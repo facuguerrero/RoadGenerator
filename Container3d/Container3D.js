@@ -8,7 +8,7 @@ class Container3D {
     }
 
     initMatrix() {
-        //inicializa la matriz como la identidad
+        //inicializa la matriz como la identidad.
         this.matrix = mat4.create();
         mat4.identity(this.matrix);
     }
