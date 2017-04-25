@@ -4,6 +4,7 @@ class Container3D {
         this.children = [];
         this.initMatrix();
         this.shaderProgram = null;
+        this.modified = false;
     }
 
     initMatrix() {
@@ -14,14 +15,17 @@ class Container3D {
 
     translate(x, y, z) {
         mat4.translate(this.matrix, this.matrix, vec3.fromValues(x, y, z));
+        this.modified = true;
     }
 
     scale(x, y, z) {
         mat4.scale(this.matrix, this.matrix, vec3.fromValues(x, y, z));
+        this.modified = true;
     }
 
     rotate(angulo, x, y, z) {
         mat4.rotate(this.matrix, this.matrix, angulo, vec3.fromValues(x, y, z));
+        this.modified = true;
     }
 
     add(child) {
@@ -38,11 +42,13 @@ class Container3D {
     resetMatrix() {
         //resetea la matriz como la identidad
         initMatrix();
+        this.modified = true;
     }
 
     applyMatrix(matrix) {
         //recibe una matriz la cual multiplica por la suya propia
         mat4.multiply(this.matrix, this.matrix, matrix);
+        this.modified = true;
     }
 
     setShaderProgram(shaderProgram){
