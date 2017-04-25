@@ -25,10 +25,13 @@ class Container3D {
 
     add(child) {
         //recibe un hijo de tipo Objeto3d para agregar a su jerarquia
+        this.children.push(child);
     }
 
     remove(child) {
         //recibe un hijo
+        var index = this.children.indexOf(child);
+        this.children.splice(index, 1);
     }
 
     resetMatrix() {
