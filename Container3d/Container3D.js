@@ -5,12 +5,16 @@ class Container3D {
         this.initMatrix();
         this.shaderProgram = null;
         this.modified = false;
+        this.prevModelMatrix= null;
     }
 
     initMatrix() {
         //inicializa la matriz como la identidad.
         this.matrix = mat4.create();
         mat4.identity(this.matrix);
+
+        this.prevModelMatrix = mat4.create();
+        mat4.identity(this.prevModelMatrix);
     }
 
     translate(x, y, z) {
