@@ -35,7 +35,7 @@ class BufferCalculator{
       this.posBuffer = [];
       this.colorBuffer = [];
 
-      var radioAux = radius;
+      var radioAux = radio;
       var theta = (2*Math.PI)/(this.colms - 1);
 
       for (var i = 0.0; i < this.rows; i++){
@@ -107,11 +107,11 @@ class BufferCalculator{
     }
 
     getIndexBuffer( ){
-    return this.indexBuffer;;
+    return this.indexBuffer;
     }
 
     getNomalBuffer( ){
-    return this.normalBuffer;;
+    return this.normalBuffer;
     }
 
     /*funcion interna para el calculo de buffers a partir
