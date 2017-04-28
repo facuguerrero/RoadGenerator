@@ -7,6 +7,9 @@
 
 <script type="text/javascript" src="gl-matrix.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
+<script type="text/javascript" src="../Container3d/Objecto3D.js"></script>
+<script type="text/javascript" src="../Container3d/Container3D.js"></script>
+<script type="text/javascript" src="../Container3d/BufferCalculator.js"></script>
 
 <script id="shader-fs-colored-obj" type="x-shader/x-fragment">
     precision mediump float;
@@ -139,16 +142,15 @@
 
 </script> -->
 
-<script type ="text/javascript" src="../Container3d/BufferCalculator.js">
+<!-- <script type ="text/javascript" src="../Container3d/BufferCalculator.js">
 
     var buffcalc = new BufferCalculator("cubo", 10, 10);
     cubo.setBufferCreator(buffcalc);
 
-</script>
+</script> -->
 
-<script type="text/javascript" src="../Container3d/Objecto3D.js">
+<script type="text/javascript">
 
-    var cubo = new Objecto3D();
 
     var gl;
 
@@ -441,7 +443,7 @@
                     this.index_buffer.push(first + 1);
                 }
             }
-
+          }
             // Creaci�n e Inicializaci�n de los buffers a nivel de OpenGL
             this.webgl_normal_buffer = gl.createBuffer();
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webgl_normal_buffer);
@@ -515,7 +517,7 @@
             /////////////////////////////////
         }
 
-    }
+    
 
 
     function TexturedSphere(latitude_bands, longitude_bands){
