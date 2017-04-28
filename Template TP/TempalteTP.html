@@ -133,19 +133,22 @@
     }
 </script>
 
-<script type ="text/javascript" src="../Container3d/Objecto3D.js">
+<!-- <script type ="text/javascript" src="../Container3d/Objecto3D.js">
 
-    var cubo = new Object();
+    var cubo = new Objecto3D();
 
-</script>
+</script> -->
 
 <script type ="text/javascript" src="../Container3d/BufferCalculator.js">
 
     var buffcalc = new BufferCalculator("cubo", 10, 10);
+    cubo.setBufferCreator(buffcalc);
 
 </script>
 
-<script type="text/javascript">
+<script type="text/javascript" src="../Container3d/Objecto3D.js">
+
+    var cubo = new Objecto3D();
 
     var gl;
 
@@ -722,7 +725,7 @@
         cubo.setupShaders(shaderProgramTexturedObject);
         cubo.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
         cubo.build();
-        cubo.draw()
+        cubo.draw(mat4.create() ,CameraMatrix,pMatrix, false);
 
 
         ///////////////////////////////////////////////////////
