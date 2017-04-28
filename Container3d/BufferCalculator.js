@@ -1,5 +1,7 @@
-CILINDRO “cilindro”
-CUBO “cubo”
+var CILINDRO;
+CILINDRO = "cilindro";
+var CUBO;
+CUBO = "cubo";
 
 class BufferCalculator{
     /*recibe el tipo de figura como string
