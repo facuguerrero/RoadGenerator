@@ -1,14 +1,12 @@
-class Container3D {
-    constructor() {
-        this.matrix = null;
-        this.children = [];
-        this.initMatrix();
-        this.shaderProgram = null;
-        this.modified = false;
-        this.prevModelMatrix= null;
-    }
+function Container3D () {
+    this.matrix = null;
+    this.prevModelMatrix = null;
+    this.children = [];
+    this.initMatrix();
+    this.shaderProgram = null;
+    this.modified = false;
 
-    initMatrix() {
+    this.initMatrix = function () {
         //inicializa la matriz como la identidad.
         this.matrix = mat4.create();
         mat4.identity(this.matrix);
@@ -17,51 +15,51 @@ class Container3D {
         mat4.identity(this.prevModelMatrix);
     }
 
-    translate(x, y, z) {
+    this.translate = function (x, y, z) {
         mat4.translate(this.matrix, this.matrix, vec3.fromValues(x, y, z));
         this.modified = true;
     }
 
-    scale(x, y, z) {
+    this.scale = function (x, y, z) {
         mat4.scale(this.matrix, this.matrix, vec3.fromValues(x, y, z));
         this.modified = true;
     }
 
-    rotate(angulo, x, y, z) {
+    this.rotate = function (angulo, x, y, z) {
         mat4.rotate(this.matrix, this.matrix, angulo, vec3.fromValues(x, y, z));
         this.modified = true;
     }
 
-    add(child) {
+    this.add = function (child) {
         //recibe un hijo de tipo Objeto3d para agregar a su jerarquia
         this.children.push(child);
     }
 
-    remove(child) {
+    this.remove = function (child) {
         //recibe un hijo
         var index = this.children.indexOf(child);
         this.children.splice(index, 1);
     }
 
-    resetMatrix() {
+    this.resetMatrix = function () {
         //resetea la matriz como la identidad
         initMatrix();
         this.modified = true;
     }
 
-    applyMatrix(matrix) {
+    this.applyMatrix = function (matrix) {
         //recibe una matriz la cual multiplica por la suya propia
         mat4.multiply(this.matrix, this.matrix, matrix);
         this.modified = true;
     }
 
-    setShaderProgram(shaderProgram){
+    this.setShaderProgram = function (shaderProgram) {
         //recibe el shader a utilizar
         this.shaderProgram = shaderProgram;
         gl.useProgram(shaderProgram);
     }
 
-    setupLighting(lightPosition, ambientColor, diffuseColor){
+    this.setupLighting = function (lightPosition, ambientColor, diffuseColor) {
         // Configuración de la luz
         // Se inicializan las variables asociadas con la Iluminación
         this.setupChildrenLighting(lightPosition, ambientColor, diffuseColor);
@@ -75,8 +73,8 @@ class Container3D {
         gl.uniform3fv(this.shaderProgram.directionalColorUniform, diffuseColor);
     }
 
-    setupChildrenLighting(lightPosition, ambientColor, diffuseColor){
-        for (var i = 0; i < this.children.length; i++){
+    this.setupChildrenLighting = function (lightPosition, ambientColor, diffuseColor) {
+        for (var i = 0; i < this.children.length; i++) {
             var child = this.children[i];
             child.setupLighting(lightPosition, ambientColor, diffuseColor);
         }
@@ -89,10 +87,10 @@ class Container3D {
      * @param {pMatrix} mat4 Matriz de proyeccion
      * @param {parentMod} bool Indica si el padre fue modificado o no
      */
-    draw(mMatrix, CameraMatrix, pMatrix, parentMod){
+    this.draw = function (mMatrix, CameraMatrix, pMatrix, parentMod) {
         //Se crea una matriz nueva para no modificar la matriz del padre
         var modelMatrix = mat4.create();
-        if(this.modified || parentMod){
+        if (this.modified || parentMod) {
             mat4.multiply(modelMatrix, mMatrix, this.matrix);
             mat4.multiply(this.prevModelMatrix, modelMatrix, mat4.create());
         } else mat4.multiply(modelMatrix, this.prevModelMatrix, mat4.create());
@@ -103,8 +101,8 @@ class Container3D {
     /**Dibuja a los hijos
      * @param Idem draw.
      */
-    _drawChildren(modelMatrix, CameraMatrix, pMatrix, parentMod){
-        for (var i = 0; i < this.children.length; i++){
+    this._drawChildren = function (modelMatrix, CameraMatrix, pMatrix, parentMod) {
+        for (var i = 0; i < this.children.length; i++) {
             var child = this.children[i];
             child.draw(modelMatrix, CameraMatrix, pMatrix, parentMod);
         }
