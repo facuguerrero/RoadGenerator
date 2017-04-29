@@ -2,18 +2,13 @@ function Container3D () {
     this.matrix = null;
     this.prevModelMatrix = null;
     this.children = [];
-    this.initMatrix();
     this.shaderProgram = null;
     this.modified = false;
+    this.matrix = mat4.create();
+    mat4.identity(this.matrix);
+    this.prevModelMatrix = mat4.create();
+    mat4.identity(this.prevModelMatrix);
 
-    this.initMatrix = function () {
-        //inicializa la matriz como la identidad.
-        this.matrix = mat4.create();
-        mat4.identity(this.matrix);
-
-        this.prevModelMatrix = mat4.create();
-        mat4.identity(this.prevModelMatrix);
-    }
 
     this.translate = function (x, y, z) {
         mat4.translate(this.matrix, this.matrix, vec3.fromValues(x, y, z));
