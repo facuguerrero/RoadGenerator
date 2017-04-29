@@ -1,5 +1,7 @@
+/* Exports para incluir en el template */
+
 class Objeto3D extends Container3D{
-    constructor(){
+    export constructor(){
         super();
         this.drawType = gl.TRIANGLE_STRIP;
 

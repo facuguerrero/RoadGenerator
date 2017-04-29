@@ -3,6 +3,7 @@ CILINDRO = "cilindro";
 var CUBO;
 CUBO = "cubo";
 
+
 class BufferCalculator{
     /*recibe el tipo de figura como string
     y las dimensiones como columnas y filas*/
