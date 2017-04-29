@@ -7,7 +7,7 @@
 
 <script type="text/javascript" src="gl-matrix.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
-<script type="text/javascript" src="../Container3d/Container3D.js"></script>
+<script type="text/javascript" src="../Container3d/Objeto3D.js"></script>
 <script id="shader-fs-colored-obj" type="x-shader/x-fragment">
 
     precision mediump float;
@@ -721,7 +721,7 @@
         mat4.lookAt(CameraMatrix, eye_point, at_point, up_point);
         mat4.multiply(CameraMatrix, CameraMatrix, matriz_camara);
 
-        var hola = new Container3D();
+        var hola = new Objeto3D();
 //        var cubo = new Objeto3D();
 //        var buffcalc = new BufferCalculator("cubo", 10, 10);
 //        cubo.setBufferCreator(buffcalc);
