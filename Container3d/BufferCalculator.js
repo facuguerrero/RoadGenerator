@@ -4,24 +4,20 @@ var CUBO;
 CUBO = "cubo";
 
 
-class BufferCalculator{
+function BufferCalculator(figura, rows, colms){
     /*recibe el tipo de figura como string
     y las dimensiones como columnas y filas*/
-    constructor(figura, rows, colms){
-      this.figura = figura;
-      this.rows = rows;
-      this.colms = colms;
-
+    this.figura = figura;
+    this.rows = rows;
+    this.colms = colms;
 
     this.posBuffer = [];
     this.colorBuffer = [];
     this.normalBuffer = [];
     this.indexBuffer = [];
 
-    this.setBuffers(figura);
-    }
+    this.setBuffers = function(figura){
 
-    setBuffers(figura){
       if( figura == CILINDRO){
         this.setBuffersCil();
       }
@@ -32,7 +28,7 @@ class BufferCalculator{
       this.setIndexBuffer();
     }
 
-    setBuffersCil(radio){
+    this.setBuffersCil = function(radio){
       this.posBuffer = [];
       this.colorBuffer = [];
 
@@ -69,10 +65,10 @@ class BufferCalculator{
       }
     }
 
-    setBuffersCubo(){
+    this.setBuffersCubo = function(){
     }
 
-    setIndexBuffer(){
+    this.setIndexBuffer = function(){
       this.indexBuffer = [];
 
       for (var i = 0; i < (this.rows - 1); i++){
@@ -99,24 +95,24 @@ class BufferCalculator{
     }
 
 
-    getPosBuffer(){
+    this.getPosBuffer = function(){
       return this.posBuffer;
     }
 
-    getColorBuffer( ){
+    this.getColorBuffer = function(){
     return this.colorBuffer;
     }
 
-    getIndexBuffer( ){
+    this.getIndexBuffer = function(){
     return this.indexBuffer;
     }
 
-    getNomalBuffer( ){
+    this.getNomalBuffer = function(){
     return this.normalBuffer;
     }
 
     /*funcion interna para el calculo de buffers a partir
     de su dimension de columnas y filas*/
-    calculateBuffer(rows, colms){
+    this.calculateBuffer = function(rows, colms){
     }
 }
