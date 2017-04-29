@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Container3D.js" afterPath="$PROJECT_DIR$/Container3d/Container3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -451,7 +448,7 @@
       <workItem from="1493385458297" duration="670000" />
       <workItem from="1493386147573" duration="711000" />
       <workItem from="1493393189106" duration="1757000" />
-      <workItem from="1493485542991" duration="3161000" />
+      <workItem from="1493485542991" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="Piola">
       <created>1493133730299</created>
@@ -495,11 +492,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493394454902</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="container como objeto javascript 5">
+      <created>1493488729169</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1493488729169</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9625000" />
+    <option name="totallyTimeSpent" value="9656000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-7" width="1600" height="844" extended-state="6" />
@@ -554,7 +558,8 @@
     <MESSAGE value="cambio del template" />
     <MESSAGE value="subo el cambio" />
     <MESSAGE value="superficie de barrido" />
-    <option name="LAST_COMMIT_MESSAGE" value="superficie de barrido" />
+    <MESSAGE value="container como objeto javascript 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="container como objeto javascript 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
