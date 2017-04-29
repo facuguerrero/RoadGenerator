@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -414,7 +411,7 @@
       <workItem from="1493385458297" duration="670000" />
       <workItem from="1493386147573" duration="711000" />
       <workItem from="1493393189106" duration="1757000" />
-      <workItem from="1493485542991" duration="5258000" />
+      <workItem from="1493485542991" duration="5277000" />
     </task>
     <task id="LOCAL-00001" summary="Piola">
       <created>1493133730299</created>
@@ -507,11 +504,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493490031230</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="dejo de chillar pero no pasa naranja">
+      <created>1493490818392</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1493490818392</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11722000" />
+    <option name="totallyTimeSpent" value="11741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-7" width="1600" height="844" extended-state="6" />
@@ -569,7 +573,8 @@
     <MESSAGE value="container como objeto javascript 5" />
     <MESSAGE value="container funcionando" />
     <MESSAGE value="todo pasado a javascript 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="todo pasado a javascript 5" />
+    <MESSAGE value="dejo de chillar pero no pasa naranja" />
+    <option name="LAST_COMMIT_MESSAGE" value="dejo de chillar pero no pasa naranja" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
