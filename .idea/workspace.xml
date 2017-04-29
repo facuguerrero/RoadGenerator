@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            <state relative-caret-position="505">
+              <caret line="108" column="28" lean-forward="true" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
               <folding>
                 <element signature="e#758#871#0" expanded="false" />
                 <element signature="e#909#1018#0" expanded="false" />
@@ -43,46 +46,27 @@
                 <element signature="e#1888#2015#0" expanded="false" />
                 <element signature="e#2095#2683#0" expanded="false" />
                 <element signature="e#2771#2963#0" expanded="false" />
-                <element signature="e#3154#3208#0" expanded="false" />
-                <element signature="e#3331#3626#0" expanded="false" />
-                <element signature="e#3725#4567#0" expanded="false" />
-                <element signature="e#4887#5708#0" expanded="false" />
-                <element signature="e#5767#6360#0" expanded="false" />
-                <element signature="e#6367#6720#0" expanded="false" />
-                <element signature="e#6788#8839#0" expanded="false" />
-                <element signature="e#8845#8899#0" expanded="false" />
-                <element signature="e#8982#9169#0" expanded="false" />
+                <element signature="e#3772#4614#0" expanded="false" />
+                <element signature="e#4934#5755#0" expanded="false" />
+                <element signature="e#5814#6407#0" expanded="false" />
+                <element signature="e#6414#6767#0" expanded="false" />
+                <element signature="e#6835#8886#0" expanded="false" />
+                <element signature="e#8892#8946#0" expanded="false" />
+                <element signature="e#9029#9216#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="arbol.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado/objects/arbol.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sg_tp1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado/sg_tp1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5273">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="499">
+              <caret line="726" column="36" lean-forward="false" selection-start-line="726" selection-start-column="36" selection-end-line="726" selection-end-column="36" />
+              <folding>
+                <marker date="1493490698104" expanded="false" signature="36448:36456" ph="á" />
+                <marker date="1493490698104" expanded="false" signature="36526:36539" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,11 +74,9 @@
       <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding>
-                <marker date="1493489984005" expanded="true" signature="3472:3494" ph="{...}" />
-              </folding>
+            <state relative-caret-position="348">
+              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,8 +97,9 @@
       <list>
         <option value="$PROJECT_DIR$/Template TP/Container3D.js" />
         <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
-        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+        <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
       </list>
     </option>
   </component>
@@ -231,7 +214,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/BufferCalculator.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template TP/TempalteTP.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -431,7 +414,7 @@
       <workItem from="1493385458297" duration="670000" />
       <workItem from="1493386147573" duration="711000" />
       <workItem from="1493393189106" duration="1757000" />
-      <workItem from="1493485542991" duration="4485000" />
+      <workItem from="1493485542991" duration="5258000" />
     </task>
     <task id="LOCAL-00001" summary="Piola">
       <created>1493133730299</created>
@@ -517,11 +500,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493490025844</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="todo pasado a javascript 5">
+      <created>1493490031230</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1493490031230</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10949000" />
+    <option name="totallyTimeSpent" value="11722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-7" width="1600" height="844" extended-state="6" />
@@ -583,7 +573,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Container3d/Objeto3D.js</url>
+          <line>97</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -611,15 +609,13 @@
             <element signature="e#1888#2015#0" expanded="false" />
             <element signature="e#2095#2683#0" expanded="false" />
             <element signature="e#2771#2963#0" expanded="false" />
-            <element signature="e#3154#3208#0" expanded="false" />
-            <element signature="e#3331#3626#0" expanded="false" />
-            <element signature="e#3725#4567#0" expanded="false" />
-            <element signature="e#4887#5708#0" expanded="false" />
-            <element signature="e#5767#6360#0" expanded="false" />
-            <element signature="e#6367#6720#0" expanded="false" />
-            <element signature="e#6788#8839#0" expanded="false" />
-            <element signature="e#8845#8899#0" expanded="false" />
-            <element signature="e#8982#9169#0" expanded="false" />
+            <element signature="e#3772#4614#0" expanded="false" />
+            <element signature="e#4934#5755#0" expanded="false" />
+            <element signature="e#5814#6407#0" expanded="false" />
+            <element signature="e#6414#6767#0" expanded="false" />
+            <element signature="e#6835#8886#0" expanded="false" />
+            <element signature="e#8892#8946#0" expanded="false" />
+            <element signature="e#9029#9216#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -628,7 +624,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15372">
           <caret line="854" column="22" lean-forward="false" selection-start-line="854" selection-start-column="22" selection-end-line="854" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1493490698104" expanded="false" signature="36448:36456" ph="á" />
+            <marker date="1493490698104" expanded="false" signature="36526:36539" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -655,15 +654,13 @@
             <element signature="e#1888#2015#0" expanded="false" />
             <element signature="e#2095#2683#0" expanded="false" />
             <element signature="e#2771#2963#0" expanded="false" />
-            <element signature="e#3154#3208#0" expanded="false" />
-            <element signature="e#3331#3626#0" expanded="false" />
-            <element signature="e#3725#4567#0" expanded="false" />
-            <element signature="e#4887#5708#0" expanded="false" />
-            <element signature="e#5767#6360#0" expanded="false" />
-            <element signature="e#6367#6720#0" expanded="false" />
-            <element signature="e#6788#8839#0" expanded="false" />
-            <element signature="e#8845#8899#0" expanded="false" />
-            <element signature="e#8982#9169#0" expanded="false" />
+            <element signature="e#3772#4614#0" expanded="false" />
+            <element signature="e#4934#5755#0" expanded="false" />
+            <element signature="e#5814#6407#0" expanded="false" />
+            <element signature="e#6414#6767#0" expanded="false" />
+            <element signature="e#6835#8886#0" expanded="false" />
+            <element signature="e#8892#8946#0" expanded="false" />
+            <element signature="e#9029#9216#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -672,7 +669,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15372">
           <caret line="854" column="22" lean-forward="true" selection-start-line="854" selection-start-column="22" selection-end-line="854" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1493490698104" expanded="false" signature="36448:36456" ph="á" />
+            <marker date="1493490698104" expanded="false" signature="36526:36539" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -747,7 +747,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1493490698104" expanded="false" signature="36448:36456" ph="á" />
+            <marker date="1493490698104" expanded="false" signature="36526:36539" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -803,72 +806,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2868">
           <caret line="439" column="13" lean-forward="true" selection-start-line="439" selection-start-column="13" selection-end-line="439" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
           <folding>
-            <marker date="1493489984005" expanded="true" signature="3472:3494" ph="{...}" />
+            <marker date="1493490698104" expanded="false" signature="36448:36456" ph="á" />
+            <marker date="1493490698104" expanded="false" signature="36526:36539" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bajado/objects/arbol.js">
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -889,6 +877,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Bajado/objects/arbol.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1970">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -897,10 +893,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="726" column="36" lean-forward="false" selection-start-line="726" selection-start-column="36" selection-end-line="726" selection-end-column="36" />
+          <folding>
+            <marker date="1493490698104" expanded="false" signature="36448:36456" ph="á" />
+            <marker date="1493490698104" expanded="false" signature="36526:36539" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        <state relative-caret-position="505">
+          <caret line="108" column="28" lean-forward="true" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
           <folding>
             <element signature="e#758#871#0" expanded="false" />
             <element signature="e#909#1018#0" expanded="false" />
@@ -912,24 +927,14 @@
             <element signature="e#1888#2015#0" expanded="false" />
             <element signature="e#2095#2683#0" expanded="false" />
             <element signature="e#2771#2963#0" expanded="false" />
-            <element signature="e#3154#3208#0" expanded="false" />
-            <element signature="e#3331#3626#0" expanded="false" />
-            <element signature="e#3725#4567#0" expanded="false" />
-            <element signature="e#4887#5708#0" expanded="false" />
-            <element signature="e#5767#6360#0" expanded="false" />
-            <element signature="e#6367#6720#0" expanded="false" />
-            <element signature="e#6788#8839#0" expanded="false" />
-            <element signature="e#8845#8899#0" expanded="false" />
-            <element signature="e#8982#9169#0" expanded="false" />
+            <element signature="e#3772#4614#0" expanded="false" />
+            <element signature="e#4934#5755#0" expanded="false" />
+            <element signature="e#5814#6407#0" expanded="false" />
+            <element signature="e#6414#6767#0" expanded="false" />
+            <element signature="e#6835#8886#0" expanded="false" />
+            <element signature="e#8892#8946#0" expanded="false" />
+            <element signature="e#9029#9216#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>

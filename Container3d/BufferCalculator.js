@@ -16,21 +16,19 @@ function BufferCalculator(figura, rows, colms){
     this.normalBuffer = [];
     this.indexBuffer = [];
 
-    this.setBuffers = function(figura){
+    this.calculateBuffers = function(){
 
-      if( figura == CILINDRO){
-        this.setBuffersCil();
+      if( this.figura == CILINDRO){
+        this.calcBuffersCil();
       }
 
-      if( figura == CUBO ){
-        this.setBuffersCubo();
+      if( this.figura == CUBO ){
+        this.calcBuffersCubo();
       }
-      this.setIndexBuffer();
+      this.calcIndexBuffer();
     }
 
-    this.setBuffersCil = function(radio){
-      this.posBuffer = [];
-      this.colorBuffer = [];
+    this.calcBuffersCil = function(radio){
 
       var radioAux = radio;
       var theta = (2*Math.PI)/(this.colms - 1);
@@ -65,11 +63,10 @@ function BufferCalculator(figura, rows, colms){
       }
     }
 
-    this.setBuffersCubo = function(){
+    this.calcBuffersCubo = function(){
     }
 
-    this.setIndexBuffer = function(){
-      this.indexBuffer = [];
+    this.calcIndexBuffer = function(){
 
       for (var i = 0; i < (this.rows - 1); i++){
         //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
@@ -107,7 +104,7 @@ function BufferCalculator(figura, rows, colms){
     return this.indexBuffer;
     }
 
-    this.getNomalBuffer = function(){
+    this.getNormalBuffer = function(){
     return this.normalBuffer;
     }
 

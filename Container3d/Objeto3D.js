@@ -102,10 +102,11 @@ function Objeto3D() {
     /**********METODOS DE DIBUJADO**********/
     /*Construye todos los buffers necesitados*/
     this.build = function(){
-        this.posBuffer = this.bufferCreator.setPosBuffer();
-        this.normalBuffer =this.bufferCreator.setNormalBuffer();
-        this.colorBuffer = this.bufferCreator.setColorBuffer();
-        this.indexBuffer = this.bufferCreator.setIndexBuffer();
+        this.bufferCreator. calculateBuffers()
+        this.posBuffer = this.bufferCreator.getPosBuffer();
+        this.normalBuffer =this.bufferCreator.getNormalBuffer();
+        this.colorBuffer = this.bufferCreator.getColorBuffer();
+        this.indexBuffer = this.bufferCreator.getIndexBuffer();
 
         this.setUpWebGLBuffers();
     }
