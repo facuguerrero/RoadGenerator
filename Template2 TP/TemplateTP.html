@@ -3,14 +3,13 @@
 
 <head>
 <title>Actividad Clase 03 - Vertex Shaders</title>
-<link rel="import" href="../Container3D/Objeto3D.js">
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
+<script type="text/javascript" src="Container3D.js"></script>
+<script type="text/javascript" src="Object3D.js"></script>
 <script type="text/javascript" src="gl-matrix.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
-<!--<script type="text/javascript" src="../Container3D/Objeto3D.js">
-    obj = new Objeto3D();
-</script>-->
+
 
 <script id="shader-fs-colored-obj" type="x-shader/x-fragment">
     precision mediump float;
@@ -317,6 +316,7 @@
     var deimos = null;
     var mars = null;
     var phobos = null;
+    var obj = null;
 
     var deimosRotationMatrix = mat4.create();
     mat4.identity(deimosRotationMatrix);
@@ -356,7 +356,6 @@
 
     function ColoredSphere(latitude_bands, longitude_bands){
 
-        obj = new Objeto3D();
         this.latitudeBands = latitude_bands;
         this.longitudeBands = longitude_bands;
 
@@ -837,6 +836,8 @@
 
         deimos = new ColoredSphere(64, 64);
         deimos.initBuffers();
+
+        obj = new Object3D();
 
         mars = new TexturedSphere(64,64);
         mars.initBuffers();
