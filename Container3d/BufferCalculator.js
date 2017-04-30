@@ -26,11 +26,12 @@ class BufferCalculator{
     calculateBuffer(){
 
       if(this.figura == CILINDRO){
-        this.calcBuffersCil();
+        this.calcBuffersCil(32);
       }
       if(this.figura == ESFERA){
         this.calcBufferEsfera();
       }
+      this.calcIndexBuffer();
     }
 
     calcBuffersCil(radio){
