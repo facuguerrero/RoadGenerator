@@ -111,8 +111,4 @@ class BufferCalculator{
     return this.normalBuffer;
     }
 
-    /*funcion interna para el calculo de buffers a partir
-    de su dimension de columnas y filas*/
-    calculateBuffer(rows, colms){
-    }
 }
