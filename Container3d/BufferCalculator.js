@@ -116,25 +116,32 @@ class BufferCalculator{
 
       this.rows= this.latitudeBands;
       this.colms = this.longitudeBands;
-      this.calcIndexBuffer();
     }
 
     calcIndexBuffer(){
 
 
-      for (var latNumber=0; latNumber < this.rows; latNumber++) {
-          for (var longNumber=0; longNumber < this.colms; longNumber++) {
-              var first = (latNumber * (this.rows + 1)) + longNumber;
-              var second = first + this.colms + 1;
-              this.indexBuffer.push(first);
-              this.indexBuffer.push(second);
-              this.indexBuffer.push(first + 1);
-
-              this.indexBuffer.push(second);
-              this.indexBuffer.push(second + 1);
-              this.indexBuffer.push(first + 1);
+      for (var i = 0; i < (this.rows - 1); i++){
+          //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
+          if ((i % 2) == 0){
+              //Recorrido hacia la derecha
+              var init = this.colms*i;
+              var next = this.colms*(i+1);
+              for (var j = 0; j < this.colms; j++){
+                  this.indexBuffer.push(init + j);
+                  this.indexBuffer.push(next + j);
+              }
+          }else{
+              //Recorrido hacia la izquierda
+              var init = this.cols*(i+1) - 1;
+              var next = this.cols*(i+2) - 1;
+              for (var j = 0; j < this.cols; j++){
+                  this.indexBuffer.push(init - j);
+                  this.indexBuffer.push(next - j);
+              }
           }
-        }
+      }
+      console.log(this.indexBuffer.length);
     }
 
 

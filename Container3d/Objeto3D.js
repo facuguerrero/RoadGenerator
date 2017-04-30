@@ -149,7 +149,7 @@ class Objeto3D extends Container3D{
         //Index
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         //Draw
-        gl.drawElements(this.drawType, this.indexBuffer.length, gl.UNSIGNED_SHORT, 0);
+        gl.drawElements(this.drawType, this.indexBuffer.length-1, gl.UNSIGNED_SHORT, 0);
     }
 
     /**Dibuja a los hijos
