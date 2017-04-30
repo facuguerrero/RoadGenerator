@@ -318,6 +318,7 @@
     var mars = null;
     var phobos = null;
     var obj = null;
+    var buffcalc = null;
 
     var deimosRotationMatrix = mat4.create();
     mat4.identity(deimosRotationMatrix);
@@ -712,7 +713,11 @@
         mat4.lookAt(CameraMatrix, eye_point, at_point, up_point);
         mat4.multiply(CameraMatrix, CameraMatrix, matriz_camara);
 
-
+        obj.setShaderProgram(shaderProgramColoredObject);
+        obj.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
+        var model_matrix_obj = mat4.create();
+        mat4.identity(model_matrix_obj);
+        obj.draw(model_matrix_obj, CameraMatrix, pMatrix, false);
 
         ///////////////////////////////////////////////////////
         //
@@ -839,6 +844,10 @@
         deimos.initBuffers();
 
         obj = new Objeto3D();
+        buffcalc = new BufferCalculator("cilindro", 10, 10);
+        buffcalc.calculateBuffer();
+        obj.setBufferCreator(buffcalc);
+        obj.build();
 
         mars = new TexturedSphere(64,64);
         mars.initBuffers();
