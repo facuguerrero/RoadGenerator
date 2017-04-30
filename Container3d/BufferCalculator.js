@@ -23,55 +23,8 @@ class BufferCalculator{
 
     calculateBuffer(){
 
-        var latNumber;
-        var longNumber;
+      this.calcBufferEsfera();
 
-        for (latNumber=0; latNumber <= this.latitudeBands; latNumber++) {
-            var theta = latNumber * Math.PI / this.latitudeBands;
-            var sinTheta = Math.sin(theta);
-            var cosTheta = Math.cos(theta);
-
-            for (longNumber=0; longNumber <= this.longitudeBands; longNumber++) {
-                var phi = longNumber * 2 * Math.PI / this.longitudeBands;
-                var sinPhi = Math.sin(phi);
-                var cosPhi = Math.cos(phi);
-
-                var x = cosPhi * sinTheta;
-                var y = cosTheta;
-                var z = sinPhi * sinTheta;
-                var u = 1.0 - (longNumber / this.longitudeBands);
-                var v = 1.0 - (latNumber / this.latitudeBands);
-
-                this.normalBuffer.push(x);
-                this.normalBuffer.push(y);
-                this.normalBuffer.push(z);
-
-                // Mejorar o modificar el algoritmo que inicializa
-                // el color de cada vertice
-                this.colorBuffer.push(x/2.0)
-                this.colorBuffer.push(y/2.0)
-                this.colorBuffer.push(z/2.0)
-
-                this.posBuffer.push(x);
-                this.posBuffer.push(y);
-                this.posBuffer.push(z);
-            }
-        }
-
-
-        for (latNumber=0; latNumber < this.latitudeBands; latNumber++) {
-            for (longNumber=0; longNumber < this.longitudeBands; longNumber++) {
-                var first = (latNumber * (this.longitudeBands + 1)) + longNumber;
-                var second = first + this.longitudeBands + 1;
-                this.indexBuffer.push(first);
-                this.indexBuffer.push(second);
-                this.indexBuffer.push(first + 1);
-
-                this.indexBuffer.push(second);
-                this.indexBuffer.push(second + 1);
-                this.indexBuffer.push(first + 1);
-            }
-        }
     }
 
     calcBuffersCil(radio){
@@ -118,29 +71,61 @@ class BufferCalculator{
     calcBuffersCubo(){
     }
 
+    calcBufferEsfera(){
+      var latNumber;
+      var longNumber;
+
+      for (latNumber=0; latNumber <= this.latitudeBands; latNumber++) {
+          var theta = latNumber * Math.PI / this.latitudeBands;
+          var sinTheta = Math.sin(theta);
+          var cosTheta = Math.cos(theta);
+
+          for (longNumber=0; longNumber <= this.longitudeBands; longNumber++) {
+              var phi = longNumber * 2 * Math.PI / this.longitudeBands;
+              var sinPhi = Math.sin(phi);
+              var cosPhi = Math.cos(phi);
+
+              var x = cosPhi * sinTheta;
+              var y = cosTheta;
+              var z = sinPhi * sinTheta;
+              var u = 1.0 - (longNumber / this.longitudeBands);
+              var v = 1.0 - (latNumber / this.latitudeBands);
+
+              this.normalBuffer.push(x);
+              this.normalBuffer.push(y);
+              this.normalBuffer.push(z);
+
+              // Mejorar o modificar el algoritmo que inicializa
+              // el color de cada vertice
+              this.colorBuffer.push(0.0)
+              this.colorBuffer.push(0.0)
+              this.colorBuffer.push(0.0)
+
+              this.posBuffer.push(x);
+              this.posBuffer.push(y);
+              this.posBuffer.push(z);
+          }
+      }
+
+
+      this.calcIndexBuffer();
+    }
+
     calcIndexBuffer(){
 
-      for (var i = 0; i < (this.rows - 1); i++){
-        //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
-        if ((i % 2) == 0){
-          //Recorrido hacia la derecha
-          var init = this.cols*i;
-          var next = this.cols*(i+1);
-          for (var j = 0; j < this.cols; j++){
-              this.indexBuffer.push(init + j);
-              this.indexBuffer.push(next + j);
+      for (var latNumber=0; latNumber < this.latitudeBands; latNumber++) {
+          for (var longNumber=0; longNumber < this.longitudeBands; longNumber++) {
+              var first = (latNumber * (this.longitudeBands + 1)) + longNumber;
+              var second = first + this.longitudeBands + 1;
+              this.indexBuffer.push(first);
+              this.indexBuffer.push(second);
+              this.indexBuffer.push(first + 1);
+
+              this.indexBuffer.push(second);
+              this.indexBuffer.push(second + 1);
+              this.indexBuffer.push(first + 1);
           }
         }
-        else{
-          //Recorrido hacia la izquierda
-          var init = this.cols*(i+1) - 1;
-          var next = this.cols*(i+2) - 1;
-          for (var j = 0; j < this.cols; j++){
-              this.indexBuffer.push(init - j);
-              this.indexBuffer.push(next - j);
-          }
-        }
-      }
     }
 
 
