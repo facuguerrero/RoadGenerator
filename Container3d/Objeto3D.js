@@ -1,26 +1,17 @@
 class Objeto3D extends Container3D{
 
   constructor(){
-    this.matrix = null;
-    this.prevModelMatrix = null;
-    this.children = [];
-    this.shaderProgram = null;
-    this.modified = false;
-    this.matrix = mat4.create();
-    mat4.identity(this.matrix);
-    this.prevModelMatrix = mat4.create();
-    mat4.identity(this.prevModelMatrix);
-    this.drawType = gl.TRIANGLE_STRIP;
+    super();
 
-        this.posBuffer = null;
-        this.indexBuffer = null;
-        this.colorBuffer = null;
-        this.normalBuffer = null;
+    this.posBuffer = null;
+    this.indexBuffer = null;
+    this.colorBuffer = null;
+    this.normalBuffer = null;
 
-        this.webglPosBuffer = null;
-        this.webglNormalBuffer = null;
-        this.webglColorBuffer = null;
-        this.webglIndexBuffer = null;
+    this.webglPosBuffer = null;
+    this.webglNormalBuffer = null;
+    this.webglColorBuffer = null;
+    this.webglIndexBuffer = null;
 
     this.bufferCreator = null;
     }
