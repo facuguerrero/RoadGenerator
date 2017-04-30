@@ -27,7 +27,7 @@ class Objeto3D extends Container3D{
     /**********METODOS DE DIBUJADO**********/
     /*Construye todos los buffers necesitados*/
     build(){
-        this.bufferCreator. calculateBuffer()
+        this.bufferCreator.calculateBuffer()
         this.posBuffer = this.bufferCreator.getPosBuffer();
         this.normalBuffer =this.bufferCreator.getNormalBuffer();
         this.colorBuffer = this.bufferCreator.getColorBuffer();
