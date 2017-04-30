@@ -113,6 +113,6 @@ class BufferCalculator{
 
     /*funcion interna para el calculo de buffers a partir
     de su dimension de columnas y filas*/
-    this.calculateBuffer = function(rows, colms){
+    calculateBuffer(rows, colms){
     }
 }
