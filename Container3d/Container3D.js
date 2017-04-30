@@ -1,4 +1,6 @@
-function Container3D () {
+class Container3D{
+
+  constructor(){
     this.matrix = null;
     this.prevModelMatrix = null;
     this.children = [];
@@ -8,53 +10,53 @@ function Container3D () {
     mat4.identity(this.matrix);
     this.prevModelMatrix = mat4.create();
     mat4.identity(this.prevModelMatrix);
+    }
 
-
-    this.translate = function (x, y, z) {
+    translate(x, y, z) {
         mat4.translate(this.matrix, this.matrix, vec3.fromValues(x, y, z));
         this.modified = true;
     }
 
-    this.scale = function (x, y, z) {
+    scale(x, y, z) {
         mat4.scale(this.matrix, this.matrix, vec3.fromValues(x, y, z));
         this.modified = true;
     }
 
-    this.rotate = function (angulo, x, y, z) {
+    rotate(angulo, x, y, z) {
         mat4.rotate(this.matrix, this.matrix, angulo, vec3.fromValues(x, y, z));
         this.modified = true;
     }
 
-    this.add = function (child) {
+    add(child) {
         //recibe un hijo de tipo Objeto3d para agregar a su jerarquia
         this.children.push(child);
     }
 
-    this.remove = function (child) {
+    remove(child) {
         //recibe un hijo
         var index = this.children.indexOf(child);
         this.children.splice(index, 1);
     }
 
-    this.resetMatrix = function () {
+    resetMatrix() {
         //resetea la matriz como la identidad
         initMatrix();
         this.modified = true;
     }
 
-    this.applyMatrix = function (matrix) {
+    applyMatrix(matrix) {
         //recibe una matriz la cual multiplica por la suya propia
         mat4.multiply(this.matrix, this.matrix, matrix);
         this.modified = true;
     }
 
-    this.setShaderProgram = function (shaderProgram) {
+    setShaderProgram(shaderProgram) {
         //recibe el shader a utilizar
         this.shaderProgram = shaderProgram;
         gl.useProgram(shaderProgram);
     }
 
-    this.setupLighting = function (lightPosition, ambientColor, diffuseColor) {
+    setupLighting(lightPosition, ambientColor, diffuseColor) {
         // Configuración de la luz
         // Se inicializan las variables asociadas con la Iluminación
         this.setupChildrenLighting(lightPosition, ambientColor, diffuseColor);
@@ -68,7 +70,7 @@ function Container3D () {
         gl.uniform3fv(this.shaderProgram.directionalColorUniform, diffuseColor);
     }
 
-    this.setupChildrenLighting = function (lightPosition, ambientColor, diffuseColor) {
+    setupChildrenLighting(lightPosition, ambientColor, diffuseColor) {
         for (var i = 0; i < this.children.length; i++) {
             var child = this.children[i];
             child.setupLighting(lightPosition, ambientColor, diffuseColor);
@@ -82,7 +84,7 @@ function Container3D () {
      * @param {pMatrix} mat4 Matriz de proyeccion
      * @param {parentMod} bool Indica si el padre fue modificado o no
      */
-    this.draw = function (mMatrix, CameraMatrix, pMatrix, parentMod) {
+    draw(mMatrix, CameraMatrix, pMatrix, parentMod) {
         //Se crea una matriz nueva para no modificar la matriz del padre
         var modelMatrix = mat4.create();
         if (this.modified || parentMod) {
@@ -96,7 +98,7 @@ function Container3D () {
     /**Dibuja a los hijos
      * @param Idem draw.
      */
-    this._drawChildren = function (modelMatrix, CameraMatrix, pMatrix, parentMod) {
+    _drawChildren(modelMatrix, CameraMatrix, pMatrix, parentMod) {
         for (var i = 0; i < this.children.length; i++) {
             var child = this.children[i];
             child.draw(modelMatrix, CameraMatrix, pMatrix, parentMod);

@@ -4,7 +4,9 @@ var CUBO;
 CUBO = "cubo";
 
 
-function BufferCalculator(figura, rows, colms){
+class BufferCalculator{
+
+    constructor(figura, rows, colms){
     /*recibe el tipo de figura como string
     y las dimensiones como columnas y filas*/
     this.figura = figura;
@@ -15,8 +17,9 @@ function BufferCalculator(figura, rows, colms){
     this.colorBuffer = [];
     this.normalBuffer = [];
     this.indexBuffer = [];
+    }
 
-    this.calculateBuffers = function(){
+    calculateBuffer(){
 
       if( this.figura == CILINDRO){
         this.calcBuffersCil();
@@ -28,7 +31,7 @@ function BufferCalculator(figura, rows, colms){
       this.calcIndexBuffer();
     }
 
-    this.calcBuffersCil = function(radio){
+    calcBuffersCil(radio){
 
       var radioAux = radio;
       var theta = (2*Math.PI)/(this.colms - 1);
@@ -63,10 +66,10 @@ function BufferCalculator(figura, rows, colms){
       }
     }
 
-    this.calcBuffersCubo = function(){
+    calcBuffersCubo(){
     }
 
-    this.calcIndexBuffer = function(){
+    calcIndexBuffer(){
 
       for (var i = 0; i < (this.rows - 1); i++){
         //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
@@ -92,19 +95,19 @@ function BufferCalculator(figura, rows, colms){
     }
 
 
-    this.getPosBuffer = function(){
+    getPosBuffer(){
       return this.posBuffer;
     }
 
-    this.getColorBuffer = function(){
+    getColorBuffer(){
     return this.colorBuffer;
     }
 
-    this.getIndexBuffer = function(){
+    getIndexBuffer(){
     return this.indexBuffer;
     }
 
-    this.getNormalBuffer = function(){
+    getNormalBuffer(){
     return this.normalBuffer;
     }
 

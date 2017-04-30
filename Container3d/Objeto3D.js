@@ -1,6 +1,6 @@
+class Objeto3D extends Container3D{
 
-function Objeto3D() {
-
+  constructor(){
     this.matrix = null;
     this.prevModelMatrix = null;
     this.children = [];
@@ -23,85 +23,19 @@ function Objeto3D() {
         this.webglIndexBuffer = null;
 
     this.bufferCreator = null;
-
-
-    /**********METODOS DEL CONTAINER***********/
-
-    this.translate = function (x, y, z) {
-        mat4.translate(this.matrix, this.matrix, vec3.fromValues(x, y, z));
-        this.modified = true;
     }
 
-    this.scale = function (x, y, z) {
-        mat4.scale(this.matrix, this.matrix, vec3.fromValues(x, y, z));
-        this.modified = true;
-    }
 
-    this.rotate = function (angulo, x, y, z) {
-        mat4.rotate(this.matrix, this.matrix, angulo, vec3.fromValues(x, y, z));
-        this.modified = true;
-    }
+    /**********METODOS DE MODELADO*************/
 
-    this.add = function (child) {
-        //recibe un hijo de tipo Objeto3d para agregar a su jerarquia
-        this.children.push(child);
-    }
-
-    this.remove = function (child) {
-        //recibe un hijo
-        var index = this.children.indexOf(child);
-        this.children.splice(index, 1);
-    }
-
-    this.resetMatrix = function () {
-        //resetea la matriz como la identidad
-        initMatrix();
-        this.modified = true;
-    }
-
-    this.applyMatrix = function (matrix) {
-        //recibe una matriz la cual multiplica por la suya propia
-        mat4.multiply(this.matrix, this.matrix, matrix);
-        this.modified = true;
-    }
-
-    this.setShaderProgram = function (shaderProgram) {
-        //recibe el shader a utilizar
-        this.shaderProgram = shaderProgram;
-        gl.useProgram(shaderProgram);
-    }
-
-    this.setupLighting = function (lightPosition, ambientColor, diffuseColor) {
-        // Configuración de la luz
-        // Se inicializan las variables asociadas con la Iluminación
-        this.setupChildrenLighting(lightPosition, ambientColor, diffuseColor);
-
-        gl.uniform1i(this.shaderProgram.useLightingUniform, true);
-        //Define direccion
-        gl.uniform3fv(this.shaderProgram.lightingDirectionUniform, lightPosition);
-        //Define ambient color
-        gl.uniform3fv(this.shaderProgram.ambientColorUniform, ambientColor);
-        //Define diffuse color
-        gl.uniform3fv(this.shaderProgram.directionalColorUniform, diffuseColor);
-    }
-
-    this.setupChildrenLighting = function (lightPosition, ambientColor, diffuseColor) {
-        for (var i = 0; i < this.children.length; i++) {
-            var child = this.children[i];
-            child.setupLighting(lightPosition, ambientColor, diffuseColor);
-        }
-    }
-
-        /**********METODOS DE MODELADO*************/
-
-//Define al constructor de BufferCreator que devuelve un array del buffer pedido
-    this.setBufferCreator = function(bufferCalculator){
+    //Define al constructor de BufferCreator que devuelve un array del buffer pedido
+    setBufferCreator(bufferCalculator){
         this.bufferCreator = bufferCalculator;
     }
 
     /**********METODOS DE DIBUJADO**********/
     /*Construye todos los buffers necesitados*/
-    this.build = function(){
+    build(){
         this.bufferCreator. calculateBuffers()
         this.posBuffer = this.bufferCreator.getPosBuffer();
         this.normalBuffer =this.bufferCreator.getNormalBuffer();
@@ -112,7 +46,7 @@ function Objeto3D() {
     }
 
     /*Setea los WebGlBuffers para la hora de renderizar*/
-    this.setUpWebGLBuffers = function(){
+    setUpWebGLBuffers(){
         this.webglPosBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.posBuffer), gl.STATIC_DRAW);
@@ -136,7 +70,7 @@ function Objeto3D() {
      arrayMatTrans es un array de matrices de 4x4 que al multiplicarla con cada
      nivel se aplica la transformacion.
      */
-    this.calcularSuperficieBarrido = function(vertices, arrayMatTrans){
+    calcularSuperficieBarrido(vertices, arrayMatTrans){
 
         //asumo que tengo el position vertex y el index
 
@@ -158,10 +92,10 @@ function Objeto3D() {
             matrizVertices.push(parcial);
         }
 
-        unirMalla(matrizVertices, cantidadMatrices, cantidadVertices);
+        this.unirMalla(matrizVertices, cantidadMatrices, cantidadVertices);
     }
 
-    this.unirMalla = function(matrizVertices, rows, cols){
+    unirMalla(matrizVertices, rows, cols){
         var auxiliar = 0;
         /*Las filas van hasta -1 porque en la anteultima fila agrega
          a los vertices de la ultima.*/
@@ -188,7 +122,7 @@ function Objeto3D() {
       * @param {pMatrix} mat4 Matriz de proyeccion
       * @param {parentMod} bool Indica si el padre fue modificado o no
     */
-    this.draw = function(mMatrix, CameraMatrix, pMatrix, parentMod){
+    draw(mMatrix, CameraMatrix, pMatrix, parentMod){
         //Se crea una matriz nueva para no modificar la matriz del padre
         var modelMatrix = mat4.create();
         if(this.modified || parentMod){
@@ -230,7 +164,7 @@ function Objeto3D() {
     /**Dibuja a los hijos
      * @param Idem draw.
      */
-    this._drawChildren = function (modelMatrix, CameraMatrix, pMatrix, parentMod) {
+    _drawChildren(modelMatrix, CameraMatrix, pMatrix, parentMod) {
         for (var i = 0; i < this.children.length; i++) {
             var child = this.children[i];
             child.draw(modelMatrix, CameraMatrix, pMatrix, parentMod);
