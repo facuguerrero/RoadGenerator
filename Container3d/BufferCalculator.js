@@ -120,7 +120,6 @@ class BufferCalculator{
 
     calcIndexBuffer(){
 
-
       for (var i = 0; i < (this.rows - 1); i++){
           //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
           if ((i % 2) == 0){
@@ -133,9 +132,9 @@ class BufferCalculator{
               }
           }else{
               //Recorrido hacia la izquierda
-              var init = this.cols*(i+1) - 1;
-              var next = this.cols*(i+2) - 1;
-              for (var j = 0; j < this.cols; j++){
+              var init = this.colms*(i+1) - 1;
+              var next = this.colms*(i+2) - 1;
+              for (var j = 0; j < this.colms; j++){
                   this.indexBuffer.push(init - j);
                   this.indexBuffer.push(next - j);
               }
