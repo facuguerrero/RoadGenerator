@@ -2,6 +2,8 @@ var CILINDRO;
 CILINDRO = "cilindro";
 var CUBO;
 CUBO = "cubo";
+var ESFERA;
+ESFERA = "esfera";
 
 
 class BufferCalculator{
@@ -23,8 +25,12 @@ class BufferCalculator{
 
     calculateBuffer(){
 
-      this.calcBufferEsfera();
-
+      if(this.figura == CILINDRO){
+        this.calcBuffersCil();
+      }
+      if(this.figura == ESFERA){
+        this.calcBufferEsfera();
+      }
     }
 
     calcBuffersCil(radio){
@@ -107,16 +113,18 @@ class BufferCalculator{
           }
       }
 
-
+      this.rows= this.latitudeBands;
+      this.colms = this.longitudeBands;
       this.calcIndexBuffer();
     }
 
     calcIndexBuffer(){
 
-      for (var latNumber=0; latNumber < this.latitudeBands; latNumber++) {
-          for (var longNumber=0; longNumber < this.longitudeBands; longNumber++) {
-              var first = (latNumber * (this.longitudeBands + 1)) + longNumber;
-              var second = first + this.longitudeBands + 1;
+
+      for (var latNumber=0; latNumber < this.rows; latNumber++) {
+          for (var longNumber=0; longNumber < this.colms; longNumber++) {
+              var first = (latNumber * (this.rows + 1)) + longNumber;
+              var second = first + this.colms + 1;
               this.indexBuffer.push(first);
               this.indexBuffer.push(second);
               this.indexBuffer.push(first + 1);
