@@ -43,13 +43,12 @@ class Objeto3D extends Container3D{
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.normalBuffer), gl.STATIC_DRAW);
         this.webglNormalBuffer.itemSize = 3;
         this.webglNormalBuffer.numItems = this.normalBuffer.length / 3;
-        //console.log(this.webglNormalBuffer.numItems);
 
         this.webglColorBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.colorBuffer), gl.STATIC_DRAW);
-        this.webglColorBuffer.itemSize = 2;
-        this.webglColorBuffer.numItems = this.colorBuffer.length / 2;
+        this.webglColorBuffer.itemSize = 3;
+        this.webglColorBuffer.numItems = this.colorBuffer.length / 3;
 
         this.webglPosBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
@@ -136,16 +135,15 @@ class Objeto3D extends Container3D{
         gl.uniformMatrix4fv(shaderProgramColoredObject.pMatrixUniform, false, pMatrix);
         gl.uniformMatrix4fv(shaderProgramColoredObject.ViewMatrixUniform, false, CameraMatrix);
 
-        var itemSize = 3;
         //Position
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
-        gl.vertexAttribPointer(shaderProgramColoredObject.vertexPositionAttribute, itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(shaderProgramColoredObject.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
         //Color
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
-        gl.vertexAttribPointer(shaderProgramColoredObject.vertexColorAttribute, itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(shaderProgramColoredObject.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
         //Normal
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
-        gl.vertexAttribPointer(shaderProgramColoredObject.vertexNormalAttribute, itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(shaderProgramColoredObject.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
         gl.uniformMatrix4fv(shaderProgramColoredObject.ModelMatrixUniform, false, modelMatrix);
@@ -159,7 +157,7 @@ class Objeto3D extends Container3D{
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         //Draw
         var tam = this.indexBuffer.length;
-        gl.drawElements(this.drawType, tam, gl.UNSIGNED_SHORT, 0);
+        gl.drawElements(gl.TRIANGLES, this.webglIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
       }
 
     /**Dibuja a los hijos
