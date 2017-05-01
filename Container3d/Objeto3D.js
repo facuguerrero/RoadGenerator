@@ -32,7 +32,6 @@ class Objeto3D extends Container3D{
         this.normalBuffer =this.bufferCreator.getNormalBuffer();
         this.colorBuffer = this.bufferCreator.getColorBuffer();
         this.indexBuffer = this.bufferCreator.getIndexBuffer();
-
         this.setUpWebGLBuffers();
     }
 
@@ -53,6 +52,7 @@ class Objeto3D extends Container3D{
         this.webglIndexBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.indexBuffer), gl.STATIC_DRAW);
+        console.log(this.webglIndexBuffer.numItems);
 }
 
     /*
@@ -149,8 +149,9 @@ class Objeto3D extends Container3D{
         //Index
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         //Draw
-        gl.drawElements(this.drawType, this.indexBuffer.length-1, gl.UNSIGNED_SHORT, 0);
-    }
+        var tam = this.indexBuffer.length;
+        gl.drawElements(this.drawType, tam, gl.UNSIGNED_SHORT, 0);
+      }
 
     /**Dibuja a los hijos
      * @param Idem draw.

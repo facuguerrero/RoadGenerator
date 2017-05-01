@@ -8,25 +8,24 @@ ESFERA = "esfera";
 
 class BufferCalculator{
 
-    constructor(figura, rows, colms){
+    constructor(figura, rows, colms, radio = 0){
     /*recibe el tipo de figura como string
     y las dimensiones como columnas y filas*/
     this.figura = figura;
     this.rows = rows;
     this.colms = colms;
+    this.radio = radio;
 
     this.posBuffer = [];
     this.colorBuffer = [];
     this.normalBuffer = [];
     this.indexBuffer = [];
-    this.latitudeBands = 64;
-    this.longitudeBands = 64;
     }
 
     calculateBuffer(){
 
       if(this.figura == CILINDRO){
-        this.calcBuffersCil(32);
+        this.calcBuffersCil();
       }
       if(this.figura == ESFERA){
         this.calcBufferEsfera();
@@ -34,9 +33,9 @@ class BufferCalculator{
       this.calcIndexBuffer();
     }
 
-    calcBuffersCil(radio){
+    calcBuffersCil(){
 
-      var radioAux = radio;
+
       var theta = (2*Math.PI)/(this.colms - 1);
 
       for (var i = 0.0; i < this.rows; i++){
@@ -59,19 +58,18 @@ class BufferCalculator{
                 // Para cada vertice definimos su posicion
                 // como coordenada (x, y, z=0)
                 //La variable X se define como R*Cos(theta)
-                this.posBuffer.push(radioAux*Math.cos(theta*j));
+                this.posBuffer.push(this.radio*Math.cos(theta*j));
                 //Altura Y se mantiene igual en el pasaje de coordenadas
                 this.posBuffer.push(i-(this.rows-1)/2.0);
                 //La variable Z se define como R*Sen(theta)
-                this.posBuffer.push(radioAux*Math.sin(theta*j));
+                this.posBuffer.push(this.radio*Math.sin(theta*j));
 
-                this.colorBuffer.push(radioAux*Math.cos(theta*j) / 2.0);
+                this.colorBuffer.push(this.radio*Math.cos(theta*j) / 2.0);
                 this.colorBuffer.push(i-(this.rows-1)/2.0);
-                this.colorBuffer.push(radioAux*Math.sin(theta*j) / 2.0);
+                this.colorBuffer.push(this.radio*Math.sin(theta*j) / 2.0);
               }
-              // Para cada vertice definimos su color
 
-          }
+        }
       }
     }
 
@@ -82,21 +80,21 @@ class BufferCalculator{
       var latNumber;
       var longNumber;
 
-      for (latNumber=0; latNumber <= this.latitudeBands; latNumber++) {
-          var theta = latNumber * Math.PI / this.latitudeBands;
+      for (latNumber=0; latNumber <= this.rows; latNumber++) {
+          var theta = latNumber * Math.PI / this.rows;
           var sinTheta = Math.sin(theta);
           var cosTheta = Math.cos(theta);
 
-          for (longNumber=0; longNumber <= this.longitudeBands; longNumber++) {
-              var phi = longNumber * 2 * Math.PI / this.longitudeBands;
+          for (longNumber=0; longNumber <= this.colms; longNumber++) {
+              var phi = longNumber * 2 * Math.PI / this.colms;
               var sinPhi = Math.sin(phi);
               var cosPhi = Math.cos(phi);
 
               var x = cosPhi * sinTheta;
               var y = cosTheta;
               var z = sinPhi * sinTheta;
-              var u = 1.0 - (longNumber / this.longitudeBands);
-              var v = 1.0 - (latNumber / this.latitudeBands);
+              var u = 1.0 - (longNumber / this.colms);
+              var v = 1.0 - (latNumber / this.rows);
 
               this.normalBuffer.push(x);
               this.normalBuffer.push(y);
@@ -113,15 +111,12 @@ class BufferCalculator{
               this.posBuffer.push(z);
           }
       }
-
-      this.rows= this.latitudeBands;
-      this.colms = this.longitudeBands;
     }
 
     calcIndexBuffer(){
 
       for (var i = 0; i < (this.rows - 1); i++){
-          //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
+        //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
           if ((i % 2) == 0){
               //Recorrido hacia la derecha
               var init = this.colms*i;
@@ -130,7 +125,8 @@ class BufferCalculator{
                   this.indexBuffer.push(init + j);
                   this.indexBuffer.push(next + j);
               }
-          }else{
+          }
+          else{
               //Recorrido hacia la izquierda
               var init = this.colms*(i+1) - 1;
               var next = this.colms*(i+2) - 1;
@@ -139,8 +135,7 @@ class BufferCalculator{
                   this.indexBuffer.push(next - j);
               }
           }
-      }
-      console.log(this.indexBuffer.length);
+        }
     }
 
 

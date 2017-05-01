@@ -699,7 +699,7 @@
         /////////////////////////////////////////////////////
 		// Definimos la ubicaci�n de la camara
 		// Pensamos por el momento marsamente la posici�n de la c�mara, la cual siempre mira al mars.
-		var matriz_camara = mat4.create();
+		    var matriz_camara = mat4.create();
         mat4.identity(matriz_camara);
 		//mat4.identity(CameraMatrix);
 		//mat4.translate(CameraMatrix, CameraMatrix, [0, 0, -60]);
@@ -823,10 +823,10 @@
 
     function tick() {
         requestAnimFrame(tick);
-		var newRotationMatrix = mat4.create();
+		    var newRotationMatrix = mat4.create();
         mat4.identity(newRotationMatrix);
         mat4.rotate(newRotationMatrix, newRotationMatrix, 0.025, [0, 1, 0]);
-		mat4.multiply(newRotationMatrix, deimosRotationMatrix, deimosRotationMatrix);
+		    mat4.multiply(newRotationMatrix, deimosRotationMatrix, deimosRotationMatrix);
 
         deimosRotationAnglemars += 0.0045;
         phobosRotationAngledeimos += 0.0005;
@@ -844,7 +844,7 @@
         deimos.initBuffers();
 
         obj = new Objeto3D();
-        buffcalc = new BufferCalculator("cilindro", 60, 60);
+        buffcalc = new BufferCalculator("esfera", 64, 64);
         obj.setBufferCreator(buffcalc);
         obj.build();
 
@@ -859,6 +859,7 @@
         gl.enable(gl.DEPTH_TEST);
 
         tick();
+
     }
 
 </script>
