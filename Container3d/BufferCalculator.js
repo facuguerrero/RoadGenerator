@@ -102,9 +102,9 @@ class BufferCalculator{
 
               // Mejorar o modificar el algoritmo que inicializa
               // el color de cada vertice
-              this.colorBuffer.push(0.0)
-              this.colorBuffer.push(0.0)
-              this.colorBuffer.push(0.0)
+              this.colorBuffer.push(0.0);
+              this.colorBuffer.push(0.0);
+              this.colorBuffer.push(0.0);
 
               this.posBuffer.push(x);
               this.posBuffer.push(y);
@@ -115,22 +115,23 @@ class BufferCalculator{
 
     calcIndexBuffer() {
 
-        var latNumber;
-        var longNumber;
-
-        for (latNumber = 0; latNumber < this.rows; latNumber++) {
-            for (longNumber = 0; longNumber < this.colms; longNumber++) {
-                var first = (latNumber * (this.rows + 1)) + longNumber;
-                var second = first + this.colms + 1;
-                this.indexBuffer.push(first);
-                this.indexBuffer.push(second);
-                this.indexBuffer.push(first + 1);
-
-                this.indexBuffer.push(second);
-                this.indexBuffer.push(second + 1);
-                this.indexBuffer.push(first + 1);
+        // Itero en todas las filas menos en la última
+        for(var i = 0; i < (this.rows-1); i++) {
+            if (i % 2 == 0) {
+                // Swipe right
+                for (var k = 0; k < this.colms; k++) {
+                    this.indexBuffer.push(i * this.colms + k);
+                    this.indexBuffer.push((i+1) * this.colms + k);
+                }
+            } else {
+                // Swipe left
+                for (var j = this.colms-1; j >= 0; j--) {
+                    this.indexBuffer.push(i * this.colms + j);
+                    this.indexBuffer.push((i+1) * this.colms + j);
+                }
             }
         }
+    console.log(this.indexBuffer.length);
     }
 
     getPosBuffer(){
