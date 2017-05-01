@@ -156,7 +156,6 @@ class Objeto3D extends Container3D{
         //Index
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         //Draw
-        var tam = this.indexBuffer.length;
         gl.drawElements(gl.TRIANGLES, this.webglIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
       }
 

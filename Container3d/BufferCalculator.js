@@ -21,8 +21,6 @@ class BufferCalculator{
     this.normalBuffer = [];
     this.indexBuffer = [];
 
-    this.latitudeBands = 64;
-    this.longitudeBands = 64;
     }
 
     calculateBuffer(){
@@ -120,10 +118,10 @@ class BufferCalculator{
         var latNumber;
         var longNumber;
 
-        for (latNumber = 0; latNumber < this.latitudeBands; latNumber++) {
-            for (longNumber = 0; longNumber < this.longitudeBands; longNumber++) {
-                var first = (latNumber * (this.longitudeBands + 1)) + longNumber;
-                var second = first + this.longitudeBands + 1;
+        for (latNumber = 0; latNumber < this.rows; latNumber++) {
+            for (longNumber = 0; longNumber < this.colms; longNumber++) {
+                var first = (latNumber * (this.rows + 1)) + longNumber;
+                var second = first + this.colms + 1;
                 this.indexBuffer.push(first);
                 this.indexBuffer.push(second);
                 this.indexBuffer.push(first + 1);
