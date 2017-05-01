@@ -77,24 +77,6 @@ class Container3D{
         }
     }
 
-    /**Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara
-     *y la matriz de proyeccion.
-     * @param {mMatrix} mat4 Matriz de modelado del padre.
-     * @param {CameraMatrix} mat4 Matriz de camara
-     * @param {pMatrix} mat4 Matriz de proyeccion
-     * @param {parentMod} bool Indica si el padre fue modificado o no
-     */
-    draw(mMatrix, CameraMatrix, pMatrix, parentMod) {
-        //Se crea una matriz nueva para no modificar la matriz del padre
-        var modelMatrix = mat4.create();
-        if (this.modified || parentMod) {
-            mat4.multiply(modelMatrix, mMatrix, this.matrix);
-            mat4.multiply(this.prevModelMatrix, modelMatrix, mat4.create());
-        } else mat4.multiply(modelMatrix, this.prevModelMatrix, mat4.create());
-        //Se hace un llamado al draw de los hijos, uno por uno.
-        this._drawChildren(modelMatrix, CameraMatrix, pMatrix, parentMod || this.modified);
-        this.modified = false;
-    }
     /**Dibuja a los hijos
      * @param Idem draw.
      */

@@ -37,21 +37,31 @@ class Objeto3D extends Container3D{
 
     /*Setea los WebGlBuffers para la hora de renderizar*/
     setUpWebGLBuffers(){
-        this.webglPosBuffer = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.posBuffer), gl.STATIC_DRAW);
 
         this.webglNormalBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.normalBuffer), gl.STATIC_DRAW);
+        this.webglNormalBuffer.itemSize = 3;
+        this.webglNormalBuffer.numItems = this.normalBuffer.length / 3;
+        //console.log(this.webglNormalBuffer.numItems);
 
         this.webglColorBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.colorBuffer), gl.STATIC_DRAW);
+        this.webglColorBuffer.itemSize = 2;
+        this.webglColorBuffer.numItems = this.colorBuffer.length / 2;
+
+        this.webglPosBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.posBuffer), gl.STATIC_DRAW);
+        this.webglPosBuffer.itemSize = 3;
+        this.webglPosBuffer.numItems = this.posBuffer.length / 3;
 
         this.webglIndexBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.indexBuffer), gl.STATIC_DRAW);
+        this.webglIndexBuffer.itemSize = 1;
+        this.webglIndexBuffer.numItems = this.indexBuffer.length;
 }
 
     /*
@@ -112,7 +122,7 @@ class Objeto3D extends Container3D{
       * @param {pMatrix} mat4 Matriz de proyeccion
       * @param {parentMod} bool Indica si el padre fue modificado o no
     */
-    draw(mMatrix, CameraMatrix, pMatrix, parentMod){
+    draww(mMatrix, parentMod){
         //Se crea una matriz nueva para no modificar la matriz del padre
         var modelMatrix = mat4.create();
         if(this.modified || parentMod){
@@ -120,30 +130,30 @@ class Objeto3D extends Container3D{
             mat4.multiply(this.prevModelMatrix, modelMatrix, mat4.create());
         } else mat4.multiply(modelMatrix, this.prevModelMatrix, mat4.create());
         //Se hace un llamado al draw de los hijos, uno por uno.
-        this._drawChildren(modelMatrix, CameraMatrix, pMatrix, this.modified || parentMod);
+        //this._drawChildren(modelMatrix, CameraMatrix, pMatrix, this.modified || parentMod);
         this.modified = false;
         //Matriz de proyeccion y vista
-        gl.uniformMatrix4fv(this.shaderProgram.pMatrixUniform, false, pMatrix);
-        gl.uniformMatrix4fv(this.shaderProgram.ViewMatrixUniform, false, CameraMatrix);
+        gl.uniformMatrix4fv(shaderProgramColoredObject.pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(shaderProgramColoredObject.ViewMatrixUniform, false, CameraMatrix);
 
         var itemSize = 3;
         //Position
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
-        gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(shaderProgramColoredObject.vertexPositionAttribute, itemSize, gl.FLOAT, false, 0, 0);
         //Color
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
-        gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(shaderProgramColoredObject.vertexColorAttribute, itemSize, gl.FLOAT, false, 0, 0);
         //Normal
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer, itemSize, gl.FLOAT, false, 0, 0);
-        gl.vertexAttribPointer(this.shaderProgram.vertexNormalAttribute, itemSize, gl.FLOAT, false, 0, 0);
+        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
+        gl.vertexAttribPointer(shaderProgramColoredObject.vertexNormalAttribute, itemSize, gl.FLOAT, false, 0, 0);
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
-        gl.uniformMatrix4fv(this.shaderProgram.ModelMatrixUniform, false, modelMatrix);
+        gl.uniformMatrix4fv(shaderProgramColoredObject.ModelMatrixUniform, false, modelMatrix);
         var normalMatrix = mat3.create();
         mat3.fromMat4(normalMatrix, modelMatrix);
         mat3.invert(normalMatrix, normalMatrix);
         mat3.transpose(normalMatrix, normalMatrix);
-        gl.uniformMatrix3fv(this.shaderProgram.nMatrixUniform, false, normalMatrix);
+        gl.uniformMatrix3fv(shaderProgramColoredObject.nMatrixUniform, false, normalMatrix);
 
         //Index
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);

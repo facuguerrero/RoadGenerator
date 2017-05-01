@@ -20,6 +20,9 @@ class BufferCalculator{
     this.colorBuffer = [];
     this.normalBuffer = [];
     this.indexBuffer = [];
+
+    this.latitudeBands = 64;
+    this.longitudeBands = 64;
     }
 
     calculateBuffer(){
