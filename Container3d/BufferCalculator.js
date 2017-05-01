@@ -23,7 +23,6 @@ class BufferCalculator{
     }
 
     calculateBuffer(){
-
       if(this.figura == CILINDRO){
         this.calcBuffersCil();
       }
@@ -113,31 +112,25 @@ class BufferCalculator{
       }
     }
 
-    calcIndexBuffer(){
+    calcIndexBuffer() {
 
-      for (var i = 0; i < (this.rows - 1); i++){
-        //Si las filas son cero o pares se recorre a la derecha y sino a la izquierda
-          if ((i % 2) == 0){
-              //Recorrido hacia la derecha
-              var init = this.colms*i;
-              var next = this.colms*(i+1);
-              for (var j = 0; j < this.colms; j++){
-                  this.indexBuffer.push(init + j);
-                  this.indexBuffer.push(next + j);
-              }
-          }
-          else{
-              //Recorrido hacia la izquierda
-              var init = this.colms*(i+1) - 1;
-              var next = this.colms*(i+2) - 1;
-              for (var j = 0; j < this.colms; j++){
-                  this.indexBuffer.push(init - j);
-                  this.indexBuffer.push(next - j);
-              }
-          }
+        var latNumber;
+        var longNumber;
+
+        for (latNumber = 0; latNumber < this.latitudeBands; latNumber++) {
+            for (longNumber = 0; longNumber < this.longitudeBands; longNumber++) {
+                var first = (latNumber * (this.longitudeBands + 1)) + longNumber;
+                var second = first + this.longitudeBands + 1;
+                this.indexBuffer.push(first);
+                this.indexBuffer.push(second);
+                this.indexBuffer.push(first + 1);
+
+                this.indexBuffer.push(second);
+                this.indexBuffer.push(second + 1);
+                this.indexBuffer.push(first + 1);
+            }
         }
     }
-
 
     getPosBuffer(){
       return this.posBuffer;

@@ -52,7 +52,6 @@ class Objeto3D extends Container3D{
         this.webglIndexBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.indexBuffer), gl.STATIC_DRAW);
-        console.log(this.webglIndexBuffer.numItems);
 }
 
     /*
