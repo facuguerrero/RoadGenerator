@@ -50,25 +50,27 @@ class BufferCalculator{
                 //La variable Z se define como R*Sen(theta)
                 this.posBuffer.push(0);
 
-                this.colorBuffer.push(Math.cos(theta*j) / 2.0);
-                this.colorBuffer.push(i-( (this.rows-1) + (sentido*2))/2.0);
-                this.colorBuffer.push(0);
+                this.normalBuffer.push(Math.cos(theta*j) / 2.0);
+                this.normalBuffer.push(i-( (this.rows-1) + (sentido*2))/2.0);
+                this.normalBuffer.push(0);
               }
-              else {
-                // Para cada vertice definimos su posicion
-                // como coordenada (x, y, z=0)
-                //La variable X se define como R*Cos(theta)
-                this.posBuffer.push(this.radio*Math.cos(theta*j));
-                //Altura Y se mantiene igual en el pasaje de coordenadas
-                this.posBuffer.push(i-(this.rows-1)/2.0);
-                //La variable Z se define como R*Sen(theta)
-                this.posBuffer.push(this.radio*Math.sin(theta*j));
+            else {
+            // Para cada vertice definimos su posicion
+            // como coordenada (x, y, z=0)
+            //La variable X se define como R*Cos(theta)
+            this.posBuffer.push(this.radio*Math.cos(theta*j));
+            //Altura Y se mantiene igual en el pasaje de coordenadas
+            this.posBuffer.push(i-(this.rows-1)/2.0);
+            //La variable Z se define como R*Sen(theta)
+            this.posBuffer.push(this.radio*Math.sin(theta*j));
 
-                this.colorBuffer.push(this.radio*Math.cos(theta*j) / 2.0);
-                this.colorBuffer.push(i-(this.rows-1)/2.0);
-                this.colorBuffer.push(this.radio*Math.sin(theta*j) / 2.0);
-              }
-
+            this.normalBuffer.push(this.radio*Math.cos(theta*j) / 2.0);
+            this.normalBuffer.push(i-(this.rows-1)/2.0);
+            this.normalBuffer.push(this.radio*Math.sin(theta*j) / 2.0);
+            }
+            this.colorBuffer.push(0.0);
+            this.colorBuffer.push(0.0);
+            this.colorBuffer.push(0.0);
         }
       }
     }
@@ -77,61 +79,52 @@ class BufferCalculator{
     }
 
     calcBufferEsfera(){
-      var latNumber;
-      var longNumber;
 
-      for (latNumber=0; latNumber <= this.rows; latNumber++) {
-          var theta = latNumber * Math.PI / this.rows;
-          var sinTheta = Math.sin(theta);
-          var cosTheta = Math.cos(theta);
+        var _rad = this.radio;
+        var theta = (2*Math.PI)/(this.colms - 1);
+        var phi = (Math.PI)/(this.rows - 1);
 
-          for (longNumber=0; longNumber <= this.colms; longNumber++) {
-              var phi = longNumber * 2 * Math.PI / this.colms;
-              var sinPhi = Math.sin(phi);
-              var cosPhi = Math.cos(phi);
+        for (var i = 0.0; i < this.rows; i++){
+            for (var j = 0.0; j < this.colms; j++){
+                // Para cada v�rtice definimos su posici�n
+                // como coordenada (x, y, z=0)
+                //La variable X se define como R*Cos(theta)*Sin(phi)
+                this.posBuffer.push(_rad*Math.cos(theta*j)*Math.sin(phi*i));
+                //La variable Y se define como R*Cos(phi)
+                this.posBuffer.push(_rad*Math.cos(phi*i));
+                //La variable Z se define como R*Sen(theta)*Sin(phi)
+                this.posBuffer.push(_rad*Math.sin(theta*j)*Math.sin(phi*i));
 
-              var x = cosPhi * sinTheta;
-              var y = cosTheta;
-              var z = sinPhi * sinTheta;
-              var u = 1.0 - (longNumber / this.colms);
-              var v = 1.0 - (latNumber / this.rows);
+                // Para cada v�rtice definimos su color
+                this.colorBuffer.push(1.0/this.rows * i);
+                this.colorBuffer.push(0.2);
+                this.colorBuffer.push(1.0/this.colms * j);
 
-              this.normalBuffer.push(x);
-              this.normalBuffer.push(y);
-              this.normalBuffer.push(z);
-
-              // Mejorar o modificar el algoritmo que inicializa
-              // el color de cada vertice
-              this.colorBuffer.push(0.0);
-              this.colorBuffer.push(0.0);
-              this.colorBuffer.push(0.0);
-
-              this.posBuffer.push(x);
-              this.posBuffer.push(y);
-              this.posBuffer.push(z);
-          }
-      }
+                this.normalBuffer.push(_rad*Math.cos(theta*j)*Math.sin(phi*i));
+                this.normalBuffer.push(_rad*Math.cos(phi*i));
+                this.normalBuffer.push(_rad*Math.sin(theta*j)*Math.sin(phi*i));
+            }
+        }
     }
+
 
     calcIndexBuffer() {
 
-        // Itero en todas las filas menos en la última
         for(var i = 0; i < (this.rows-1); i++) {
             if (i % 2 == 0) {
-                // Swipe right
+                // Hacia la derecha
                 for (var k = 0; k < this.colms; k++) {
                     this.indexBuffer.push(i * this.colms + k);
                     this.indexBuffer.push((i+1) * this.colms + k);
                 }
             } else {
-                // Swipe left
+                // Cambio de lado a la izquierda
                 for (var j = this.colms-1; j >= 0; j--) {
                     this.indexBuffer.push(i * this.colms + j);
                     this.indexBuffer.push((i+1) * this.colms + j);
                 }
             }
         }
-    console.log(this.indexBuffer.length);
     }
 
     getPosBuffer(){

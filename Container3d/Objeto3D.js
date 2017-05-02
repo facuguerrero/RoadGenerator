@@ -129,7 +129,7 @@ class Objeto3D extends Container3D{
             mat4.multiply(this.prevModelMatrix, modelMatrix, mat4.create());
         } else mat4.multiply(modelMatrix, this.prevModelMatrix, mat4.create());
         //Se hace un llamado al draw de los hijos, uno por uno.
-        //this._drawChildren(modelMatrix, CameraMatrix, pMatrix, this.modified || parentMod);
+        this._drawChildren(modelMatrix, CameraMatrix, pMatrix, this.modified || parentMod);
         this.modified = false;
         //Matriz de proyeccion y vista
         gl.uniformMatrix4fv(shaderProgramColoredObject.pMatrixUniform, false, pMatrix);
@@ -156,7 +156,7 @@ class Objeto3D extends Container3D{
         //Index
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         //Draw
-        gl.drawElements(gl.TRIANGLES, this.webglIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+        gl.drawElements(gl.TRIANGLE_STRIP, this.webglIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
       }
 
     /**Dibuja a los hijos
