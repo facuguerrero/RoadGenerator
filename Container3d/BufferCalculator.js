@@ -144,14 +144,18 @@ class BufferCalculator{
     }
 
     /*
-     vertices es una lista de listas que contienen las coordenadas
-     x e y de cada vertice, ya parametrizado de una superficie.
-     arrayMatTrans es un array de matrices de 4x4 que al multiplicarla con cada
+     vertices es una lista de vec3 que contienen las coordenadas
+     x e y (con z = 1) de cada vertice, ya parametrizado de una superficie.
+     arrayMatTrans es un array de mat3 al multiplicarla con cada
      nivel se aplica la transformacion.
+     arrayVecPos es un array de vec3 que al multiplicarlo con cada vertice
+     obtenemos el punto hacia donde tenemos que transladar.
+     arrayVecNorm es un array de vec3 que contiene las normales de los puntos.
+     Se supone que estan normalizados.
      El path es una lista de listas que contienen las coordenadas
      x, y, z de cada punto del camino.
      */
-    calcularSuperficieBarrido(vertices, arrayMatTrans, path){
+    calcularSuperficieBarrido(vertices, arrayMatTrans, arrayVecPos, arrayVecNorm, path){
 
 
         this.calcIndexBuffer();
@@ -160,50 +164,36 @@ class BufferCalculator{
         var len_c2 = vertices.length;
 
         for (var i = 0; i < this.rows; i++) {
+            var matActual = arrayMatTrans[i];
 
-            var u1 = i*len_c1/(this.rows-1);
-            var path_point = this.pathCurve.at(u1);
-            var path_tan = this.pathCurve.tan_at(u1);
-            var path_norm = this.pathCurve.norm_at(u1);
-
-            var path_binorm = vec3.create();
-            vec3.cross(path_binorm, path_tan, path_norm);
-
-            vec3.normalize(path_binorm, path_binorm);
-            vec3.normalize(path_tan, path_tan);
-            vec3.normalize(path_norm, path_norm);
-
-            var translate_mat = mat4.create();
-            mat4.identity(translate_mat);
-            mat4.translate(translate_mat, translate_mat, path_point);
-
+            var vecTrasActual = vec3.create();
+            vec3.copy(vecTrasActual,arrayVecPos[i]);
 
             for(var j = 0; j < this.colms; j++){
+                var verticeFormaActual = vec3.create();
+                vec3.copy(verticeFormaActual,vertices[j]);
 
+                var normVer = vec3.create();
+                vec3.copy(normVer, arrayVecNorm[j]);
 
+                var binomrVer = vec3.create();
+                binormVer = vec3.fromValues(0.0,0.0,1.0)
 
+                var tanVer = vec3.create();
+                vec3.cross(tanVer,normVer,binormVer);
+
+                vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
+                vec3.multiply(verticeFormaActual,verticeFormaActual,arrayVecPos[j]);
+                vec3.transformMat3(normVer,normVer,matActual);
+
+                this.posBuffer.push(verticeFormaActual[0]);
+                this.posBuffer.push(verticeFormaActual[1]);
+                this.posBuffer.push(verticeFormaActual[2]);
+                this.normalBuffer.push(normVer[0]);
+                this.normalBuffer.push(normVer[1]);
+                this.normalBuffer.push(normVer[2]);
             }
-
         }
-
-        cantidadMatrices = arrayMatTrans.length;
-        cantidadVertices = vertices.length;
-        var matrizVertices =[];
-        for(var i = 0.0; i < cantidadMatrices ; i++){
-            var matActual = arrayMatTrans[i];
-            var parcial =[];
-            for(var j =0.0; j< cantidadVertices; j++){
-                //var newVertice = vertices[j] multiply matActual; //cambiar esto por la cuenta real
-                posBuffer.push(newVertice[0]);
-                posBuffer.push(newVertice[1]);
-                //posBuffer.push(pos z en la matriz); //cual es el z?
-
-                parcial.push( j + (i*x));
-
-            }
-            matrizVertices.push(parcial);
-        }
-
         this.unirMalla(matrizVertices, cantidadMatrices, cantidadVertices);
     }
 
