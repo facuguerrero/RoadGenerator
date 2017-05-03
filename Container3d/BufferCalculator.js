@@ -143,4 +143,54 @@ class BufferCalculator{
     return this.normalBuffer;
     }
 
+    /*
+     vertices es una lista de listas que contienen las coordenadas
+     x e y de cada vertice, ya parametrizado.
+     arrayMatTrans es un array de matrices de 4x4 que al multiplicarla con cada
+     nivel se aplica la transformacion.
+     */
+    calcularSuperficieBarrido(vertices, arrayMatTrans){
+
+        //asumo que tengo el position vertex y el index
+
+        cantidadMatrices = arrayMatTrans.length;
+        cantidadVertices = vertices.length;
+        var matrizVertices =[];
+        for(var i = 0.0; i < cantidadMatrices ; i++){
+            var matActual = arrayMatTrans[i];
+            var parcial =[];
+            for(var j =0.0; j< cantidadVertices; j++){
+                //var newVertice = vertices[j] multiply matActual; //cambiar esto por la cuenta real
+                posBuffer.push(newVertice[0]);
+                posBuffer.push(newVertice[1]);
+                //posBuffer.push(pos z en la matriz); //cual es el z?
+
+                parcial.push( j + (i*x));
+
+            }
+            matrizVertices.push(parcial);
+        }
+
+        this.unirMalla(matrizVertices, cantidadMatrices, cantidadVertices);
+    }
+
+    unirMalla(matrizVertices, rows, cols){
+        var auxiliar = 0;
+        /*Las filas van hasta -1 porque en la anteultima fila agrega
+         a los vertices de la ultima.*/
+        for(var i = 0.0; i < rows-1; i++){
+            for(var j = 0.0; j < cols; j++){
+
+                /* Esto se hace para que funcione bien a la ida y
+                 vuelta de la malla*/
+                if(i % 2 == 0){auxiliar = j;}
+                else{auxiliar = rows - j - 1;}
+
+                this.indexBuffer.push(matriz_indices[i][auxiliar] );
+                this.indexBuffer.push(matriz_indices[i+1][auxiliar]);
+
+            }
+        }
+    }
+
 }

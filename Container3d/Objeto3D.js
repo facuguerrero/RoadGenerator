@@ -71,46 +71,9 @@ class Objeto3D extends Container3D{
      */
     calcularSuperficieBarrido(vertices, arrayMatTrans){
 
-        //asumo que tengo el position vertex y el index
+        //llama al buffer calculator para crear la sup
+        this.setUpWebGLBuffers();
 
-        cantidadMatrices = arrayMatTrans.length;
-        cantidadVertices = vertices.length;
-        var matrizVertices =[];
-        for(var i = 0.0; i < cantidadMatrices ; i++){
-            var matActual = arrayMatTrans[i];
-            var parcial =[];
-            for(var j =0.0; j< cantidadVertices; j++){
-                //var newVertice = vertices[j] multiply matActual; //cambiar esto por la cuenta real
-                posBuffer.push(newVertice[0]);
-                posBuffer.push(newVertice[1]);
-                //posBuffer.push(pos z en la matriz); //cual es el z?
-
-                parcial.push( j + (i*x));
-
-            }
-            matrizVertices.push(parcial);
-        }
-
-        this.unirMalla(matrizVertices, cantidadMatrices, cantidadVertices);
-    }
-
-    unirMalla(matrizVertices, rows, cols){
-        var auxiliar = 0;
-        /*Las filas van hasta -1 porque en la anteultima fila agrega
-         a los vertices de la ultima.*/
-        for(var i = 0.0; i < rows-1; i++){
-            for(var j = 0.0; j < cols; j++){
-
-                /* Esto se hace para que funcione bien a la ida y
-                 vuelta de la malla*/
-                if(i % 2 == 0){auxiliar = j;}
-                else{auxiliar = rows - j - 1;}
-
-                this.indexBuffer.push(matriz_indices[i][auxiliar] );
-                this.indexBuffer.push(matriz_indices[i+1][auxiliar]);
-
-            }
-        }
     }
 
 
@@ -121,7 +84,7 @@ class Objeto3D extends Container3D{
       * @param {pMatrix} mat4 Matriz de proyeccion
       * @param {parentMod} bool Indica si el padre fue modificado o no
     */
-    draww(mMatrix, parentMod){
+    draw(mMatrix, parentMod){
         //Se crea una matriz nueva para no modificar la matriz del padre
         var modelMatrix = mat4.create();
         if(this.modified || parentMod){
