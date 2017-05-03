@@ -145,13 +145,46 @@ class BufferCalculator{
 
     /*
      vertices es una lista de listas que contienen las coordenadas
-     x e y de cada vertice, ya parametrizado.
+     x e y de cada vertice, ya parametrizado de una superficie.
      arrayMatTrans es un array de matrices de 4x4 que al multiplicarla con cada
      nivel se aplica la transformacion.
+     El path es una lista de listas que contienen las coordenadas
+     x, y, z de cada punto del camino.
      */
-    calcularSuperficieBarrido(vertices, arrayMatTrans){
+    calcularSuperficieBarrido(vertices, arrayMatTrans, path){
 
-        //asumo que tengo el position vertex y el index
+
+        this.calcIndexBuffer();
+
+        var len_c1 = path.length;
+        var len_c2 = vertices.length;
+
+        for (var i = 0; i < this.rows; i++) {
+
+            var u1 = i*len_c1/(this.rows-1);
+            var path_point = this.pathCurve.at(u1);
+            var path_tan = this.pathCurve.tan_at(u1);
+            var path_norm = this.pathCurve.norm_at(u1);
+
+            var path_binorm = vec3.create();
+            vec3.cross(path_binorm, path_tan, path_norm);
+
+            vec3.normalize(path_binorm, path_binorm);
+            vec3.normalize(path_tan, path_tan);
+            vec3.normalize(path_norm, path_norm);
+
+            var translate_mat = mat4.create();
+            mat4.identity(translate_mat);
+            mat4.translate(translate_mat, translate_mat, path_point);
+
+
+            for(var j = 0; j < this.colms; j++){
+
+
+
+            }
+
+        }
 
         cantidadMatrices = arrayMatTrans.length;
         cantidadVertices = vertices.length;
