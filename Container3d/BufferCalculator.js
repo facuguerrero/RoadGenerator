@@ -155,13 +155,10 @@ class BufferCalculator{
      El path es una lista de listas que contienen las coordenadas
      x, y, z de cada punto del camino.
      */
-    calcularSuperficieBarrido(vertices, arrayMatTrans, arrayVecPos, arrayVecNorm, path){
+    calcularSuperficieBarrido(vertices, arrayMatTrans, arrayVecPos, arrayVecNorm){
 
 
         this.calcIndexBuffer();
-
-        var len_c1 = path.length;
-        var len_c2 = vertices.length;
 
         for (var i = 0; i < this.rows; i++) {
             var matActual = arrayMatTrans[i];
@@ -169,21 +166,21 @@ class BufferCalculator{
             var vecTrasActual = vec3.create();
             vec3.copy(vecTrasActual,arrayVecPos[i]);
 
+            var normVer = vec3.create();
+            vec3.copy(normVer, arrayVecNorm[i]);
+
             for(var j = 0; j < this.colms; j++){
                 var verticeFormaActual = vec3.create();
                 vec3.copy(verticeFormaActual,vertices[j]);
 
-                var normVer = vec3.create();
-                vec3.copy(normVer, arrayVecNorm[j]);
-
                 var binomrVer = vec3.create();
-                binormVer = vec3.fromValues(0.0,0.0,1.0)
+                var binormVer = vec3.fromValues(0.0,0.0,1.0)
 
                 var tanVer = vec3.create();
                 vec3.cross(tanVer,normVer,binormVer);
 
                 vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
-                vec3.multiply(verticeFormaActual,verticeFormaActual,arrayVecPos[j]);
+                vec3.multiply(verticeFormaActual,verticeFormaActual,vecTrasActual);
                 vec3.transformMat3(normVer,normVer,matActual);
 
                 this.posBuffer.push(verticeFormaActual[0]);

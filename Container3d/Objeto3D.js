@@ -69,9 +69,32 @@ class Objeto3D extends Container3D{
      arrayMatTrans es un array de matrices de 4x4 que al multiplicarla con cada
      nivel se aplica la transformacion.
      */
-    calcularSuperficieBarrido(vertices, arrayMatTrans){
+    calcularSuperficieBarrido(){
 
-        //this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatTrans, arrayVecPos, arrayVecNorm, path);
+        var vertices = [];
+        vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
+        vertices.push(vec3.fromValues(0.0, 0.1, 0.0));
+        vertices.push(vec3.fromValues(0.1, 0.1, 0.0));
+        vertices.push(vec3.fromValues(0.1, 0.0, 0.0));
+
+        var arrayMatT = [];
+        var matt = mat4.create();
+        mat4.identity(matt);
+        arrayMatT.push(matt);
+        arrayMatT.push(matt);
+        arrayMatT.push(matt);
+
+        var arrayVecPos = [];
+        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
+        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.1));
+        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.2));
+
+        var arrayVecNOR = [];
+        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
+        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.1));
+        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.2));
+
+        this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
         this.build();
 
     }

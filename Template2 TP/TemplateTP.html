@@ -390,9 +390,9 @@
         initShaders();
 
         obj = new Objeto3D();
-        buffcalc = new BufferCalculator("esfera", 64, 64, 1);
+        buffcalc = new BufferCalculator("esfera", 3, 4, 1);
         obj.setBufferCreator(buffcalc);
-        obj.build();
+        obj.calcularSuperficieBarrido();
 
         gl.clearColor(255.0, 255.0, 255.0, 1.0);
         gl.enable(gl.DEPTH_TEST);
