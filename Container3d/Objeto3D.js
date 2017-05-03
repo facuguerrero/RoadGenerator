@@ -71,8 +71,8 @@ class Objeto3D extends Container3D{
      */
     calcularSuperficieBarrido(vertices, arrayMatTrans){
 
-        //llama al buffer calculator para crear la sup
-        this.setUpWebGLBuffers();
+        //this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatTrans, arrayVecPos, arrayVecNorm, path);
+        this.build();
 
     }
 
