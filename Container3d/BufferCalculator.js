@@ -192,9 +192,9 @@ class BufferCalculator{
                 this.normalBuffer.push(normVer[0]);
                 this.normalBuffer.push(normVer[1]);
                 this.normalBuffer.push(normVer[2]);
-                this.colorBuffer.push(173.0);
-                this.colorBuffer.push(147.0);
-                this.colorBuffer.push(242.0);
+                this.colorBuffer.push(0.1730);
+                this.colorBuffer.push(0.1470);
+                this.colorBuffer.push(0.2420);
             }
         }
       }
