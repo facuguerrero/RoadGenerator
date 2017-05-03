@@ -197,26 +197,5 @@ class BufferCalculator{
                 this.colorBuffer.push(242.0);
             }
         }
-        this.unirMalla(matrizVertices, cantidadMatrices, cantidadVertices);
-    }
-
-    unirMalla(matrizVertices, rows, cols){
-        var auxiliar = 0;
-        /*Las filas van hasta -1 porque en la anteultima fila agrega
-         a los vertices de la ultima.*/
-        for(var i = 0.0; i < rows-1; i++){
-            for(var j = 0.0; j < cols; j++){
-
-                /* Esto se hace para que funcione bien a la ida y
-                 vuelta de la malla*/
-                if(i % 2 == 0){auxiliar = j;}
-                else{auxiliar = rows - j - 1;}
-
-                this.indexBuffer.push(matriz_indices[i][auxiliar] );
-                this.indexBuffer.push(matriz_indices[i+1][auxiliar]);
-
-            }
-        }
-    }
-
-}
+      }
+  }
