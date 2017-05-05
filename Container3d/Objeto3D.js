@@ -86,16 +86,16 @@ class Objeto3D extends Container3D{
         arrayMatT.push(matt);
 
         var arrayVecPos = [];
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 1.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 2.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 3.0));
+        arrayVecPos.push(vec3.fromValues(1.0, 1.0, 1.0));
+        arrayVecPos.push(vec3.fromValues(1.0, 1.0, 8.0));
+        arrayVecPos.push(vec3.fromValues(1.0, 1.0, 8.0));
+        arrayVecPos.push(vec3.fromValues(1.0, 1.0, 8.0));
 
         var arrayVecNOR = [];
-        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 1.0));
-        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 2.0));
-        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 3.0));
+        arrayVecNOR.push(vec3.fromValues(1.0, 1.0, 1.0));
+        arrayVecNOR.push(vec3.fromValues(1.0, 1.0, 8.0));
+        arrayVecNOR.push(vec3.fromValues(1.0, 1.0, 8.0));
+        arrayVecNOR.push(vec3.fromValues(1.0, 1.0, 8.0));
 
         this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
         this.build();
