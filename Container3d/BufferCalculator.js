@@ -180,7 +180,7 @@ class BufferCalculator{
                 vec3.cross(tanVer,normVer,binormVer);
 
                 vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
-                vec3.multiply(verticeFormaActual,verticeFormaActual,vecTrasActual);
+                vec3.add(verticeFormaActual,verticeFormaActual,vecTrasActual);
                 console.log(verticeFormaActual[0]);
                 vec3.transformMat3(normVer,normVer,matActual);
 
