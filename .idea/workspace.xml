@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="funca esfera">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/Container3D.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/Object3D.js" afterPath="" />
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -42,21 +39,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
+            <state relative-caret-position="110">
               <caret line="76" column="54" lean-forward="true" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
-              <folding>
-                <marker date="1494178965187" expanded="true" signature="34:6573" ph="{...}" />
-                <marker date="1494178965187" expanded="true" signature="2688:3740" ph="{...}" />
-                <marker date="1494178965187" expanded="true" signature="3747:4100" ph="/** Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara ...*/" />
-                <marker date="1494178965187" expanded="true" signature="4129:6255" ph="{...}" />
-                <marker date="1494178965187" expanded="true" signature="4283:4433" ph="{...}" />
-                <marker date="1494178965187" expanded="true" signature="6261:6315" ph="/** Dibuja a los hijos ...*/" />
-                <marker date="1494178965187" expanded="true" signature="6381:6568" ph="{...}" />
-                <marker date="1494178965187" expanded="true" signature="6438:6562" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
@@ -416,7 +404,7 @@
       <workItem from="1493732993369" duration="5101000" />
       <workItem from="1493811353813" duration="10408000" />
       <workItem from="1493993554961" duration="4652000" />
-      <workItem from="1494152864723" duration="5460000" />
+      <workItem from="1494152864723" duration="6080000" />
     </task>
     <task id="LOCAL-00001" summary="Piola">
       <created>1493133730299</created>
@@ -656,17 +644,23 @@
       <option name="project" value="LOCAL" />
       <updated>1494178933821</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="funca esfera">
+      <created>1494178990234</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1494178990234</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65173000" />
+    <option name="totallyTimeSpent" value="65793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -725,9 +719,9 @@
     <MESSAGE value="cambio del cilindro" />
     <MESSAGE value="objetos funcionando, y template limpio" />
     <MESSAGE value="cambio objeto" />
-    <MESSAGE value="funca esfera" />
     <MESSAGE value="modificacion de la superficie de barrido" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificacion de la superficie de barrido" />
+    <MESSAGE value="funca esfera" />
+    <option name="LAST_COMMIT_MESSAGE" value="funca esfera" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -740,16 +734,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1494178965187" expanded="true" signature="34:6573" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="2688:3740" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="3747:4100" ph="/** Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara ...*/" />
-            <marker date="1494178965187" expanded="true" signature="4129:6255" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="4283:4433" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="6261:6315" ph="/** Dibuja a los hijos ...*/" />
-            <marker date="1494178965187" expanded="true" signature="6381:6568" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="6438:6562" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,23 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="76" column="54" lean-forward="true" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
-          <folding>
-            <marker date="1494178965187" expanded="true" signature="34:6573" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="2688:3740" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="3747:4100" ph="/** Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara ...*/" />
-            <marker date="1494178965187" expanded="true" signature="4129:6255" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="4283:4433" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="6261:6315" ph="/** Dibuja a los hijos ...*/" />
-            <marker date="1494178965187" expanded="true" signature="6381:6568" ph="{...}" />
-            <marker date="1494178965187" expanded="true" signature="6438:6562" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
@@ -1180,6 +1148,14 @@
             <element signature="n#!!block;n#calcBuffersCubo#0;n#BufferCalculator#0" expanded="false" />
             <element signature="n#!!block;n#calcBufferEsfera#0;n#BufferCalculator#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="76" column="54" lean-forward="true" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
