@@ -72,7 +72,7 @@ class Objeto3D extends Container3D{
     calcularSuperficieBarrido(){
 
         var vertices = [];
-        vertices.push(vec3.fromValues(0.0, 0.7, 0.0));
+        vertices.push(vec3.fromValues(0.0, 7.0, 0.0));
         vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
         vertices.push(vec3.fromValues(7.0, 7.0, 0.0));
 
@@ -89,8 +89,8 @@ class Objeto3D extends Container3D{
 
         var arrayVecPos = [];
         arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
+        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 1.0));
+        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 2.0));
 
         var arrayVecNOR = [];
         arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
