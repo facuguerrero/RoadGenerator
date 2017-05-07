@@ -23,89 +23,89 @@ class BufferCalculator{
 
     }
 
-    calculateBuffer(){
-      if(this.figura == CILINDRO){
-        this.calcBuffersCil();
-      }
-      if(this.figura == ESFERA){
-        this.calcBufferEsfera();
-      }
-      this.calcIndexBuffer();
-    }
-
-    calcBuffersCil(){
-
-
-      var theta = (2*Math.PI)/(this.colms - 1);
-
-      for (var i = 0.0; i < this.rows; i++){
-        for (var j = 0.0; j < this.colms; j++){
-            if (i == 0.0 || i == (this.rows-1)){
-                //Si el i==0, -cos(0)=-1, si i==rows-1, -cos(pi)=1
-                var sentido = -Math.cos(Math.PI*i/(this.rows-1));
-                //La variable X es 0, el centro
-                this.posBuffer.push(Math.cos(theta*j));
-                //Altura Y se mantiene igual en el pasaje de coordenadas
-                this.posBuffer.push(i-( (this.rows-1) + (sentido*2))/2.0);
-                //La variable Z se define como R*Sen(theta)
-                this.posBuffer.push(0);
-
-                this.normalBuffer.push(Math.cos(theta*j) / 2.0);
-                this.normalBuffer.push(i-( (this.rows-1) + (sentido*2))/2.0);
-                this.normalBuffer.push(0);
-              }
-            else {
-            // Para cada vertice definimos su posicion
-            // como coordenada (x, y, z=0)
-            //La variable X se define como R*Cos(theta)
-            this.posBuffer.push(this.radio*Math.cos(theta*j));
-            //Altura Y se mantiene igual en el pasaje de coordenadas
-            this.posBuffer.push(i-(this.rows-1)/2.0);
-            //La variable Z se define como R*Sen(theta)
-            this.posBuffer.push(this.radio*Math.sin(theta*j));
-
-            this.normalBuffer.push(this.radio*Math.cos(theta*j) / 2.0);
-            this.normalBuffer.push(i-(this.rows-1)/2.0);
-            this.normalBuffer.push(this.radio*Math.sin(theta*j) / 2.0);
-            }
-            this.colorBuffer.push(0.0);
-            this.colorBuffer.push(0.0);
-            this.colorBuffer.push(0.0);
-        }
-      }
-    }
-
-    calcBuffersCubo(){
-    }
-
-    calcBufferEsfera(){
-
-        var _rad = this.radio;
-        var theta = (2*Math.PI)/(this.colms - 1);
-        var phi = (Math.PI)/(this.rows - 1);
-
-        for (var i = 0.0; i < this.rows; i++){
-            for (var j = 0.0; j < this.colms; j++){
-                // Para cada v�rtice definimos su posici�n
-                // como coordenada (x, y, z=0)
-                //La variable X se define como R*Cos(theta)*Sin(phi)
-                this.posBuffer.push(_rad*Math.cos(theta*j)*Math.sin(phi*i));
-                //La variable Y se define como R*Cos(phi)
-                this.posBuffer.push(_rad*Math.cos(phi*i));
-                //La variable Z se define como R*Sen(theta)*Sin(phi)
-                this.posBuffer.push(_rad*Math.sin(theta*j)*Math.sin(phi*i));
-
-                // Para cada v�rtice definimos su color
-                this.colorBuffer.push(1.0/this.rows * i);
-                this.colorBuffer.push(0.2);
-                this.colorBuffer.push(1.0/this.colms * j);
-
-                this.normalBuffer.push(_rad*Math.cos(theta*j)*Math.sin(phi*i));
-                this.normalBuffer.push(_rad*Math.cos(phi*i));
-                this.normalBuffer.push(_rad*Math.sin(theta*j)*Math.sin(phi*i));
-            }
-        }
-    }
+    // calculateBuffer(){
+    //   if(this.figura == CILINDRO){
+    //     this.calcBuffersCil();
+    //   }
+    //   if(this.figura == ESFERA){
+    //     this.calcBufferEsfera();
+    //   }
+    //   this.calcIndexBuffer();
+    // }
+    //
+    // calcBuffersCil(){
+    //
+    //
+    //   var theta = (2*Math.PI)/(this.colms - 1);
+    //
+    //   for (var i = 0.0; i < this.rows; i++){
+    //     for (var j = 0.0; j < this.colms; j++){
+    //         if (i == 0.0 || i == (this.rows-1)){
+    //             //Si el i==0, -cos(0)=-1, si i==rows-1, -cos(pi)=1
+    //             var sentido = -Math.cos(Math.PI*i/(this.rows-1));
+    //             //La variable X es 0, el centro
+    //             this.posBuffer.push(Math.cos(theta*j));
+    //             //Altura Y se mantiene igual en el pasaje de coordenadas
+    //             this.posBuffer.push(i-( (this.rows-1) + (sentido*2))/2.0);
+    //             //La variable Z se define como R*Sen(theta)
+    //             this.posBuffer.push(0);
+    //
+    //             this.normalBuffer.push(Math.cos(theta*j) / 2.0);
+    //             this.normalBuffer.push(i-( (this.rows-1) + (sentido*2))/2.0);
+    //             this.normalBuffer.push(0);
+    //           }
+    //         else {
+    //         // Para cada vertice definimos su posicion
+    //         // como coordenada (x, y, z=0)
+    //         //La variable X se define como R*Cos(theta)
+    //         this.posBuffer.push(this.radio*Math.cos(theta*j));
+    //         //Altura Y se mantiene igual en el pasaje de coordenadas
+    //         this.posBuffer.push(i-(this.rows-1)/2.0);
+    //         //La variable Z se define como R*Sen(theta)
+    //         this.posBuffer.push(this.radio*Math.sin(theta*j));
+    //
+    //         this.normalBuffer.push(this.radio*Math.cos(theta*j) / 2.0);
+    //         this.normalBuffer.push(i-(this.rows-1)/2.0);
+    //         this.normalBuffer.push(this.radio*Math.sin(theta*j) / 2.0);
+    //         }
+    //         this.colorBuffer.push(0.0);
+    //         this.colorBuffer.push(0.0);
+    //         this.colorBuffer.push(0.0);
+    //     }
+    //   }
+    // }
+    //
+    // calcBuffersCubo(){
+    // }
+    //
+    // calcBufferEsfera(){
+    //
+    //     var _rad = this.radio;
+    //     var theta = (2*Math.PI)/(this.colms - 1);
+    //     var phi = (Math.PI)/(this.rows - 1);
+    //
+    //     for (var i = 0.0; i < this.rows; i++){
+    //         for (var j = 0.0; j < this.colms; j++){
+    //             // Para cada v�rtice definimos su posici�n
+    //             // como coordenada (x, y, z=0)
+    //             //La variable X se define como R*Cos(theta)*Sin(phi)
+    //             this.posBuffer.push(_rad*Math.cos(theta*j)*Math.sin(phi*i));
+    //             //La variable Y se define como R*Cos(phi)
+    //             this.posBuffer.push(_rad*Math.cos(phi*i));
+    //             //La variable Z se define como R*Sen(theta)*Sin(phi)
+    //             this.posBuffer.push(_rad*Math.sin(theta*j)*Math.sin(phi*i));
+    //
+    //             // Para cada v�rtice definimos su color
+    //             this.colorBuffer.push(1.0/this.rows * i);
+    //             this.colorBuffer.push(0.2);
+    //             this.colorBuffer.push(1.0/this.colms * j);
+    //
+    //             this.normalBuffer.push(_rad*Math.cos(theta*j)*Math.sin(phi*i));
+    //             this.normalBuffer.push(_rad*Math.cos(phi*i));
+    //             this.normalBuffer.push(_rad*Math.sin(theta*j)*Math.sin(phi*i));
+    //         }
+    //     }
+    // }
 
 
     calcIndexBuffer() {
