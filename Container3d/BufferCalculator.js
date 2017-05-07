@@ -173,15 +173,13 @@ class BufferCalculator{
                 var verticeFormaActual = vec3.create();
                 vec3.copy(verticeFormaActual,vertices[j]);
 
-                var binomrVer = vec3.create();
                 var binormVer = vec3.fromValues(0.0,0.0,1.0)
 
                 var tanVer = vec3.create();
                 vec3.cross(tanVer,normVer,binormVer);
 
                 vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
-                vec3.multiply(verticeFormaActual,verticeFormaActual,vecTrasActual);
-                console.log(verticeFormaActual[0]);
+                vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
                 vec3.transformMat3(normVer,normVer,matActual);
 
                 this.posBuffer.push(verticeFormaActual[0]);
@@ -190,9 +188,9 @@ class BufferCalculator{
                 this.normalBuffer.push(normVer[0]);
                 this.normalBuffer.push(normVer[1]);
                 this.normalBuffer.push(normVer[2]);
-                this.colorBuffer.push(0.1730);
-                this.colorBuffer.push(0.1470);
-                this.colorBuffer.push(0.2420);
+                this.colorBuffer.push(0.0);
+                this.colorBuffer.push(0.0);
+                this.colorBuffer.push(0.0);
             }
         }
       }
