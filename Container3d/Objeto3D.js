@@ -27,7 +27,6 @@ class Objeto3D extends Container3D{
     /**********METODOS DE DIBUJADO**********/
     /*Construye todos los buffers necesitados*/
     build(){
-        this.bufferCreator.calculateBuffer()
         this.posBuffer = this.bufferCreator.getPosBuffer();
         this.normalBuffer =this.bufferCreator.getNormalBuffer();
         this.colorBuffer = this.bufferCreator.getColorBuffer();
@@ -72,9 +71,10 @@ class Objeto3D extends Container3D{
     calcularSuperficieBarrido(){
 
         var vertices = [];
-        vertices.push(vec3.fromValues(0.0, 7.0, 0.0));
-        vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
-        vertices.push(vec3.fromValues(7.0, 7.0, 0.0));
+        vertices.push(vec3.fromValues(1.0, 0.0, 0.0));
+        vertices.push(vec3.fromValues(-1.0, 0.0, 0.0));
+        vertices.push(vec3.fromValues(1.0, 0.0, 0.0));
+
 
         var arrayMatT = [];
         var matt = mat3.create();
@@ -89,13 +89,13 @@ class Objeto3D extends Container3D{
 
         var arrayVecPos = [];
         arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 1.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 2.0));
+        arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
+        arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
 
         var arrayVecNOR = [];
         arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecNOR.push(vec3.fromValues(7.0, 7.0, 0.0));
-        arrayVecNOR.push(vec3.fromValues(7.0, 0.0, 0.0));
+        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
+        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
 
         this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
         this.build();

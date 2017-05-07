@@ -173,13 +173,14 @@ class BufferCalculator{
                 var verticeFormaActual = vec3.create();
                 vec3.copy(verticeFormaActual,vertices[j]);
 
-                var binormVer = vec3.fromValues(0.0,0.0,1.0)
+                var binormVer = vec3.fromValues(0.0,0.0,1.0);
 
                 var tanVer = vec3.create();
                 vec3.cross(tanVer,normVer,binormVer);
 
                 vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
                 vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
+
                 vec3.transformMat3(normVer,normVer,matActual);
 
                 this.posBuffer.push(verticeFormaActual[0]);
@@ -193,5 +194,6 @@ class BufferCalculator{
                 this.colorBuffer.push(0.0);
             }
         }
+        console.log(this.posBuffer.length / 3);
       }
   }

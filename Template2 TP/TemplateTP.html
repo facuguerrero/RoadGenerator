@@ -390,8 +390,10 @@
         initShaders();
 
         obj = new Objeto3D();
-        buffcalc = new BufferCalculator("esfera", 3, 3, 1);
-        obj.setBufferCreator(buffcalc);
+        buffcalc = new BufferCalculator("circulo", 3, 3, 1);
+//        buffcalc.calcIndexBuffer();
+//        buffcalc.calcBuffersCil();
+        obj.setBufferCreator(buffcalc)
         obj.calcularSuperficieBarrido();
 
         gl.clearColor(255.0, 255.0, 255.0, 1.0);
