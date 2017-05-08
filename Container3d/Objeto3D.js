@@ -1,7 +1,13 @@
+var CUADRADO;
+CUADRADO = "cuadrado";
+
 class Objeto3D extends Container3D{
 
   constructor(){
     super();
+
+    this.figuras = null;
+    this.figuras = new FigurasPrimitivias();
 
     this.posBuffer = null;
     this.indexBuffer = null;
@@ -63,40 +69,31 @@ class Objeto3D extends Container3D{
 }
 
     /*
-     vertices es una lista de listas que contienen las coordenadas
-     x e y de cada vertice, ya parametrizado.
-     arrayMatTrans es un array de matrices de 4x4 que al multiplicarla con cada
-     nivel se aplica la transformacion.
+     arrayMatTrans es un array de matrices de 3x3 que al multiplicarla con cada
+     nivel se aplica la transformacion de rotacion o escalado y lo mismo con el array de posicion para
+     transformaciones de traslacion.
+     IMPORTANTE:la cantidad de rows tiene que ser igual a la longitud del arrayMat y del Array Pos
      */
-    calcularSuperficieBarrido(){
+    calcularSuperficieBarrido(figura, rows, colms, arrayMatT, arrayVecPos){
+
+        buffcalc = new BufferCalculator(rows, colms);
+
+        //chequeo tamaños correctos
+        if((arrayMatT.lenght != rows || arrayVecPos.lenght != rows)){
+            console.log("error de dimension para la superficie");
+        }
 
         var vertices = [];
-        vertices.push(vec3.fromValues(1.0, 0.0, 0.0));
-        vertices.push(vec3.fromValues(-1.0, 0.0, 0.0));
-        vertices.push(vec3.fromValues(1.0, 0.0, 0.0));
-
-
-        var arrayMatT = [];
-        var matt = mat3.create();
-        var mattt = mat3.create();
-        var matttt = mat3.create();
-        mat3.identity(matt);
-        mat3.identity(mattt);
-        mat3.identity(matttt);
-        arrayMatT.push(matt);
-        arrayMatT.push(mattt);
-        arrayMatT.push(matttt);
-
-        var arrayVecPos = [];
-        arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
-        arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
-
         var arrayVecNOR = [];
-        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
-        arrayVecNOR.push(vec3.fromValues(0.0, 0.0, 0.0));
 
+        if (figura == CUADRADO){
+            if(colms != 5){
+                console.log("para hacer un cuadrado se necesitan exactamente 5 vertices");
+            }
+            this.figuras.calcularCuadrado(vertices, arrayVecNOR);
+        }
+
+        this.setBufferCreator(buffcalc);
         this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
         this.build();
 

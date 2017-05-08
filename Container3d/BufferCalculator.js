@@ -1,20 +1,10 @@
-var CILINDRO;
-CILINDRO = "cilindro";
-var CUBO;
-CUBO = "cubo";
-var ESFERA;
-ESFERA = "esfera";
-
-
 class BufferCalculator{
 
-    constructor(figura, rows, colms, radio = 0){
+    constructor(rows, colms){
     /*recibe el tipo de figura como string
     y las dimensiones como columnas y filas*/
-    this.figura = figura;
     this.rows = rows;
     this.colms = colms;
-    this.radio = radio;
 
     this.posBuffer = [];
     this.colorBuffer = [];
@@ -68,9 +58,9 @@ class BufferCalculator{
     //         this.normalBuffer.push(i-(this.rows-1)/2.0);
     //         this.normalBuffer.push(this.radio*Math.sin(theta*j) / 2.0);
     //         }
-    //         this.colorBuffer.push(0.0);
-    //         this.colorBuffer.push(0.0);
-    //         this.colorBuffer.push(0.0);
+    //         this.colorBuffer.push(1.0/this.rows * i);
+    //         this.colorBuffer.push(0.2);
+    //         this.colorBuffer.push(1.0/this.colms * j);
     //     }
     //   }
     // }
@@ -166,12 +156,12 @@ class BufferCalculator{
             var vecTrasActual = vec3.create();
             vec3.copy(vecTrasActual,arrayVecPos[i]);
 
-            var normVer = vec3.create();
-            vec3.copy(normVer, arrayVecNorm[i]);
-
             for(var j = 0; j < this.colms; j++){
                 var verticeFormaActual = vec3.create();
                 vec3.copy(verticeFormaActual,vertices[j]);
+
+                var normVer = vec3.create();
+                vec3.copy(normVer, arrayVecNorm[j]);
 
                 var binormVer = vec3.fromValues(0.0,0.0,1.0);
 
@@ -189,11 +179,10 @@ class BufferCalculator{
                 this.normalBuffer.push(normVer[0]);
                 this.normalBuffer.push(normVer[1]);
                 this.normalBuffer.push(normVer[2]);
-                this.colorBuffer.push(0.0);
-                this.colorBuffer.push(0.0);
-                this.colorBuffer.push(0.0);
+                this.colorBuffer.push(1.0/this.rows * i);
+                this.colorBuffer.push(0.2);
+                this.colorBuffer.push(1.0/this.colms * j);
             }
         }
-        console.log(this.posBuffer.length / 3);
       }
   }
