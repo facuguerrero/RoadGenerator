@@ -1,5 +1,7 @@
 var CUADRADO;
 CUADRADO = "cuadrado";
+var CIRCUNFERENCIA;
+CIRCUNFERENCIA = "circunferencia";
 
 class Objeto3D extends Container3D{
 
@@ -79,7 +81,7 @@ class Objeto3D extends Container3D{
         buffcalc = new BufferCalculator(rows, colms);
 
         //chequeo tamaños correctos
-        if((arrayMatT.lenght != rows || arrayVecPos.lenght != rows)){
+        if((arrayMatT.length != rows || arrayVecPos.length != rows)){
             console.log("error de dimension para la superficie");
         }
 
@@ -91,6 +93,10 @@ class Objeto3D extends Container3D{
                 console.log("para hacer un cuadrado se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularCuadrado(vertices, arrayVecNOR);
+        }
+        else if(figura == CIRCUNFERENCIA){
+            var radio = 1;
+            this.figuras.calcularCirculo(colms, vertices, arrayVecNOR, radio);
         }
 
         this.setBufferCreator(buffcalc);
