@@ -71,14 +71,14 @@ class CameraHandler{
                 if (orbitCam.getRadius() < 0.0){
                     orbitCam.setRadius(0.0);
                 }
-                this.updateMatrix();
+                this.handler.updateMatrix();
                 break;
             case 109:		// '-'
                 orbitCam.addRadius(VEL_MOV);
                 if (orbitCam.getRadius < 0.0){
                     orbitCam.setRadius(0.0);
                 }
-                this.updateMatrix();
+                this.handler.updateMatrix();
                 break;
         }
     }
@@ -105,7 +105,7 @@ class CameraHandler{
             if (orbitCam.getPhi() > Math.PI/2)
                 orbitCam.setPhi(Math.PI/2);
 
-            this.updateMatrix();
+            this.handler.updateMatrix();
         }
 
     }

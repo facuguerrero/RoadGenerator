@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/OrbitCamera.js" afterPath="$PROJECT_DIR$/handlers/OrbitCamera.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/CameraHandler.js" afterPath="$PROJECT_DIR$/handlers/CameraHandler.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,28 +27,18 @@
       <file leaf-file-name="CameraHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="91" column="81" lean-forward="true" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
+            <state relative-caret-position="270">
+              <caret line="69" column="16" lean-forward="false" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrbitCamera.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/handlers/OrbitCamera.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplateTP.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TemplateTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="419" column="0" lean-forward="true" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="435" column="33" lean-forward="true" selection-start-line="435" selection-start-column="33" selection-end-line="435" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#canvas#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1494536768529" expanded="false" signature="17403:17411" ph="á" />
@@ -101,6 +91,7 @@
     </findStrings>
     <replaceStrings>
       <replace>aux</replace>
+      <replace>this.handler</replace>
       <replace>this.handler.</replace>
     </replaceStrings>
   </component>
@@ -127,9 +118,9 @@
         <option value="$PROJECT_DIR$/Bajado/primitives/bspline.js" />
         <option value="$PROJECT_DIR$/Letras_Prueba_Camara/index.html" />
         <option value="$PROJECT_DIR$/handlers/Mouse.js" />
-        <option value="$PROJECT_DIR$/handlers/CameraHandler.js" />
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
         <option value="$PROJECT_DIR$/handlers/OrbitCamera.js" />
+        <option value="$PROJECT_DIR$/handlers/CameraHandler.js" />
       </list>
     </option>
   </component>
@@ -279,7 +270,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template2 TP/TemplateTP.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/handlers/CameraHandler.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -840,11 +830,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494536474202</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="aca tamo en la pile">
+      <created>1494536938791</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1494536938791</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100166000" />
+    <option name="totallyTimeSpent" value="100480000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -915,7 +912,8 @@
     <MESSAGE value="cuadrado como primitiva funcionando" />
     <MESSAGE value="circunferencia como primitiva funcionando" />
     <MESSAGE value="Bspline" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bspline" />
+    <MESSAGE value="aca tamo en la pile" />
+    <option name="LAST_COMMIT_MESSAGE" value="aca tamo en la pile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1227,30 +1225,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
+    <entry file="file://$PROJECT_DIR$/handlers/OrbitCamera.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="419" column="0" lean-forward="true" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#canvas#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1494536768529" expanded="false" signature="17403:17411" ph="á" />
-          </folding>
+        <state relative-caret-position="765">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="81" lean-forward="true" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
+        <state relative-caret-position="270">
+          <caret line="69" column="16" lean-forward="false" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/OrbitCamera.js">
+    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="522">
+          <caret line="435" column="33" lean-forward="true" selection-start-line="435" selection-start-column="33" selection-end-line="435" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1494536768529" expanded="false" signature="17403:17411" ph="á" />
+          </folding>
         </state>
       </provider>
     </entry>
