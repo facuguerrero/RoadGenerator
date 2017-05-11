@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/primitivas/CuadraticBSpline.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -342,7 +341,7 @@
       <workItem from="1494249707657" duration="6335000" />
       <workItem from="1494354560738" duration="74000" />
       <workItem from="1494354651294" duration="5000" />
-      <workItem from="1494506486071" duration="2551000" />
+      <workItem from="1494506486071" duration="2589000" />
     </task>
     <task id="LOCAL-00001" summary="Piola">
       <created>1493133730299</created>
@@ -624,11 +623,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494255995063</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Bspline">
+      <created>1494512557665</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1494512557665</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86435000" />
+    <option name="totallyTimeSpent" value="86473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -680,7 +686,8 @@
     <MESSAGE value="comentadas cosas al pedo" />
     <MESSAGE value="cuadrado como primitiva funcionando" />
     <MESSAGE value="circunferencia como primitiva funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="circunferencia como primitiva funcionando" />
+    <MESSAGE value="Bspline" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bspline" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
