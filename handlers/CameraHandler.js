@@ -10,9 +10,9 @@ class CameraHandler{
         //orbital o libre
         this.mode = null;
 
-        this.freeCam = new FreeCamera();
-        this.orbitCam = new OrbitCamera();
-        this.mouse = new Mouse();
+        freeCam = new FreeCamera();
+        orbitCam = new OrbitCamera();
+        mouse = new Mouse();
     }
 
     /*
@@ -67,15 +67,15 @@ class CameraHandler{
                  CON VARIOS PARAMETROS DEFINIDOS POR DEFECTO. PARA PROBAR LO TIRO
                  ASI VILLERO PERO DESPUES DE ULTIMA HACEMOS ALGO MAS PROLIJO*/
 
-                this.orbitCam.addRadius(-VEL_MOV);
-                if (this.orbitCam.getRadius() < 0.0){
+                orbitCam.addRadius(-VEL_MOV);
+                if (orbitCam.getRadius() < 0.0){
                     this.setRadius(0.0);
                 }
                 this.updateMatrix();
                 break;
             case 109:		// '-'
-                this.orbitCam.addRadius(VEL_MOV);
-                if (this.orbitCam.getRadius < 0.0){
+                orbitCam.addRadius(VEL_MOV);
+                if (orbitCam.getRadius < 0.0){
                     this.setRadius(0.0);
                 }
                 this.updateMatrix();
@@ -86,24 +86,24 @@ class CameraHandler{
     onMouseMoveOrbit(e){
 
         //Se tiene que mover si el mouse esta apretado
-        if (this.mouse.pressedState()) {
+        if (mouse.pressedState()) {
 
             /*Obtenemos el movimiento en X e Y realizado por el mouse
              restando la posicion anterior(la guardada), con la nueva del mouse*/
-            var deltaX = this.mouse.getPosX() - e.clientX;
-            var deltaY = this.mouse.getPosY() - e.clientY;
+            var deltaX = mouse.getPosX() - e.clientX;
+            var deltaY = mouse.getPosY() - e.clientY;
 
-            this.mouse.setPosX(e.clientX);
-            this.mouse.setPosY(e.clientY);
+            mouse.setPosX(e.clientX);
+            mouse.setPosY(e.clientY);
 
-            this.orbitCam.addTheta(deltaX * this.mouse.getVel());
-            this.orbitCam.addPhi(deltaY * this.mouse.getVel());
+            orbitCam.addTheta(deltaX * mouse.getVel());
+            orbitCam.addPhi(deltaY * mouse.getVel());
 
-            if (this.orbitCam.getPhi() < -Math.PI/2)
-                this.orbitCam.addPhi(-Math.PI/2);
+            if (orbitCam.getPhi() < -Math.PI/2)
+                orbitCam.addPhi(-Math.PI/2);
 
-            if (this.orbitCam.getPhi() > Math.PI/2)
-                this.orbitCam.setPhi(Math.PI/2);
+            if (orbitCam.getPhi() > Math.PI/2)
+                orbitCam.setPhi(Math.PI/2);
 
             this.updateMatrix();
         }
@@ -111,13 +111,13 @@ class CameraHandler{
     }
 
     onMousePressedOrbit(e){
-        this.mouse.setPosX(e.clientX);
-        this.mouse.setPosY(e.clientY);
-        this.mouse.pressedOn();
+        mouse.setPosX(e.clientX);
+        mouse.setPosY(e.clientY);
+        mouse.pressedOn();
     }
 
     onMouseUnpressedOrbit(e) {
-        this.mouse.pressedOff();
+        mouse.pressedOff();
     }
 
     updateMatrix() {
@@ -128,17 +128,17 @@ class CameraHandler{
         mat4.identity(this.viewMat);
         if (this.mode == "orbit") {
             //Solo trasladamos si agrandamos o achicamos el zoom
-            var r = -this.orbitCam.getRadius();
+            var r = -orbitCam.getRadius();
             var vec_1 = vec3.create();
             vec_1 = vec3.fromValues(0.0,0.0,r);
             mat4.translate(this.viewMat, this.viewMat, vec_1);
 
-            var p = this.orbitCam.getPhi();
+            var p = orbitCam.getPhi();
             var vec_2 = vec3.create();
             vec_2 = vec3.fromValues(1.0, 0.0, 0.0)
             mat4.rotate(this.viewMat, this.viewMat, p , vec_2);
 
-            var t = this.orbitCam.getTheta();
+            var t = orbitCam.getTheta();
             var vec_3 = vec3.create();
             var vec_3 = vec3.fromValues(0.0, -1.0, 0.0);
             mat4.rotate(this.viewMat, this.viewMat, t, vec_3);
