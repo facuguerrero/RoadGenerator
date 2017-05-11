@@ -11,11 +11,11 @@ class Mouse{
 
     /*SETTERS*/
     setPosX(x){
-        posX=x;
+        this.posX=x;
     }
 
     setPosY(y){
-        posY=y;
+        this.posY=y;
     }
     /*GETTERS*/
     getPosX(){
