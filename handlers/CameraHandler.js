@@ -69,14 +69,14 @@ class CameraHandler{
 
                 orbitCam.addRadius(-VEL_MOV);
                 if (orbitCam.getRadius() < 0.0){
-                    this.setRadius(0.0);
+                    orbitCam.setRadius(0.0);
                 }
                 this.updateMatrix();
                 break;
             case 109:		// '-'
                 orbitCam.addRadius(VEL_MOV);
                 if (orbitCam.getRadius < 0.0){
-                    this.setRadius(0.0);
+                    orbitCam.setRadius(0.0);
                 }
                 this.updateMatrix();
                 break;
