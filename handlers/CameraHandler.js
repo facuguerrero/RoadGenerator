@@ -37,7 +37,7 @@ class CameraHandler{
     setOrbit(){
 
         this.viewMat = mat4.create();
-        mat4.identity(this.view_mat);
+        mat4.identity(this.viewMat);
 
         //asumiendo que el body y canvas estan creados y son globales
         body.onkeydown = this.onKeyDownOrbit;

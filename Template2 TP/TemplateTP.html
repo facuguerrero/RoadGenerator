@@ -310,6 +310,8 @@
     var mvMatrixStack = [];
     var pMatrix = mat4.create();
 
+    var body = null;
+    var canvas = null;
     var camera = null;
 
     var mouseDown = false;
@@ -397,17 +399,17 @@
 
 
     function webGLStart() {
-        var canvas = document.getElementById("my_canvas");
+        canvas = document.getElementById("my_canvas");
         initGL(canvas);
         initShaders();
-        var body = document.getElementById("my_body");
+        body = document.getElementById("my_body");
 
         camera = new CameraHandler();
 
         body.handler = camera;
         canvas.handler = camera;
 
-        //camera.setOrbit();
+        camera.setOrbit();
         obj = new Objeto3D();
 
         curva = new CuadraticBSpline(3);
