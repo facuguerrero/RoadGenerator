@@ -400,16 +400,14 @@
         var canvas = document.getElementById("my_canvas");
         initGL(canvas);
         initShaders();
-        /*
-         var body = document.getElementById("my_body");
+        var body = document.getElementById("my_body");
 
-         camera = new CameraHandler();
+        camera = new CameraHandler();
 
-         body.handler = camera;
-         canvas.handler = camera;
+        body.handler = camera;
+        canvas.handler = camera;
 
-         camera.setOrbit();
-         */
+        //camera.setOrbit();
         obj = new Objeto3D();
 
         curva = new CuadraticBSpline(3);
