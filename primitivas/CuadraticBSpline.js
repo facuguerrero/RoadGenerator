@@ -8,10 +8,6 @@ class CuadraticBSpline{
         this.rows = rows;
     }
 
-    setBinormal(vector){
-        this.binormal_vector = vector;
-    }
-
     getLength() {
         return this.num_control_points-2;
     }

@@ -6,6 +6,7 @@
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
 <script type="text/javascript" src="../primitivas/FigurasPrimitivas.js"></script>
+<script type="text/javascript" src="../primitivas/CuadraticBSpline.js"></script>
 <script type="text/javascript" src="../Container3d/BufferCalculator.js"></script>
 <script type="text/javascript" src="../Container3d/Container3D.js"></script>
 <script type="text/javascript" src="../Container3d/Objeto3D.js"></script>
@@ -307,7 +308,7 @@
     var lastMouseY = null;
 
     var obj = null;
-    var buffcalc = null;
+    var curva = null;
 
     function mvPushMatrix() {
         var copy = mat4.create();
@@ -392,27 +393,41 @@
 
         obj = new Objeto3D();
 
-        var arrayMatT = [];
-         var matt = mat3.create();
-         var mattt = mat3.create();
-         var matttt = mat3.create();
-         mat3.identity(matt);
-         mat3.identity(mattt);
-         mat3.identity(matttt);
-         arrayMatT.push(matt);
-         arrayMatT.push(mattt);
-         //arrayMatT.push(matttt);
-         //arrayMatT.push(matttt);
-         //arrayMatT.push(matttt);
+        curva = new CuadraticBSpline(3);
+        var puntos = [];
+        puntos.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntos.push(vec3.fromValues(1.0, 1.0, 1.0));
+        puntos.push(vec3.fromValues(2.0, 2.0, 2.0));
+        curva.setControlPoints(puntos);
+        curva.calculateArrays();
 
         var arrayVecPos = [];
-         arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
-         arrayVecPos.push(vec3.fromValues(2.0, 2.0, 2.0));
-         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 7.0));
-         //arrayVecPos.push(vec3.fromValues(7.0, 0.0, 0.0));
-         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
+        arrayVecPos = curva.getVecPos();
 
-        obj.calcularSuperficieBarrido("circunferencia", 2, 10, arrayMatT, arrayVecPos);
+        var arrayMatT = [];
+        arrayMatT = curva.getArrayMatT();
+
+//        var arrayMatT = [];
+//         var matt = mat3.create();
+//         var mattt = mat3.create();
+//         var matttt = mat3.create();
+//         mat3.identity(matt);
+//         mat3.identity(mattt);
+//         mat3.identity(matttt);
+//         arrayMatT.push(matt);
+//         arrayMatT.push(mattt);
+//         //arrayMatT.push(matttt);
+//         //arrayMatT.push(matttt);
+//         //arrayMatT.push(matttt);
+//
+//        var arrayVecPos = [];
+//         arrayVecPos.push(vec3.fromValues(0.0, 0.0, 0.0));
+//         arrayVecPos.push(vec3.fromValues(2.0, 2.0, 2.0));
+//         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 7.0));
+//         //arrayVecPos.push(vec3.fromValues(7.0, 0.0, 0.0));
+//         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
+
+        obj.calcularSuperficieBarrido("circunferencia", 3, 10, arrayMatT, arrayVecPos);
 
         gl.clearColor(255.0, 255.0, 255.0, 1.0);
         gl.enable(gl.DEPTH_TEST);
