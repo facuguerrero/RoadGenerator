@@ -310,6 +310,8 @@
     var mvMatrixStack = [];
     var pMatrix = mat4.create();
 
+    var camera = null;
+
     var mouseDown = false;
     var lastMouseX = null;
     var lastMouseY = null;
@@ -398,6 +400,9 @@
         var canvas = document.getElementById("clase03-vertex shader");
         initGL(canvas);
         initShaders();
+
+        camera = new CameraHandler();
+        camera.setOrbit();
 
         obj = new Objeto3D();
 
