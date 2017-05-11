@@ -397,13 +397,19 @@
 
 
     function webGLStart() {
-        var canvas = document.getElementById("clase03-vertex shader");
+        var canvas = document.getElementById("my_canvas");
         initGL(canvas);
         initShaders();
+        /*
+         var body = document.getElementById("my_body");
 
-        camera = new CameraHandler();
-        camera.setOrbit();
+         camera = new CameraHandler();
 
+         body.handler = camera;
+         canvas.handler = camera;
+
+         camera.setOrbit();
+         */
         obj = new Objeto3D();
 
         curva = new CuadraticBSpline(3);
@@ -454,11 +460,11 @@
 </head>
 
 
-<body onload="webGLStart();">
+<body id = "my_body" onload="webGLStart();">
     <center>
             <h1>Sistemas Gr�ficos - 66.71</h1>
             <h2>Framework Trabajo Pr&aacute;ctico 2016</h2>
-            <canvas id="clase03-vertex shader" style="border: none;" width="1280" height="720">
+            <canvas id="my_canvas" style="border: none;" width="1280" height="720">
             Your browser does not support the HTML5 canvas element.
             </scanvas>
 
