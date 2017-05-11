@@ -9,14 +9,34 @@ class OrbitCamera{
         this.theta = 0.0;
     }
 
+    /*SETTERS*/
     setRadius(r){
         this.radius = r;
     }
+
+    setPhi(p){
+        this.phi = p;
+    }
+
+    setTheta(t){
+        this.theta = t;
+    }
+
+    /*ADDS*/
     addRadius(r){
         this.radius+=r;
     }
 
+    addTheta(t){
+        this.theta += t;
+    }
+
+    addPhi(p){
+        this.phi += p;
+    }
+
     /*GETTERS*/
+
     getRadius(){
         return this.radius;
     }
@@ -27,13 +47,5 @@ class OrbitCamera{
 
     getTheta(){
         return this.theta;
-    }
-
-    addTheta(t){
-        this.theta += t;
-    }
-
-    addPhi(p){
-        this.phi += p;
     }
 }
