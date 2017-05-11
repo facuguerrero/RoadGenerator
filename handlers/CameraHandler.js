@@ -6,14 +6,12 @@ class CameraHandler{
 
         //Matriz de vista
         this.viewMat = null;
-        this.viewMat = mat4.create();
-        mat4.identity(this.view_mat);
 
         //orbital o libre
         this.mode = null;
 
         this.freeCam = new FreeCamera();
-        this.orbitCam = new orbitCam();
+        this.orbitCam = new OrbitCamera();
         this.mouse = new Mouse();
     }
 
@@ -37,6 +35,9 @@ class CameraHandler{
      */
 
     setOrbit(){
+
+        this.viewMat = mat4.create();
+        mat4.identity(this.view_mat);
 
         //asumiendo que el body y canvas estan creados y son globales
         body.onkeydown = this.onKeyDownOrbit;
