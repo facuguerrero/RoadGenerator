@@ -86,7 +86,7 @@ class CameraHandler{
     onMouseMoveOrbit(e){
 
         //Se tiene que mover si el mouse esta apretado
-        if (this.pressedState()) {
+        if (this.mouse.pressedState()) {
 
             /*Obtenemos el movimiento en X e Y realizado por el mouse
              restando la posicion anterior(la guardada), con la nueva del mouse*/
@@ -125,20 +125,23 @@ class CameraHandler{
          Cada vez que se la llama inicializa la matriz en la identidad
          porque las variables se actualizan por posicion y no por corrimiento.*/
 
-        mat4.identity(this.view_mat);
+        mat4.identity(this.viewMat);
         if (this.mode == "orbit") {
             //Solo trasladamos si agrandamos o achicamos el zoom
             var r = -this.orbitCam.getRadius();
-            var vec1 = vec3.fromValues(0.0,0.0,r);
-            mat4.translate(this.view_mat, this.view_mat, vec1);
+            var vec_1 = vec3.create();
+            vec_1 = vec3.fromValues(0.0,0.0,r);
+            mat4.translate(this.viewMat, this.viewMat, vec_1);
 
             var p = this.orbitCam.getPhi();
-            var vec2 = vec3.fromValues(1.0, 0.0, 0.0)
-            mat4.rotate(this.view_mat, this.view_mat, p , vec2);
+            var vec_2 = vec3.create();
+            vec_2 = vec3.fromValues(1.0, 0.0, 0.0)
+            mat4.rotate(this.viewMat, this.viewMat, p , vec_2);
 
             var t = this.orbitCam.getTheta();
-            var vec3 = vec3.fromValues(0.0, -1.0, 0.0);
-            mat4.rotate(this.view_mat, this.view_mat, t, vec3);
+            var vec_3 = vec3.create();
+            var vec_3 = vec3.fromValues(0.0, -1.0, 0.0);
+            mat4.rotate(this.viewMat, this.viewMat, t, vec_3);
         }
 
         if(this.mode == "free"){
