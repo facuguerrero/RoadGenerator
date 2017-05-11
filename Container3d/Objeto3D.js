@@ -78,7 +78,7 @@ class Objeto3D extends Container3D{
      */
     calcularSuperficieBarrido(figura, rows, colms, arrayMatT, arrayVecPos){
 
-        buffcalc = new BufferCalculator(rows, colms);
+        var buffcalc = new BufferCalculator(rows, colms);
 
         //chequeo tamaños correctos
         if((arrayMatT.length != rows || arrayVecPos.length != rows)){

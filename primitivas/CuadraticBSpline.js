@@ -3,8 +3,8 @@ class CuadraticBSpline{
     constructor(rows){
         this.control_points = null;
         this.num_control_points = null;
-        this.arrayMatT = null;
-        this.vecPos = null;
+        this.arrayMatT = [];
+        this.vecPos = [];
         this.rows = rows;
     }
 
@@ -29,12 +29,12 @@ class CuadraticBSpline{
 
         for(var i = 0; i < this.rows; i++){
             //se cargan todas las matrices y vectores
-            var u = i * this.getLength() / (rows - 1);
+            var u = i * this.getLength() / (this.rows - 1);
 
             var vec = this.getVecAtU(u);
             this.vecPos.push(vec);
 
-            var mat = getMatAtU(u);
+            var mat = this.getMatAtU(u);
             this.arrayMatT.push(mat);
         }
 
@@ -45,8 +45,8 @@ class CuadraticBSpline{
         var aux = Math.floor(u);
         var t = u - aux;
         //si es el ultimo punto
-        if (u >= this.length()){
-            aux = this.length()-1;
+        if (u >= this.getLength()){
+            aux = this.getLength()-1;
             t = 1;
         }
         var p1 = this.control_points[aux];
@@ -70,10 +70,10 @@ class CuadraticBSpline{
     getMatAtU(u){
 
         //obtenemos primero el vector tangente a traves de la derivada
-        var vecTang = getTangAtU(u);
+        var vecTang = this.getTangAtU(u);
 
         //con el producto vectorial del tangente con (0,0,1) obtenemos el normal
-        var vecNorm = getNormAtU(u, vecTang);
+        var vecNorm = this.getNormAtU(u, vecTang);
 
         //calculamos el vector binormal como el producto entre el normal y tangente
         var vecBinorm = vec3.create();
@@ -102,8 +102,8 @@ class CuadraticBSpline{
         var aux = Math.floor(u);
         var t = u - aux;
         //si es el ultimo punto
-        if (u >= this.length()){
-            aux = this.length()-1;
+        if (u >= this.getLength()){
+            aux = this.getLength()-1;
             t = 1;
         }
         var p1 = this.control_points[aux];
