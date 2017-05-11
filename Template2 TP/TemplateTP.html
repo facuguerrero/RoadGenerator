@@ -393,11 +393,12 @@
 
         obj = new Objeto3D();
 
-        curva = new CuadraticBSpline(3);
+        curva = new CuadraticBSpline(4);
         var puntos = [];
         puntos.push(vec3.fromValues(0.0, 0.0, 0.0));
-        puntos.push(vec3.fromValues(1.0, 1.0, 1.0));
-        puntos.push(vec3.fromValues(2.0, 2.0, 2.0));
+        puntos.push(vec3.fromValues(3.0, 0.0, 3.0));
+        puntos.push(vec3.fromValues(6.0, 3.0, 6.0));
+        puntos.push(vec3.fromValues(9.0, 6.0, 9.0));
         curva.setControlPoints(puntos);
         curva.calculateArrays();
 
@@ -427,7 +428,7 @@
 //         //arrayVecPos.push(vec3.fromValues(7.0, 0.0, 0.0));
 //         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
 
-        obj.calcularSuperficieBarrido("circunferencia", 3, 10, arrayMatT, arrayVecPos);
+        obj.calcularSuperficieBarrido("circunferencia", 4, 10, arrayMatT, arrayVecPos);
 
         gl.clearColor(255.0, 255.0, 255.0, 1.0);
         gl.enable(gl.DEPTH_TEST);
