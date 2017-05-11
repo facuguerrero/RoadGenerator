@@ -2,6 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/ejercicios/ej1.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/ejercicios/ej2a.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/ejercicios/ej2b.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/ejercicios/ej2c.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/ejercicios/ej3a.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/ejercicios/ej3b.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/ejercicios/ej3c.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/Detector.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/Stats.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/controls/OrbitControls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/dat.gui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/dat.gui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/gl-matrix-min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/jquery-1.9.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/jquery-2.1.4.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/loaders/ColladaLoader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/stats.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/three.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js/three.min.r71.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/js2/escena3d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/modelos/g.DAE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/modelos/q.DAE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/modelos/r.DAE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Letras_Prueba_Camara/styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/gl-matrix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/mars_1k_color.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/moon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/webgl-utils.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,7 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>var</find>
       <find>setUpWe</find>
       <find>draw</find>
       <find>Objeto</find>
@@ -63,6 +92,7 @@
       <find>pre_x</find>
       <find>handler</find>
       <find>mouse_down</find>
+      <find>cameraManual</find>
     </findStrings>
     <replaceStrings>
       <replace>aux</replace>
@@ -91,6 +121,7 @@
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
         <option value="$PROJECT_DIR$/Bajado/primitives/bspline.js" />
         <option value="$PROJECT_DIR$/handlers/CameraHandler.js" />
+        <option value="$PROJECT_DIR$/Letras_Prueba_Camara/index.html" />
       </list>
     </option>
   </component>
@@ -146,20 +177,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Template2 TP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Letras_Prueba_Camara" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1381,11 +1398,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494533624042</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Bspline">
+      <created>1494533638528</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1494533638528</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97028000" />
+    <option name="totallyTimeSpent" value="97293000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1465,13 +1489,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Template TP/gl-matrix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -1775,14 +1792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="448" column="19" lean-forward="false" selection-start-line="448" selection-start-column="13" selection-end-line="448" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Bajado/sg_tp1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -1811,6 +1820,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1635">
           <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Letras_Prueba_Camara/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="318" column="40" lean-forward="false" selection-start-line="318" selection-start-column="28" selection-end-line="318" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1091">
+          <caret line="431" column="82" lean-forward="true" selection-start-line="431" selection-start-column="82" selection-end-line="431" selection-end-column="82" />
           <folding />
         </state>
       </provider>
