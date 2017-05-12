@@ -102,7 +102,7 @@ class CameraHandler{
             mouse.setPosY(e.clientY);
 
             orbitCam.addTheta(deltaX * mouse.getVel());
-            orbitCam.addPhi(deltaY * mouse.getVel());
+            orbitCam.addPhi(-deltaY * mouse.getVel());
 
             if (orbitCam.getPhi() < -Math.PI/2)
                 orbitCam.addPhi(-Math.PI/2);
