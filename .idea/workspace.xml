@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/CameraHandler.js" afterPath="$PROJECT_DIR$/handlers/CameraHandler.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -4939,13 +4938,6 @@
       <workItem from="1494525030406" duration="5983000" />
       <workItem from="1494590115675" duration="951000" />
     </task>
-    <task id="LOCAL-00010" summary="container funcionando">
-      <created>1493489321209</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1493489321209</updated>
-    </task>
     <task id="LOCAL-00011" summary="container funcionando">
       <created>1493489327561</created>
       <option name="number" value="00011" />
@@ -5282,11 +5274,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494597648621</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Hoy tiene que andar">
+      <created>1494598025689</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1494598025689</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107888000" />
+    <option name="totallyTimeSpent" value="107908000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -5377,7 +5376,8 @@
     <MESSAGE value="circunferencia como primitiva funcionando" />
     <MESSAGE value="Bspline" />
     <MESSAGE value="aca tamo en la pile" />
-    <option name="LAST_COMMIT_MESSAGE" value="aca tamo en la pile" />
+    <MESSAGE value="Hoy tiene que andar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hoy tiene que andar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
