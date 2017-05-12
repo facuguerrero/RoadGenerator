@@ -23,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TemplateTP.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TemplateTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-956">
@@ -32,6 +32,16 @@
                 <element signature="n#style#0;n#canvas#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1494592033888" expanded="false" signature="17436:17444" ph="á" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Container3D.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/Container3D.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1653">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -547,13 +557,6 @@
       <workItem from="1494525030406" duration="5983000" />
       <workItem from="1494590115675" duration="951000" />
     </task>
-    <task id="LOCAL-00004" summary="subo el cambio">
-      <created>1493389929455</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1493389929455</updated>
-    </task>
     <task id="LOCAL-00005" summary="superficie de barrido">
       <created>1493394439495</created>
       <option name="number" value="00005" />
@@ -890,11 +893,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494592158172</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="aca tamo en la pile">
+      <created>1494592924770</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1494592924770</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102923000" />
+    <option name="totallyTimeSpent" value="102972000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -907,8 +917,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22751729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22751729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11210762" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1081,7 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/Container3D.js" />
     <entry file="file://$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/Object3D.js" />
     <entry file="file://$PROJECT_DIR$/Bajado/primitives/terna.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1300,6 +1310,14 @@
             <element signature="n#style#0;n#canvas#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1494592033888" expanded="false" signature="17436:17444" ph="á" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1653">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
