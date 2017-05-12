@@ -90,7 +90,6 @@ class CameraHandler{
     }
 
     onMouseMoveOrbit(e){
-
         //Se tiene que mover si el mouse esta apretado
         if (mouse.pressedState()) {
 
@@ -141,7 +140,7 @@ class CameraHandler{
 
             var p = orbitCam.getPhi();
             var vec_2 = vec3.create();
-            vec_2 = vec3.fromValues(1.0, 0.0, 0.0)
+            vec_2 = vec3.fromValues(1.0, 0.0, 0.0);
             mat4.rotate(CameraMatrix, CameraMatrix, p , vec_2);
 
             var t = orbitCam.getTheta();
