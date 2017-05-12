@@ -46,6 +46,16 @@ class CameraHandler{
 
     }
 
+    setHandler(){
+    var body = document.getElementById("my_body");
+    var canvas = document.getElementById("my_canvas");
+
+    body.handler = this;
+    canvas.handler = this;
+
+    this.setOrbit();
+    }
+
     onKeyDownOrbit (e){
         switch (e.keyCode) {
             //descomentar cuando haya mas de una camara
