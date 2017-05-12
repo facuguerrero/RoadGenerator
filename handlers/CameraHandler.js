@@ -104,11 +104,13 @@ class CameraHandler{
             orbitCam.addTheta(deltaX * mouse.getVel());
             orbitCam.addPhi(-deltaY * mouse.getVel());
 
-            if (orbitCam.getPhi() < -Math.PI/2)
-                orbitCam.addPhi(-Math.PI/2);
+            if (orbitCam.getPhi() < -Math.PI/2) {
+                orbitCam.addPhi(-Math.PI / 2);
+            }
 
-            if (orbitCam.getPhi() > Math.PI/2)
-                orbitCam.setPhi(Math.PI/2);
+            if (orbitCam.getPhi() > Math.PI/2) {
+                orbitCam.setPhi(Math.PI / 2);
+            }
 
             this.handler.updateMatrix();
         }
