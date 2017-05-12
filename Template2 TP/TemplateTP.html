@@ -354,6 +354,8 @@
 
     function drawScene() {
 
+        requestAnimationFrame(drawScene);
+
 		// Se configura el vierport dentro de �rea �canvas�. en este caso se utiliza toda
 		// el �rea disponible
         gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
@@ -396,7 +398,6 @@
         mat4.rotate(model_matrix_obj,model_matrix_obj,1.2,[0,1,0]);
         //mat4.scale(model_matrix_obj, model_matrix_obj, [3.0, 3.0, 3.0]);
         obj.draw(model_matrix_obj, false);
-        console.log("a");
     }
 
 
