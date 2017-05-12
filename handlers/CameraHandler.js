@@ -5,7 +5,7 @@ class CameraHandler{
     constructor(){
 
         //Matriz de vista
-        this.viewMat = null;
+        this.CameraMatrix = null;
 
         //orbital o libre
         this.mode = null;
@@ -35,9 +35,6 @@ class CameraHandler{
      */
 
     setOrbit(){
-
-        this.viewMat = mat4.create();
-        mat4.identity(this.viewMat);
 
         //asumiendo que el body y canvas estan creados y son globales
         body.onkeydown = this.onKeyDownOrbit;
@@ -125,23 +122,23 @@ class CameraHandler{
          Cada vez que se la llama inicializa la matriz en la identidad
          porque las variables se actualizan por posicion y no por corrimiento.*/
 
-        mat4.identity(this.viewMat);
+        mat4.identity(this.CameraMatrix);
         if (this.mode == "orbit") {
             //Solo trasladamos si agrandamos o achicamos el zoom
             var r = -orbitCam.getRadius();
             var vec_1 = vec3.create();
             vec_1 = vec3.fromValues(0.0,0.0,r);
-            mat4.translate(this.viewMat, this.viewMat, vec_1);
+            mat4.translate(this.CameraMatrix, this.CameraMatrix, vec_1);
 
             var p = orbitCam.getPhi();
             var vec_2 = vec3.create();
             vec_2 = vec3.fromValues(1.0, 0.0, 0.0)
-            mat4.rotate(this.viewMat, this.viewMat, p , vec_2);
+            mat4.rotate(this.CameraMatrix, this.CameraMatrix, p , vec_2);
 
             var t = orbitCam.getTheta();
             var vec_3 = vec3.create();
             var vec_3 = vec3.fromValues(0.0, -1.0, 0.0);
-            mat4.rotate(this.viewMat, this.viewMat, t, vec_3);
+            mat4.rotate(this.CameraMatrix, this.CameraMatrix, t, vec_3);
         }
 
         if(this.mode == "free"){
