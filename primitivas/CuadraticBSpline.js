@@ -58,9 +58,10 @@ class CuadraticBSpline{
 
     interpolar(p1, p2, p3, t){
         var aux = vec3.fromValues(0.0, 0.0, 0.0);
-        var base1 = (t*t/2);
+        var base1 = (t*t/2 - t + 1/2);
         var base2 = (- t*t + t + 1/2);
-        var base3 = (t*t/2 - t + 1/2);
+        var base3 = (t*t/2);
+
         vec3.scaleAndAdd(aux, aux, p1, base1);
         vec3.scaleAndAdd(aux, aux, p2, base2);
         vec3.scaleAndAdd(aux, aux, p3, base3);
@@ -110,31 +111,32 @@ class CuadraticBSpline{
         var p2 = this.control_points[aux+1];
         var p3 = this.control_points[aux+2];
 
-        if (u < 1){
-            var son_iguales = true;
-            son_iguales &= (p1[0] == p2[0]);
-            son_iguales &= (p1[1] == p2[1]);
-            son_iguales &= (p1[2] == p2[2]);
-            if (son_iguales) {
-                var aux = vec3.fromValues(0.0, 0.0, 0.0);
-                vec3.sub(aux, p4, p3);
-                vec3.normalize(aux, aux);
-                return aux;
-            }
-        }
-
-        if (u > this.getLength()-1) {
-            var son_iguales = true;
-            son_iguales &= (p2[0] == p3[0]);
-            son_iguales &= (p2[1] == p3[1]);
-            son_iguales &= (p2[2] == p3[2]);
-            if (son_iguales) {
-                var aux = vec3.fromValues(0.0, 0.0, 0.0);
-                vec3.sub(aux, p2, p1);
-                vec3.normalize(aux, aux);
-                return aux;
-            }
-        }
+        //HACE FALTA? REVISAR
+        // if (u < 1){
+        //     var son_iguales = true;
+        //     son_iguales &= (p1[0] == p2[0]) && (p2[0] == p3[0]);
+        //     son_iguales &= (p1[1] == p2[1]) && (p2[1] == p3[1]);
+        //     son_iguales &= (p1[2] == p2[2]) && (p2[2] == p3[2]);
+        //     if (son_iguales) {
+        //         var aux = vec3.fromValues(0.0, 0.0, 0.0);
+        //         vec3.sub(aux, p3, p2);
+        //         vec3.normalize(aux, aux);
+        //         return aux;
+        //     }
+        // }
+        //
+        // if (u > this.getLength()-1) {
+        //     var son_iguales = true;
+        //     son_iguales &= (p1[0] == p2[0]) && (p2[0] == p3[0]);
+        //     son_iguales &= (p1[1] == p2[1]) && (p2[1] == p3[1]);
+        //     son_iguales &= (p1[2] == p2[2]) && (p2[2] == p3[2]);
+        //     if (son_iguales) {
+        //         var aux = vec3.fromValues(0.0, 0.0, 0.0);
+        //         vec3.sub(aux, p2, p1);
+        //         vec3.normalize(aux, aux);
+        //         return aux;
+        //     }
+        // }
 
         return this.interpolarDeriv(p1, p2, p3, t);
 

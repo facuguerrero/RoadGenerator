@@ -395,7 +395,7 @@
         obj.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
         var model_matrix_obj = mat4.create();
         mat4.identity(model_matrix_obj);
-        mat4.rotate(model_matrix_obj,model_matrix_obj,1.2,[0,1,0]);
+        //mat4.rotate(model_matrix_obj,model_matrix_obj,1.2,[0,1,0]);
         //mat4.scale(model_matrix_obj, model_matrix_obj, [3.0, 3.0, 3.0]);
         obj.draw(model_matrix_obj, false);
     }
@@ -415,17 +415,22 @@
         camera.setOrbit();
         obj = new Objeto3D();
 
-        curva = new CuadraticBSpline(3);
+        curva = new CuadraticBSpline(4);
         var puntos = [];
         puntos.push(vec3.fromValues(0.0, 0.0, 0.0));
-        puntos.push(vec3.fromValues(10.0, 10.0, 10.0));
-        puntos.push(vec3.fromValues(20.0, 0.0, 20.0));
+        puntos.push(vec3.fromValues(10.0, 10.0, 0.0));
+        puntos.push(vec3.fromValues(20.0, 10.0, 0.0));
+        puntos.push(vec3.fromValues(30.0, 0.0, 0.0));
 
         curva.setControlPoints(puntos);
         curva.calculateArrays();
 
         var arrayVecPos = [];
         arrayVecPos = curva.getVecPos();
+        console.log(arrayVecPos[0]);
+        console.log(arrayVecPos[1]);
+        console.log(arrayVecPos[2]);
+        console.log(arrayVecPos[3]);
 
         var arrayMatT = [];
         arrayMatT = curva.getArrayMatT();
@@ -450,7 +455,7 @@
 //         //arrayVecPos.push(vec3.fromValues(7.0, 0.0, 0.0));
 //         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
 
-        obj.calcularSuperficieBarrido("circunferencia", 3, 10, arrayMatT, arrayVecPos);
+        obj.calcularSuperficieBarrido("circunferencia", 4, 10, arrayMatT, arrayVecPos);
 
         gl.clearColor(255.0, 255.0, 255.0, 1.0);
         gl.enable(gl.DEPTH_TEST);

@@ -4,7 +4,7 @@ class OrbitCamera{
 
         //Constructor de la camara orbital.
         this.center = [0.0, 0.0, 0.0];
-        this.radius = 100;
+        this.radius = 150;
         this.phi = 0.0;
         this.theta = 0.0;
     }
