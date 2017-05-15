@@ -62,5 +62,19 @@ class FigurasPrimitivias{
 
     }
 
+    calcularLinea(vertices, arrayVecNOR){
+
+        vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
+        var vecNorm1 = vec3.fromValues(0.0, 0.0, 0.0);
+        vec3.normalize(vecNorm1, vecNorm1);
+        arrayVecNOR.push(vecNorm1);
+
+        vertices.push(vec3.fromValues(1.0, 0.0, 0.0));
+        var vecNorm2 = vec3.fromValues(1.0, 0.0, 0.0);
+        vec3.normalize(vecNorm2, vecNorm2);
+        arrayVecNOR.push(vecNorm2);
+
+    }
+
 
 }

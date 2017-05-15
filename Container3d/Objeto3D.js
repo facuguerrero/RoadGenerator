@@ -2,6 +2,8 @@ var CUADRADO;
 CUADRADO = "cuadrado";
 var CIRCUNFERENCIA;
 CIRCUNFERENCIA = "circunferencia";
+var LINEA;
+LINEA = "linea";
 
 class Objeto3D extends Container3D{
 
@@ -78,8 +80,8 @@ class Objeto3D extends Container3D{
      */
     calcularSuperficieBarrido(figura, rows, colms, arrayMatT, arrayVecPos){
 
+        //console.log("supBarrido");
         var buffcalc = new BufferCalculator(rows, colms);
-
         //chequeo tamaños correctos
         if((arrayMatT.length != rows || arrayVecPos.length != rows)){
             console.log("error de dimension para la superficie");
@@ -97,6 +99,14 @@ class Objeto3D extends Container3D{
         else if(figura == CIRCUNFERENCIA){
             var radio = 1;
             this.figuras.calcularCirculo(colms, vertices, arrayVecNOR, radio);
+        }
+
+        else if(figura == LINEA){
+            if(colms != 2){
+                console.log("para hacer un cuadrado se necesitan exactamente 5 vertices");
+            }
+            //console.log(colms);
+            this.figuras.calcularLinea(vertices, arrayVecNOR);
         }
 
         this.setBufferCreator(buffcalc);

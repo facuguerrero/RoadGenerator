@@ -10,6 +10,8 @@
 <script type="text/javascript" src="../handlers/FreeCamera.js"></script>
 <script type="text/javascript" src="../handlers/CameraHandler.js"></script>
 
+<script type="text/javascript" src="../objetos/ObjetosFactory.js"></script>
+
 <script type="text/javascript" src="../primitivas/FigurasPrimitivas.js"></script>
 <script type="text/javascript" src="../primitivas/CuadraticBSpline.js"></script>
 
@@ -314,6 +316,8 @@
     var body = null;
     var canvas = null;
     var camera = null;
+    var factory = null;
+    var grid = null;
 
     var mouse = null;
     var freeCam = null;
@@ -398,6 +402,10 @@
         //mat4.rotate(model_matrix_obj,model_matrix_obj,1.2,[0,1,0]);
         //mat4.scale(model_matrix_obj, model_matrix_obj, [3.0, 3.0, 3.0]);
         obj.draw(model_matrix_obj, false);
+
+        var model_matrix_grid = mat4.create();
+        mat4.identity(model_matrix_grid);
+        grid.draw(model_matrix_grid, false);
     }
 
 
@@ -406,6 +414,10 @@
         initGL(canvas);
         initShaders();
         body = document.getElementById("my_body");
+        factory = new ObjetosFactory();
+
+        //aca rompe
+        grid = factory.createGrid();
 
         camera = new CameraHandler();
 
@@ -450,7 +462,6 @@
 //         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 7.0));
 //         //arrayVecPos.push(vec3.fromValues(7.0, 0.0, 0.0));
 //         //arrayVecPos.push(vec3.fromValues(0.0, 7.0, 0.0));
-
         obj.calcularSuperficieBarrido("circunferencia", 4, 10, arrayMatT, arrayVecPos);
 
         gl.clearColor(255.0, 255.0, 255.0, 1.0);
