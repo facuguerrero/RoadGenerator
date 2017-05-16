@@ -9,6 +9,7 @@
 <script type="text/javascript" src="../handlers/OrbitCamera.js"></script>
 <script type="text/javascript" src="../handlers/FreeCamera.js"></script>
 <script type="text/javascript" src="../handlers/CameraHandler.js"></script>
+<script type="text/javascript" src="../handlers/Canvas2D.js"></script>
 
 <script type="text/javascript" src="../objetos/ObjetosFactory.js"></script>
 
@@ -22,6 +23,23 @@
 <script type="text/javascript" src="gl-matrix.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
 
+<!-- Shader de vértices para el Canvas2D -->
+<script id="canvas2D-shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    uniform mat4 uVMatrix;
+    uniform mat4 uPMatrix;
+    void main(void) {
+        gl_Position = uPMatrix * uVMatrix * vec4(aVertexPosition, 1.0);
+        gl_PointSize = 5.0;
+    }
+</script>
+
+<!-- Shader de fragmentos para las canvas2D -->
+<script id="canvas2D-shader-fs" type="x-shader/x-fragment">
+    void main(void) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    }
+</script>
 
 <script id="shader-fs-colored-obj" type="x-shader/x-fragment">
     precision mediump float;
@@ -315,6 +333,9 @@
 
     var body = null;
     var canvas = null;
+    var canvas2Ddoc = null;
+    var canvas2D_gl = null;
+    var canvas2D = null;
     var camera = null;
     var factory = null;
     var grid = null;
@@ -419,7 +440,18 @@
         initGL(canvas);
         initShaders();
         body = document.getElementById("my_body");
+
+        canvas2Ddoc = document.getElementById("canvas2Ddoc");
+        try {
+            canvas2D_gl = canvas2Ddoc.getContext("webgl");
+        } catch (e) {
+            console.log("Error cargando WebGL");
+        }
+
         factory = new ObjetosFactory();
+
+        canvas2D = new Canvas2D();
+        canvas2D.loadCanvas2D();
 
         grid = factory.createGrid();
         
@@ -491,6 +523,7 @@
             <h1>Sistemas Gr�ficos - 66.71</h1>
             <h2>Framework Trabajo Pr&aacute;ctico 2016</h2>
             <canvas id="my_canvas" style="border: none;" width="1280" height="720">
+            <canvas id="canvas2Ddoc" width="200" height="200"></canvas>
             Your browser does not support the HTML5 canvas element.
             </scanvas>
 
