@@ -4,6 +4,8 @@ var CIRCUNFERENCIA;
 CIRCUNFERENCIA = "circunferencia";
 var LINEA;
 LINEA = "linea";
+var BASE_RUTA = "base_ruta";
+var ASFALTO_RUTA = "asfalto_ruta";
 
 class Objeto3D extends Container3D{
 
@@ -107,6 +109,21 @@ class Objeto3D extends Container3D{
             }
             //console.log(colms);
             this.figuras.calcularLinea(vertices, arrayVecNOR);
+        }
+        else if(figura == BASE_RUTA){
+            if(colms != 9){
+                console.log("para hacer una base de ruta se necesitan exactamente 9 vertices");
+            }
+            this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
+        }
+        else if(figura == ASFALTO_RUTA){
+            if(colms != 5){
+                console.log("para hacer el asfalto de la ruta se necesitan exactamente 5 vertices");
+            }
+            this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);
+        }
+        else {
+            console.log("le pasaste mal la figura");
         }
 
         this.setBufferCreator(buffcalc);
