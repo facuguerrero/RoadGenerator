@@ -112,45 +112,39 @@ class ObjetosFactory{
         return ruta;
     }
 
-    createBuilding(n,w,h,z){
+    createBuilding(h,x,z){
     /*La funcion recibe:
-    @ n: Cantidad de elevaciones del edificio.
-    @ w: Numero que indica el ancho de las elevaciones.
-    @ h: Numero que indica la cantidad de elevaciones del edificio.
+    @ h: Alto del edificio.
+    @ x: Numero que indica el ancho de las elevaciones.
     @ z: Longitud de una elevacion del edificio.
      */
 
       var edificio = new Objeto3D();
-      var curva = new CuadraticBSpline(n);
-
 
       //Creamos los puntos de la curva del edificio
       var puntosEdificio = [];
-      for(var i=0; i<n; i++){
-          puntosEdificio.push(vec3.fromValues(0.0, i, 0.0));
-      }
+      puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
+      puntosEdificio.push(vec3.fromValues(0.0, h, 0.0));
 
-      curva.setControlPoints(puntosEdificio);
-      curva.calculateArrays();
-
-      var arrayVecPos = [];
-      arrayVecPos = curva.getVecPos();
       var arrayMatT = [];
-      arrayMatT = curva.getArrayMatT();
+      var mat = mat3.create();
+      mat3.identity(mat);
+      arrayMatT.push(mat);
+      arrayMatT.push(mat);
 
-      //var buffcalc = new BufferCalculator(arrayVecPos.length,2);
-      //edificio.setBufferCreator(buffcalc);
-      //edificio.build();
+      //var puntosTapa = []
 
-      var base = new Objeto3D();
-      base.calcularSuperficieBarrido("linea",n,2,arrayMatT,arrayVecPos);
-      base.translate(1.0, h, 1.0);
-      base.rotate(-Math.PI/2, 0.0, 0.0, 1.0);
-      edificio.add(base);
+      //Creamos el techo del edificio
+      //var base = new Objeto3D();
+      //base.calcularSuperficieBarrido("linea",2,2,arrayMatT,arrayVecPos);
+      //Lo ubico en la parte superior.
+      //base.translate(-0.50, h-(h*0.5), 0.0);
+      //base.rotate(-Math.PI/2, 0.0, 0.0, 1.0);
+      //edificio.add(base);
 
-      edificio.calcularSuperficieBarrido("cuadrado", n, 5, arrayMatT, arrayVecPos);
+      edificio.calcularSuperficieBarrido("cuadrado", 2, 5, arrayMatT, puntosEdificio);
 
-      edificio.scale(w,h,z);
+      //edificio.scale(w,h,z);
 
       return edificio;
     }
