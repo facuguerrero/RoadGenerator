@@ -41,7 +41,7 @@ class FigurasPrimitivias{
     }
 
 
-    calcularRectangulo(vertices, arrayVecNOR, ancho, largo){
+    /*calcularRectangulo(vertices, arrayVecNOR, ancho, largo){
 
         //COMENTARIO: Faltan completar las normales que no se como se llenan, solo se que el eje z va vacio
 
@@ -72,7 +72,7 @@ class FigurasPrimitivias{
         vec3.normalize(vecNorm5, vecNorm5);
         arrayVecNOR.push(vecNorm5);
 
-    }
+    }*/
     //crea un circulo centrado en el origen
     calcularCirculo(colms, vertices, arrayVecNOR, radio){
 

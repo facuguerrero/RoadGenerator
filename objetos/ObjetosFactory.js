@@ -112,39 +112,39 @@ class ObjetosFactory{
         return ruta;
     }
 
-    createBuilding(h,x,z){
+    createBuilding(x,y,z){
     /*La funcion recibe:
-    @ h: Alto del edificio.
-    @ x: Numero que indica el ancho de las elevaciones.
-    @ z: Longitud de una elevacion del edificio.
+     @ x: Ancho de las elevaciones.
+     @ y: Alto del edificio.
+     @ z: Profundidad de una elevacion del edificio.
      */
 
       var edificio = new Objeto3D();
 
       //Creamos los puntos de la curva del edificio
       var puntosEdificio = [];
-      puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
-      puntosEdificio.push(vec3.fromValues(0.0, h, 0.0));
+      puntosEdificio.push( vec3.fromValues(0.0, 0.0, 0.0) );
+      puntosEdificio.push( vec3.fromValues(0.0, y, 0.0) );
 
       var arrayMatT = [];
       var mat = mat3.create();
+      var matt = mat3.create();
       mat3.identity(mat);
+      mat3.identity(matt);
       arrayMatT.push(mat);
-      arrayMatT.push(mat);
+      arrayMatT.push(matt);
 
-      //var puntosTapa = []
-
+      var puntosTapa = [];
+      puntosTapa.push( vec3.fromValues(0.0,y,0.0) );
+      puntosTapa.push( vec3.fromValues(0.0,y,z) );
       //Creamos el techo del edificio
-      //var base = new Objeto3D();
-      //base.calcularSuperficieBarrido("linea",2,2,arrayMatT,arrayVecPos);
+      var base = new Objeto3D();
+      base.calcularSuperficieBarrido("linea",2,2,arrayMatT,puntosTapa);
       //Lo ubico en la parte superior.
       //base.translate(-0.50, h-(h*0.5), 0.0);
       //base.rotate(-Math.PI/2, 0.0, 0.0, 1.0);
-      //edificio.add(base);
-
+      edificio.add(base);
       edificio.calcularSuperficieBarrido("cuadrado", 2, 5, arrayMatT, puntosEdificio);
-
-      //edificio.scale(w,h,z);
 
       return edificio;
     }

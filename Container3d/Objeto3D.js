@@ -99,12 +99,12 @@ class Objeto3D extends Container3D{
             this.figuras.calcularCuadrado(vertices, arrayVecNOR);
         }
 
-        else if(figura == RECTANGULO){
+       /* else if(figura == RECTANGULO){
             if(colms != 5){
                 console.log("para hacer un rectangulo se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularRectangulo(vertices,arrayVecNOR);
-        }
+        }*/
         else if(figura == CIRCUNFERENCIA){
             var radio = 1;
             this.figuras.calcularCirculo(colms, vertices, arrayVecNOR, radio);
