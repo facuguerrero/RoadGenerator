@@ -112,6 +112,48 @@ class ObjetosFactory{
         return ruta;
     }
 
+    createBuilding(n,w,h,z){
+    /*La funcion recibe:
+    @ n: Cantidad de elevaciones del edificio.
+    @ w: Numero que indica el ancho de las elevaciones.
+    @ h: Numero que indica la cantidad de elevaciones del edificio.
+    @ z: Longitud de una elevacion del edificio.
+     */
+
+      var edificio = new Objeto3D();
+      var curva = new CuadraticBSpline(n);
+
+
+      //Creamos los puntos de la curva del edificio
+      var puntosEdificio = [];
+      for(var i=0; i<n; i++){
+          puntosEdificio.push(vec3.fromValues(0.0, i, 0.0));
+      }
+
+      curva.setControlPoints(puntosEdificio);
+      curva.calculateArrays();
+
+      var arrayVecPos = [];
+      arrayVecPos = curva.getVecPos();
+      var arrayMatT = [];
+      arrayMatT = curva.getArrayMatT();
+
+      //var buffcalc = new BufferCalculator(arrayVecPos.length,2);
+      //edificio.setBufferCreator(buffcalc);
+      //edificio.build();
+
+      var base = new Objeto3D();
+      base.calcularSuperficieBarrido("linea",n,2,arrayMatT,arrayVecPos);
+      base.translate(1.0, h, 1.0);
+      base.rotate(-Math.PI/2, 0.0, 0.0, 1.0);
+      edificio.add(base);
+
+      edificio.calcularSuperficieBarrido("cuadrado", n, 5, arrayMatT, arrayVecPos);
+
+      edificio.scale(w,h,z);
+
+      return edificio;
+    }
 
 
 }
