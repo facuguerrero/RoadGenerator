@@ -27,7 +27,7 @@ class CuadraticBSpline{
 
     calculateArrays(){
 
-        for(var i = 0; i < this.rows; i++){
+        for(var i = 0; i < this.rows; i += 0.1){
             //se cargan todas las matrices y vectores
             var u = i * this.getLength() / (this.rows - 1);
 
