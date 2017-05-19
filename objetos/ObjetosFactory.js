@@ -41,51 +41,16 @@ class ObjetosFactory{
 
         var ruta = new Objeto3D();
 
-        var curva = new CuadraticBSpline(puntos.length);
+        var curvaRuta = new CuadraticBSpline(puntos.length, 0.1, false);
 
-        curva.setControlPoints(puntos);
-        curva.calculateArrays();
+        curvaRuta.setControlPoints(puntos);
+        curvaRuta.calculateArrays();
 
         var vecPos = [];
-        vecPos = curva.getVecPos();
-
-        var arrayMatTT = [];
-        arrayMatTT = curva.getArrayMatT();
+        vecPos = curvaRuta.getVecPos();
 
         var arrayMatT = [];
-        var matt = mat3.create();
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-        arrayMatT.push(matt);
-
-
+        arrayMatT = curvaRuta.getArrayMatT();
 
         var buffcalc = new BufferCalculator(vecPos.length,9);
         ruta.setBufferCreator(buffcalc);
@@ -106,10 +71,41 @@ class ObjetosFactory{
         baseRuta2.add(asfaltoRuta1);
 
         baseRuta2.calcularSuperficieBarrido("base_ruta", vecPos.length, 9, arrayMatT, vecPos);
-        baseRuta2.translate(-20.0, 0.0, 0.0);
+        baseRuta2.translate(-18.0, 0.0, 0.0);
         ruta.add(baseRuta2);
 
+        var farol1 = this.createFarol();
+        ruta.add(farol1 );
+
         return ruta;
+    }
+
+    createFarol(){
+
+        var farol = new Objeto3D();
+
+        var puntos_farol = [];
+        puntos_farol.push(vec3.fromValues(2.0, -5.0, 0.0));
+        puntos_farol.push(vec3.fromValues(2.0, 5.0, 0.0));
+        puntos_farol.push(vec3.fromValues(2.0, 11.0, 0.0));
+        puntos_farol.push(vec3.fromValues(4.0, 15.0, 0.0));
+        puntos_farol.push(vec3.fromValues(6.0, 15.0, 0.0));
+
+        var curvaFarol = new CuadraticBSpline(puntos_farol.length, 0.1, false);
+
+        curvaFarol.setControlPoints(puntos_farol);
+        curvaFarol.calculateArrays();
+
+        var vecPos = [];
+        vecPos = curvaFarol.getVecPos();
+
+        var arrayMatT = [];
+        arrayMatT = curvaFarol.getArrayMatT();
+
+        farol.calcularSuperficieBarrido("circunferencia", vecPos.length, 10, arrayMatT, vecPos);
+
+        return farol;
+
     }
 
     createBuilding(x,y,z){
