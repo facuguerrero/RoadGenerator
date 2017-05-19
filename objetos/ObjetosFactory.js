@@ -125,6 +125,7 @@ class ObjetosFactory{
       var puntosEdificio = [];
       puntosEdificio.push( vec3.fromValues(0.0, 0.0, 0.0) );
       puntosEdificio.push( vec3.fromValues(0.0, y, 0.0) );
+      puntosEdificio.push( vec3.fromValues(x,1.0,z) );
 
       var arrayMatT = [];
       var mat = mat3.create();
@@ -134,17 +135,16 @@ class ObjetosFactory{
       arrayMatT.push(mat);
       arrayMatT.push(matt);
 
-      //var puntosTapa = [];
-      //puntosTapa.push( vec3.fromValues(0.0,y,0.0) );
-      //puntosTapa.push( vec3.fromValues(0.0,y,z) );
+      var puntosTapa = [];
+      puntosTapa.push( vec3.fromValues(0.0,y,0.0) );
+      puntosTapa.push( vec3.fromValues(0.0,y,z) );
       //Creamos el techo del edificio
-      //var base = new Objeto3D();
-      //base.calcularSuperficieBarrido("linea",2,2,arrayMatT,puntosTapa);
-      //Lo ubico en la parte superior.
-      //base.translate(-0.50, h-(h*0.5), 0.0);
-      //base.rotate(-Math.PI/2, 0.0, 0.0, 1.0);
-      //edificio.add(base);
-      edificio.calcularSuperficieBarrido("cuadrado", 2, 5, arrayMatT, puntosEdificio);
+      var base = new Objeto3D();
+      base.calcularSuperficieBarrido("linea",2,2,arrayMatT,puntosTapa);
+
+      edificio.add(base);
+
+      edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
 
       return edificio;
     }
