@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/CuadraticBSpline.js" afterPath="$PROJECT_DIR$/primitivas/CuadraticBSpline.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,7 +88,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-595">
               <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-              <folding />
+              <folding>
+                <marker date="1495211178977" expanded="true" signature="1344:2899" ph="/*...*/" />
+                <marker date="1495211178977" expanded="true" signature="3000:3642" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="3129:3635" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="3494:3623" ph="//..." />
+                <marker date="1495211178977" expanded="true" signature="3684:4074" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="4119:5933" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,9 +103,20 @@
       <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1584">
-              <caret line="88" column="65" lean-forward="true" selection-start-line="88" selection-start-column="65" selection-end-line="88" selection-end-column="65" />
-              <folding />
+            <state relative-caret-position="1602">
+              <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+              <folding>
+                <marker date="1495211178977" expanded="true" signature="5003:5029" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5003:5136" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5003:5901" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5003:8734" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5173:5388" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5428:5651" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5456:5572" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5665:5729" ph="{...}" />
+                <marker date="1495211178977" expanded="true" signature="5908:6261" ph="/** Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara ...*/" />
+                <marker date="1495211178977" expanded="true" signature="6444:6594" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -270,6 +285,118 @@
       <recent name="$PROJECT_DIR$/Template2 TP" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/Objeto3D.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/objetos/ObjetosFactory.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/primitivas/FigurasPrimitivas.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -404,14 +531,7 @@
       <workItem from="1494861288755" duration="1346000" />
       <workItem from="1494867555616" duration="3726000" />
       <workItem from="1494955421581" duration="1369000" />
-      <workItem from="1495185455777" duration="6946000" />
-    </task>
-    <task id="LOCAL-00017" summary="cambio template 2">
-      <created>1493580584425</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1493580584425</updated>
+      <workItem from="1495185455777" duration="6968000" />
     </task>
     <task id="LOCAL-00018" summary="cambio template 2">
       <created>1493580751875</created>
@@ -749,11 +869,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495123324679</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Falso edificio">
+      <created>1495211166676</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1495211166676</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136563000" />
+    <option name="totallyTimeSpent" value="136585000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -766,12 +893,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11659193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11548913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1124,9 +1250,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="88" column="65" lean-forward="true" selection-start-line="88" selection-start-column="65" selection-end-line="88" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="1602">
+          <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+          <folding>
+            <marker date="1495211178977" expanded="true" signature="5003:5029" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5003:5136" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5003:5901" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5003:8734" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5173:5388" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5428:5651" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5456:5572" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5665:5729" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="5908:6261" ph="/** Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara ...*/" />
+            <marker date="1495211178977" expanded="true" signature="6444:6594" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1166,7 +1303,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-595">
           <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1495211178977" expanded="true" signature="1344:2899" ph="/*...*/" />
+            <marker date="1495211178977" expanded="true" signature="3000:3642" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="3129:3635" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="3494:3623" ph="//..." />
+            <marker date="1495211178977" expanded="true" signature="3684:4074" ph="{...}" />
+            <marker date="1495211178977" expanded="true" signature="4119:5933" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
