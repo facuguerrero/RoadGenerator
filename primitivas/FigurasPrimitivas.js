@@ -41,28 +41,28 @@ class FigurasPrimitivias{
     }
 
 
-    /*calcularRectangulo(vertices, arrayVecNOR, ancho, largo){
+    calcularEstructuraEdificio(vertices, arrayVecNOR, escalado){
 
-        //COMENTARIO: Faltan completar las normales que no se como se llenan, solo se que el eje z va vacio
-
+        var x = escalado[0];
+        var z = escalado[2];
         //primer vertice
         vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
         var vecNorm1 = vec3.fromValues(0.0, 0.0, 0.0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        vertices.push(vec3.fromValues(1.0, 0.0, 0.0));
-        var vecNorm2 = vec3.fromValues(1.0, 0.0, 0.0);
+        vertices.push(vec3.fromValues(0.0, 0.0, z));
+        var vecNorm2 = vec3.fromValues(0.0, 0.0, z);
         vec3.normalize(vecNorm2, vecNorm2);
         arrayVecNOR.push(vecNorm2);
 
-        vertices.push(vec3.fromValues(1.0, 1.0, 0.0));
-        var vecNorm3 = vec3.fromValues(1.0, 1.0, 0.0);
+        vertices.push(vec3.fromValues(x, 0.0, z));
+        var vecNorm3 = vec3.fromValues(x, 0.0, z);
         vec3.normalize(vecNorm3, vecNorm3);
         arrayVecNOR.push(vecNorm3);
 
-        vertices.push(vec3.fromValues(0.0, 1.0, 0.0));
-        var vecNorm4 = vec3.fromValues(0.0, 1.0, 0.0);
+        vertices.push(vec3.fromValues(x, 0.0, 0.0));
+        var vecNorm4 = vec3.fromValues(x, 0.0, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
@@ -72,7 +72,24 @@ class FigurasPrimitivias{
         vec3.normalize(vecNorm5, vecNorm5);
         arrayVecNOR.push(vecNorm5);
 
-    }*/
+    }
+
+    calcularTapaEdificio(vertices, arrayVecNOR, x){
+
+        vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
+        var vecNorm1 = vec3.fromValues(0.0, 0.0, 0.0);
+        vec3.normalize(vecNorm1, vecNorm1);
+        arrayVecNOR.push(vecNorm1);
+
+        vertices.push(vec3.fromValues(x, 0.0, 0.0));
+        var vecNorm2 = vec3.fromValues(x, 0.0, 0.0);
+        vec3.normalize(vecNorm2, vecNorm2);
+        arrayVecNOR.push(vecNorm2);
+
+
+    }
+
+
     //crea un circulo centrado en el origen
     calcularCirculo(colms, vertices, arrayVecNOR, radio){
 

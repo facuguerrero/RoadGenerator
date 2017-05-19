@@ -6,7 +6,8 @@ var LINEA;
 LINEA = "linea";
 var BASE_RUTA = "base_ruta";
 var ASFALTO_RUTA = "asfalto_ruta";
-
+var ESTRUCTURA_EDIFICIO= "estructura_edificio";
+var TAPA_EDIFICIO="tapa_edificio";
 class Objeto3D extends Container3D{
 
   constructor(){
@@ -85,8 +86,13 @@ class Objeto3D extends Container3D{
         //console.log("supBarrido");
         var buffcalc = new BufferCalculator(rows, colms);
         //chequeo tamaños correctos
-        if((arrayMatT.length != rows || arrayVecPos.length != rows)){
-            console.log("error de dimension para la superficie");
+        if((arrayMatT.length != rows || arrayVecPos.length != rows)) {
+            //Se chequea el caso en el que es edificio
+            console.log(arrayVecPos.length);
+            console.log(rows);
+            if (arrayVecPos.length != rows + 1) {
+                console.log("error de dimension para la superficie");
+            }
         }
 
         var vertices = [];
@@ -99,12 +105,24 @@ class Objeto3D extends Container3D{
             this.figuras.calcularCuadrado(vertices, arrayVecNOR);
         }
 
-       /* else if(figura == RECTANGULO){
+       else if(figura == ESTRUCTURA_EDIFICIO){
             if(colms != 5){
-                console.log("para hacer un rectangulo se necesitan exactamente 5 vertices");
+                console.log("para hacer un edificio se necesitan exactamente 5 vertices");
             }
-            this.figuras.calcularRectangulo(vertices,arrayVecNOR);
-        }*/
+            //Si estamos en el edificio, se le agrega un vector para el escalado.
+            //Lo borramos para no romper la superficie.
+            var escalado = arrayVecPos.pop();
+            this.figuras.calcularEstructuraEdificio(vertices,arrayVecNOR,escalado);
+        }
+
+        else if(figura == TAPA_EDIFICIO){
+            if(colms != 2){
+                console.log("para hacer una tapa se necesitan exactamente 2 vertices");
+            }
+            //el ultimo trae la dimension de x
+           var escalado = arrayVecPos.pop();
+           this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
+        }
         else if(figura == CIRCUNFERENCIA){
             var radio = 1;
             this.figuras.calcularCirculo(colms, vertices, arrayVecNOR, radio);
@@ -112,7 +130,7 @@ class Objeto3D extends Container3D{
 
         else if(figura == LINEA){
             if(colms != 2){
-                console.log("para hacer un cuadrado se necesitan exactamente 5 vertices");
+                console.log("para hacer una linea se necesitan exactamente 2 vertices");
             }
             //console.log(colms);
             this.figuras.calcularLinea(vertices, arrayVecNOR);
