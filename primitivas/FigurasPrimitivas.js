@@ -43,8 +43,6 @@ class FigurasPrimitivias{
 
     calcularEstructuraEdificio(vertices, arrayVecNOR, escalado){
 
-
-        console.log(escalado);
         var x = escalado[0];
         var z = escalado[2];
         //primer vertice
@@ -73,6 +71,21 @@ class FigurasPrimitivias{
         var vecNorm5 = vec3.fromValues(0.0, 0.0, 0.0);
         vec3.normalize(vecNorm5, vecNorm5);
         arrayVecNOR.push(vecNorm5);
+
+    }
+
+    calcularTapaEdificio(vertices, arrayVecNOR, x){
+
+        vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
+        var vecNorm1 = vec3.fromValues(0.0, 0.0, 0.0);
+        vec3.normalize(vecNorm1, vecNorm1);
+        arrayVecNOR.push(vecNorm1);
+
+        vertices.push(vec3.fromValues(x, 0.0, 0.0));
+        var vecNorm2 = vec3.fromValues(x, 0.0, 0.0);
+        vec3.normalize(vecNorm2, vecNorm2);
+        arrayVecNOR.push(vecNorm2);
+
 
     }
 
