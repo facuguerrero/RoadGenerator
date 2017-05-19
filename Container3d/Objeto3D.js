@@ -8,6 +8,7 @@ var BASE_RUTA = "base_ruta";
 var ASFALTO_RUTA = "asfalto_ruta";
 var ESTRUCTURA_EDIFICIO= "estructura_edificio";
 var TAPA_EDIFICIO="tapa_edificio";
+var CALLE = "calle";
 class Objeto3D extends Container3D{
 
   constructor(){
@@ -123,6 +124,7 @@ class Objeto3D extends Container3D{
            var escalado = arrayVecPos.pop();
            this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
         }
+
         else if(figura == CIRCUNFERENCIA){
             var radio = 1;
             this.figuras.calcularCirculo(colms, vertices, arrayVecNOR, radio);
@@ -135,18 +137,29 @@ class Objeto3D extends Container3D{
             //console.log(colms);
             this.figuras.calcularLinea(vertices, arrayVecNOR);
         }
+
         else if(figura == BASE_RUTA){
             if(colms != 9){
                 console.log("para hacer una base de ruta se necesitan exactamente 9 vertices");
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
         }
+
         else if(figura == ASFALTO_RUTA){
             if(colms != 5){
                 console.log("para hacer el asfalto de la ruta se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);
         }
+
+        else if(figura == CALLE){
+            if(colms != 2){
+                console.log("para hacer una calle se necesitan exactamente 2 vertices");
+            }
+            escalado = arrayVecPos.pop();
+            this.figuras.calcularCalle(vertices, arrayVecNOR, escalado[0]);
+        }
+
         else {
             console.log("le pasaste mal la figura");
         }

@@ -146,5 +146,45 @@ class ObjetosFactory{
       return edificio;
     }
 
+    createCalle(x,z){
+    /* Funcion que recibe 2 parametros:
+    @X es el ancho de la calle.
+    @Z es el ancho de la calle.
+
+    Devuelve una calle.
+     */
+        var calle = new Objeto3D();
+
+        var buffcalc = new BufferCalculator(2,2);
+        calle.setBufferCreator(buffcalc);
+        calle.build();
+
+        var arrayMatT = [];
+        var matt = mat3.create();
+        var mattt = mat3.create();
+        mat3.identity(matt);
+        mat3.identity(mattt);
+        arrayMatT.push(matt);
+        arrayMatT.push(mattt);
+
+        var linea = new Objeto3D();
+        var pos = [];
+        pos.push(vec3.fromValues(0.0, 0.0,0.0));
+        pos.push(vec3.fromValues(0.0, 0.0, z));
+        pos.push(vec3.fromValues(x,0,0));
+        linea.calcularSuperficieBarrido("calle", 2, 2, arrayMatT, pos);
+        calle.add(linea);
+
+        return calle;
+
+    }
+
+    createEsquina(x){
+        /*La esquina es considerada como
+        una calle con las mismas dimensiones de
+        ancho y largo.
+         */
+       return this.createCalle(x,x);
+    }
 
 }
