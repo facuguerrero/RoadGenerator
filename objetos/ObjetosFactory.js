@@ -88,10 +88,10 @@ class ObjetosFactory{
         puntos_farol.push(vec3.fromValues(2.0, -5.0, 0.0));
         puntos_farol.push(vec3.fromValues(2.0, 5.0, 0.0));
         puntos_farol.push(vec3.fromValues(2.0, 11.0, 0.0));
-        puntos_farol.push(vec3.fromValues(4.0, 15.0, 0.0));
-        puntos_farol.push(vec3.fromValues(6.0, 15.0, 0.0));
+        puntos_farol.push(vec3.fromValues(10.0, 15.0, 0.0));
+        //puntos_farol.push(vec3.fromValues(6.0, 15.0, 0.0));
 
-        var curvaFarol = new CuadraticBSpline(puntos_farol.length, 0.1, false);
+        var curvaFarol = new CuadraticBSpline(puntos_farol.length, 1, true);
 
         curvaFarol.setControlPoints(puntos_farol);
         curvaFarol.calculateArrays();
@@ -185,6 +185,16 @@ class ObjetosFactory{
         ancho y largo.
          */
        return this.createCalle(x,x);
+    }
+
+    createCar(){
+
+        var auto = new Objeto3D();
+
+        var carroceria = new Objeto3D();
+        var puntosBaseAuto = [];
+
+
     }
 
 }
