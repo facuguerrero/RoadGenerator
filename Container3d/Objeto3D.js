@@ -9,6 +9,9 @@ var ASFALTO_RUTA = "asfalto_ruta";
 var ESTRUCTURA_EDIFICIO= "estructura_edificio";
 var TAPA_EDIFICIO="tapa_edificio";
 var CALLE = "calle";
+var CARROCERIA="carroceria";
+var RUEDA="rueda";
+
 class Objeto3D extends Container3D{
 
   constructor(){
@@ -89,10 +92,9 @@ class Objeto3D extends Container3D{
         //chequeo tamaños correctos
         if((arrayMatT.length != rows || arrayVecPos.length != rows)) {
             //Se chequea el caso en el que es edificio
-            console.log(arrayVecPos.length);
-            console.log(rows);
+            console.log("error de dimension para la superficie");
             if (arrayVecPos.length != rows + 1) {
-                console.log("error de dimension para la superficie");
+                console.log("error de dimension para la superficie con escalado");
             }
         }
 
@@ -158,6 +160,19 @@ class Objeto3D extends Container3D{
             }
             escalado = arrayVecPos.pop();
             this.figuras.calcularCalle(vertices, arrayVecNOR, escalado[0]);
+        }
+
+        else if(figura == CARROCERIA){
+            if(colms != 19){
+                console.log("para hacer la carroceria se necesitan 19 vertices");
+            }
+            this.figuras.calcularCarroceria(vertices, arrayVecNOR);
+        }
+
+       else if(figura == RUEDA){
+
+            escalado = arrayVecPos.pop();
+            this.figuras.createRueda(vertices,arrayVecNOR,escalado);
         }
 
         else {

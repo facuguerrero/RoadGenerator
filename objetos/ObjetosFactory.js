@@ -228,13 +228,44 @@ class ObjetosFactory{
     }
 
     createCar(){
+        /*Variables a modificar para las dimensiones del auto*/
 
         var auto = new Objeto3D();
+        var buffcalc = new BufferCalculator(2,2);
+        auto.setBufferCreator(buffcalc);
+        auto.build();
 
+
+        //Creamos la carroceria del auto
         var carroceria = new Objeto3D();
-        var puntosBaseAuto = [];
 
+        //Declaro los puntos de la carroceria del auto
+        var puntosCarroceria =[];
+        puntosCarroceria.push( vec3.fromValues(0.0,0.0,0.0) );
+        puntosCarroceria.push( vec3.fromValues(0.0,0.0,4.0) );
 
+        //Matrices de transformacion
+        var arrayMat = [];
+        var mat = mat3.create();
+        var matt = mat3.create();
+        mat3.identity(mat);
+        mat3.identity(matt);
+        arrayMat.push(mat);
+        arrayMat.push(matt);
+
+        carroceria.calcularSuperficieBarrido("carroceria",2,19,arrayMat, puntosCarroceria);
+        auto.add(carroceria);
+
+        //Creamos las ruedas del auto
+        var rueda1 = new Objeto3D();
+
+        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
+        //posicionamientos y el radio
+        puntosCarroceria.push( vec3.fromValues(1.0,1.0, 0.9) );
+        rueda1.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
+        auto.add(rueda1);
+
+        return auto;
     }
 
 }

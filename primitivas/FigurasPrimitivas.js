@@ -260,5 +260,101 @@ class FigurasPrimitivias{
         arrayVecNOR.push(vecNorm2);
     }
 
+    calcularCarroceria(vertices,arrayVecNOR){
+
+        var x0= 0.0;
+        var x1= 1.0;
+        var x2= 7.0;
+        var x3= 11.0;
+        var r= 1.0;
+        var y1= 1.0;
+        var y2= 2.0;
+        var y3= 2.5;
+
+        /*Declaro los puntos de la carroceria del auto
+        arrancando por el vertice inferior izquierdo, y avanzando
+        en x hasta la trompa del auto*/
+        vertices.push(vec3.fromValues(x0, y1, 0.0));
+        var vecNorm1 = vec3.fromValues(x0, y1, 0.0);
+        vec3.normalize(vecNorm1, vecNorm1);
+        arrayVecNOR.push(vecNorm1);
+
+        this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR, false);
+
+        vertices.push(vec3.fromValues(x2, y1, 0.0));
+        var vecNorm4 = vec3.fromValues(x2, y1, 0.0);
+        vec3.normalize(vecNorm4, vecNorm4);
+        arrayVecNOR.push(vecNorm4);
+
+        this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR, false);
+
+        vertices.push(vec3.fromValues(x3, y1, 0.0));
+        var vecNorm4 = vec3.fromValues(x3, y1, 0.0);
+        vec3.normalize(vecNorm4, vecNorm4);
+        arrayVecNOR.push(vecNorm4);
+
+        vertices.push(vec3.fromValues(x3, y2, 0.0));
+        var vecNorm4 = vec3.fromValues(x3, y2, 0.0);
+        vec3.normalize(vecNorm4, vecNorm4);
+        arrayVecNOR.push(vecNorm4);
+
+        vertices.push(vec3.fromValues(x2, y3, 0.0));
+        var vecNorm4 = vec3.fromValues(x3, y3, 0.0);
+        vec3.normalize(vecNorm4, vecNorm4);
+        arrayVecNOR.push(vecNorm4);
+
+        vertices.push(vec3.fromValues(x0, y3, 0.0));
+        var vecNorm4 = vec3.fromValues(x0, y3, 0.0);
+        vec3.normalize(vecNorm4, vecNorm4);
+        arrayVecNOR.push(vecNorm4);
+
+        //ultimo vertice
+        vertices.push(vec3.fromValues(x0, y1, 0.0));
+        var vecNorm5 = vec3.fromValues(x0, y1, 0.0);
+        vec3.normalize(vecNorm5, vecNorm5);
+        arrayVecNOR.push(vecNorm5);
+    }
+
+    createBaseRueda(x,y,r,vertices, arrayVecNOR, esRueda){
+        /*Funcion auxiliar para crear la cabidad de la rueda.
+        * @X es el x apartir del cual dibujamos
+        * @Y es el y a partir del cual dibujamos
+        * @r es el radio
+        * @esRueda es un bool para saber si es la rueda o la cabidad*/
+
+        var cantPuntos = 1;
+        var total = 0.0;
+
+        if(esRueda){
+            total = 2.0;
+        }
+
+        for (var j = -cantPuntos; j <= total; j+=0.2) {
+
+            var u = (j * Math.PI);
+
+            var vec = vec3.fromValues( (x+r) + (r*Math.cos(u)) , y + Math.abs(r*Math.sin(u)) , 0.0);
+            if(esRueda) {
+                console.log(vec);
+            }
+            vertices.push(vec);
+
+            var vecNorm = vec3.fromValues(Math.cos(2 * Math.PI * u), 0.0, Math.sin(2 * Math.PI * u));
+            vec3.normalize(vecNorm, vecNorm);
+            arrayVecNOR.push(vecNorm);
+            // Esto agrega 6 puntos puntos
+        }
+    }
+
+    createRueda(vertices,arrayVecNOR,escalado){
+        /*Escalado es un vector que tiene los dos primeros datos
+         con las posiciones, y el tercero con el radio.
+         */
+        var x = escalado[0];
+        var y = escalado[1];
+        var r = escalado[2];
+        this.createBaseRueda(x,y,r, vertices , arrayVecNOR , true);
+    }
+
 
 }
