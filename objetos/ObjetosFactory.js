@@ -217,10 +217,13 @@ class ObjetosFactory{
         auto.add(carroceria);
 
         //Creamos las ruedas del auto
-        var rueda = new Objeto3D();
-        //Las matrices y los puntos son los mismos que la carroceria
+        var rueda1 = new Objeto3D();
 
-        //rueda.calcularSuperficieBarrido("rueda",2,2,arrayMat,puntosCarroceria);
+        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
+        //posicionamientos y el radio
+        puntosCarroceria.push( vec3.fromValues(1.0,1.0, 0.9) );
+        rueda1.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
+        auto.add(rueda1);
 
         return auto;
     }

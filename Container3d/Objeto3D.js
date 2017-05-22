@@ -169,9 +169,11 @@ class Objeto3D extends Container3D{
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
         }
 
-       /* else if(figura == RUEDA){
-            this.figuras.createRueda();
-        }*/
+       else if(figura == RUEDA){
+
+            escalado = arrayVecPos.pop();
+            this.figuras.createRueda(vertices,arrayVecNOR,escalado);
+        }
 
         else {
             console.log("le pasaste mal la figura");

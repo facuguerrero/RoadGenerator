@@ -287,7 +287,7 @@ class FigurasPrimitivias{
         var total = 0.0;
 
         if(esRueda){
-            total = 1.0;
+            total = 2.0;
         }
 
         for (var j = -cantPuntos; j <= total; j+=0.2) {
@@ -295,7 +295,9 @@ class FigurasPrimitivias{
             var u = (j * Math.PI);
 
             var vec = vec3.fromValues( (x+r) + (r*Math.cos(u)) , y + Math.abs(r*Math.sin(u)) , 0.0);
-            //console.log(vec);
+            if(esRueda) {
+                console.log(vec);
+            }
             vertices.push(vec);
 
             var vecNorm = vec3.fromValues(Math.cos(2 * Math.PI * u), 0.0, Math.sin(2 * Math.PI * u));
@@ -305,10 +307,14 @@ class FigurasPrimitivias{
         }
     }
 
-    createRueda(vertices,arrayVecNOR){
-        var r=0.9;
-
-        //this.createBaseRueda()
+    createRueda(vertices,arrayVecNOR,escalado){
+        /*Escalado es un vector que tiene los dos primeros datos
+         con las posiciones, y el tercero con el radio.
+         */
+        var x = escalado[0];
+        var y = escalado[1];
+        var r = escalado[2];
+        this.createBaseRueda(x,y,r, vertices , arrayVecNOR , true);
     }
 
 
