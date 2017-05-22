@@ -126,7 +126,7 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == CIRCUNFERENCIA){
-            var radio = 1;
+            var radio = 0.35;
             this.figuras.calcularCirculo(colms, vertices, arrayVecNOR, radio);
         }
 

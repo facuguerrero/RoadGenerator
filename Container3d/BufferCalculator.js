@@ -166,7 +166,7 @@ class BufferCalculator{
                 var binormVer = vec3.fromValues(0.0,0.0,1.0);
 
                 var tanVer = vec3.create();
-                vec3.cross(tanVer,normVer,binormVer);
+                vec3.cross(tanVer,binormVer, normVer);
 
                 vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
                 vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);

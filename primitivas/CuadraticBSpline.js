@@ -90,6 +90,11 @@ class CuadraticBSpline{
         //armamos la matriz de transformacion con los 3 vectores
         var matRotacion = mat3.create();
         if (this.normalPath == true) {
+
+            // matRotacion = [ vecNorm[0], vecNorm[1], vecNorm[2],
+            //     vecBinorm[0], vecBinorm[1], vecBinorm[2],
+            //     vecTang[0], vecTang[1], vecTang[2] ];
+
             for (var j = 0; j < 3; j++) {
                 matRotacion[j + 0] = vecBinorm[j];
                 matRotacion[j + 3] = vecNorm[j];
@@ -105,6 +110,7 @@ class CuadraticBSpline{
 
     getTangAtU(u){
 
+
         /* EN CASO DE PROBLEMA VER EL CONTROL EN LAS PUNTAS
          SI LOS PUNTOS SON IGUALES HAY QUE DEFINIR EL (0,0,0) */
         var aux = Math.floor(u);
@@ -118,42 +124,17 @@ class CuadraticBSpline{
         var p2 = this.control_points[aux+1];
         var p3 = this.control_points[aux+2];
 
-        //HACE FALTA? REVISAR
-        // if (u < 1){
-        //     var son_iguales = true;
-        //     son_iguales &= (p1[0] == p2[0]) && (p2[0] == p3[0]);
-        //     son_iguales &= (p1[1] == p2[1]) && (p2[1] == p3[1]);
-        //     son_iguales &= (p1[2] == p2[2]) && (p2[2] == p3[2]);
-        //     if (son_iguales) {
-        //         var aux = vec3.fromValues(0.0, 0.0, 0.0);
-        //         vec3.sub(aux, p3, p2);
-        //         vec3.normalize(aux, aux);
-        //         return aux;
-        //     }
-        // }
-        //
-        // if (u > this.getLength()-1) {
-        //     var son_iguales = true;
-        //     son_iguales &= (p1[0] == p2[0]) && (p2[0] == p3[0]);
-        //     son_iguales &= (p1[1] == p2[1]) && (p2[1] == p3[1]);
-        //     son_iguales &= (p1[2] == p2[2]) && (p2[2] == p3[2]);
-        //     if (son_iguales) {
-        //         var aux = vec3.fromValues(0.0, 0.0, 0.0);
-        //         vec3.sub(aux, p2, p1);
-        //         vec3.normalize(aux, aux);
-        //         return aux;
-        //     }
-        // }
-
         return this.interpolarDeriv(p1, p2, p3, t);
 
     }
 
     interpolarDeriv(p1, p2, p3, t){
         var aux = vec3.fromValues(0.0, 0.0, 0.0);
-        var base1 = (t);
+
+        var base1 = (t - 1);
         var base2 = (-2*t +1);
-        var base3 = (t - 1);
+        var base3 = (t);
+
         vec3.scaleAndAdd(aux, aux, p1, base1);
         vec3.scaleAndAdd(aux, aux, p2, base2);
         vec3.scaleAndAdd(aux, aux, p3, base3);
@@ -161,6 +142,7 @@ class CuadraticBSpline{
     }
 
     getNormAtU(u,vecTang){
+
         var vecNorm = vec3.create();
         var vecBinorm = vec3.fromValues(0.0, 0.0, 1.0);
         vec3.cross(vecNorm, vecBinorm, vecTang);

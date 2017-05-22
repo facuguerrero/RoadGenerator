@@ -97,10 +97,9 @@ class FigurasPrimitivias{
         var len = 1.0;
 
         for (var j = 0; j < colms; j++) {
-
             var u = j * len / (colms - 1);
-            vertices.push(vec3.fromValues(radio * Math.cos(2 * Math.PI * u), 0.0, radio * Math.sin(2 * Math.PI * u)));
-            var vecNorm = vec3.fromValues(Math.cos(2 * Math.PI * u), 0.0, Math.sin(2 * Math.PI * u));
+            vertices.push(vec3.fromValues(radio * Math.cos(2 * Math.PI * u), radio * Math.sin(2 * Math.PI * u), 0.0));
+            var vecNorm = vec3.fromValues(Math.cos(2 * Math.PI * u), Math.sin(2 * Math.PI * u), 0.0);
             vec3.normalize(vecNorm, vecNorm);
             arrayVecNOR.push(vecNorm);
 
@@ -164,16 +163,56 @@ class FigurasPrimitivias{
         vec3.normalize(vecNorm7, vecNorm7);
         arrayVecNOR.push(vecNorm7);
 
-        vertices.push(vec3.fromValues(-8.0, 0.0, 0.0));
+        vertices.push(vec3.fromValues(-8.0, 0.2, 0.0));
         var vecNorm8 = vec3.fromValues(-1.0, -1.0, 0.0);
         vec3.normalize(vecNorm8, vecNorm8);
         arrayVecNOR.push(vecNorm8);
 
-        //ultimo vertice repite el primero vertice
-        vertices.push(vec3.fromValues(8.0, 0.0, 0.0));
-        var vecNorm9 = vec3.fromValues(1.0, -1.0, 0.0);
+        vertices.push(vec3.fromValues(-11.0, 0.2, 0.0));
+        var vecNorm9 = vec3.fromValues(-1.0, 1.0, 0.0);
         vec3.normalize(vecNorm9, vecNorm9);
         arrayVecNOR.push(vecNorm9);
+
+        vertices.push(vec3.fromValues(-11.0, 3.0, 0.0));
+        var vecNorm10 = vec3.fromValues(1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm10, vecNorm10);
+        arrayVecNOR.push(vecNorm10);
+
+        vertices.push(vec3.fromValues(-12.0, 3.0, 0.0));
+        var vecNorm11 = vec3.fromValues(-1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm11, vecNorm11);
+        arrayVecNOR.push(vecNorm11);
+
+        vertices.push(vec3.fromValues(-13.0, 1.0, 0.0));
+        var vecNorm12 = vec3.fromValues(-1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm12, vecNorm12);
+        arrayVecNOR.push(vecNorm12);
+
+        vertices.push(vec3.fromValues(-25.0, 1.0, 0.0));
+        var vecNorm13 = vec3.fromValues(1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm13, vecNorm13);
+        arrayVecNOR.push(vecNorm13);
+
+        vertices.push(vec3.fromValues(-26.0, 3.0, 0.0));
+        var vecNorm14 = vec3.fromValues(1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm14, vecNorm14);
+        arrayVecNOR.push(vecNorm14);
+
+        vertices.push(vec3.fromValues(-27.0, 3.0, 0.0));
+        var vecNorm15 = vec3.fromValues(-1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm15, vecNorm15);
+        arrayVecNOR.push(vecNorm15);
+
+        vertices.push(vec3.fromValues(-27.0, 0.0, 0.0));
+        var vecNorm16 = vec3.fromValues(-1.0, -1.0, 0.0);
+        vec3.normalize(vecNorm16, vecNorm16);
+        arrayVecNOR.push(vecNorm16);
+
+        //ultimo vertice repite el primero vertice
+        vertices.push(vec3.fromValues(8.0, 0.0, 0.0));
+        var vecNorm17 = vec3.fromValues(1.0, -1.0, 0.0);
+        vec3.normalize(vecNorm17, vecNorm17);
+        arrayVecNOR.push(vecNorm17);
 
     }
 
