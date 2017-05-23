@@ -390,17 +390,17 @@ class FigurasPrimitivias{
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        vertices.push(vec3.fromValues(0,4,0));
+        vertices.push(vec3.fromValues(0,1,0));
         var vecNorm1 = vec3.fromValues(-1, 1, 0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        vertices.push(vec3.fromValues(4,4,0));
+        vertices.push(vec3.fromValues(1,1,0));
         var vecNorm1 = vec3.fromValues(1, 1, 0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        vertices.push(vec3.fromValues(4,0,0));
+        vertices.push(vec3.fromValues(1,0,0));
         var vecNorm1 = vec3.fromValues(1, -1, 0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);

@@ -382,7 +382,7 @@ class ObjetosFactory {
         //manzana.add(edificio2);
 
         centro.translate(anchoVereda/2,0.05,anchoVereda/2);
-        manzana.add(centro);
+        //manzana.add(centro);
         manzana.add(vereda);
         return manzana;
     }
