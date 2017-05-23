@@ -383,7 +383,7 @@ class FigurasPrimitivias{
 
     }
 
-    calcularVereda(vertices, arrayVecNor){
+    calcularVereda(vertices, arrayVecNOR){
 
         vertices.push(vec3.fromValues(0,0,0));
         var vecNorm1 = vec3.fromValues(-1, -1, 0);
