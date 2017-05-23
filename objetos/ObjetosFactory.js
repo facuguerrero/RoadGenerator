@@ -338,11 +338,11 @@ class ObjetosFactory {
     }
 
 
-    createManzanaB(x){
+    createManzanaB(x, alturas){
 
         var manzana = this.createEscene(x);
         var anchoVereda = 4.0;
-        var centro =this.createEscene(x-anchoVereda);
+        var centro = this.createEscene(x-anchoVereda);
 
         var puntos = [];
         puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
@@ -353,37 +353,77 @@ class ObjetosFactory {
         puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
         puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
         puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
-        // puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
-        // puntos.push(vec3.fromValues(0.0, 18.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
 
         var vereda = this.createVereda(puntos);
 
-        var edificio1 = this.createBuilding(2.5, 8.0, 2.5);
+        var edificio1 = this.createBuilding(4.0, alturas[0], 5.0);
         centro.add(edificio1);
 
-        var edificio2 = this.createBuilding(2.0,10.0,2.5);
-        edificio2.translate(2.5,0.0,0.0);
+        var edificio2 = this.createBuilding(5.0,alturas[1],2.5);
+        edificio2.translate(4.15,0.0,0.0);
         centro.add(edificio2);
 
-        var edificio2 = this.createBuilding(3.0,5.0,2.5);
-        edificio2.translate(2.5,0.0,0.0);
-        //centro.add(edificio2);
+        var edificio3 = this.createBuilding(3.5,alturas[2],2.5);
+        edificio3.translate(9.3,0.0,0.0);
+        centro.add(edificio3);
 
-        //var edificio2 = this.createBuilding(2.0,10.0,2.5);
-        //edificio2.translate(2.6,0,0);
-        //manzana.add(edificio2);
+        var edificio4 = this.createBuilding(3.05,alturas[3],4.0);
+        edificio4.translate(12.95,0.0,0.0);
+        centro.add(edificio4);
+
+        var edificio5 = this.createBuilding(2.5,alturas[4],3.5);
+        edificio5.translate(0.0,0.0,5.15);
+        centro.add(edificio5);
+
+        var edificio6 = this.createBuilding(2.5,alturas[5],4.0);
+        edificio6.translate(0.0,0.0,8.8);
+        centro.add(edificio6);
+
+        var edificio7 = this.createBuilding(3.5,alturas[6],3.05);
+        edificio7.translate(0.0,0.0,12.95);
+        centro.add(edificio7);
+
+        var edificio8 = this.createBuilding(3.0,alturas[7],2.5);
+        edificio8.translate(3.65,0.0,13.5);
+        centro.add(edificio8);
+
+        var edificio9 = this.createBuilding(3.5,alturas[8],2.5);
+        edificio9.translate(6.8,0,13.5);
+        centro.add(edificio9);
+
+        var edificio10 = this.createBuilding(2.5,alturas[9],2.5);
+        edificio10.translate(10.45,0,13.5);
+        centro.add(edificio10);
+
+        var edificio11 = this.createBuilding(2.9,alturas[10],2.5);
+        edificio11.translate(13.1,0,13.5);
+        centro.add(edificio11);
+
+        var edificio12 = this.createBuilding(2.5,alturas[11],3.0);
+        edificio12.translate(13.5,0.0,4.1);
+        centro.add(edificio12);
+
+        var edificio13 = this.createBuilding(2.5,alturas[12],2.5);
+        edificio13.translate(13.5,0.0,7.25);
+        centro.add(edificio13);
+
+        var edificio14 = this.createBuilding(2.5,alturas[13],3.5);
+        edificio14.translate(13.5,0.0,9.9);
+        centro.add(edificio14);
 
         centro.translate(anchoVereda/2,0.05,anchoVereda/2);
         manzana.add(centro);

@@ -501,7 +501,8 @@
             var largoCalle=20.0;
             var manzana = 20.0;
 
-            manzana1 = factory.createManzanaB(manzana);
+            var alturas = [8.0, 10.0, 6.0, 9.0, 9.0, 7.0, 10.0, 8.0, 6.0, 10.0,7.0, 5.0,8.0,6.0];
+            manzana1 = factory.createManzanaB(manzana, alturas);
             escena = factory.createEscene( (4*manzana) + (3*anchoCalle) );
 
             //Manzanas 1 a 4 estan sobre y=0 y se numeran en x creciente
