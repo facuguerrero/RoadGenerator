@@ -465,11 +465,7 @@
 
             var model_matrix_escena = mat4.create();
             mat4.identity(model_matrix_escena);
-            //escena.draw(model_matrix_escena, false);
-
-            var model_matrix_manzana1 = mat4.create();
-            mat4.identity(model_matrix_manzana1);
-            manzana1.draw(model_matrix_manzana1, false);
+            escena.draw(model_matrix_escena, false);
 
         }
 
@@ -501,8 +497,7 @@
             var largoCalle=20.0;
             var manzana = 20.0;
 
-            var alturas = [8.0, 10.0, 6.0, 9.0, 9.0, 7.0, 10.0, 8.0, 6.0, 10.0,7.0, 5.0,8.0,6.0];
-            manzana1 = factory.createManzanaB(manzana, alturas);
+            manzana1 = factory.createManzanaB(manzana);
             escena = factory.createEscene( (4*manzana) + (3*anchoCalle) );
 
             //Manzanas 1 a 4 estan sobre y=0 y se numeran en x creciente
@@ -664,6 +659,8 @@
             esquina9= factory.createEsquina(anchoCalle);
             esquina9.translate(3*manzana + 2*anchoCalle,0.1,3*manzana+ 2*anchoCalle);
             escena.add(esquina9);
+
+            escena.add(manzana1);
 
             camera = new CameraHandler();
 

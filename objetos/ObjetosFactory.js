@@ -338,11 +338,13 @@ class ObjetosFactory {
     }
 
 
-    createManzanaB(x, alturas){
+    createManzanaB(x){
 
         var manzana = this.createEscene(x);
         var anchoVereda = 4.0;
         var centro = this.createEscene(x-anchoVereda);
+
+        var alturas =this.llenarAlturas();
 
         var puntos = [];
         puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
@@ -441,5 +443,22 @@ class ObjetosFactory {
             mat[2], mat[5], mat[8], 0,
             0, 0, 0, 1];
         return new_mat;
+    }
+
+    llenarAlturas(){
+        var alturas = [];
+        var variaciones = [0.3,0.5,0.7];
+        for(var i =0.0; i<14;i++){
+            console.log(i);
+            var num = Math.random();
+
+            if(num <0.3 || num>0.7){
+                num = variaciones[i%3];
+            }
+            console.log(num);
+
+            alturas.push(num*20);
+        }
+        return alturas;
     }
 }
