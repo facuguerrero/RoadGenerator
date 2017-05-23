@@ -373,17 +373,21 @@ class ObjetosFactory {
         var edificio1 = this.createBuilding(2.5, 8.0, 2.5);
         centro.add(edificio1);
 
-        var edificio2 = this.createBuilding(2.0,10,2.5);
-        edificio2.translate(2.5,0,0);
+        var edificio2 = this.createBuilding(2.0,10.0,2.5);
+        edificio2.translate(2.5,0.0,0.0);
         centro.add(edificio2);
+
+        var edificio2 = this.createBuilding(3.0,5.0,2.5);
+        edificio2.translate(2.5,0.0,0.0);
+        //centro.add(edificio2);
 
         //var edificio2 = this.createBuilding(2.0,10.0,2.5);
         //edificio2.translate(2.6,0,0);
         //manzana.add(edificio2);
 
         centro.translate(anchoVereda/2,0.05,anchoVereda/2);
-        //manzana.add(centro);
-        manzana.add(vereda);
+        manzana.add(centro);
+        //manzana.add(vereda);
         return manzana;
     }
 
