@@ -58,32 +58,43 @@ class ObjetosFactory{
 
         var mediaRuta1 = this.createMediaRuta(vecPos, arrayMatT);
         mediaRuta1.rotate(-Math.PI / 2, 0.0, 0.0, 1.0);
-        mediaRuta1.translate(0.0, 0.0, 9.5);
         ruta.add(mediaRuta1);
 
-        var factorCantFaroles = 5;
-        var ajusteFarolesBordes = 5;
-        var sentido = 1;
-        for(var i = ajusteFarolesBordes; i < vecPos.length-ajusteFarolesBordes; i+= factorCantFaroles){
-            //se cargan todas las matrices y vectores
-            // var u = i * puntos.length - 2.0  / (puntos.length - 1.0);
+        //creo una nueva curva que se adecue a los faroles
+        var puntosFaroles = [];
+        for(var j = 0; j < puntos.length; j++){
+            var vecR = puntos[j];
+            puntosFaroles.push(vec3.fromValues(vecR[0], vecR[1], (vecR[2] - 0.5)));
+        }
+        var curvaFaroles = new CuadraticBSpline(puntosFaroles.length, 0.1, true);
 
-            var vec = vecPos[i];
+        curvaFaroles.setControlPoints(puntosFaroles);
+        curvaFaroles.calculateArrays();
+
+        var vecPosFaroles = curvaFaroles.getVecPos();
+        var arrayMatF = curvaFaroles.getArrayMatT();
+
+        var factorCantFaroles = 2;
+        var ajusteFarolesBordes = 2;
+        var sentido = 1;
+        for(var i = ajusteFarolesBordes; i < vecPos.length-ajusteFarolesBordes-10; i+= factorCantFaroles){
+
+            var vec = vecPosFaroles[i];
+            var mat = this.getMatriz4x4(arrayMatF[i]);
 
             var farol = this.createFarol();
             farol.translate(vec[1], vec[0], vec[2]);
-            farol.translate(0.0, 0.0, -1.0);
-            farol.rotate(sentido * Math.PI/ 2, 0.0, 1.0, 0.0);
+            farol.applyMatrix(mat);
+            farol.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
+            if (sentido == -1){
+                farol.rotate(Math.PI, 0.0, 1.0, 0.0);
+            }
             ruta.add(farol);
-
             sentido = sentido * -1;
 
         }
 
-        // var mediaRuta2 = this.createMediaRuta(vecPos, arrayMatT);
-        // mediaRuta2.rotate(-Math.PI / 2, 0.0, 0.0, 1.0);
-        // ruta.add(mediaRuta2);
-
+        ruta.scale(0.3, 0.3, 0.3);
         return ruta;
     }
 
@@ -91,8 +102,8 @@ class ObjetosFactory{
 
         var asfaltoRuta = new Objeto3D();
         var baseRuta = new Objeto3D();
-        // asfaltoRuta.calcularSuperficieBarrido("asfalto_ruta", vecPos.length, 5, arrayMatT, vecPos);
-        // baseRuta.add(asfaltoRuta);
+        asfaltoRuta.calcularSuperficieBarrido("asfalto_ruta", vecPos.length, 9, arrayMatT, vecPos);
+        baseRuta.add(asfaltoRuta);
 
         baseRuta.calcularSuperficieBarrido("base_ruta", vecPos.length, 17, arrayMatT, vecPos);
 
@@ -275,6 +286,19 @@ class ObjetosFactory{
         auto.add(rueda2);
 
         return auto;
+    }
+
+//----------------- Metodos Auxiliares ---------------//
+
+    getMatriz4x4(mat){
+        //recibe una matriz de 3x3 y devuelve su correspondiente homogenea en 4x4
+        var new_mat = [ mat[0], mat[3], mat[6], 0,
+            mat[1], mat[4], mat[7], 0,
+            mat[2], mat[5], mat[8], 0,
+            0, 0, 0, 1];
+        return new_mat;
+
+
     }
 
 }
