@@ -1,15 +1,15 @@
-class ObjetosFactory{
+class ObjetosFactory {
 
-    constructor(){
+    constructor() {
         //
     }
 
     //Crea una grilla en el plano xz que permite modelar con mayor facilidad
-    createGrid(){
+    createGrid() {
 
         var grid = new Objeto3D();
 
-        var buffcalc = new BufferCalculator(2,2);
+        var buffcalc = new BufferCalculator(2, 2);
         grid.setBufferCreator(buffcalc);
         grid.build();
 
@@ -22,7 +22,7 @@ class ObjetosFactory{
         arrayMatT.push(mattt);
 
         //barras verticales
-        for (var i = -50.0; i <= 50.0; i+= 3) {
+        for (var i = -50.0; i <= 50.0; i += 3) {
 
             var linea = new Objeto3D();
             var vecPos = [];
@@ -37,7 +37,7 @@ class ObjetosFactory{
 
     }
 
-    createRuta(puntos){
+    createRuta(puntos) {
 
         var ruta = new Objeto3D();
 
@@ -52,7 +52,7 @@ class ObjetosFactory{
         var arrayMatT = [];
         arrayMatT = curvaRuta.getArrayMatT();
 
-        var buffcalc = new BufferCalculator(vecPos.length,9);
+        var buffcalc = new BufferCalculator(vecPos.length, 9);
         ruta.setBufferCreator(buffcalc);
         ruta.build();
 
@@ -62,7 +62,7 @@ class ObjetosFactory{
 
         //creo una nueva curva que se adecue a los faroles
         var puntosFaroles = [];
-        for(var j = 0; j < puntos.length; j++){
+        for (var j = 0; j < puntos.length; j++) {
             var vecR = puntos[j];
             puntosFaroles.push(vec3.fromValues(vecR[0], vecR[1], (vecR[2] - 0.5)));
         }
@@ -77,7 +77,7 @@ class ObjetosFactory{
         var factorCantFaroles = 2;
         var ajusteFarolesBordes = 2;
         var sentido = 1;
-        for(var i = ajusteFarolesBordes; i < vecPos.length-ajusteFarolesBordes-10; i+= factorCantFaroles){
+        for (var i = ajusteFarolesBordes; i < vecPos.length - ajusteFarolesBordes - 10; i += factorCantFaroles) {
 
             var vec = vecPosFaroles[i];
             var mat = this.getMatriz4x4(arrayMatF[i]);
@@ -86,7 +86,7 @@ class ObjetosFactory{
             farol.translate(vec[1], vec[0], vec[2]);
             farol.applyMatrix(mat);
             farol.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
-            if (sentido == -1){
+            if (sentido == -1) {
                 farol.rotate(Math.PI, 0.0, 1.0, 0.0);
             }
             ruta.add(farol);
@@ -98,7 +98,7 @@ class ObjetosFactory{
         return ruta;
     }
 
-    createMediaRuta(vecPos, arrayMatT){
+    createMediaRuta(vecPos, arrayMatT) {
 
         var asfaltoRuta = new Objeto3D();
         var baseRuta = new Objeto3D();
@@ -111,7 +111,7 @@ class ObjetosFactory{
 
     }
 
-    createFarol(){
+    createFarol() {
 
         var farol = new Objeto3D();
 
@@ -143,70 +143,70 @@ class ObjetosFactory{
 
     }
 
-    createBuilding(x,y,z,tapaAbajo = false){
-    /*La funcion recibe:
-     @ x: Ancho de las elevaciones.
-     @ y: Alto del edificio.
-     @ z: Profundidad de una elevacion del edificio.
-     @ tapaAbajo: bool para definir o no una tapa inferior
-     */
+    createBuilding(x, y, z, tapaAbajo = false) {
+        /*La funcion recibe:
+         @ x: Ancho de las elevaciones.
+         @ y: Alto del edificio.
+         @ z: Profundidad de una elevacion del edificio.
+         @ tapaAbajo: bool para definir o no una tapa inferior
+         */
 
-      var edificio = new Objeto3D();
+        var edificio = new Objeto3D();
 
-      //Creamos los puntos de la curva del edificio
-      var puntosEdificio = [];
-      puntosEdificio.push( vec3.fromValues(0.0, 0.0, 0.0) );
-      puntosEdificio.push( vec3.fromValues(0.0, y, 0.0) );
-      puntosEdificio.push( vec3.fromValues(x,0.0,z) );
+        //Creamos los puntos de la curva del edificio
+        var puntosEdificio = [];
+        puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
+        puntosEdificio.push(vec3.fromValues(x, 0.0, z));
 
-      var arrayMatT = [];
-      var mat = mat3.create();
-      var matt = mat3.create();
-      mat3.identity(mat);
-      mat3.identity(matt);
-      arrayMatT.push(mat);
-      arrayMatT.push(matt);
+        var arrayMatT = [];
+        var mat = mat3.create();
+        var matt = mat3.create();
+        mat3.identity(mat);
+        mat3.identity(matt);
+        arrayMatT.push(mat);
+        arrayMatT.push(matt);
 
-      var puntosTapa = [];
-      puntosTapa.push( vec3.fromValues(0.0,y,0.0) );
-      puntosTapa.push( vec3.fromValues(0.0,y,z) );
-      puntosTapa.push( vec3.fromValues(x,0.0,0.0) );
-      //Creamos el techo del edificio
-      var base = new Objeto3D();
-      base.calcularSuperficieBarrido("tapa_edificio",2,2,arrayMatT,puntosTapa);
+        var puntosTapa = [];
+        puntosTapa.push(vec3.fromValues(0.0, y, 0.0));
+        puntosTapa.push(vec3.fromValues(0.0, y, z));
+        puntosTapa.push(vec3.fromValues(x, 0.0, 0.0));
+        //Creamos el techo del edificio
+        var base = new Objeto3D();
+        base.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapa);
 
-      edificio.add(base);
+        edificio.add(base);
 
-      if(tapaAbajo) {
+        if (tapaAbajo) {
 
-          var puntosTapaAbajo = [];
-          puntosTapaAbajo.push(vec3.fromValues(0.0, 0.0, 0.0));
-          puntosTapaAbajo.push(vec3.fromValues(0.0, 0.0, z));
-          puntosTapaAbajo.push(vec3.fromValues(x, 0.0, 0.0));
-          //Creamos el piso del edificio
-          var baseAbajo = new Objeto3D();
-          baseAbajo.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapaAbajo);
+            var puntosTapaAbajo = [];
+            puntosTapaAbajo.push(vec3.fromValues(0.0, 0.0, 0.0));
+            puntosTapaAbajo.push(vec3.fromValues(0.0, 0.0, z));
+            puntosTapaAbajo.push(vec3.fromValues(x, 0.0, 0.0));
+            //Creamos el piso del edificio
+            var baseAbajo = new Objeto3D();
+            baseAbajo.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapaAbajo);
 
-          edificio.add(baseAbajo);
+            edificio.add(baseAbajo);
 
-      }
+        }
 
 
-      edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
+        edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
 
-      return edificio;
+        return edificio;
     }
 
-    createCalle(x,z){
-    /* Funcion que recibe 2 parametros:
-    @X es el ancho de la calle.
-    @Z es el ancho de la calle.
+    createCalle(x, z) {
+        /* Funcion que recibe 2 parametros:
+         @X es el ancho de la calle.
+         @Z es el ancho de la calle.
 
-    Devuelve una calle.
-     */
+         Devuelve una calle.
+         */
         var calle = new Objeto3D();
 
-        var buffcalc = new BufferCalculator(2,2);
+        var buffcalc = new BufferCalculator(2, 2);
         calle.setBufferCreator(buffcalc);
         calle.build();
 
@@ -220,9 +220,9 @@ class ObjetosFactory{
 
         var linea = new Objeto3D();
         var pos = [];
-        pos.push(vec3.fromValues(0.0, 0.0,0.0));
+        pos.push(vec3.fromValues(0.0, 0.0, 0.0));
         pos.push(vec3.fromValues(0.0, 0.0, z));
-        pos.push(vec3.fromValues(x,0,0));
+        pos.push(vec3.fromValues(x, 0, 0));
         linea.calcularSuperficieBarrido("calle", 2, 2, arrayMatT, pos);
         calle.add(linea);
 
@@ -230,19 +230,19 @@ class ObjetosFactory{
 
     }
 
-    createEsquina(x){
+    createEsquina(x) {
         /*La esquina es considerada como
-        una calle con las mismas dimensiones de
-        ancho y largo.
+         una calle con las mismas dimensiones de
+         ancho y largo.
          */
-       return this.createCalle(x,x);
+        return this.createCalle(x, x);
     }
 
-    createCar(){
+    createCar() {
         /*Variables a modificar para las dimensiones del auto*/
 
         var auto = new Objeto3D();
-        var buffcalc = new BufferCalculator(2,2);
+        var buffcalc = new BufferCalculator(2, 2);
         auto.setBufferCreator(buffcalc);
         auto.build();
 
@@ -251,9 +251,9 @@ class ObjetosFactory{
         var carroceria = new Objeto3D();
 
         //Declaro los puntos de la carroceria del auto
-        var puntosCarroceria =[];
-        puntosCarroceria.push( vec3.fromValues(0.0,0.0,0.0) );
-        puntosCarroceria.push( vec3.fromValues(0.0,0.0,4.0) );
+        var puntosCarroceria = [];
+        puntosCarroceria.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntosCarroceria.push(vec3.fromValues(0.0, 0.0, 4.0));
 
         //Matrices de transformacion
         var arrayMat = [];
@@ -264,7 +264,7 @@ class ObjetosFactory{
         arrayMat.push(mat);
         arrayMat.push(matt);
 
-        carroceria.calcularSuperficieBarrido("carroceria",2,19,arrayMat, puntosCarroceria);
+        carroceria.calcularSuperficieBarrido("carroceria", 2, 19, arrayMat, puntosCarroceria);
         auto.add(carroceria);
 
         //Creamos las ruedas del auto
@@ -272,33 +272,103 @@ class ObjetosFactory{
 
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
-        puntosCarroceria.push( vec3.fromValues(2.0,1.0, 0.8) );
+        puntosCarroceria.push(vec3.fromValues(2.0, 1.0, 0.8));
 
-        rueda1.calcularSuperficieBarrido("rueda",2 ,11,arrayMat,puntosCarroceria);
+        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         auto.add(rueda1);
 
         var rueda2 = new Objeto3D();
 
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
-        puntosCarroceria.push( vec3.fromValues(8.0,1.0, 0.8) );
-        rueda2.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
+        puntosCarroceria.push(vec3.fromValues(8.0, 1.0, 0.8));
+        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         auto.add(rueda2);
 
         return auto;
     }
 
+    createEscene(x) {
+
+
+        var escene = new Objeto3D();
+
+        var buffcalc = new BufferCalculator(2, 2);
+        escene.setBufferCreator(buffcalc);
+        escene.build();
+
+        var arrayMatT = [];
+        var matt = mat3.create();
+        var mattt = mat3.create();
+        mat3.identity(matt);
+        mat3.identity(mattt);
+        arrayMatT.push(matt);
+        arrayMatT.push(mattt);
+
+        var linea = new Objeto3D();
+        var pos = [];
+        pos.push(vec3.fromValues(0.0, 0.0, 0.0));
+        pos.push(vec3.fromValues(0.0, 0.0, x));
+        pos.push(vec3.fromValues(x, 0, 0));
+
+        linea.calcularSuperficieBarrido("escena", 2, 2, arrayMatT, pos);
+
+        escene.add(linea);
+        return escene;
+    }
+
+    createVereda(puntos){
+
+        var vereda = new Objeto3D();
+
+        var curva = new CuadraticBSpline(puntos.length, 0.1, true);
+
+        curva.setControlPoints(puntos);
+        curva.calculateArrays();
+
+        var vecPos = [];
+        vecPos = curva.getVecPos();
+
+        var arrayMatT = [];
+        arrayMatT = curva.getArrayMatT();
+
+        var buffcalc = new BufferCalculator(vecPos.length, 9);
+        vereda.setBufferCreator(buffcalc);
+        vereda.build();
+    }
+
+
+    createManzanaB(x){
+
+        var manzana = this.createEscene(x);
+        var anchoVereda = 4.0;
+        var centro =this.createEscene(x-anchoVereda);
+
+        var edificio1 = this.createBuilding(2.5, 8.0, 2.5);
+        centro.add(edificio1);
+
+        var edificio2 = this.createBuilding(2.0,10,2.5);
+        edificio2.translate(2.5,0,0);
+        centro.add(edificio2);
+
+        //var edificio2 = this.createBuilding(2.0,10.0,2.5);
+        //edificio2.translate(2.6,0,0);
+        //manzana.add(edificio2);
+
+        centro.translate(anchoVereda/2,0.05,anchoVereda/2);
+        manzana.add(centro);
+        return manzana;
+    }
+
+
 //----------------- Metodos Auxiliares ---------------//
 
     getMatriz4x4(mat){
         //recibe una matriz de 3x3 y devuelve su correspondiente homogenea en 4x4
-        var new_mat = [ mat[0], mat[3], mat[6], 0,
+        var new_mat = [mat[0], mat[3], mat[6], 0,
             mat[1], mat[4], mat[7], 0,
             mat[2], mat[5], mat[8], 0,
             0, 0, 0, 1];
         return new_mat;
-
-
     }
-
 }

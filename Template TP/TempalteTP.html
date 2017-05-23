@@ -338,7 +338,44 @@
         var canvas2D = null;
         var camera = null;
         var factory = null;
-        var grid = null;
+
+        var calle1 = null;
+        var calle2 = null;
+        var calle3 = null;
+        var calle4 = null;
+        var calle5 = null;
+        var calle6 = null;
+        var calle7 = null;
+        var calle8 = null;
+        var calle9 = null;
+        var calle10 = null;
+        var calle11= null;
+        var calle12 = null;
+        var calle13 = null;
+        var calle14 = null;
+        var calle15 = null;
+        var calle16 = null;
+        var calle17 = null;
+        var calle18 = null;
+        var calle19 = null;
+        var calle20 = null;
+        var calle21 = null;
+        var calle22 = null;
+        var calle23 = null;
+        var calle24 = null;
+
+        var esquina1=null;
+        var esquina2=null;
+        var esquina3=null;
+        var esquina4=null;
+        var esquina5=null;
+        var esquina6=null;
+        var esquina7=null;
+        var esquina8=null;
+        var esquina9=null;
+
+        var manzana1=null;
+
         var ruta = null;
 
         var mouse = null;
@@ -425,13 +462,15 @@
             //mat4.scale(model_matrix_obj, model_matrix_obj, [3.0, 3.0, 3.0]);
             //obj.draw(model_matrix_obj, false);
 
-            var model_matrix_grid = mat4.create();
-            mat4.identity(model_matrix_grid);
-            grid.draw(model_matrix_grid, false);
 
-            var model_matrix_prueba = mat4.create();
-            mat4.identity(model_matrix_prueba);
-            prueba.draw(model_matrix_prueba, false);
+            var model_matrix_escena = mat4.create();
+            mat4.identity(model_matrix_escena);
+            //escena.draw(model_matrix_escena, false);
+
+            var model_matrix_manzana1 = mat4.create();
+            mat4.identity(model_matrix_manzana1);
+            manzana1.draw(model_matrix_manzana1, false);
+
         }
 
 
@@ -451,11 +490,179 @@
             factory = new ObjetosFactory();
 
             canvas2D = new Canvas2D();
+
             canvas2D.loadCanvas2D();
+            /*Aca comienza la funcion generadora de la ciudad.
+            Recibe por parametros un n es el tamaño de la grilla*/
 
-            grid = factory.createGrid();
+            var n=4;
 
-            prueba = factory.createCar();
+            var anchoCalle=3.0;
+            var largoCalle=20.0;
+            var manzana = 20.0;
+
+            manzana1 = factory.createManzanaB(manzana);
+            escena = factory.createEscene( (4*manzana) + (3*anchoCalle) );
+
+            //Manzanas 1 a 4 estan sobre y=0 y se numeran en x creciente
+            //calle 1: posicion contigua a la manzana 1.
+            calle1 = factory.createCalle(anchoCalle, largoCalle);
+            calle1.translate(manzana,0.1,0);
+            escena.add(calle1);
+
+            //calle 2: posicion contigua a la manzana 2.
+            calle2 = factory.createCalle(anchoCalle, largoCalle);
+            calle2.translate(2*manzana+anchoCalle,0.1,0);
+            escena.add(calle2);
+
+            //calle 3: posicion contigua a la manzana 3.
+            calle3 = factory.createCalle(anchoCalle, largoCalle);
+            calle3.translate(3*manzana+ 2*anchoCalle,0.1,0);
+            escena.add(calle3);
+
+            //Manzanas 5 a 8 estan sobre y=manzana y se numeran en x creciente
+            //calle 4: posicion contigua a la manzana 5.
+            calle4 = factory.createCalle(anchoCalle, largoCalle);
+            calle4.translate(manzana,0.1, (manzana+anchoCalle));
+            escena.add(calle4);
+
+            //calle 5: posicion contigua a la manzana 6.
+            calle5 = factory.createCalle(anchoCalle, largoCalle);
+            calle5.translate(2*manzana+anchoCalle,0.1, (manzana+anchoCalle));
+            escena.add(calle5);
+
+            //calle 6: posicion contigua a la manzana 7
+            calle6 = factory.createCalle(anchoCalle, largoCalle);
+            calle6.translate(3*manzana+ 2*anchoCalle,0.1, (manzana+anchoCalle));
+            escena.add(calle6);
+
+            //Manzanas 9 a 12 estan sobre y= 2* manzana
+
+            calle7 = factory.createCalle(anchoCalle, largoCalle);
+            calle7.translate(manzana,0.1, (2*manzana+2*anchoCalle));
+            escena.add(calle7);
+
+            calle8 = factory.createCalle(anchoCalle, largoCalle);
+            calle8.translate(2*manzana+anchoCalle,0.1, (2*manzana+2*anchoCalle));
+            escena.add(calle8);
+
+            calle9 = factory.createCalle(anchoCalle, largoCalle);
+            calle9.translate(3*manzana+ 2*anchoCalle,0.1, (2*manzana+2*anchoCalle));
+            escena.add(calle9);
+
+            //Manzanas 13 a 16 estan en y= 3* manzana
+            calle10 = factory.createCalle(anchoCalle, largoCalle);
+            calle10.translate(manzana,0.1, (3*manzana+3*anchoCalle));
+            escena.add(calle10);
+
+            calle11 = factory.createCalle(anchoCalle, largoCalle);
+            calle11.translate(2*manzana+anchoCalle,0.1, (3*manzana+3*anchoCalle));
+            escena.add(calle11);
+
+            calle12 = factory.createCalle(anchoCalle, largoCalle);
+            calle12.translate(3*manzana+ 2*anchoCalle,0.1, (3*manzana+3*anchoCalle));
+            escena.add(calle12);
+
+            // Comenzamos con las calles horizontales.
+            calle13 = factory.createCalle(anchoCalle, largoCalle);
+            calle13.translate(0,0.1,manzana+anchoCalle);
+            calle13.rotate(Math.PI/2,0,1,0);
+            escena.add(calle13);
+
+            calle14 = factory.createCalle(anchoCalle, largoCalle);
+            calle14.translate(0,0.1,2*manzana+2*anchoCalle);
+            calle14.rotate(Math.PI/2,0,1,0);
+            escena.add(calle14);
+
+            calle15 = factory.createCalle(anchoCalle, largoCalle);
+            calle15.translate(0,0.1,3*manzana+3*anchoCalle);
+            calle15.rotate(Math.PI/2,0,1,0);
+            escena.add(calle15);
+
+            //Cruzamos al otro lado
+            calle16 = factory.createCalle(anchoCalle, largoCalle);
+            calle16.translate(manzana+anchoCalle,0.1,manzana+anchoCalle);
+            calle16.rotate(Math.PI/2,0,1,0);
+            escena.add(calle16);
+
+            calle17 = factory.createCalle(anchoCalle, largoCalle);
+            calle17.translate(manzana+anchoCalle,0.1,2*manzana+2*anchoCalle);
+            calle17.rotate(Math.PI/2,0,1,0);
+            escena.add(calle17);
+
+            calle18 = factory.createCalle(anchoCalle, largoCalle);
+            calle18.translate(manzana+anchoCalle,0.1,3*manzana+3*anchoCalle);
+            calle18.rotate(Math.PI/2,0,1,0);
+            escena.add(calle18);
+
+            //Cruzamos al otro lado
+            calle19 = factory.createCalle(anchoCalle, largoCalle);
+            calle19.translate(2*manzana+ 2*anchoCalle,0.1,manzana+anchoCalle);
+            calle19.rotate(Math.PI/2,0,1,0);
+            escena.add(calle19);
+
+            calle20 = factory.createCalle(anchoCalle, largoCalle);
+            calle20.translate(2*manzana+ 2*anchoCalle,0.1,2*manzana+2*anchoCalle);
+            calle20.rotate(Math.PI/2,0,1,0);
+            escena.add(calle20);
+
+            calle21 = factory.createCalle(anchoCalle, largoCalle);
+            calle21.translate(2*manzana+ 2*anchoCalle,0.1,3*manzana+3*anchoCalle);
+            calle21.rotate(Math.PI/2,0,1,0);
+            escena.add(calle21);
+
+            //Cruzamos al otro lado
+            calle22 = factory.createCalle(anchoCalle, largoCalle);
+            calle22.translate(3*manzana+ 3*anchoCalle,0.1,manzana+anchoCalle);
+            calle22.rotate(Math.PI/2,0,1,0);
+            escena.add(calle22);
+
+            calle23 = factory.createCalle(anchoCalle, largoCalle);
+            calle23.translate(3*manzana+ 3*anchoCalle,0.1,2*manzana+2*anchoCalle);
+            calle23.rotate(Math.PI/2,0,1,0);
+            escena.add(calle23);
+
+            calle24 = factory.createCalle(anchoCalle, largoCalle);
+            calle24.translate(3*manzana+ 3*anchoCalle,0.1,3*manzana+3*anchoCalle);
+            calle24.rotate(Math.PI/2,0,1,0);
+            escena.add(calle24);
+
+            //CREAMOS LAS ESQUINAS.
+            esquina1= factory.createEsquina(anchoCalle);
+            esquina1.translate(manzana,0.1,manzana);
+            escena.add(esquina1);
+
+            esquina2= factory.createEsquina(anchoCalle);
+            esquina2.translate(manzana,0.1,2*manzana+anchoCalle);
+            escena.add(esquina2);
+
+            esquina3= factory.createEsquina(anchoCalle);
+            esquina3.translate(manzana,0.1,3*manzana+ 2*anchoCalle);
+            escena.add(esquina3);
+
+            esquina4= factory.createEsquina(anchoCalle);
+            esquina4.translate(2*manzana + anchoCalle,0.1,manzana);
+            escena.add(esquina4);
+
+            esquina5= factory.createEsquina(anchoCalle);
+            esquina5.translate(2*manzana + anchoCalle,0.1,2*manzana+anchoCalle);
+            escena.add(esquina5);
+
+            esquina6= factory.createEsquina(anchoCalle);
+            esquina6.translate(2*manzana + anchoCalle,0.1,3*manzana+ 2*anchoCalle);
+            escena.add(esquina6);
+
+            esquina7= factory.createEsquina(anchoCalle);
+            esquina7.translate(3*manzana + 2*anchoCalle,0.1,manzana);
+            escena.add(esquina7);
+
+            esquina8= factory.createEsquina(anchoCalle);
+            esquina8.translate(3*manzana + 2*anchoCalle,0.1,2*manzana+anchoCalle);
+            escena.add(esquina8);
+
+            esquina9= factory.createEsquina(anchoCalle);
+            esquina9.translate(3*manzana + 2*anchoCalle,0.1,3*manzana+ 2*anchoCalle);
+            escena.add(esquina9);
 
             camera = new CameraHandler();
 

@@ -11,6 +11,7 @@ var TAPA_EDIFICIO="tapa_edificio";
 var CALLE = "calle";
 var CARROCERIA="carroceria";
 var RUEDA="rueda";
+var ESCENA ="escena";
 
 class Objeto3D extends Container3D{
 
@@ -162,6 +163,14 @@ class Objeto3D extends Container3D{
             this.figuras.calcularCalle(vertices, arrayVecNOR, escalado[0]);
         }
 
+        else if(figura == ESCENA){
+            if(colms != 2){
+                console.log("para hacer una grilla se necesitan exactamente 2 vertices");
+            }
+            escalado = arrayVecPos.pop();
+            this.figuras.calcularEscena(vertices, arrayVecNOR, escalado[0]);
+        }
+
         else if(figura == CARROCERIA){
             if(colms != 19){
                 console.log("para hacer la carroceria se necesitan 19 vertices");
@@ -170,9 +179,15 @@ class Objeto3D extends Container3D{
         }
 
        else if(figura == RUEDA){
-
+            if(colms != 11){
+                console.log("para hacer la rueda se necesitan 11 vertices");
+            }
             escalado = arrayVecPos.pop();
             this.figuras.createRueda(vertices,arrayVecNOR,escalado);
+        }
+
+        else if(figura == VEREDA){
+           this.figuras.createVereda(vertices,arrayVecNor);
         }
 
         else {
