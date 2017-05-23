@@ -249,7 +249,7 @@ class ObjetosFactory{
         var mat = mat3.create();
         var matt = mat3.create();
         mat3.identity(mat);
-        mat3.identity(matt);
+        mat3.identity(mat);
         arrayMat.push(mat);
         arrayMat.push(matt);
 
@@ -261,9 +261,18 @@ class ObjetosFactory{
 
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
-        puntosCarroceria.push( vec3.fromValues(1.0,1.0, 0.9) );
-        rueda1.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
+        puntosCarroceria.push( vec3.fromValues(2.0,1.0, 0.8) );
+
+        rueda1.calcularSuperficieBarrido("rueda",2 ,11,arrayMat,puntosCarroceria);
         auto.add(rueda1);
+
+        var rueda2 = new Objeto3D();
+
+        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
+        //posicionamientos y el radio
+        puntosCarroceria.push( vec3.fromValues(8.0,1.0, 0.8) );
+        rueda2.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
+        auto.add(rueda2);
 
         return auto;
     }

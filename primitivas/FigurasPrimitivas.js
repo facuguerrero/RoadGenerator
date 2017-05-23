@@ -279,14 +279,14 @@ class FigurasPrimitivias{
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR, false);
+        this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR);
 
         vertices.push(vec3.fromValues(x2, y1, 0.0));
         var vecNorm4 = vec3.fromValues(x2, y1, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
-        this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR, false);
+        this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR);
 
         vertices.push(vec3.fromValues(x3, y1, 0.0));
         var vecNorm4 = vec3.fromValues(x3, y1, 0.0);
@@ -315,7 +315,7 @@ class FigurasPrimitivias{
         arrayVecNOR.push(vecNorm5);
     }
 
-    createBaseRueda(x,y,r,vertices, arrayVecNOR, esRueda){
+    createBaseRueda(x,y,r,vertices, arrayVecNOR){
         /*Funcion auxiliar para crear la cabidad de la rueda.
         * @X es el x apartir del cual dibujamos
         * @Y es el y a partir del cual dibujamos
@@ -325,18 +325,11 @@ class FigurasPrimitivias{
         var cantPuntos = 1;
         var total = 0.0;
 
-        if(esRueda){
-            total = 2.0;
-        }
-
         for (var j = -cantPuntos; j <= total; j+=0.2) {
 
             var u = (j * Math.PI);
 
             var vec = vec3.fromValues( (x+r) + (r*Math.cos(u)) , y + Math.abs(r*Math.sin(u)) , 0.0);
-            if(esRueda) {
-                console.log(vec);
-            }
             vertices.push(vec);
 
             var vecNorm = vec3.fromValues(Math.cos(2 * Math.PI * u), 0.0, Math.sin(2 * Math.PI * u));
@@ -353,7 +346,21 @@ class FigurasPrimitivias{
         var x = escalado[0];
         var y = escalado[1];
         var r = escalado[2];
-        this.createBaseRueda(x,y,r, vertices , arrayVecNOR , true);
+
+
+        for (var j = 0; j <= 2; j+=0.2) {
+
+            var u = (j * Math.PI);
+
+            var vec = vec3.fromValues( x + (r*Math.cos(u)) , y + r*Math.sin(u) , 0.0);
+            console.log(vec);
+            vertices.push(vec);
+
+            var vecNorm = vec3.fromValues(255,255,255);
+            vec3.normalize(vecNorm, vecNorm);
+            arrayVecNOR.push(vecNorm);
+        }
+
     }
 
 
