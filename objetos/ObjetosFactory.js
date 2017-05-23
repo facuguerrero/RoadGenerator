@@ -332,9 +332,9 @@ class ObjetosFactory {
         var arrayMatT = [];
         arrayMatT = curva.getArrayMatT();
 
-        var buffcalc = new BufferCalculator(vecPos.length, 9);
-        vereda.setBufferCreator(buffcalc);
-        vereda.build();
+        vereda.calcularSuperficieBarrido("vereda", vecPos.length, 5, arrayMatT, vecPos);
+        return vereda;
+
     }
 
 
@@ -343,6 +343,32 @@ class ObjetosFactory {
         var manzana = this.createEscene(x);
         var anchoVereda = 4.0;
         var centro =this.createEscene(x-anchoVereda);
+
+        var puntos = [];
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 16.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 16.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 18.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+
+        var vereda = this.createVereda(puntos);
 
         var edificio1 = this.createBuilding(2.5, 8.0, 2.5);
         centro.add(edificio1);
@@ -357,6 +383,7 @@ class ObjetosFactory {
 
         centro.translate(anchoVereda/2,0.05,anchoVereda/2);
         manzana.add(centro);
+        manzana.add(vereda);
         return manzana;
     }
 
