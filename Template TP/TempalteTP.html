@@ -375,7 +375,9 @@
         var esquina9=null;
 
         var manzana1=null;
-
+        var manzana2=null;
+        var manzana3=null;
+        var manzana4= null;
         var ruta = null;
 
         var mouse = null;
@@ -497,7 +499,6 @@
             var largoCalle=20.0;
             var manzana = 20.0;
 
-            manzana1 = factory.createManzanaB(manzana);
             escena = factory.createEscene( (4*manzana) + (3*anchoCalle) );
 
             //Manzanas 1 a 4 estan sobre y=0 y se numeran en x creciente
@@ -660,7 +661,21 @@
             esquina9.translate(3*manzana + 2*anchoCalle,0.1,3*manzana+ 2*anchoCalle);
             escena.add(esquina9);
 
+            //Creamos las manzanas
+            manzana1 = factory.createManzanaB(manzana);
             escena.add(manzana1);
+
+            manzana2 = factory.createManzanaB(manzana);
+            manzana2.translate(manzana+anchoCalle,0.0,0.0);
+            escena.add(manzana2);
+
+            manzana3 = factory.createManzanaB(manzana);
+            manzana3.translate(2*manzana + 2*anchoCalle,0.0,0.0);
+            escena.add(manzana3);
+
+            manzana4 = factory.createManzanaB(manzana);
+            manzana4.translate(3*manzana + 3*anchoCalle,0.0,0.0);
+            escena.add(manzana4);
 
             camera = new CameraHandler();
 
