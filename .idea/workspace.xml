@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="Ya tan las calles ubicadas">
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,28 +27,28 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7545">
-              <caret line="503" column="44" lean-forward="false" selection-start-line="503" selection-start-column="37" selection-end-line="503" selection-end-column="44" />
+            <state relative-caret-position="450">
+              <caret line="694" column="29" lean-forward="true" selection-start-line="694" selection-start-column="29" selection-end-line="694" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="351" column="28" lean-forward="false" selection-start-line="351" selection-start-column="28" selection-end-line="351" selection-end-column="28" />
+            <state relative-caret-position="2397">
+              <caret line="346" column="59" lean-forward="true" selection-start-line="346" selection-start-column="59" selection-end-line="346" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="189" column="13" lean-forward="true" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
+            <state relative-caret-position="300">
+              <caret line="191" column="74" lean-forward="false" selection-start-line="191" selection-start-column="74" selection-end-line="191" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -155,8 +152,8 @@
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
         <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
-        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
       </list>
     </option>
   </component>
@@ -420,14 +417,7 @@
       <workItem from="1495418702462" duration="1417000" />
       <workItem from="1495467360300" duration="3343000" />
       <workItem from="1495536878513" duration="1093000" />
-      <workItem from="1495548655905" duration="1451000" />
-    </task>
-    <task id="LOCAL-00021" summary="cambio del cilindro">
-      <created>1493658940141</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1493658940141</updated>
+      <workItem from="1495548655905" duration="2083000" />
     </task>
     <task id="LOCAL-00022" summary="cambio del cilindro">
       <created>1493661572535</created>
@@ -765,11 +755,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495418749426</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="armando la manzana">
+      <created>1495550124503</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1495550124504</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159810000" />
+    <option name="totallyTimeSpent" value="160442000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -829,7 +826,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="superficie de barrido" />
     <MESSAGE value="container como objeto javascript 5" />
     <MESSAGE value="container funcionando" />
     <MESSAGE value="todo pasado a javascript 5" />
@@ -854,7 +850,8 @@
     <MESSAGE value="MARCOS VOS SEGUI USANDO TEMPLATE 2, YO PARA PROBAR USO TEMPLATE 1" />
     <MESSAGE value="Auto" />
     <MESSAGE value="Ya tan las calles ubicadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya tan las calles ubicadas" />
+    <MESSAGE value="armando la manzana" />
+    <option name="LAST_COMMIT_MESSAGE" value="armando la manzana" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1165,14 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7545">
-          <caret line="503" column="44" lean-forward="false" selection-start-line="503" selection-start-column="37" selection-end-line="503" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1184,18 +1173,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+    <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="189" column="13" lean-forward="true" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
+        <state relative-caret-position="450">
+          <caret line="694" column="29" lean-forward="true" selection-start-line="694" selection-start-column="29" selection-end-line="694" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="351" column="28" lean-forward="false" selection-start-line="351" selection-start-column="28" selection-end-line="351" selection-end-column="28" />
+        <state relative-caret-position="2397">
+          <caret line="346" column="59" lean-forward="true" selection-start-line="346" selection-start-column="59" selection-end-line="346" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="191" column="74" lean-forward="false" selection-start-line="191" selection-start-column="74" selection-end-line="191" selection-end-column="74" />
           <folding />
         </state>
       </provider>

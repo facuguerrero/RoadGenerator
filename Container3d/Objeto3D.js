@@ -12,6 +12,7 @@ var CALLE = "calle";
 var CARROCERIA="carroceria";
 var RUEDA="rueda";
 var ESCENA ="escena";
+var VEREDA = "vereda";
 
 class Objeto3D extends Container3D{
 
@@ -187,6 +188,9 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == VEREDA){
+           if(colms != 5){
+               console.log("Para hacer una vereda se necesitan 5 puntos");
+           }
            this.figuras.createVereda(vertices,arrayVecNor);
         }
 
