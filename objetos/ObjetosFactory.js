@@ -353,20 +353,20 @@ class ObjetosFactory {
         puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
         puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
         puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        // puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
+        // puntos.push(vec3.fromValues(0.0, 18.0, 18.0));
+        // puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        // puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        // puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        // puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        // puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
+        // puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        // puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        // puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        // puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        // puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+        // puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        // puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
 
         var vereda = this.createVereda(puntos);
 
