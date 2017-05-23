@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="677" column="31" lean-forward="false" selection-start-line="677" selection-start-column="31" selection-end-line="677" selection-end-column="31" />
+            <state relative-caret-position="495">
+              <caret line="412" column="31" lean-forward="false" selection-start-line="412" selection-start-column="31" selection-end-line="412" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -36,8 +37,8 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="441" column="38" lean-forward="true" selection-start-line="441" selection-start-column="38" selection-end-line="441" selection-end-column="38" />
+            <state relative-caret-position="6615">
+              <caret line="441" column="38" lean-forward="false" selection-start-line="441" selection-start-column="38" selection-end-line="441" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -79,11 +80,11 @@
       <find>figuras</find>
       <find>7.8</find>
       <find>2.8</find>
-      <find>obj</find>
       <find>curva</find>
       <find>draw</find>
       <find>ruta</find>
       <find>manzana</find>
+      <find>obj</find>
     </findStrings>
     <replaceStrings>
       <replace>aux</replace>
@@ -99,6 +100,7 @@
       <replace>2.0</replace>
       <replace>prueba</replace>
       <replace>manzana1</replace>
+      <replace>escene</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -140,10 +142,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -394,14 +396,8 @@
       <workItem from="1495467360300" duration="3343000" />
       <workItem from="1495536878513" duration="1093000" />
       <workItem from="1495548655905" duration="2556000" />
-      <workItem from="1495558058806" duration="6681000" />
-    </task>
-    <task id="LOCAL-00032" summary="funca esfera">
-      <created>1493996969704</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1493996969704</updated>
+      <workItem from="1495558058806" duration="6694000" />
+      <workItem from="1495565917802" duration="558000" />
     </task>
     <task id="LOCAL-00033" summary="funca esfera">
       <created>1493996992367</created>
@@ -739,11 +735,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495564739995</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="edificios random">
+      <created>1495564744017</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1495564744017</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170116000" />
+    <option name="totallyTimeSpent" value="170687000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +758,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21521907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1111,14 +1114,6 @@
     </entry>
     <entry file="file:///media/marc/CAP/TPSisGraf-master/objetos/ObjetosFactory.js" />
     <entry file="file:///media/marc/CAP/TPSisGraf-master/primitivas/FigurasPrimitivas.js" />
-    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="457" column="29" lean-forward="false" selection-start-line="457" selection-start-column="29" selection-end-line="457" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1137,16 +1132,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="441" column="38" lean-forward="true" selection-start-line="441" selection-start-column="38" selection-end-line="441" selection-end-column="38" />
+        <state relative-caret-position="6615">
+          <caret line="441" column="38" lean-forward="false" selection-start-line="441" selection-start-column="38" selection-end-line="441" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="677" column="31" lean-forward="false" selection-start-line="677" selection-start-column="31" selection-end-line="677" selection-end-column="31" />
+        <state relative-caret-position="495">
+          <caret line="412" column="31" lean-forward="false" selection-start-line="412" selection-start-column="31" selection-end-line="412" selection-end-column="31" />
           <folding />
         </state>
       </provider>

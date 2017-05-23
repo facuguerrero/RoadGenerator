@@ -410,12 +410,7 @@
             return degrees * Math.PI / 180;
         }
 
-
-
-        //////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////
+        /*DIBUJAMOS LA ESCENA*/
 
         function drawScene() {
 
@@ -431,35 +426,13 @@
             // Se configura la matriz de proyecci�n
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
-            /////////////////////////////////////////////////////
-            // Configuraci�n de la luz
-            // Se inicializan las variables asociadas con la Iluminaci�n
-
-
-            /////////////////////////////////////////////////////
-            // Definimos la ubicaci�n de la camara
-            // Pensamos por el momento marsamente la posici�n de la c�mara, la cual siempre mira al mars.
-//        var matriz_camara = mat4.create();
-//        mat4.identity(matriz_camara);
-//		//mat4.identity(CameraMatrix);
-//		//mat4.translate(CameraMatrix, CameraMatrix, [0, 0, -60]);
-//        var eye_point = vec3.create();
-//        vec3.set(eye_point, 40, 75, -100);
-//        var at_point = vec3.create();
-//        vec3.set(at_point, 0, 0, 0);
-//        var up_point = vec3.create();
-//        vec3.set(up_point, 0, 1, 0);
-//
-//        mat4.lookAt(CameraMatrix, eye_point, at_point, up_point);
-//        mat4.multiply(CameraMatrix, CameraMatrix, matriz_camara);
-
-            ////////////////////////////////////////////////////////
             ///Dibujamos las figuras
 
-          obj.setShaderProgram(shaderProgramColoredObject);
+            obj.setShaderProgram(shaderProgramColoredObject);
             obj.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
-            var model_matrix_obj = mat4.create();
-            mat4.identity(model_matrix_obj);
+            var model_matrix_escene = mat4.create();
+            mat4.identity(model_matrix_escene);
+            escena.draw(model_matrix_escene, false);
             //mat4.rotate(model_matrix_obj,model_matrix_obj,1.2,[0,1,0]);
             //mat4.scale(model_matrix_obj, model_matrix_obj, [3.0, 3.0, 3.0]);
             //obj.draw(model_matrix_obj, false);
@@ -467,7 +440,7 @@
 
             var model_matrix_escena = mat4.create();
             mat4.identity(model_matrix_escena);
-            escena.draw(model_matrix_escena, false);
+            //escena.draw(model_matrix_escena, false);
 
         }
 
