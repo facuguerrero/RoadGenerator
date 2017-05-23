@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -396,14 +394,7 @@
       <workItem from="1495467360300" duration="3343000" />
       <workItem from="1495536878513" duration="1093000" />
       <workItem from="1495548655905" duration="2556000" />
-      <workItem from="1495558058806" duration="6258000" />
-    </task>
-    <task id="LOCAL-00029" summary="funca esfera">
-      <created>1493820050090</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1493820050090</updated>
+      <workItem from="1495558058806" duration="6277000" />
     </task>
     <task id="LOCAL-00030" summary="funca esfera">
       <created>1493821162052</created>
@@ -741,11 +732,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495562885213</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="edificios random">
+      <created>1495564335421</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1495564335421</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169693000" />
+    <option name="totallyTimeSpent" value="169712000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -786,7 +784,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="container funcionando" />
     <MESSAGE value="todo pasado a javascript 5" />
     <MESSAGE value="dejo de chillar pero no pasa naranja" />
     <MESSAGE value="cambio template 2" />
@@ -811,7 +808,8 @@
     <MESSAGE value="Ya tan las calles ubicadas" />
     <MESSAGE value="armando la manzana" />
     <MESSAGE value="acomode normales edificio" />
-    <option name="LAST_COMMIT_MESSAGE" value="acomode normales edificio" />
+    <MESSAGE value="edificios random" />
+    <option name="LAST_COMMIT_MESSAGE" value="edificios random" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
