@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -35,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
@@ -85,13 +84,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="410" column="33" lean-forward="false" selection-start-line="410" selection-start-column="33" selection-end-line="410" selection-end-column="33" />
+            <state relative-caret-position="261">
+              <caret line="402" column="39" lean-forward="false" selection-start-line="402" selection-start-column="39" selection-end-line="402" selection-end-column="39" />
               <folding>
-                <marker date="1495551514118" expanded="true" signature="14573:14579" ph="{...}" />
+                <marker date="1495551835361" expanded="true" signature="14584:14590" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -192,8 +191,8 @@
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
         <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-        <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+        <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
       </list>
     </option>
   </component>
@@ -1260,13 +1259,6 @@
       <workItem from="1495536878513" duration="1093000" />
       <workItem from="1495548655905" duration="2556000" />
     </task>
-    <task id="LOCAL-00025" summary="funca esfera">
-      <created>1493666717561</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1493666717561</updated>
-    </task>
     <task id="LOCAL-00026" summary="objetos funcionando, y template limpio">
       <created>1493754382172</created>
       <option name="number" value="00026" />
@@ -1603,11 +1595,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495551013124</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="armando la manzana">
+      <created>1495551545399</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1495551545399</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161211000" />
+    <option name="totallyTimeSpent" value="161507000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2027,21 +2026,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="410" column="33" lean-forward="false" selection-start-line="410" selection-start-column="33" selection-end-line="410" selection-end-column="33" />
-          <folding>
-            <marker date="1495551514118" expanded="true" signature="14573:14579" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="323" column="58" lean-forward="false" selection-start-line="323" selection-start-column="58" selection-end-line="323" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="402" column="39" lean-forward="false" selection-start-line="402" selection-start-column="39" selection-end-line="402" selection-end-column="39" />
+          <folding>
+            <marker date="1495551835361" expanded="true" signature="14584:14590" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
