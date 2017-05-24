@@ -666,24 +666,28 @@
         }
 
         function rellenarManzanas(anchoCalle, manzana, escena,factory){
-            //var aux = [true,false,true,false,false,false,true,false,true,true,false,true,true,true,false,false];
-            var aux = [true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+            var aux = [true,false,true,false,false,false,true,false,true,true,false,true,true,true,false,false];
             //aux para probar solamente
+            var vertical = 0;
+            var horizontal = 0;
+            for (var i=0; i< 16; i++){
 
-            for (var i=0; i< 4; i++){
-                for(var j=0; j<4; i++){
-                    var nMan = (i*4) + j;
-                    console.log(nMan);
-                    /*if(){
-                       ACA VA EL IF DE SI ES RUTA O CALLE!!!
-                    }*/
-                    /*if(aux[nMan]){
-                        var mEdf = factory.createManzanaB(manzana);
-                        mEdf.translate( (i* (anchoCalle+manzana) ), 0.0, (j* (anchoCalle+manzana) ) );
-                        escena.add(mEdf);
-                    }*/
-
+                /*if(){
+                ACA VA EL IF DE SI ES RUTA O CALLE!!!
+                }*/
+                if(aux[i]){
+                    var mEdf = factory.createManzanaB(manzana);
+                    mEdf.translate( (horizontal* (anchoCalle+manzana) ), 0.0, (vertical* (anchoCalle+manzana) ) );
+                    escena.add(mEdf);
                 }
+                vertical++;
+                if(vertical ==4){
+                    vertical=0;
+                    horizontal++;
+                }
+                console.log(horizontal);
+                console.log(vertical);
+
             }
         }
 
