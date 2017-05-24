@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,42 +24,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="654" column="0" lean-forward="true" selection-start-line="654" selection-start-column="0" selection-end-line="654" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="375" column="0" lean-forward="false" selection-start-line="375" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="436" column="56" lean-forward="true" selection-start-line="436" selection-start-column="56" selection-end-line="436" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="422">
+              <caret line="680" column="0" lean-forward="false" selection-start-line="680" selection-start-column="0" selection-end-line="680" selection-end-column="0" />
+              <folding>
+                <element signature="e#19003#26013#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,8 +75,8 @@
       <find>ruta</find>
       <find>manzana</find>
       <find>obj.</find>
-      <find>obj</find>
       <find>consol</find>
+      <find>obj</find>
     </findStrings>
     <replaceStrings>
       <replace>aux</replace>
@@ -152,10 +121,10 @@
         <option value="$PROJECT_DIR$/handlers/Canvas2D.js" />
         <option value="$PROJECT_DIR$/primitivas/CuadraticBSpline.js" />
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
-        <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+        <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
       </list>
     </option>
   </component>
@@ -450,14 +419,7 @@
       <workItem from="1495548655905" duration="2556000" />
       <workItem from="1495558058806" duration="6694000" />
       <workItem from="1495565917802" duration="7324000" />
-      <workItem from="1495634749731" duration="1192000" />
-    </task>
-    <task id="LOCAL-00035" summary="funca esfera">
-      <created>1494178990234</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1494178990234</updated>
+      <workItem from="1495634749731" duration="3044000" />
     </task>
     <task id="LOCAL-00036" summary="funca esfera">
       <created>1494181168180</created>
@@ -795,11 +757,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495635334423</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Limpiando template para armar main">
+      <created>1495635957253</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1495635957253</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178645000" />
+    <option name="totallyTimeSpent" value="180497000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -840,7 +809,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dejo de chillar pero no pasa naranja" />
     <MESSAGE value="cambio template 2" />
     <MESSAGE value="cambio calc buffer" />
     <MESSAGE value="cambio del cilindro" />
@@ -865,7 +833,8 @@
     <MESSAGE value="acomode normales edificio" />
     <MESSAGE value="edificios random" />
     <MESSAGE value="Normales auto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Normales auto" />
+    <MESSAGE value="Limpiando template para armar main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Limpiando template para armar main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1175,10 +1144,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="654" column="0" lean-forward="true" selection-start-line="654" selection-start-column="0" selection-end-line="654" selection-end-column="0" />
+        <state relative-caret-position="431">
+          <caret line="436" column="56" lean-forward="true" selection-start-line="436" selection-start-column="56" selection-end-line="436" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1199,11 +1168,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+    <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="436" column="56" lean-forward="true" selection-start-line="436" selection-start-column="56" selection-end-line="436" selection-end-column="56" />
-          <folding />
+        <state relative-caret-position="422">
+          <caret line="680" column="0" lean-forward="false" selection-start-line="680" selection-start-column="0" selection-end-line="680" selection-end-column="0" />
+          <folding>
+            <element signature="e#19003#26013#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

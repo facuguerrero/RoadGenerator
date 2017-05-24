@@ -449,22 +449,60 @@
             } catch (e) {
                 console.log("Error cargando WebGL");
             }
-
+            /*Inicializacion de variables*/
             factory = new ObjetosFactory();
-
             canvas2D = new Canvas2D();
+            camera = new CameraHandler();
+            /*NO BORRAR!*/
+            obj = new Objeto3D();
 
+
+            /*Seteamos los parametros*/
+            body.handler = camera;
+            canvas.handler = camera;
             canvas2D.loadCanvas2D();
+
+            camera.setOrbit();
+
             /*Aca comienza la funcion generadora de la ciudad.
             Recibe por parametros un n es el tamaño de la grilla*/
-
             var n=4;
-
             var anchoCalle=3.0;
             var largoCalle=20.0;
+
             var manzana = 20.0;
 
             escena = factory.createEscene( (4*manzana) + (3*anchoCalle) );
+
+            this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
+            this.rellenarManzanas(anchoCalle, manzana, escena, factory);
+
+            //Creamos las manzanas
+            /*manzana1 = factory.createManzanaB(manzana);
+            escena.add(manzana1);
+            manzana2 = factory.createManzanaB(manzana);
+
+            manzana2.translate(manzana+anchoCalle,0.0,0.0);
+            escena.add(manzana2);
+            manzana3 = factory.createManzanaB(manzana);
+
+            manzana3.translate(2*manzana + 2*anchoCalle,0.0,0.0);
+            escena.add(manzana3);
+            manzana4 = factory.createManzanaB(manzana);
+
+            manzana4.translate(3*manzana + 3*anchoCalle,0.0,0.0);
+
+            escena.add(manzana4);*/
+
+
+            gl.clearColor(255.0, 255.0, 255.0, 1.0);
+            gl.enable(gl.DEPTH_TEST);
+
+            drawScene();
+        }
+
+
+        function rellenarCalles(anchoCalle, largoCalle, manzana, escena,factory){
 
             //Manzanas 1 a 4 estan sobre y=0 y se numeran en x creciente
             //calle 1: posicion contigua a la manzana 1.
@@ -625,38 +663,28 @@
             esquina9= factory.createEsquina(anchoCalle);
             esquina9.translate(3*manzana + 2*anchoCalle,0.1,3*manzana+ 2*anchoCalle);
             escena.add(esquina9);
+        }
 
-            //Creamos las manzanas
-            manzana1 = factory.createManzanaB(manzana);
-            escena.add(manzana1);
+        function rellenarManzanas(anchoCalle, manzana, escena,factory){
+            //var aux = [true,false,true,false,false,false,true,false,true,true,false,true,true,true,false,false];
+            var aux = [true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+            //aux para probar solamente
 
-            manzana2 = factory.createManzanaB(manzana);
-            manzana2.translate(manzana+anchoCalle,0.0,0.0);
-            escena.add(manzana2);
+            for (var i=0; i< 4; i++){
+                for(var j=0; i<4; i++){
+                    var nMan = (i*4) + j;
 
-            manzana3 = factory.createManzanaB(manzana);
-            manzana3.translate(2*manzana + 2*anchoCalle,0.0,0.0);
-            escena.add(manzana3);
+                    /*if(){
+                       ACA VA EL IF DE SI ES RUTA O CALLE!!!
+                    }*/
+                    if(aux[nMan]){
+                        var mEdf = factory.createManzanaB(manzana);
+                        mEdf.translate( (i* (anchoCalle+manzana) ), 0.0, (j* (anchoCalle+manzana) ) );
+                        escena.add(mEdf);
+                    }
 
-            manzana4 = factory.createManzanaB(manzana);
-            manzana4.translate(3*manzana + 3*anchoCalle,0.0,0.0);
-            escena.add(manzana4);
-
-            camera = new CameraHandler();
-
-            body.handler = camera;
-            canvas.handler = camera;
-
-            camera.setOrbit();
-
-            /*EJEMPLO OBJETO*/
-            obj = new Objeto3D();
-
-
-            gl.clearColor(255.0, 255.0, 255.0, 1.0);
-            gl.enable(gl.DEPTH_TEST);
-
-            drawScene();
+                }
+            }
         }
 
     </script>
