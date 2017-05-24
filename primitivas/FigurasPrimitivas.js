@@ -295,42 +295,42 @@ class FigurasPrimitivias{
         arrancando por el vertice inferior izquierdo, y avanzando
         en x hasta la trompa del auto*/
         vertices.push(vec3.fromValues(x0, y1, 0.0));
-        var vecNorm1 = vec3.fromValues(x0, y1, 0.0);
+        var vecNorm1 = vec3.fromValues(-1.0, -1.0, 0.0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
         this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR);
 
         vertices.push(vec3.fromValues(x2, y1, 0.0));
-        var vecNorm4 = vec3.fromValues(x2, y1, 0.0);
+        var vecNorm4 = vec3.fromValues(0.0, -1.0, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
         this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR);
 
         vertices.push(vec3.fromValues(x3, y1, 0.0));
-        var vecNorm4 = vec3.fromValues(x3, y1, 0.0);
+        var vecNorm4 = vec3.fromValues(1.0, -1.0, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
         vertices.push(vec3.fromValues(x3, y2, 0.0));
-        var vecNorm4 = vec3.fromValues(x3, y2, 0.0);
+        var vecNorm4 = vec3.fromValues(1.0, 1.0, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
         vertices.push(vec3.fromValues(x2, y3, 0.0));
-        var vecNorm4 = vec3.fromValues(x3, y3, 0.0);
+        var vecNorm4 = vec3.fromValues(0.0, 1.0, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
         vertices.push(vec3.fromValues(x0, y3, 0.0));
-        var vecNorm4 = vec3.fromValues(x0, y3, 0.0);
+        var vecNorm4 = vec3.fromValues(-1.0, 1.0, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
         //ultimo vertice
         vertices.push(vec3.fromValues(x0, y1, 0.0));
-        var vecNorm5 = vec3.fromValues(x0, y1, 0.0);
+        var vecNorm5 = vec3.fromValues(-1.0,-1.0, 0.0);
         vec3.normalize(vecNorm5, vecNorm5);
         arrayVecNOR.push(vecNorm5);
     }
