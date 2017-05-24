@@ -475,7 +475,7 @@
             escena = factory.createEscene( (4*manzana) + (3*anchoCalle) );
 
             this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
-            this.rellenarManzanas(anchoCalle, manzana, escena, factory);
+            //this.rellenarManzanas(anchoCalle, manzana, escena, factory);
 
             //Creamos las manzanas
             /*manzana1 = factory.createManzanaB(manzana);
@@ -671,17 +671,17 @@
             //aux para probar solamente
 
             for (var i=0; i< 4; i++){
-                for(var j=0; i<4; i++){
+                for(var j=0; j<4; i++){
                     var nMan = (i*4) + j;
-
+                    console.log(nMan);
                     /*if(){
                        ACA VA EL IF DE SI ES RUTA O CALLE!!!
                     }*/
-                    if(aux[nMan]){
+                    /*if(aux[nMan]){
                         var mEdf = factory.createManzanaB(manzana);
                         mEdf.translate( (i* (anchoCalle+manzana) ), 0.0, (j* (anchoCalle+manzana) ) );
                         escena.add(mEdf);
-                    }
+                    }*/
 
                 }
             }

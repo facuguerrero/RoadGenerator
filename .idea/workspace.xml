@@ -27,10 +27,10 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="680" column="0" lean-forward="false" selection-start-line="680" selection-start-column="0" selection-end-line="680" selection-end-column="0" />
+            <state relative-caret-position="107">
+              <caret line="477" column="14" lean-forward="false" selection-start-line="477" selection-start-column="14" selection-end-line="477" selection-end-column="14" />
               <folding>
-                <element signature="e#19003#26013#0" expanded="false" />
+                <element signature="e#19005#26015#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -419,14 +419,7 @@
       <workItem from="1495548655905" duration="2556000" />
       <workItem from="1495558058806" duration="6694000" />
       <workItem from="1495565917802" duration="7324000" />
-      <workItem from="1495634749731" duration="3044000" />
-    </task>
-    <task id="LOCAL-00036" summary="funca esfera">
-      <created>1494181168180</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1494181168180</updated>
+      <workItem from="1495634749731" duration="3324000" />
     </task>
     <task id="LOCAL-00037" summary="problema en el build">
       <created>1494190710107</created>
@@ -764,11 +757,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495635957253</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Estoy separando en funciones, la generacion de las manzanas esta fallando pero debe ser una boludes.&#10;Mas tarde lo veo">
+      <created>1495637824259</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1495637824259</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180497000" />
+    <option name="totallyTimeSpent" value="180777000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -809,7 +809,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cambio template 2" />
     <MESSAGE value="cambio calc buffer" />
     <MESSAGE value="cambio del cilindro" />
     <MESSAGE value="objetos funcionando, y template limpio" />
@@ -834,7 +833,8 @@
     <MESSAGE value="edificios random" />
     <MESSAGE value="Normales auto" />
     <MESSAGE value="Limpiando template para armar main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Limpiando template para armar main" />
+    <MESSAGE value="Estoy separando en funciones, la generacion de las manzanas esta fallando pero debe ser una boludes.&#10;Mas tarde lo veo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Estoy separando en funciones, la generacion de las manzanas esta fallando pero debe ser una boludes.&#10;Mas tarde lo veo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1170,10 +1170,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="680" column="0" lean-forward="false" selection-start-line="680" selection-start-column="0" selection-end-line="680" selection-end-column="0" />
+        <state relative-caret-position="107">
+          <caret line="477" column="14" lean-forward="false" selection-start-line="477" selection-start-column="14" selection-end-line="477" selection-end-column="14" />
           <folding>
-            <element signature="e#19003#26013#0" expanded="false" />
+            <element signature="e#19005#26015#0" expanded="false" />
           </folding>
         </state>
       </provider>
