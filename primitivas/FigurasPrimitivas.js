@@ -373,7 +373,6 @@ class FigurasPrimitivias{
             var u = (j * Math.PI);
 
             var vec = vec3.fromValues( x + (r*Math.cos(u)) , y + r*Math.sin(u) , 0.0);
-            console.log(vec);
             vertices.push(vec);
 
             var vecNorm = vec3.fromValues(255,255,255);

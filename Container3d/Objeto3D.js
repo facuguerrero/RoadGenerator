@@ -94,7 +94,6 @@ class Objeto3D extends Container3D{
         //chequeo tamaños correctos
         if((arrayMatT.length != rows || arrayVecPos.length != rows)) {
             //Se chequea el caso en el que es edificio
-            console.log("error de dimension para la superficie");
             if (arrayVecPos.length != rows + 1) {
                 console.log("error de dimension para la superficie con escalado");
             }

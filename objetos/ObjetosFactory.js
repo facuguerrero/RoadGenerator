@@ -449,14 +449,11 @@ class ObjetosFactory {
         var alturas = [];
         var variaciones = [0.3,0.5,0.7];
         for(var i =0.0; i<14;i++){
-            console.log(i);
             var num = Math.random();
 
             if(num <0.3 || num>0.7){
                 num = variaciones[i%3];
             }
-            console.log(num);
-
             alturas.push(num*20);
         }
         return alturas;
