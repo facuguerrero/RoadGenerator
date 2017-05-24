@@ -23,7 +23,7 @@ class CuadraticBezier{
         if (points.length < 3){
             console.log("insuficiente cantidad de puntos de control para armar una Bezier cuadratica\n");
         }
-        if(points.lengh%3 !=0){
+        if(points.length%3 !=0){
             console.log("cantidad de puntos incorrecta, Bezier recibe multiplos de 3 \n");
         }
         this.control_points = points;
@@ -34,12 +34,13 @@ class CuadraticBezier{
 
         for(var i = 0; i < this.rows/3 ; i += this.step){
             //se cargan todas las matrices y vectores
+
             var u = i * this.getLength() / (this.rows - 1);
 
-            var vec = this.getVecAtU(u);
+            var vec = this.getVecAtU(i);
             this.vecPos.push(vec);
 
-            var mat = this.getMatAtU(u);
+            var mat = this.getMatAtU(i);
             this.arrayMatT.push(mat);
         }
 
@@ -49,6 +50,7 @@ class CuadraticBezier{
 
         var aux = Math.floor(u);
         var t = u - aux;
+        aux = 3*u;
         //si es el ultimo punto
         if (u >= this.getLength()){
             aux = this.getLength()-1;
@@ -57,6 +59,10 @@ class CuadraticBezier{
         var p1 = this.control_points[aux];
         var p2 = this.control_points[aux+1];
         var p3 = this.control_points[aux+2];
+
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
 
         return this.interpolar(p1, p2, p3, t);
     }

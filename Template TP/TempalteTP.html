@@ -15,6 +15,7 @@
 
     <script type="text/javascript" src="../primitivas/FigurasPrimitivas.js"></script>
     <script type="text/javascript" src="../primitivas/CuadraticBSpline.js"></script>
+    <script type="text/javascript" src="../primitivas/CuadraticBezier.js"></script>
 
     <script type="text/javascript" src="../Container3d/BufferCalculator.js"></script>
     <script type="text/javascript" src="../Container3d/Container3D.js"></script>
@@ -474,8 +475,10 @@
 
             escena = factory.createEscene( (4*manzana) + (3*anchoCalle) );
 
-            this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
-            this.rellenarManzanas(anchoCalle, manzana, escena, factory);
+            var manzana1 = factory.createManzanaB(manzana);
+            escena.add(manzana1);
+            //this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
+            //this.rellenarManzanas(anchoCalle, manzana, escena, factory);
 
             //Creamos las manzanas
             /*manzana1 = factory.createManzanaB(manzana);
