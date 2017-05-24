@@ -433,6 +433,19 @@ class ObjetosFactory {
         return manzana;
     }
 
+    createManzanaP(x){
+
+        var manzana = this.createEscene(x);
+        var anchoVereda = 4.0;
+        var centro = this.createEscene(x-anchoVereda);
+        
+        
+        centro.translate(anchoVereda/2,0.15,anchoVereda/2);
+        manzana.add(centro);
+        //manzana.add(vereda);
+        return manzana;
+    }
+
 
 //----------------- Metodos Auxiliares ---------------//
 
