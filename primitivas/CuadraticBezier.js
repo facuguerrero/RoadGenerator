@@ -31,11 +31,11 @@ class CuadraticBezier{
     }
 
     calculateArrays(){
-
-        for(var i = 0; i < this.rows/3 ; i += this.step){
+        var tramos = Math.floor(this.rows/3);
+        for(var i = 0.0; i < tramos ; i += this.step){
             //se cargan todas las matrices y vectores
 
-            var u = i * this.getLength() / (this.rows - 1);
+            //var u = i * this.getLength() / ((this.rows) - 1);
 
             var vec = this.getVecAtU(i);
             this.vecPos.push(vec);
@@ -48,11 +48,11 @@ class CuadraticBezier{
 
     getVecAtU(u){
 
-        var aux = Math.floor(u);
-        var t = u - aux;
-        aux = 3*u;
+        var entero = Math.floor(u);
+        var t = u - entero;
+        var aux= 3*entero;
         //si es el ultimo punto
-        if (u >= this.getLength()){
+       if (u >= this.getLength()){
             aux = this.getLength()-1;
             t = 1;
         }
@@ -122,8 +122,9 @@ class CuadraticBezier{
 
         /* EN CASO DE PROBLEMA VER EL CONTROL EN LAS PUNTAS
          SI LOS PUNTOS SON IGUALES HAY QUE DEFINIR EL (0,0,0) */
-        var aux = Math.floor(u);
-        var t = u - aux;
+        var entero = Math.floor(u);
+        var t = u - entero;
+        var aux= 3*entero;
         //si es el ultimo punto
         if (u >= this.getLength()){
             aux = this.getLength()-1;
@@ -140,8 +141,8 @@ class CuadraticBezier{
     interpolarDeriv(p1, p2, p3, t){
         var aux = vec3.fromValues(0.0, 0.0, 0.0);
 
-        var base1 = (-2)*(1 -t);
-        var base2 = (2*(1-t) - 2*t );
+        var base1 = ((-2)*(1 -t));
+        var base2 = ((2*(1-t)) - (2*t));
         var base3 = (2*t);
 
         vec3.scaleAndAdd(aux, aux, p1, base1);

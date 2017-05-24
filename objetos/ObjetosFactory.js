@@ -321,7 +321,7 @@ class ObjetosFactory {
 
         var vereda = new Objeto3D();
 
-        var curva = new CuadraticBezier(puntos.length, true);
+        var curva = new CuadraticBezier(puntos.length,0.1 ,true);
 
         curva.setControlPoints(puntos);
         curva.calculateArrays();
@@ -353,9 +353,6 @@ class ObjetosFactory {
         puntos.push(vec3.fromValues(20.0,0.0,0.0));
         puntos.push(vec3.fromValues(20.0,0.0,10.0));
         puntos.push(vec3.fromValues(20.0,0.0,20.0));
-        puntos.push(vec3.fromValues(20.0,0.0,20.0));
-        puntos.push(vec3.fromValues(20.0,0.0,40.0));
-        puntos.push(vec3.fromValues(20.0,0.0,60.0));
         /*puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
         puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
         puntos.push(vec3.fromValues(0.0, 16.0, 2.0));
@@ -380,6 +377,7 @@ class ObjetosFactory {
         puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
         */
         var vereda = this.createVereda(puntos);
+        vereda.translate(0.0,0.5,0.0);
         manzana.add(vereda);
 
         var edificio1 = this.createBuilding(4.0, alturas[0], 5.0);
