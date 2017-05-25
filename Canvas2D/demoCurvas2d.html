@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+    
+body{
+	font-family: Arial;
+
+}
+
+#botonera{
+	position: absolute;
+	top: 450px;
+	right: 10px;
+
+}
+
+#botonera a{
+	display: inline-block;
+	padding: 10px;
+
+
+}
+    
+
+    #myCanvas{
+    	cursor:crosshair;
+    	position: absolute;
+		top: 150px;
+		right: 0;
+
+    }
+</style>
+
+	<script src="jquery-2.1.4.min.js"></script>
+
+	<canvas id="myCanvas" width="300" height="300" style="border:3px solid #d3d3d3;">
+
+	Your browser does not support the HTML5 canvas tag.
+	</canvas>
+
+	<div id="botonera">
+		<a href="#" onclick="Load();">Load</a> <br>
+	</div>
+
+<script>
+
+
+var Base0,Base1,Base2;
+var Base0der,Base1der,Base2der;
+
+
+function setBase(){
+
+	 Base0=function(u) { return (u*u/2 - u + 1/2);}
+
+	 Base1=function(u) { return (- u*u + u + 1/2); }
+
+	 Base2=function(u) { return (u*u/2); }
+
+	 Base0der=function(u) { return (u - 1); }
+
+	 Base1der=function(u) { return (-2*u + 1); }
+
+	 Base2der=function(u) { return (u);}
+
+}
+
+	var CurvaCuadratica=function (u,puntosDeControl){
+
+		var p0=puntosDeControl[0];
+		var p1=puntosDeControl[1];
+		var p2=puntosDeControl[2];
+
+		var punto=new Object();
+
+		punto.x=Base0(u)*p0[0]+Base1(u)*p1[0]+Base2(u)*p2[0];
+		punto.y=Base0(u)*p0[1]+Base1(u)*p1[1]+Base2(u)*p2[1];
+
+		return punto;
+	}
+
+	var CurvaCuadraticaDerivadaPrimera=function (u,puntosDeControl){
+
+		var p0=puntosDeControl[0];
+		var p1=puntosDeControl[1];
+		var p2=puntosDeControl[2];
+
+		var punto=new Object();
+
+		punto.x=Base0der(u)*p0[0]+Base1der(u)*p1[0]+Base2der(u)*p2[0];
+		punto.y=Base0der(u)*p0[1]+Base1der(u)*p1[1]+Base2der(u)*p2[1];
+
+		return punto;
+	}
+
+	function dibujarCurvaCuadratica(puntosDeControl,dibujarGrafo){
+
+		// devuelve un punto de la curva segun el parametro u entre 0 y 1
+
+		// 3 Puntos de control P0, P1 y P2		
+		
+
+		var p0=puntosDeControl[0];
+		var p1=puntosDeControl[1];
+		var p2=puntosDeControl[2];
+		var p3=puntosDeControl[3];
+		var p4=puntosDeControl[4]; 
+		var p5=puntosDeControl[5]; 		
+
+
+		ctx.lineWidth=15;
+		// Dibujamos la curva en color azul, entre u=0 y u=1 con deltaU
+
+		var deltaU=0.01; // es el paso de avance sobre la curva cuanto mas chico mayor es el detalle
+						 // u=0.05 son 20 segmentos (0.05=1/20)
+		ctx.clearRect ( 0 , 0 ,1000 , 1000 );
+		ctx.beginPath();
+		
+		for (var count=0; count<puntosDeControl.length ; count=count+deltaU){
+			// Tengo que calcular la posicion del punto c(u)
+
+			var currentU = count * (puntosDeControl.length-2) / (puntosDeControl.length - 1);
+
+			var control_points = [];
+			var aux = Math.floor(currentU);
+			var t = currentU - aux;
+			//si es el ultimo punto
+			if (currentU >= puntosDeControl.length -2){
+			aux = puntosDeControl.length - 3;
+			t = 1;
+			}
+			control_points[0] = puntosDeControl[aux];
+			control_points[1] = puntosDeControl[aux + 1];
+			control_points[2] = puntosDeControl[aux + 2];
+
+			var punto=CurvaCuadratica(t,control_points);
+
+			if (t==0) ctx.moveTo(punto.x,punto.y);
+			ctx.lineTo(punto.x,punto.y);// hago una linea desde el ultimo lineTo hasta x,y
+			
+			//console.log("C("+u+")= "+punto.x+","+punto.y);
+		}
+		ctx.strokeStyle="#0000FF";
+		ctx.stroke();
+
+
+
+		// Dibujo el grafo de control en color rojo, solo para verificar donde esta cada punto de control
+
+		if (dibujarGrafo){
+			ctx.beginPath();
+			
+			//dibujo cada punto de control
+			ctx.strokeStyle="#00ff00";
+			ctx.beginPath();			
+			ctx.arc(p0[0],p0[1],7,0,2*Math.PI);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc(p1[0],p1[1],7,0,2*Math.PI);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc(p2[0],p2[1],7,0,2*Math.PI);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc(p3[0],p3[1],7,0,2*Math.PI);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc(p4[0],p4[1],7,0,2*Math.PI);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc(p5[0],p5[1],7,0,2*Math.PI);
+			ctx.stroke();											
+
+		}
+
+
+	}
+
+	function dibujarVector(x1,y1,x2,y2,color){
+
+		ctx.beginPath();
+		ctx.moveTo(x1,y1);
+		ctx.lineTo(x1+x2,y1+y2);
+		ctx.strokeStyle=color;
+		ctx.stroke();		
+	}
+
+  
+     function animate() {
+
+     	  requestAnimationFrame( animate ); 
+
+		  dibujarCurvaCuadratica(puntosDeControl,true);
+	
+	}
+	
+
+	var puntosDeControl=[ [0, 75], [0,75], [100,100] , [150,150] , [200,200],  [300,225], [300,225] ];
+
+	var c=document.getElementById("myCanvas");
+	var ctx=c.getContext("2d");
+
+
+
+
+$( document ).ready(function() {// esto es para esperar que carge la libreria Jquery
+
+
+	function updateCoordinates(e){
+		   var pos=$("#myCanvas").position();
+           $("#pad").html("mouse x: " + (e.pageX -pos.left)+ "<br>mouse y: " + (e.pageY-pos.top)); 
+	}
+
+    var mouseIsPressed=false;
+    var p2 = false;
+    var p3 = false;
+    var p4 = false;
+    var radio = 7;
+
+     $("#myCanvas").bind('mousemove',function(e){ 
+        var pos=$("#myCanvas").position();
+        if (mouseIsPressed){
+        	if(p4){
+        		punto = puntosDeControl[4];
+        		punto[0] = (e.pageX -pos.left);	
+        		punto[1] = (e.pageY-pos.top);
+        	}
+			else if(p2){
+        		punto = puntosDeControl[2];
+        		punto[0] = (e.pageX -pos.left);	
+        		punto[1] = (e.pageY-pos.top);
+        	}
+			else if(p3){
+        		punto = puntosDeControl[3];
+        		punto[0] = (e.pageX -pos.left);	
+        		punto[1] = (e.pageY-pos.top);
+        	}
+        	updateCoordinates(e);
+        }	
+    }); 
+
+
+     $("#myCanvas").bind('mousedown',function(e){ 
+            mouseIsPressed=true;
+            var pos=$("#myCanvas").position();
+            
+            if( (puntosDeControl[4][0] <= (e.pageX -pos.left)) + radio &&
+            	(puntosDeControl[4][0] >= (e.pageX -pos.left)) - radio &&
+            	(puntosDeControl[4][1] <= (e.pageY-pos.top) + radio) &&
+            	(puntosDeControl[4][1] >= (e.pageY-pos.top) - radio) ){
+            	p4 = true;
+            }
+            else if( (puntosDeControl[2][0] <= (e.pageX -pos.left)) + radio &&
+            	(puntosDeControl[2][0] >= (e.pageX -pos.left)) - radio &&
+            	(puntosDeControl[2][1] <= (e.pageY-pos.top) + radio) &&
+            	(puntosDeControl[2][1] >= (e.pageY-pos.top) - radio) ){
+            	p2 = true;
+            }
+            else if( (puntosDeControl[3][0] <= (e.pageX -pos.left)) + radio &&
+            	(puntosDeControl[3][0] >= (e.pageX -pos.left)) - radio &&
+            	(puntosDeControl[3][1] <= (e.pageY-pos.top) + radio) &&
+            	(puntosDeControl[3][1] >= (e.pageY-pos.top) - radio) ){
+            	p3 = true;
+            }                        
+
+
+            updateCoordinates(e);
+    }); 
+
+     $("#myCanvas").bind('mouseup',function(e){ 
+           	mouseIsPressed=false;
+        	p4 = false;
+        	p2 = false;
+        	p3 = false;
+    }); 
+
+
+});
+
+
+
+	setBase();
+	//setBases("bspline2");
+	animate();
+	//dibujarCurva(puntosDeControl,true);
+
+</script>
+
+</body>
+</html>
