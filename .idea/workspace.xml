@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="$PROJECT_DIR$/Template TP/TempalteTP.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,9 +30,14 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="475" column="31" lean-forward="false" selection-start-line="475" selection-start-column="31" selection-end-line="475" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="78">
+              <caret line="480" column="14" lean-forward="false" selection-start-line="480" selection-start-column="14" selection-end-line="480" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#26651#26659#0" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,9 +45,27 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="524" column="61" lean-forward="false" selection-start-line="524" selection-start-column="61" selection-end-line="524" selection-end-column="61" />
-              <folding />
+            <state relative-caret-position="316">
+              <caret line="470" column="31" lean-forward="false" selection-start-line="470" selection-start-column="31" selection-end-line="470" selection-end-column="31" />
+              <folding>
+                <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createRuta#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createMediaRuta#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createFarol#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createBuilding#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createCalle#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createVereda#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createManzanaP#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#getMatriz4x4#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#llenarAlturas#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#addRuedas#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#addTapaRueda#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#addTecho#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#addTapaTecho#0;n#ObjetosFactory#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,8 +73,8 @@
       <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="177" column="28" lean-forward="false" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
+            <state relative-caret-position="285">
+              <caret line="148" column="35" lean-forward="false" selection-start-line="148" selection-start-column="35" selection-end-line="148" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -57,18 +83,8 @@
       <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="282" column="4" lean-forward="false" selection-start-line="282" selection-start-column="4" selection-end-line="282" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="432">
+              <caret line="314" column="53" lean-forward="false" selection-start-line="314" selection-start-column="53" selection-end-line="314" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -162,9 +178,9 @@
         <option value="$PROJECT_DIR$/primitivas/CuadraticBSpline.js" />
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
         <option value="$PROJECT_DIR$/primitivas/CuadraticBezier.js" />
+        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
-        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
@@ -176,10 +192,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -196,6 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -223,79 +240,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Template TP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="primitivas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="objetos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="handlers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Container3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,14 +409,8 @@
       <workItem from="1495634749731" duration="3324000" />
       <workItem from="1495652015172" duration="974000" />
       <workItem from="1495658691522" duration="4544000" />
-      <workItem from="1495717682387" duration="7798000" />
-    </task>
-    <task id="LOCAL-00043" summary="Bspline">
-      <created>1494515692130</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1494515692130</updated>
+      <workItem from="1495717682387" duration="8545000" />
+      <workItem from="1495750221770" duration="2482000" />
     </task>
     <task id="LOCAL-00044" summary="Bspline">
       <created>1494533624042</created>
@@ -808,11 +748,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495723485175</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Auto">
+      <created>1495725497601</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1495725497601</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194880000" />
+    <option name="totallyTimeSpent" value="198109000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -824,7 +771,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21521907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -901,7 +848,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1171,19 +1118,10 @@
     </entry>
     <entry file="file:///media/marc/CAP/TPSisGraf-master/objetos/ObjetosFactory.js" />
     <entry file="file:///media/marc/CAP/TPSisGraf-master/primitivas/FigurasPrimitivas.js" />
-    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="484" column="34" lean-forward="false" selection-start-line="484" selection-start-column="34" selection-end-line="484" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/CuadraticBSpline.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1467">
           <caret line="108" column="5" lean-forward="false" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="143" column="21" lean-forward="false" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,47 +1136,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-348">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template2 TP/TemplateTP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="523" column="0" lean-forward="false" selection-start-line="523" selection-start-column="0" selection-end-line="524" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="475" column="31" lean-forward="false" selection-start-line="475" selection-start-column="31" selection-end-line="475" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="78">
+          <caret line="480" column="14" lean-forward="false" selection-start-line="480" selection-start-column="14" selection-end-line="480" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#26651#26659#0" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="15">
           <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="177" column="28" lean-forward="false" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="282" column="4" lean-forward="false" selection-start-line="282" selection-start-column="4" selection-end-line="282" selection-end-column="4" />
+        <state relative-caret-position="432">
+          <caret line="314" column="53" lean-forward="false" selection-start-line="314" selection-start-column="53" selection-end-line="314" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="148" column="35" lean-forward="false" selection-start-line="148" selection-start-column="35" selection-end-line="148" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="524" column="61" lean-forward="false" selection-start-line="524" selection-start-column="61" selection-end-line="524" selection-end-column="61" />
-          <folding />
+        <state relative-caret-position="316">
+          <caret line="470" column="31" lean-forward="false" selection-start-line="470" selection-start-column="31" selection-end-line="470" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createRuta#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createMediaRuta#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createFarol#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createBuilding#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createCalle#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createVereda#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createManzanaP#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#getMatriz4x4#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#llenarAlturas#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#addRuedas#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#addTapaRueda#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#addTecho#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#addTapaTecho#0;n#ObjetosFactory#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

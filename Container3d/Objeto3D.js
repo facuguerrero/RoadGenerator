@@ -13,6 +13,7 @@ var CARROCERIA="carroceria";
 var RUEDA="rueda";
 var ESCENA ="escena";
 var VEREDA = "vereda";
+var TECHO = "techo";
 
 class Objeto3D extends Container3D{
 
@@ -176,6 +177,10 @@ class Objeto3D extends Container3D{
                 console.log("para hacer la carroceria se necesitan 19 vertices");
             }
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
+        }
+
+        else if(figura == TECHO){
+            this.figuras.calcularTecho(vertices,arrayVecNOR);
         }
 
        else if(figura == RUEDA){

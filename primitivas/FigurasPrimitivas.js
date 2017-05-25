@@ -280,6 +280,48 @@ class FigurasPrimitivias{
         arrayVecNOR.push(vecNorm2);
     }
 
+    calcularTecho(vertices,arrayVecNOR){
+
+        var x0= 0.0;
+        var x1= 1.0;
+        var x2= 7.0;
+        var x3= 11.0;
+        var r= 1.0;
+        var y1= 1.0;
+        var y2= 2.0;
+        var y3= 2.5;
+        var y4=3.5;
+
+        vertices.push(vec3.fromValues(x0, y3,0.0));
+        var vecNorm1 = vec3.fromValues(-1.0, -1.0, 0.0);
+        vec3.normalize(vecNorm1, vecNorm1);
+        arrayVecNOR.push(vecNorm1);
+
+        vertices.push(vec3.fromValues(x2, y3,0.0));
+        var vecNorm2 = vec3.fromValues(1.0, -1.0, 0.0);
+        vec3.normalize(vecNorm2, vecNorm2);
+        arrayVecNOR.push(vecNorm2);
+
+        vertices.push(vec3.fromValues(x2-1.0, y4,0.0));
+        var vecNorm3 = vec3.fromValues(1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm3, vecNorm3);
+        arrayVecNOR.push(vecNorm3);
+
+        vertices.push(vec3.fromValues(x1+(2*r), y4,0.0));
+        var vecNorm4 = vec3.fromValues(1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm4, vecNorm4);
+        arrayVecNOR.push(vecNorm4);
+
+        vertices.push(vec3.fromValues(x1+(r), y4-0.5,0.0));
+        var vecNorm4 = vec3.fromValues(1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm4, vecNorm4);
+        arrayVecNOR.push(vecNorm4);
+
+        vertices.push(vec3.fromValues(x0, y3,0.0));
+        arrayVecNOR.push(vecNorm1);
+
+    }
+
     calcularCarroceria(vertices,arrayVecNOR){
 
         var x0= 0.0;
@@ -302,16 +344,16 @@ class FigurasPrimitivias{
         this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR);
 
         vertices.push(vec3.fromValues(x2, y1, 0.0));
-        var vecNorm4 = vec3.fromValues(0.0, -1.0, 0.0);
-        vec3.normalize(vecNorm4, vecNorm4);
-        arrayVecNOR.push(vecNorm4);
+        var vecNorm2 = vec3.fromValues(0.0, -1.0, 0.0);
+        vec3.normalize(vecNorm2, vecNorm2);
+        arrayVecNOR.push(vecNorm2);
 
         this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR);
 
         vertices.push(vec3.fromValues(x3, y1, 0.0));
-        var vecNorm4 = vec3.fromValues(1.0, -1.0, 0.0);
-        vec3.normalize(vecNorm4, vecNorm4);
-        arrayVecNOR.push(vecNorm4);
+        var vecNorm3 = vec3.fromValues(1.0, -1.0, 0.0);
+        vec3.normalize(vecNorm3, vecNorm3);
+        arrayVecNOR.push(vecNorm3);
 
         vertices.push(vec3.fromValues(x3, y2, 0.0));
         var vecNorm4 = vec3.fromValues(1.0, 1.0, 0.0);
@@ -319,20 +361,20 @@ class FigurasPrimitivias{
         arrayVecNOR.push(vecNorm4);
 
         vertices.push(vec3.fromValues(x2, y3, 0.0));
-        var vecNorm4 = vec3.fromValues(0.0, 1.0, 0.0);
-        vec3.normalize(vecNorm4, vecNorm4);
-        arrayVecNOR.push(vecNorm4);
+        var vecNorm5 = vec3.fromValues(0.0, 1.0, 0.0);
+        vec3.normalize(vecNorm5, vecNorm5);
+        arrayVecNOR.push(vecNorm5);
 
         vertices.push(vec3.fromValues(x0, y3, 0.0));
-        var vecNorm4 = vec3.fromValues(-1.0, 1.0, 0.0);
-        vec3.normalize(vecNorm4, vecNorm4);
-        arrayVecNOR.push(vecNorm4);
+        var vecNorm6 = vec3.fromValues(-1.0, 1.0, 0.0);
+        vec3.normalize(vecNorm6, vecNorm6);
+        arrayVecNOR.push(vecNorm6);
 
         //ultimo vertice
         vertices.push(vec3.fromValues(x0, y1, 0.0));
-        var vecNorm5 = vec3.fromValues(-1.0,-1.0, 0.0);
-        vec3.normalize(vecNorm5, vecNorm5);
-        arrayVecNOR.push(vecNorm5);
+        var vecNorm7 = vec3.fromValues(-1.0,-1.0, 0.0);
+        vec3.normalize(vecNorm7, vecNorm7);
+        arrayVecNOR.push(vecNorm7);
 
     }
 

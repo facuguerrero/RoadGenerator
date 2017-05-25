@@ -267,9 +267,12 @@ class ObjetosFactory {
         carroceria.calcularSuperficieBarrido("carroceria", 2, 19, arrayMat, puntosCarroceria);
         auto.add(carroceria);
 
-        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria);
+        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria, false);
+        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria, true);
 
         this.addRuedas(puntosCarroceria,arrayMat, auto);
+
+        this.addTecho(puntosCarroceria,arrayMat,carroceria);
 
         return auto;
     }
@@ -322,7 +325,6 @@ class ObjetosFactory {
         return vereda;
 
     }
-
 
     createManzanaB(x){
 
@@ -466,42 +468,28 @@ class ObjetosFactory {
         return alturas;
     }
 
-    addPuertas(carroceria,auto,arrayMat,puntosCarroceria){
+    addPuertas(carroceria,auto, trasladar){
         var puerta1 = new Objeto3D();
         var buf = new BufferCalculator(2,19);
         /*Seteo los buffers */
         buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
         buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
-
+        buf.posBuffer = carroceria.bufferCreator.posBuffer;
         puerta1.setBufferCreator(buf);
 
         //console.log(buf.posBuffer);
-        puerta1.calcularSuperficieBarrido("carroceria",2,19,arrayMat,puntosCarroceria);
         puerta1.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
             ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+
+        if(trasladar){
+            //Acomodar las normales.
+            puerta1.translate(0.0, 0.0, 4.0);
+        }
         puerta1.build();
         auto.add(puerta1);
 
-
-        //ACOMODAR LAS NORMALES, ESTAN COMO PARA ADENTRO DEL AUTO
-        var puerta2 = new Objeto3D();
-        var buf = new BufferCalculator(2,19);
-        /*Seteo los buffers */
-        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
-        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
-
-        puerta2.setBufferCreator(buf);
-
-        //console.log(buf.posBuffer);
-        puerta2.calcularSuperficieBarrido("carroceria",2,19,arrayMat,puntosCarroceria);
-
-        puerta2.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
-            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
-        puerta2.build();
-
-        puerta2.translate(0.0,0.0,4.0);
-        auto.add(puerta2);
     }
+
 
     addRuedas(puntosCarroceria,arrayMat,auto){
         //Creamos las ruedas del auto
@@ -545,5 +533,33 @@ class ObjetosFactory {
         }
         tapa1.build();
         rueda.add(tapa1);
+    }
+
+    addTecho(puntosCarroceria,arrayMat,carroceria){
+
+        var techo = new Objeto3D();
+        techo.calcularSuperficieBarrido("techo",2,6,arrayMat,puntosCarroceria);
+
+        this.addTapaTecho(techo, false);
+        this.addTapaTecho(techo, true);
+
+        carroceria.add(techo);
+    }
+
+    addTapaTecho(techo, trasladar){
+        var tapa = new Objeto3D();
+        var buf = new BufferCalculator(2,6);
+        /*Seteo los buffers */
+        buf.normalBuffer = techo.bufferCreator.normalBuffer;
+        buf.colorBuffer = techo.bufferCreator.colorBuffer;
+        buf.posBuffer = techo.bufferCreator.posBuffer;
+        tapa.setBufferCreator(buf);
+
+        tapa.bufferCreator.indexBuffer = [0,1,2,2,0,3,3,0,4];
+        if(trasladar){
+            tapa.translate(0.0,0.0,4.0);
+        }
+        tapa.build();
+        techo.add(tapa);
     }
 }

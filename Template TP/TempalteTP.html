@@ -475,27 +475,10 @@
 
             escena = factory.createCar();
 
-            //var manzana1 = factory.createManzanaB(manzana);
-            //escena.add(manzana1);
+            //escena=factory.createEscene(n*(anchoCalle+manzana));
+
             //this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
             //this.rellenarManzanas(anchoCalle, manzana, escena, factory);
-
-            //Creamos las manzanas
-            /*manzana1 = factory.createManzanaB(manzana);
-            escena.add(manzana1);
-            manzana2 = factory.createManzanaB(manzana);
-
-            manzana2.translate(manzana+anchoCalle,0.0,0.0);
-            escena.add(manzana2);
-            manzana3 = factory.createManzanaB(manzana);
-
-            manzana3.translate(2*manzana + 2*anchoCalle,0.0,0.0);
-            escena.add(manzana3);
-            manzana4 = factory.createManzanaB(manzana);
-
-            manzana4.translate(3*manzana + 3*anchoCalle,0.0,0.0);
-
-            escena.add(manzana4);*/
 
 
             gl.clearColor(255.0, 255.0, 255.0, 1.0);
@@ -699,20 +682,17 @@
 </head>
 
 
-<body id = "my_body" onload="webGLStart();">
+<body id = "my_body" onload="webGLStart();" body style="background-color:#0EA9EB;">
 <center>
-    <h1>Sistemas Gr�ficos - 66.71</h1>
-    <h2>Framework Trabajo Pr&aacute;ctico 2016</h2>
-    <canvas id="my_canvas" style="border: none;" width="1280" height="720">
+    <h1 style="color:white">SG - 66.71 - Trabajo Pr&aacute;ctico 2017</h1>
+    <h2 style="color:white">Schapira y Guerrero</h2>
+    <canvas id="my_canvas" style="border: none;" width="1280" height="520">
         <canvas id="canvas2Ddoc" width="200" height="200"></canvas>
         Your browser does not support the HTML5 canvas element.
         </scanvas>
 
 </center>
-<br/>
-Las texturas son cortes�a de <a href="http://maps.jpl.nasa.gov/">Jet Propulsion Laboratory</a>.
-<br/>
-<br/>
+
 
 </body>
 
