@@ -246,17 +246,14 @@ class ObjetosFactory {
         auto.setBufferCreator(buffcalc);
         auto.build();
 
-
-        //Creamos la carroceria del auto
-        var carroceria = new Objeto3D();
-
         //Declaro los puntos de la carroceria del auto
         var puntosCarroceria = [];
+
         puntosCarroceria.push(vec3.fromValues(0.0, 0.0, 0.0));
         puntosCarroceria.push(vec3.fromValues(0.0, 0.0, 4.0));
-
         //Matrices de transformacion
         var arrayMat = [];
+
         var mat = mat3.create();
         var matt = mat3.create();
         mat3.identity(mat);
@@ -264,26 +261,15 @@ class ObjetosFactory {
         arrayMat.push(mat);
         arrayMat.push(matt);
 
+        //Creamos la carroceria del auto
+        var carroceria = new Objeto3D();
+
         carroceria.calcularSuperficieBarrido("carroceria", 2, 19, arrayMat, puntosCarroceria);
         auto.add(carroceria);
 
-        //Creamos las ruedas del auto
-        var rueda1 = new Objeto3D();
+        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria);
 
-        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
-        //posicionamientos y el radio
-        puntosCarroceria.push(vec3.fromValues(2.0, 1.0, 0.8));
-
-        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
-        auto.add(rueda1);
-
-        var rueda2 = new Objeto3D();
-
-        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
-        //posicionamientos y el radio
-        puntosCarroceria.push(vec3.fromValues(8.0, 1.0, 0.8));
-        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
-        auto.add(rueda2);
+        this.addRuedas(puntosCarroceria,arrayMat, auto);
 
         return auto;
     }
@@ -478,5 +464,69 @@ class ObjetosFactory {
             alturas.push(num*20);
         }
         return alturas;
+    }
+
+    addPuertas(carroceria,auto,arrayMat,puntosCarroceria){
+        var puerta1 = new Objeto3D();
+        var buf = new BufferCalculator(2,19);
+        /*Seteo los buffers */
+        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
+        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
+
+        puerta1.setBufferCreator(buf);
+
+        //console.log(buf.posBuffer);
+        puerta1.calcularSuperficieBarrido("carroceria",2,19,arrayMat,puntosCarroceria);
+        console.log(puerta1.bufferCreator.posBuffer[35]);
+        console.log(puerta1.bufferCreator.posBuffer[36]);
+        console.log(puerta1.bufferCreator.posBuffer[37]);
+        //,,4,16,5,5,16,6,6,16,7
+        puerta1.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
+            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+        puerta1.build();
+        auto.add(puerta1);
+
+
+        //ACOMODAR LAS NORMALES, ESTAN COMO PARA ADENTRO DEL AUTO
+        var puerta2 = new Objeto3D();
+        var buf = new BufferCalculator(2,19);
+        /*Seteo los buffers */
+        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
+        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
+
+        puerta2.setBufferCreator(buf);
+
+        //console.log(buf.posBuffer);
+        puerta2.calcularSuperficieBarrido("carroceria",2,19,arrayMat,puntosCarroceria);
+        console.log(puerta2.bufferCreator.posBuffer[35]);
+        console.log(puerta2.bufferCreator.posBuffer[36]);
+        console.log(puerta2.bufferCreator.posBuffer[37]);
+        //,,4,16,5,5,16,6,6,16,7
+        puerta2.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
+            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+        puerta2.build();
+
+        puerta2.translate(0.0,0.0,4.0);
+        auto.add(puerta2);
+    }
+
+    addRuedas(puntosCarroceria,arrayMat,auto){
+        //Creamos las ruedas del auto
+        var rueda1 = new Objeto3D();
+
+        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
+        //posicionamientos y el radio
+        puntosCarroceria.push(vec3.fromValues(2.0, 1.0, 0.8));
+
+        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        auto.add(rueda1);
+
+        var rueda2 = new Objeto3D();
+
+        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
+        //posicionamientos y el radio
+        puntosCarroceria.push(vec3.fromValues(8.0, 1.0, 0.8));
+        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        auto.add(rueda2);
     }
 }

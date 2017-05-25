@@ -87,7 +87,7 @@ class Objeto3D extends Container3D{
      transformaciones de traslacion.
      IMPORTANTE:la cantidad de rows tiene que ser igual a la longitud del arrayMat y del Array Pos
      */
-    calcularSuperficieBarrido(figura, rows, colms, arrayMatT, arrayVecPos){
+    calcularSuperficieBarrido(figura, rows, colms, arrayMatT, arrayVecPos, barrer = true){
 
         //console.log("supBarrido");
         var buffcalc = new BufferCalculator(rows, colms);
@@ -197,10 +197,14 @@ class Objeto3D extends Container3D{
             console.log("le pasaste mal la figura");
         }
 
-        this.setBufferCreator(buffcalc);
-        this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
-        this.build();
-
+        if(barrer) {
+            this.setBufferCreator(buffcalc);
+            this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
+            this.build();
+        }
+        else if(! barrer){
+            this.bufferCreator.posBuffer=vertices;
+        }
     }
 
 

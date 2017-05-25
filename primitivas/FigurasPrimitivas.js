@@ -333,6 +333,7 @@ class FigurasPrimitivias{
         var vecNorm5 = vec3.fromValues(-1.0,-1.0, 0.0);
         vec3.normalize(vecNorm5, vecNorm5);
         arrayVecNOR.push(vecNorm5);
+
     }
 
     createBaseRueda(x,y,r,vertices, arrayVecNOR){
@@ -346,7 +347,6 @@ class FigurasPrimitivias{
         var total = 0.0;
 
         for (var j = -cantPuntos; j <= total; j+=0.2) {
-
             var u = (j * Math.PI);
 
             var vec = vec3.fromValues( (x+r) + (r*Math.cos(u)) , y + Math.abs(r*Math.sin(u)) , 0.0);
