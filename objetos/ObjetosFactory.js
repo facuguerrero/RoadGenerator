@@ -477,10 +477,6 @@ class ObjetosFactory {
 
         //console.log(buf.posBuffer);
         puerta1.calcularSuperficieBarrido("carroceria",2,19,arrayMat,puntosCarroceria);
-        console.log(puerta1.bufferCreator.posBuffer[35]);
-        console.log(puerta1.bufferCreator.posBuffer[36]);
-        console.log(puerta1.bufferCreator.posBuffer[37]);
-        //,,4,16,5,5,16,6,6,16,7
         puerta1.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
             ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
         puerta1.build();
@@ -498,10 +494,7 @@ class ObjetosFactory {
 
         //console.log(buf.posBuffer);
         puerta2.calcularSuperficieBarrido("carroceria",2,19,arrayMat,puntosCarroceria);
-        console.log(puerta2.bufferCreator.posBuffer[35]);
-        console.log(puerta2.bufferCreator.posBuffer[36]);
-        console.log(puerta2.bufferCreator.posBuffer[37]);
-        //,,4,16,5,5,16,6,6,16,7
+
         puerta2.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
             ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
         puerta2.build();
@@ -513,20 +506,44 @@ class ObjetosFactory {
     addRuedas(puntosCarroceria,arrayMat,auto){
         //Creamos las ruedas del auto
         var rueda1 = new Objeto3D();
-
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
         puntosCarroceria.push(vec3.fromValues(2.0, 1.0, 0.8));
-
         rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         auto.add(rueda1);
+        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.0,false);
+        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.0,true);
+
 
         var rueda2 = new Objeto3D();
-
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
         puntosCarroceria.push(vec3.fromValues(8.0, 1.0, 0.8));
         rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         auto.add(rueda2);
+        this.addTapaRueda(rueda2,arrayMat, puntosCarroceria,8.0,false);
+        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,8.0,true);
+
+    }
+
+    addTapaRueda(rueda,arrayMat, puntosCarroceria,x,trasladar){
+
+        var tapa1 = new Objeto3D();
+
+        var buf = new BufferCalculator(2,11);
+        /*Seteo los buffers */
+        buf.normalBuffer = rueda.bufferCreator.normalBuffer;
+        buf.colorBuffer = rueda.bufferCreator.colorBuffer;
+        tapa1.setBufferCreator(buf);
+
+        puntosCarroceria.push(vec3.fromValues(x, 1.0, 0.8));
+        tapa1.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
+
+        tapa1.bufferCreator.indexBuffer = [1,0,2,2,0,3,3,0,4,4,0,5,5,0,6,6,0,7,7,0,8,8,0,9];
+        if(trasladar){
+            tapa1.translate(0.0,0.0,4.0);
+        }
+        tapa1.build();
+        rueda.add(tapa1);
     }
 }
