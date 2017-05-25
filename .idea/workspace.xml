@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template2 TP/TemplateTP.html" afterPath="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -489,14 +488,7 @@
       <workItem from="1495652015172" duration="974000" />
       <workItem from="1495658691522" duration="4544000" />
       <workItem from="1495717682387" duration="8545000" />
-      <workItem from="1495750221770" duration="4551000" />
-    </task>
-    <task id="LOCAL-00046" summary="Bspline">
-      <created>1494535004620</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1494535004620</updated>
+      <workItem from="1495750221770" duration="4597000" />
     </task>
     <task id="LOCAL-00047" summary="Bspline">
       <created>1494536464340</created>
@@ -834,11 +826,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495753423409</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Canvas">
+      <created>1495754786821</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1495754786822</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200178000" />
+    <option name="totallyTimeSpent" value="200224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -898,7 +897,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="funca esfera" />
     <MESSAGE value="problema en el build" />
     <MESSAGE value="comentadas cosas al pedo" />
     <MESSAGE value="cuadrado como primitiva funcionando" />
@@ -923,7 +921,8 @@
     <MESSAGE value="Intento de bezier" />
     <MESSAGE value="Auto" />
     <MESSAGE value="Auto Terminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auto Terminado" />
+    <MESSAGE value="Canvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Canvas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
