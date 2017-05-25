@@ -267,8 +267,7 @@ class ObjetosFactory {
         carroceria.calcularSuperficieBarrido("carroceria", 2, 19, arrayMat, puntosCarroceria);
         auto.add(carroceria);
 
-        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria, false);
-        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria, true);
+        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria);
 
         this.addRuedas(puntosCarroceria,arrayMat, auto);
 
@@ -468,7 +467,7 @@ class ObjetosFactory {
         return alturas;
     }
 
-    addPuertas(carroceria,auto, trasladar){
+    addPuertas(carroceria,auto,arrayMat,puntosCarroceria){
         var puerta1 = new Objeto3D();
         var buf = new BufferCalculator(2,19);
         /*Seteo los buffers */
@@ -480,14 +479,26 @@ class ObjetosFactory {
         //console.log(buf.posBuffer);
         puerta1.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
             ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
-
-        if(trasladar){
-            //Acomodar las normales.
-            puerta1.translate(0.0, 0.0, 4.0);
-        }
         puerta1.build();
         auto.add(puerta1);
 
+
+        //ACOMODAR LAS NORMALES, ESTAN COMO PARA ADENTRO DEL AUTO
+        var puerta2 = new Objeto3D();
+        var buf = new BufferCalculator(2,19);
+        /*Seteo los buffers */
+        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
+        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
+        buf.posBuffer = carroceria.bufferCreator.posBuffer;
+
+        puerta2.setBufferCreator(buf);
+
+        puerta2.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
+            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+        puerta2.build();
+
+        puerta2.translate(0.0,0.0,4.0);
+        auto.add(puerta2);
     }
 
 
