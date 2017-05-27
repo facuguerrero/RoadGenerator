@@ -176,7 +176,7 @@ class ObjetosFactory {
         //Creamos el techo del edificio
         var base = new Objeto3D();
         base.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapa);
-
+        this.addColor(base,0.0,0.0,1.0);
         edificio.add(base);
 
         if (tapaAbajo) {
@@ -195,6 +195,7 @@ class ObjetosFactory {
 
 
         edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
+        this.addColor(edificio,1.0,0.0,0.0);
 
         return edificio;
     }
@@ -367,7 +368,7 @@ class ObjetosFactory {
         */
         var vereda = this.createVereda(puntos);
         vereda.translate(0.0,0.5,0.0);
-        manzana.add(vereda);
+        //manzana.add(vereda);
 
         var edificio1 = this.createBuilding(4.0, alturas[0], 5.0);
         centro.add(edificio1);
@@ -426,7 +427,6 @@ class ObjetosFactory {
 
         centro.translate(anchoVereda/2,0.05,anchoVereda/2);
         manzana.add(centro);
-        //manzana.add(vereda);
         return manzana;
     }
 
@@ -574,5 +574,20 @@ class ObjetosFactory {
         }
         tapa.build();
         techo.add(tapa);
+    }
+
+    addColor(objeto,r,g,b){
+
+        var cantVertices = objeto.bufferCreator.posBuffer.length/3;
+        var color = []
+        for(var i=0; i<cantVertices; i++){
+            color.push(r);
+            color.push(g);
+            color.push(b);
+        }
+
+        objeto.bufferCreator.colorBuffer = color;
+        //console.log(objeto.bufferCreator.posBuffer);
+        //console.log(objeto.bufferCreator.colorBuffer);
     }
 }
