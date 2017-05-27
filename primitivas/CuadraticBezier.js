@@ -32,6 +32,7 @@ class CuadraticBezier{
 
     calculateArrays(){
         var tramos = Math.floor(this.rows/3);
+
         for(var i = 0.0; i < tramos ; i += this.step){
             //se cargan todas las matrices y vectores
 
@@ -40,7 +41,9 @@ class CuadraticBezier{
             var vec = this.getVecAtU(i);
             this.vecPos.push(vec);
 
+
             var mat = this.getMatAtU(i);
+
             this.arrayMatT.push(mat);
         }
 
@@ -155,6 +158,7 @@ class CuadraticBezier{
 
         var vecNorm = vec3.create();
         var vecBinorm = vec3.fromValues(0.0, 0.0, 1.0);
+
         vec3.cross(vecNorm, vecBinorm, vecTang);
         return vecNorm;
     }

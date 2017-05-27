@@ -308,22 +308,48 @@ class ObjetosFactory {
         return escene;
     }
 
-    createVereda(puntos){
+    createVereda(){
 
         var vereda = new Objeto3D();
+        var buffcalc = new BufferCalculator(2, 2);
+        vereda.setBufferCreator(buffcalc);
+        vereda.build();
 
-        var curva = new CuadraticBezier(puntos.length,0.1 ,true);
 
-        curva.setControlPoints(puntos);
-        curva.calculateArrays();
+        var perfil = new Objeto3D();
 
-        var vecPos = [];
-        vecPos = curva.getVecPos();
+        var puntosPerfil = [];
 
-        var arrayMatT = [];
-        arrayMatT = curva.getArrayMatT();
+        puntosPerfil.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntosPerfil.push(vec3.fromValues(0.0, 0.2, 0.0));
+        //Matrices de transformacion
+        var arrayMat = [];
 
-        vereda.calcularSuperficieBarrido("vereda", vecPos.length, 5, arrayMatT, vecPos);
+        var mat = mat3.create();
+        var matt = mat3.create();
+        mat3.identity(mat);
+        mat3.identity(mat);
+        arrayMat.push(mat);
+        arrayMat.push(matt);
+        perfil.calcularSuperficieBarrido("vereda", 2, 25, arrayMat, puntosPerfil);
+        vereda.add(perfil);
+
+        var piso = new Objeto3D();
+        var buf = new BufferCalculator(2,28);
+        /*Seteo los buffers */
+        buf.normalBuffer = perfil.bufferCreator.normalBuffer;
+        buf.colorBuffer = perfil.bufferCreator.colorBuffer;
+        buf.posBuffer = perfil.bufferCreator.posBuffer;
+        piso.setBufferCreator(buf);
+
+        piso.bufferCreator.indexBuffer = [0,7,1, 1,7,2, 2,7,3, 3,7,4, 4,7,5, 5,6,7,
+            7,12,8, 8,12,9, 9,12,10, 10,12,11, 11,12,7, 7,12,0,
+            0,12,13, 14,13,15, 15,13,16, 16,13,17, 17,13,18, 18,0,13, 13,15,18, 18,0,19,
+            19,0,20, 20,0,21, 21,0,22, 22,0,23, 23,0,24];
+        piso.build();
+        piso.translate(0.0,0.2,0.0);
+
+        vereda.add(piso);
         return vereda;
 
     }
@@ -336,39 +362,7 @@ class ObjetosFactory {
 
         var alturas =this.llenarAlturas();
 
-        var puntos = [];
-        puntos.push(vec3.fromValues(0.0,0.0,0.0));
-        puntos.push(vec3.fromValues(10.0,0.0,0.0));
-        puntos.push(vec3.fromValues(20.0,0.0,0.0));
-        puntos.push(vec3.fromValues(20.0,0.0,0.0));
-        puntos.push(vec3.fromValues(20.0,0.0,10.0));
-        puntos.push(vec3.fromValues(20.0,0.0,20.0));
-        /*puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 16.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 16.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 4.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 18.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-        */
-        var vereda = this.createVereda(puntos);
-        vereda.translate(0.0,0.5,0.0);
-        //manzana.add(vereda);
+        var vereda = this.createVereda();
 
         var edificio1 = this.createBuilding(4.0, alturas[0], 5.0);
         centro.add(edificio1);
@@ -426,7 +420,9 @@ class ObjetosFactory {
         centro.add(edificio14);
 
         centro.translate(anchoVereda/2,0.05,anchoVereda/2);
-        manzana.add(centro);
+        vereda.add(centro);
+        manzana.add(vereda);
+
         return manzana;
     }
 
@@ -435,11 +431,12 @@ class ObjetosFactory {
         var manzana = this.createEscene(x);
         var anchoVereda = 4.0;
         var centro = this.createEscene(x-anchoVereda);
-        
+
+        var vereda = this.createVereda();
         
         centro.translate(anchoVereda/2,0.15,anchoVereda/2);
-        manzana.add(centro);
-        //manzana.add(vereda);
+        vereda.add(centro);
+        manzana.add(vereda);
         return manzana;
     }
 

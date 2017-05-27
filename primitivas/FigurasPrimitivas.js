@@ -426,30 +426,82 @@ class FigurasPrimitivias{
 
     calcularVereda(vertices, arrayVecNOR){
 
-        vertices.push(vec3.fromValues(-1.0, 0.0, 0.0));
-        var vecNorm1 = vec3.fromValues(-1.0, -1.0, 0.0);
+        vertices.push(vec3.fromValues(5.0, 0.0, 0.0));
+        var vecNorm1 = vec3.fromValues(0.0, 0.0, -1.0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        vertices.push(vec3.fromValues(-1.0, 0.1, 0.0));
-        var vecNorm2 = vec3.fromValues(-1.0, 1.0, 0.0);
+        vertices.push(vec3.fromValues(15.0, 0.0, 0.0));
+        var vecNorm2 = vec3.fromValues(0.0, 0.0, -1.0);
         vec3.normalize(vecNorm2, vecNorm2);
         arrayVecNOR.push(vecNorm2);
 
-        vertices.push(vec3.fromValues(1.0, 0.1, 0.0));
-        var vecNorm3 = vec3.fromValues(1.0, 1.0, 0.0);
+        this.calcularCurvaEsquina(vertices,arrayVecNOR, 15.0, 5.0, 1);
+
+        /*vertices.push(vec3.fromValues(20.0, 0.0, 15.0));
+        var vecNorm3 = vec3.fromValues(1.0, 0.0, 0.0);
         vec3.normalize(vecNorm3, vecNorm3);
         arrayVecNOR.push(vecNorm3);
+        */
 
-        vertices.push(vec3.fromValues(1.0, 0.0, 0.0));
-        var vecNorm3 = vec3.fromValues(1.0, -1.0, 0.0);
+        this.calcularCurvaEsquina(vertices,arrayVecNOR, 15.0, 15.0, 2);
+
+        /*vertices.push(vec3.fromValues(5.0, 0.0, 20.0));
+        var vecNorm3 = vec3.fromValues(0.0, 0.0, 1.0);
         vec3.normalize(vecNorm3, vecNorm3);
         arrayVecNOR.push(vecNorm3);
+        */
+        this.calcularCurvaEsquina(vertices,arrayVecNOR, 5.0, 15.0,3);
+        /*
+        vertices.push(vec3.fromValues(0.0, 0.0, 5.0));
+        var vecNorm3 = vec3.fromValues(-1.0, 0.0, 0.0);
+        vec3.normalize(vecNorm3, vecNorm3);
+        arrayVecNOR.push(vecNorm3);
+        */
+        this.calcularCurvaEsquina(vertices, arrayVecNOR, 5.0, 5.0, 4);
 
-        vertices.push(vec3.fromValues(-1.0, 0.0, 0.0));
-        var vecNorm4 = vec3.fromValues(-1.0, -1.0, 0.0);
-        vec3.normalize(vecNorm4, vecNorm4);
-        arrayVecNOR.push(vecNorm4);
+        vertices.push(vec3.fromValues(5.0, 0.0, 0.0));
+        arrayVecNOR.push(vecNorm1);
+
+
+    }
+
+    calcularCurvaEsquina(vertices,arrayVecNOR, x,z, control){
+        /* el parametro control es un parametro para saber que esquina debe dibujar*/
+
+        var r=5.0;
+
+        if(control == 1){
+            var j= 1.5;
+            var max = 2.0;
+        }
+        if (control == 2){
+            var j = 0.0;
+            var max =0.5;
+        }
+        if(control == 3){
+            var j = 0.5;
+            var max = 1.0;
+        }
+        if(control == 4){
+            var j = 1;
+            var max = 1.5;
+        }
+
+        for (j; j <= max; j+=0.1) {
+
+            var u = (j * Math.PI);
+
+            var vec = vec3.fromValues( x + (r*Math.cos(u)) ,0.0, z + r*Math.sin(u));
+            vertices.push(vec);
+
+            //DUDOSO QUE LA NORMAL ESTE BIEN
+            var vecNorm = vec3.fromValues(x + (r*Math.cos(u)), 0.0, z + r*Math.sin(u));
+            vec3.normalize(vecNorm, vecNorm);
+            arrayVecNOR.push(vecNorm);
+        }
+        //Entran 6 puntos
+
     }
 
     calcularEscena(vertices, arrayVecNOR, x) {

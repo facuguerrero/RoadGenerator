@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="Veredirijilla">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/TempalteTP.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/gl-matrix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/jquery-2.1.4.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/mars_1k_color.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/moon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Template TP/webgl-utils.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/CuadraticBezier.js" afterPath="$PROJECT_DIR$/primitivas/CuadraticBezier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,66 +32,7 @@
     <fileColor scope="All" color="Green" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8442">
-              <caret line="469" column="0" lean-forward="false" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="924" column="58" lean-forward="false" selection-start-line="924" selection-start-column="58" selection-end-line="924" selection-end-column="58" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#27578#27586#0" expanded="true" />
-                <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#canvas#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#canvas#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="76" column="33" lean-forward="false" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createFarol#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createCalle#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createCar#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createVereda#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createManzanaP#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#addTapaTecho#0;n#ObjetosFactory#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2610">
-              <caret line="145" column="26" lean-forward="false" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -170,9 +120,9 @@
         <option value="$PROJECT_DIR$/primitivas/CuadraticBSpline.js" />
         <option value="$PROJECT_DIR$/primitivas/CuadraticBezier.js" />
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
+        <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-        <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
@@ -184,10 +134,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="64" />
     <option name="y" value="-11" />
-    <option name="width" value="1602" />
-    <option name="height" value="849" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -204,6 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,52 +167,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Template TP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="objetos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Container3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,6 +188,121 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Template2 TP" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/Objeto3D.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template TP/TempalteTP.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template2 TP/TemplateTP.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/handlers/Canvas2D.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/objetos/ObjetosFactory.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -782,7 +805,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208209000" />
+    <option name="totallyTimeSpent" value="210166000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -794,10 +817,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21521907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11509716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -807,13 +829,22 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11509716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -823,8 +854,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cuadrado como primitiva funcionando" />
-    <MESSAGE value="circunferencia como primitiva funcionando" />
     <MESSAGE value="Bspline" />
     <MESSAGE value="aca tamo en la pile" />
     <MESSAGE value="Hoy tiene que andar" />
@@ -848,7 +877,9 @@
     <MESSAGE value="Canvas" />
     <MESSAGE value="&quot;Funcion de color&quot;" />
     <MESSAGE value="Subo un template para probar la curva bezier a parte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Subo un template para probar la curva bezier a parte" />
+    <MESSAGE value="Perfil" />
+    <MESSAGE value="Veredirijilla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Veredirijilla" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1110,7 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1467">
           <caret line="108" column="5" lean-forward="false" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,20 +1190,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TemplateAlt/TempalteTP.html" />
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2610">
-          <caret line="145" column="26" lean-forward="false" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
+        <state relative-caret-position="304">
+          <caret line="195" column="65" lean-forward="false" selection-start-line="195" selection-start-column="65" selection-end-line="195" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8442">
-          <caret line="469" column="0" lean-forward="false" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
+        <state relative-caret-position="72">
+          <caret line="438" column="70" lean-forward="true" selection-start-line="438" selection-start-column="70" selection-end-line="438" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="435" column="8" lean-forward="true" selection-start-line="435" selection-start-column="8" selection-end-line="435" selection-end-column="8" />
+          <folding>
+            <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createRuta#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createMediaRuta#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createFarol#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createBuilding#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createCalle#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#addTapaTecho#0;n#ObjetosFactory#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1181,33 +1228,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="924" column="58" lean-forward="false" selection-start-line="924" selection-start-column="58" selection-end-line="924" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#27578#27586#0" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+    <entry file="file://$PROJECT_DIR$/TemplateAlt/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="76" column="33" lean-forward="false" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createFarol#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createCalle#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createCar#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createVereda#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createManzanaP#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#addTapaTecho#0;n#ObjetosFactory#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

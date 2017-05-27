@@ -192,8 +192,8 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == VEREDA){
-           if(colms != 5){
-               console.log("Para hacer una vereda se necesitan 5 puntos");
+           if(colms != 25){
+               console.log("Para hacer una vereda se necesitan 25 puntos");
            }
            this.figuras.calcularVereda(vertices,arrayVecNOR);
         }
