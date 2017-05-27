@@ -426,17 +426,17 @@ class FigurasPrimitivias{
 
     calcularVereda(vertices, arrayVecNOR){
 
-        vertices.push(vec3.fromValues(5.0, 0.0, 0.0));
+        vertices.push(vec3.fromValues(3.0, 0.0, 0.0));
         var vecNorm1 = vec3.fromValues(0.0, 0.0, -1.0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        vertices.push(vec3.fromValues(15.0, 0.0, 0.0));
+        vertices.push(vec3.fromValues(17.0, 0.0, 0.0));
         var vecNorm2 = vec3.fromValues(0.0, 0.0, -1.0);
         vec3.normalize(vecNorm2, vecNorm2);
         arrayVecNOR.push(vecNorm2);
 
-        this.calcularCurvaEsquina(vertices,arrayVecNOR, 15.0, 5.0, 1);
+        this.calcularCurvaEsquina(vertices,arrayVecNOR, 17.0, 3.0, 1);
 
         /*vertices.push(vec3.fromValues(20.0, 0.0, 15.0));
         var vecNorm3 = vec3.fromValues(1.0, 0.0, 0.0);
@@ -444,23 +444,23 @@ class FigurasPrimitivias{
         arrayVecNOR.push(vecNorm3);
         */
 
-        this.calcularCurvaEsquina(vertices,arrayVecNOR, 15.0, 15.0, 2);
+        this.calcularCurvaEsquina(vertices,arrayVecNOR, 17.0, 17.0, 2);
 
         /*vertices.push(vec3.fromValues(5.0, 0.0, 20.0));
         var vecNorm3 = vec3.fromValues(0.0, 0.0, 1.0);
         vec3.normalize(vecNorm3, vecNorm3);
         arrayVecNOR.push(vecNorm3);
         */
-        this.calcularCurvaEsquina(vertices,arrayVecNOR, 5.0, 15.0,3);
+        this.calcularCurvaEsquina(vertices,arrayVecNOR, 3.0, 17.0,3);
         /*
         vertices.push(vec3.fromValues(0.0, 0.0, 5.0));
         var vecNorm3 = vec3.fromValues(-1.0, 0.0, 0.0);
         vec3.normalize(vecNorm3, vecNorm3);
         arrayVecNOR.push(vecNorm3);
         */
-        this.calcularCurvaEsquina(vertices, arrayVecNOR, 5.0, 5.0, 4);
+        this.calcularCurvaEsquina(vertices, arrayVecNOR, 3.0, 3.0, 4);
 
-        vertices.push(vec3.fromValues(5.0, 0.0, 0.0));
+        vertices.push(vec3.fromValues(3.0, 0.0, 0.0));
         arrayVecNOR.push(vecNorm1);
 
 
@@ -469,7 +469,7 @@ class FigurasPrimitivias{
     calcularCurvaEsquina(vertices,arrayVecNOR, x,z, control){
         /* el parametro control es un parametro para saber que esquina debe dibujar*/
 
-        var r=5.0;
+        var r=3.0;
 
         if(control == 1){
             var j= 1.5;

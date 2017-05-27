@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="Veredirijilla">
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,22 +23,22 @@
     <fileColor scope="All" color="Green" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="-120">
               <caret line="202" column="54" lean-forward="false" selection-start-line="202" selection-start-column="54" selection-end-line="202" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="440" column="35" lean-forward="false" selection-start-line="440" selection-start-column="35" selection-end-line="440" selection-end-column="35" />
+            <state relative-caret-position="540">
+              <caret line="462" column="39" lean-forward="false" selection-start-line="462" selection-start-column="39" selection-end-line="462" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -47,7 +47,7 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
+            <state relative-caret-position="522">
               <caret line="575" column="0" lean-forward="false" selection-start-line="575" selection-start-column="0" selection-end-line="588" selection-end-column="5" />
               <folding>
                 <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
@@ -153,9 +153,9 @@
         <option value="$PROJECT_DIR$/primitivas/CuadraticBezier.js" />
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
         <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
-        <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+        <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
       </list>
     </option>
   </component>
@@ -186,6 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -243,7 +244,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -416,14 +416,8 @@
       <workItem from="1495886058241" duration="2174000" />
       <workItem from="1495892323194" duration="5299000" />
       <workItem from="1495898024746" duration="260000" />
-      <workItem from="1495910184891" duration="1276000" />
-    </task>
-    <task id="LOCAL-00054" summary="aca tamo en la pile">
-      <created>1494592979902</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1494592979902</updated>
+      <workItem from="1495910184891" duration="1310000" />
+      <workItem from="1495921258854" duration="649000" />
     </task>
     <task id="LOCAL-00055" summary="aca tamo en la pile">
       <created>1494593863143</created>
@@ -761,11 +755,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495900962208</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="asdadqwe">
+      <created>1495911472369</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1495911472370</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211551000" />
+    <option name="totallyTimeSpent" value="212234000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -782,7 +783,6 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21445042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11509716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -791,6 +791,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -806,7 +807,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bspline" />
     <MESSAGE value="aca tamo en la pile" />
     <MESSAGE value="Hoy tiene que andar" />
     <MESSAGE value="agregada la autopista. Falta ver bien la curva" />
@@ -831,7 +831,8 @@
     <MESSAGE value="Subo un template para probar la curva bezier a parte" />
     <MESSAGE value="Perfil" />
     <MESSAGE value="Veredirijilla" />
-    <option name="LAST_COMMIT_MESSAGE" value="Veredirijilla" />
+    <MESSAGE value="asdadqwe" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdadqwe" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1145,9 +1146,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html" />
     <entry file="file://$PROJECT_DIR$/TemplateAlt/TempalteTP.html" />
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="202" column="54" lean-forward="false" selection-start-line="202" selection-start-column="54" selection-end-line="202" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
+        <state relative-caret-position="522">
           <caret line="575" column="0" lean-forward="false" selection-start-line="575" selection-start-column="0" selection-end-line="588" selection-end-column="5" />
           <folding>
             <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
@@ -1165,16 +1174,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="440" column="35" lean-forward="false" selection-start-line="440" selection-start-column="35" selection-end-line="440" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="202" column="54" lean-forward="false" selection-start-line="202" selection-start-column="54" selection-end-line="202" selection-end-column="54" />
+        <state relative-caret-position="540">
+          <caret line="462" column="39" lean-forward="false" selection-start-line="462" selection-start-column="39" selection-end-line="462" selection-end-column="39" />
           <folding />
         </state>
       </provider>
