@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -492,14 +491,7 @@
       <workItem from="1495658691522" duration="4544000" />
       <workItem from="1495717682387" duration="8545000" />
       <workItem from="1495750221770" duration="4849000" />
-      <workItem from="1495886058241" duration="1827000" />
-    </task>
-    <task id="LOCAL-00048" summary="Bspline">
-      <created>1494536474202</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1494536474202</updated>
+      <workItem from="1495886058241" duration="1884000" />
     </task>
     <task id="LOCAL-00049" summary="aca tamo en la pile">
       <created>1494536938791</created>
@@ -837,11 +829,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495754868377</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="&quot;Funcion de color&quot;">
+      <created>1495887901902</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1495887901903</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202303000" />
+    <option name="totallyTimeSpent" value="202360000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -882,7 +881,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="problema en el build" />
     <MESSAGE value="comentadas cosas al pedo" />
     <MESSAGE value="cuadrado como primitiva funcionando" />
     <MESSAGE value="circunferencia como primitiva funcionando" />
@@ -907,7 +905,8 @@
     <MESSAGE value="Auto" />
     <MESSAGE value="Auto Terminado" />
     <MESSAGE value="Canvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Canvas" />
+    <MESSAGE value="&quot;Funcion de color&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Funcion de color&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
