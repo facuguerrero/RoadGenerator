@@ -143,14 +143,14 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == BASE_RUTA){
-            if(colms != 9){
+            if(colms != 17){
                 console.log("para hacer una base de ruta se necesitan exactamente 9 vertices");
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
         }
 
         else if(figura == ASFALTO_RUTA){
-            if(colms != 5){
+            if(colms != 9){
                 console.log("para hacer el asfalto de la ruta se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);

@@ -879,18 +879,17 @@ body{
 
     function marcarGrilla(u){
 
-        var ajusteRadio = 30.0;
+        var ajusteRadio = 5.0;
 
-        var posY = (u.y / 76.0);
-        var topY = Math.floor(posY + (ajusteRadio/76.0));
-        var lowY = Math.floor(posY - (ajusteRadio/76.0));
+        var posY = ((u.y) / 76.0);
+        var topY = Math.floor(posY + (ajusteRadio / 76.0));
+        var lowY = Math.floor(posY - (ajusteRadio / 76.0));
+        if (topY > 3.0){ topY = 3.0;}
 
-        var factorTopY = Math.floor (topY / 4.0);
-        var factorLowY = Math.floor (lowY / 4.0);
-
-        var posX = (u.x / 76.0);
-        var topX = Math.floor(posX + (ajusteRadio/76.0));
-        var lowX = Math.floor(posX - (ajusteRadio/76.0));
+        var posX = ((u.x) / 76.0);
+        var topX = Math.floor(posX + (ajusteRadio / 76.0));
+        var lowX = Math.floor(posX - (ajusteRadio / 76.0));
+        if (topX > 3.0){ topX = 3.0;}
 
         var cuadradoTop = topX + (4 * topY);
         var cuadradoLow = lowX + (4 * lowY);
@@ -923,11 +922,10 @@ body{
 
     }
 
-    var puntosDeControl=[ [0, 75], [0,75], [100,100] , [150,150] , [200,200],  [300,225], [300,225] ];
-    var new_points = [ [0, 75], [0,75], [100,100] , [150,150] , [200,200],  [300,225], [300,225] ];
+    var puntosDeControl=[ [0, 75], [0,75], [100,100] , [150,130] , [200,200],  [300,225], [300,225] ];
+    var new_points = [ [0, 75], [0,75], [100,100] , [150,130] , [200,200],  [300,225], [300,225] ];
 
-    var grilla = [];
-    resetGrilla(grilla);
+    var grilla = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
 
     var c=document.getElementById("myCanvas");
     var ctx=c.getContext("2d");
