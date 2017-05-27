@@ -118,6 +118,8 @@ class Objeto3D extends Container3D{
             //Lo borramos para no romper la superficie.
             var escalado = arrayVecPos.pop();
             this.figuras.calcularEstructuraEdificio(vertices,arrayVecNOR,escalado);
+            this.addColor(buffcalc,25, 1.0, 0.0, 0.0);
+
         }
 
         else if(figura == TAPA_EDIFICIO){
@@ -177,6 +179,8 @@ class Objeto3D extends Container3D{
                 console.log("para hacer la carroceria se necesitan 19 vertices");
             }
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
+            this.addColor(buffcalc,19, 0.0, 0.0, 1.0);
+
         }
 
         else if(figura == TECHO){
@@ -196,6 +200,7 @@ class Objeto3D extends Container3D{
                console.log("Para hacer una vereda se necesitan 25 puntos");
            }
            this.figuras.calcularVereda(vertices,arrayVecNOR);
+           this.addColor(buffcalc,25, 0.21, 0.17, 0.16);
         }
 
         else {
@@ -212,6 +217,19 @@ class Objeto3D extends Container3D{
         }
     }
 
+    addColor(buf,largo,r,g,b){
+
+        var color = []
+        for(var i=0; i<largo; i++){
+            color.push(r);
+            color.push(g);
+            color.push(b);
+        }
+
+        buf.colorBuffer = color;
+        //console.log(objeto.bufferCreator.posBuffer);
+        //console.log(objeto.bufferCreator.colorBuffer);
+    }
 
     /**Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara
       *y la matriz de proyeccion.
