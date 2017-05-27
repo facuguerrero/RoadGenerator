@@ -26,8 +26,8 @@
       <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="467" column="0" lean-forward="true" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
+            <state relative-caret-position="552">
+              <caret line="469" column="0" lean-forward="true" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -491,14 +491,7 @@
       <workItem from="1495658691522" duration="4544000" />
       <workItem from="1495717682387" duration="8545000" />
       <workItem from="1495750221770" duration="4849000" />
-      <workItem from="1495886058241" duration="1884000" />
-    </task>
-    <task id="LOCAL-00049" summary="aca tamo en la pile">
-      <created>1494536938791</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1494536938791</updated>
+      <workItem from="1495886058241" duration="2096000" />
     </task>
     <task id="LOCAL-00050" summary="aca tamo en la pile">
       <created>1494537234964</created>
@@ -836,11 +829,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495887901903</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="&quot;Funcion de color&quot;">
+      <created>1495887948344</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1495887948344</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202360000" />
+    <option name="totallyTimeSpent" value="202572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1273,8 +1273,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="467" column="0" lean-forward="true" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
+        <state relative-caret-position="552">
+          <caret line="469" column="0" lean-forward="true" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
           <folding />
         </state>
       </provider>
