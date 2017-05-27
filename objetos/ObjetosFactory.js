@@ -94,7 +94,9 @@ class ObjetosFactory {
 
         }
 
-        ruta.scale(0.3, 0.3, 0.3);
+        //ajustes de tamanio de la ruta
+        ruta.scale(0.32, 0.32, 0.32);
+        ruta.translate(-8.0 , 0.0, -8.0);
         return ruta;
     }
 
