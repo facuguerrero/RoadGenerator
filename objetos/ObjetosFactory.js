@@ -94,7 +94,9 @@ class ObjetosFactory {
 
         }
 
-        ruta.scale(0.3, 0.3, 0.3);
+        //ajustes de tamanio de la ruta
+        ruta.scale(0.32, 0.32, 0.32);
+        ruta.translate(-8.0 , 0.0, -8.0);
         return ruta;
     }
 
@@ -174,7 +176,7 @@ class ObjetosFactory {
         //Creamos el techo del edificio
         var base = new Objeto3D();
         base.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapa);
-
+        this.addColor(base,0.0,0.0,1.0);
         edificio.add(base);
 
         if (tapaAbajo) {
@@ -193,6 +195,7 @@ class ObjetosFactory {
 
 
         edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
+        this.addColor(edificio,1.0,0.0,0.0);
 
         return edificio;
     }
@@ -246,17 +249,14 @@ class ObjetosFactory {
         auto.setBufferCreator(buffcalc);
         auto.build();
 
-
-        //Creamos la carroceria del auto
-        var carroceria = new Objeto3D();
-
         //Declaro los puntos de la carroceria del auto
         var puntosCarroceria = [];
+
         puntosCarroceria.push(vec3.fromValues(0.0, 0.0, 0.0));
         puntosCarroceria.push(vec3.fromValues(0.0, 0.0, 4.0));
-
         //Matrices de transformacion
         var arrayMat = [];
+
         var mat = mat3.create();
         var matt = mat3.create();
         mat3.identity(mat);
@@ -264,26 +264,17 @@ class ObjetosFactory {
         arrayMat.push(mat);
         arrayMat.push(matt);
 
+        //Creamos la carroceria del auto
+        var carroceria = new Objeto3D();
+
         carroceria.calcularSuperficieBarrido("carroceria", 2, 19, arrayMat, puntosCarroceria);
         auto.add(carroceria);
 
-        //Creamos las ruedas del auto
-        var rueda1 = new Objeto3D();
+        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria);
 
-        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
-        //posicionamientos y el radio
-        puntosCarroceria.push(vec3.fromValues(2.0, 1.0, 0.8));
+        this.addRuedas(puntosCarroceria,arrayMat, auto);
 
-        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
-        auto.add(rueda1);
-
-        var rueda2 = new Objeto3D();
-
-        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
-        //posicionamientos y el radio
-        puntosCarroceria.push(vec3.fromValues(8.0, 1.0, 0.8));
-        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
-        auto.add(rueda2);
+        this.addTecho(puntosCarroceria,arrayMat,carroceria);
 
         return auto;
     }
@@ -321,7 +312,7 @@ class ObjetosFactory {
 
         var vereda = new Objeto3D();
 
-        var curva = new CuadraticBSpline(puntos.length, 1, false);
+        var curva = new CuadraticBezier(puntos.length,0.1 ,true);
 
         curva.setControlPoints(puntos);
         curva.calculateArrays();
@@ -337,15 +328,22 @@ class ObjetosFactory {
 
     }
 
-
     createManzanaB(x){
 
         var manzana = this.createEscene(x);
         var anchoVereda = 4.0;
-        var centro =this.createEscene(x-anchoVereda);
+        var centro = this.createEscene(x-anchoVereda);
+
+        var alturas =this.llenarAlturas();
 
         var puntos = [];
-        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0,0.0,0.0));
+        puntos.push(vec3.fromValues(10.0,0.0,0.0));
+        puntos.push(vec3.fromValues(20.0,0.0,0.0));
+        puntos.push(vec3.fromValues(20.0,0.0,0.0));
+        puntos.push(vec3.fromValues(20.0,0.0,10.0));
+        puntos.push(vec3.fromValues(20.0,0.0,20.0));
+        /*puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
         puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
         puntos.push(vec3.fromValues(0.0, 16.0, 2.0));
         puntos.push(vec3.fromValues(0.0, 16.0, 2.0));
@@ -355,39 +353,93 @@ class ObjetosFactory {
         puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
         puntos.push(vec3.fromValues(0.0, 18.0, 16.0));
         puntos.push(vec3.fromValues(0.0, 18.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
-        // puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-        // puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
-
+        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 16.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 18.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 16.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        */
         var vereda = this.createVereda(puntos);
+        vereda.translate(0.0,0.5,0.0);
+        //manzana.add(vereda);
 
-        var edificio1 = this.createBuilding(2.5, 8.0, 2.5);
+        var edificio1 = this.createBuilding(4.0, alturas[0], 5.0);
         centro.add(edificio1);
 
-        var edificio2 = this.createBuilding(2.0,10.0,2.5);
-        edificio2.translate(2.5,0.0,0.0);
+        var edificio2 = this.createBuilding(5.0,alturas[1],2.5);
+        edificio2.translate(4.15,0.0,0.0);
         centro.add(edificio2);
 
-        var edificio2 = this.createBuilding(3.0,5.0,2.5);
-        edificio2.translate(2.5,0.0,0.0);
-        //centro.add(edificio2);
+        var edificio3 = this.createBuilding(3.5,alturas[2],2.5);
+        edificio3.translate(9.3,0.0,0.0);
+        centro.add(edificio3);
 
-        //var edificio2 = this.createBuilding(2.0,10.0,2.5);
-        //edificio2.translate(2.6,0,0);
-        //manzana.add(edificio2);
+        var edificio4 = this.createBuilding(3.05,alturas[3],4.0);
+        edificio4.translate(12.95,0.0,0.0);
+        centro.add(edificio4);
+
+        var edificio5 = this.createBuilding(2.5,alturas[4],3.5);
+        edificio5.translate(0.0,0.0,5.15);
+        centro.add(edificio5);
+
+        var edificio6 = this.createBuilding(2.5,alturas[5],4.0);
+        edificio6.translate(0.0,0.0,8.8);
+        centro.add(edificio6);
+
+        var edificio7 = this.createBuilding(3.5,alturas[6],3.05);
+        edificio7.translate(0.0,0.0,12.95);
+        centro.add(edificio7);
+
+        var edificio8 = this.createBuilding(3.0,alturas[7],2.5);
+        edificio8.translate(3.65,0.0,13.5);
+        centro.add(edificio8);
+
+        var edificio9 = this.createBuilding(3.5,alturas[8],2.5);
+        edificio9.translate(6.8,0,13.5);
+        centro.add(edificio9);
+
+        var edificio10 = this.createBuilding(2.5,alturas[9],2.5);
+        edificio10.translate(10.45,0,13.5);
+        centro.add(edificio10);
+
+        var edificio11 = this.createBuilding(2.9,alturas[10],2.5);
+        edificio11.translate(13.1,0,13.5);
+        centro.add(edificio11);
+
+        var edificio12 = this.createBuilding(2.5,alturas[11],3.0);
+        edificio12.translate(13.5,0.0,4.1);
+        centro.add(edificio12);
+
+        var edificio13 = this.createBuilding(2.5,alturas[12],2.5);
+        edificio13.translate(13.5,0.0,7.25);
+        centro.add(edificio13);
+
+        var edificio14 = this.createBuilding(2.5,alturas[13],3.5);
+        edificio14.translate(13.5,0.0,9.9);
+        centro.add(edificio14);
 
         centro.translate(anchoVereda/2,0.05,anchoVereda/2);
-        //manzana.add(centro);
-        manzana.add(vereda);
+        manzana.add(centro);
+        return manzana;
+    }
+
+    createManzanaP(x){
+
+        var manzana = this.createEscene(x);
+        var anchoVereda = 4.0;
+        var centro = this.createEscene(x-anchoVereda);
+        
+        
+        centro.translate(anchoVereda/2,0.15,anchoVereda/2);
+        manzana.add(centro);
+        //manzana.add(vereda);
         return manzana;
     }
 
@@ -401,5 +453,141 @@ class ObjetosFactory {
             mat[2], mat[5], mat[8], 0,
             0, 0, 0, 1];
         return new_mat;
+    }
+
+    llenarAlturas(){
+        var alturas = [];
+        var variaciones = [0.3,0.5,0.7];
+        for(var i =0.0; i<14;i++){
+            var num = Math.random();
+
+            if(num <0.3 || num>0.7){
+                num = variaciones[i%3];
+            }
+            alturas.push(num*20);
+        }
+        return alturas;
+    }
+
+    addPuertas(carroceria,auto,arrayMat,puntosCarroceria){
+        var puerta1 = new Objeto3D();
+        var buf = new BufferCalculator(2,19);
+        /*Seteo los buffers */
+        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
+        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
+        buf.posBuffer = carroceria.bufferCreator.posBuffer;
+        puerta1.setBufferCreator(buf);
+
+        //console.log(buf.posBuffer);
+        puerta1.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
+            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+        puerta1.build();
+        auto.add(puerta1);
+
+
+        //ACOMODAR LAS NORMALES, ESTAN COMO PARA ADENTRO DEL AUTO
+        var puerta2 = new Objeto3D();
+        var buf = new BufferCalculator(2,19);
+        /*Seteo los buffers */
+        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
+        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
+        buf.posBuffer = carroceria.bufferCreator.posBuffer;
+
+        puerta2.setBufferCreator(buf);
+
+        puerta2.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
+            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+        puerta2.build();
+
+        puerta2.translate(0.0,0.0,4.0);
+        auto.add(puerta2);
+    }
+
+
+    addRuedas(puntosCarroceria,arrayMat,auto){
+        //Creamos las ruedas del auto
+        var rueda1 = new Objeto3D();
+        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
+        //posicionamientos y el radio
+        puntosCarroceria.push(vec3.fromValues(2.0, 1.0, 0.8));
+        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        auto.add(rueda1);
+        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.0,false);
+        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.0,true);
+
+
+        var rueda2 = new Objeto3D();
+        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
+        //posicionamientos y el radio
+        puntosCarroceria.push(vec3.fromValues(8.0, 1.0, 0.8));
+        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        auto.add(rueda2);
+        this.addTapaRueda(rueda2,arrayMat, puntosCarroceria,8.0,false);
+        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,8.0,true);
+
+    }
+
+    addTapaRueda(rueda,arrayMat, puntosCarroceria,x,trasladar){
+
+        var tapa1 = new Objeto3D();
+
+        var buf = new BufferCalculator(2,11);
+        /*Seteo los buffers */
+        buf.normalBuffer = rueda.bufferCreator.normalBuffer;
+        buf.colorBuffer = rueda.bufferCreator.colorBuffer;
+        tapa1.setBufferCreator(buf);
+
+        puntosCarroceria.push(vec3.fromValues(x, 1.0, 0.8));
+        tapa1.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
+
+        tapa1.bufferCreator.indexBuffer = [1,0,2,2,0,3,3,0,4,4,0,5,5,0,6,6,0,7,7,0,8,8,0,9];
+        if(trasladar){
+            tapa1.translate(0.0,0.0,4.0);
+        }
+        tapa1.build();
+        rueda.add(tapa1);
+    }
+
+    addTecho(puntosCarroceria,arrayMat,carroceria){
+
+        var techo = new Objeto3D();
+        techo.calcularSuperficieBarrido("techo",2,6,arrayMat,puntosCarroceria);
+
+        this.addTapaTecho(techo, false);
+        this.addTapaTecho(techo, true);
+
+        carroceria.add(techo);
+    }
+
+    addTapaTecho(techo, trasladar){
+        var tapa = new Objeto3D();
+        var buf = new BufferCalculator(2,6);
+        /*Seteo los buffers */
+        buf.normalBuffer = techo.bufferCreator.normalBuffer;
+        buf.colorBuffer = techo.bufferCreator.colorBuffer;
+        buf.posBuffer = techo.bufferCreator.posBuffer;
+        tapa.setBufferCreator(buf);
+
+        tapa.bufferCreator.indexBuffer = [0,1,2,2,0,3,3,0,4];
+        if(trasladar){
+            tapa.translate(0.0,0.0,4.0);
+        }
+        tapa.build();
+        techo.add(tapa);
+    }
+
+    addColor(objeto,r,g,b){
+
+        var cantVertices = objeto.bufferCreator.posBuffer.length/3;
+        var color = []
+        for(var i=0; i<cantVertices; i++){
+            color.push(r);
+            color.push(g);
+            color.push(b);
+        }
+
+        objeto.bufferCreator.colorBuffer = color;
+        //console.log(objeto.bufferCreator.posBuffer);
+        //console.log(objeto.bufferCreator.colorBuffer);
     }
 }

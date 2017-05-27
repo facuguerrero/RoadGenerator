@@ -1,4 +1,4 @@
-class CuadraticBSpline{
+class CuadraticBezier{
 
     constructor(rows, step = 1.0, normalPath = true){
         this.step = step;
@@ -21,22 +21,26 @@ class CuadraticBSpline{
             console.log("cantidad de puntos invalida, tiene que ser igual que las filas\n");
         }
         if (points.length < 3){
-            console.log("insuficiente cantidad de puntos de control para armar una B-Spline cuadratica\n");
+            console.log("insuficiente cantidad de puntos de control para armar una Bezier cuadratica\n");
+        }
+        if(points.length%3 !=0){
+            console.log("cantidad de puntos incorrecta, Bezier recibe multiplos de 3 \n");
         }
         this.control_points = points;
         this.num_control_points = points.length;
     }
 
     calculateArrays(){
-
-        for(var i = 0; i < this.rows; i += this.step){
+        var tramos = Math.floor(this.rows/3);
+        for(var i = 0.0; i < tramos ; i += this.step){
             //se cargan todas las matrices y vectores
-            var u = i * this.getLength() / (this.rows - 1);
 
-            var vec = this.getVecAtU(u);
+            //var u = i * this.getLength() / ((this.rows) - 1);
+
+            var vec = this.getVecAtU(i);
             this.vecPos.push(vec);
 
-            var mat = this.getMatAtU(u);
+            var mat = this.getMatAtU(i);
             this.arrayMatT.push(mat);
         }
 
@@ -44,10 +48,11 @@ class CuadraticBSpline{
 
     getVecAtU(u){
 
-        var aux = Math.floor(u);
-        var t = u - aux;
+        var entero = Math.floor(u);
+        var t = u - entero;
+        var aux= 3*entero;
         //si es el ultimo punto
-        if (u >= this.getLength()){
+       if (u >= this.getLength()){
             aux = this.getLength()-1;
             t = 1;
         }
@@ -55,14 +60,18 @@ class CuadraticBSpline{
         var p2 = this.control_points[aux+1];
         var p3 = this.control_points[aux+2];
 
+        // console.log(p1);
+        // console.log(p2);
+        // console.log(p3);
+
         return this.interpolar(p1, p2, p3, t);
     }
 
     interpolar(p1, p2, p3, t){
         var aux = vec3.fromValues(0.0, 0.0, 0.0);
-        var base1 = (t*t/2 - t + 1/2);
-        var base2 = (- t*t + t + 1/2);
-        var base3 = (t*t/2);
+        var base1 = ((1-t)*(1-t));
+        var base2 = ((2*t)*(1-t));
+        var base3 = (t*t);
 
         vec3.scaleAndAdd(aux, aux, p1, base1);
         vec3.scaleAndAdd(aux, aux, p2, base2);
@@ -113,8 +122,9 @@ class CuadraticBSpline{
 
         /* EN CASO DE PROBLEMA VER EL CONTROL EN LAS PUNTAS
          SI LOS PUNTOS SON IGUALES HAY QUE DEFINIR EL (0,0,0) */
-        var aux = Math.floor(u);
-        var t = u - aux;
+        var entero = Math.floor(u);
+        var t = u - entero;
+        var aux= 3*entero;
         //si es el ultimo punto
         if (u >= this.getLength()){
             aux = this.getLength()-1;
@@ -124,34 +134,6 @@ class CuadraticBSpline{
         var p2 = this.control_points[aux+1];
         var p3 = this.control_points[aux+2];
 
-        //si se repiten los 2 primeros puntos de control
-        if (u < 1) {
-            var son_iguales = true;
-            son_iguales &= (p1[0] == p2[0]);
-            son_iguales &= (p1[1] == p2[1]);
-            son_iguales &= (p1[2] == p2[2]);
-            if (son_iguales) {
-                var tmp = vec3.fromValues(0.0, 0.0, 0.0);
-                vec3.sub(tmp, p3, p2);
-                vec3.normalize(tmp, tmp);
-                return tmp;
-            }
-        }
-
-        //si se repiten los 2 ultimos puntos de control
-        if (u > this.getLength()-1) {
-            var son_iguales = true;
-            son_iguales &= (p2[0] == p3[0]);
-            son_iguales &= (p2[1] == p3[1]);
-            son_iguales &= (p2[2] == p3[2]);
-            if (son_iguales) {
-                var tmp = vec3.fromValues(0.0, 0.0, 0.0);
-                vec3.sub(tmp, p2, p1);
-                vec3.normalize(tmp, tmp);
-                return tmp;
-            }
-        }
-
         return this.interpolarDeriv(p1, p2, p3, t);
 
     }
@@ -159,9 +141,9 @@ class CuadraticBSpline{
     interpolarDeriv(p1, p2, p3, t){
         var aux = vec3.fromValues(0.0, 0.0, 0.0);
 
-        var base1 = (t - 1);
-        var base2 = (-2*t +1);
-        var base3 = (t);
+        var base1 = ((-2)*(1 -t));
+        var base2 = ((2*(1-t)) - (2*t));
+        var base3 = (2*t);
 
         vec3.scaleAndAdd(aux, aux, p1, base1);
         vec3.scaleAndAdd(aux, aux, p2, base2);

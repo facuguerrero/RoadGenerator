@@ -13,6 +13,7 @@ var CARROCERIA="carroceria";
 var RUEDA="rueda";
 var ESCENA ="escena";
 var VEREDA = "vereda";
+var TECHO = "techo";
 
 class Objeto3D extends Container3D{
 
@@ -87,14 +88,13 @@ class Objeto3D extends Container3D{
      transformaciones de traslacion.
      IMPORTANTE:la cantidad de rows tiene que ser igual a la longitud del arrayMat y del Array Pos
      */
-    calcularSuperficieBarrido(figura, rows, colms, arrayMatT, arrayVecPos){
+    calcularSuperficieBarrido(figura, rows, colms, arrayMatT, arrayVecPos, barrer = true){
 
         //console.log("supBarrido");
         var buffcalc = new BufferCalculator(rows, colms);
         //chequeo tamaños correctos
         if((arrayMatT.length != rows || arrayVecPos.length != rows)) {
             //Se chequea el caso en el que es edificio
-            console.log("error de dimension para la superficie");
             if (arrayVecPos.length != rows + 1) {
                 console.log("error de dimension para la superficie con escalado");
             }
@@ -179,6 +179,10 @@ class Objeto3D extends Container3D{
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
         }
 
+        else if(figura == TECHO){
+            this.figuras.calcularTecho(vertices,arrayVecNOR);
+        }
+
        else if(figura == RUEDA){
             if(colms != 11){
                 console.log("para hacer la rueda se necesitan 11 vertices");
@@ -198,10 +202,14 @@ class Objeto3D extends Container3D{
             console.log("le pasaste mal la figura");
         }
 
-        this.setBufferCreator(buffcalc);
-        this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
-        this.build();
-
+        if(barrer) {
+            this.setBufferCreator(buffcalc);
+            this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
+            this.build();
+        }
+        else if(! barrer){
+            this.bufferCreator.posBuffer=vertices;
+        }
     }
 
 
