@@ -36,7 +36,7 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TemplateAlt/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-270">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -501,14 +501,7 @@
       <workItem from="1495658691522" duration="4544000" />
       <workItem from="1495717682387" duration="8545000" />
       <workItem from="1495750221770" duration="4849000" />
-      <workItem from="1495886058241" duration="2146000" />
-    </task>
-    <task id="LOCAL-00051" summary="aca tamo en la pile">
-      <created>1494592016408</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1494592016408</updated>
+      <workItem from="1495886058241" duration="2174000" />
     </task>
     <task id="LOCAL-00052" summary="aca tamo en la pile">
       <created>1494592158172</created>
@@ -846,11 +839,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495888158333</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Subo un template para probar la curva bezier a parte">
+      <created>1495888219526</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1495888219526</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202622000" />
+    <option name="totallyTimeSpent" value="202650000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -891,7 +891,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comentadas cosas al pedo" />
     <MESSAGE value="cuadrado como primitiva funcionando" />
     <MESSAGE value="circunferencia como primitiva funcionando" />
     <MESSAGE value="Bspline" />
@@ -916,7 +915,8 @@
     <MESSAGE value="Auto Terminado" />
     <MESSAGE value="Canvas" />
     <MESSAGE value="&quot;Funcion de color&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Funcion de color&quot;" />
+    <MESSAGE value="Subo un template para probar la curva bezier a parte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Subo un template para probar la curva bezier a parte" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1284,7 +1284,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TemplateAlt/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-270">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
