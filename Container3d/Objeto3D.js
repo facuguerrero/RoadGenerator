@@ -129,6 +129,9 @@ class Objeto3D extends Container3D{
             //el ultimo trae la dimension de x
            var escalado = arrayVecPos.pop();
            this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
+           console.log(vertices.length);
+           this.addColor(buffcalc, 4, 1.0,0.0,0.0);
+
         }
 
         else if(figura == CIRCUNFERENCIA){
@@ -164,6 +167,8 @@ class Objeto3D extends Container3D{
             }
             escalado = arrayVecPos.pop();
             this.figuras.calcularCalle(vertices, arrayVecNOR, escalado[0]);
+            this.addColor(buffcalc, 4, 0.3, 0.3, 0.3);
+
         }
 
         else if(figura == ESCENA){
@@ -179,12 +184,15 @@ class Objeto3D extends Container3D{
                 console.log("para hacer la carroceria se necesitan 19 vertices");
             }
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
-            this.addColor(buffcalc,19, 0.0, 0.0, 1.0);
+            this.addColor(buffcalc,39, 0.0, 0.0, 1.0);
 
         }
 
         else if(figura == TECHO){
             this.figuras.calcularTecho(vertices,arrayVecNOR);
+            console.log(colms);
+            this.addColor(buffcalc, 12, 0.0, 0.0, 1.0);
+
         }
 
        else if(figura == RUEDA){
@@ -200,7 +208,7 @@ class Objeto3D extends Container3D{
                console.log("Para hacer una vereda se necesitan 25 puntos");
            }
            this.figuras.calcularVereda(vertices,arrayVecNOR);
-           this.addColor(buffcalc,25, 0.21, 0.17, 0.16);
+           this.addColor(buffcalc,25, 0.61, 0.48, 0.3);
         }
 
         else {

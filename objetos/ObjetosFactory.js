@@ -337,7 +337,16 @@ class ObjetosFactory {
         var piso = new Objeto3D();
         var buf = new BufferCalculator(2,28);
         /*Seteo los buffers */
-        buf.normalBuffer = perfil.bufferCreator.normalBuffer;
+
+        //Sabemos que las normales son salientes al plano, entonces son 1 en y.
+        var norm = [];
+        for( var i = 0; i<28; i++){
+            norm.push(0.0);
+            norm.push(1.0);
+            norm.push(0.0);
+        }
+
+        buf.normalBuffer =norm;
         buf.colorBuffer = perfil.bufferCreator.colorBuffer;
         buf.posBuffer = perfil.bufferCreator.posBuffer;
         piso.setBufferCreator(buf);
@@ -470,7 +479,21 @@ class ObjetosFactory {
         var puerta1 = new Objeto3D();
         var buf = new BufferCalculator(2,19);
         /*Seteo los buffers */
-        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
+        var norm1 = [];
+        var norm2 = [];
+
+        for (var i =0; i<19;i++){
+            norm1.push(-1.0);
+            norm1.push(0.0);
+            norm1.push(0.0);
+
+            norm2.push(1.0);
+            norm2.push(0.0);
+            norm2.push(0.0);
+        }
+
+
+        buf.normalBuffer = norm1;
         buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
         buf.posBuffer = carroceria.bufferCreator.posBuffer;
         puerta1.setBufferCreator(buf);
@@ -486,7 +509,7 @@ class ObjetosFactory {
         var puerta2 = new Objeto3D();
         var buf = new BufferCalculator(2,19);
         /*Seteo los buffers */
-        buf.normalBuffer = carroceria.bufferCreator.normalBuffer;
+        buf.normalBuffer = norm2;
         buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
         buf.posBuffer = carroceria.bufferCreator.posBuffer;
 
@@ -560,8 +583,24 @@ class ObjetosFactory {
         var tapa = new Objeto3D();
         var buf = new BufferCalculator(2,6);
         /*Seteo los buffers */
-        buf.normalBuffer = techo.bufferCreator.normalBuffer;
-        buf.colorBuffer = techo.bufferCreator.colorBuffer;
+        var saliente = 1.0;
+        if(!trasladar){
+            saliente=-1.0;
+        }
+        var norm = [];
+        var col =[];
+
+        for(var i = 0; i<6;i++){
+            norm.push(saliente);
+            norm.push(0.0);
+            norm.push(0.0);
+
+            col.push(0.0);
+            col.push(0.0);
+            col.push(1.0);
+        }
+        buf.normalBuffer = norm;
+        buf.colorBuffer = col;
         buf.posBuffer = techo.bufferCreator.posBuffer;
         tapa.setBufferCreator(buf);
 
