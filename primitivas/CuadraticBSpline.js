@@ -124,6 +124,34 @@ class CuadraticBSpline{
         var p2 = this.control_points[aux+1];
         var p3 = this.control_points[aux+2];
 
+        //si se repiten los 2 primeros puntos de control
+        if (u < 1) {
+            var son_iguales = true;
+            son_iguales &= (p1[0] == p2[0]);
+            son_iguales &= (p1[1] == p2[1]);
+            son_iguales &= (p1[2] == p2[2]);
+            if (son_iguales) {
+                var tmp = vec3.fromValues(0.0, 0.0, 0.0);
+                vec3.sub(tmp, p3, p2);
+                vec3.normalize(tmp, tmp);
+                return tmp;
+            }
+        }
+
+        //si se repiten los 2 ultimos puntos de control
+        if (u > this.getLength()-1) {
+            var son_iguales = true;
+            son_iguales &= (p2[0] == p3[0]);
+            son_iguales &= (p2[1] == p3[1]);
+            son_iguales &= (p2[2] == p3[2]);
+            if (son_iguales) {
+                var tmp = vec3.fromValues(0.0, 0.0, 0.0);
+                vec3.sub(tmp, p2, p1);
+                vec3.normalize(tmp, tmp);
+                return tmp;
+            }
+        }
+
         return this.interpolarDeriv(p1, p2, p3, t);
 
     }

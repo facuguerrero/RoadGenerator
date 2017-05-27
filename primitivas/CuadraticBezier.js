@@ -60,9 +60,9 @@ class CuadraticBezier{
         var p2 = this.control_points[aux+1];
         var p3 = this.control_points[aux+2];
 
-        console.log(p1);
-        console.log(p2);
-        console.log(p3);
+        // console.log(p1);
+        // console.log(p2);
+        // console.log(p3);
 
         return this.interpolar(p1, p2, p3, t);
     }
