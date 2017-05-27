@@ -9,7 +9,6 @@ var curva = null;
 class Canvas2D{
 
     contructor(){
-        //
     }
     
     loadCanvas2D(){
@@ -79,11 +78,18 @@ class Canvas2D{
         canvas2D_gl.clear(canvas2D_gl.COLOR_BUFFER_BIT|canvas2D_gl.DEPTH_BUFFER_BIT);
 
         //revisar y agregar toda la parte de la curva
-        //curva = new CuadraticBSpline(3);
-        //curva.setControlPoints(curve_down_points.concat(curve_points, curve_up_points));
-        //curva.setupWebGLBuffers(0.1);
-        //curva.grid.draw_2D();
-
+        curva = new CuadraticBSpline(3);
+        curva.setControlPoints(curve_down_points.concat(curve_points, curve_up_points));
+        curva.calculateArrays();
+        var vecPos = [];
+        vecPos = curva.getVecPos();
+        var arrayMatT = [];
+        arrayMatT = curva.getArrayMatT();
+        var object = new Objeto3D();
+        object.calcularSuperficieBarrido("cuadrado", vecPos.length, 5, vecPos, arrayMatT);
+        var model_matrix_object = mat4.create();
+        mat4.identity(model_matrix_object);
+        object.draw(model_matrix_object, false);
         this.draw_points();
     }
 
