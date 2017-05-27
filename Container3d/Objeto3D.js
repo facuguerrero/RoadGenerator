@@ -152,6 +152,7 @@ class Objeto3D extends Container3D{
                 console.log("para hacer una base de ruta se necesitan exactamente 9 vertices");
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
+            this.addColor(buffcalc,1000,0.66,0.64,0.60);
         }
 
         else if(figura == ASFALTO_RUTA){
@@ -159,6 +160,8 @@ class Objeto3D extends Container3D{
                 console.log("para hacer el asfalto de la ruta se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);
+            this.addColor(buffcalc,5000,0.2 ,0.2 ,0.2);
+
         }
 
         else if(figura == CALLE){
