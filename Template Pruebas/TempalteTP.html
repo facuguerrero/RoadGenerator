@@ -1,0 +1,699 @@
+
+<html>
+
+<head>
+    <title>Actividad Clase 03 - Vertex Shaders</title>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+    <script type="text/javascript" src="../handlers/Mouse.js"></script>
+    <script type="text/javascript" src="../handlers/OrbitCamera.js"></script>
+    <script type="text/javascript" src="../handlers/FreeCamera.js"></script>
+    <script type="text/javascript" src="../handlers/CameraHandler.js"></script>
+    <script type="text/javascript" src="../handlers/Canvas2D.js"></script>
+
+    <script type="text/javascript" src="../objetos/ObjetosFactory.js"></script>
+
+    <script type="text/javascript" src="../primitivas/FigurasPrimitivas.js"></script>
+    <script type="text/javascript" src="../primitivas/CuadraticBSpline.js"></script>
+    <script type="text/javascript" src="../primitivas/CuadraticBezier.js"></script>
+
+    <script type="text/javascript" src="../Container3d/BufferCalculator.js"></script>
+    <script type="text/javascript" src="../Container3d/Container3D.js"></script>
+    <script type="text/javascript" src="../Container3d/Objeto3D.js"></script>
+
+    <script type="text/javascript" src="gl-matrix.js"></script>
+    <script type="text/javascript" src="webgl-utils.js"></script>
+
+    <!-- Shader de vértices para el Canvas2D -->
+    <script id="canvas2D-shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    uniform mat4 uVMatrix;
+    uniform mat4 uPMatrix;
+    void main(void) {
+        gl_Position = uPMatrix * uVMatrix * vec4(aVertexPosition, 1.0);
+        gl_PointSize = 5.0;
+    }
+</script>
+
+    <!-- Shader de fragmentos para las canvas2D -->
+    <script id="canvas2D-shader-fs" type="x-shader/x-fragment">
+    void main(void) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    }
+</script>
+
+    <script id="shader-fs-colored-obj" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec3 vVertexColor;
+    varying vec3 vLightWeighting;
+
+    uniform sampler2D uSampler;
+
+    void main(void) {
+        gl_FragColor = vec4(vVertexColor.rgb * vLightWeighting, 1.0);
+    }
+</script>
+
+    <script id="shader-vs-colored-obj" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec3 aVertexColor;
+
+    uniform mat4 uViewMatrix;
+    uniform mat4 uModelMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform vec3 uAmbientColor;
+
+    uniform vec3 uLightPosition;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+
+    varying vec3 vVertexColor;
+    varying vec3 vLightWeighting;
+
+    void main(void) {
+
+        // Transformamos al v�rtice al espacio de la c�mara
+        vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
+
+        // Transformamos al v�rtice al espacio de la proyecci�n
+        gl_Position = uPMatrix * pos_camera_view;
+
+        // Coordenada de textura sin modifiaciones
+        vVertexColor = aVertexColor;
+
+        ////////////////////////////////////////////
+        // Calculos de la iluminaci�n
+        vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
+        normalize(light_dir);
+        if (!uUseLighting)
+        {
+            vLightWeighting = vec3(1.0, 1.0, 1.0);
+        }
+        else
+        {
+            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
+            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
+            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+        }
+        ////////////////////////////////////////////
+    }
+</script>
+
+    <script id="shader-fs-textured-obj" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    uniform sampler2D uSampler;
+
+    void main(void) {
+        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+    }
+</script>
+
+    <script id="shader-vs-textured-obj" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+
+    uniform mat4 uViewMatrix;
+    uniform mat4 uModelMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform vec3 uAmbientColor;
+
+    uniform vec3 uLightPosition;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    void main(void) {
+
+		// Transformamos al v�rtice al espacio de la c�mara
+		vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
+
+		// Transformamos al v�rtice al espacio de la proyecci�n
+        gl_Position = uPMatrix * pos_camera_view;
+
+		// Coordenada de textura sin modifiaciones
+        vTextureCoord = aTextureCoord;
+
+		////////////////////////////////////////////
+		// Calculos de la iluminaci�n
+		vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
+		normalize(light_dir);
+        if (!uUseLighting)
+		{
+            vLightWeighting = vec3(1.0, 1.0, 1.0);
+        }
+		else
+		{
+            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
+            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
+            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+        }
+		////////////////////////////////////////////
+    }
+</script>
+
+    <script type="text/javascript">
+
+        var gl;
+
+        function initGL(canvas) {
+            try {
+                gl = canvas.getContext("experimental-webgl");
+                gl.viewportWidth = canvas.width;
+                gl.viewportHeight = canvas.height;
+            } catch (e) {
+            }
+            if (!gl) {
+                alert("Could not initialise WebGL, sorry :-(");
+            }
+        }
+
+
+        function getShader(gl, id) {
+            var shaderScript = document.getElementById(id);
+            if (!shaderScript) {
+                return null;
+            }
+
+            var str = "";
+            var k = shaderScript.firstChild;
+            while (k) {
+                if (k.nodeType == 3) {
+                    str += k.textContent;
+                }
+                k = k.nextSibling;
+            }
+
+            var shader;
+            if (shaderScript.type == "x-shader/x-fragment") {
+                shader = gl.createShader(gl.FRAGMENT_SHADER);
+            } else if (shaderScript.type == "x-shader/x-vertex") {
+                shader = gl.createShader(gl.VERTEX_SHADER);
+            } else {
+                return null;
+            }
+
+            gl.shaderSource(shader, str);
+            gl.compileShader(shader);
+
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                alert(gl.getShaderInfoLog(shader));
+                return null;
+            }
+
+            return shader;
+        }
+
+
+        var shaderProgramTexturedObject;
+        var shaderProgramColoredObject;
+
+
+        function initShaders() {
+
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            //
+            // Inicializamos todo lo relacionado con el program shader para
+            // renderizar objetos texturados
+
+            var fragmentShaderTexturedObj = getShader(gl, "shader-fs-textured-obj");
+            var vertexShaderTexturedObj = getShader(gl, "shader-vs-textured-obj");
+
+            shaderProgramTexturedObject = gl.createProgram();
+            gl.attachShader(shaderProgramTexturedObject, vertexShaderTexturedObj);
+            gl.attachShader(shaderProgramTexturedObject, fragmentShaderTexturedObj);
+            gl.linkProgram(shaderProgramTexturedObject);
+
+            if (!gl.getProgramParameter(shaderProgramTexturedObject, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+
+            shaderProgramTexturedObject.vertexPositionAttribute = gl.getAttribLocation(shaderProgramTexturedObject, "aVertexPosition");
+            gl.enableVertexAttribArray(shaderProgramTexturedObject.vertexPositionAttribute);
+
+            shaderProgramTexturedObject.textureCoordAttribute = gl.getAttribLocation(shaderProgramTexturedObject, "aTextureCoord");
+            gl.enableVertexAttribArray(shaderProgramTexturedObject.textureCoordAttribute);
+
+            shaderProgramTexturedObject.vertexNormalAttribute = gl.getAttribLocation(shaderProgramTexturedObject, "aVertexNormal");
+            gl.enableVertexAttribArray(shaderProgramTexturedObject.vertexNormalAttribute);
+
+            shaderProgramTexturedObject.pMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uPMatrix");
+            shaderProgramTexturedObject.ViewMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uViewMatrix");
+            shaderProgramTexturedObject.ModelMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uModelMatrix");
+            shaderProgramTexturedObject.nMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uNMatrix");
+            shaderProgramTexturedObject.samplerUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uSampler");
+            shaderProgramTexturedObject.useLightingUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uUseLighting");
+            shaderProgramTexturedObject.ambientColorUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uAmbientColor");
+            shaderProgramTexturedObject.lightingDirectionUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uLightPosition");
+            shaderProgramTexturedObject.directionalColorUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uDirectionalColor");
+
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            //
+            // Inicializamos todo lo relacionado con el program shader para
+            // renderizar objetos Coloreados
+
+            var fragmentShaderColoredObj = getShader(gl, "shader-fs-colored-obj");
+            var vertexShaderColoredObj = getShader(gl, "shader-vs-colored-obj");
+
+            shaderProgramColoredObject = gl.createProgram();
+            gl.attachShader(shaderProgramColoredObject, vertexShaderColoredObj);
+            gl.attachShader(shaderProgramColoredObject, fragmentShaderColoredObj);
+            gl.linkProgram(shaderProgramColoredObject);
+
+            if (!gl.getProgramParameter(shaderProgramColoredObject, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+
+
+            shaderProgramColoredObject.vertexPositionAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexPosition");
+            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexPositionAttribute);
+
+            shaderProgramColoredObject.vertexColorAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexColor");
+            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexColorAttribute);
+
+            shaderProgramColoredObject.vertexNormalAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexNormal");
+            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexNormalAttribute);
+
+            shaderProgramColoredObject.pMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uPMatrix");
+            shaderProgramColoredObject.ViewMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uViewMatrix");
+            shaderProgramColoredObject.ModelMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uModelMatrix");
+            shaderProgramColoredObject.nMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uNMatrix");
+            shaderProgramColoredObject.samplerUniform = gl.getUniformLocation(shaderProgramColoredObject, "uSampler");
+            shaderProgramColoredObject.useLightingUniform = gl.getUniformLocation(shaderProgramColoredObject, "uUseLighting");
+            shaderProgramColoredObject.ambientColorUniform = gl.getUniformLocation(shaderProgramColoredObject, "uAmbientColor");
+            shaderProgramColoredObject.lightingDirectionUniform = gl.getUniformLocation(shaderProgramColoredObject, "uLightPosition");
+            shaderProgramColoredObject.directionalColorUniform = gl.getUniformLocation(shaderProgramColoredObject, "uDirectionalColor");
+        }
+
+
+        function handleLoadedTexture() {
+//        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+//        gl.bindTexture(gl.TEXTURE_2D, mars.texture);
+//        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, mars.texture.image);
+//        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+//        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+//        gl.generateMipmap(gl.TEXTURE_2D);
+//
+//        gl.bindTexture(gl.TEXTURE_2D, null);
+
+            //gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            //gl.bindTexture(gl.TEXTURE_2D, phobos.texture);
+            //gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, phobos.texture.image);
+            //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+            //gl.generateMipmap(gl.TEXTURE_2D);
+
+            //gl.bindTexture(gl.TEXTURE_2D, null);
+        }
+
+        var CameraMatrix = mat4.create();
+        mat4.identity(CameraMatrix);
+        var mvMatrix = mat4.create();
+        var mvMatrixStack = [];
+        var pMatrix = mat4.create();
+
+        var body = null;
+        var canvas = null;
+        var canvas2Ddoc = null;
+        var canvas2D_gl = null;
+        var canvas2D = null;
+        var camera = null;
+        var factory = null;
+
+        var calle1 = null;
+        var calle2 = null;
+        var calle3 = null;
+        var calle4 = null;
+        var calle5 = null;
+        var calle6 = null;
+        var calle7 = null;
+        var calle8 = null;
+        var calle9 = null;
+        var calle10 = null;
+        var calle11= null;
+        var calle12 = null;
+        var calle13 = null;
+        var calle14 = null;
+        var calle15 = null;
+        var calle16 = null;
+        var calle17 = null;
+        var calle18 = null;
+        var calle19 = null;
+        var calle20 = null;
+        var calle21 = null;
+        var calle22 = null;
+        var calle23 = null;
+        var calle24 = null;
+
+        var esquina1=null;
+        var esquina2=null;
+        var esquina3=null;
+        var esquina4=null;
+        var esquina5=null;
+        var esquina6=null;
+        var esquina7=null;
+        var esquina8=null;
+        var esquina9=null;
+
+        var manzana1=null;
+        var manzana2=null;
+        var manzana3=null;
+        var manzana4= null;
+        var ruta = null;
+
+        var mouse = null;
+        var freeCam = null;
+        var orbitCam = null;
+
+        var obj = null;
+        var curva = null;
+
+        function mvPushMatrix() {
+            var copy = mat4.create();https://proxyspotting.in/torrent/17191509/Collateral_Beauty_(2016)_1080p_BluRay_-_6CH_-_1.8GB_-_ShAaNiG
+                mat4.set(mvMatrix, copy);
+            mvMatrixStack.push(copy);
+        }
+
+        function mvPopMatrix() {
+            if (mvMatrixStack.length == 0) {
+                throw "Invalid popMatrix!";
+            }
+            mvMatrix = mvMatrixStack.pop();
+        }
+
+        function setViewProjectionMatrix() {
+            gl.uniformMatrix4fv(shaderProgramTexturedObject.pMatrixUniform, false, pMatrix);
+            gl.uniformMatrix4fv(shaderProgramTexturedObject.ViewMatrixUniform, false, CameraMatrix);
+        }
+
+
+        function degToRad(degrees) {
+            return degrees * Math.PI / 180;
+        }
+
+        /*DIBUJAMOS LA ESCENA*/
+
+        function drawScene() {
+
+            requestAnimationFrame(drawScene);
+
+            // Se configura el vierport dentro de �rea �canvas�. en este caso se utiliza toda
+            // el �rea disponible
+            gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+
+            // Se habilita el color de borrado para la pantalla (Color Buffer) y otros buffers
+            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+            // Se configura la matriz de proyecci�n
+            mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
+
+            ///Dibujamos las figuras
+
+            obj.setShaderProgram(shaderProgramColoredObject);
+            obj.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
+            var model_matrix_escene = mat4.create();
+            mat4.identity(model_matrix_escene);
+            escena.draw(model_matrix_escene, false);
+
+        }
+
+
+        function webGLStart() {
+            canvas = document.getElementById("my_canvas");
+            initGL(canvas);
+            initShaders();
+            body = document.getElementById("my_body");
+
+            canvas2Ddoc = document.getElementById("canvas2Ddoc");
+            try {
+                canvas2D_gl = canvas2Ddoc.getContext("webgl");
+            } catch (e) {
+                console.log("Error cargando WebGL");
+            }
+            /*Inicializacion de variables*/
+            factory = new ObjetosFactory();
+            canvas2D = new Canvas2D();
+            camera = new CameraHandler();
+            /*NO BORRAR!*/
+            obj = new Objeto3D();
+
+
+            /*Seteamos los parametros*/
+            body.handler = camera;
+            canvas.handler = camera;
+            canvas2D.loadCanvas2D();
+
+            camera.setOrbit();
+
+            /*Aca comienza la funcion generadora de la ciudad.
+            Recibe por parametros un n es el tamaño de la grilla*/
+            var n=4;
+            var anchoCalle=3.0;
+            var largoCalle=20.0;
+
+            var manzana = 20.0;
+
+            escena = factory.createManzanaB(20);
+
+            //escena=factory.createEscene(n*(anchoCalle+manzana));
+
+            //this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
+            //this.rellenarManzanas(anchoCalle, manzana, escena, factory);
+
+
+            gl.clearColor(255.0, 255.0, 255.0, 1.0);
+            gl.enable(gl.DEPTH_TEST);
+
+            drawScene();
+        }
+
+
+        function rellenarCalles(anchoCalle, largoCalle, manzana, escena,factory){
+
+            //Manzanas 1 a 4 estan sobre y=0 y se numeran en x creciente
+            //calle 1: posicion contigua a la manzana 1.
+            calle1 = factory.createCalle(anchoCalle, largoCalle);
+            calle1.translate(manzana,0.1,0);
+            escena.add(calle1);
+
+            //calle 2: posicion contigua a la manzana 2.
+            calle2 = factory.createCalle(anchoCalle, largoCalle);
+            calle2.translate(2*manzana+anchoCalle,0.1,0);
+            escena.add(calle2);
+
+            //calle 3: posicion contigua a la manzana 3.
+            calle3 = factory.createCalle(anchoCalle, largoCalle);
+            calle3.translate(3*manzana+ 2*anchoCalle,0.1,0);
+            escena.add(calle3);
+
+            //Manzanas 5 a 8 estan sobre y=manzana y se numeran en x creciente
+            //calle 4: posicion contigua a la manzana 5.
+            calle4 = factory.createCalle(anchoCalle, largoCalle);
+            calle4.translate(manzana,0.1, (manzana+anchoCalle));
+            escena.add(calle4);
+
+            //calle 5: posicion contigua a la manzana 6.
+            calle5 = factory.createCalle(anchoCalle, largoCalle);
+            calle5.translate(2*manzana+anchoCalle,0.1, (manzana+anchoCalle));
+            escena.add(calle5);
+
+            //calle 6: posicion contigua a la manzana 7
+            calle6 = factory.createCalle(anchoCalle, largoCalle);
+            calle6.translate(3*manzana+ 2*anchoCalle,0.1, (manzana+anchoCalle));
+            escena.add(calle6);
+
+            //Manzanas 9 a 12 estan sobre y= 2* manzana
+
+            calle7 = factory.createCalle(anchoCalle, largoCalle);
+            calle7.translate(manzana,0.1, (2*manzana+2*anchoCalle));
+            escena.add(calle7);
+
+            calle8 = factory.createCalle(anchoCalle, largoCalle);
+            calle8.translate(2*manzana+anchoCalle,0.1, (2*manzana+2*anchoCalle));
+            escena.add(calle8);
+
+            calle9 = factory.createCalle(anchoCalle, largoCalle);
+            calle9.translate(3*manzana+ 2*anchoCalle,0.1, (2*manzana+2*anchoCalle));
+            escena.add(calle9);
+
+            //Manzanas 13 a 16 estan en y= 3* manzana
+            calle10 = factory.createCalle(anchoCalle, largoCalle);
+            calle10.translate(manzana,0.1, (3*manzana+3*anchoCalle));
+            escena.add(calle10);
+
+            calle11 = factory.createCalle(anchoCalle, largoCalle);
+            calle11.translate(2*manzana+anchoCalle,0.1, (3*manzana+3*anchoCalle));
+            escena.add(calle11);
+
+            calle12 = factory.createCalle(anchoCalle, largoCalle);
+            calle12.translate(3*manzana+ 2*anchoCalle,0.1, (3*manzana+3*anchoCalle));
+            escena.add(calle12);
+
+            // Comenzamos con las calles horizontales.
+            calle13 = factory.createCalle(anchoCalle, largoCalle);
+            calle13.translate(0,0.1,manzana+anchoCalle);
+            calle13.rotate(Math.PI/2,0,1,0);
+            escena.add(calle13);
+
+            calle14 = factory.createCalle(anchoCalle, largoCalle);
+            calle14.translate(0,0.1,2*manzana+2*anchoCalle);
+            calle14.rotate(Math.PI/2,0,1,0);
+            escena.add(calle14);
+
+            calle15 = factory.createCalle(anchoCalle, largoCalle);
+            calle15.translate(0,0.1,3*manzana+3*anchoCalle);
+            calle15.rotate(Math.PI/2,0,1,0);
+            escena.add(calle15);
+
+            //Cruzamos al otro lado
+            calle16 = factory.createCalle(anchoCalle, largoCalle);
+            calle16.translate(manzana+anchoCalle,0.1,manzana+anchoCalle);
+            calle16.rotate(Math.PI/2,0,1,0);
+            escena.add(calle16);
+
+            calle17 = factory.createCalle(anchoCalle, largoCalle);
+            calle17.translate(manzana+anchoCalle,0.1,2*manzana+2*anchoCalle);
+            calle17.rotate(Math.PI/2,0,1,0);
+            escena.add(calle17);
+
+            calle18 = factory.createCalle(anchoCalle, largoCalle);
+            calle18.translate(manzana+anchoCalle,0.1,3*manzana+3*anchoCalle);
+            calle18.rotate(Math.PI/2,0,1,0);
+            escena.add(calle18);
+
+            //Cruzamos al otro lado
+            calle19 = factory.createCalle(anchoCalle, largoCalle);
+            calle19.translate(2*manzana+ 2*anchoCalle,0.1,manzana+anchoCalle);
+            calle19.rotate(Math.PI/2,0,1,0);
+            escena.add(calle19);
+
+            calle20 = factory.createCalle(anchoCalle, largoCalle);
+            calle20.translate(2*manzana+ 2*anchoCalle,0.1,2*manzana+2*anchoCalle);
+            calle20.rotate(Math.PI/2,0,1,0);
+            escena.add(calle20);
+
+            calle21 = factory.createCalle(anchoCalle, largoCalle);
+            calle21.translate(2*manzana+ 2*anchoCalle,0.1,3*manzana+3*anchoCalle);
+            calle21.rotate(Math.PI/2,0,1,0);
+            escena.add(calle21);
+
+            //Cruzamos al otro lado
+            calle22 = factory.createCalle(anchoCalle, largoCalle);
+            calle22.translate(3*manzana+ 3*anchoCalle,0.1,manzana+anchoCalle);
+            calle22.rotate(Math.PI/2,0,1,0);
+            escena.add(calle22);
+
+            calle23 = factory.createCalle(anchoCalle, largoCalle);
+            calle23.translate(3*manzana+ 3*anchoCalle,0.1,2*manzana+2*anchoCalle);
+            calle23.rotate(Math.PI/2,0,1,0);
+            escena.add(calle23);
+
+            calle24 = factory.createCalle(anchoCalle, largoCalle);
+            calle24.translate(3*manzana+ 3*anchoCalle,0.1,3*manzana+3*anchoCalle);
+            calle24.rotate(Math.PI/2,0,1,0);
+            escena.add(calle24);
+
+            //CREAMOS LAS ESQUINAS.
+            esquina1= factory.createEsquina(anchoCalle);
+            esquina1.translate(manzana,0.1,manzana);
+            escena.add(esquina1);
+
+            esquina2= factory.createEsquina(anchoCalle);
+            esquina2.translate(manzana,0.1,2*manzana+anchoCalle);
+            escena.add(esquina2);
+
+            esquina3= factory.createEsquina(anchoCalle);
+            esquina3.translate(manzana,0.1,3*manzana+ 2*anchoCalle);
+            escena.add(esquina3);
+
+            esquina4= factory.createEsquina(anchoCalle);
+            esquina4.translate(2*manzana + anchoCalle,0.1,manzana);
+            escena.add(esquina4);
+
+            esquina5= factory.createEsquina(anchoCalle);
+            esquina5.translate(2*manzana + anchoCalle,0.1,2*manzana+anchoCalle);
+            escena.add(esquina5);
+
+            esquina6= factory.createEsquina(anchoCalle);
+            esquina6.translate(2*manzana + anchoCalle,0.1,3*manzana+ 2*anchoCalle);
+            escena.add(esquina6);
+
+            esquina7= factory.createEsquina(anchoCalle);
+            esquina7.translate(3*manzana + 2*anchoCalle,0.1,manzana);
+            escena.add(esquina7);
+
+            esquina8= factory.createEsquina(anchoCalle);
+            esquina8.translate(3*manzana + 2*anchoCalle,0.1,2*manzana+anchoCalle);
+            escena.add(esquina8);
+
+            esquina9= factory.createEsquina(anchoCalle);
+            esquina9.translate(3*manzana + 2*anchoCalle,0.1,3*manzana+ 2*anchoCalle);
+            escena.add(esquina9);
+        }
+
+        function rellenarManzanas(anchoCalle, manzana, escena,factory){
+            var aux = [true,false,true,false,false,false,true,false,true,true,false,true,true,true,false,false];
+            //aux para probar solamente
+            var vertical = 0;
+            var horizontal = 0;
+            for (var i=0; i< 16; i++){
+
+                /*if(){
+                ACA VA EL IF DE SI ES RUTA O CALLE!!!
+                }*/
+                if(aux[i]){
+                    var mEdf = factory.createManzanaB(manzana);
+                    mEdf.translate( (horizontal* (anchoCalle+manzana) ), 0.0, (vertical* (anchoCalle+manzana) ) );
+                    escena.add(mEdf);
+                }
+                vertical++;
+                if(vertical ==4){
+                    vertical=0;
+                    horizontal++;
+                }
+                console.log(horizontal);
+                console.log(vertical);
+
+            }
+        }
+
+    </script>
+
+</head>
+
+
+<body id = "my_body" onload="webGLStart();" body style="background-color:#0EA9EB;">
+<center>
+    <h1 style="color:white">SG - 66.71 - Trabajo Pr&aacute;ctico 2017</h1>
+    <h2 style="color:white">Schapira y Guerrero</h2>
+    <canvas id="my_canvas" style="border: none;" width="1280" height="520">
+        <canvas id="canvas2Ddoc" width="200" height="200"></canvas>
+        Your browser does not support the HTML5 canvas element.
+        </scanvas>
+
+</center>
+
+
+</body>
+
+</html>
