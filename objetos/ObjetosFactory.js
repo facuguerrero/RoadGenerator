@@ -74,8 +74,8 @@ class ObjetosFactory {
         var vecPosFaroles = curvaFaroles.getVecPos();
         var arrayMatF = curvaFaroles.getArrayMatT();
 
-        var factorCantFaroles = 2;
-        var ajusteFarolesBordes = 2;
+        var factorCantFaroles = 5;
+        var ajusteFarolesBordes = 5;
         var sentido = 1;
         for (var i = ajusteFarolesBordes; i < vecPos.length - ajusteFarolesBordes - 10; i += factorCantFaroles) {
 
