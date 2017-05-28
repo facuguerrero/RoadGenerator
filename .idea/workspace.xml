@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="461" column="22" lean-forward="true" selection-start-line="461" selection-start-column="22" selection-end-line="461" selection-end-column="22" />
+            <state relative-caret-position="287">
+              <caret line="411" column="30" lean-forward="true" selection-start-line="411" selection-start-column="30" selection-end-line="411" selection-end-column="30" />
               <folding>
                 <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createRuta#0;n#ObjetosFactory#0" expanded="false" />
@@ -41,7 +40,6 @@
                 <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createCar#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
-                <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -52,6 +50,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
               <caret line="218" column="55" lean-forward="true" selection-start-line="218" selection-start-column="55" selection-end-line="218" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="652" column="30" lean-forward="true" selection-start-line="652" selection-start-column="30" selection-end-line="652" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -170,6 +178,7 @@
         <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+        <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
       </list>
     </option>
   </component>
@@ -223,7 +232,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Template Pruebas" />
+              <option name="myItemId" value="Template Guerrero-Schapira" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,14 +455,7 @@
       <workItem from="1495898024746" duration="260000" />
       <workItem from="1495910184891" duration="1310000" />
       <workItem from="1495921258854" duration="5802000" />
-      <workItem from="1495976186753" duration="1121000" />
-    </task>
-    <task id="LOCAL-00057" summary="aca tamo en la pile">
-      <created>1494596112156</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1494596112156</updated>
+      <workItem from="1495976186753" duration="1376000" />
     </task>
     <task id="LOCAL-00058" summary="aca tamo en la pile">
       <created>1494597648620</created>
@@ -791,11 +793,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495928954077</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Mnazana pasto">
+      <created>1495977324038</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1495977324038</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218901000" />
+    <option name="totallyTimeSpent" value="219156000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,7 +845,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Hoy tiene que andar" />
     <MESSAGE value="agregada la autopista. Falta ver bien la curva" />
     <MESSAGE value="Falso edificio" />
     <MESSAGE value="Calle y esquina" />
@@ -861,7 +869,8 @@
     <MESSAGE value="Veredirijilla" />
     <MESSAGE value="asdadqwe" />
     <MESSAGE value="TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO" />
+    <MESSAGE value="Mnazana pasto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mnazana pasto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -870,13 +879,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1190,8 +1192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="461" column="22" lean-forward="true" selection-start-line="461" selection-start-column="22" selection-end-line="461" selection-end-column="22" />
+        <state relative-caret-position="287">
+          <caret line="411" column="30" lean-forward="true" selection-start-line="411" selection-start-column="30" selection-end-line="411" selection-end-column="30" />
           <folding>
             <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createRuta#0;n#ObjetosFactory#0" expanded="false" />
@@ -1202,8 +1204,15 @@
             <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createCar#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="652" column="30" lean-forward="true" selection-start-line="652" selection-start-column="30" selection-end-line="652" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

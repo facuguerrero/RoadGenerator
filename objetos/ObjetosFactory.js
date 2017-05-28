@@ -374,7 +374,7 @@ class ObjetosFactory {
 
         var alturas =this.llenarAlturas();
 
-        var vereda = this.createVereda();
+        var vereda = this.createVereda(1);
 
         var edificio1 = this.createBuilding(4.0, alturas[0], 5.0);
         centro.add(edificio1);

@@ -655,6 +655,11 @@
                     mEdf.translate( (horizontal* (anchoCalle+manzana) ), 0.0, (vertical* (anchoCalle+manzana) ) );
                     escena.add(mEdf);
                 }
+                else{
+                    var mPast = factory.createManzanaP(manzana);
+                    mPast.translate( (horizontal* (anchoCalle+manzana) ), 0.0, (vertical* (anchoCalle+manzana) ) );
+                    escena.add(mPast);
+                }
                 horizontal++;
                 if(horizontal ==4){
                     horizontal=0;
