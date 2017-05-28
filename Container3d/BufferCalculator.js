@@ -228,8 +228,8 @@ class BufferCalculator{
                 var aux = vec3.fromValues(1.0,1.0,1.0);
                 vec3.transformMat3(vecTrasActual,aux,matActual);
 
-                vec3.transformMat3(verticeFormaActual,vecActual,matActual);
                 vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
+                vec3.transformMat3(verticeFormaActual,vecActual,matActual);
 
                 this.posBuffer.push(verticeFormaActual[0]);
                 this.posBuffer.push(verticeFormaActual[1]);
