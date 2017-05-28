@@ -204,12 +204,12 @@ class BufferCalculator{
 
         for (var i = 0; i < this.colms; i++) {
 
+
             /*Creamos la matriz de rotacion para el paso actual*/
             var matActual = mat3.create();
             mat3.identity(matActual);
             //angulo de rotacion
             mat3.rotate(matActual, matActual, ((2*Math.PI*i)/(this.colms-1)), vecRot);
-
 
             for(var j = 0; j < this.rows; j++){
 
@@ -225,7 +225,10 @@ class BufferCalculator{
 
                 /*Actualizamos las normales*/
                 vec3.transformMat3(normalFormaActual,normalFormaActual, matActual);
+
                 console.log(verticeFormaActual);
+
+
                 /*Actualizamos los buffers*/
                 this.posBuffer.push(verticeFormaActual[0]);
                 this.posBuffer.push(verticeFormaActual[1]);
