@@ -180,6 +180,7 @@ class Objeto3D extends Container3D{
             }
             escalado = arrayVecPos.pop();
             this.figuras.calcularEscena(vertices, arrayVecNOR, escalado[0]);
+            this.addColor(buffcalc,4, 0.3, 0.3, 0.3);
         }
 
         else if(figura == CARROCERIA){

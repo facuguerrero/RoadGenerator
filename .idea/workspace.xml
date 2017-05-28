@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,8 +31,8 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="411" column="30" lean-forward="true" selection-start-line="411" selection-start-column="30" selection-end-line="411" selection-end-column="30" />
+            <state relative-caret-position="-1875">
+              <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="335" selection-end-column="28" />
               <folding>
                 <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createRuta#0;n#ObjetosFactory#0" expanded="false" />
@@ -45,41 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="218" column="55" lean-forward="true" selection-start-line="218" selection-start-column="55" selection-end-line="218" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="652" column="30" lean-forward="true" selection-start-line="652" selection-start-column="30" selection-end-line="652" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Container3D.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="296" column="0" lean-forward="true" selection-start-line="296" selection-start-column="0" selection-end-line="297" selection-end-column="51" />
+            <state relative-caret-position="312">
+              <caret line="224" column="18" lean-forward="false" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -96,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>viewMat</find>
       <find>handler</find>
       <find>mat4.crea</find>
       <find>matriz_camara</find>
@@ -125,6 +97,7 @@
       <find>add</find>
       <find>Color</find>
       <find>addColor</find>
+      <find>i</find>
       <find>manza</find>
     </findStrings>
     <replaceStrings>
@@ -162,7 +135,6 @@
         <option value="$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/Object3D.js" />
         <option value="$PROJECT_DIR$/ArchivosUsados/SisGrafRodri/actividadGridTemplate.html" />
         <option value="$PROJECT_DIR$/primitivas/Caja.js" />
-        <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
         <option value="$PROJECT_DIR$/Bajado/primitives/bspline.js" />
         <option value="$PROJECT_DIR$/Letras_Prueba_Camara/index.html" />
         <option value="$PROJECT_DIR$/handlers/Mouse.js" />
@@ -174,11 +146,12 @@
         <option value="$PROJECT_DIR$/primitivas/CuadraticBezier.js" />
         <option value="$PROJECT_DIR$/Template2 TP/TemplateTP.html" />
         <option value="$PROJECT_DIR$/Template TP/TempalteTP.html" />
-        <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
-        <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
-        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
+        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+        <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
+        <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
       </list>
     </option>
   </component>
@@ -232,7 +205,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Template Guerrero-Schapira" />
+              <option name="myItemId" value="Template Pruebas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,14 +428,7 @@
       <workItem from="1495898024746" duration="260000" />
       <workItem from="1495910184891" duration="1310000" />
       <workItem from="1495921258854" duration="5802000" />
-      <workItem from="1495976186753" duration="1376000" />
-    </task>
-    <task id="LOCAL-00058" summary="aca tamo en la pile">
-      <created>1494597648620</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1494597648621</updated>
+      <workItem from="1495976186753" duration="8621000" />
     </task>
     <task id="LOCAL-00059" summary="Hoy tiene que andar">
       <created>1494598025689</created>
@@ -800,11 +766,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495977324038</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Toda la grilla cargada">
+      <created>1495977576447</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1495977576447</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219156000" />
+    <option name="totallyTimeSpent" value="226401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -822,6 +795,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21445042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11509716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -834,7 +808,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -845,7 +818,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="agregada la autopista. Falta ver bien la curva" />
     <MESSAGE value="Falso edificio" />
     <MESSAGE value="Calle y esquina" />
     <MESSAGE value="MARCOS VOS SEGUI USANDO TEMPLATE 2, YO PARA PROBAR USO TEMPLATE 1" />
@@ -870,7 +842,8 @@
     <MESSAGE value="asdadqwe" />
     <MESSAGE value="TODO" />
     <MESSAGE value="Mnazana pasto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mnazana pasto" />
+    <MESSAGE value="Toda la grilla cargada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toda la grilla cargada" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1126,14 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Canvas2D/jquery-2.1.4.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1158,22 +1123,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template TP/TempalteTP.html" />
     <entry file="file://$PROJECT_DIR$/TemplateAlt/TempalteTP.html" />
-    <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="296" column="0" lean-forward="true" selection-start-line="296" selection-start-column="0" selection-end-line="297" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template Pruebas/TempalteTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="475" column="53" lean-forward="true" selection-start-line="475" selection-start-column="53" selection-end-line="475" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1182,18 +1131,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3379">
+          <caret line="664" column="33" lean-forward="true" selection-start-line="664" selection-start-column="33" selection-end-line="664" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="218" column="55" lean-forward="true" selection-start-line="218" selection-start-column="55" selection-end-line="218" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="289">
+          <caret line="161" column="32" lean-forward="false" selection-start-line="161" selection-start-column="32" selection-end-line="161" selection-end-column="32" />
+          <folding>
+            <marker date="1495979201373" expanded="true" signature="437:11489" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="455:830" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="837:881" ph="/** METODOS DE MODELADO ...*/" />
+            <marker date="1495979201373" expanded="true" signature="1006:1060" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="1066:1107" ph="/** METODOS DE DIBUJADO ...*/" />
+            <marker date="1495979201373" expanded="true" signature="1112:1155" ph="/*...*/" />
+            <marker date="1495979201373" expanded="true" signature="1167:1461" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="1467:1520" ph="/*...*/" />
+            <marker date="1495979201373" expanded="true" signature="1544:2836" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="2842:3171" ph="/*...*/" />
+            <marker date="1495979201373" expanded="true" signature="3261:8322" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="3464:3677" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="3569:3667" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="3768:3978" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="3796:3902" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="4025:4493" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="4053:4159" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="4172:4297" ph="//..." />
+            <marker date="1495979201373" expanded="true" signature="4535:4942" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="4563:4666" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="4985:5105" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="5139:5378" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="5167:5271" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="5416:5689" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="5445:5556" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="5730:6010" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="5758:5874" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="6044:6360" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="6072:6176" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="6395:6711" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="6423:6528" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="6750:7010" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="6779:6876" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7044:7206" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7239:7481" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7268:7360" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7516:7941" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7544:7634" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7770:7845" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7861:7931" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="7956:8020" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="8041:8228" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="8254:8316" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="8353:8657" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="8413:8505" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="8548:8651" ph="//..." />
+            <marker date="1495979201373" expanded="true" signature="8663:9016" ph="/** Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara ...*/" />
+            <marker date="1495979201373" expanded="true" signature="9045:11171" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="9199:9349" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="11177:11231" ph="/** Dibuja a los hijos ...*/" />
+            <marker date="1495979201373" expanded="true" signature="11297:11484" ph="{...}" />
+            <marker date="1495979201373" expanded="true" signature="11354:11478" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="216" column="4" lean-forward="false" selection-start-line="216" selection-start-column="4" selection-end-line="216" selection-end-column="4" />
+          <folding>
+            <marker date="1495979023116" expanded="true" signature="24:17206" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="44:62" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="68:171" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="215:1337" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="1403:2371" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="2423:2812" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="2915:3556" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="3044:3549" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="3408:3537" ph="//..." />
+            <marker date="1495979023116" expanded="true" signature="3598:3988" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="4033:7426" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="7474:9294" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="9340:9727" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="9768:11017" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="11063:12877" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="11243:11395" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="12927:13711" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="12937:13183" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="13293:13705" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="13759:14339" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="13769:13893" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="14023:14332" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="14382:15778" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="14850:15046" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="15129:15324" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="15403:15607" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="15840:16768" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="15850:15927" ph="/*...*/" />
+            <marker date="1495979023116" expanded="true" signature="15973:16035" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="16061:16123" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="16148:16211" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="16236:16297" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="16333:16735" ph="{...}" />
+            <marker date="1495979023116" expanded="true" signature="16815:17202" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="411" column="30" lean-forward="true" selection-start-line="411" selection-start-column="30" selection-end-line="411" selection-end-column="30" />
+        <state relative-caret-position="-1875">
+          <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="335" selection-end-column="28" />
           <folding>
             <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createRuta#0;n#ObjetosFactory#0" expanded="false" />
@@ -1208,10 +1261,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+    <entry file="file://$PROJECT_DIR$/Template Pruebas/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
-          <caret line="652" column="30" lean-forward="true" selection-start-line="652" selection-start-column="30" selection-end-line="652" selection-end-column="30" />
+          <caret line="449" column="22" lean-forward="false" selection-start-line="449" selection-start-column="22" selection-end-line="449" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="224" column="18" lean-forward="false" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
           <folding />
         </state>
       </provider>

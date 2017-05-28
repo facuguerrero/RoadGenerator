@@ -142,8 +142,6 @@ class BufferCalculator{
      obtenemos el punto hacia donde tenemos que transladar.
      arrayVecNorm es un array de vec3 que contiene las normales de los puntos.
      Se supone que estan normalizados.
-     El path es una lista de listas que contienen las coordenadas
-     x, y, z de cada punto del camino.
      */
     calcularSuperficieBarrido(vertices, arrayMatTrans, arrayVecPos, arrayVecNorm){
 
@@ -185,4 +183,61 @@ class BufferCalculator{
             }
         }
       }
+
+    /*
+     vertices es una lista de vec3 que contienen las coordenadas
+     x, y, z de cada vertice, de la figura a rotar.
+     arrayMatTrans es un array de mat3 al multiplicarla con cada
+     nivel se aplica la transformacion.
+
+     arrayVecPos es un array de vec3 que contiene sobre el eje que tenemos que rotar.
+
+     arrayVecNorm es un array de vec3 que contiene las normales de los puntos.
+     Se supone que estan normalizados.
+     */
+        calcularSuperficieRevolucion(vertices, arrayMatRot, ejeRotacion, arrayVecNorm){
+
+
+        this.calcIndexBuffer();
+
+        var factorRotacion = 0.25;
+        var angulo =  Math.PI;
+
+        var vecRot = vec3.create();
+        vec3.copy(vecRot,ejeRotacion);
+
+        for (var i = 0; i < this.colms; i++) {
+            var verticeFormaActual = vec3.create();
+            vec3.copy(verticeFormaActual,vertices[i]);
+            var matActual = arrayMatRot[i];
+
+            var normVer = vec3.create();
+            vec3.copy(normVer, arrayVecNorm[i]);
+
+            /*Hacemos una rotacion de 2pi*/
+            for(var j = 0; j <= 2/factorRotacion; j++){
+
+                var binormVer = vec3.fromValues(0.0,0.0,1.0);
+
+                var tanVer = vec3.create();
+                vec3.cross(tanVer,binormVer, normVer);
+
+                //vec3.rotate(ejeRotacion,(i*factorRotacion)*angulo,normVer);
+                //vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
+                //vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
+
+                //vec3.transformMat3(normVer,normVer,matActual);
+
+                this.posBuffer.push(verticeFormaActual[0]);
+                this.posBuffer.push(verticeFormaActual[1]);
+                this.posBuffer.push(verticeFormaActual[2]);
+                this.normalBuffer.push(normVer[0]);
+                this.normalBuffer.push(normVer[1]);
+                this.normalBuffer.push(normVer[2]);
+                this.colorBuffer.push(1.0);
+                this.colorBuffer.push(1.0);
+                this.colorBuffer.push(1.0);
+            }
+        }
+    }
   }
