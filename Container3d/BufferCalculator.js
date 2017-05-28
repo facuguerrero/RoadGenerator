@@ -195,51 +195,47 @@ class BufferCalculator{
      arrayVecNorm es un array de vec3 que contiene las normales de los puntos.
      Se supone que estan normalizados.
      */
-        calcularSuperficieRevolucion(vertices, arrayMatRot, ejeRotacion, arrayVecNorm){
-
+        calcularSuperficieRevolucion(vertices, ejeRotacion, arrayVecNorm){
 
         this.calcIndexBuffer();
 
         var vecRot = vec3.create();
         vec3.copy(vecRot,ejeRotacion);
 
-        for (var i = 0; i < this.rows; i++) {
+        for (var i = 0; i < this.colms; i++) {
 
-            var vecActual = vec3.create();
-            vec3.copy(vecActual, vertices[i]);
+            /*Creamos la matriz de rotacion para el paso actual*/
+            var matActual = mat3.create();
+            mat3.identity(matActual);
+            //angulo de rotacion
+            mat3.rotate(matActual, matActual, ((2*Math.PI*i)/(this.colms-1)), vecRot);
 
-            var vecNormActual = vec3.create();
-            vec3.copy(vecNormActual, arrayVecNorm[i]);
 
-            for(var j = 0; j < this.colms; j++){
+            for(var j = 0; j < this.rows; j++){
 
-                var matActual = arrayMatRot[j];
-
+                /*Nos quedamos con el vertice de posicion y normal actual*/
                 var verticeFormaActual = vec3.create();
+                vec3.copy(verticeFormaActual, vertices[j]);
 
-                var normVer = vec3.create();
-                vec3.transformMat3(normVer,normVer,matActual);
+                var normalFormaActual = vec3.create();
+                vec3.copy(normalFormaActual, arrayVecNorm[j]);
 
-                var binormVer = vec3.fromValues(0.0,0.0,1.0);
-                var tanVer = vec3.create();
-                vec3.cross(tanVer,binormVer, normVer);
+                /*Actualizamos la posicion*/
+                vec3.transformMat3(verticeFormaActual, verticeFormaActual, matActual);
 
-                var vecTrasActual= vec3.create();
-                var aux = vec3.fromValues(1.0,1.0,1.0);
-                vec3.transformMat3(vecTrasActual,aux,matActual);
-
-                vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
-                vec3.transformMat3(verticeFormaActual,vecActual,matActual);
-
+                /*Actualizamos las normales*/
+                vec3.transformMat3(normalFormaActual,normalFormaActual, matActual);
+                console.log(verticeFormaActual);
+                /*Actualizamos los buffers*/
                 this.posBuffer.push(verticeFormaActual[0]);
                 this.posBuffer.push(verticeFormaActual[1]);
                 this.posBuffer.push(verticeFormaActual[2]);
-                this.normalBuffer.push(normVer[0]);
-                this.normalBuffer.push(normVer[1]);
-                this.normalBuffer.push(normVer[2]);
-                this.colorBuffer.push(1.0);
-                this.colorBuffer.push(1.0);
-                this.colorBuffer.push(1.0);
+                this.normalBuffer.push(normalFormaActual[0]);
+                this.normalBuffer.push(normalFormaActual[1]);
+                this.normalBuffer.push(normalFormaActual[2]);
+                this.colorBuffer.push(0.0);
+                this.colorBuffer.push(0.0);
+                this.colorBuffer.push(0.0);
             }
         }
     }
