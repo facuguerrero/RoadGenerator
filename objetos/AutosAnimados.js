@@ -40,11 +40,12 @@ class AutosAnimados {
         this.vecPosAutos = curvaAutos.getVecPos();
         this.arrayMatA = curvaAutos.getArrayMatT();
 
-        var random = Math.random() * 5;
+        var random1 = Math.random() * 5;
+        var random2 = Math.random() * 5;
         var factorCantAutos = 5.0;
         var ajusteAutosBordes = 5.0;
         var distanciaEntreAutos = 2;
-        for (var k = ajusteAutosBordes; k < this.vecPosAutos.length - ajusteAutosBordes - random - 10.0; k += factorCantAutos + random) {
+        for (var k = ajusteAutosBordes; k < this.vecPosAutos.length - ajusteAutosBordes - random1 - 10.0; k += factorCantAutos + random1) {
 
             var i = Math.floor(k);
 
@@ -53,7 +54,7 @@ class AutosAnimados {
             var mat1 = this.factory.getMatriz4x4(this.arrayMatA[i]);
 
             var auto1 = this.factory.createCar();
-            auto1.translate(vec1[1], vec1[0], vec1[2] - 10.5);
+            auto1.translate(vec1[1], vec1[0], vec1[2] - 10);
             auto1.applyMatrix(mat1);
             auto1.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
@@ -63,12 +64,12 @@ class AutosAnimados {
             this.posAutos1.push(i);
 
             //auto 2
-            var pos2 = i + 6 + Math.floor(random);
+            var pos2 = i + 6 + Math.floor(random1);
             var vec2 = this.vecPosAutos[pos2];
             var mat2 = this.factory.getMatriz4x4(this.arrayMatA[pos2]);
 
             var auto2 = this.factory.createCar();
-            auto2.translate(vec2[1], vec2[0], vec2[2] - 10.5);
+            auto2.translate(vec2[1], vec2[0], vec2[2] - 15);
             auto2.applyMatrix(mat2);
             auto2.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto2.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
@@ -82,7 +83,7 @@ class AutosAnimados {
             var mat3 = this.factory.getMatriz4x4(this.arrayMatA[i]);
 
             var auto3 = this.factory.createCar();
-            auto3.translate(vec3[1], vec3[0], vec3[2] + 10.5);
+            auto3.translate(vec3[1], vec3[0], vec3[2] + 10);
             auto3.applyMatrix(mat3);
             auto3.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto3.rotate(-Math.PI / 2, 0.0, 1.0, 0.0);
@@ -92,12 +93,12 @@ class AutosAnimados {
             this.posAutos3.push(i);
 
             //auto 4
-            var pos4 = i + 6 + Math.floor(random);
+            var pos4 = i + 6 + Math.floor(random2);
             var vec4 = this.vecPosAutos[pos4];
             var mat4 = this.factory.getMatriz4x4(this.arrayMatA[pos4]);
 
             var auto4 = this.factory.createCar();
-            auto4.translate(vec4[1], vec4[0], vec4[2] + 10.5);
+            auto4.translate(vec4[1], vec4[0], vec4[2] + 15);
             auto4.applyMatrix(mat4);
             auto4.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto4.rotate(-Math.PI / 2, 0.0, 1.0, 0.0);
@@ -106,119 +107,21 @@ class AutosAnimados {
             this.autos4.push(auto4);
             this.posAutos4.push(pos4);
 
-            random = Math.random() * 5;
+            random1 = Math.random() * 5;
+            random2 = Math.random() * 5;
 
         }
 
     }
 
-    // updateAutos() {
-    //
-    //     //creo dos nuevas curvas que se adecuen a los autos
-    //     var puntosAutos = [];
-    //     for (var j = 0; j < this.puntos.length; j++) {
-    //         var vecR = this.puntos[j];
-    //         puntosAutos.push([vecR[0] + 1.9, vecR[1], (vecR[2])]);
-    //     }
-    //     var curvaAutos = new CuadraticBSpline(puntosAutos.length, 0.1, true);
-    //
-    //     curvaAutos.setControlPoints(puntosAutos);
-    //     curvaAutos.calculateArrays();
-    //
-    //     this.vecPosAutos = curvaAutos.getVecPos();
-    //     this.arrayMatA = curvaAutos.getArrayMatT();
-    //
-    //     var random = Math.random() * 5;
-    //     var factorCantAutos = 5.0;
-    //     var ajusteAutosBordes = 5.0;
-    //     var distanciaEntreAutos = 2;
-    //     for (var k = ajusteAutosBordes; k < this.vecPosAutos.length - ajusteAutosBordes - random - 10.0; k += factorCantAutos + random) {
-    //
-    //         var i = Math.floor(k);
-    //
-    //         //auto 1
-    //         var vec1 = this.vecPosAutos[i];
-    //         var mat1 = this.factory.getMatriz4x4(this.arrayMatA[i]);
-    //
-    //         var auto1 = this.autos1[];
-    //         auto1.translate(vec1[1], vec1[0], vec1[2] - 10.5);
-    //         auto1.applyMatrix(mat1);
-    //         auto1.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
-    //         auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
-    //         auto1.scale(0.5, 0.5, 0.5);
-    //         this.ruta.add(auto1);
-    //         this.autos1.push(auto1);
-    //         this.posAutos1.push(i);
-    //
-    //         //auto 2
-    //         var pos2 = i + 6 + Math.floor(random);
-    //         var vec2 = this.vecPosAutos[pos2];
-    //         var mat2 = this.factory.getMatriz4x4(this.arrayMatA[pos2]);
-    //
-    //         var auto2 = this.factory.createCar();
-    //         auto2.translate(vec2[1], vec2[0], vec2[2] - 10.5);
-    //         auto2.applyMatrix(mat2);
-    //         auto2.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
-    //         auto2.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
-    //         auto2.scale(0.5, 0.5, 0.5);
-    //         this.ruta.add(auto2);
-    //         this.autos2.push(auto2);
-    //         this.posAutos2.push(pos2);
-    //
-    //         //auto3
-    //         var vec3 = this.vecPosAutos[i];
-    //         var mat3 = this.factory.getMatriz4x4(this.arrayMatA[i]);
-    //
-    //         var auto3 = this.factory.createCar();
-    //         auto3.translate(vec3[1], vec3[0], vec3[2] + 10.5);
-    //         auto3.applyMatrix(mat3);
-    //         auto3.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
-    //         auto3.rotate(-Math.PI / 2, 0.0, 1.0, 0.0);
-    //         auto3.scale(0.5, 0.5, 0.5);
-    //         this.ruta.add(auto3);
-    //         this.autos3.push(auto3);
-    //         this.posAutos3.push(i);
-    //
-    //         //auto 4
-    //         var pos4 = i + 6 + Math.floor(random);
-    //         var vec4 = this.vecPosAutos[pos4];
-    //         var mat4 = this.factory.getMatriz4x4(this.arrayMatA[pos4]);
-    //
-    //         var auto4 = this.factory.createCar();
-    //         auto4.translate(vec4[1], vec4[0], vec4[2] + 10.5);
-    //         auto4.applyMatrix(mat4);
-    //         auto4.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
-    //         auto4.rotate(-Math.PI / 2, 0.0, 1.0, 0.0);
-    //         auto4.scale(0.5, 0.5, 0.5);
-    //         this.ruta.add(auto4);
-    //         this.autos4.push(auto4);
-    //         this.posAutos4.push(pos4);
-    //
-    //         random = Math.random() * 5;
-    //
-    //     }
-    //
-    // }
-
-    borrarAutos(){
-
-        var long = this.autos1.length;
-        for(var i = 0; i < long; i++){
-            this.ruta.remove(this.autos1[i]);
-            //this.ruta.remove(this.autos2[i]);
-            //this.ruta.remove(this.autos3[i]);
-            //this.ruta.remove(this.autos4[i]);
-        }
-
-    }
 
     updateAutos(){
 
         var largoCurva = 55.0;
 
-        this.count += 0.3;
+        this.count += 0.15;
 
-        if (this.count > 1.3){
+        if (this.count > 1.15){
             this.count = 0.0;
         }
 
@@ -269,28 +172,28 @@ class AutosAnimados {
             var mat4 = this.factory.getMatriz4x4(this.arrayMatA[pos4]);
 
             auto1.resetMatrix();
-            auto1.translate(vec1[1], vec1[0], vec1[2] - 10.5);
+            auto1.translate(vec1[1], vec1[0], vec1[2] - 10);
             auto1.applyMatrix(mat1);
             auto1.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
             auto1.scale(0.5, 0.5, 0.5);
 
             auto2.resetMatrix();
-            auto2.translate(vec2[1], vec2[0], vec2[2] + 10.5);
+            auto2.translate(vec2[1], vec2[0], vec2[2] - 15);
             auto2.applyMatrix(mat2);
             auto2.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto2.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
             auto2.scale(0.5, 0.5, 0.5);
 
             auto3.resetMatrix();
-            auto3.translate(vec3[1], vec3[0], vec3[2] + 10.5);
+            auto3.translate(vec3[1], vec3[0], vec3[2] + 10);
             auto3.applyMatrix(mat3);
             auto3.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto3.rotate(-Math.PI / 2, 0.0, 1.0, 0.0);
             auto3.scale(0.5, 0.5, 0.5);
 
             auto4.resetMatrix();
-            auto4.translate(vec4[1], vec4[0], vec4[2] + 10.5);
+            auto4.translate(vec4[1], vec4[0], vec4[2] + 15);
             auto4.applyMatrix(mat4);
             auto4.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             auto4.rotate(-Math.PI / 2, 0.0, 1.0, 0.0);
