@@ -446,17 +446,13 @@
             normales.push(vec3.fromValues(1.0,0.0,0.0));
 
             var matrices = [];
-            //var mat = mat3.create();
-            var x = 1.0;
-            var mat = [Math.cos(x),0.0,Math.sin(x),0.0,1.0,0.0,-Math.sin(x),0.0,Math.cos(x)];
-            matrices.push(mat);
-            matrices.push(mat);
+            this.obtenerMatricesRotacion(matrices,0.25);
 
             var prueba = new Objeto3D();
-            var buf = new BufferCalculator(2,2);
-            buf.calcularSuperficieRevolucion(vectores,matrices,vec3.fromValues(0.0,1.0,0.0) , normales );
+            var buf = new BufferCalculator(2,8);
             prueba.setBufferCreator(buf);
-
+            buf.calcularSuperficieRevolucion(vectores,matrices,vec3.fromValues(0.0,1.0,0.0) , normales );
+            prueba.build();
 
             escena = factory.createManzanaP(manzana);
             //escena=factory.createEscene(n*(anchoCalle+manzana));
@@ -469,6 +465,16 @@
             gl.enable(gl.DEPTH_TEST);
 
             drawScene();
+        }
+
+        function obtenerMatricesRotacion(matrices,factorRotacion){
+
+            for(var i =0; i<2/factorRotacion; i++){
+                var angulo = Math.PI * i * factorRotacion;
+                var mat = [Math.cos(angulo),0.0,Math.sin(angulo),0.0,1.0,0.0,-Math.sin(angulo),0.0,Math.cos(angulo)];
+                matrices.push(mat);
+            }
+
         }
 
 

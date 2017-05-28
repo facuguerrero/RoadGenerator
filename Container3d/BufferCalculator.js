@@ -200,33 +200,36 @@ class BufferCalculator{
 
         this.calcIndexBuffer();
 
-        var factorRotacion = 0.25;
-        var angulo =  Math.PI;
-
         var vecRot = vec3.create();
         vec3.copy(vecRot,ejeRotacion);
 
-        for (var i = 0; i < this.colms; i++) {
-            var verticeFormaActual = vec3.create();
-            vec3.copy(verticeFormaActual,vertices[i]);
-            var matActual = arrayMatRot[i];
+        for (var i = 0; i < this.rows; i++) {
 
-            var normVer = vec3.create();
-            vec3.copy(normVer, arrayVecNorm[i]);
+            var vecActual = vec3.create();
+            vec3.copy(vecActual, vertices[i]);
 
-            /*Hacemos una rotacion de 2pi*/
-            for(var j = 0; j <= 2/factorRotacion; j++){
+            var vecNormActual = vec3.create();
+            vec3.copy(vecNormActual, arrayVecNorm[i]);
+
+            for(var j = 0; j < this.colms; j++){
+
+                var matActual = arrayMatRot[j];
+
+                var verticeFormaActual = vec3.create();
+
+                var normVer = vec3.create();
+                vec3.transformMat3(normVer,normVer,matActual);
 
                 var binormVer = vec3.fromValues(0.0,0.0,1.0);
-
                 var tanVer = vec3.create();
                 vec3.cross(tanVer,binormVer, normVer);
 
-                //vec3.rotate(ejeRotacion,(i*factorRotacion)*angulo,normVer);
-                //vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
-                //vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
+                var vecTrasActual= vec3.create();
+                var aux = vec3.fromValues(1.0,1.0,1.0);
+                vec3.transformMat3(vecTrasActual,aux,matActual);
 
-                //vec3.transformMat3(normVer,normVer,matActual);
+                vec3.transformMat3(verticeFormaActual,vecActual,matActual);
+                vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
 
                 this.posBuffer.push(verticeFormaActual[0]);
                 this.posBuffer.push(verticeFormaActual[1]);
