@@ -339,7 +339,7 @@
         var canvas2D = null;
         var camera = null;
         var factory = null;
-        var prueba = null;
+        var rev = null;
 
 
         var mouse = null;
@@ -394,11 +394,11 @@
             obj.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
-            escena.draw(model_matrix_escene, false);
+            //escena.draw(model_matrix_escene, false);
 
-            var model_matrix_prueba = mat4.create();
-            mat4.identity(model_matrix_prueba);
-            prueba.draw(model_matrix_prueba, false);
+            var model_matrix_rev = mat4.create();
+            mat4.identity(model_matrix_rev);
+            rev.draw(model_matrix_rev, false);
 
         }
 
@@ -446,21 +446,16 @@
             normales.push(vec3.fromValues(1.0,0.0,0.0));
 
             var matrices = [];
-            this.obtenerMatricesRotacion(matrices,0.25);
+            //this.obtenerMatricesRotacion(matrices,0.25);
 
 
-            var prueba = new Objeto3D();
-            var buf = new BufferCalculator(2,8);
-            prueba.setBufferCreator(buf);
-            buf.calcularSuperficieRevolucion(vectores,matrices,vec3.fromValues(0.0,1.0,0.0) , normales );
-            prueba.build();
+            var rev = new Objeto3D();
+            var buf = new BufferCalculator(2,16);
+            buf.calcularSuperficieRevolucion(vectores, vec3.fromValues(0.0, 1.0 ,0.0) , normales );
+            rev.setBufferCreator(buf);
+            rev.build();
 
             escena = factory.createManzanaP(manzana);
-            //escena=factory.createEscene(n*(anchoCalle+manzana));
-
-            //this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
-            //this.rellenarManzanas(anchoCalle, manzana, escena, factory);
-
 
             gl.clearColor(255.0, 255.0, 255.0, 1.0);
             gl.enable(gl.DEPTH_TEST);
