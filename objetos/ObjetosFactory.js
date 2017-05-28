@@ -310,7 +310,7 @@ class ObjetosFactory {
         return escene;
     }
 
-    createVereda(){
+    createVereda(control){
 
         var vereda = new Objeto3D();
         var buffcalc = new BufferCalculator(2, 2);
@@ -324,6 +324,7 @@ class ObjetosFactory {
 
         puntosPerfil.push(vec3.fromValues(0.0, 0.0, 0.0));
         puntosPerfil.push(vec3.fromValues(0.0, 0.2, 0.0));
+        puntosPerfil.push(vec3.fromValues(control,control,control));
         //Matrices de transformacion
         var arrayMat = [];
 
@@ -441,13 +442,17 @@ class ObjetosFactory {
 
         var manzana = this.createEscene(x);
         var anchoVereda = 4.0;
-        var centro = this.createEscene(x-anchoVereda);
 
-        var vereda = this.createVereda();
-        
-        centro.translate(anchoVereda/2,0.15,anchoVereda/2);
+
+        var vereda = this.createVereda(1);
+        var centro = this.createVereda(-1);
+
+        centro.translate(anchoVereda/2 +0.5, 0.2,anchoVereda/2 + 0.5);
+        centro.scale(0.75,1.0,0.75);
+
         vereda.add(centro);
         manzana.add(vereda);
+
         return manzana;
     }
 
