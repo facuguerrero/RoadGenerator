@@ -318,6 +318,7 @@
         var canvas = null;
         var camera = null;
         var factory = null;
+        var autosAnimados = null;
 
         var calle1 = null;
         var calle2 = null;
@@ -414,6 +415,8 @@
             mat4.identity(model_matrix_escene);
             escena.draw(model_matrix_escene, false);
 
+            autosAnimados.updateAutos();
+
         }
 
 
@@ -464,6 +467,8 @@
 
             escena=factory.createEscene(n*(anchoCalle+manzana));
             escena.add(ruta);
+
+            autosAnimados = new AutosAnimados(ruta, puntos_ruta, factory);
             
             //ajusto la posicion de la escena para mejor visualizacion
             escena.translate(-22.0, 0.0, -20.0);
@@ -962,7 +967,7 @@ body{
     var p2 = false;
     var p3 = false;
     var p4 = false;
-    var radio = 7;
+    var radio = 12;
 
      $("#myCanvas").bind('mousemove',function(e){ 
         var pos=$("#myCanvas").position();

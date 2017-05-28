@@ -94,8 +94,6 @@ class ObjetosFactory {
 
         }
 
-        var autosAnimados = new AutosAnimados(ruta, puntos, this);
-
         //ajustes de tamanio de la ruta
         ruta.scale(0.32, 0.32, 0.32);
         ruta.translate(-8.0 , 0.0, -8.0);

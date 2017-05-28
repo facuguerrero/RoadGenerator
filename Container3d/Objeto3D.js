@@ -129,7 +129,6 @@ class Objeto3D extends Container3D{
             //el ultimo trae la dimension de x
            var escalado = arrayVecPos.pop();
            this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
-           console.log(vertices.length);
            this.addColor(buffcalc, 4, 1.0,0.0,0.0);
 
         }
@@ -194,7 +193,6 @@ class Objeto3D extends Container3D{
 
         else if(figura == TECHO){
             this.figuras.calcularTecho(vertices,arrayVecNOR);
-            console.log(colms);
             this.addColor(buffcalc, 12, 0.0, 0.0, 1.0);
 
         }

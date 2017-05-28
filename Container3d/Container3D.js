@@ -40,7 +40,7 @@ class Container3D{
 
     resetMatrix() {
         //resetea la matriz como la identidad
-        initMatrix();
+        mat4.identity(this.matrix);
         this.modified = true;
     }
 
