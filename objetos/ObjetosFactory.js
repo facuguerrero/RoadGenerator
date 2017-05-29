@@ -470,7 +470,28 @@ class ObjetosFactory {
     }
 
     createColumna(){
-        //
+        var columna = new Objeto3D();
+        var buffcalc = new BufferCalculator(2, 2);
+        columna.setBufferCreator(buffcalc);
+        columna.build();
+
+        /*Creo lo que es el cilindro de la columna*/
+        var pilar = new Objeto3D();
+        pilar.calcularSuperficieRevolucion("columna",2,400);
+        pilar.rotate(-Math.PI/2,1.0,0.0,0.0);
+        columna.add(pilar);
+        pilar.translate(0.0,0.0,1.0)
+
+        /*Creo lo que es la base de la columna*/
+        var base = new Objeto3D();
+
+        base.calcularSuperficieRevolucion("base_columna",2,400);
+        base.rotate(-Math.PI/2,1.0,0.0,0.0);
+
+
+        columna.add(base);
+        return columna;
+
     }
 
 
