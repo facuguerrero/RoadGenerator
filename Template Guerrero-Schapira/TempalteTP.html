@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Actividad Clase 03 - Vertex Shaders</title>
+    <title>Road Generator</title>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
     <script type="text/javascript" src="../handlers/Mouse.js"></script>
@@ -683,61 +683,115 @@
 <style>
     
 body{
-    font-family: Arial;
-
+    font-family: "Lato", sans-serif;
+    background-image: url("whirlpool.png");
 }
 
-#botonera{
-    position: absolute;
-    top: 450px;
-    right: 130px;
-
-}
-
-#botonera a{
+.button {
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    top: -120px;
+    left:460px;
     display: inline-block;
-    padding: 10px;
-
-
+    border-radius: 4px;
+    background-color: #63a1aa;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }
-    
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+    #franjaSup{
+        background-color: white;
+        position: absolute;
+        top:0;
+        left:0;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        z-index:-1;
+    }
 
     #myCanvas{
         cursor:crosshair;
-        position: absolute;
-        top: 150px;
-        right: 10;
-        background-color: white 
-        
+        position:relative;
+        top:-140px;
+        left:10px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
     }
 
     #my_canvas{
-        position: absolute;
-        right: 350px;
+        position:relative;
+        left:-10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+    }
+
+    h1{
+        position:relative;
+        top:-10px;
+        z-index:1;
+    }
+
+    h2{
+        position:relative;
+        top:-25px;
+        z-index:1;
     }
 
 </style>
 
 <script src="jquery-2.1.4.min.js"></script>
 
-<body id = "my_body" onload="Load();" body style="background-color:#0EA9EB;">
+<body id = "my_body" onload="Load();" body style="background-color:#E0E0E0;">
+
     <center>
-            <h1 style="color:white">SG - 66.71 - Trabajo Pr&aacute;ctico 2017</h1>
-            <h2 style="color:white">Schapira y Guerrero</h2>
-            <canvas id="my_canvas" style="border:3px solid #d3d3d3;" width="900" height="500">
+        <h1 style="color:dimgray">SG - 66.71 - Trabajo Pr&aacute;ctico 2017</h1>
+        <h2 style="color:grey">Schapira y Guerrero</h2>
+            <canvas id="franjaSup" width="1600" height="90">
             </canvas>
-            <canvas id="myCanvas" width="300" height="300" style="border:3px solid #d3d3d3;">
+            <canvas id="my_canvas" width="900" height="500">
+            </canvas>
+            <canvas id="myCanvas" width="300" height="300">
             Your browser does not support the HTML5 canvas element.
             </canvas>
 
     </center>
 
-    <div id="botonera">
-        <a href="#" onclick="Load();">Load</a> <br>
-    </div>
-
+    <center>
+        <button class="button" onclick="Load();"><span>Load </span></button>
+    </center>
 
 
 
@@ -839,7 +893,7 @@ body{
 
                 //console.log("C("+u+")= "+punto.x+","+punto.y);
         }
-        ctx.strokeStyle="#0000FF";
+        ctx.strokeStyle="#61858b";
         ctx.stroke();
 
 
@@ -850,7 +904,7 @@ body{
             ctx.beginPath();
 
             //dibujo cada punto de control
-            ctx.strokeStyle="#00ff00";
+            ctx.strokeStyle="#ce8200";
             ctx.beginPath();
             ctx.arc(p0[0],p0[1],7,0,2*Math.PI);
             ctx.stroke();

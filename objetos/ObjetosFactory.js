@@ -77,7 +77,10 @@ class ObjetosFactory {
         var factorCantFaroles = 5;
         var ajusteFarolesBordes = 5;
         var sentido = 1;
-        for (var i = ajusteFarolesBordes; i < vecPos.length - ajusteFarolesBordes - 10; i += factorCantFaroles) {
+        var largo = vecPos.length - ajusteFarolesBordes - 10;
+        var factorColumnas = 5.0
+
+        for (var i = ajusteFarolesBordes; i < largo; i += factorCantFaroles) {
 
             var vec = vecPosFaroles[i];
             var mat = this.getMatriz4x4(arrayMatF[i]);
@@ -91,6 +94,18 @@ class ObjetosFactory {
             }
             ruta.add(farol);
             sentido = sentido * -1;
+
+            // if ((i + factorColumnas) < largo) {
+            //
+            //     var vecC = vecPosFaroles[i + factorColumnas];
+            //     var matC = this.getMatriz4x4(arrayMatF[i + factorColumnas]);
+            //
+            //     var columna = this.createColumna();
+            //     columna.translate(vecC[1], vecC[0], vecC[2]);
+            //     columna.applyMatrix(matC);
+            //     ruta.add(columna);
+            // }
+
 
         }
 
@@ -452,6 +467,10 @@ class ObjetosFactory {
         manzana.add(vereda);
 
         return manzana;
+    }
+
+    createColumna(){
+        //
     }
 
 
