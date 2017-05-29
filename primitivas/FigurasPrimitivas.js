@@ -1,4 +1,4 @@
-class FigurasPrimitivias{
+class FigurasPrimitivas{
 
     constructor(){
         //
@@ -533,16 +533,31 @@ class FigurasPrimitivias{
 
     }
 
-    calcularBaseColumna(arrayVecPos, ejeRotacion, arrayVecNor){
-        /*ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0));
+    calcularBaseColumna(arrayVecPos, ejeRotacion, arrayVecNor) {
 
-        var curvaBase = new CuadraticBezier(3,0.1);
+        ejeRotacion.push(vec3.fromValues(0.0, 0.0, 1.0));
+
+        var curvaBase = new CuadraticBezier(12, 0.1);
 
         //Creamos los puntos de control para la curva
-        var puntos= [];
-        puntos.push(vec3.fromValues(0.0,10.0,0.0));
-        puntos.push(vec3.fromValues(0.0,10.0,10.0));
-        puntos.push(vec3.fromValues(0.0,10.0,20.0));
+        var puntos = [];
+        puntos.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 0.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+
+        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 3.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 1.0, 5.0));
+        puntos.push(vec3.fromValues(0.0, 0.0, 6.0));
+
+        puntos.push(vec3.fromValues(0.0, 0.0, 6.0));
+        puntos.push(vec3.fromValues(0.0, 0.0, 7.0));
+        puntos.push(vec3.fromValues(0.0, 0.0, 8.0));
+
+
         curvaBase.setControlPoints(puntos);
         curvaBase.calculateArrays();
 
@@ -550,12 +565,12 @@ class FigurasPrimitivias{
 
         var matrices = curvaBase.getArrayMatT();
 
-        var longitud = Math.floor((vectores.length/3));
-        for(var i = 0; i < longitud; i++){
+        var longitud = Math.floor((vectores.length));
+        console.log(longitud);
+        for (var i = 0; i < longitud; i++) {
             var matAux = matrices[i];
             var vecAux = vectores[i];
 
-            console.log(i);
             arrayVecNor.push(matAux[3]);
             arrayVecNor.push(matAux[4]);
             arrayVecNor.push(matAux[5]);
@@ -564,15 +579,16 @@ class FigurasPrimitivias{
             arrayVecPos.push(vecAux[1]);
             arrayVecPos.push(vecAux[2]);
         }
-    */
 
+
+/*
         ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
 
         arrayVecPos.push(vec3.fromValues(4.0,1.0,0.0));
         arrayVecPos.push(vec3.fromValues(3.0,1.0,2.0));
 
         arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));*/
     }
     /*
      ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );

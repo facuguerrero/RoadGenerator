@@ -23,7 +23,7 @@ class Objeto3D extends Container3D{
     super();
 
     this.figuras = null;
-    this.figuras = new FigurasPrimitivias();
+    this.figuras = new FigurasPrimitivas();
 
     this.posBuffer = null;
     this.indexBuffer = null;
@@ -261,7 +261,6 @@ class Objeto3D extends Container3D{
             this.figuras.calcularBaseColumna(arrayVecPos,ejeRotacion,arrayVecNor);
             //this.addColor(buffcalc, 40,1.0,0.0,0.0);
         }
-
 
         buffcalc.calcularSuperficieRevolucion(arrayVecPos, ejeRotacion, arrayVecNor);
         this.setBufferCreator(buffcalc);
