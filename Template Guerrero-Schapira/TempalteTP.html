@@ -153,6 +153,7 @@
     <script type="text/javascript">
 
         var gl;
+        var glTextures = {};
 
         function initGL(canvas) {
             try {
@@ -248,6 +249,23 @@
             shaderProgramColoredObject.directionalColorUniform = gl.getUniformLocation(shaderProgramColoredObject, "uDirectionalColor");
         }
 
+        function initTextures(){
+
+            glTextures["building1"] = loadTexture("textures/ed1_pisos.jpg");
+            glTextures["building1"] = loadTexture("textures/ed2_pisos.jpg");
+
+        }
+
+        function loadTexture(path, clamp_edges) {
+            var texture = gl.createTexture();
+            var image = new Image();
+            image.onload = function() {
+                handleLoadedTexture(image, texture, clamp_edges);
+            }
+            image.src = path;
+
+            return texture;
+        }
 
         function handleLoadedTexture() {
 //        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
@@ -388,6 +406,7 @@
             canvas = document.getElementById("my_canvas");
             initGL(canvas);
             initShaders();
+            initTextures();
 
             shadersHandler = new ShaderHandler();
 
