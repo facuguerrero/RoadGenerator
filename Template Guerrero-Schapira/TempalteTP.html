@@ -213,46 +213,6 @@
             ////////////////////////////////////////////
             //
             // Inicializamos todo lo relacionado con el program shader para
-            // renderizar objetos texturados
-
-            var fragmentShaderTexturedObj = getShader(gl, "shader-fs-textured-obj");
-            var vertexShaderTexturedObj = getShader(gl, "shader-vs-textured-obj");
-
-            shaderProgramTexturedObject = gl.createProgram();
-            gl.attachShader(shaderProgramTexturedObject, vertexShaderTexturedObj);
-            gl.attachShader(shaderProgramTexturedObject, fragmentShaderTexturedObj);
-            gl.linkProgram(shaderProgramTexturedObject);
-
-            if (!gl.getProgramParameter(shaderProgramTexturedObject, gl.LINK_STATUS)) {
-                alert("Could not initialise shaders");
-            }
-
-            shaderProgramTexturedObject.vertexPositionAttribute = gl.getAttribLocation(shaderProgramTexturedObject, "aVertexPosition");
-            gl.enableVertexAttribArray(shaderProgramTexturedObject.vertexPositionAttribute);
-
-            shaderProgramTexturedObject.textureCoordAttribute = gl.getAttribLocation(shaderProgramTexturedObject, "aTextureCoord");
-            gl.enableVertexAttribArray(shaderProgramTexturedObject.textureCoordAttribute);
-
-            shaderProgramTexturedObject.vertexNormalAttribute = gl.getAttribLocation(shaderProgramTexturedObject, "aVertexNormal");
-            gl.enableVertexAttribArray(shaderProgramTexturedObject.vertexNormalAttribute);
-
-            shaderProgramTexturedObject.pMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uPMatrix");
-            shaderProgramTexturedObject.ViewMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uViewMatrix");
-            shaderProgramTexturedObject.ModelMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uModelMatrix");
-            shaderProgramTexturedObject.nMatrixUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uNMatrix");
-            shaderProgramTexturedObject.samplerUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uSampler");
-            shaderProgramTexturedObject.useLightingUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uUseLighting");
-            shaderProgramTexturedObject.ambientColorUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uAmbientColor");
-            shaderProgramTexturedObject.lightingDirectionUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uLightPosition");
-            shaderProgramTexturedObject.directionalColorUniform = gl.getUniformLocation(shaderProgramTexturedObject, "uDirectionalColor");
-
-            ////////////////////////////////////////////
-            ////////////////////////////////////////////
-
-            ////////////////////////////////////////////
-            ////////////////////////////////////////////
-            //
-            // Inicializamos todo lo relacionado con el program shader para
             // renderizar objetos Coloreados
 
             var fragmentShaderColoredObj = getShader(gl, "shader-fs-colored-obj");
