@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="Columna">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,7 +26,7 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="251">
               <caret line="413" column="14" lean-forward="false" selection-start-line="413" selection-start-column="14" selection-end-line="413" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -43,66 +39,6 @@
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>init</find>
-      <find>my_</find>
-      <find>canvas</find>
-      <find>curve_spline</find>
-      <find>figuras</find>
-      <find>7.8</find>
-      <find>2.8</find>
-      <find>curva</find>
-      <find>draw</find>
-      <find>ruta</find>
-      <find>manzana</find>
-      <find>obj.</find>
-      <find>consol</find>
-      <find>obj</find>
-      <find>console</find>
-      <find>tapa1</find>
-      <find>grilla</find>
-      <find>add</find>
-      <find>Color</find>
-      <find>addColor</find>
-      <find>manza</find>
-      <find>bord</find>
-      <find>revolucion</find>
-      <find>columna</find>
-      <find>FigurasPrimitivias</find>
-      <find>createC</find>
-      <find>load</find>
-      <find>handler</find>
-      <find>i</find>
-      <find>getShader</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>aux</replace>
-      <replace>this.handler</replace>
-      <replace>this.handler.</replace>
-      <replace>CameraMatrix</replace>
-      <replace>canvas2D</replace>
-      <replace>canvas2D_gl</replace>
-      <replace>canvas2DShader</replace>
-      <replace>canvasUpdate</replace>
-      <replace>curva</replace>
-      <replace>7.0</replace>
-      <replace>2.0</replace>
-      <replace>prueba</replace>
-      <replace>manzana1</replace>
-      <replace>escene</replace>
-      <replace>escena</replace>
-      <replace>puerta2</replace>
-      <replace>tapa2</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,10 +83,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1301" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -204,17 +140,6 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ArchivosUsados/SisGrafRodri" />
-      <recent name="$PROJECT_DIR$/Template2 TP" />
-      <recent name="$PROJECT_DIR$/Container3d" />
-      <recent name="$PROJECT_DIR$/Template TP" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Template2 TP" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -381,14 +306,7 @@
       <workItem from="1496093559606" duration="6671000" />
       <workItem from="1496146280224" duration="1291000" />
       <workItem from="1496151688425" duration="293000" />
-      <workItem from="1496169411918" duration="72000" />
-    </task>
-    <task id="LOCAL-00080" summary="edificios random">
-      <created>1495564739995</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1495564739995</updated>
+      <workItem from="1496169411918" duration="151000" />
     </task>
     <task id="LOCAL-00081" summary="edificios random">
       <created>1495564744017</created>
@@ -726,23 +644,21 @@
       <option name="project" value="LOCAL" />
       <updated>1496153347167</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="askmdkae">
+      <created>1496169496966</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1496169496967</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273274000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="273353000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21291314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -771,7 +687,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="armando la manzana" />
     <MESSAGE value="acomode normales edificio" />
     <MESSAGE value="edificios random" />
     <MESSAGE value="Normales auto" />
@@ -796,7 +711,8 @@
     <MESSAGE value="HTML HYPER FACHA" />
     <MESSAGE value="Load Shader" />
     <MESSAGE value="Columna" />
-    <option name="LAST_COMMIT_MESSAGE" value="Columna" />
+    <MESSAGE value="askmdkae" />
+    <option name="LAST_COMMIT_MESSAGE" value="askmdkae" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1018,7 +934,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="251">
           <caret line="413" column="14" lean-forward="false" selection-start-line="413" selection-start-column="14" selection-end-line="413" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1029,20 +945,5 @@
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
