@@ -523,10 +523,19 @@ class FigurasPrimitivas{
 
     calcularColumna(arrayVecPos, ejeRotacion, arrayVecNor){
 
-        ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
+       /* ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
 
         arrayVecPos.push(vec3.fromValues(1.0,2.0,2.0));
         arrayVecPos.push(vec3.fromValues(1.0,2.0,17.0));
+
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
+        */
+
+        ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
+
+        arrayVecPos.push(vec3.fromValues(2.0,0.0,1.0));
+        arrayVecPos.push(vec3.fromValues(2.0,1.0,1.0));
 
         arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
         arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
