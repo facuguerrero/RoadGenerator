@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/ShaderHandler.js" afterPath="$PROJECT_DIR$/handlers/ShaderHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +26,8 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2681">
-              <caret line="423" column="0" lean-forward="true" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
+            <state relative-caret-position="251">
+              <caret line="261" column="39" lean-forward="true" selection-start-line="261" selection-start-column="39" selection-end-line="261" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -7257,13 +7251,6 @@
       <workItem from="1496146280224" duration="1291000" />
       <workItem from="1496151688425" duration="293000" />
     </task>
-    <task id="LOCAL-00087" summary="Boludeces">
-      <created>1495652313771</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1495652313771</updated>
-    </task>
     <task id="LOCAL-00088" summary="bezier">
       <created>1495652951541</created>
       <option name="number" value="00088" />
@@ -7600,11 +7587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496169784879</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Columna">
+      <created>1496170022553</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1496170022553</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275170000" />
+    <option name="totallyTimeSpent" value="275248000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -7865,6 +7859,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7880,6 +7875,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="42" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7893,8 +7889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2681">
-          <caret line="423" column="0" lean-forward="true" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
+        <state relative-caret-position="251">
+          <caret line="261" column="39" lean-forward="true" selection-start-line="261" selection-start-column="39" selection-end-line="261" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
