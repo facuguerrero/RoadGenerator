@@ -280,6 +280,7 @@
         var camera = null;
         var factory = null;
         var autosAnimados = null;
+        var shadersHandler = null;
 
         var calle1 = null;
         var calle2 = null;
@@ -387,6 +388,9 @@
             canvas = document.getElementById("my_canvas");
             initGL(canvas);
             initShaders();
+
+            shadersHandler = new ShaderHandler();
+
             body = document.getElementById("my_body");
 
             /*Inicializacion de variables*/
@@ -1057,7 +1061,6 @@ body{
     //dibujarCurva(puntosDeControl,true);
 
     function Load(){
-        console.log(new_points[2]);
         puntosDeControl [2] = new_points[2];
         puntosDeControl [3] = new_points[3];
         puntosDeControl [4] = new_points[4];
