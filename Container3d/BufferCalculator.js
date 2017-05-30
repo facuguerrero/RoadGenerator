@@ -209,18 +209,19 @@ class BufferCalculator{
             mat4.identity(matActual);
             //angulo de rotacion
             mat4.rotate(matActual, matActual, ( (2.0*Math.PI*i) / (this.colms-1) ), vecRot);
-
+            console.log(matActual);
             for(var j = 0.0; j < this.rows; j++){
 
                 /*Nos quedamos con el vertice de posicion y normal actual*/
                 var verticeFormaActual = vec3.create();
                 vec3.copy(verticeFormaActual, vertices[j]);
-
+                console.log(verticeFormaActual);
                 var normalFormaActual = vec3.create();
                 vec3.copy(normalFormaActual, arrayVecNorm[j]);
 
                 /*Actualizamos la posicion*/
                 vec3.transformMat4(verticeFormaActual, verticeFormaActual, matActual);
+                console.log(verticeFormaActual);
 
                 /*Actualizamos las normales*/
                 vec3.transformMat4(normalFormaActual,normalFormaActual, matActual);
