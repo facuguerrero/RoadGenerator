@@ -202,16 +202,15 @@ class BufferCalculator{
         var vecRot = vec3.create();
         vec3.copy(vecRot,ejeRotacion);
 
-        for (var i = 0; i < this.colms; i++) {
-
+        for (var i = 0.0; i < this.colms; i++) {
 
             /*Creamos la matriz de rotacion para el paso actual*/
-            var matActual = mat3.create();
-            mat3.identity(matActual);
+            var matActual = mat4.create();
+            mat4.identity(matActual);
             //angulo de rotacion
-            mat3.rotate(matActual, matActual, ( (2*Math.PI*i) / (this.colms-1) ), vecRot);
+            mat4.rotate(matActual, matActual, ( (2.0*Math.PI*i) / (this.colms-1) ), vecRot);
 
-            for(var j = 0; j < this.rows; j++){
+            for(var j = 0.0; j < this.rows; j++){
 
                 /*Nos quedamos con el vertice de posicion y normal actual*/
                 var verticeFormaActual = vec3.create();
@@ -221,10 +220,11 @@ class BufferCalculator{
                 vec3.copy(normalFormaActual, arrayVecNorm[j]);
 
                 /*Actualizamos la posicion*/
-                vec3.transformMat3(verticeFormaActual, verticeFormaActual, matActual);
+                vec3.transformMat4(verticeFormaActual, verticeFormaActual, matActual);
 
                 /*Actualizamos las normales*/
-                vec3.transformMat3(normalFormaActual,normalFormaActual, matActual);
+                vec3.transformMat4(normalFormaActual,normalFormaActual, matActual);
+                vec3.normalize(normalFormaActual, normalFormaActual);
 
                 /*Actualizamos los buffers*/
                 this.posBuffer.push(verticeFormaActual[0]);
@@ -237,6 +237,8 @@ class BufferCalculator{
                 this.colorBuffer.push(0.59);
                 this.colorBuffer.push(0.56);
             }
+
         }
+
     }
   }

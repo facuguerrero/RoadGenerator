@@ -525,25 +525,52 @@ class FigurasPrimitivas{
 
         ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
 
-        arrayVecPos.push(vec3.fromValues(0.0,3.0,1.0));
-        arrayVecPos.push(vec3.fromValues(0.0,3.0,10.0));
+        arrayVecPos.push(vec3.fromValues(1.0,2.0,2.0));
+        arrayVecPos.push(vec3.fromValues(1.0,2.0,17.0));
 
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
 
     }
 
-    calcularBaseColumna(arrayVecPos, ejeRotacion, arrayVecNor) {
+    calcularBaseColumna(rows, arrayVecPos, ejeRotacion, arrayVecNor) {
 
-        ejeRotacion.push(vec3.fromValues(0.0, 0.0, 1.0));
+        ejeRotacion.push(vec3.fromValues(0.0, 1.0, 0.0));
 
-        var curvaBase = new CuadraticBezier(12, 0.1);
+        var step = 0.1;
+        for(var i=0.0; i<rows; i += step){
+
+            //arrayVecPos.push( vec3.fromValues(diametro - ((2.0*i)/rows) , 1.0, altura + (2.0*i)/(rows)) );
+            //arrayVecNor.push( vec3.fromValues(0.0, 0.0, -1.0) );
+
+            arrayVecPos.push( vec3.fromValues( 0.0, -(i*(i/2))+6, i) );
+            //CALCULAR NORMAL DE LA BASE!!!
+            arrayVecNor.push( vec3.fromValues(0.0, 0.0, 1.0) );
+        }
+    }
+
+    calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor){
+
+        ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
+
+        arrayVecPos.push(vec3.fromValues(0.0,2.5,-17.0));
+        arrayVecPos.push(vec3.fromValues(0.0,8.0,-19.0));
+        arrayVecPos.push(vec3.fromValues(0.0,8.0,-20.0));
+
+        //CALCULAR BIEN LAS NORMALES
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+    }
+/*        ejeRotacion.push(vec3.fromValues(0.0, 1.0, 0.0));
+
+        var curvaBase = new CuadraticBSpline(3, 0.1);
 
         //Creamos los puntos de control para la curva
         var puntos = [];
-        puntos.push(vec3.fromValues(0.0, 0.0, 0.0));
         puntos.push(vec3.fromValues(0.0, 2.0, 0.0));
-        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 6.0, 3.0));
 
         puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
         puntos.push(vec3.fromValues(0.0, 2.0, 3.0));
@@ -565,11 +592,13 @@ class FigurasPrimitivas{
 
         var matrices = curvaBase.getArrayMatT();
 
-        var longitud = Math.floor((vectores.length));
+        var longitud = Math.floor((vectores.length)) - 1;
         console.log(longitud);
         for (var i = 0; i < longitud; i++) {
             var matAux = matrices[i];
             var vecAux = vectores[i];
+            console.log(vecAux);
+            //console.log(matAux);
 
             arrayVecNor.push(matAux[3]);
             arrayVecNor.push(matAux[4]);
@@ -581,7 +610,7 @@ class FigurasPrimitivas{
         }
 
 
-/*
+
         ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
 
         arrayVecPos.push(vec3.fromValues(4.0,1.0,0.0));
@@ -589,13 +618,5 @@ class FigurasPrimitivas{
 
         arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
         arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));*/
-    }
-    /*
-     ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
 
-     arrayVecPos.push(vec3.fromValues(3.0,1.0,0.0));
-     arrayVecPos.push(vec3.fromValues(1.5,1.0,2.0));
-
-     arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
-     arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));*/
 }

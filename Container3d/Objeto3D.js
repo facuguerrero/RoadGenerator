@@ -16,6 +16,7 @@ var VEREDA = "vereda";
 var TECHO = "techo";
 var COLUMNA= "columna";
 var BASE_COLUMNA="base_columna";
+var TAPA_COLUMNA = "tapa_columna";
 
 class Objeto3D extends Container3D{
 
@@ -241,8 +242,6 @@ class Objeto3D extends Container3D{
      */
     calcularSuperficieRevolucion(figura,rows,colms){
 
-        var buffcalc = new BufferCalculator(rows, colms);
-
         var arrayVecPos= [];
         var ejeRotacion=[];
         var arrayVecNor=[];
@@ -255,13 +254,21 @@ class Objeto3D extends Container3D{
         }
 
         if(figura == BASE_COLUMNA){
-            if(rows != 2){
+            if(rows != 40){
                 console.log("Para la base de la columna se necesitan 2 niveles");
             }
-            this.figuras.calcularBaseColumna(arrayVecPos,ejeRotacion,arrayVecNor);
-            //this.addColor(buffcalc, 40,1.0,0.0,0.0);
+            this.figuras.calcularBaseColumna(rows,arrayVecPos,ejeRotacion,arrayVecNor);
+            //this.addColor(buffcalc, 5000,0.0,0.0,0.0);
         }
 
+        if(figura == TAPA_COLUMNA){
+            if(rows != 3){
+                console.log("Para la tapa de la columna se necesitan 3 niveles");
+            }
+            this.figuras.calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor);
+        }
+
+        var buffcalc = new BufferCalculator(rows, colms);
         buffcalc.calcularSuperficieRevolucion(arrayVecPos, ejeRotacion, arrayVecNor);
         this.setBufferCreator(buffcalc);
         this.build();
