@@ -165,23 +165,9 @@ class ShaderHandler{
 		glShaders["specular"] = shader;
 	}
 
-	loadBuildingShader() {
-		var shader = this.crearPrograma("shaders/BuildingShader.glsl", "");
-
-		gl.linkProgram(shader);
-		this.setupCommons(shader);
-
-		shader.aVertexUV = gl.getAttribLocation(shader, "aVertexUV");
-		shader.aVertexUVBig = gl.getAttribLocation(shader, "aVertexUVBig");
-		shader.uMaxHeight = gl.getUniformLocation(shader, "uMaxHeight");
-
-		glShaders["building"] = shader;
-	}
-
 	load(){
 		this.loadColorShader();
 		this.loadTextureShader();
-		this.loadBuildingShader();
 	}
 
 }
