@@ -425,7 +425,7 @@
             var manzana = 20.0;
             escena=factory.createEscene(n*(anchoCalle+manzana));
 
-            this.rellenarRuta(escena);
+            this.crearRuta(escena);
             this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
             this.rellenarManzanas(anchoCalle, manzana, escena, factory);
 
@@ -434,7 +434,7 @@
             escena.scale(0.5, 0.5, 0.5);
         }
 
-        function rellenarRuta(escena){
+        function crearRuta(escena){
             var puntos_ruta = [];
             var factorH = 1;
             var factorW = 1;
