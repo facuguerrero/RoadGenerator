@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="Columna">
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -1307,13 +1306,6 @@
       <workItem from="1496093559606" duration="6671000" />
       <workItem from="1496146280224" duration="1291000" />
     </task>
-    <task id="LOCAL-00071" summary="armando la manzana">
-      <created>1495550745110</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1495550745110</updated>
-    </task>
     <task id="LOCAL-00072" summary="armando la manzana">
       <created>1495550948737</created>
       <option name="number" value="00072" />
@@ -1650,11 +1642,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496147302328</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Columna">
+      <created>1496148351905</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1496148351905</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267862000" />
+    <option name="totallyTimeSpent" value="267902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
