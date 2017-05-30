@@ -307,26 +307,26 @@ class Objeto3D extends Container3D{
         this._drawChildren(modelMatrix, CameraMatrix, pMatrix, this.modified || parentMod);
         this.modified = false;
         //Matriz de proyeccion y vista
-        gl.uniformMatrix4fv(shaderProgramColoredObject.pMatrixUniform, false, pMatrix);
-        gl.uniformMatrix4fv(shaderProgramColoredObject.ViewMatrixUniform, false, CameraMatrix);
+        gl.uniformMatrix4fv(glShaders["color"].pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(glShaders["color"].ViewMatrixUniform, false, CameraMatrix);
 
         //Position
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
-        gl.vertexAttribPointer(shaderProgramColoredObject.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(glShaders["color"].vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
         //Color
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
-        gl.vertexAttribPointer(shaderProgramColoredObject.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(glShaders["color"].vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
         //Normal
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
-        gl.vertexAttribPointer(shaderProgramColoredObject.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(glShaders["color"].vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
-        gl.uniformMatrix4fv(shaderProgramColoredObject.ModelMatrixUniform, false, modelMatrix);
+        gl.uniformMatrix4fv(glShaders["color"].ModelMatrixUniform, false, modelMatrix);
         var normalMatrix = mat3.create();
         mat3.fromMat4(normalMatrix, modelMatrix);
         mat3.invert(normalMatrix, normalMatrix);
         mat3.transpose(normalMatrix, normalMatrix);
-        gl.uniformMatrix3fv(shaderProgramColoredObject.nMatrixUniform, false, normalMatrix);
+        gl.uniformMatrix3fv(glShaders["color"].nMatrixUniform, false, normalMatrix);
 
         //Index
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);

@@ -166,8 +166,8 @@ class ShaderHandler{
 	}
 
 	load(){
-		//this.loadColorShader();
-		//this.loadTextureShader();
+		this.loadColorShader();
+		this.loadTextureShader();
 	}
 
 }
