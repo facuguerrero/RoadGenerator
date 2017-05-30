@@ -211,8 +211,10 @@
         function initStreetShaders() {
             //Inicializamos el shader de la calle.
 
-            var fragmentShader = getShader(gl, "shader-fs-colored-obj");
-            var vertexShader = getShader(gl, "shader-vs-colored-obj");
+            /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
+
+            var fragmentShader = getShader(gl, "shaders/street/fs-street.glsl");
+            var vertexShader = getShader(gl, "shaders/street/vs-street.glsl");
 
             streetShader = gl.createProgram();
             gl.attachShader(streetShader, vertexShader);
@@ -222,7 +224,6 @@
             if (!gl.getProgramParameter(streetShader, gl.LINK_STATUS)) {
                 alert("Could not initialise shaders");
             }
-
 
             streetShader.vertexPositionAttribute = gl.getAttribLocation(streetShader, "aVertexPosition");
             gl.enableVertexAttribArray(streetShader.vertexPositionAttribute);
