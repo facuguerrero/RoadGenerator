@@ -532,13 +532,13 @@ class FigurasPrimitivas{
         arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
         */
 
-        ejeRotacion.push([0.0,1.0,0.0]);
+        ejeRotacion.push(vec3.fromValues(0.0,1.0,0.0));
 
-        arrayVecPos.push(vec3.fromValues(3.0,0.0,0.0));
-        arrayVecPos.push(vec3.fromValues(3.0,1.0,0.0));
+        arrayVecPos.push(vec3.fromValues(2.5,1.0,2.0));
+        arrayVecPos.push(vec3.fromValues(2.5,1.0,17.0));
 
-        arrayVecNor.push(vec3.fromValues(1.0,0.0,0.0));
-        arrayVecNor.push(vec3.fromValues(1.0,0.0,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
 
     }
 

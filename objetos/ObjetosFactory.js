@@ -491,19 +491,19 @@ class ObjetosFactory {
         columna.add(pilar);
 
         /*Creo lo que es la base de la columna*/
-        /*var base = new Objeto3D();
+        var base = new Objeto3D();
 
         base.calcularSuperficieRevolucion("base_columna",40,400);
         base.rotate(-Math.PI/2,1.0,0.0,0.0);
         columna.add(base);
-*/
+
         /*Creo la tapa de la columna*/
 
-  /*      var tapa = new Objeto3D();
+        var tapa = new Objeto3D();
         tapa.calcularSuperficieRevolucion("tapa_columna",3,400);
         tapa.rotate(Math.PI/2,1.0,0.0,0.0);
         columna.add(tapa);
-*/
+
 
         return columna;
     }
