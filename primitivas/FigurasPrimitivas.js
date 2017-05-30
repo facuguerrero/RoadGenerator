@@ -534,11 +534,11 @@ class FigurasPrimitivas{
 
         ejeRotacion.push(vec3.fromValues(0.0,1.0,0.0));
 
-        arrayVecPos.push(vec3.fromValues(2.5,1.0,2.0));
-        arrayVecPos.push(vec3.fromValues(2.5,1.0,17.0));
+        arrayVecPos.push(vec3.fromValues(2.0,2.0,0.0));
+        arrayVecPos.push(vec3.fromValues(2.0,17.0,0.0));
 
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,-0.07,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,-0.07,0.0));
 
     }
 
@@ -552,9 +552,11 @@ class FigurasPrimitivas{
             //arrayVecPos.push( vec3.fromValues(diametro - ((2.0*i)/rows) , 1.0, altura + (2.0*i)/(rows)) );
             //arrayVecNor.push( vec3.fromValues(0.0, 0.0, -1.0) );
 
-            arrayVecPos.push( vec3.fromValues( 0.0, -(i*(i/2))+6, i) );
-            //CALCULAR NORMAL DE LA BASE!!!
-            arrayVecNor.push( vec3.fromValues(0.0, 0.0, 1.0) );
+            arrayVecPos.push( vec3.fromValues( 0.0, i, -(i*(i/2))+6) );
+            /*La normal la obtenemos con:
+            normal = - 1 / tangente
+            recordando que la tangente es la derivada.*/
+            arrayVecNor.push( vec3.fromValues(0.0, 1.0, -1/i) );
         }
     }
 
@@ -562,14 +564,66 @@ class FigurasPrimitivas{
 
         ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
 
-        arrayVecPos.push(vec3.fromValues(0.0,2.5,-17.0));
-        arrayVecPos.push(vec3.fromValues(0.0,8.0,-19.0));
-        arrayVecPos.push(vec3.fromValues(0.0,8.0,-20.0));
+        arrayVecPos.push(vec3.fromValues(0.0,17.0,2.5));
+        arrayVecPos.push(vec3.fromValues(0.0,19.0,8.0));
+        arrayVecPos.push(vec3.fromValues(0.0,20.0,8.0));
 
-        //CALCULAR BIEN LAS NORMALES
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
-        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        /*La normal la obtenemos con:
+        normal = - 1 / tangente
+        recordando que la tangente es la derivada.
+        x-x1/ x2-x1
+        x-17/2 = y-2.5 / 5.5
+        x-17 = (y-2.5) 2/5.5
+
+        */
+        arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
+        arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
+        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+    }
+
+    calcularColumnaConBezier(arrayVecPos, ejeRotacion, arrayVecNor){
+      var curvaBase = new CuadraticBSpline(3, 0.1);
+
+      ejeRotacion.push(vec3.fromValues(0.0,1.0,0.0));
+      //Creamos los puntos de control para la curva
+      var puntos = [];
+      puntos.push(vec3.fromValues(0.0, 0.0, 1.0));
+      puntos.push(vec3.fromValues(0.0, 0.0, 3.0));
+      puntos.push(vec3.fromValues(0.0, 2.0, 3.0));
+
+      puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+      puntos.push(vec3.fromValues(0.0, 2.0, 3.0));
+      puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+
+      puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+      puntos.push(vec3.fromValues(0.0, 1.0, 5.0));
+      puntos.push(vec3.fromValues(0.0, 0.0, 6.0));
+
+      puntos.push(vec3.fromValues(0.0, 0.0, 6.0));
+      puntos.push(vec3.fromValues(0.0, 0.0, 7.0));
+      puntos.push(vec3.fromValues(0.0, 0.0, 8.0));
+
+      curvaBase.setControlPoints(puntos);
+      curvaBase.calculateArrays();
+
+      var vectores = curvaBase.getVecPos();
+
+      var matrices = curvaBase.getArrayMatT();
+
+      var longitud = Math.floor((vectores.length)) -1;
+      for (var i = 0; i < longitud; i++) {
+          var matAux = matrices[i];
+          var vecAux = vectores[i];
+
+          arrayVecNor.push(matAux[3]);
+          arrayVecNor.push(matAux[4]);
+          arrayVecNor.push(matAux[5]);
+
+          arrayVecPos.push(vecAux[0]);
+          arrayVecPos.push(vecAux[1]);
+          arrayVecPos.push(vecAux[2]);
+      }
+
     }
 /*        ejeRotacion.push(vec3.fromValues(0.0, 1.0, 0.0));
 

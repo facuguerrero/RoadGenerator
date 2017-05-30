@@ -25,13 +25,135 @@
     <script type="text/javascript" src="gl-matrix.js"></script>
     <script type="text/javascript" src="webgl-utils.js"></script>
 
+    <script id="shader-fs-colored-obj" type="x-shader/x-fragment">
+    precision mediump float;
 
+    varying vec3 vVertexColor;
+    varying vec3 vLightWeighting;
+
+    uniform sampler2D uSampler;
+
+    void main(void) {
+        gl_FragColor = vec4(vVertexColor.rgb * vLightWeighting, 1.0);
+    }
+</script>
+
+    <script id="shader-vs-colored-obj" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec3 aVertexColor;
+
+    uniform mat4 uViewMatrix;
+    uniform mat4 uModelMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform vec3 uAmbientColor;
+
+    uniform vec3 uLightPosition;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+
+    varying vec3 vVertexColor;
+    varying vec3 vLightWeighting;
+
+    void main(void) {
+
+        // Transformamos al v�rtice al espacio de la c�mara
+        vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
+
+        // Transformamos al v�rtice al espacio de la proyecci�n
+        gl_Position = uPMatrix * pos_camera_view;
+
+        // Coordenada de textura sin modifiaciones
+        vVertexColor = aVertexColor;
+
+        ////////////////////////////////////////////
+        // Calculos de la iluminaci�n
+        vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
+        normalize(light_dir);
+        if (!uUseLighting)
+        {
+            vLightWeighting = vec3(1.0, 1.0, 1.0);
+        }
+        else
+        {
+            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
+            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
+            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+        }
+        ////////////////////////////////////////////
+    }
+</script>
+
+    <script id="shader-fs-textured-obj" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    uniform sampler2D uSampler;
+
+    void main(void) {
+        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+    }
+</script>
+
+    <script id="shader-vs-textured-obj" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+
+    uniform mat4 uViewMatrix;
+    uniform mat4 uModelMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform vec3 uAmbientColor;
+
+    uniform vec3 uLightPosition;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    void main(void) {
+
+		// Transformamos al v�rtice al espacio de la c�mara
+		vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
+
+		// Transformamos al v�rtice al espacio de la proyecci�n
+        gl_Position = uPMatrix * pos_camera_view;
+
+		// Coordenada de textura sin modifiaciones
+        vTextureCoord = aTextureCoord;
+
+		////////////////////////////////////////////
+		// Calculos de la iluminaci�n
+		vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
+		normalize(light_dir);
+        if (!uUseLighting)
+		{
+            vLightWeighting = vec3(1.0, 1.0, 1.0);
+        }
+		else
+		{
+            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
+            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
+            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+        }
+		////////////////////////////////////////////
+    }
+</script>
 
     <script type="text/javascript">
 
         var gl;
         var glTextures = {};
-        var glShaders = {};
 
         function initGL(canvas) {
             try {
@@ -82,11 +204,49 @@
         }
 
 
+        var shaderProgramTexturedObject;
+        var shaderProgramColoredObject;
+
+
         function initShaders() {
 
-            var fragmentShader = getShader(gl, "shader-fs");
-            var vertexShader = getShader(gl, "shader-vs");
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            //
+            // Inicializamos todo lo relacionado con el program shader para
+            // renderizar objetos Coloreados
 
+            var fragmentShaderColoredObj = getShader(gl, "shader-fs-colored-obj");
+            var vertexShaderColoredObj = getShader(gl, "shader-vs-colored-obj");
+
+            shaderProgramColoredObject = gl.createProgram();
+            gl.attachShader(shaderProgramColoredObject, vertexShaderColoredObj);
+            gl.attachShader(shaderProgramColoredObject, fragmentShaderColoredObj);
+            gl.linkProgram(shaderProgramColoredObject);
+
+            if (!gl.getProgramParameter(shaderProgramColoredObject, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+
+
+            shaderProgramColoredObject.vertexPositionAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexPosition");
+            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexPositionAttribute);
+
+            shaderProgramColoredObject.vertexColorAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexColor");
+            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexColorAttribute);
+
+            shaderProgramColoredObject.vertexNormalAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexNormal");
+            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexNormalAttribute);
+
+            shaderProgramColoredObject.pMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uPMatrix");
+            shaderProgramColoredObject.ViewMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uViewMatrix");
+            shaderProgramColoredObject.ModelMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uModelMatrix");
+            shaderProgramColoredObject.nMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uNMatrix");
+            shaderProgramColoredObject.samplerUniform = gl.getUniformLocation(shaderProgramColoredObject, "uSampler");
+            shaderProgramColoredObject.useLightingUniform = gl.getUniformLocation(shaderProgramColoredObject, "uUseLighting");
+            shaderProgramColoredObject.ambientColorUniform = gl.getUniformLocation(shaderProgramColoredObject, "uAmbientColor");
+            shaderProgramColoredObject.lightingDirectionUniform = gl.getUniformLocation(shaderProgramColoredObject, "uLightPosition");
+            shaderProgramColoredObject.directionalColorUniform = gl.getUniformLocation(shaderProgramColoredObject, "uDirectionalColor");
         }
 
         function initTextures(){
@@ -132,7 +292,6 @@
         var mvMatrix = mat4.create();
         var mvMatrixStack = [];
         var pMatrix = mat4.create();
-        var lastRead;
 
         var body = null;
         var canvas = null;
@@ -229,7 +388,9 @@
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
             ///Dibujamos las figuras
-            escena.setShaderProgram(glShaders["color"]);
+
+            obj.setShaderProgram(shaderProgramColoredObject);
+            obj.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
             escena.draw(model_matrix_escene, false);
@@ -249,7 +410,7 @@
             initShaders();
             initTextures();
 
-            shadersHandler = new ShaderHandler();
+            //shadersHandler = new ShaderHandler();
             //shadersHandler.load();
 
             /*Inicializacion de variables*/
@@ -502,7 +663,7 @@
                 // console.log(horizontal);
                 // console.log(vertical);
 
-            }   
+            }
         }
 
     </script>
@@ -510,7 +671,7 @@
 </head>
 
 <style>
-    
+
 body{
     font-family: "Lato", sans-serif;
     background-image: url("whirlpool.png");
@@ -799,9 +960,9 @@ body{
         // 4  5  6  7
         // 8  9  10 11
         // 12 13 14 15
-        for (var k = 0; k < 16; k++) {                 
+        for (var k = 0; k < 16; k++) {
             if(grilla.length < 16){ grilla.push(true); }
-            else{ grilla[k] = true; }    
+            else{ grilla[k] = true; }
         }
     }
 
@@ -852,33 +1013,33 @@ body{
     var p4 = false;
     var radio = 12;
 
-     $("#myCanvas").bind('mousemove',function(e){ 
+     $("#myCanvas").bind('mousemove',function(e){
         var pos=$("#myCanvas").position();
         if (mouseIsPressed){
             if(p4){
                 punto = puntosDeControl[4];
-                punto[0] = (e.pageX -pos.left); 
+                punto[0] = (e.pageX -pos.left);
                 punto[1] = (e.pageY-pos.top);
             }
             else if(p2){
                 punto = puntosDeControl[2];
-                punto[0] = (e.pageX -pos.left); 
+                punto[0] = (e.pageX -pos.left);
                 punto[1] = (e.pageY-pos.top);
             }
             else if(p3){
                 punto = puntosDeControl[3];
-                punto[0] = (e.pageX -pos.left); 
+                punto[0] = (e.pageX -pos.left);
                 punto[1] = (e.pageY-pos.top);
             }
             updateCoordinates(e);
-        }   
-    }); 
+        }
+    });
 
 
-     $("#myCanvas").bind('mousedown',function(e){ 
+     $("#myCanvas").bind('mousedown',function(e){
             mouseIsPressed=true;
             var pos=$("#myCanvas").position();
-            
+
             if( (puntosDeControl[4][0] <= (e.pageX -pos.left)) + radio &&
                 (puntosDeControl[4][0] >= (e.pageX -pos.left)) - radio &&
                 (puntosDeControl[4][1] <= (e.pageY-pos.top) + radio) &&
@@ -896,18 +1057,18 @@ body{
                 (puntosDeControl[3][1] <= (e.pageY-pos.top) + radio) &&
                 (puntosDeControl[3][1] >= (e.pageY-pos.top) - radio) ){
                 p3 = true;
-            }                        
+            }
 
 
             updateCoordinates(e);
-    }); 
+    });
 
-     $("#myCanvas").bind('mouseup',function(e){ 
+     $("#myCanvas").bind('mouseup',function(e){
             mouseIsPressed=false;
             p4 = false;
             p2 = false;
             p3 = false;
-    }); 
+    });
 
 
 });

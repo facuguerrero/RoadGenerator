@@ -1,16 +1,17 @@
+
 class ShaderHandler{
 
 
 	constructor(){
+		this.lastRead = null;
 	}
-
 
 	// Para leer un archivo
 	cargarArchivo(path){
 		var request = new XMLHttpRequest();
 		request.open('GET', path, false);
 		request.addEventListener('load', function() {
-			lastRead = request.responseText;
+			this.lastRead = request.responseText;
 		});
 		request.send();
 	}
@@ -50,10 +51,10 @@ class ShaderHandler{
 	// Crea un shader a partir de un archivo en path, aplicando
 	// los parámetros especificados.
 	crearPrograma(path, params) {
-		lastRead = null;
+		this.lastRead = null;
 		this.cargarArchivo(path);
 
-		var src = lastRead;
+		var src = this.lastRead;
 		var frag_shader = this.compilarShader(src, "fragment", params);
 		var vert_shader = this.compilarShader(src, "vertex", params);
 
