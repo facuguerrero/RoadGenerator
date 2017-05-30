@@ -16,6 +16,7 @@
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
+    varying float vID;
 
     void main(void) {
 
@@ -24,6 +25,9 @@
 
 		// Transformamos al v�rtice al espacio de la proyecci�n
         gl_Position = uPMatrix * pos_camera_view;
+
+        //se pasa el id
+        vID = aID;
 
 		// Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
