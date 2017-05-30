@@ -478,7 +478,7 @@ class ObjetosFactory {
     createColumna(){
         /*Objeto Contenedor*/
 
-        var cantidad = 500;
+        var cantidad = 600;
         var columna = new Objeto3D();
         var buffcalc = new BufferCalculator(2, cantidad);
         columna.setBufferCreator(buffcalc);
