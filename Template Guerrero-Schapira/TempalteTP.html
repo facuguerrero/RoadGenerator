@@ -249,11 +249,6 @@
             shaderProgramColoredObject.directionalColorUniform = gl.getUniformLocation(shaderProgramColoredObject, "uDirectionalColor");
         }
 
-        function loadShaders() {
-            var handler = new ShaderHandler();
-            handler.load();
-        }
-
         function initTextures(){
 
             glTextures["building1"] = loadTexture("textures/ed1_pisos.jpg");
@@ -409,14 +404,14 @@
 
             /*Funciones Inicializadoras*/
             canvas = document.getElementById("my_canvas");
+            body = document.getElementById("my_body");
+
             initGL(canvas);
             initShaders();
             initTextures();
-            loadShaders();
 
             shadersHandler = new ShaderHandler();
-
-            body = document.getElementById("my_body");
+            shadersHandler.load();
 
             /*Inicializacion de variables*/
             factory = new ObjetosFactory();
