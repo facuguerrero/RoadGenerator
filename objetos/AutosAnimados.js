@@ -111,6 +111,7 @@ class AutosAnimados {
             random2 = Math.random() * 5;
 
         }
+        //si se quiere levantar mas todo solo cambiar esto
         this.ruta.translate(0.0, 20.0, 0.0);
 
     }
