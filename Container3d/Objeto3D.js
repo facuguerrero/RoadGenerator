@@ -14,6 +14,9 @@ var RUEDA="rueda";
 var ESCENA ="escena";
 var VEREDA = "vereda";
 var TECHO = "techo";
+var COLUMNA= "columna";
+var BASE_COLUMNA="base_columna";
+var TAPA_COLUMNA = "tapa_columna";
 
 class Objeto3D extends Container3D{
 
@@ -21,7 +24,7 @@ class Objeto3D extends Container3D{
     super();
 
     this.figuras = null;
-    this.figuras = new FigurasPrimitivias();
+    this.figuras = new FigurasPrimitivas();
 
     this.posBuffer = null;
     this.indexBuffer = null;
@@ -232,6 +235,45 @@ class Objeto3D extends Container3D{
             this.bufferCreator.posBuffer=vertices;
         }
     }
+
+    /*Rows representa la cantidad de niveles de la superficie.
+    Colms representa el n que divide el angulo tal que : 2pi/n para la rotacion
+
+     */
+    calcularSuperficieRevolucion(figura,rows,colms){
+
+        var arrayVecPos= [];
+        var ejeRotacion=[];
+        var arrayVecNor=[];
+
+        if(figura == COLUMNA){
+            if(rows != 2){
+                console.log("Para el pilar de la columna se necesitan solo 2 niveles");
+            }
+            this.figuras.calcularColumna(arrayVecPos, ejeRotacion, arrayVecNor);
+        }
+
+        if(figura == BASE_COLUMNA){
+            if(rows != 40){
+                console.log("Para la base de la columna se necesitan 2 niveles");
+            }
+            this.figuras.calcularBaseColumna(rows,arrayVecPos,ejeRotacion,arrayVecNor);
+            //this.addColor(buffcalc, 5000,0.0,0.0,0.0);
+        }
+
+        if(figura == TAPA_COLUMNA){
+            if(rows != 3){
+                console.log("Para la tapa de la columna se necesitan 3 niveles");
+            }
+            this.figuras.calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor);
+        }
+
+        var buffcalc = new BufferCalculator(rows, colms);
+        buffcalc.calcularSuperficieRevolucion(arrayVecPos, ejeRotacion, arrayVecNor);
+        this.setBufferCreator(buffcalc);
+        this.build();
+    }
+
 
     addColor(buf,largo,r,g,b){
 

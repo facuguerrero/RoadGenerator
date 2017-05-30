@@ -439,21 +439,23 @@
             var manzana = 20.0;
             var vectores = [];
             vectores.push(vec3.fromValues(0.0,0.0,0.0));
-            vectores.push(vec3.fromValues(0.0,10.0,0.0));
+            vectores.push(vec3.fromValues(0.0,0.0,10.0));
+            vectores.push(vec3.fromValues(0.0,10.0,10.0));
+
 
             var normales =[];
             normales.push(vec3.fromValues(1.0,0.0,0.0));
             normales.push(vec3.fromValues(1.0,0.0,0.0));
+            normales.push(vec3.fromValues(1.0,0.0,0.0));
 
             var matrices = [];
-            //this.obtenerMatricesRotacion(matrices,0.25);
+            //this.obtenerMatricesRotacion(matrices,0.25)
 
-
-            var rev = new Objeto3D();
-            var buf = new BufferCalculator(2,16);
-            buf.calcularSuperficieRevolucion(vectores, vec3.fromValues(0.0, 1.0 ,0.0) , normales );
-            rev.setBufferCreator(buf);
-            rev.build();
+            rev = factory.createColumna();
+            //var buf = new BufferCalculator(2,400);
+            //buf.calcularSuperficieRevolucion(vectores, vec3.fromValues(0.0, 1.0 ,0.0) , normales );
+            //rev.setBufferCreator(buf);
+            //rev.build();
 
             escena = factory.createManzanaP(manzana);
 

@@ -1,9 +1,11 @@
-class FigurasPrimitivias{
+class FigurasPrimitivas{
 
     constructor(){
         //
     }
 
+
+    /*SUPERFICIES DE BARRIDO*/
     /*crea un cuadrado de dimensiones proporcionales a 1x1
     centrado en el origen de coordenadas
      */
@@ -517,5 +519,104 @@ class FigurasPrimitivias{
         arrayVecNOR.push(vecNorm2);
     }
 
+    /*SUPERFICIES DE REVOLUCION*/
+
+    calcularColumna(arrayVecPos, ejeRotacion, arrayVecNor){
+
+        ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
+
+        arrayVecPos.push(vec3.fromValues(1.0,2.0,2.0));
+        arrayVecPos.push(vec3.fromValues(1.0,2.0,17.0));
+
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,1.0));
+
+    }
+
+    calcularBaseColumna(rows, arrayVecPos, ejeRotacion, arrayVecNor) {
+
+        ejeRotacion.push(vec3.fromValues(0.0, 1.0, 0.0));
+
+        var step = 0.1;
+        for(var i=0.0; i<rows; i += step){
+
+            //arrayVecPos.push( vec3.fromValues(diametro - ((2.0*i)/rows) , 1.0, altura + (2.0*i)/(rows)) );
+            //arrayVecNor.push( vec3.fromValues(0.0, 0.0, -1.0) );
+
+            arrayVecPos.push( vec3.fromValues( 0.0, -(i*(i/2))+6, i) );
+            //CALCULAR NORMAL DE LA BASE!!!
+            arrayVecNor.push( vec3.fromValues(0.0, 0.0, 1.0) );
+        }
+    }
+
+    calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor){
+
+        ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
+
+        arrayVecPos.push(vec3.fromValues(0.0,2.5,-17.0));
+        arrayVecPos.push(vec3.fromValues(0.0,8.0,-19.0));
+        arrayVecPos.push(vec3.fromValues(0.0,8.0,-20.0));
+
+        //CALCULAR BIEN LAS NORMALES
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+    }
+/*        ejeRotacion.push(vec3.fromValues(0.0, 1.0, 0.0));
+
+        var curvaBase = new CuadraticBSpline(3, 0.1);
+
+        //Creamos los puntos de control para la curva
+        var puntos = [];
+        puntos.push(vec3.fromValues(0.0, 2.0, 0.0));
+        puntos.push(vec3.fromValues(0.0, 4.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 6.0, 3.0));
+
+        puntos.push(vec3.fromValues(0.0, 2.0, 2.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 3.0));
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+
+        puntos.push(vec3.fromValues(0.0, 2.0, 4.0));
+        puntos.push(vec3.fromValues(0.0, 1.0, 5.0));
+        puntos.push(vec3.fromValues(0.0, 0.0, 6.0));
+
+        puntos.push(vec3.fromValues(0.0, 0.0, 6.0));
+        puntos.push(vec3.fromValues(0.0, 0.0, 7.0));
+        puntos.push(vec3.fromValues(0.0, 0.0, 8.0));
+
+
+        curvaBase.setControlPoints(puntos);
+        curvaBase.calculateArrays();
+
+        var vectores = curvaBase.getVecPos();
+
+        var matrices = curvaBase.getArrayMatT();
+
+        var longitud = Math.floor((vectores.length)) - 1;
+        console.log(longitud);
+        for (var i = 0; i < longitud; i++) {
+            var matAux = matrices[i];
+            var vecAux = vectores[i];
+            console.log(vecAux);
+            //console.log(matAux);
+
+            arrayVecNor.push(matAux[3]);
+            arrayVecNor.push(matAux[4]);
+            arrayVecNor.push(matAux[5]);
+
+            arrayVecPos.push(vecAux[0]);
+            arrayVecPos.push(vecAux[1]);
+            arrayVecPos.push(vecAux[2]);
+        }
+
+
+
+        ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
+
+        arrayVecPos.push(vec3.fromValues(4.0,1.0,0.0));
+        arrayVecPos.push(vec3.fromValues(3.0,1.0,2.0));
+
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.0,-1.0));*/
 
 }

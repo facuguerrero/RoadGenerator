@@ -78,7 +78,7 @@ class ObjetosFactory {
         var ajusteFarolesBordes = 5;
         var sentido = 1;
         var largo = vecPos.length - ajusteFarolesBordes - 10;
-        var factorColumnas = 5.0
+        var factorColumnas = 0.0;
 
         for (var i = ajusteFarolesBordes; i < largo; i += factorCantFaroles) {
 
@@ -95,16 +95,22 @@ class ObjetosFactory {
             ruta.add(farol);
             sentido = sentido * -1;
 
-            // if ((i + factorColumnas) < largo) {
-            //
-            //     var vecC = vecPosFaroles[i + factorColumnas];
-            //     var matC = this.getMatriz4x4(arrayMatF[i + factorColumnas]);
-            //
-            //     var columna = this.createColumna();
-            //     columna.translate(vecC[1], vecC[0], vecC[2]);
-            //     columna.applyMatrix(matC);
-            //     ruta.add(columna);
-            // }
+            if (factorColumnas == 2.0){
+                if ((i + factorColumnas) < largo) {
+
+                    var vecC = vecPosFaroles[i + factorColumnas];
+                    var matC = this.getMatriz4x4(arrayMatF[i + factorColumnas]);
+
+                    var columna = this.createColumna();
+                    columna.translate(vecC[1], vecC[0], vecC[2]);
+                    columna.applyMatrix(matC);
+                    columna.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
+                    ruta.add(columna);
+                }
+                factorColumnas = 0.0;
+            }
+
+            factorColumnas++;
 
 
         }
@@ -470,7 +476,36 @@ class ObjetosFactory {
     }
 
     createColumna(){
-        //
+        /*Objeto Contenedor*/
+
+        var cantidad = 500;
+        var columna = new Objeto3D();
+        var buffcalc = new BufferCalculator(2, cantidad);
+        columna.setBufferCreator(buffcalc);
+        columna.build();
+
+        /*Creo lo que es el cilindro de la columna*/
+        var pilar = new Objeto3D();
+        pilar.calcularSuperficieRevolucion("columna",2,cantidad);
+        pilar.rotate(-Math.PI/2,1.0,0.0,0.0);
+        columna.add(pilar);
+
+        /*Creo lo que es la base de la columna*/
+        var base = new Objeto3D();
+
+        base.calcularSuperficieRevolucion("base_columna",40,400);
+        base.rotate(-Math.PI/2,1.0,0.0,0.0);
+        columna.add(base);
+
+        /*Creo la tapa de la columna*/
+
+        var tapa = new Objeto3D();
+        tapa.calcularSuperficieRevolucion("tapa_columna",3,400);
+        tapa.rotate(Math.PI/2,1.0,0.0,0.0);
+        columna.add(tapa);
+
+
+        return columna;
     }
 
 
