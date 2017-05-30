@@ -422,8 +422,8 @@
             escena=factory.createEscene(n*(anchoCalle+manzana));
 
             this.rellenarRuta(escena);
-            this.rellenarCalles(escena,anchoCalle, largoCalle, manzana, escena, factory);
-            this.rellenarManzanas(escena,anchoCalle, manzana, escena, factory);
+            this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
+            this.rellenarManzanas(anchoCalle, manzana, escena, factory);
 
             //ajusto la posicion de la escena para mejor visualizacion
             escena.translate(-22.0, 0.0, -20.0);
@@ -450,7 +450,7 @@
 
         }
 
-        function rellenarCalles(escena,anchoCalle, largoCalle, manzana, escena,factory){
+        function rellenarCalles(anchoCalle, largoCalle, manzana, escena,factory){
 
             //Manzanas 1 a 4 estan sobre y=0 y se numeran en x creciente
             //calle 1: posicion contigua a la manzana 1.
@@ -613,7 +613,7 @@
             escena.add(esquina9);
         }
 
-        function rellenarManzanas(escena,anchoCalle, manzana, escena,factory){
+        function rellenarManzanas(anchoCalle, manzana, escena,factory){
             var vertical = 0;
             var horizontal = 0;
             for (var i=0; i< 16; i++){
