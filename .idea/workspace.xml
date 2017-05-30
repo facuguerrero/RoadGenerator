@@ -27,24 +27,24 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="200" column="57" lean-forward="false" selection-start-line="200" selection-start-column="57" selection-end-line="200" selection-end-column="57" />
+            <state relative-caret-position="408">
+              <caret line="230" column="14" lean-forward="false" selection-start-line="230" selection-start-column="14" selection-end-line="230" selection-end-column="14" />
               <folding>
-                <element signature="e#16622#17173#0" expanded="false" />
-                <element signature="e#17209#18299#0" expanded="false" />
-                <element signature="e#25463#26451#0" expanded="false" />
+                <element signature="e#16691#17242#0" expanded="false" />
+                <element signature="e#17278#18368#0" expanded="false" />
+                <element signature="e#25532#26520#0" expanded="false" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#28330#28338#0" expanded="true" />
+                <element signature="e#28399#28407#0" expanded="true" />
                 <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1496177701737" expanded="true" signature="1605:1682" ph="{...}" />
-                <marker date="1496177701737" expanded="true" signature="2200:3192" ph="{...}" />
-                <marker date="1496177701737" expanded="true" signature="2780:2842" ph="{...}" />
-                <marker date="1496177701737" expanded="true" signature="2864:3133" ph="{...}" />
-                <marker date="1496177701737" expanded="true" signature="3422:3599" ph="{...}" />
-                <marker date="1496177701737" expanded="true" signature="4120:5042" ph="{...}" />
-                <marker date="1496177701737" expanded="true" signature="4648:4710" ph="{...}" />
-                <marker date="1496177701737" expanded="true" signature="4720:4989" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="1605:1682" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="2200:3192" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="2780:2842" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="2864:3133" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="3422:3599" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="4120:5042" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="4648:4710" ph="{...}" />
+                <marker date="1496177812494" expanded="true" signature="4720:4989" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -484,13 +484,6 @@
       <workItem from="1496170636234" duration="2238000" />
       <workItem from="1496173126109" duration="647000" />
     </task>
-    <task id="LOCAL-00094" summary="Auto Terminado">
-      <created>1495753423408</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1495753423409</updated>
-    </task>
     <task id="LOCAL-00095" summary="Canvas">
       <created>1495754786821</created>
       <option name="number" value="00095" />
@@ -827,11 +820,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496177366608</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="Columna">
+      <created>1496177711002</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1496177711002</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281224000" />
+    <option name="totallyTimeSpent" value="281345000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1153,24 +1153,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="200" column="57" lean-forward="false" selection-start-line="200" selection-start-column="57" selection-end-line="200" selection-end-column="57" />
+        <state relative-caret-position="408">
+          <caret line="230" column="14" lean-forward="false" selection-start-line="230" selection-start-column="14" selection-end-line="230" selection-end-column="14" />
           <folding>
-            <element signature="e#16622#17173#0" expanded="false" />
-            <element signature="e#17209#18299#0" expanded="false" />
-            <element signature="e#25463#26451#0" expanded="false" />
+            <element signature="e#16691#17242#0" expanded="false" />
+            <element signature="e#17278#18368#0" expanded="false" />
+            <element signature="e#25532#26520#0" expanded="false" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#28330#28338#0" expanded="true" />
+            <element signature="e#28399#28407#0" expanded="true" />
             <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1496177701737" expanded="true" signature="1605:1682" ph="{...}" />
-            <marker date="1496177701737" expanded="true" signature="2200:3192" ph="{...}" />
-            <marker date="1496177701737" expanded="true" signature="2780:2842" ph="{...}" />
-            <marker date="1496177701737" expanded="true" signature="2864:3133" ph="{...}" />
-            <marker date="1496177701737" expanded="true" signature="3422:3599" ph="{...}" />
-            <marker date="1496177701737" expanded="true" signature="4120:5042" ph="{...}" />
-            <marker date="1496177701737" expanded="true" signature="4648:4710" ph="{...}" />
-            <marker date="1496177701737" expanded="true" signature="4720:4989" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="1605:1682" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="2200:3192" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="2780:2842" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="2864:3133" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="3422:3599" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="4120:5042" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="4648:4710" ph="{...}" />
+            <marker date="1496177812494" expanded="true" signature="4720:4989" ph="{...}" />
           </folding>
         </state>
       </provider>
