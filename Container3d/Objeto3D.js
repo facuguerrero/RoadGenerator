@@ -18,6 +18,13 @@ var COLUMNA= "columna";
 var BASE_COLUMNA="base_columna";
 var TAPA_COLUMNA = "tapa_columna";
 
+var EDIFICIO = "edificio";
+var RUTA = "ruta";
+var FAROL = "farol";
+var AUTO = "auto";
+var CALLE = "calle";
+
+
 class Objeto3D extends Container3D{
 
   constructor(){
@@ -35,10 +42,20 @@ class Objeto3D extends Container3D{
     this.webglNormalBuffer = null;
     this.webglColorBuffer = null;
     this.webglIndexBuffer = null;
+    this.webglTextureBuffer = null;
 
     this.bufferCreator = null;
+
+    this.objectType = null;
+    this.id = null;
     }
 
+    //recibe un objectype que es un string que tiene que ser similar a alguno de los define superiores
+    //id no se bien que es
+    setType(objectType, id){
+        this.objectType = objectType;
+        this.id = id;
+    }
 
     /**********METODOS DE MODELADO*************/
 
@@ -83,6 +100,9 @@ class Objeto3D extends Container3D{
         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.indexBuffer), gl.STATIC_DRAW);
         this.webglIndexBuffer.itemSize = 1;
         this.webglIndexBuffer.numItems = this.indexBuffer.length;
+
+        //falta cargar los buffers de Texturas
+
 }
 
     /*
@@ -320,6 +340,17 @@ class Objeto3D extends Container3D{
         //Normal
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
         gl.vertexAttribPointer(shaderProgramColoredObject.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+        //Texture
+        if(this.webglTextureBuffer){
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTextureBuffer);
+            gl.vertexAttribPointer(shaderProgramColoredObject.textureCoordAttribute, this.webglTextureBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        }
+
+        //a continuacion se setea todo dependiendo del id
+        if(this.objectType == CALLE){
+            gl.vertexAttrib1f(idStreet, this.id)
+        }
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
         gl.uniformMatrix4fv(shaderProgramColoredObject.ModelMatrixUniform, false, modelMatrix);

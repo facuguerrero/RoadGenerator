@@ -102,7 +102,7 @@ class ObjetosFactory {
                     var matC = this.getMatriz4x4(arrayMatF[i + factorColumnas]);
 
                     var columna = this.createColumna();
-                    columna.translate(vecC[1], vecC[0], vecC[2]);
+                    columna.translate(vecC[1], vecC[0]-20.0, vecC[2]);
                     columna.applyMatrix(matC);
                     columna.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
                     ruta.add(columna);

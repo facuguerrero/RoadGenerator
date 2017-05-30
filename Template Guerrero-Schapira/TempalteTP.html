@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../handlers/CameraHandler.js"></script>
     <script type="text/javascript" src="../handlers/ShaderHandler.js"></script>
 
-    <script type="text/javascript" src="../shaders/genericShader.js"></script>
+    <script type="text/javascript" src="../Template Guerrero-Schapira/shaders/GenericShader.js"></script>
 
     <script type="text/javascript" src="../objetos/AutosAnimados.js"></script>
     <script type="text/javascript" src="../objetos/ObjetosFactory.js"></script>
@@ -170,13 +170,31 @@
         }
 
 
-        function getShader(genericShader){
+        function getShader(id) {
+            var shaderScript = document.getElementById(id);
+            if (!shaderScript) {
+                return null;
+            }
+
+            var str = "";
+            var k = shaderScript.firstChild;
+            while (k) {
+                if (k.nodeType == 3) {
+                    str += k.textContent;
+                }
+                k = k.nextSibling;
+            }
 
             var shader;
+            if (shaderScript.type == "x-shader/x-fragment") {
+                shader = gl.createShader(gl.FRAGMENT_SHADER);
+            } else if (shaderScript.type == "x-shader/x-vertex") {
+                shader = gl.createShader(gl.VERTEX_SHADER);
+            } else {
+                return null;
+            }
 
-            shader = gl.createShader( genericShader.getType() );
-
-            gl.shaderSource(shader, genericShader.getShaderCode());
+            gl.shaderSource(shader, str);
             gl.compileShader(shader);
 
             if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
@@ -186,6 +204,24 @@
 
             return shader;
         }
+
+        //HAY QUE AGREGAR ESTA
+//        function getShader(genericShader){
+//
+////            var shader;
+////
+////            //shader = gl.createShader( genericShader.getType() );
+////
+////            gl.shaderSource(shader, genericShader.getShaderCode());
+////            gl.compileShader(shader);
+////
+////            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+////                alert(gl.getShaderInfoLog(shader));
+////                return null;
+////            }
+////
+////            return shader;
+//        }
 
 
         var shaderProgramTexturedObject;
@@ -228,7 +264,7 @@
             streetShader.lightingDirectionUniform = gl.getUniformLocation(streetShader, "uLightPosition");
             streetShader.directionalColorUniform = gl.getUniformLocation(streetShader, "uDirectionalColor");
 
-            //idStreet = gl.getAttribLocation(streetShader, "aID");
+            idStreet = gl.getAttribLocation(streetShader, "aID");
         }
 
 
@@ -240,8 +276,8 @@
             // Inicializamos todo lo relacionado con el program shader para
             // renderizar objetos Coloreados
 
-            var fragmentShaderColoredObj = getShader(gl, "shader-fs-colored-obj");
-            var vertexShaderColoredObj = getShader(gl, "shader-vs-colored-obj");
+            var fragmentShaderColoredObj = getShader("shader-fs-colored-obj");
+            var vertexShaderColoredObj = getShader("shader-vs-colored-obj");
 
             shaderProgramColoredObject = gl.createProgram();
             gl.attachShader(shaderProgramColoredObject, vertexShaderColoredObj);
@@ -364,6 +400,10 @@
         var manzana3=null;
         var manzana4= null;
         var ruta = null;
+
+        //variables de las id de texturas
+        var idStreet;
+
 
         var mouse = null;
         var freeCam = null;
