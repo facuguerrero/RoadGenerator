@@ -352,14 +352,16 @@ class Objeto3D extends Container3D{
         //Position
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
-        //Color
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
-        gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         //Texture
         if(this.webglTextureBuffer){
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTextureBuffer);
             gl.vertexAttribPointer(this.shaderProgram.textureCoordAttribute, this.webglTextureBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        }
+        else{
+            //Color
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
+            gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
         }
 
         //a continuacion se setea todo dependiendo del id
