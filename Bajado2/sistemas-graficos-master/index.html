@@ -1,0 +1,341 @@
+<!doctype html>
+<meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+<meta content="ISO-8859-1" http-equiv="encoding">
+<html>
+<head>
+    <title>Space GL</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+        canvas {
+            background-color: white;
+        }
+        textarea {
+            background-color: black;
+            foreground-color: white;
+        }
+    </style>
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="gl-matrix.js"></script>
+    <script type="text/javascript" src="webgl-utils.js"></script>
+
+    <!-- Scrips -->
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="VertexGrid.js"></script>
+    <script type="text/javascript" src="Plane.js"></script>
+    <script type="text/javascript" src="Cilindro.js"></script>
+    <script type="text/javascript" src="Esfera.js"></script>
+    <script type="text/javascript" src="SupBarrido.js"></script>
+    <script type="text/javascript" src="ClosedExtrusion.js"></script>
+    <script type="text/javascript" src="SupRevolucion.js"></script>
+    <script type="text/javascript" src="Vertex.js"></script>
+    <script type="text/javascript" src="SpaceStation.js"></script>
+    <script type="text/javascript" src="SpaceStationCargoBay.js"></script>
+    <script type="text/javascript" src="SpaceStationCargoBayCover.js"></script>
+    <script type="text/javascript" src="SpaceStationCenter.js"></script>
+    <script type="text/javascript" src="SpaceStationCylinder.js"></script>
+    <script type="text/javascript" src="SpaceStationHumanCabin.js"></script>
+    <script type="text/javascript" src="CurvaBezierCubica.js"></script>
+    <script type="text/javascript" src="TexturedSphere.js"></script>
+    <script type="text/javascript" src="Camera.js"></script>
+    <script type="text/javascript" src="SolarPanelBlock.js"></script>
+    <script type="text/javascript" src="SolarPanelWing.js"></script>
+    <script type="text/javascript" src="NaveVidrio.js"></script>
+    <script type="text/javascript" src="NaveCasco.js"></script>
+    <script type="text/javascript" src="NaveWing.js"></script>
+    <script type="text/javascript" src="NaveLegs.js"></script>
+    <script type="text/javascript" src="NaveLeg.js"></script>
+    <script type="text/javascript" src="NaveCompleteWing.js"></script>
+    <script type="text/javascript" src="NaveWingWithTurbin.js"></script>
+    <script type="text/javascript" src="NaveTurbin.js"></script>
+    <script type="text/javascript" src="Nave.js"></script>
+    <script type="text/javascript" src="CurvaBSpline.js"></script>
+    <script type="text/javascript" src="MangueraAstronauta.js"></script>
+    <script type="text/javascript" src="Background.js"></script>
+    <script type="text/javascript" src="jquery-1.9.1.js"></script>
+
+
+    <!-- Shaders -->
+    <script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+	attribute vec3 aVertexTangent;
+	attribute vec3 aVertexBinormal;
+
+    attribute vec2 aTextureCoord;
+
+    uniform mat4 uViewMatrix;
+    uniform mat4 uModelMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform bool uUseLighting;
+    uniform bool uUseReflection;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    varying vec3 vertPos;
+	varying vec3 reflectDir;
+
+	varying vec3 normalInterp;
+	varying vec3 tangentInterp;
+	varying vec3 binormalInterp;
+
+    void main(void) {
+
+		// Transformamos al vértice al espacio de la cámara
+		vec4 pos_camera_view = uModelMatrix * vec4(aVertexPosition, 1.0);
+
+		// Transformamos al vértice al espacio de la proyección
+        gl_Position = uPMatrix * uViewMatrix * pos_camera_view;
+
+    	vertPos = vec3(pos_camera_view);
+
+		// Coordenada de textura sin modifiaciones
+        vTextureCoord = aTextureCoord;
+
+        normalInterp = normalize(uNMatrix * aVertexNormal);
+        tangentInterp = normalize(uNMatrix * aVertexTangent);
+        binormalInterp = normalize(uNMatrix * aVertexBinormal);
+
+		if (uUseReflection) {
+    			vec3 view = normalize(vertPos);
+    			reflectDir = reflect(view, normalInterp);
+    			reflectDir = vec3(uViewMatrix * vec4(reflectDir, 0.0));
+    	}
+    }
+    </script>
+
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+        precision mediump float;
+
+        varying vec2 vTextureCoord;
+        varying vec3 vLightWeighting;
+
+        // Color without Texture
+        uniform vec4 uColorWOTexture;
+        uniform bool uUseTexture;
+
+        // Maps
+        uniform bool uUseReflection;
+        uniform bool uUseNormalMap;
+        uniform float uReflectFactor;
+        uniform bool uUseLightMap;
+
+        // Samplers
+        uniform sampler2D uSampler;
+        uniform sampler2D uReflectionSampler;
+        uniform sampler2D uNormalSampler;
+        uniform sampler2D uLightSampler;
+
+        // Lights
+        uniform vec3 uAmbientColor;
+        uniform vec3 uAutoIluminationColor;
+        uniform bool uUseDirectionalLights;
+        uniform bool uUsePunctualLights;
+        uniform bool uUseAutoIlumination;
+        uniform float uAutoIluminationIntensity;
+        uniform float uAmbientalLightIntensity;
+        
+        // Principal Light
+        uniform vec3 uPrincipalLightDirection;
+        uniform vec3 uPrincipalDiffuseColor;
+        uniform vec3 uPrincipalSpecularColor;
+        uniform float uPrincipalLightIntensity;
+        
+        // Secondary Light
+        uniform vec3 uSecondaryLightDirection;
+        uniform vec3 uSecondaryDiffuseColor;
+        uniform vec3 uSecondarySpecularColor;
+        uniform float uSecondaryLightIntensity;
+        
+        // Puntual Lights
+        uniform float uPunctualLightRadio;
+        uniform float uPunctualLightIntensity;
+        uniform vec3 uPunctualDiffuseColor;
+        uniform vec3 uPunctualSpecularColor;
+        uniform vec3 uPunctual1LightPosition;
+        uniform vec3 uPunctual2LightPosition;
+        uniform vec3 uPunctual3LightPosition;
+        uniform vec3 uPunctual4LightPosition;
+
+		// Camera
+        uniform vec3 uCameraPos;
+
+        varying vec3 reflectDir;
+
+        varying vec3 normalInterp;
+        varying vec3 tangentInterp;
+        varying vec3 binormalInterp;
+
+        varying vec3 vertPos;
+
+        void main(void) {
+        vec3 normal = normalize(normalInterp);
+        vec3 tangent = normalize(tangentInterp);
+        vec3 binormal = normalize(binormalInterp);
+
+		// Normal Map
+        if (uUseNormalMap) {
+            mat3 tbn = mat3(tangent, binormal, normal);
+            vec3 normalCoordinate = texture2D(uNormalSampler, vec2(vTextureCoord.s, vTextureCoord.t)).xyz * 2.0 - 1.0;
+            normal = normalize(tbn * normalCoordinate);
+        }
+
+        // Calculos de la iluminación
+        /** Principal Light: Direccional **/
+        vec3 lightDir = uPrincipalLightDirection;
+        vec3 lightDirNormalized = normalize(lightDir);
+        vec3 lightReflectDir = reflect(-lightDirNormalized, normal);
+        vec3 viewDir = normalize(uCameraPos - vertPos);	
+		float diffusePrincipalLightWeighting = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
+        vec3 r = 2.0 * diffusePrincipalLightWeighting * normal - lightDirNormalized;
+        float rv = max(dot(r, viewDir), 0.0); 
+		float specularPrincipalLightWeighting = pow(rv,15.0);	// Especular: [(2*(N*L)*N - L) * V] ^ alpha
+								
+		/** Secondary Light: Direccional **/
+        lightDir = uSecondaryLightDirection;
+        lightDirNormalized = normalize(lightDir);
+        lightReflectDir = reflect(-lightDirNormalized, normal);
+        viewDir = normalize(uCameraPos - vertPos);	
+        float diffuseSecondaryLightWeighting = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
+        r = 2.0 * diffuseSecondaryLightWeighting * normal - lightDirNormalized;
+        rv = max(dot(r, viewDir), 0.0); 
+		float specularSecondaryLightWeighting = pow(rv,7.0);	// Especular: [(2*(N*L)*N - L) * V] ^ alpha
+				
+		/** Tertiary Lights: Puntuals **/
+		// Puntual Light 1 
+        lightDir = uPunctual1LightPosition - vertPos;
+        lightDirNormalized = normalize(lightDir);
+        viewDir = normalize(uCameraPos - vertPos);	
+        float diffusePunctualLightWeighting_1 = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
+        r = 2.0 * diffusePunctualLightWeighting_1 * normal - lightDirNormalized;
+        rv = max(dot(r, viewDir), 0.0); 
+		float specularPunctualLightWeighting_1 = pow(rv,7.0); // Especular: [(2*(N*L)*N - L) * V] ^ alpha
+		float dist_puntual_1 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0));
+
+		// Puntual Light 2
+        lightDir = uPunctual2LightPosition - vertPos;
+        lightDirNormalized = normalize(lightDir);
+        viewDir = normalize(uCameraPos - vertPos);
+        float diffusePunctualLightWeighting_2 = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
+        r = 2.0 * diffusePunctualLightWeighting_2 * normal - lightDirNormalized;	
+        rv = max(dot(r, viewDir), 0.0); 
+		float specularPunctualLightWeighting_2 = pow(rv,15.0);    // Especular: [(2*(N*L)*N - L) * V] ^ alpha
+		float dist_puntual_2 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0));
+				
+		// Puntual Light 3
+        lightDir =  uPunctual3LightPosition - vertPos;
+        lightDirNormalized = normalize(lightDir);
+        viewDir = normalize(uCameraPos - vertPos);	
+        float diffusePunctualLightWeighting_3 = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
+        r = 2.0 * diffusePunctualLightWeighting_3 * normal - lightDirNormalized;		
+        rv = max(dot(r, viewDir), 0.0); 
+		float specularPunctualLightWeighting_3 = pow(rv,15.0);    // Especular: [(2*(N*L)*N - L) * V] ^ alpha
+        float dist_puntual_3 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0)); 
+														
+		// Puntual Light 4
+        lightDir = uPunctual4LightPosition - vertPos;
+        lightDirNormalized = normalize(lightDir);
+        viewDir = normalize(uCameraPos - vertPos);
+        float diffusePunctualLightWeighting_4 = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)        
+        r = 2.0 * diffusePunctualLightWeighting_4 * normal - lightDirNormalized;				
+        rv = max(dot(r, viewDir), 0.0); 
+		float specularPunctualLightWeighting_4 = pow(rv,7.0);	// Especular: [(2*(N*L)*N - L) * V] ^ alpha
+		float dist_puntual_4 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0));									
+
+		// Use Punctual Lights ?
+		if (!uUsePunctualLights) {
+			specularPunctualLightWeighting_1 = 0.0;
+            specularPunctualLightWeighting_2 = 0.0;
+            specularPunctualLightWeighting_3 = 0.0;
+            specularPunctualLightWeighting_4 = 0.0;
+            diffusePunctualLightWeighting_1 = 0.0;
+            diffusePunctualLightWeighting_2 = 0.0;
+            diffusePunctualLightWeighting_3 = 0.0;
+            diffusePunctualLightWeighting_4 = 0.0;
+		}
+
+		// Use Directional Lights ?
+		if (!uUseDirectionalLights) {
+			diffusePrincipalLightWeighting = 0.0;
+			specularPrincipalLightWeighting = 0.0;
+			diffuseSecondaryLightWeighting = 0.0;
+			specularSecondaryLightWeighting = 0.0;
+		}
+		
+		// Total Light
+        // Especular
+        vec3 specularLightWeighting = uPrincipalLightIntensity * uPrincipalSpecularColor * specularPrincipalLightWeighting +
+                                      uSecondaryLightIntensity * uSecondarySpecularColor * specularSecondaryLightWeighting +
+                                      uPunctualLightIntensity  * uPunctualSpecularColor  * specularPunctualLightWeighting_1 /dist_puntual_1 +
+                                      uPunctualLightIntensity  * uPunctualSpecularColor  * specularPunctualLightWeighting_2 /dist_puntual_2 +
+                                      uPunctualLightIntensity  * uPunctualSpecularColor  * specularPunctualLightWeighting_3 /dist_puntual_3 +
+                                      uPunctualLightIntensity  * uPunctualSpecularColor  * specularPunctualLightWeighting_4 /dist_puntual_4;
+
+        // Direccional
+        vec3 direccionalLightWeighting = uPrincipalLightIntensity * uPrincipalDiffuseColor * diffusePrincipalLightWeighting +
+                                         uSecondaryLightIntensity * uSecondaryDiffuseColor * diffuseSecondaryLightWeighting +
+                                         uPunctualLightIntensity  * uPunctualDiffuseColor  * diffusePunctualLightWeighting_1 /dist_puntual_1 +
+                                         uPunctualLightIntensity  * uPunctualDiffuseColor  * diffusePunctualLightWeighting_2 /dist_puntual_2 +
+                                         uPunctualLightIntensity  * uPunctualDiffuseColor  * diffusePunctualLightWeighting_3 /dist_puntual_3 +
+                                         uPunctualLightIntensity  * uPunctualDiffuseColor  * diffusePunctualLightWeighting_4 /dist_puntual_4;
+
+        // Ambiental
+        vec3 ambientalLightWeighting = uAmbientalLightIntensity * uAmbientColor;
+	
+		// Ambiental + Direccional + Especular													
+		vec3 vLightWeighting = ambientalLightWeighting + direccionalLightWeighting + specularLightWeighting;
+							   
+		// Auto Iluminación
+		if (uUseAutoIlumination) {
+			vLightWeighting = uAutoIluminationIntensity * uAutoIluminationColor;
+		}
+		
+		// Color
+        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+        if (uUseTexture) {
+            gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+        } else {
+            gl_FragColor = vec4(uColorWOTexture.rgb * vLightWeighting, uColorWOTexture.a);
+        }
+
+ 
+		// Mapa de Iluminación
+		if (uUseLightMap) {
+			vec4 light = texture2D(uLightSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+			vec3 vLightWeightingForLightMap = uAutoIluminationIntensity * uAutoIluminationColor;
+			gl_FragColor = vec4(textureColor.rgb * vLightWeighting + light.rgb * vLightWeightingForLightMap, textureColor.a);
+		}
+		
+		// Mapa de Reflexion
+        if (uUseReflection) {
+			vec2 reflectDir2D = vec2(reflectDir.x,reflectDir.y);
+			vec4 enviromentColor = texture2D(uReflectionSampler, reflectDir2D );
+			gl_FragColor = vec4(mix(textureColor, enviromentColor, uReflectFactor).rgb * vLightWeighting, textureColor.a);
+        }
+        }
+        
+    </script>
+</head>
+
+
+<body onload="webGLStart()">
+<center>
+    <h1>Space GL</h1>
+    <b> <font color="white">Solar Panels: </font></b>Open: O, Close: P
+    <br>
+    <b> <font color="white">Cameras: </font></b>Orbital 1, Cargo bay: 2, Spaceship cabin: 3, Spaceship 3er person: 4
+    <br>
+    <b> <font color="white">Spaceship movement: </font></b>WASD rotate, + - accelerate (must be in cameras 3 o 4), R:
+    Close landing gear, T: Open landing gear
+    <canvas id="tp-canvas" width="1280" height="720">
+        Your browser does not support the HTML5 canvas element.
+    </canvas>
+</center>
+</body>
+</html>
