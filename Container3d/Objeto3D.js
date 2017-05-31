@@ -349,7 +349,7 @@ class Objeto3D extends Container3D{
 
         //a continuacion se setea todo dependiendo del id
         if(this.objectType == CALLE){
-            gl.vertexAttrib1f(idStreet, this.id)
+            gl.vertexAttrib1f(idStreet, this.id);
         }
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
