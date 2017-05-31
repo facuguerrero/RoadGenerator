@@ -330,6 +330,7 @@
             if (!gl.getProgramParameter(streetShader, gl.LINK_STATUS)) {
                 alert("Could not initialise shaders");
             }
+            gl.useProgram(streetShader);
 
             streetShader.vertexPositionAttribute = gl.getAttribLocation(streetShader, "aVertexPosition");
             gl.enableVertexAttribArray(streetShader.vertexPositionAttribute);
@@ -374,6 +375,7 @@
                 alert("Could not initialise shaders");
             }
 
+            gl.useProgram(shaderProgramColoredObject);
 
             shaderProgramColoredObject.vertexPositionAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexPosition");
             gl.enableVertexAttribArray(shaderProgramColoredObject.vertexPositionAttribute);
