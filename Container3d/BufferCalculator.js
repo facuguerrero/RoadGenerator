@@ -72,6 +72,14 @@ class BufferCalculator{
     return this.normalBuffer;
     }
 
+    getTextureBuffer1(){
+    return this.textureBuffer1;
+    }
+
+    getTextureBuffer2(){
+    return this.textureBuffer2;
+    }
+
     /*
      vertices es una lista de vec3 que contienen las coordenadas
      x e y (con z = 1) de cada vertice, ya parametrizado de una superficie.
