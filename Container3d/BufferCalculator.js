@@ -10,6 +10,10 @@ class BufferCalculator{
     this.colorBuffer = [];
     this.normalBuffer = [];
     this.indexBuffer = [];
+    this.textureBuffer = [];
+
+    //Bool para saber si tiene textura o no!
+    this.texture = false;
 
     }
 
@@ -97,7 +101,6 @@ class BufferCalculator{
     //     }
     // }
 
-
     calcIndexBuffer() {
 
         for(var i = 0; i < (this.rows-1); i++) {
@@ -115,6 +118,10 @@ class BufferCalculator{
                 }
             }
         }
+    }
+
+    setBoolTexture(){
+        this.texture = true;
     }
 
     getPosBuffer(){
