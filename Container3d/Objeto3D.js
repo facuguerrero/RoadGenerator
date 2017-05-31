@@ -355,9 +355,6 @@ class Objeto3D extends Container3D{
         //Color
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-        //Normal
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
-        gl.vertexAttribPointer(this.shaderProgram.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         //Texture
         if(this.webglTextureBuffer){
@@ -369,6 +366,10 @@ class Objeto3D extends Container3D{
         if(this.objectType == CALLE){
             gl.vertexAttrib1f(idStreet, this.id);
         }
+
+        //Normal
+        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
+        gl.vertexAttribPointer(this.shaderProgram.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
         gl.uniformMatrix4fv(this.shaderProgram.ModelMatrixUniform, false, modelMatrix);
