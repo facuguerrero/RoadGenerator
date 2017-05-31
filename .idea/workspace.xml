@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -79,9 +78,22 @@
         <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1980">
-              <caret line="147" column="8" lean-forward="false" selection-start-line="147" selection-start-column="8" selection-end-line="147" selection-end-column="8" />
+              <caret line="155" column="8" lean-forward="false" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
               <folding>
-                <marker date="1496237774029" expanded="true" signature="53:320" ph="{...}" />
+                <marker date="1496239991151" expanded="true" signature="53:320" ph="{...}" />
+                <marker date="1496239991151" expanded="true" signature="1645:2282" ph="/*...*/" />
+                <marker date="1496239991151" expanded="true" signature="2364:4234" ph="{...}" />
+                <marker date="1496239991151" expanded="true" signature="2445:4226" ph="{...}" />
+                <marker date="1496239991151" expanded="true" signature="2642:4216" ph="{...}" />
+                <marker date="1496239991151" expanded="true" signature="3785:4008" ph="{...}" />
+                <marker date="1496239991151" expanded="true" signature="4045:4202" ph="{...}" />
+                <marker date="1496239991151" expanded="true" signature="4240:4678" ph="/*...*/" />
+                <marker date="1496239991151" expanded="true" signature="4958:5011" ph="/*...*/" />
+                <marker date="1496239991151" expanded="true" signature="5287:5346" ph="/*...*/" />
+                <marker date="1496239991151" expanded="true" signature="5618:5646" ph="/*...*/" />
+                <marker date="1496239991151" expanded="true" signature="5751:5780" ph="/*...*/" />
+                <marker date="1496239991151" expanded="true" signature="5952:5980" ph="/*...*/" />
+                <marker date="1496239991151" expanded="true" signature="6518:6741" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -316,7 +328,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/BufferCalculator.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/Objeto3D.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -580,13 +593,6 @@
       <workItem from="1496170636234" duration="2238000" />
       <workItem from="1496173126109" duration="647000" />
       <workItem from="1496222213509" duration="4502000" />
-    </task>
-    <task id="LOCAL-00105" summary="TODO">
-      <created>1495928954077</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1495928954077</updated>
     </task>
     <task id="LOCAL-00106" summary="Mnazana pasto">
       <created>1495977324038</created>
@@ -924,11 +930,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496239350721</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="Calle">
+      <created>1496239963933</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1496239963933</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290618000" />
+    <option name="totallyTimeSpent" value="290659000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -941,12 +954,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21674491" sideWeight="0.49380806" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1130031" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1130031" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -978,7 +990,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="acomode normales edificio" />
     <MESSAGE value="edificios random" />
     <MESSAGE value="Normales auto" />
     <MESSAGE value="Limpiando template para armar main" />
@@ -1003,7 +1014,8 @@
     <MESSAGE value="Load Shader" />
     <MESSAGE value="Columna" />
     <MESSAGE value="Template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Template" />
+    <MESSAGE value="Calle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1263,9 +1275,22 @@
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
-          <caret line="147" column="8" lean-forward="false" selection-start-line="147" selection-start-column="8" selection-end-line="147" selection-end-column="8" />
+          <caret line="155" column="8" lean-forward="false" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
           <folding>
-            <marker date="1496237774029" expanded="true" signature="53:320" ph="{...}" />
+            <marker date="1496239991151" expanded="true" signature="53:320" ph="{...}" />
+            <marker date="1496239991151" expanded="true" signature="1645:2282" ph="/*...*/" />
+            <marker date="1496239991151" expanded="true" signature="2364:4234" ph="{...}" />
+            <marker date="1496239991151" expanded="true" signature="2445:4226" ph="{...}" />
+            <marker date="1496239991151" expanded="true" signature="2642:4216" ph="{...}" />
+            <marker date="1496239991151" expanded="true" signature="3785:4008" ph="{...}" />
+            <marker date="1496239991151" expanded="true" signature="4045:4202" ph="{...}" />
+            <marker date="1496239991151" expanded="true" signature="4240:4678" ph="/*...*/" />
+            <marker date="1496239991151" expanded="true" signature="4958:5011" ph="/*...*/" />
+            <marker date="1496239991151" expanded="true" signature="5287:5346" ph="/*...*/" />
+            <marker date="1496239991151" expanded="true" signature="5618:5646" ph="/*...*/" />
+            <marker date="1496239991151" expanded="true" signature="5751:5780" ph="/*...*/" />
+            <marker date="1496239991151" expanded="true" signature="5952:5980" ph="/*...*/" />
+            <marker date="1496239991151" expanded="true" signature="6518:6741" ph="{...}" />
           </folding>
         </state>
       </provider>
