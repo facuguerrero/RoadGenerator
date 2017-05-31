@@ -1,6 +1,7 @@
 class ObjetosFactory {
 
     constructor() {
+        this.numB=4.0;
         //
     }
 
