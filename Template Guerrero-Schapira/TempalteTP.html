@@ -403,7 +403,7 @@
 
                 var location = gl.getUniformLocation(streetShader, "calle");
                 gl.uniform1i(location, 0) //0 ya que es la primer textura
-                gl.activeTexture(glTextures["calle"]);
+                gl.activeTexture(gl.TEXTURE0);
                 gl.bindTexture(gl.TEXTURE_2D, glTextures["calle"]);
         }
 
