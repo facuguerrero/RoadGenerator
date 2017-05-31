@@ -229,6 +229,7 @@ class ObjetosFactory {
          Devuelve una calle.
          */
         var calle = new Objeto3D();
+        calle.setType("calle",0.0);
 
         var arrayMatT = [];
         var matt = mat3.create();
@@ -243,7 +244,6 @@ class ObjetosFactory {
         pos.push(vec3.fromValues(0.0, 0.0, z));
         pos.push(vec3.fromValues(x, 0, 0));
         calle.calcularSuperficieBarrido("calle", 2, 2, arrayMatT, pos);
-        calle.setType("calle",0.0);
 
         return calle;
 

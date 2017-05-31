@@ -85,12 +85,6 @@ class Objeto3D extends Container3D{
         this.webglNormalBuffer.itemSize = 3;
         this.webglNormalBuffer.numItems = this.normalBuffer.length / 3;
 
-        this.webglColorBuffer = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.colorBuffer), gl.STATIC_DRAW);
-        this.webglColorBuffer.itemSize = 3;
-        this.webglColorBuffer.numItems = this.colorBuffer.length / 3;
-
         this.webglPosBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.posBuffer), gl.STATIC_DRAW);
@@ -103,12 +97,19 @@ class Objeto3D extends Container3D{
         this.webglIndexBuffer.itemSize = 1;
         this.webglIndexBuffer.numItems = this.indexBuffer.length;
 
-        if(this.textureBuffer1.length > 0){
+        if(this.bufferCreator.texture1){
             this.webglTextureBuffer = gl.createBuffer();
             gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglTextureBuffer);
             gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.textureBuffer1), gl.STATIC_DRAW);
             this.webglTextureBuffer.itemSize = 2;
             this.webglTextureBuffer.numItems = this.textureBuffer1.length;
+        }
+        else{
+            this.webglColorBuffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.colorBuffer), gl.STATIC_DRAW);
+            this.webglColorBuffer.itemSize = 3;
+            this.webglColorBuffer.numItems = this.colorBuffer.length / 3;
         }
 
 }
@@ -353,15 +354,12 @@ class Objeto3D extends Container3D{
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
-        //Color
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
-        gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-
         //Texture
-        if(this.objectType == CALLE){
+        if(this.bufferCreator.texture1){
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTextureBuffer);
             gl.vertexAttribPointer(this.shaderProgram.textureCoordAttribute, this.webglTextureBuffer.itemSize, gl.FLOAT, false, 0, 0);
-        }else{
+        }
+        else{
             //Color
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
             gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
