@@ -150,7 +150,7 @@
     }
 </script>
 
-    <script id="vs-street" type="x-shader/x-vertex">
+    <script id="vs-general" type="x-shader/x-vertex">
 
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
@@ -479,6 +479,49 @@
         var shaderProgramTexturedObject;
         var shaderProgramColoredObject;
         var streetShader;
+        var buildingShaders;
+
+        function initBuildingTopShaders() {
+
+            //Inicializamos el shader de la calle.
+
+            /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
+
+            var fragmentShader = getShader("fs-buildingTop");
+            var vertexShader = getShader("vs-general");
+
+            buildingShaders = gl.createProgram();
+            gl.attachShader(buildingShaders, vertexShader);
+            gl.attachShader(buildingShaders, fragmentShader);
+            gl.linkProgram(buildingShaders);
+
+            if (!gl.getProgramParameter(buildingShaders, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+            gl.useProgram(buildingShaders);
+
+            buildingShaders.vertexPositionAttribute = gl.getAttribLocation(buildingShaders, "aVertexPosition");
+            gl.enableVertexAttribArray(buildingShaders.vertexPositionAttribute);
+
+            buildingShaders.textureCoordAttribute = gl.getAttribLocation(buildingShaders, "aTextureCoord");
+            gl.enableVertexAttribArray(buildingShaders.textureCoordAttribute);
+
+            buildingShaders.vertexNormalAttribute = gl.getAttribLocation(buildingShaders, "aVertexNormal");
+            gl.enableVertexAttribArray(buildingShaders.vertexNormalAttribute);
+
+            buildingShaders.pMatrixUniform = gl.getUniformLocation(buildingShaders, "uPMatrix");
+            buildingShaders.ViewMatrixUniform = gl.getUniformLocation(buildingShaders, "uViewMatrix");
+            buildingShaders.ModelMatrixUniform = gl.getUniformLocation(buildingShaders, "uModelMatrix");
+            buildingShaders.nMatrixUniform = gl.getUniformLocation(buildingShaders, "uNMatrix");
+            buildingShaders.samplerUniform = gl.getUniformLocation(buildingShaders, "uSampler");
+            buildingShaders.useLightingUniform = gl.getUniformLocation(buildingShaders, "uUseLighting");
+            buildingShaders.ambientColorUniform = gl.getUniformLocation(buildingShaders, "uAmbientColor");
+            buildingShaders.lightingDirectionUniform = gl.getUniformLocation(buildingShaders, "uLightPosition");
+            buildingShaders.directionalColorUniform = gl.getUniformLocation(buildingShaders, "uDirectionalColor");
+
+            idBuilding = gl.getAttribLocation(buildingShaders, "aID");
+
+        }
 
         function initStreetShaders() {
             //Inicializamos el shader de la calle.
@@ -486,7 +529,7 @@
             /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
 
             var fragmentShader = getShader("fs-street");
-            var vertexShader = getShader("vs-street");
+            var vertexShader = getShader("vs-general");
 
             streetShader = gl.createProgram();
             gl.attachShader(streetShader, vertexShader);
@@ -573,6 +616,37 @@
                 gl.uniform1i(location, 0) //0 ya que es la primer textura
                 gl.activeTexture(gl.TEXTURE0);
                 gl.bindTexture(gl.TEXTURE_2D, glTextures["street"]);
+
+            //se cargan las texturas de los edificios
+                var nombresEdificios = ["ed1", "ed2", "ed3", "ed4", "ed5", "ed6", "ed7", "ed8", "ed9", "ed10", "ed11", "ed12", "ed13", "ed14", "ed15", "ed16"];
+                var TEXTURES = [gl.TEXTURE1, gl.TEXTURE2, gl.TEXTURE3, gl.TEXTURE4, gl.TEXTURE5, gl.TEXTURE6, gl.TEXTURE7, gl.TEXTURE8, gl.TEXTURE9, gl.TEXTURE10, gl.TEXTURE11, gl.TEXTURE12, gl.TEXTURE13, gl.TEXTURE14, gl.TEXTURE15, gl.TEXTURE16];
+                gl.useProgram(buildingShader);
+                loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
+                loadTexture("textures/ed2_pisos.jpg", nombresEdificios[1]);
+                loadTexture("textures/ed3_pisos.jpg", nombresEdificios[2]);
+                loadTexture("textures/ed4_pisos.jpg", nombresEdificios[3]);
+                loadTexture("textures/ed5_pisos.jpg", nombresEdificios[4]);
+                loadTexture("textures/ed7_pisos.jpg", nombresEdificios[5]);
+                loadTexture("textures/ed8_pisos.jpg", nombresEdificios[6]);
+                loadTexture("textures/ed9_pisos.jpg", nombresEdificios[7]);
+                loadTexture("textures/ed10_pisos.jpg", nombresEdificios[8]);
+                loadTexture("textures/ed11_pisos.jpg", nombresEdificios[9]);
+                loadTexture("textures/ed12_pisos.jpg", nombresEdificios[10]);
+                loadTexture("textures/ed14_pisos.jpg", nombresEdificios[11]);
+                loadTexture("textures/ed15_pisos.jpg", nombresEdificios[12]);
+                loadTexture("textures/ed16_pisos.jpg", nombresEdificios[13]);
+                loadTexture("textures/ed17_pisos.jpg", nombresEdificios[14]);
+                loadTexture("textures/ed19_pisos.jpg", nombresEdificios[15]);
+
+                for(i=1; i<17; i++) {
+
+                    var location = gl.getUniformLocation(buildingShader, nombresEdificios[i - 1]);
+                    gl.uniform1i(location, i)
+                    gl.activeTexture(TEXTURES[i - 1]);
+                    gl.bindTexture(gl.TEXTURE_2D, glTextures[nombresEdificios[i - 1]]);
+
+                }
+
         }
 
         function loadTexture(path, string) {
@@ -721,6 +795,7 @@
             initGL(canvas);
             initColoredShaders();
             initStreetShaders();
+            initBuildingTopShaders();
             initTextures();
 
             //shadersHandler = new ShaderHandler();
