@@ -99,8 +99,8 @@ class Objeto3D extends Container3D{
 
         if(this.bufferCreator.texture1){
             this.webglTextureBuffer = gl.createBuffer();
-            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglTextureBuffer);
-            gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.textureBuffer1), gl.STATIC_DRAW);
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTextureBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, new Uint16Array(this.textureBuffer1), gl.STATIC_DRAW);
             this.webglTextureBuffer.itemSize = 2;
             this.webglTextureBuffer.numItems = this.textureBuffer1.length;
         }
@@ -365,6 +365,7 @@ class Objeto3D extends Container3D{
             gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         }
+
         //a continuacion se setea todo dependiendo del id
         if(this.objectType == CALLE){
             gl.vertexAttrib1f(idStreet, this.id);
