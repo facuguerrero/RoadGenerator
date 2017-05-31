@@ -397,40 +397,34 @@
 
         function initTextures(){
 
-            glTextures["building1"] = loadTexture("textures/ed1_pisos.jpg");
-            glTextures["building1"] = loadTexture("textures/ed2_pisos.jpg");
-            glTextures["calle"] = loadTexture("textures/calle.jpg")
+            //se cargan las texturas de la calle
+                gl.useProgram(streetShader);
+                loadTexture("textures/calle.jpg", "calle");
+
+                var location = gl.getUniformLocation(streetShader, "calle");
+                gl.uniform1i(location, 0) //0 ya que es la primer textura
+                gl.activeTexture(glTextures["calle"]);
+                gl.bindTexture(gl.TEXTURE_2D, glTextures["calle"]);
         }
 
-        function loadTexture(path, clamp_edges) {
+        function loadTexture(path, string) {
             var texture = gl.createTexture();
             var image = new Image();
+
             image.onload = function() {
-                handleLoadedTexture(image, texture, clamp_edges);
+                gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+                gl.bindTexture(gl.TEXTURE_2D, texture);
+                gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+                gl.generateMipmap(gl.TEXTURE_2D);
             }
             image.src = path;
-
-            return texture;
-        }
-
-        function handleLoadedTexture() {
-//        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-//        gl.bindTexture(gl.TEXTURE_2D, mars.texture);
-//        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, mars.texture.image);
-//        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-//        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
-//        gl.generateMipmap(gl.TEXTURE_2D);
-//
-//        gl.bindTexture(gl.TEXTURE_2D, null);
-
-            //gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-            //gl.bindTexture(gl.TEXTURE_2D, phobos.texture);
-            //gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, phobos.texture.image);
-            //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-            //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
-            //gl.generateMipmap(gl.TEXTURE_2D);
-
-            //gl.bindTexture(gl.TEXTURE_2D, null);
+            texture.image = image;
+            //agrega la textura a glTextures
+            glTextures[string] = texture;
         }
 
         var CameraMatrix = mat4.create();
