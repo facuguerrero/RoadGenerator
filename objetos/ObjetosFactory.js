@@ -176,7 +176,7 @@ class ObjetosFactory {
          */
 
         var edificio = new Objeto3D();
-        calle.setType("edificio",this.numB);
+        edificio.setType("edificio",this.numB);
         this.sumNumB();
 
         //Creamos los puntos de la curva del edificio
@@ -355,7 +355,7 @@ class ObjetosFactory {
         vereda.add(perfil);
 
         var piso = new Objeto3D();
-        calle.setType("vereda",this.numB);
+        piso.setType("vereda",this.numB);
 
         var buf = new BufferCalculator(2,28);
         /*Seteo los buffers */
