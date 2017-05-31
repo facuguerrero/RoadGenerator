@@ -130,16 +130,16 @@ class BufferCalculator{
 
                 if (this.texture1) {
                     // Coordenadas
-                    var u = 1.0 - (i % 512.0) / 512.0;
-                    var v = 1.0 - (j / (this.rows - 1));
+                    var u = (i / (this.rows - 1));
+                    var v = (j / (this.colms - 1));
 
                     // if (switch_u == 1.0) {
                     //     u = 1.0 - (i % 512.0) / 512.0;
                     // } else {
                     //     u = (i % 512.0) / 512.0;
                     // }
-                    this.textureBuffer1.push(u);
                     this.textureBuffer1.push(v);
+                    this.textureBuffer1.push(u);
                     //hay que ver si hay que pasar otros vertices
                 }
 
