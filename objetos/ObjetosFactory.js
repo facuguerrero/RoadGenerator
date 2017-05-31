@@ -1,7 +1,7 @@
 class ObjetosFactory {
 
     constructor() {
-        this.numB=4.0;
+        this.numB=0.0;
         //
     }
 
@@ -176,6 +176,8 @@ class ObjetosFactory {
          */
 
         var edificio = new Objeto3D();
+        calle.setType("edificio",this.numB);
+        this.sumNumB();
 
         //Creamos los puntos de la curva del edificio
         var puntosEdificio = [];
@@ -353,6 +355,8 @@ class ObjetosFactory {
         vereda.add(perfil);
 
         var piso = new Objeto3D();
+        calle.setType("vereda",this.numB);
+
         var buf = new BufferCalculator(2,28);
         /*Seteo los buffers */
 
@@ -513,6 +517,13 @@ class ObjetosFactory {
             mat[2], mat[5], mat[8], 0,
             0, 0, 0, 1];
         return new_mat;
+    }
+
+    sumNumB(){
+        this.numB += 1.0;
+        if(this.numB >= 17.0){
+            this.numB=1.0;
+        }
     }
 
     llenarAlturas(){

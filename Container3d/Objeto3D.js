@@ -23,6 +23,8 @@ var RUTA = "ruta";
 var FAROL = "farol";
 var AUTO = "auto";
 var CALLE = "calle";
+var EDIFICIO = "edificio";
+var VEREDA = "vereda";
 
 
 class Objeto3D extends Container3D{
@@ -369,6 +371,12 @@ class Objeto3D extends Container3D{
         //a continuacion se setea todo dependiendo del id
         if(this.objectType == CALLE){
             gl.vertexAttrib1f(idStreet, this.id);
+        }
+        if(this.objectType == EDIFICIO){
+            gl.vertexAttrib1f(idBuilding, this.id);
+        }
+        if(this.objectType == VEREDA){
+            gl.vertexAttrib1f(idSideWalk, this.id);
         }
 
         //Normal
