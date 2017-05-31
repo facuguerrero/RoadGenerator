@@ -192,7 +192,8 @@ class Objeto3D extends Container3D{
             }
             escalado = arrayVecPos.pop();
             this.figuras.calcularCalle(vertices, arrayVecNOR, escalado[0]);
-            this.addColor(buffcalc, 4, 0.3, 0.3, 0.3);
+            buffcalc.setTextures(1);
+            //this.addColor(buffcalc, 4, 0.3, 0.3, 0.3);
 
         }
 
@@ -266,6 +267,8 @@ class Objeto3D extends Container3D{
         var ejeRotacion=[];
         var arrayVecNor=[];
 
+        var buffcalc = new BufferCalculator(rows, colms);
+
         if(figura == COLUMNA){
             if(rows != 2){
                 console.log("Para el pilar de la columna se necesitan solo 2 niveles");
@@ -289,7 +292,6 @@ class Objeto3D extends Container3D{
         }
 
 
-        var buffcalc = new BufferCalculator(rows, colms);
         buffcalc.calcularSuperficieRevolucion(arrayVecPos, ejeRotacion, arrayVecNor);
         this.setBufferCreator(buffcalc);
         this.build();
