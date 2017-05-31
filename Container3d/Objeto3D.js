@@ -100,7 +100,7 @@ class Objeto3D extends Container3D{
         if(this.bufferCreator.texture1){
             this.webglTextureBuffer = gl.createBuffer();
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTextureBuffer);
-            gl.bufferData(gl.ARRAY_BUFFER, new Uint16Array(this.textureBuffer1), gl.STATIC_DRAW);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.textureBuffer1), gl.STATIC_DRAW);
             this.webglTextureBuffer.itemSize = 2;
             this.webglTextureBuffer.numItems = this.textureBuffer1.length;
         }
