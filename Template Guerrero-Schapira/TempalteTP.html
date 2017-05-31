@@ -170,7 +170,7 @@
         }
 
 
-        function getShader(id) {
+        function getColoredShader(id) {
             var shaderScript = document.getElementById(id);
             if (!shaderScript) {
                 return null;
@@ -205,23 +205,23 @@
             return shader;
         }
 
-        //HAY QUE AGREGAR ESTA
-//        function getShader(genericShader){
-//
-////            var shader;
-////
-////            //shader = gl.createShader( genericShader.getType() );
-////
-////            gl.shaderSource(shader, genericShader.getShaderCode());
-////            gl.compileShader(shader);
-////
-////            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-////                alert(gl.getShaderInfoLog(shader));
-////                return null;
-////            }
-////
-////            return shader;
-//        }
+
+        function getShader(genericShader){
+
+            var shader;
+
+            //shader = gl.createShader( genericShader.getType() );
+
+            gl.shaderSource(shader, genericShader.getShaderCode());
+            gl.compileShader(shader);
+
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                alert(gl.getShaderInfoLog(shader));
+                return null;
+            }
+
+            return shader;
+        }
 
 
         var shaderProgramTexturedObject;
@@ -268,7 +268,7 @@
         }
 
 
-        function initShaders() {
+        function initColoredShaders() {
 
             ////////////////////////////////////////////
             ////////////////////////////////////////////
@@ -276,8 +276,8 @@
             // Inicializamos todo lo relacionado con el program shader para
             // renderizar objetos Coloreados
 
-            var fragmentShaderColoredObj = getShader("shader-fs-colored-obj");
-            var vertexShaderColoredObj = getShader("shader-vs-colored-obj");
+            var fragmentShaderColoredObj = getColoredShader("shader-fs-colored-obj");
+            var vertexShaderColoredObj = getColoredShader("shader-vs-colored-obj");
 
             shaderProgramColoredObject = gl.createProgram();
             gl.attachShader(shaderProgramColoredObject, vertexShaderColoredObj);
@@ -471,7 +471,7 @@
             body = document.getElementById("my_body");
 
             initGL(canvas);
-            initShaders();
+            initColoredShaders();
             initTextures();
 
             //shadersHandler = new ShaderHandler();
