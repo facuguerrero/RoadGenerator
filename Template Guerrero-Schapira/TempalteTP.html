@@ -210,7 +210,7 @@
 
             var shader;
 
-            //shader = gl.createShader( genericShader.getType() );
+            shader = gl.createShader( genericShader.getType() );
 
             gl.shaderSource(shader, genericShader.getShaderCode());
             gl.compileShader(shader);
@@ -228,8 +228,13 @@
         var shaderProgramColoredObject;
         var streetShader;
 
-        function initStreetShaders(genericVertex, genericFragment) {
+        function initStreetShaders() {
             //Inicializamos el shader de la calle.
+
+            var genericVertex = new GenericVertexShader();
+            genericVertex.setShaderCode();
+            var genericFragment = new GenericFragmentShader();
+            genericFragment.setShaderCode();
 
             /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
 
@@ -473,6 +478,7 @@
             initGL(canvas);
             initColoredShaders();
             initTextures();
+            initStreetShaders();
 
             //shadersHandler = new ShaderHandler();
             //shadersHandler.load();
