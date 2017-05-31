@@ -399,12 +399,12 @@
 
             //se cargan las texturas de la callee
                 gl.useProgram(streetShader);
-                loadTexture("textures/calle.jpg", "calle");
+                loadTexture("textures/calle.jpg", "street");
 
-                var location = gl.getUniformLocation(streetShader, "calle");
+                var location = gl.getUniformLocation(streetShader, "street");
                 gl.uniform1i(location, 0) //0 ya que es la primer textura
                 gl.activeTexture(gl.TEXTURE0);
-                gl.bindTexture(gl.TEXTURE_2D, glTextures["calle"]);
+                gl.bindTexture(gl.TEXTURE_2D, glTextures["street"]);
         }
 
         function loadTexture(path, string) {
