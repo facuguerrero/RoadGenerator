@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -706,14 +705,7 @@
       <workItem from="1496151688425" duration="293000" />
       <workItem from="1496170636234" duration="2238000" />
       <workItem from="1496173126109" duration="647000" />
-      <workItem from="1496222213509" duration="4442000" />
-    </task>
-    <task id="LOCAL-00102" summary="Veredirijilla">
-      <created>1495900962206</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1495900962208</updated>
+      <workItem from="1496222213509" duration="4502000" />
     </task>
     <task id="LOCAL-00103" summary="asdadqwe">
       <created>1495911472369</created>
@@ -1051,11 +1043,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496236839002</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="Columna">
+      <created>1496237460836</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1496237460836</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288211000" />
+    <option name="totallyTimeSpent" value="288271000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
