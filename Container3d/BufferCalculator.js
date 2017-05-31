@@ -119,6 +119,17 @@ class BufferCalculator{
                 this.colorBuffer.push(1.0/this.rows * i);
                 this.colorBuffer.push(0.2);
                 this.colorBuffer.push(1.0/this.colms * j);
+
+                if (this.texture1) {
+                    this.textureBuffer1.push(verticeFormaActual[0]);
+                    this.textureBuffer1.push(verticeFormaActual[1]);
+                    //hay que ver si hay que pasar otros vertices
+                }
+
+                if (this.texture2) {
+                    this.textureBuffer2.push(verticeFormaActual[0]);
+                    this.textureBuffer2.push(verticeFormaActual[1]);
+                }
             }
         }
       }
