@@ -129,8 +129,17 @@ class BufferCalculator{
                 this.colorBuffer.push(1.0/this.colms * j);
 
                 if (this.texture1) {
-                    this.textureBuffer1.push(verticeFormaActual[0]);
-                    this.textureBuffer1.push(verticeFormaActual[1]);
+                    // Coordenadas
+                    var u = 1.0 - (i % 512.0) / 512.0;
+                    var v = 1.0 - (j / (this.rows - 1));
+
+                    // if (switch_u == 1.0) {
+                    //     u = 1.0 - (i % 512.0) / 512.0;
+                    // } else {
+                    //     u = (i % 512.0) / 512.0;
+                    // }
+                    this.textureBuffer1.push(u);
+                    this.textureBuffer1.push(v);
                     //hay que ver si hay que pasar otros vertices
                 }
 

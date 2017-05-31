@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="Calle">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +30,8 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="405" column="44" lean-forward="false" selection-start-line="405" selection-start-column="44" selection-end-line="405" selection-end-column="44" />
+            <state relative-caret-position="256">
+              <caret line="744" column="44" lean-forward="false" selection-start-line="744" selection-start-column="44" selection-end-line="744" selection-end-column="44" />
               <folding>
                 <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -38,31 +41,56 @@
                 <element signature="n#script#20;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#33005#33013#0" expanded="true" />
+                <element signature="e#32011#32019#0" expanded="true" />
                 <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1496244352948" expanded="true" signature="1525:1602" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="2120:3112" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="2700:2762" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="2784:3053" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="3342:3519" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="4040:4962" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="4568:4630" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="4640:4909" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="5518:6484" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="6090:6152" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="6162:6431" ph="{...}" />
-                <marker date="1496244352948" expanded="false" signature="6956:8122" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="7008:7104" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="7132:7227" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="7255:7351" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="7379:7659" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="7424:7565" ph="/*...*/" />
-                <marker date="1496244352948" expanded="true" signature="7687:7784" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="7812:7910" ph="{...}" />
-                <marker date="1496244352948" expanded="true" signature="7938:8034" ph="{...}" />
-                <marker date="1496244352948" expanded="false" signature="30138:31126" ph="{...}" />
-                <marker date="1496244352948" expanded="false" signature="31158:32808" ph="..." />
-                <marker date="1496244352948" expanded="false" signature="33535:42138" ph="..." />
+                <marker date="1496256802726" expanded="true" signature="1525:1602" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="2120:3112" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="2700:2762" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="2784:3053" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="3342:3519" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="4040:4962" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="4568:4630" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="4640:4909" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="5518:6484" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="6090:6152" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="6162:6431" ph="{...}" />
+                <marker date="1496256802726" expanded="false" signature="6956:8122" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="7008:7104" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="7132:7227" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="7255:7351" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="7379:7659" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="7424:7565" ph="/*...*/" />
+                <marker date="1496256802726" expanded="true" signature="7687:7784" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="7812:7910" ph="{...}" />
+                <marker date="1496256802726" expanded="true" signature="7938:8034" ph="{...}" />
+                <marker date="1496256802726" expanded="false" signature="29144:30132" ph="{...}" />
+                <marker date="1496256802726" expanded="false" signature="30164:31814" ph="..." />
+                <marker date="1496256802726" expanded="false" signature="32541:41144" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-241">
+              <caret line="166" column="13" lean-forward="false" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
+              <folding>
+                <marker date="1496170279029" expanded="true" signature="1951:2046" ph="{...}" />
+                <marker date="1496170279029" expanded="true" signature="2186:2235" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="244" column="37" lean-forward="false" selection-start-line="244" selection-start-column="37" selection-end-line="244" selection-end-column="37" />
+              <folding>
+                <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,18 +109,8 @@
       <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3244">
-              <caret line="199" column="45" lean-forward="false" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/primitives/grid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8508">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="398">
+              <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -108,62 +126,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="grid.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/primitives/grid.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="299" column="37" lean-forward="false" selection-start-line="299" selection-start-column="25" selection-end-line="299" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="367" column="9" lean-forward="false" selection-start-line="367" selection-start-column="9" selection-end-line="367" selection-end-column="9" />
+            <state relative-caret-position="1289">
+              <caret line="341" column="38" lean-forward="false" selection-start-line="341" selection-start-column="38" selection-end-line="341" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutosAnimados.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
+      <file leaf-file-name="Container3D.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="113" column="58" lean-forward="false" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
+            <state relative-caret-position="354">
+              <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="104" column="56" lean-forward="false" selection-start-line="104" selection-start-column="56" selection-end-line="104" selection-end-column="56" />
-              <folding>
-                <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
-                <marker date="1496238318846" expanded="true" signature="21:20788" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="14273:15211" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="15293:15559" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="15399:15528" ph="[...]" />
-                <marker date="1496238318846" expanded="true" signature="15580:15886" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="15682:15856" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="15757:15812" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="15945:17469" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="16039:16061" ph="/*...*/" />
-                <marker date="1496238318846" expanded="true" signature="16143:16330" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="16613:16751" ph="[...]" />
-                <marker date="1496238318846" expanded="true" signature="16965:16987" ph="/*...*/" />
-                <marker date="1496238318846" expanded="true" signature="17231:17369" ph="[...]" />
-                <marker date="1496238318846" expanded="true" signature="17517:18527" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="17602:17719" ph="//..." />
-                <marker date="1496238318846" expanded="true" signature="18085:18202" ph="//..." />
-                <marker date="1496238318846" expanded="true" signature="18591:19231" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="18685:18707" ph="/*...*/" />
-                <marker date="1496238318846" expanded="true" signature="19123:19176" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="19283:19521" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="19557:20362" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="19647:19669" ph="/*...*/" />
-                <marker date="1496238318846" expanded="true" signature="19720:19758" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="19835:20017" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="20257:20309" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="20390:20786" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="20525:20617" ph="{...}" />
-                <marker date="1496238318846" expanded="true" signature="20677:20780" ph="//..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -179,8 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>consol</find>
-      <find>console</find>
       <find>tapa1</find>
       <find>grilla</find>
       <find>add</find>
@@ -209,6 +195,8 @@
       <find>Type</find>
       <find>.Type</find>
       <find>glTextures</find>
+      <find>ARRAY_BUFFER</find>
+      <find>calle2.setType(&quot;calle&quot;,0.0);</find>
     </findStrings>
     <replaceStrings>
       <replace>aux</replace>
@@ -229,11 +217,11 @@
       <replace>puerta2</replace>
       <replace>tapa2</replace>
       <replace>this.</replace>
-      <replace>this.shaderProgram</replace>
       <replace>glShaders[&quot;color&quot;]</replace>
       <replace>lastRead</replace>
       <replace>streetShader</replace>
       <replace>.setType</replace>
+      <replace>this.shaderProgram</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -264,14 +252,14 @@
         <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/handlers/ShaderHandler.js" />
-        <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/shaders/street/fs-street.glsl" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/shaders/street/vs-street.glsl" />
         <option value="$PROJECT_DIR$/objetos/AutosAnimados.js" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-        <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+        <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
   </component>
@@ -340,60 +328,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Template Guerrero-Schapira" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Template Guerrero-Schapira" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shaders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Template Guerrero-Schapira" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shaders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="street" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="objetos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -422,25 +356,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Bajado2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sistemas-graficos-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Bajado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sg_TP1-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1389,27 +1309,6 @@
       <workItem from="1496173126109" duration="647000" />
       <workItem from="1496222213509" duration="4502000" />
     </task>
-    <task id="LOCAL-00109" summary="Falta terminar la superficie de revolucion">
-      <created>1495988369463</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1495988369464</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Falta terminar la superficie de revolucion">
-      <created>1496002960694</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1496002960694</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Falta terminar la superficie de revolucion">
-      <created>1496009411428</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1496009411428</updated>
-    </task>
     <task id="LOCAL-00112" summary="Falta terminar la superficie de revolucion">
       <created>1496024270440</created>
       <option name="number" value="00112" />
@@ -1732,11 +1631,32 @@
       <option name="project" value="LOCAL" />
       <updated>1496244377409</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="Calle">
+      <created>1496244920967</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1496244920967</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Calle">
+      <created>1496252599525</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1496252599525</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Calle">
+      <created>1496254193398</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1496254193398</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295052000" />
+    <option name="totallyTimeSpent" value="300399000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1947,14 +1867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="69" column="48" lean-forward="false" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/shaders/color_shader.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1999,44 +1911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="104" column="56" lean-forward="false" selection-start-line="104" selection-start-column="56" selection-end-line="104" selection-end-column="56" />
-          <folding>
-            <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
-            <marker date="1496238318846" expanded="true" signature="21:20788" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="14273:15211" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="15293:15559" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="15399:15528" ph="[...]" />
-            <marker date="1496238318846" expanded="true" signature="15580:15886" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="15682:15856" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="15757:15812" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="15945:17469" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="16039:16061" ph="/*...*/" />
-            <marker date="1496238318846" expanded="true" signature="16143:16330" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="16613:16751" ph="[...]" />
-            <marker date="1496238318846" expanded="true" signature="16965:16987" ph="/*...*/" />
-            <marker date="1496238318846" expanded="true" signature="17231:17369" ph="[...]" />
-            <marker date="1496238318846" expanded="true" signature="17517:18527" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="17602:17719" ph="//..." />
-            <marker date="1496238318846" expanded="true" signature="18085:18202" ph="//..." />
-            <marker date="1496238318846" expanded="true" signature="18591:19231" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="18685:18707" ph="/*...*/" />
-            <marker date="1496238318846" expanded="true" signature="19123:19176" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="19283:19521" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="19557:20362" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="19647:19669" ph="/*...*/" />
-            <marker date="1496238318846" expanded="true" signature="19720:19758" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="19835:20017" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="20257:20309" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="20390:20786" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="20525:20617" ph="{...}" />
-            <marker date="1496238318846" expanded="true" signature="20677:20780" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/SupRevolucion.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-225">
@@ -2051,26 +1925,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/index.html">
+    <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2320">
-          <caret line="317" column="13" lean-forward="false" selection-start-line="317" selection-start-column="13" selection-end-line="317" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/primitives/grid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8508">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3244">
-          <caret line="199" column="45" lean-forward="false" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
+        <state relative-caret-position="18">
+          <caret line="113" column="58" lean-forward="false" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -2083,10 +1941,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
+    <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/primitives/grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="113" column="58" lean-forward="false" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
+        <state relative-caret-position="196">
+          <caret line="299" column="37" lean-forward="false" selection-start-line="299" selection-start-column="25" selection-end-line="299" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -2099,10 +1957,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1289">
+          <caret line="341" column="38" lean-forward="false" selection-start-line="341" selection-start-column="38" selection-end-line="341" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="166" column="13" lean-forward="false" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
+          <folding>
+            <marker date="1496170279029" expanded="true" signature="1951:2046" ph="{...}" />
+            <marker date="1496170279029" expanded="true" signature="2186:2235" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="405" column="44" lean-forward="false" selection-start-line="405" selection-start-column="44" selection-end-line="405" selection-end-column="44" />
+        <state relative-caret-position="256">
+          <caret line="744" column="44" lean-forward="false" selection-start-line="744" selection-start-column="44" selection-end-line="744" selection-end-column="44" />
           <folding>
             <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -2112,40 +2005,42 @@
             <element signature="n#script#20;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#33005#33013#0" expanded="true" />
+            <element signature="e#32011#32019#0" expanded="true" />
             <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1496244352948" expanded="true" signature="1525:1602" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="2120:3112" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="2700:2762" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="2784:3053" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="3342:3519" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="4040:4962" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="4568:4630" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="4640:4909" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="5518:6484" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="6090:6152" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="6162:6431" ph="{...}" />
-            <marker date="1496244352948" expanded="false" signature="6956:8122" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="7008:7104" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="7132:7227" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="7255:7351" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="7379:7659" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="7424:7565" ph="/*...*/" />
-            <marker date="1496244352948" expanded="true" signature="7687:7784" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="7812:7910" ph="{...}" />
-            <marker date="1496244352948" expanded="true" signature="7938:8034" ph="{...}" />
-            <marker date="1496244352948" expanded="false" signature="30138:31126" ph="{...}" />
-            <marker date="1496244352948" expanded="false" signature="31158:32808" ph="..." />
-            <marker date="1496244352948" expanded="false" signature="33535:42138" ph="..." />
+            <marker date="1496256802726" expanded="true" signature="1525:1602" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="2120:3112" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="2700:2762" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="2784:3053" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="3342:3519" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="4040:4962" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="4568:4630" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="4640:4909" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="5518:6484" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="6090:6152" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="6162:6431" ph="{...}" />
+            <marker date="1496256802726" expanded="false" signature="6956:8122" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="7008:7104" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="7132:7227" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="7255:7351" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="7379:7659" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="7424:7565" ph="/*...*/" />
+            <marker date="1496256802726" expanded="true" signature="7687:7784" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="7812:7910" ph="{...}" />
+            <marker date="1496256802726" expanded="true" signature="7938:8034" ph="{...}" />
+            <marker date="1496256802726" expanded="false" signature="29144:30132" ph="{...}" />
+            <marker date="1496256802726" expanded="false" signature="30164:31814" ph="..." />
+            <marker date="1496256802726" expanded="false" signature="32541:41144" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="367" column="9" lean-forward="false" selection-start-line="367" selection-start-column="9" selection-end-line="367" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="378">
+          <caret line="244" column="37" lean-forward="false" selection-start-line="244" selection-start-column="37" selection-end-line="244" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!block;n#createGrid#0;n#ObjetosFactory#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -230,10 +230,6 @@ class ObjetosFactory {
          */
         var calle = new Objeto3D();
 
-        var buffcalc = new BufferCalculator(2, 2);
-        calle.setBufferCreator(buffcalc);
-        calle.build();
-
         var arrayMatT = [];
         var matt = mat3.create();
         var mattt = mat3.create();
@@ -242,13 +238,12 @@ class ObjetosFactory {
         arrayMatT.push(matt);
         arrayMatT.push(mattt);
 
-        var linea = new Objeto3D();
         var pos = [];
         pos.push(vec3.fromValues(0.0, 0.0, 0.0));
         pos.push(vec3.fromValues(0.0, 0.0, z));
         pos.push(vec3.fromValues(x, 0, 0));
-        linea.calcularSuperficieBarrido("calle", 2, 2, arrayMatT, pos);
-        calle.add(linea);
+        calle.calcularSuperficieBarrido("calle", 2, 2, arrayMatT, pos);
+        calle.setType("calle",0.0);
 
         return calle;
 
