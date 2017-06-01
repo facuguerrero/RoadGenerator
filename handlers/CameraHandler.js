@@ -295,23 +295,24 @@ class CameraHandler{
 
         switch (e.keyCode) {
             case 87: // W
-                freeCamR.addPosZ(Math.sin(theta - Math.PI/4) * VEL_MOV/10);
-                freeCamR.addPosX(Math.cos(theta - Math.PI/4) * VEL_MOV/10);
+                freeCamR.addPosZ(Math.cos(theta) * VEL_MOV/10);
+                freeCamR.addPosX(Math.sin(theta) * VEL_MOV/10);
                 break;
 
             case 65: // A
-                freeCamR.addPosZ(-Math.sin(theta + Math.PI/4) * VEL_MOV/10);
-                freeCamR.addPosX(-Math.cos(theta + Math.PI/4) * VEL_MOV/10);
+                freeCamR.addPosZ(Math.cos(theta + Math.PI/2) * VEL_MOV/10);
+                freeCamR.addPosX(Math.sin(theta + Math.PI/2) * VEL_MOV/10);
                 break;
 
             case 83: // S
-                freeCamR.addPosZ(-Math.sin(theta - Math.PI/4) * VEL_MOV/10);
-                freeCamR.addPosX(-Math.cos(theta - Math.PI/4) * VEL_MOV/10);
+                freeCamR.addPosZ(-Math.cos(theta) * VEL_MOV/10);
+                freeCamR.addPosX(-Math.sin(theta) * VEL_MOV/10);
                 break;
 
-            case 68: // D
-                freeCamR.addPosZ(Math.sin(theta + Math.PI/4) * VEL_MOV/10);
-                freeCamR.addPosX(Math.cos(theta + Math.PI/4) * VEL_MOV/10);
+            case 68: // S
+                freeCamR.addPosZ(Math.cos(theta - Math.PI/2) * VEL_MOV/10);
+                freeCamR.addPosX(Math.sin(theta - Math.PI/2) * VEL_MOV/10);
+                break;
                 break;
 
             case 81: // Q
