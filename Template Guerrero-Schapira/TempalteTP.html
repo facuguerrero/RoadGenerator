@@ -213,12 +213,6 @@
 
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
     uniform sampler2D street;
-    uniform sampler2D cross;
-    uniform sampler2D vereda;
-    uniform sampler2D pasto;
-    uniform sampler2D asfalto;
-    uniform sampler2D concreto;
-    uniform sampler2D postes;
 
     varying float vID;
 
@@ -228,30 +222,179 @@
         if(vID == 0.0){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
         }
-        else if(vID == 1.0){
-           textureColor = texture2D(cross, vec2(vTextureCoord.s, vTextureCoord.t));
+
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+    }
+    </script>
+
+    <script id="fs-buildingTop" type="x-shader/x-fragment">
+    precision highp float;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    uniform float t;
+
+    //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
+
+    uniform sampler2D building1;
+    uniform sampler2D building2;
+    uniform sampler2D building3;
+    uniform sampler2D building4;
+    uniform sampler2D building5;
+    uniform sampler2D building6;
+    uniform sampler2D building7;
+    uniform sampler2D building8;
+    uniform sampler2D building9;
+    uniform sampler2D building10;
+    uniform sampler2D building11;
+    uniform sampler2D building12;
+    uniform sampler2D pb1;
+    uniform sampler2D pb2;
+    uniform sampler2D pb3;
+    uniform sampler2D pb4;
+
+    varying float vID;
+
+    void main(void) {
+        vec4 textureColor;
+        vec4 textureColor2;
+        float factor = 0.2;
+
+        // Coordenada de textura sin modifiaciones
+        vec4 color = vec4(1.0,0.0,0.0, 1.0);
+        vec2 auxUv = vTextureCoord;
+        vec2 auxUv2 = vTextureCoord;
+
+
+        if(vID == 1.0){
+            auxUv2.x = auxUv2.x * 4.0;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 1.0;
+            auxUv.y = auxUv.y * 1.2;
+            factor = 0.13;
+            textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 2.0){
-           textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
+            auxUv2.x = auxUv2.x * 4.0;
+            auxUv2.y = auxUv2.y * 2.0;
+            auxUv.x = auxUv.x * 0.8;
+            auxUv.y = auxUv.y * 1.2;
+            factor = 0.32;
+           textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 3.0){
-           //EL PASTO SE REPITE
-           /*vec2 auxUV = vTextureCoord;
-           auxUV.x = auxUV.x * 4.0;
-           auxUV.y = auxUV.y * 4.0;
-           y en vez de vec2 pasar aux*/
-           textureColor = texture2D(pasto, vec2(vTextureCoord.s, vTextureCoord.t));
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 4.0){
-           textureColor = texture2D(asfalto, vec2(vTextureCoord.s, vTextureCoord.t));
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building4, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 5.0){
-           textureColor = texture2D(concreto, vec2(vTextureCoord.s, vTextureCoord.t));
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 6.0){
-           textureColor = texture2D(postes, vec2(vTextureCoord.s, vTextureCoord.t));
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+        }
+        else if(vID == 7.0){
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+        }
+        else if(vID == 8.0){
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+        }
+        else if(vID == 9.0){
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+        }
+        else if(vID == 10.0){
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building10, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+        }
+        else if(vID == 11.0){
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+        }
+        else if(vID == 12.0){
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+           textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+        }
+        else{
+            auxUv2.x = auxUv2.x;
+            auxUv2.y = auxUv2.y;
+            auxUv.x = auxUv.x * 5.0;
+            auxUv.y = auxUv.y * 5.0;
+            textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
 
+            auxUv2.x = auxUv2.x * 4.0;
+            auxUv2.y = auxUv2.y * 2.0;
+            auxUv.x = auxUv.x * 0.8;
+            auxUv.y = auxUv.y * 1.1;
+            factor = 0.36;
+           textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
+           textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+
+        if(auxUv2.y < factor){
+
+            color.x=textureColor2.x;
+            color.y=textureColor2.y;
+            color.z=textureColor2.z;
+        }
+        else{
+            color.x=textureColor.x;
+            color.y=textureColor.y;
+            color.z=textureColor.z;
+        }
+
+        textureColor = color;
         gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
     }
     </script>
@@ -282,10 +425,10 @@
 
     void main(void) {
 
+        vTextureCoord = aTextureCoord;
+
         //se pasa el id
         vID = aID;
-
-        vTextureCoord = aTextureCoord;
 
         // position
         vec4 auxPos = vec4(aVertexPosition,1.0);
@@ -325,193 +468,76 @@
 
     </script>
 
-    <script id="fs-buildingTop" type="x-shader/x-fragment">
-    precision highp float;
+    <!--<script id="fs-buildingLow" type="x-shader/x-fragment">-->
+    <!--precision highp float;-->
 
-    varying vec2 vTextureCoord;
-    varying vec3 vLightWeighting;
+    <!--varying vec2 vTextureCoord;-->
+    <!--varying vec3 vLightWeighting;-->
 
-    uniform float t;
+    <!--//TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0-->
 
-    //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
+    <!--uniform sampler2D pb1;-->
+    <!--uniform sampler2D pb2;-->
+    <!--uniform sampler2D pb3;-->
+    <!--uniform sampler2D pb4;-->
 
-    uniform sampler2D building1;
-    uniform sampler2D building2;
-    uniform sampler2D building3;
-    uniform sampler2D building4;
-    uniform sampler2D building5;
-    uniform sampler2D building6;
-    uniform sampler2D building7;
-    uniform sampler2D building8;
-    uniform sampler2D building9;
-    uniform sampler2D building10;
-    uniform sampler2D building11;
-    uniform sampler2D building12;
-    uniform sampler2D pb1;
-    uniform sampler2D pb2;
-    uniform sampler2D pb3;
-    uniform sampler2D pb4;
+    <!--uniform sampler2D pb5;-->
+    <!--uniform sampler2D pb6;-->
+    <!--uniform sampler2D pb7;-->
+    <!--uniform sampler2D pb8;-->
 
-    varying float vID;
+    <!--uniform sampler2D pb9;-->
+    <!--uniform sampler2D pb10;-->
+    <!--uniform sampler2D pb11;-->
+    <!--uniform sampler2D pb12;-->
 
-    void main(void) {
-        vec4 textureColor;
-        vec4 textureColor2;
-        vec4 textureColor3;
-        vec4 textureColor4;
-        vec4 textureColor5;
-
-        // Coordenada de textura sin modifiaciones
-        vec4 color = vec4(1.0,0.0,0.0, 1.0);
-        vec2 auxUv = vTextureCoord;
-        auxUv.x = auxUv.x * 0.67;
-        auxUv.x = auxUv.x * 0.3;
+    <!--uniform sampler2D pb13;-->
+    <!--uniform sampler2D pb14;-->
+    <!--uniform sampler2D vereda;-->
 
 
-        if(vID == 1.0){
-           textureColor = texture2D(building1, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 2.0){
-           textureColor = texture2D(building2, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 3.0){
-           textureColor = texture2D(building3, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 4.0){
-           textureColor = texture2D(building4, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 5.0){
-           textureColor = texture2D(building5, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 6.0){
-           textureColor = texture2D(building6, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 7.0){
-           textureColor = texture2D(building7, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 8.0){
-           textureColor = texture2D(building8, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 9.0){
-           textureColor = texture2D(building9, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 10.0){
-           textureColor = texture2D(building10, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 11.0){
-           textureColor = texture2D(building11, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 12.0){
-           textureColor = texture2D(building12, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-//        else if(vID == 13.0){
-//            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
-//        }
-//        else if(vID == 14.0){
-//            textureColor3 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
-//        }
-//        else if(vID == 15.0){
-//            textureColor4 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
-//        }
-//        else if(vID == 16.0){
-//            textureColor5 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
-//        }
+    <!--varying float vID;-->
 
-        textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+    <!--void main(void) {-->
+        <!--vec4 textureColor;-->
 
-        textureColor3 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+        <!--if(vID == 5.0){-->
+           <!--textureColor = texture2D(pb5, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 6.0){-->
+           <!--textureColor = texture2D(pb6, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 7.0){-->
+           <!--textureColor = texture2D(pb7, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 8.0){-->
+           <!--textureColor = texture2D(pb8, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 9.0){-->
+           <!--textureColor = texture2D(pb9, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 10.0){-->
+           <!--textureColor = texture2D(pb10, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 11.0){-->
+           <!--textureColor = texture2D(pb11, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 12.0){-->
+           <!--textureColor = texture2D(pb12, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 13.0){-->
+           <!--textureColor = texture2D(pb13, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 14.0){-->
+           <!--textureColor = texture2D(pb14, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
+        <!--else if(vID == 15.0){-->
+           <!--textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));-->
+        <!--}-->
 
-        textureColor4 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
-
-        textureColor5 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
-
-
-        if(vTextureCoord.y < 1.0){
-
-            color.x=textureColor2.x;
-            color.y=textureColor2.y;
-            color.z=textureColor2.z;
-        }
-        else{
-            color.x=textureColor.x;
-            color.y=textureColor.y;
-            color.z=textureColor.z;
-        }
-
-        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
-    }
-    </script>
-
-    <script id="fs-buildingLow" type="x-shader/x-fragment">
-    precision highp float;
-
-    varying vec2 vTextureCoord;
-    varying vec3 vLightWeighting;
-
-    //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
-
-    uniform sampler2D pb1;
-    uniform sampler2D pb2;
-    uniform sampler2D pb3;
-    uniform sampler2D pb4;
-
-    uniform sampler2D pb5;
-    uniform sampler2D pb6;
-    uniform sampler2D pb7;
-    uniform sampler2D pb8;
-
-    uniform sampler2D pb9;
-    uniform sampler2D pb10;
-    uniform sampler2D pb11;
-    uniform sampler2D pb12;
-
-    uniform sampler2D pb13;
-    uniform sampler2D pb14;
-    uniform sampler2D vereda;
-
-
-    varying float vID;
-
-    void main(void) {
-        vec4 textureColor;
-
-        if(vID == 5.0){
-           textureColor = texture2D(pb5, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 6.0){
-           textureColor = texture2D(pb6, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 7.0){
-           textureColor = texture2D(pb7, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 8.0){
-           textureColor = texture2D(pb8, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 9.0){
-           textureColor = texture2D(pb9, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 10.0){
-           textureColor = texture2D(pb10, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 11.0){
-           textureColor = texture2D(pb11, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 12.0){
-           textureColor = texture2D(pb12, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 13.0){
-           textureColor = texture2D(pb13, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 14.0){
-           textureColor = texture2D(pb14, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 15.0){
-           textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-
-        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
-    }
-    </script>
+        <!--gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);-->
+    <!--}-->
+    <!--</script>-->
 
     <script type="text/javascript">
 
@@ -715,7 +741,7 @@
                 gl.useProgram(buildingShaders);
                 loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
                 loadTexture("textures/ed2_pisos.jpg", nombresEdificios[1]);
-                loadTexture("textures/ed3_pisos.jpg", nombresEdificios[2]);
+                loadTexture("textures/ed17_pisos.jpg", nombresEdificios[2]);
                 loadTexture("textures/ed4_pisos.jpg", nombresEdificios[3]);
                 loadTexture("textures/ed5_pisos.jpg", nombresEdificios[4]);
                 loadTexture("textures/ed7_pisos.jpg", nombresEdificios[5]);
