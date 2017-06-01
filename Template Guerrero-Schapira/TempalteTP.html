@@ -256,11 +256,82 @@
     }
     </script>
 
+    <script id="vs-buildingTop" type="x-shader/x-vertex">
+
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+    attribute float aID;
+
+    uniform mat4 uViewMatrix;
+    uniform mat4 uModelMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform vec3 uAmbientColor;
+    uniform vec3 uLightPosition;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+    varying float vID;
+
+    uniform float t;
+
+    void main(void) {
+
+        //se pasa el id
+        vID = aID;
+
+        vTextureCoord = aTextureCoord;
+
+        // position
+        vec4 auxPos = vec4(aVertexPosition,1.0);
+
+        float escalaY=min(1.0,t*0.001);
+        auxPos.y=auxPos.y*escalaY;
+
+        // uv
+        vec2 auxUv=vTextureCoord;
+        auxUv.y = auxUv.y*escalaY;
+
+        vTextureCoord = auxUv;
+
+        // Transformamos al v�rtice al espacio de la c�mara
+		vec4 pos_camera_view = uViewMatrix * uModelMatrix * auxPos;
+
+		// Transformamos al v�rtice al espacio de la proyecci�n
+        gl_Position = uPMatrix * pos_camera_view;
+
+
+		////////////////////////////////////////////
+		// Calculos de la iluminaci�n
+		vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
+		normalize(light_dir);
+        if (!uUseLighting)
+		{
+            vLightWeighting = vec3(1.0, 1.0, 1.0);
+        }
+		else
+		{
+            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
+            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
+            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+        }
+		////////////////////////////////////////////
+    }
+
+    </script>
+
     <script id="fs-buildingTop" type="x-shader/x-fragment">
     precision highp float;
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
+
+    uniform float t;
 
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
 
@@ -276,15 +347,26 @@
     uniform sampler2D building10;
     uniform sampler2D building11;
     uniform sampler2D building12;
-    uniform sampler2D building13;
-    uniform sampler2D building14;
-    uniform sampler2D building15;
-    uniform sampler2D building16;
+    uniform sampler2D pb1;
+    uniform sampler2D pb2;
+    uniform sampler2D pb3;
+    uniform sampler2D pb4;
 
     varying float vID;
 
     void main(void) {
         vec4 textureColor;
+        vec4 textureColor2;
+        vec4 textureColor3;
+        vec4 textureColor4;
+        vec4 textureColor5;
+
+        // Coordenada de textura sin modifiaciones
+        vec4 color = vec4(1.0,0.0,0.0, 1.0);
+        vec2 auxUv = vTextureCoord;
+        auxUv.x = auxUv.x * 0.67;
+        auxUv.x = auxUv.x * 0.3;
+
 
         if(vID == 1.0){
            textureColor = texture2D(building1, vec2(vTextureCoord.s, vTextureCoord.t));
@@ -322,17 +404,38 @@
         else if(vID == 12.0){
            textureColor = texture2D(building12, vec2(vTextureCoord.s, vTextureCoord.t));
         }
-        else if(vID == 13.0){
-           textureColor = texture2D(building13, vec2(vTextureCoord.s, vTextureCoord.t));
+//        else if(vID == 13.0){
+//            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+//        }
+//        else if(vID == 14.0){
+//            textureColor3 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+//        }
+//        else if(vID == 15.0){
+//            textureColor4 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+//        }
+//        else if(vID == 16.0){
+//            textureColor5 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+//        }
+
+        textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+
+        textureColor3 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+
+        textureColor4 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+
+        textureColor5 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+
+
+        if(vTextureCoord.y < 1.0){
+
+            color.x=textureColor2.x;
+            color.y=textureColor2.y;
+            color.z=textureColor2.z;
         }
-        else if(vID == 14.0){
-           textureColor = texture2D(building14, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 15.0){
-           textureColor = texture2D(building15, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 16.0){
-           textureColor = texture2D(building16, vec2(vTextureCoord.s, vTextureCoord.t));
+        else{
+            color.x=textureColor.x;
+            color.y=textureColor.y;
+            color.z=textureColor.z;
         }
 
         gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
@@ -372,19 +475,7 @@
     void main(void) {
         vec4 textureColor;
 
-        if(vID == 1.0){
-           textureColor = texture2D(pb1, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 2.0){
-           textureColor = texture2D(pb2, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 3.0){
-           textureColor = texture2D(pb3, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 4.0){
-           textureColor = texture2D(pb4, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-        else if(vID == 5.0){
+        if(vID == 5.0){
            textureColor = texture2D(pb5, vec2(vTextureCoord.s, vTextureCoord.t));
         }
         else if(vID == 6.0){
@@ -488,7 +579,7 @@
             /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
 
             var fragmentShader = getShader("fs-buildingTop");
-            var vertexShader = getShader("vs-general");
+            var vertexShader = getShader("vs-buildingTop");
 
             buildingShaders = gl.createProgram();
             gl.attachShader(buildingShaders, vertexShader);
@@ -619,7 +710,7 @@
 
                 //se cargan las texturas de los edificios
                 var nombresEdificios = ["building1", "building2", "building3", "building4", "building5", "building6", "building7",
-                    "building8", "building9", "building10", "building11", "building12", "building13", "building14", "building15", "building16"];
+                    "building8", "building9", "building10", "building11", "building12", "pb1", "pb2", "pb3", "pb4"];
                 var TEXTURES = [gl.TEXTURE1, gl.TEXTURE2, gl.TEXTURE3, gl.TEXTURE4, gl.TEXTURE5, gl.TEXTURE6, gl.TEXTURE7, gl.TEXTURE8, gl.TEXTURE9, gl.TEXTURE10, gl.TEXTURE11, gl.TEXTURE12, gl.TEXTURE13, gl.TEXTURE14, gl.TEXTURE15, gl.TEXTURE16];
                 gl.useProgram(buildingShaders);
                 loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
@@ -634,10 +725,10 @@
                 loadTexture("textures/ed11_pisos.jpg", nombresEdificios[9]);
                 loadTexture("textures/ed12_pisos.jpg", nombresEdificios[10]);
                 loadTexture("textures/ed14_pisos.jpg", nombresEdificios[11]);
-                loadTexture("textures/ed15_pisos.jpg", nombresEdificios[12]);
-                loadTexture("textures/ed16_pisos.jpg", nombresEdificios[13]);
-                loadTexture("textures/ed17_pisos.jpg", nombresEdificios[14]);
-                loadTexture("textures/ed19_pisos.jpg", nombresEdificios[15]);
+                loadTexture("textures/ed1_pb.jpg", nombresEdificios[12]);
+                loadTexture("textures/ed2_pb.jpg", nombresEdificios[13]);
+                loadTexture("textures/ed8_pb.jpg", nombresEdificios[14]);
+                loadTexture("textures/ed4_pb.jpg", nombresEdificios[15]);
 
                 for(i=1; i<17; i++) {
 
@@ -675,6 +766,7 @@
         var mvMatrix = mat4.create();
         var mvMatrixStack = [];
         var pMatrix = mat4.create();
+        var frame=0;
 
         var body = null;
         var canvas = null;
@@ -784,6 +876,11 @@
             escena.draw(model_matrix_escene, false);
 
             autosAnimados.updateAutos();
+
+            var t = gl.getUniformLocation(buildingShaders, "t");
+            gl.useProgram(buildingShaders);
+            gl.uniform1f(t,frame);
+            frame++;
 
         }
 

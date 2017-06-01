@@ -577,7 +577,7 @@ class ObjetosFactory {
 
     sumNumB(){
         this.numB += 1.0;
-        if(this.numB >= 17.0){
+        if(this.numB >= 13.0){
             this.numB=1.0;
         }
     }
