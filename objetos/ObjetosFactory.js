@@ -690,7 +690,20 @@ class ObjetosFactory {
 
         var buf = new BufferCalculator(2,11);
         /*Seteo los buffers */
-        buf.normalBuffer = rueda.bufferCreator.normalBuffer;
+
+        var norm = [];
+        var n = -1.0;
+        if (trasladar){
+            n=1.0;
+        }
+        var col = [];
+        for(var i=0.0; i<rueda.bufferCreator.normalBuffer.length /3; i++){
+            norm.push(0.0);
+            norm.push(0.0);
+            norm.push(n);
+
+        }
+        buf.normalBuffer = norm;
         buf.colorBuffer = rueda.bufferCreator.colorBuffer;
         tapa1.setBufferCreator(buf);
 

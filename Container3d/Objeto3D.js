@@ -273,6 +273,7 @@ class Objeto3D extends Container3D{
             }
             escalado = arrayVecPos.pop();
             this.figuras.createRueda(vertices,arrayVecNOR,escalado);
+            this.addColor(buffcalc,vertices.length*3,0.0,0.0,0.0);
         }
 
         else if(figura == VEREDA){
