@@ -173,8 +173,8 @@ class Objeto3D extends Container3D{
             //el ultimo trae la dimension de x
            var escalado = arrayVecPos.pop();
            this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
-           buffcalc.setTextures(1);
-           //this.addColor(buffcalc, 4, 1.0,0.0,0.0);
+           //buffcalc.setTextures(1);
+           this.addColor(buffcalc, 4, 1.0,0.0,0.0);
 
         }
 
