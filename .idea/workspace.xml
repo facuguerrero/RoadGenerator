@@ -30,9 +30,77 @@
       <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
+            <state relative-caret-position="155">
+              <caret line="358" column="49" lean-forward="false" selection-start-line="358" selection-start-column="49" selection-end-line="358" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="620" column="49" lean-forward="false" selection-start-line="620" selection-start-column="41" selection-end-line="620" selection-end-column="49" />
+              <folding>
+                <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1496318342731" expanded="true" signature="1525:1602" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="2120:3112" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="2700:2762" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="2784:3053" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="3342:3519" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="4040:4962" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="4568:4630" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="4640:4909" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="5519:6485" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="6091:6153" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="6163:6432" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="6957:8123" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="7009:7105" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="7133:7228" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="7256:7352" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="7380:7660" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="7425:7566" ph="/*...*/" />
+                <marker date="1496318342731" expanded="true" signature="7688:7785" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="7813:7911" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="7939:8035" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="8924:11082" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="8976:9075" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9103:9202" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9230:9329" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9357:9456" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9484:9583" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9611:9710" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9738:9837" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9865:9964" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="9992:10091" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="10120:10220" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="10249:10349" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="10378:10478" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="10507:10607" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="10636:10736" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="10765:10865" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="10894:10994" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="11765:13706" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="11817:11910" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="11938:12031" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12059:12152" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12180:12273" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12301:12394" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12422:12515" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12543:12636" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12664:12757" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12785:12878" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="12907:13001" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="13030:13124" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="13153:13247" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="13276:13370" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="13399:13493" ph="{...}" />
+                <marker date="1496318342731" expanded="true" signature="13522:13618" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>revolucion</find>
       <find>columna</find>
       <find>FigurasPrimitivias</find>
       <find>createC</find>
@@ -78,6 +145,7 @@
       <find>objeto</find>
       <find>idst</find>
       <find>idStreet</find>
+      <find>building</find>
     </findStrings>
     <replaceStrings>
       <replace>aux</replace>
@@ -138,9 +206,9 @@
         <option value="$PROJECT_DIR$/objetos/AutosAnimados.js" />
         <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
       </list>
     </option>
   </component>
@@ -180,6 +248,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Template Guerrero-Schapira" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -27930,13 +28012,6 @@
       <workItem from="1496173126109" duration="647000" />
       <workItem from="1496222213509" duration="4502000" />
     </task>
-    <task id="LOCAL-00125" summary="Columna">
-      <created>1496151148139</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1496151148139</updated>
-    </task>
     <task id="LOCAL-00126" summary="Columna">
       <created>1496151941663</created>
       <option name="number" value="00126" />
@@ -28273,11 +28348,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496265071993</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Set Types">
+      <created>1496318550858</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1496318550859</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308783000" />
+    <option name="totallyTimeSpent" value="309572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -28292,52 +28374,33 @@
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21283256" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1130031" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11413044" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.213125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21283256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11413044" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1130031" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.213125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11413044" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.213125" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -28627,21 +28690,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1298">
-          <caret line="720" column="26" lean-forward="true" selection-start-line="720" selection-start-column="26" selection-end-line="720" selection-end-column="26" />
+        <state relative-caret-position="188">
+          <caret line="620" column="49" lean-forward="false" selection-start-line="620" selection-start-column="41" selection-end-line="620" selection-end-column="49" />
           <folding>
             <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1496318342731" expanded="true" signature="1525:1602" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="2120:3112" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="2700:2762" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="2784:3053" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="3342:3519" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="4040:4962" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="4568:4630" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="4640:4909" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="5519:6485" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="6091:6153" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="6163:6432" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="6957:8123" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="7009:7105" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="7133:7228" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="7256:7352" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="7380:7660" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="7425:7566" ph="/*...*/" />
+            <marker date="1496318342731" expanded="true" signature="7688:7785" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="7813:7911" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="7939:8035" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="8924:11082" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="8976:9075" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9103:9202" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9230:9329" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9357:9456" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9484:9583" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9611:9710" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9738:9837" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9865:9964" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="9992:10091" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="10120:10220" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="10249:10349" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="10378:10478" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="10507:10607" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="10636:10736" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="10765:10865" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="10894:10994" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="11765:13706" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="11817:11910" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="11938:12031" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12059:12152" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12180:12273" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12301:12394" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12422:12515" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12543:12636" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12664:12757" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12785:12878" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="12907:13001" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="13030:13124" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="13153:13247" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="13276:13370" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="13399:13493" ph="{...}" />
+            <marker date="1496318342731" expanded="true" signature="13522:13618" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
+        <state relative-caret-position="155">
+          <caret line="358" column="49" lean-forward="false" selection-start-line="358" selection-start-column="49" selection-end-line="358" selection-end-column="49" />
           <folding />
         </state>
       </provider>

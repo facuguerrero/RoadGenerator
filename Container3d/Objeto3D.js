@@ -355,6 +355,9 @@ class Objeto3D extends Container3D{
         if (this.objectType == CALLE){
             this.setShaderProgram(streetShader);
         }
+        if (this.objectType == EDIFICIO){
+            this.setShaderProgram(buildingShaders);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
