@@ -7,7 +7,6 @@
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/CameraHandler.js" afterPath="$PROJECT_DIR$/handlers/CameraHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/FreeCamera.js" afterPath="$PROJECT_DIR$/handlers/FreeCamera.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="CameraHandler.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+            <state relative-caret-position="156">
+              <caret line="300" column="0" lean-forward="true" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -429,14 +428,7 @@
       <workItem from="1496170636234" duration="2238000" />
       <workItem from="1496173126109" duration="647000" />
       <workItem from="1496222213509" duration="4502000" />
-      <workItem from="1496333527700" duration="1259000" />
-    </task>
-    <task id="LOCAL-00132" summary="Columna">
-      <created>1496155477432</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1496155477432</updated>
+      <workItem from="1496333527700" duration="1656000" />
     </task>
     <task id="LOCAL-00133" summary="Columna">
       <created>1496169701179</created>
@@ -774,11 +766,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496333500038</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="Camaras andandoooo!!">
+      <created>1496334798207</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1496334798208</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324351000" />
+    <option name="totallyTimeSpent" value="324748000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,7 +837,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Boludeces" />
     <MESSAGE value="bezier" />
     <MESSAGE value="Intento de bezier" />
     <MESSAGE value="Auto" />
@@ -863,7 +861,8 @@
     <MESSAGE value="Fs-Building" />
     <MESSAGE value="Set Types" />
     <MESSAGE value="3 camaras y la libre ruta esta posicionada. falta arreglar su movimiento" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 camaras y la libre ruta esta posicionada. falta arreglar su movimiento" />
+    <MESSAGE value="Camaras andandoooo!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Camaras andandoooo!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1191,8 +1190,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+        <state relative-caret-position="156">
+          <caret line="300" column="0" lean-forward="true" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
           <folding />
         </state>
       </provider>
