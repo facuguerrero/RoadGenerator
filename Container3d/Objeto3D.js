@@ -175,7 +175,7 @@ class Objeto3D extends Container3D{
             //el ultimo trae la dimension de x
             var escalado = arrayVecPos.pop();
             this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
-            this.addColor(buffcalc, 4, 1.0,0.0,0.0);
+            this.addColor(buffcalc, 4, 0.41,0.41,0.41);
 
         }
 
@@ -413,9 +413,9 @@ class Objeto3D extends Container3D{
         if(this.objectType == EDIFICIO){
             gl.vertexAttrib1f(idBuilding, this.id);
         }
-        if(this.objectType == VEREDA){
-            gl.vertexAttrib1f(idSideWalk, this.id);
-        }
+        // if(this.objectType == VEREDA){
+        //     gl.vertexAttrib1f(idSideWalk, this.id);
+        // }
 
         //Normal
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);

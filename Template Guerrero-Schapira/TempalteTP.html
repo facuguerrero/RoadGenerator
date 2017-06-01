@@ -282,8 +282,8 @@
             auxUv.x = auxUv.x * 0.8;
             auxUv.y = auxUv.y * 1.2;
             factor = 0.32;
-           textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+            textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 3.0){
             auxUv2.x = auxUv2.x * 4.0;
@@ -291,8 +291,8 @@
             auxUv.x = auxUv.x * 0.8;
             auxUv.y = auxUv.y * 1.1;
             factor = 0.36;
-           textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 4.0){
             auxUv2.x = auxUv2.x * 4.0;
@@ -303,68 +303,75 @@
             textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 5.0){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
-            auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+                auxUv2.x = auxUv2.x * 3.8;
+                auxUv2.y = auxUv2.y;
+                auxUv.x = auxUv.x * 4.0;
+                auxUv.y = auxUv.y * 3.2;
+                factor = 0.3;
+                textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 6.0){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
+            auxUv2.x = auxUv2.x * 4.0;
+            auxUv2.y = auxUv2.y * 3.0;
+            auxUv.x = auxUv.x * 4.0;
             auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+            factor = 0.52;
+            textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 7.0){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
-            auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            auxUv2.x = auxUv2.x * 4.0;
+            auxUv2.y = auxUv2.y * 2.0;
+            auxUv.x = auxUv.x * 4.0;
+            auxUv.y = auxUv.y * 6.7;
+            factor = 0.3;
+            textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 8.0){
             auxUv2.x = auxUv2.x;
             auxUv2.y = auxUv2.y;
             auxUv.x = auxUv.x * 5.0;
             auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+            textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 9.0){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
-            auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+                auxUv2.x = auxUv2.x * 4.0;
+                auxUv2.y = auxUv2.y * 2.0;
+                auxUv.x = auxUv.x * 4.0;
+                auxUv.y = auxUv.y * 5.0;
+                factor = 0.35;
+                textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 10.0){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
-            auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building10, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+            auxUv2.x = auxUv2.x * 4.0;
+            auxUv2.y = auxUv2.y * 2.0;
+            auxUv.x = auxUv.x * 4.0;
+            auxUv.y = auxUv.y * 7.0;
+            factor = 0.25;
+            textureColor = texture2D(building10, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 11.0){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
-            auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+                auxUv2.x = auxUv2.x * 4.0;
+                auxUv2.y = auxUv2.y * 2.0;
+                auxUv.x = auxUv.x * 3.8;
+                auxUv.y = auxUv.y * 6.6;
+                factor = 0.3;
+                textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
         }
         else if(vID == 12.0){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
-            auxUv.y = auxUv.y * 5.0;
-           textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
-           textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+                auxUv2.x = auxUv2.x * 1.6;
+                auxUv2.y = auxUv2.y;
+                auxUv.x = auxUv.x * 4.0;
+                auxUv.y = auxUv.y * 4.0;
+                factor = 0.24;
+                textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
 
         if(auxUv2.y < factor){
@@ -410,10 +417,7 @@
 
     void main(void) {
 
-        vTextureCoord = aTextureCoord;
 
-        //se pasa el id
-        vID = aID;
 
         // position
         vec4 auxPos = vec4(aVertexPosition,1.0);
@@ -421,17 +425,22 @@
         float escalaY=min(1.0,t*0.01);
         auxPos.y=auxPos.y*escalaY;
 
-        // uv
-        vec2 auxUv=vTextureCoord;
-        auxUv.y = auxUv.y*escalaY;
-
-        vTextureCoord = auxUv;
-
         // Transformamos al v�rtice al espacio de la c�mara
 		vec4 pos_camera_view = uViewMatrix * uModelMatrix * auxPos;
 
 		// Transformamos al v�rtice al espacio de la proyecci�n
         gl_Position = uPMatrix * pos_camera_view;
+
+        //se pasa el id
+        vID = aID;
+
+        vTextureCoord = aTextureCoord;
+
+        // uv
+        vec2 auxUv=vTextureCoord;
+        auxUv.y = auxUv.y*escalaY;
+
+        vTextureCoord = auxUv;
 
 
 		////////////////////////////////////////////
@@ -889,10 +898,13 @@
 
             autosAnimados.updateAutos();
 
-            var t = gl.getUniformLocation(buildingShaders, "t");
-            gl.useProgram(buildingShaders);
-            gl.uniform1f(t,frame);
-            frame++;
+            if (frame < 200) {
+                var t = gl.getUniformLocation(buildingShaders, "t");
+                gl.useProgram(buildingShaders);
+                gl.uniform1f(t, frame);
+                factory.updateTechos(frame);
+                frame++;
+            }
 
         }
 

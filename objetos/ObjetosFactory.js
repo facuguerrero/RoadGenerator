@@ -2,6 +2,8 @@ class ObjetosFactory {
 
     constructor() {
         this.numB=0.0;
+        this.tapasEdificios = [];
+        this.alturas = [];
         //
     }
 
@@ -176,7 +178,6 @@ class ObjetosFactory {
          */
 
         var edificio = new Objeto3D();
-        this.sumNumB();
 
         //Creamos los puntos de la curva del edificio
         var puntosEdificio = [];
@@ -250,13 +251,15 @@ class ObjetosFactory {
         arrayMatT.push(matt);
 
         var puntosTapa = [];
-        puntosTapa.push(vec3.fromValues(0.0, y, 0.0));
-        puntosTapa.push(vec3.fromValues(0.0, y, z));
+        puntosTapa.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntosTapa.push(vec3.fromValues(0.0, 0.0, z));
         puntosTapa.push(vec3.fromValues(x, 0.0, 0.0));
         //Creamos el techo del edificio
         var base = new Objeto3D();
         base.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapa);
         this.addColor(base,0.0,0.0,1.0);
+        this.tapasEdificios.push(base);
+        this.alturas.push(y);
         edificio.add(base);
 
         if (tapaAbajo) {
@@ -567,6 +570,17 @@ class ObjetosFactory {
 
 
 //----------------- Metodos Auxiliares ---------------//
+
+    updateTechos(t){
+
+        for (var i = 0; i < this.tapasEdificios.length; i++){
+            var ed = this.tapasEdificios[i];
+            var altura = this.alturas[i];
+            ed.resetMatrix();
+            var escalaY= Math.min(1.0,t*0.01);
+            ed.translate(0.0, altura * escalaY, 0.0);
+        }
+    }
 
     getMatriz4x4(mat){
         //recibe una matriz de 3x3 y devuelve su correspondiente homogenea en 4x4
