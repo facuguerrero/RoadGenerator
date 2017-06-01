@@ -275,7 +275,6 @@ class ObjetosFactory {
 
 
         edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
-        this.addColor(edificio,1.0,0.0,0.0);
 
         return edificio;
     }
