@@ -1,7 +1,7 @@
 class ObjetosFactory {
 
     constructor() {
-        this.numB=1.0;
+        this.numB=0.0;
         //
     }
 
@@ -508,7 +508,7 @@ class ObjetosFactory {
         edificio14.translate(13.5,0.0,9.9);
         centro.add(edificio14);
 
-        centro.translate(anchoVereda/2,0.05,anchoVereda/2);
+        centro.translate(anchoVereda/2,0.6,anchoVereda/2);
         vereda.add(centro);
         manzana.add(vereda);
 
