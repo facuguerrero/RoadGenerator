@@ -373,6 +373,15 @@
                 textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
                 textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
+        else{
+                auxUv2.x = auxUv2.x * 1.6;
+                auxUv2.y = auxUv2.y;
+                auxUv.x = auxUv.x * 4.0;
+                auxUv.y = auxUv.y * 4.0;
+                factor = 0.24;
+                textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+        }
 
         if(auxUv2.y < factor){
 
