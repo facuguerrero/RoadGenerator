@@ -1,11 +1,11 @@
 class FreeCamera{
 
     //recive una lista con las 3 coordenadas de la posicion inicial
-    constructor(init_pos){
+    constructor(init_pos,p=0.0,t=0.0){
 
         this.pos = init_pos; //Posicion inicial del observador
-        this.phi = 0.4;     //Angulo en xy que indica si mira para arriba o para abajo.
-        this.theta = -0.8;
+        this.phi = p;     //Angulo en xy que indica si mira para arriba o para abajo.
+        this.theta = t;
     }
 
     /* GETTERS */
