@@ -159,12 +159,68 @@ class ObjetosFactory {
 
         farol.calcularSuperficieBarrido("circunferencia", vecPos.length, 10, arrayMatT, vecPos);
 
-        var luz = this.createBuilding(3.0, 1.0, 2.0, true);
+        var luz = this.createLuzFarol(3.0, 1.0, 2.0, true);
         luz.translate(6.0, altura - 0.5, -1.0);
         farol.add(luz);
 
         return farol;
 
+    }
+
+    createLuzFarol(x, y, z, tapaAbajo = false) {
+        /*La funcion recibe:
+         @ x: Ancho de las elevaciones.
+         @ y: Alto del edificio.
+         @ z: Profundidad de una elevacion del edificio.
+         @ tapaAbajo: bool para definir o no una tapa inferior
+         */
+
+        var edificio = new Objeto3D();
+        this.sumNumB();
+
+        //Creamos los puntos de la curva del edificio
+        var puntosEdificio = [];
+        puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
+        puntosEdificio.push(vec3.fromValues(x, 0.0, z));
+
+        var arrayMatT = [];
+        var mat = mat3.create();
+        var matt = mat3.create();
+        mat3.identity(mat);
+        mat3.identity(matt);
+        arrayMatT.push(mat);
+        arrayMatT.push(matt);
+
+        var puntosTapa = [];
+        puntosTapa.push(vec3.fromValues(0.0, y, 0.0));
+        puntosTapa.push(vec3.fromValues(0.0, y, z));
+        puntosTapa.push(vec3.fromValues(x, 0.0, 0.0));
+        //Creamos el techo del edificio
+        var base = new Objeto3D();
+        base.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapa);
+        this.addColor(base,0.0,0.0,1.0);
+        edificio.add(base);
+
+        if (tapaAbajo) {
+
+            var puntosTapaAbajo = [];
+            puntosTapaAbajo.push(vec3.fromValues(0.0, 0.0, 0.0));
+            puntosTapaAbajo.push(vec3.fromValues(0.0, 0.0, z));
+            puntosTapaAbajo.push(vec3.fromValues(x, 0.0, 0.0));
+            //Creamos el piso del edificio
+            var baseAbajo = new Objeto3D();
+            baseAbajo.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapaAbajo);
+
+            edificio.add(baseAbajo);
+
+        }
+
+
+        edificio.calcularSuperficieBarrido("estructura_luz", 2, 5, arrayMatT, puntosEdificio);
+        this.addColor(edificio,1.0,0.0,0.0);
+
+        return edificio;
     }
 
     createBuilding(x, y, z, tapaAbajo = false) {

@@ -8,6 +8,8 @@ var BASE_RUTA = "base_ruta";
 var ASFALTO_RUTA = "asfalto_ruta";
 var ESTRUCTURA_EDIFICIO= "estructura_edificio";
 var TAPA_EDIFICIO="tapa_edificio";
+var ESTRUCTURA_LUZ= "estructura_luz";
+var TAPA_LUZ="tapa_luz";
 var CALLE = "calle";
 var CARROCERIA="carroceria";
 var RUEDA="rueda";
@@ -171,9 +173,31 @@ class Objeto3D extends Container3D{
                 console.log("para hacer una tapa se necesitan exactamente 2 vertices");
             }
             //el ultimo trae la dimension de x
+            var escalado = arrayVecPos.pop();
+            this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
+            this.addColor(buffcalc, 4, 1.0,0.0,0.0);
+
+        }
+
+        else if(figura == ESTRUCTURA_LUZ){
+            if(colms != 5){
+                console.log("para hacer un edificio se necesitan exactamente 5 vertices");
+            }
+            //Si estamos en el edificio, se le agrega un vector para el escalado.
+            //Lo borramos para no romper la superficie.
+            var escalado = arrayVecPos.pop();
+            this.figuras.calcularEstructuraEdificio(vertices,arrayVecNOR,escalado);
+            this.addColor(buffcalc,25, 1.0, 0.0, 0.0);
+
+        }
+
+        else if(figura == TAPA_LUZ){
+            if(colms != 2){
+                console.log("para hacer una tapa se necesitan exactamente 2 vertices");
+            }
+            //el ultimo trae la dimension de x
            var escalado = arrayVecPos.pop();
            this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
-           //buffcalc.setTextures(1);
            this.addColor(buffcalc, 4, 1.0,0.0,0.0);
 
         }
