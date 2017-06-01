@@ -75,6 +75,7 @@ class Objeto3D extends Container3D{
         this.colorBuffer = this.bufferCreator.getColorBuffer();
         this.indexBuffer = this.bufferCreator.getIndexBuffer();
         this.textureBuffer1 = this.bufferCreator.getTextureBuffer1();
+        this.textureBuffer2 = this.bufferCreator.getTextureBuffer2();
         this.setUpWebGLBuffers();
     }
 
@@ -112,6 +113,14 @@ class Objeto3D extends Container3D{
             gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.colorBuffer), gl.STATIC_DRAW);
             this.webglColorBuffer.itemSize = 3;
             this.webglColorBuffer.numItems = this.colorBuffer.length / 3;
+        }
+
+        if(this.textureBuffer2.length > 0){
+            this.webglTextureBuffer = gl.createBuffer();
+            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglTextureBuffer);
+            gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.textureBuffer2), gl.STATIC_DRAW);
+            this.webglTextureBuffer.itemSize = 2;
+            this.webglTextureBuffer.numItems = this.textureBuffer2.length;
         }
 
 }
