@@ -361,7 +361,7 @@ class ObjetosFactory {
 
         var buffcalc = new BufferCalculator(2, 2);
         escene.setBufferCreator(buffcalc);
-        escene.build();
+
 
         var arrayMatT = [];
         var matt = mat3.create();
@@ -380,6 +380,7 @@ class ObjetosFactory {
         linea.calcularSuperficieBarrido("escena", 2, 2, arrayMatT, pos);
 
         escene.add(linea);
+        escene.build();
         return escene;
     }
 
@@ -387,8 +388,6 @@ class ObjetosFactory {
 
         var vereda = new Objeto3D();
         var buffcalc = new BufferCalculator(2, 2);
-        vereda.setBufferCreator(buffcalc);
-        vereda.build();
 
 
         var perfil = new Objeto3D();
@@ -418,10 +417,12 @@ class ObjetosFactory {
 
         //Sabemos que las normales son salientes al plano, entonces son 1 en y.
         var norm = [];
+
         for( var i = 0; i<28; i++){
             norm.push(0.0);
             norm.push(1.0);
             norm.push(0.0);
+
         }
 
         buf.normalBuffer =norm;
@@ -437,6 +438,8 @@ class ObjetosFactory {
         piso.translate(0.0,0.2,0.0);
 
         vereda.add(piso);
+        vereda.setBufferCreator(buffcalc);
+        vereda.build();
         return vereda;
 
     }
@@ -449,7 +452,7 @@ class ObjetosFactory {
 
         var alturas =this.llenarAlturas();
 
-        var vereda = this.createVereda(1);
+        var vereda = this.createVereda(true);
 
         var edificio1 = this.createBuilding(4.0, alturas[0], 5.0);
         centro.add(edificio1);
@@ -519,8 +522,8 @@ class ObjetosFactory {
         var anchoVereda = 4.0;
 
 
-        var vereda = this.createVereda(1);
-        var centro = this.createVereda(-1);
+        var vereda = this.createVereda(true);
+        var centro = this.createVereda(false);
 
         centro.translate(anchoVereda/2 +0.5, 0.2,anchoVereda/2 + 0.5);
         centro.scale(0.75,1.0,0.75);

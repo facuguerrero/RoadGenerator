@@ -281,11 +281,11 @@ class Objeto3D extends Container3D{
            }
            var vereda = arrayVecPos.pop();
            this.figuras.calcularVereda(vertices,arrayVecNOR);
-           if(vereda[0] == 1) {
-               this.addColor(buffcalc, 25, 0.61, 0.48, 0.3);
+           if(vereda[0]) {
+               this.addColor(buffcalc, 76, 0.61, 0.48, 0.3);
            }
            else{
-               this.addColor(buffcalc, 25,0.0,1.0,0.0);
+               this.addColor(buffcalc, 76,0.0,1.0,0.0);
            }
         }
 

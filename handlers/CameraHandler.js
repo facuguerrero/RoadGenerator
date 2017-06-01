@@ -9,29 +9,59 @@ class CameraHandler{
         //orbital o libre
         this.mode = null;
 
-        freeCam = new FreeCamera();
+        freeCam = new FreeCamera([0.0,-1.0,0.0]);
         orbitCam = new OrbitCamera();
         mouse = new Mouse();
     }
+    /* ------------------ METODOS COMPARTIDOS/SETTERS -----------------------------------------*/
 
-    /*
-     // Configura los handlers para los elementos del html
-     setHandlers (){
+    updateMatrix() {
+        /*Funcion que actualiza la matriz.
+         Cada vez que se la llama inicializa la matriz en la identidad
+         porque las variables se actualizan por posicion y no por corrimiento.*/
 
+        mat4.identity(CameraMatrix);
+        if (this.mode == "orbit") {
+            //Solo trasladamos si agrandamos o achicamos el zoom
+            var r = -orbitCam.getRadius();
+            var vec_1 = vec3.create();
+            vec_1 = vec3.fromValues(0.0,0.0,r);
+            mat4.translate(CameraMatrix, CameraMatrix, vec_1);
 
-     // ACORDARSE DE HACER ESTO
+            var p = orbitCam.getPhi();
+            var vec_2 = vec3.create();
+            vec_2 = vec3.fromValues(1.0, 0.0, 0.0);
+            mat4.rotate(CameraMatrix, CameraMatrix, p , vec_2);
 
-     esto mejor hacerlo afuera
+            var t = orbitCam.getTheta();
+            var vec_3 = vec3.create();
+            var vec_3 = vec3.fromValues(0.0, -1.0, 0.0);
+            mat4.rotate(CameraMatrix, CameraMatrix, t, vec_3);
+        }
 
-     var body = document.getElementById("my_body");
-     var canvas = document.getElementById("my_canvas");
+        if(this.mode == "free"){
+            var phi = freeCam.getPhi();
+            var vec_1 = vec3.fromValues(1.0,0.0,0.0);
+            mat4.rotate(CameraMatrix, CameraMatrix, phi, vec_1);
 
-     body.handler = this;
-     canvas.handler = this;
+            var theta = freeCam.getTheta();
+            var vec_2 = vec3.fromValues(0.0, -1.0, 0.0);
+            mat4.rotate(CameraMatrix, CameraMatrix, theta, vec_2);
 
+            var pos = freeCam.getPos();
+            mat4.translate(CameraMatrix, CameraMatrix, pos);
+        }
+    }
 
-     }
-     */
+    setHandler(){
+        var body = document.getElementById("my_body");
+        var canvas = document.getElementById("my_canvas");
+
+        body.handler = this;
+        canvas.handler = this;
+
+        this.setOrbit();
+    }
 
     setOrbit(){
 
@@ -43,35 +73,121 @@ class CameraHandler{
 
         this.mode = "orbit";
         this.updateMatrix();
-
     }
 
-    setHandler(){
-    var body = document.getElementById("my_body");
-    var canvas = document.getElementById("my_canvas");
+    setFree(){
 
-    body.handler = this;
-    canvas.handler = this;
+        body.onkeydown = this.onKeyDownFree;
+        canvas.onmousemove = this.onMouseMoveFree;
+        canvas.onmouseup = this.onMouseUnpressedFree;
+        canvas.onmousedown = this.onMousePressedFree;
 
-    this.setOrbit();
+        this.mode = "free";
+        this.updateMatrix();
     }
+
+    /* ------------------ CAMARA LIBRE ----------------------------*/
+
+    /*PRESIONAR EL BOTON 1 PARA ENTRAR A LA CAMARA LIBRE
+
+    CONTROLES:
+
+     */
+
+    onKeyDownFree(e) {
+        var theta = freeCam.getTheta();
+
+        switch (e.keyCode) {
+            case 87: // W
+                freeCam.addPosZ(Math.cos(theta) * VEL_MOV/10);
+                freeCam.addPosX(Math.sin(theta) * VEL_MOV/10);
+                break;
+
+            case 65: // A
+                freeCam.addPosZ(Math.cos(theta + Math.PI/2) * VEL_MOV/10);
+                freeCam.addPosX(Math.sin(theta + Math.PI/2) * VEL_MOV/10);
+                break;
+
+            case 83: // S
+                freeCam.addPosZ(-Math.cos(theta) * VEL_MOV/10);
+                freeCam.addPosX(-Math.sin(theta) * VEL_MOV/10);
+                break;
+
+            case 68: // S
+                freeCam.addPosZ(Math.cos(theta - Math.PI/2) * VEL_MOV/10);
+                freeCam.addPosX(Math.sin(theta - Math.PI/2) * VEL_MOV/10);
+                break;
+
+            case 81: // Q
+                freeCam.addPosY(-VEL_MOV / 10);
+                break;
+            case 69: //E
+                freeCam.addPosY( VEL_MOV / 10);
+                break;
+
+            case 50: // 2
+                this.handler.setOrbit();
+                alert("Camara en modo orbita");
+                break;
+        }
+        this.handler.updateMatrix();
+    }
+
+    onMouseMoveFree(e) {
+
+        if (mouse.pressedState()) {
+            var deltaX = mouse.getPosX() - e.clientX;
+            var deltaY = mouse.getPosY() - e.clientY;
+
+            mouse.setPosX(e.clientX);
+            mouse.setPosY(e.clientY);
+
+            freeCam.addTheta( deltaX * mouse.getVel() );
+            freeCam.addPhi( -deltaY * mouse.getVel() );
+
+            if (freeCam.getPhi() < -Math.PI/2) {
+                freeCam.setPhi(-Math.PI / 2);
+            }
+
+            if (freeCam.getPhi() > Math.PI/2) {
+                freeCam.setPhi(Math.PI / 2);
+            }
+            this.handler.updateMatrix();
+        }
+    }
+
+    onMousePressedFree(e){
+        mouse.setPosX(e.clientX);
+        mouse.setPosY(e.clientY);
+        mouse.pressedOn();
+    }
+
+    onMouseUnpressedFree(e) {
+        mouse.pressedOff();
+    }
+
+
+    /* ------------------ CAMARA ORBITAL --------------------------*/
+
+    /* PRESIONAR EL BOTON 2 PARA ENTRAR A LA CAMARA ORBITAL.
+
+    CONTROLES:
+        + Para aumentar el zoom.
+        - Para disminuir el zoom.
+        La camara se mueve con el movimiento del mouse.
+
+     */
 
     onKeyDownOrbit (e){
         switch (e.keyCode) {
-            //descomentar cuando haya mas de una camara
-            /*
+
              case 49:		// '1'
-             this.handler.set_free();
+             this.handler.setFree();
              alert("Camara en modo libre");
              break;
-             */
+
             //Caso en el que + aumenta el zoom
             case 107:
-
-                //this.orbitCam.addOrbitRadius(-params.velocidad_mov/10.0);
-                /*LINEA VIEJA. PARAMS ESTA DEFINIDO EN EL HTML, ES COMO UN STRUCT
-                 CON VARIOS PARAMETROS DEFINIDOS POR DEFECTO. PARA PROBAR LO TIRO
-                 ASI VILLERO PERO DESPUES DE ULTIMA HACEMOS ALGO MAS PROLIJO*/
 
                 orbitCam.addRadius(-VEL_MOV);
                 if (orbitCam.getRadius() < 0.0){
@@ -79,6 +195,7 @@ class CameraHandler{
                 }
                 this.handler.updateMatrix();
                 break;
+
             case 109:		// '-'
                 orbitCam.addRadius(VEL_MOV);
                 if (orbitCam.getRadius < 0.0){
@@ -125,35 +242,6 @@ class CameraHandler{
 
     onMouseUnpressedOrbit(e) {
         mouse.pressedOff();
-    }
-
-    updateMatrix() {
-        /*Funcion que actualiza la matriz.
-         Cada vez que se la llama inicializa la matriz en la identidad
-         porque las variables se actualizan por posicion y no por corrimiento.*/
-
-        mat4.identity(CameraMatrix);
-        if (this.mode == "orbit") {
-            //Solo trasladamos si agrandamos o achicamos el zoom
-            var r = -orbitCam.getRadius();
-            var vec_1 = vec3.create();
-            vec_1 = vec3.fromValues(0.0,0.0,r);
-            mat4.translate(CameraMatrix, CameraMatrix, vec_1);
-
-            var p = orbitCam.getPhi();
-            var vec_2 = vec3.create();
-            vec_2 = vec3.fromValues(1.0, 0.0, 0.0);
-            mat4.rotate(CameraMatrix, CameraMatrix, p , vec_2);
-
-            var t = orbitCam.getTheta();
-            var vec_3 = vec3.create();
-            var vec_3 = vec3.fromValues(0.0, -1.0, 0.0);
-            mat4.rotate(CameraMatrix, CameraMatrix, t, vec_3);
-        }
-
-        if(this.mode == "free"){
-            //cuando hagamos la otra camara hay que implementar esta parte
-        }
     }
 
 }

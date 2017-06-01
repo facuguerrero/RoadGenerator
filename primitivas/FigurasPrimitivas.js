@@ -428,12 +428,12 @@ class FigurasPrimitivas{
     calcularVereda(vertices, arrayVecNOR){
 
         vertices.push(vec3.fromValues(2.0, 0.0, 0.0));
-        var vecNorm1 = vec3.fromValues(0.0, 0.0, -1.0);
+        var vecNorm1 = vec3.fromValues(-1.0, 0.0, 0.0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
         vertices.push(vec3.fromValues(18.0, 0.0, 0.0));
-        var vecNorm2 = vec3.fromValues(0.0, 0.0, -1.0);
+        var vecNorm2 = vec3.fromValues(-1.0, 0.0, 0.0);
         vec3.normalize(vecNorm2, vecNorm2);
         arrayVecNOR.push(vecNorm2);
 
@@ -497,8 +497,7 @@ class FigurasPrimitivas{
             var vec = vec3.fromValues( x + (r*c) ,0.0, z + (r*s));
             vertices.push(vec);
 
-            //DUDOSO QUE LA NORMAL ESTE BIEN
-            var vecNorm = vec3.fromValues(c/c, 0.0, s/s );
+            var vecNorm = vec3.fromValues(r/s, 0.0, -r/c );
             vec3.normalize(vecNorm, vecNorm);
             arrayVecNOR.push(vecNorm);
         }
@@ -509,12 +508,12 @@ class FigurasPrimitivas{
     calcularEscena(vertices, arrayVecNOR, x) {
 
         vertices.push(vec3.fromValues(0.0, 0.0, 0.0));
-        var vecNorm1 = vec3.fromValues(0.0, 1.0, 0.0);
+        var vecNorm1 = vec3.fromValues(0.0, -1.0, 0.0);
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
         vertices.push(vec3.fromValues(x, 0.0, 0.0));
-        var vecNorm2 = vec3.fromValues(0.0, 1.0, 0.0);
+        var vecNorm2 = vec3.fromValues(0.0, -1.0, 0.0);
         vec3.normalize(vecNorm2, vecNorm2);
         arrayVecNOR.push(vecNorm2);
     }
