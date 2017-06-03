@@ -235,27 +235,27 @@ class FigurasPrimitivas{
         arrayVecNOR.push(vecNorm3);
 
         vertices.push(vec3.fromValues(1.2, 0.1, 0.0));
-        var vecNorm4 = vec3.fromValues(-1.0, -1.0, 0.0);
+        var vecNorm4 = vec3.fromValues(-1.0, 1.0, 0.0);
         vec3.normalize(vecNorm4, vecNorm4);
         arrayVecNOR.push(vecNorm4);
 
         vertices.push(vec3.fromValues(-1.2, 0.1, 0.0));
-        var vecNorm5 = vec3.fromValues(-1.0, -1.0, 0.0);
+        var vecNorm5 = vec3.fromValues(1.0, 1.0, 0.0);
         vec3.normalize(vecNorm5, vecNorm5);
         arrayVecNOR.push(vecNorm5);
 
         vertices.push(vec3.fromValues(-1.2, 2.0, 0.0));
-        var vecNorm6 = vec3.fromValues(-1.0, 1.0, 0.0);
+        var vecNorm6 = vec3.fromValues(1.0, 1.0, 0.0);
         vec3.normalize(vecNorm6, vecNorm6);
         arrayVecNOR.push(vecNorm6);
 
         vertices.push(vec3.fromValues(-16.8, 2.0, 0.0));
-        var vecNorm7 = vec3.fromValues(1.0, 1.0, 0.0);
+        var vecNorm7 = vec3.fromValues(-1.0, 1.0, 0.0);
         vec3.normalize(vecNorm7, vecNorm7);
         arrayVecNOR.push(vecNorm7);
 
         vertices.push(vec3.fromValues(-16.8, 0.0, 0.0));
-        var vecNorm8 = vec3.fromValues(1.0, -1.0, 0.0);
+        var vecNorm8 = vec3.fromValues(-1.0, -1.0, 0.0);
         vec3.normalize(vecNorm8, vecNorm8);
         arrayVecNOR.push(vecNorm8);
 
