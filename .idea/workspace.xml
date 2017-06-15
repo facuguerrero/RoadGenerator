@@ -4,66 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/Container3d/BufferCalculator.js" line="133" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/cruce.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed10_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed10_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed11_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed11_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed12_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed12_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed13_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed13_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed14_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed14_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed15_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed15_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed16_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed16_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed17_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed17_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed18_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed18_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed19_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed19_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed1_fachada.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed1_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed1_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed2_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed2_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed3_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed3_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed4_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed4_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed5_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed5_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed6_fachada.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed6_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed7_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed7_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed8_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed8_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed9_pb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/ed9_pisos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/tramo-dobleamarilla.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/vereda.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/maps/vereda_normal.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 03.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 05.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 06.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 07.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 08.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/renders/tp1 18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Consigna/tp1-c1-2017.pdf" afterPath="" />
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="ENTREGA 2">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -439,14 +380,7 @@
       <workItem from="1496222213509" duration="4502000" />
       <workItem from="1496333527700" duration="1656000" />
       <workItem from="1497551455170" duration="20000" />
-      <workItem from="1497551517952" duration="91000" />
-    </task>
-    <task id="LOCAL-00137" summary="Columna">
-      <created>1496172476627</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1496172476628</updated>
+      <workItem from="1497551517952" duration="165000" />
     </task>
     <task id="LOCAL-00138" summary="Columna">
       <created>1496173029936</created>
@@ -784,11 +718,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496493720103</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="ENTREGA 2">
+      <created>1497551661232</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1497551661233</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329570000" />
+    <option name="totallyTimeSpent" value="329644000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -847,7 +788,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Auto Terminado" />
     <MESSAGE value="Canvas" />
     <MESSAGE value="&quot;Funcion de color&quot;" />
     <MESSAGE value="Subo un template para probar la curva bezier a parte" />
@@ -872,7 +812,8 @@
     <MESSAGE value="Autos con ruedas negras" />
     <MESSAGE value="Camara arriba de la ruta" />
     <MESSAGE value="Entrega actualizada, esto es lo que le mostramos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entrega actualizada, esto es lo que le mostramos" />
+    <MESSAGE value="ENTREGA 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ENTREGA 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
