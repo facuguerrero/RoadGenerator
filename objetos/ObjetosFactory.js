@@ -282,7 +282,7 @@ class ObjetosFactory {
         return edificio;
     }
 
-    createCalle(x, z) {
+    createCalle(x, z, type = "calle", id = 0.0) {
         /* Funcion que recibe 2 parametros:
          @X es el ancho de la calle.
          @Z es el ancho de la calle.
@@ -290,7 +290,8 @@ class ObjetosFactory {
          Devuelve una calle.
          */
         var calle = new Objeto3D();
-        calle.setType("calle",0.0);
+
+        calle.setType(type,id);
 
         var arrayMatT = [];
         var matt = mat3.create();
@@ -315,7 +316,7 @@ class ObjetosFactory {
          una calle con las mismas dimensiones de
          ancho y largo.
          */
-        return this.createCalle(x, x);
+        return this.createCalle(x, x, "esquina",1.0);
     }
 
     createCar() {

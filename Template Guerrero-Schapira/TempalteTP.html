@@ -213,6 +213,7 @@
 
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
     uniform sampler2D street;
+    uniform sampler2D esquina;
 
     varying float vID;
 
@@ -221,6 +222,11 @@
 
         if(vID == 0.0){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
+        }
+
+        else if(vID == 1.0){
+           textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
+
         }
 
         gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
@@ -600,6 +606,7 @@
         var shaderProgramColoredObject;
         var streetShader;
         var buildingShaders;
+        var esquinaShader;
 
         function initBuildingTopShaders() {
 
@@ -643,6 +650,46 @@
 
         }
 
+        function initEsquinaShaders() {
+            //Inicializamos el shader de la calle.
+
+            /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
+
+            var fragmentShader = getShader("fs-street");
+            var vertexShader = getShader("vs-general");
+
+            esquinaShader = gl.createProgram();
+            gl.attachShader(esquinaShader, vertexShader);
+            gl.attachShader(esquinaShader, fragmentShader);
+            gl.linkProgram(esquinaShader);
+
+            if (!gl.getProgramParameter(esquinaShader, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+            gl.useProgram(esquinaShader);
+
+            esquinaShader.vertexPositionAttribute = gl.getAttribLocation(esquinaShader, "aVertexPosition");
+            gl.enableVertexAttribArray(esquinaShader.vertexPositionAttribute);
+
+            esquinaShader.textureCoordAttribute = gl.getAttribLocation(esquinaShader, "aTextureCoord");
+            gl.enableVertexAttribArray(esquinaShader.textureCoordAttribute);
+
+            esquinaShader.vertexNormalAttribute = gl.getAttribLocation(esquinaShader, "aVertexNormal");
+            gl.enableVertexAttribArray(esquinaShader.vertexNormalAttribute);
+
+            esquinaShader.pMatrixUniform = gl.getUniformLocation(esquinaShader, "uPMatrix");
+            esquinaShader.ViewMatrixUniform = gl.getUniformLocation(esquinaShader, "uViewMatrix");
+            esquinaShader.ModelMatrixUniform = gl.getUniformLocation(esquinaShader, "uModelMatrix");
+            esquinaShader.nMatrixUniform = gl.getUniformLocation(esquinaShader, "uNMatrix");
+            esquinaShader.samplerUniform = gl.getUniformLocation(esquinaShader, "uSampler");
+            esquinaShader.useLightingUniform = gl.getUniformLocation(esquinaShader, "uUseLighting");
+            esquinaShader.ambientColorUniform = gl.getUniformLocation(esquinaShader, "uAmbientColor");
+            esquinaShader.lightingDirectionUniform = gl.getUniformLocation(esquinaShader, "uLightPosition");
+            esquinaShader.directionalColorUniform = gl.getUniformLocation(esquinaShader, "uDirectionalColor");
+
+            idEsquina = gl.getAttribLocation(esquinaShader, "aID");
+        }
+
         function initStreetShaders() {
             //Inicializamos el shader de la calle.
 
@@ -682,7 +729,6 @@
 
             idStreet = gl.getAttribLocation(streetShader, "aID");
         }
-
 
         function initColoredShaders() {
 
@@ -733,9 +779,10 @@
                 loadTexture("textures/calle.jpg", "street");
 
                 var location = gl.getUniformLocation(streetShader, "street");
-                gl.uniform1i(location, 0) //0 ya que es la primer textura
+                gl.uniform1i(location, 0);//0 ya que es la primer textura
                 gl.activeTexture(gl.TEXTURE0);
                 gl.bindTexture(gl.TEXTURE_2D, glTextures["street"]);
+
 
                 //se cargan las texturas de los edificios
                 var nombresEdificios = ["building1", "building2", "building3", "building4", "building5", "building6", "building7",
@@ -762,11 +809,20 @@
                 for(i=1; i<17; i++) {
 
                     var location = gl.getUniformLocation(buildingShaders, nombresEdificios[i - 1]);
-                    gl.uniform1i(location, i)
+                    gl.uniform1i(location, i);
                     gl.activeTexture(TEXTURES[i - 1]);
                     gl.bindTexture(gl.TEXTURE_2D, glTextures[nombresEdificios[i - 1]]);
 
                 }
+
+            //se cargan las texturas de la esquina
+            gl.useProgram(esquinaShader);
+            loadTexture("textures/cruce.jpg", "esquina");
+
+            var location = gl.getUniformLocation(esquinaShader, "esquina");
+            gl.uniform1i(location, 17);
+            gl.activeTexture(gl.TEXTURE17);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["esquina"]);
 
         }
 
@@ -838,16 +894,13 @@
         var esquina8=null;
         var esquina9=null;
 
-        var manzana1=null;
-        var manzana2=null;
-        var manzana3=null;
-        var manzana4= null;
         var ruta = null;
 
         //variables de las id de texturas
         var idStreet;
         var idBuilding;
         var idSideWalk;
+        var idEsquina;
 
 
         var mouse = null;
@@ -926,6 +979,7 @@
 
             initGL(canvas);
             initColoredShaders();
+            initEsquinaShaders();
             initStreetShaders();
             initBuildingTopShaders();
             initTextures();

@@ -20,14 +20,13 @@ var COLUMNA= "columna";
 var BASE_COLUMNA="base_columna";
 var TAPA_COLUMNA = "tapa_columna";
 
-var EDIFICIO = "edificio";
 var RUTA = "ruta";
 var FAROL = "farol";
 var AUTO = "auto";
 var CALLE = "calle";
 var EDIFICIO = "edificio";
 var VEREDA = "vereda";
-
+var ESQUINA = "esquina";
 
 class Objeto3D extends Container3D{
 
@@ -383,6 +382,9 @@ class Objeto3D extends Container3D{
         else if (this.objectType == EDIFICIO){
             this.setShaderProgram(buildingShaders);
         }
+        else if (this.objectType == ESQUINA){
+            this.setShaderProgram(esquinaShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -413,6 +415,9 @@ class Objeto3D extends Container3D{
         }
         if(this.objectType == EDIFICIO){
             gl.vertexAttrib1f(idBuilding, this.id);
+        }
+        if(this.objectType == ESQUINA){
+            gl.vertexAttrib1f(idEsquina,this.id);
         }
         // if(this.objectType == VEREDA){
         //     gl.vertexAttrib1f(idSideWalk, this.id);
