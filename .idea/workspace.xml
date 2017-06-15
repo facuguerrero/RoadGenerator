@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/Container3d/BufferCalculator.js" line="133" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="ENTREGA 2">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="ENTREGA 2" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -380,7 +378,7 @@
       <workItem from="1496222213509" duration="4502000" />
       <workItem from="1496333527700" duration="1656000" />
       <workItem from="1497551455170" duration="20000" />
-      <workItem from="1497551517952" duration="165000" />
+      <workItem from="1497551517952" duration="231000" />
     </task>
     <task id="LOCAL-00138" summary="Columna">
       <created>1496173029936</created>
@@ -729,7 +727,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329644000" />
+    <option name="totallyTimeSpent" value="329710000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
