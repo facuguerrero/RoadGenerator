@@ -547,11 +547,14 @@ class FigurasPrimitivas{
 
         var step = 0.1;
         for(var i=0.0; i<rows; i += step){
-
             //arrayVecPos.push( vec3.fromValues(diametro - ((2.0*i)/rows) , 1.0, altura + (2.0*i)/(rows)) );
             //arrayVecNor.push( vec3.fromValues(0.0, 0.0, -1.0) );
+            var h = ( (2.0* i) /rows);
+            if(h == Infinity){
+                h=0.0;
+            }
 
-            arrayVecPos.push( vec3.fromValues( 0.0, i, -(i*(i/2))+6) );
+            arrayVecPos.push( vec3.fromValues( 0.0 , h , -(i*(i))+6  ) );
             /*La normal la obtenemos con:
             normal = - 1 / tangente
             recordando que la tangente es la derivada.*/

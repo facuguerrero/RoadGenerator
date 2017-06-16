@@ -323,7 +323,7 @@ class Objeto3D extends Container3D{
         }
 
         if(figura == BASE_COLUMNA){
-            if(rows != 40){
+            if(rows != 35){
                 console.log("Para la base de la columna se necesitan 2 niveles");
             }
             this.figuras.calcularBaseColumna(rows,arrayVecPos,ejeRotacion,arrayVecNor);
@@ -336,7 +336,6 @@ class Objeto3D extends Container3D{
             }
             this.figuras.calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor);
         }
-
 
         buffcalc.calcularSuperficieRevolucion(arrayVecPos, ejeRotacion, arrayVecNor);
         this.setBufferCreator(buffcalc);

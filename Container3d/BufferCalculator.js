@@ -38,6 +38,28 @@ class BufferCalculator{
         }
     }
 
+    calcInBuff(){
+
+        for(var i = 0; i < (this.rows-1); i++) {
+
+            var factor = (this.colms*this.rows)- this.rows;
+            //var factor = 1;
+            if (i % 2 == 0) {
+                // Hacia la derecha
+                for (var k = 0; k < factor; k++) {
+                    this.indexBuffer.push(i * this.rows + k);
+                    this.indexBuffer.push((i+1) * this.rows + k);
+                }
+            } else {
+                // Cambio de lado a la izquierda
+                for (var j = this.colms-1; j >= 0; j--) {
+                    this.indexBuffer.push(i * this.rows + j);
+                    this.indexBuffer.push((i+1) * this.rows + j);
+                }
+            }
+        }
+    }
+
     setBoolTexture1(){
         this.texture1 = true;
     }
@@ -164,7 +186,9 @@ class BufferCalculator{
      */
         calcularSuperficieRevolucion(vertices, ejeRotacion, arrayVecNorm){
 
-        this.calcIndexBuffer();
+        //this.calcIndexBuffer();
+        this.calcInBuff();
+
         var vector = ejeRotacion[0];
         var vecRot = vec3.fromValues(vector[0], vector[1], vector[2]);
 
@@ -226,6 +250,5 @@ class BufferCalculator{
             }
 
         }
-
     }
   }

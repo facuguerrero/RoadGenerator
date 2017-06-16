@@ -540,7 +540,8 @@ class ObjetosFactory {
     createColumna(){
         /*Objeto Contenedor*/
 
-        var cantidad = 600;
+        var cantidad = 15;
+
         var columna = new Objeto3D();
         var buffcalc = new BufferCalculator(2, cantidad);
         columna.setBufferCreator(buffcalc);
@@ -554,7 +555,7 @@ class ObjetosFactory {
 
         /*Creo lo que es la base de la columna*/
         var base = new Objeto3D();
-        base.calcularSuperficieRevolucion("base_columna",40,cantidad);
+        base.calcularSuperficieRevolucion("base_columna",10,cantidad);
         //base.rotate(-Math.PI/2,1.0,0.0,0.0);
         columna.add(base);
 
