@@ -139,7 +139,7 @@ class CameraHandler{
                 freeCam.addPosX(-Math.sin(theta) * VEL_MOV/10);
                 break;
 
-            case 68: // S
+            case 68: // D
                 freeCam.addPosZ(Math.cos(theta - Math.PI/2) * VEL_MOV/10);
                 freeCam.addPosX(Math.sin(theta - Math.PI/2) * VEL_MOV/10);
                 break;
