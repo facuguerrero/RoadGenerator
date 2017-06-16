@@ -323,8 +323,8 @@ class Objeto3D extends Container3D{
         }
 
         if(figura == BASE_COLUMNA){
-            if(rows != 35){
-                console.log("Para la base de la columna se necesitan 2 niveles");
+            if(rows != 3){
+                console.log("Para la base de la columna se necesitan 3 niveles");
             }
             this.figuras.calcularBaseColumna(rows,arrayVecPos,ejeRotacion,arrayVecNor);
             //this.addColor(buffcalc, 5000,0.0,0.0,0.0);

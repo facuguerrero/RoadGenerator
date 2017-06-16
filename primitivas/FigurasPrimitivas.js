@@ -533,8 +533,8 @@ class FigurasPrimitivas{
 
         ejeRotacion.push(vec3.fromValues(0.0,1.0,0.0));
 
-        arrayVecPos.push(vec3.fromValues(2.0,2.0,0.0));
-        arrayVecPos.push(vec3.fromValues(2.0,17.0,0.0));
+        arrayVecPos.push(vec3.fromValues(2.5,2.0,0.0));
+        arrayVecPos.push(vec3.fromValues(2.5,17.0,0.0));
 
         arrayVecNor.push(vec3.fromValues(0.0,-0.07,0.0));
         arrayVecNor.push(vec3.fromValues(0.0,-0.07,0.0));
@@ -545,7 +545,7 @@ class FigurasPrimitivas{
 
         ejeRotacion.push(vec3.fromValues(0.0, 1.0, 0.0));
 
-        var step = 0.1;
+        /*var step = 0.1;
         for(var i=0.0; i<rows; i += step){
             //arrayVecPos.push( vec3.fromValues(diametro - ((2.0*i)/rows) , 1.0, altura + (2.0*i)/(rows)) );
             //arrayVecNor.push( vec3.fromValues(0.0, 0.0, -1.0) );
@@ -557,18 +557,28 @@ class FigurasPrimitivas{
             arrayVecPos.push( vec3.fromValues( 0.0 , h , -(i*(i))+6  ) );
             /*La normal la obtenemos con:
             normal = - 1 / tangente
-            recordando que la tangente es la derivada.*/
+            recordando que la tangente es la derivada.
             arrayVecNor.push( vec3.fromValues(0.0, 1.0, -1/i) );
-        }
+        }*/
+
+        arrayVecPos.push(vec3.fromValues(6.0,0.0,0.0));
+        arrayVecPos.push(vec3.fromValues(5.0,1.0,0.0));
+        arrayVecPos.push(vec3.fromValues(2.5,2.0,0.0));
+
+        arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
+        arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
+        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+//        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+   //     arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
     }
 
     calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor){
 
         ejeRotacion.push( vec3.fromValues(0.0,1.0,0.0) );
 
-        arrayVecPos.push(vec3.fromValues(0.0,17.0,2.5));
-        arrayVecPos.push(vec3.fromValues(0.0,19.0,8.0));
-        arrayVecPos.push(vec3.fromValues(0.0,20.0,8.0));
+        arrayVecPos.push(vec3.fromValues(2.5,17.0,0.0));
+        arrayVecPos.push(vec3.fromValues(7.0,19.0,0.0));
+        arrayVecPos.push(vec3.fromValues(7.0,20.0,0.0));
 
         /*La normal la obtenemos con:
         normal = - 1 / tangente
@@ -578,8 +588,8 @@ class FigurasPrimitivas{
         x-17 = (y-2.5) 2/5.5
 
         */
-        arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
-        arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
+        arrayVecNor.push(vec3.fromValues(-0.18,-0.5,0.0));
+        arrayVecNor.push(vec3.fromValues(-0.18,-0.5,0.0));
         arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
     }
 
