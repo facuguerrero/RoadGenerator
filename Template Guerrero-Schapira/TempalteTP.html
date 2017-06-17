@@ -214,6 +214,7 @@
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
     uniform sampler2D street;
     uniform sampler2D esquina;
+    uniform sampler2D vereda;
 
     varying float vID;
 
@@ -226,7 +227,10 @@
 
         if(vID > 0.5 && vID < 1.5){
            textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
+        }
 
+        if(vID >17.5 && vID <18.5){
+            textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
         gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
@@ -599,6 +603,7 @@
         var streetShader;
         var buildingShaders;
         var esquinaShader;
+        var veredaShader;
 
         function initBuildingTopShaders() {
 
@@ -680,6 +685,46 @@
             esquinaShader.directionalColorUniform = gl.getUniformLocation(esquinaShader, "uDirectionalColor");
 
             idEsquina = gl.getAttribLocation(esquinaShader, "aID");
+        }
+
+        function initVeredaShaders() {
+            //Inicializamos el shader de la calle.
+
+            /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
+
+            var fragmentShader = getShader("fs-street");
+            var vertexShader = getShader("vs-general");
+
+            veredaShader = gl.createProgram();
+            gl.attachShader(veredaShader, vertexShader);
+            gl.attachShader(veredaShader, fragmentShader);
+            gl.linkProgram(veredaShader);
+
+            if (!gl.getProgramParameter(veredaShader, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+            gl.useProgram(veredaShader);
+
+            veredaShader.vertexPositionAttribute = gl.getAttribLocation(veredaShader, "aVertexPosition");
+            gl.enableVertexAttribArray(veredaShader.vertexPositionAttribute);
+
+            veredaShader.textureCoordAttribute = gl.getAttribLocation(veredaShader, "aTextureCoord");
+            gl.enableVertexAttribArray(veredaShader.textureCoordAttribute);
+
+            veredaShader.vertexNormalAttribute = gl.getAttribLocation(veredaShader, "aVertexNormal");
+            gl.enableVertexAttribArray(veredaShader.vertexNormalAttribute);
+
+            veredaShader.pMatrixUniform = gl.getUniformLocation(veredaShader, "uPMatrix");
+            veredaShader.ViewMatrixUniform = gl.getUniformLocation(veredaShader, "uViewMatrix");
+            veredaShader.ModelMatrixUniform = gl.getUniformLocation(veredaShader, "uModelMatrix");
+            veredaShader.nMatrixUniform = gl.getUniformLocation(veredaShader, "uNMatrix");
+            veredaShader.samplerUniform = gl.getUniformLocation(veredaShader, "uSampler");
+            veredaShader.useLightingUniform = gl.getUniformLocation(veredaShader, "uUseLighting");
+            veredaShader.ambientColorUniform = gl.getUniformLocation(veredaShader, "uAmbientColor");
+            veredaShader.lightingDirectionUniform = gl.getUniformLocation(veredaShader, "uLightPosition");
+            veredaShader.directionalColorUniform = gl.getUniformLocation(veredaShader, "uDirectionalColor");
+
+            idVereda = gl.getAttribLocation(veredaShader, "aID");
         }
 
         function initStreetShaders() {
@@ -815,6 +860,15 @@
             gl.uniform1i(location, 17);
             gl.activeTexture(gl.TEXTURE17);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["esquina"]);
+
+            //se cargan las texturas de la vereda
+            gl.useProgram(veredaShader);
+            loadTexture("textures/vereda.jpg", "vereda");
+
+            var location = gl.getUniformLocation(veredaShader, "vereda");
+            gl.uniform1i(location, 18);
+            gl.activeTexture(gl.TEXTURE18);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["vereda"]);
 
         }
 
@@ -973,6 +1027,7 @@
             initColoredShaders();
             initEsquinaShaders();
             initStreetShaders();
+            initVeredaShaders();
             initBuildingTopShaders();
             initTextures();
 

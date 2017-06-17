@@ -390,6 +390,7 @@ class ObjetosFactory {
     createVereda(control){
 
         var vereda = new Objeto3D();
+
         var buffcalc = new BufferCalculator(2, 2);
 
 
@@ -413,7 +414,9 @@ class ObjetosFactory {
         vereda.add(perfil);
 
         var piso = new Objeto3D();
-        piso.setType("vereda",this.numB);
+        if(control){
+            //piso.setType("vereda",18.0);
+        }
 
         var buf = new BufferCalculator(2,28);
         /*Seteo los buffers */
