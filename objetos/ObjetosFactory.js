@@ -1,7 +1,7 @@
 class ObjetosFactory {
 
     constructor() {
-        this.numB=0.0;
+        this.numB=2.0;
         this.tapasEdificios = [];
         this.alturas = [];
         //
@@ -595,8 +595,8 @@ class ObjetosFactory {
 
     sumNumB(){
         this.numB += 1.0;
-        if(this.numB >= 12.0){
-            this.numB=1.0;
+        if(this.numB >= 14.0){
+            this.numB=2.0;
         }
     }
 

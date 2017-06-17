@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/CameraHandler.js" afterPath="$PROJECT_DIR$/handlers/CameraHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/OrbitCamera.js" afterPath="$PROJECT_DIR$/handlers/OrbitCamera.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,61 +25,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="557" column="58" lean-forward="false" selection-start-line="557" selection-start-column="58" selection-end-line="557" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="326" column="70" lean-forward="false" selection-start-line="326" selection-start-column="70" selection-end-line="326" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="563" column="55" lean-forward="false" selection-start-line="563" selection-start-column="55" selection-end-line="563" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CameraHandler.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CameraHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2115">
-              <caret line="141" column="25" lean-forward="false" selection-start-line="141" selection-start-column="25" selection-end-line="141" selection-end-column="25" />
+            <state relative-caret-position="18">
+              <caret line="307" column="64" lean-forward="false" selection-start-line="307" selection-start-column="64" selection-end-line="307" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FreeCamera.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/handlers/FreeCamera.js">
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+            <state relative-caret-position="-2405">
+              <caret line="226" column="33" lean-forward="false" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
+              <folding>
+                <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#19;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#22;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1497727371431" expanded="true" signature="1525:1602" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="2120:3112" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="2700:2762" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="2784:3053" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="3342:3519" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="4040:4962" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="4568:4630" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="4640:4909" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="5519:6485" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="6091:6153" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="6163:6432" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="6807:7190" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="6872:6968" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="7004:7102" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="7985:13097" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="8276:8609" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="8644:8977" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="9012:9318" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="9353:9707" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="9742:10075" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="10110:10442" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="10477:10771" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="10806:11167" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="11203:11537" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="11574:11935" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="11972:12328" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="12365:12692" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="12724:12847" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="12860:12979" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="13684:14855" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="14461:14523" ph="{...}" />
+                <marker date="1497727371431" expanded="true" signature="14533:14802" ph="{...}" />
+                <marker date="1497727371431" expanded="false" signature="46976:48626" ph="..." />
+                <marker date="1497727371431" expanded="false" signature="48823:48831" ph="á" />
+                <marker date="1497727371431" expanded="false" signature="49353:57975" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="597" column="26" lean-forward="false" selection-start-line="597" selection-start-column="26" selection-end-line="597" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -96,7 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ARRAY_BUFFER</find>
       <find>add</find>
       <find>webglTextureBuffer</find>
       <find>calle</find>
@@ -126,6 +140,7 @@
       <find>numItems</find>
       <find>createEsq</find>
       <find>c</find>
+      <find>sum</find>
     </findStrings>
     <replaceStrings>
       <replace>aux</replace>
@@ -184,14 +199,14 @@
         <option value="$PROJECT_DIR$/objetos/AutosAnimados.js" />
         <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
         <option value="$PROJECT_DIR$/handlers/FreeCamera.js" />
-        <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
         <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/handlers/OrbitCamera.js" />
         <option value="$PROJECT_DIR$/handlers/CameraHandler.js" />
+        <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
   </component>
@@ -202,10 +217,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="y" value="-7" />
+    <option name="width" value="1600" />
+    <option name="height" value="844" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -222,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -245,7 +260,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Template Pruebas" />
+              <option name="myItemId" value="objetos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -263,9 +278,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Container3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bajado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,6 +326,265 @@
       <recent name="$PROJECT_DIR$/Container3d" />
       <recent name="$PROJECT_DIR$/Template TP" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/BufferCalculator.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/Container3D.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/Objeto3D.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/gl-matrix.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/webgl-utils.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Pruebas/TempalteTP.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/handlers/CameraHandler.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/handlers/FreeCamera.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/handlers/Mouse.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/handlers/OrbitCamera.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/objetos/ObjetosFactory.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/primitivas/CuadraticBSpline.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/primitivas/CuadraticBezier.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/primitivas/FigurasPrimitivas.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/cruce.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed10_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed10_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed11_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed11_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed12_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed12_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed13_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed13_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed14_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed14_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed15_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed15_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed16_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed16_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed17_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed17_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed18_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed18_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed19_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed19_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed1_fachada.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed1_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed1_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed2_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed2_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed3_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed3_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed4_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed4_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed5_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed5_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed6_fachada.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed6_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed7_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed7_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed8_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed8_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed9_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/ed9_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/tramo-dobleamarilla.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/vereda.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/maps/vereda_normal.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 01.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 02.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 03.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 05.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 06.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 07.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 08.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 16.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 17.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/renders/tp1 18.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP1/tp1-c1-2017.pdf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/auto.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/autopista.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/cruce.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/refmap.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-04.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-05.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-06.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-07.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-08.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-09.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/renders/tp2-11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/tp2-c1-2017.pdf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/tramo-dobleamarilla.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/vereda.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/TP2/vereda_normal.jpg</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/cruce.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed10_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed10_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed11_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed11_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed12_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed12_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed13_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed13_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed14_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed14_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed15_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed15_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed16_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed16_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed17_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed17_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed18_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed18_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed19_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed19_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed1_fachada.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed1_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed1_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed2_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed2_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed3_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed3_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed4_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed4_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed5_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed5_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed6_fachada.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed6_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed7_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed7_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed8_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed8_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed9_pb.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/ed9_pisos.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/tramo-dobleamarilla.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/vereda.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/maps/vereda_normal.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 01.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 02.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 03.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 05.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 06.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 07.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 08.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 16.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 17.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/renders/tp1 18.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Consigna/tp1-c1-2017.pdf</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -806,7 +1107,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353551000" />
+    <option name="totallyTimeSpent" value="354302000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -818,26 +1119,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="0" y="-7" width="1600" height="844" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21048513" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.211875" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.095975235" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10461956" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.095975235" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21048513" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1093,82 +1403,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="991" column="17" lean-forward="false" selection-start-line="991" selection-start-column="17" selection-end-line="991" selection-end-column="17" />
-          <folding>
-            <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#19;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#20;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#21;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#22;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#19375#21620#0" expanded="false" />
-            <element signature="e#26034#28754#0" expanded="false" />
-            <marker date="1497554211638" expanded="true" signature="1525:1602" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="2120:3112" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="2700:2762" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="2784:3053" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="3342:3519" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="4040:4962" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="4568:4630" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="4640:4909" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="5519:6485" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="6091:6153" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="6163:6432" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="6807:7170" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="6859:6955" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="6984:7082" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="7965:13352" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="8244:8571" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="8599:8932" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="8960:9293" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="9321:9627" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="9655:10009" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="10037:10370" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="10398:10730" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="10758:11052" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="11080:11441" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="11470:11804" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="11833:12194" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="12223:12579" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="12592:12948" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="12979:13102" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="13115:13234" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="13939:15110" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="14716:14778" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="14788:15057" ph="{...}" />
-            <marker date="1497554211638" expanded="true" signature="58005:58216" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Template Pruebas/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="454" column="30" lean-forward="false" selection-start-line="454" selection-start-column="30" selection-end-line="454" selection-end-column="30" />
-          <folding>
-            <marker date="1497554659177" expanded="true" signature="1467:1574" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="1722:1778" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="2006:2083" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="2601:3593" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="3181:3243" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="3265:3534" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="3823:4000" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="4521:5443" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="5049:5111" ph="{...}" />
-            <marker date="1497554659177" expanded="true" signature="5121:5390" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="557" column="58" lean-forward="false" selection-start-line="557" selection-start-column="58" selection-end-line="557" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1215,8 +1453,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="141" column="25" lean-forward="false" selection-start-line="141" selection-start-column="25" selection-end-line="141" selection-end-column="25" />
+        <state relative-caret-position="18">
+          <caret line="307" column="64" lean-forward="false" selection-start-line="307" selection-start-column="64" selection-end-line="307" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2405">
+          <caret line="226" column="33" lean-forward="false" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
+          <folding>
+            <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#19;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#22;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1497727371431" expanded="true" signature="1525:1602" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="2120:3112" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="2700:2762" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="2784:3053" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="3342:3519" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="4040:4962" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="4568:4630" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="4640:4909" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="5519:6485" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="6091:6153" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="6163:6432" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="6807:7190" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="6872:6968" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="7004:7102" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="7985:13097" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="8276:8609" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="8644:8977" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="9012:9318" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="9353:9707" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="9742:10075" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="10110:10442" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="10477:10771" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="10806:11167" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="11203:11537" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="11574:11935" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="11972:12328" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="12365:12692" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="12724:12847" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="12860:12979" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="13684:14855" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="14461:14523" ph="{...}" />
+            <marker date="1497727371431" expanded="true" signature="14533:14802" ph="{...}" />
+            <marker date="1497727371431" expanded="false" signature="46976:48626" ph="..." />
+            <marker date="1497727371431" expanded="false" signature="48823:48831" ph="á" />
+            <marker date="1497727371431" expanded="false" signature="49353:57975" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="597" column="26" lean-forward="false" selection-start-line="597" selection-start-column="26" selection-end-line="597" selection-end-column="26" />
           <folding />
         </state>
       </provider>
