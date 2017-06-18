@@ -233,12 +233,13 @@ class ObjetosFactory {
          */
 
         var edificio = new Objeto3D();
-        edificio.setType("edificio",this.numB);
+        edificio.setType("edificio",this.numB, y, x);
         this.sumNumB();
 
         //Creamos los puntos de la curva del edificio
         var puntosEdificio = [];
         puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
         puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
         puntosEdificio.push(vec3.fromValues(x, 0.0, z));
 
@@ -605,11 +606,11 @@ class ObjetosFactory {
 
     llenarAlturas(){
         var alturas = [];
-        var variaciones = [0.3,0.5,0.7];
+        var variaciones = [0.7,0.8,0.9];
         for(var i =0.0; i<14;i++){
             var num = Math.random();
 
-            if(num <0.3 || num>0.7){
+            if(num <0.5){
                 num = variaciones[i%3];
             }
             alturas.push(num*20);

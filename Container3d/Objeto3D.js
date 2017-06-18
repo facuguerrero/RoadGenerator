@@ -50,13 +50,16 @@ class Objeto3D extends Container3D{
 
     this.objectType = null;
     this.id = null;
+    this.maxY = null;
+    this.maxX = null;
     }
 
     //recibe un objectype que es un string que tiene que ser similar a alguno de los define superiores
     //id no se bien que es
-    setType(objectType, id){
+    setType(objectType, id, y = null){
         this.objectType = objectType;
         this.id = id;
+        this.maxY = y - Math.random(); //le resto un random para que las alturas de las entradas no queden fijas
     }
 
     /**********METODOS DE MODELADO*************/
@@ -415,6 +418,7 @@ class Objeto3D extends Container3D{
         }
         if(this.objectType == EDIFICIO){
             gl.vertexAttrib1f(idBuilding, this.id);
+            gl.vertexAttrib1f(maxYBuilding, this.maxY);
         }
         if(this.objectType == ESQUINA){
             gl.vertexAttrib1f(idEsquina,this.id);

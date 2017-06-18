@@ -265,127 +265,125 @@
     uniform sampler2D pb4;
 
     varying float vID;
+    varying float maxY;
 
     void main(void) {
         vec4 textureColor;
         vec4 textureColor2;
-        float factor = 0.2;
+        float factor;
 
         // Coordenada de textura sin modifiaciones
         vec4 color = vec4(1.0,0.0,0.0, 1.0);
         vec2 auxUv = vTextureCoord;
         vec2 auxUv2 = vTextureCoord;
 
+        //ajusto la altura de la entrada a partir de la del edificio
+        factor = 2.8/maxY;
+        float factorX = 4.0;
+        float factorpbY = maxY / 2.8;
+        float factoredY = 4.0;
+
+
 
         if(vID > 1.5 && vID < 2.5){
-            auxUv2.x = auxUv2.x * 4.0;
-            auxUv2.y = auxUv2.y * 2.0;
-            auxUv.x = auxUv.x * 0.8;
-            auxUv.y = auxUv.y * 1.2;
-            factor = 0.32;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 2.5 && vID < 3.5){
-            auxUv2.x = auxUv2.x * 4.0;
-            auxUv2.y = auxUv2.y * 2.0;
-            auxUv.x = auxUv.x * 0.8;
-            auxUv.y = auxUv.y * 1.1;
-            factor = 0.36;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 3.5 && vID < 4.5){
-            auxUv2.x = auxUv2.x * 4.0;
-            auxUv2.y = auxUv2.y * 2.0;
-            auxUv.x = auxUv.x * 0.8;
-            auxUv.y = auxUv.y * 2.0;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building4, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 4.5 && vID < 5.5){
-                auxUv2.x = auxUv2.x * 3.8;
-                auxUv2.y = auxUv2.y;
-                auxUv.x = auxUv.x * 4.0;
-                auxUv.y = auxUv.y * 3.2;
-                factor = 0.3;
-                textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 5.5 && vID < 6.5){
-            auxUv2.x = auxUv2.x * 4.0;
-            auxUv2.y = auxUv2.y * 3.0;
-            auxUv.x = auxUv.x * 4.0;
-            auxUv.y = auxUv.y * 5.0;
-            factor = 0.52;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 6.5 && vID < 7.5){
-            auxUv2.x = auxUv2.x * 4.0;
-            auxUv2.y = auxUv2.y * 2.0;
-            auxUv.x = auxUv.x * 4.0;
-            auxUv.y = auxUv.y * 6.7;
-            factor = 0.3;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 7.5 && vID < 8.5){
-            auxUv2.x = auxUv2.x;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 5.0;
-            auxUv.y = auxUv.y * 5.0;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 8.5 && vID < 9.5){
-                auxUv2.x = auxUv2.x * 4.0;
-                auxUv2.y = auxUv2.y * 2.0;
-                auxUv.x = auxUv.x * 4.0;
-                auxUv.y = auxUv.y * 5.0;
-                factor = 0.35;
-                textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 9.5 && vID < 10.5){
-            auxUv2.x = auxUv2.x * 4.0;
-            auxUv2.y = auxUv2.y * 2.0;
-            auxUv.x = auxUv.x * 4.0;
-            auxUv.y = auxUv.y * 7.0;
-            factor = 0.25;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building10, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 10.5 && vID < 11.5){
-                auxUv2.x = auxUv2.x * 4.0;
-                auxUv2.y = auxUv2.y * 2.0;
-                auxUv.x = auxUv.x * 3.8;
-                auxUv.y = auxUv.y * 6.6;
-                factor = 0.3;
-                textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 11.5 && vID < 12.5){
-                auxUv2.x = auxUv2.x * 1.6;
-                auxUv2.y = auxUv2.y;
-                auxUv.x = auxUv.x * 4.0;
-                auxUv.y = auxUv.y * 4.0;
-                factor = 0.24;
-                textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 12.5 && vID < 13.5){
-            auxUv2.x = auxUv2.x * 4.0;
-            auxUv2.y = auxUv2.y;
-            auxUv.x = auxUv.x * 1.0;
-            auxUv.y = auxUv.y * 1.2;
-            factor = 0.13;
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
             textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
 
 
-        if(auxUv2.y < factor){
+        if((vTextureCoord.y) < factor){
 
             color.x=textureColor2.x;
             color.y=textureColor2.y;
@@ -408,6 +406,8 @@
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
     attribute float aID;
+    attribute float amaxY;
+    uniform float amaxX;
 
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
@@ -423,12 +423,11 @@
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
+    varying float maxY;
 
     uniform float t;
 
     void main(void) {
-
-
 
         // position
         vec4 auxPos = vec4(aVertexPosition,1.0);
@@ -442,8 +441,9 @@
 		// Transformamos al v�rtice al espacio de la proyecci�n
         gl_Position = uPMatrix * pos_camera_view;
 
-        //se pasa el id
+        //se pasa el id y la altura y ancho maxima
         vID = aID;
+        maxY = amaxY;
 
         vTextureCoord = aTextureCoord;
 
@@ -644,6 +644,7 @@
             buildingShaders.directionalColorUniform = gl.getUniformLocation(buildingShaders, "uDirectionalColor");
 
             idBuilding = gl.getAttribLocation(buildingShaders, "aID");
+            maxYBuilding = gl.getAttribLocation(buildingShaders, "amaxY");
 
         }
 
