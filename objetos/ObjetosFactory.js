@@ -425,43 +425,59 @@ class ObjetosFactory {
             //piso.setType("pasto",19.0);
         }
 
-        var buf = new BufferCalculator(2,27);
+        var buf = new BufferCalculator(2,24);
         /*Seteo los buffers */
 
         //Sabemos que las normales son salientes al plano, entonces son 1 en y.
         var norm = [];
-        var tex = [];
+        var pos = [];
 
-        for( var i = 0; i<30; i++){
+        var tex = [0.1,0.0,  0.9,0.0,  0.93,0.005,  0.959,0.019,  0.98,0.041,  0.99,0.069,
+            1.0,0.9,  0.99,0.93,  0.98,0.958,  0.958,0.98,  0.93,0.99,  0.9,1.0,
+            0.1,1.0,  0.069,0.99,  0.041,0.98,  0.019,0.96,  0.009,0.93,  0.0,0.9,
+            0.0,0.1,  0.0098,0.069,  0.019,0.041,  0.041,0.019,  0.069,0.0048,  0.1,0.0];
+
+        console.log("empieza");
+        for( var i = 0; i<24; i++){
             norm.push(0.0);
             norm.push(1.0);
             norm.push(0.0);
-            console.log(perfil.bufferCreator.posBuffer[i]);
-            console.log(perfil.bufferCreator.posBuffer[i+1]);
-            console.log(perfil.bufferCreator.posBuffer[i+2]);
+
+            //Pone x6 aca y sacas el trasnportado.
+            pos.push(perfil.bufferCreator.posBuffer[i*3]);
+            pos.push(perfil.bufferCreator.posBuffer[i*3+1]);
+            pos.push(perfil.bufferCreator.posBuffer[i*3+2]);
+
+
+            /*
             for( var j=0; j<2; j++){
                 var u = (j / (2 - 1));
                 var v = (i / (27 - 1));
 
                 tex.push(u);
                 tex.push(v);
-            }
+            }*/
 
         }
+        console.log(perfil.bufferCreator.posBuffer);
+        console.log(pos);
+        console.log("termina");
 
+        //console.log(perfil.bufferCreator.posBuffer);
         buf.normalBuffer =norm;
+        buf.posBuffer = pos;
         buf.colorBuffer = perfil.bufferCreator.colorBuffer;
-        buf.posBuffer = perfil.bufferCreator.posBuffer;
         buf.textureBuffer1 = tex;
-        buf.textureBuffer2 = tex;
+        //buf.textureBuffer2 = tex;
 
         piso.setBufferCreator(buf);
 
         piso.bufferCreator.indexBuffer = [0,7,1, 1,7,2, 2,7,3, 3,7,4, 4,7,5, 5,6,7,
             7,12,8, 8,12,9, 9,12,10, 10,12,11, 11,12,7, 7,12,0,
             0,12,13, 14,13,15, 15,13,16, 16,13,17, 17,13,18, 18,0,13, 13,15,18, 18,0,19,
-            19,0,20, 20,0,21, 21,0,22, 22,0,23, 23,0,24];
+            19,0,20, 20,0,21, 21,0,22, 22,0,23 ];
 
+        //piso.bufferCreator.indexBuffer = [ 10,13,20];
         piso.build();
         piso.translate(0.0,0.2,0.0);
 
