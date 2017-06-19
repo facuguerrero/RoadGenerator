@@ -117,14 +117,14 @@ class AutosAnimados {
     }
 
 
-    updateAutos(){
+    updateAutos(step){
 
         var largoCurva = 55.0;
 
-        this.count += 0.15;
+        this.count += 0.5;
 
         if (this.count > 1.15){
-            this.count = 0.0;
+            this.count = step;
         }
 
         for (var i = 0; i < this.autos1.length; i++){

@@ -230,9 +230,9 @@
            textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
-        if(vID >17.5 && vID <18.5){
-            textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
+//        if(vID >17.5 && vID <18.5){
+//            textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
+//        }
 
         if(vID >18.5 && vID <19.5){
             textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
@@ -249,6 +249,7 @@
     varying vec3 vLightWeighting;
 
     uniform float t;
+    uniform float count;
 
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
 
@@ -287,7 +288,6 @@
         float factorX = 4.0;
         float factorpbY = maxY / 2.8;
         float factoredY = 5.0;
-
 
         if(vID > 1.5 && vID < 2.5){
             auxUv2.x = auxUv2.x * factorX;
@@ -385,6 +385,14 @@
             textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
+        if(vID > 13.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+        }
 
 
         if((vTextureCoord.y) < factor){
@@ -411,7 +419,6 @@
     attribute vec2 aTextureCoord;
     attribute float aID;
     attribute float amaxY;
-    uniform float amaxX;
 
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
@@ -430,13 +437,22 @@
     varying float maxY;
 
     uniform float t;
+    uniform float edificioActual;
+    uniform float count;
 
     void main(void) {
 
         // position
         vec4 auxPos = vec4(aVertexPosition,1.0);
+        float escalaY = 0.0;
 
-        float escalaY=min(1.0,t*0.01);
+        if(aID == edificioActual){
+            escalaY=min(1.0,t*0.05);
+        }
+        else if (aID < edificioActual){
+            escalaY=1.0;
+        }
+
         auxPos.y=auxPos.y*escalaY;
 
         // Transformamos al v�rtice al espacio de la c�mara
@@ -446,7 +462,7 @@
         gl_Position = uPMatrix * pos_camera_view;
 
         //se pasa el id y la altura y ancho maxima
-        vID = aID;
+        vID = count;
         maxY = amaxY;
 
         vTextureCoord = aTextureCoord;
@@ -456,7 +472,6 @@
         auxUv.y = auxUv.y*escalaY;
 
         vTextureCoord = auxUv;
-
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
@@ -944,12 +959,14 @@
         var mvMatrixStack = [];
         var pMatrix = mat4.create();
         var frame=0;
+        var countEdificios = 2.0;
 
         var body = null;
         var canvas = null;
         var camera = null;
         var factory = null;
         var autosAnimados = null;
+        var step = 0.5;
 
         var calle1 = null;
         var calle2 = null;
@@ -1049,17 +1066,26 @@
             escena.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
-            escena.draw(model_matrix_escene, false);
 
-            autosAnimados.updateAutos();
+            autosAnimados.updateAutos(step);
 
-            if (frame < 200) {
+            if (frame < 30) {
                 var t = gl.getUniformLocation(buildingShaders, "t");
                 gl.useProgram(buildingShaders);
                 gl.uniform1f(t, frame);
-                factory.updateTechos(frame);
+                var edificioActual = gl.getUniformLocation(buildingShaders, "edificioActual");
+                gl.useProgram(buildingShaders);
+                gl.uniform1f(edificioActual, countEdificios);
+                factory.updateTechos(frame, countEdificios - 2.0);
                 frame++;
             }
+
+            if (frame >= 30 && countEdificios < factory.getIdEdficios() - 1.0){
+                countEdificios = countEdificios + 1.0;
+                frame = 0;
+            }
+
+            escena.draw(model_matrix_escene, false);
 
         }
 

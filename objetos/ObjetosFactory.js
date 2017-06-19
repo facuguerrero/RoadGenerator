@@ -2,6 +2,7 @@ class ObjetosFactory {
 
     constructor() {
         this.numB=2.0;
+        this.countEdif = 2.0;
         this.tapasEdificios = [];
         this.alturas = [];
         //
@@ -235,6 +236,7 @@ class ObjetosFactory {
 
         var edificio = new Objeto3D();
         edificio.setType("edificio",this.numB, y, x);
+        edificio.setCountEd(this.countEdif);
         this.sumNumB();
 
         //Creamos los puntos de la curva del edificio
@@ -593,15 +595,19 @@ class ObjetosFactory {
 
 //----------------- Metodos Auxiliares ---------------//
 
-    updateTechos(t){
+    updateTechos(t, numEdificio){
 
-        for (var i = 0; i < this.tapasEdificios.length; i++){
-            var ed = this.tapasEdificios[i];
-            var altura = this.alturas[i];
+            var edificio = Math.floor(numEdificio);
+
+            var ed = this.tapasEdificios[edificio];
+            var altura = this.alturas[edificio];
             ed.resetMatrix();
-            var escalaY= Math.min(1.0,t*0.01);
+            var escalaY= Math.min(1.0,t*0.05);
             ed.translate(0.0, altura * escalaY, 0.0);
-        }
+    }
+
+    getIdEdficios(){
+        return this.numB;
     }
 
     getMatriz4x4(mat){
@@ -615,8 +621,9 @@ class ObjetosFactory {
 
     sumNumB(){
         this.numB += 1.0;
-        if(this.numB >= 14.0){
-            this.numB=2.0;
+        this.countEdif += 1.0;
+        if(this.countEdif >= 14.0){
+            this.countEdif=2.0;
         }
     }
 
