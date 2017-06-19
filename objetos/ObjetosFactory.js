@@ -437,8 +437,8 @@ class ObjetosFactory {
             norm.push(1.0);
             norm.push(0.0);
             for( var j=0; j<2; j++){
-                var u = (i / (28 - 1));
-                var v = (j / (2 - 1));
+                var u = (j / (2 - 1));
+                var v = (i / (28 - 1));
 
                 tex.push(u);
                 tex.push(v);
