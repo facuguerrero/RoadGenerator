@@ -432,11 +432,11 @@ class FigurasPrimitivas{
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        vertices.push(vec3.fromValues(18.0, 0.0, 0.0));
+        /*vertices.push(vec3.fromValues(18.0, 0.0, 0.0));
         var vecNorm2 = vec3.fromValues(-1.0, 0.0, 0.0);
         vec3.normalize(vecNorm2, vecNorm2);
         arrayVecNOR.push(vecNorm2);
-
+*/
         this.calcularCurvaEsquina(vertices,arrayVecNOR, 18.0, 2.0, 1);
 
         /*vertices.push(vec3.fromValues(20.0, 0.0, 15.0));
