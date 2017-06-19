@@ -22,6 +22,7 @@ var CALLE = "calle";
 var EDIFICIO = "edificio";
 var VEREDA = "vereda";
 var ESQUINA = "esquina";
+var AUTOPISTA = "autopista";
 
 class Objeto3D extends Container3D{
 
@@ -385,6 +386,9 @@ class Objeto3D extends Container3D{
         else if (this.objectType == VEREDA){
             this.setShaderProgram(veredaShader);
         }
+        else if(this.objectType == AUTOPISTA){
+            this.setShaderProgram(autopistaShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -422,6 +426,9 @@ class Objeto3D extends Container3D{
         }
         if(this.objectType == VEREDA){
             gl.vertexAttrib1f(idVereda, this.id);
+        }
+        if(this.objectType == AUTOPISTA){
+            gl.vertexAttrib1f(idAutopista, this.id);
         }
 
         //Normal
