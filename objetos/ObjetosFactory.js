@@ -418,6 +418,9 @@ class ObjetosFactory {
         if(control){
             //piso.setType("vereda",18.0);
         }
+        else{
+            //piso.setType("pasto",19.0);
+        }
 
         var buf = new BufferCalculator(2,28);
         /*Seteo los buffers */

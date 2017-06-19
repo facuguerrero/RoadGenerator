@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be2a6dc7-9c5f-4f58-8ed4-792ac3fedadf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="319" column="46" lean-forward="true" selection-start-line="319" selection-start-column="39" selection-end-line="319" selection-end-column="46" />
+            <state relative-caret-position="196">
+              <caret line="409" column="15" lean-forward="false" selection-start-line="409" selection-start-column="15" selection-end-line="409" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -72976,13 +72975,6 @@
       <workItem from="1497617370168" duration="11359000" />
       <workItem from="1497637200952" duration="3016000" />
     </task>
-    <task id="LOCAL-00143" summary="Columna">
-      <created>1496177711002</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1496177711002</updated>
-    </task>
     <task id="LOCAL-00144" summary="Columna">
       <created>1496177830177</created>
       <option name="number" value="00144" />
@@ -73319,11 +73311,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497750064771</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="Anda la vereda, pero no se carga">
+      <created>1497877155607</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1497877155608</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="369681000" />
+    <option name="totallyTimeSpent" value="369969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -73373,7 +73372,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="asdadqwe" />
     <MESSAGE value="TODO" />
     <MESSAGE value="Mnazana pasto" />
     <MESSAGE value="Toda la grilla cargada" />
@@ -73398,7 +73396,8 @@
     <MESSAGE value="COLUMNA &quot;&quot;&quot;&quot;&quot;&quot;&quot; arreglada &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; hay que hacerla mejor pero ya me pudrio esta mierda" />
     <MESSAGE value="me falta ajustar las texturas un poco mas" />
     <MESSAGE value="cambio de tecturas" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio de tecturas" />
+    <MESSAGE value="Anda la vereda, pero no se carga" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anda la vereda, pero no se carga" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -73720,8 +73719,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="319" column="46" lean-forward="true" selection-start-line="319" selection-start-column="39" selection-end-line="319" selection-end-column="46" />
+        <state relative-caret-position="196">
+          <caret line="409" column="15" lean-forward="false" selection-start-line="409" selection-start-column="15" selection-end-line="409" selection-end-column="15" />
           <folding />
         </state>
       </provider>
