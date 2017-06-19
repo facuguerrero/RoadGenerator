@@ -1714,6 +1714,10 @@ body{
 
     function updateCoordinates(e){
     var pos=$("#myCanvas").position();
+        if(p1){
+            new_points[0][1] = (e.pageY-pos.top);
+            new_points[1][1] = (e.pageY-pos.top);
+        }
         if(p2){
             new_points[2][0] = (e.pageX -pos.left);
             new_points[2][1] = (e.pageY-pos.top);
@@ -1726,9 +1730,15 @@ body{
             new_points[4][0] = (e.pageX -pos.left);
             new_points[4][1] = (e.pageY-pos.top);
         }
+        if(p5){
+            new_points[5][1] = (e.pageY-pos.top);
+            new_points[6][1] = (e.pageY-pos.top);
+        }
     }
 
     var mouseIsPressed=false;
+    var p1 = false;
+    var p5 = false;
     var p2 = false;
     var p3 = false;
     var p4 = false;
@@ -1779,6 +1789,18 @@ body{
                 (puntosDeControl[3][1] >= (e.pageY-pos.top) - radio) ){
                 p3 = true;
             }
+            else if( (puntosDeControl[1][0] <= (e.pageX -pos.left)) + radio &&
+                (puntosDeControl[1][0] >= (e.pageX -pos.left)) - radio &&
+                (puntosDeControl[1][1] <= (e.pageY-pos.top) + radio) &&
+                (puntosDeControl[1][1] >= (e.pageY-pos.top) - radio) ){
+                p1 = true;
+            }
+            else if( (puntosDeControl[5][0] <= (e.pageX -pos.left)) + radio &&
+                (puntosDeControl[5][0] >= (e.pageX -pos.left)) - radio &&
+                (puntosDeControl[5][1] <= (e.pageY-pos.top) + radio) &&
+                (puntosDeControl[5][1] >= (e.pageY-pos.top) - radio) ){
+                p5 = true;
+            }
 
 
             updateCoordinates(e);
@@ -1789,6 +1811,8 @@ body{
             p4 = false;
             p2 = false;
             p3 = false;
+            p1 = false;
+            p5 = false;
     });
 
 });
@@ -1803,9 +1827,13 @@ body{
     function Load(){
         step = document.getElementById("points").value;
         frame = 0;
+        puntosDeControl [0] = new_points[0];
+        puntosDeControl [1] = new_points[1];
         puntosDeControl [2] = new_points[2];
         puntosDeControl [3] = new_points[3];
         puntosDeControl [4] = new_points[4];
+        puntosDeControl [5] = new_points[5];
+        puntosDeControl [6] = new_points[6];
         resetGrilla(grilla);
         animate();
         webGLStart();
