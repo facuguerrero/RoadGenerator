@@ -437,7 +437,7 @@ class ObjetosFactory {
             0.1,1.0,  0.069,0.99,  0.041,0.98,  0.019,0.96,  0.009,0.93,  0.0,0.9,
             0.0,0.1,  0.0098,0.069,  0.019,0.041,  0.041,0.019,  0.069,0.0048,  0.1,0.0];
 
-        console.log("empieza");
+        //console.log("empieza");
         for( var i = 0; i<24; i++){
             norm.push(0.0);
             norm.push(1.0);
@@ -459,16 +459,16 @@ class ObjetosFactory {
             }*/
 
         }
-        console.log(perfil.bufferCreator.posBuffer);
-        console.log(pos);
-        console.log("termina");
+        //console.log(perfil.bufferCreator.posBuffer);
+        //console.log(pos);
+        //console.log("termina");
 
         //console.log(perfil.bufferCreator.posBuffer);
         buf.normalBuffer =norm;
         buf.posBuffer = pos;
         buf.colorBuffer = perfil.bufferCreator.colorBuffer;
         buf.textureBuffer1 = tex;
-        //buf.textureBuffer2 = tex;
+        buf.textureBuffer2 = tex;
 
         piso.setBufferCreator(buf);
 
