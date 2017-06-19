@@ -562,14 +562,24 @@ class FigurasPrimitivas{
         }*/
 
         arrayVecPos.push(vec3.fromValues(6.0,0.0,0.0));
-        arrayVecPos.push(vec3.fromValues(5.0,1.0,0.0));
+
+        arrayVecPos.push(vec3.fromValues(5.9,0.5,0.0));
+        arrayVecPos.push(vec3.fromValues(5.7,1.0,0.0));
+        arrayVecPos.push(vec3.fromValues(5.3,1.4,0.0));
+        arrayVecPos.push(vec3.fromValues(4.9,1.65,0.0));
+        arrayVecPos.push(vec3.fromValues(4.3,1.80,0.0));
+        arrayVecPos.push(vec3.fromValues(3.5,1.9,0.0));
+
         arrayVecPos.push(vec3.fromValues(2.5,2.0,0.0));
 
         arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
         arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
         arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
-//        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
-   //     arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
     }
 
     calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor){

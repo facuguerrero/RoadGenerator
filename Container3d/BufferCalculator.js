@@ -39,28 +39,57 @@ class BufferCalculator{
     }
 
     calcInBuff(){
-        console.log("empieza");
+        //console.log("empieza");
         for(var i = 0; i < (this.rows-1); i++) {
 
             var factor = (this.colms*this.rows)- this.rows;
-            //var factor = 1;
 
-            if (i % 2 == 0) {
-                // Hacia la derecha
-                for (var k = 0; k < factor; k++) {
-                    this.indexBuffer.push(i * this.rows + k);
-                    this.indexBuffer.push((i+1) * this.rows + k);
+            for (var k = 0; k < factor; k++) {
+                if(i * this.rows + k >= factor){
+                    break;
                 }
-            } else {
+                this.indexBuffer.push(i * this.rows + k);
+                this.indexBuffer.push((i+1) * this.rows + k);
+            }
+
+            /*else {
                 // Cambio de lado a la izquierda
-                for (var j = factor-1; j >= 0; j--) {
-                    //this.indexBuffer.push(i * this.rows + j);
-                    //this.indexBuffer.push((i+1) * this.rows + j);
+                for (var j = this.colms-1; j >= 0; j--) {
+                    this.indexBuffer.push(i * this.rows + j);
+                    this.indexBuffer.push((i+1) * this.rows + j);
+                }
+            }*/
+            //this.indexBuffer = [0,1,2, 1,2,3, 2,3,4, 3,4,5, 4,5,6, 5,6,7];
+        }
+        //console.log("termina");
+    }
+
+    /*calcInBuff(){
+        console.log("empieza");
+        for(var i = 0; i < (this.rows-1); i++) {
+
+            //var factor = (this.colms*this.rows)- this.rows;
+
+            // Hacia la derecha
+            for (var k = 0; k < this.colms; k++) {
+
+                if(k == 0) {
+                    this.indexBuffer.push( (i * this.colms) + k );
+                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + k );
+                }
+                if(k != 0){
+                    this.indexBuffer.push( k );
+                    this.indexBuffer.push( k );
+                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + (k-1) );
+                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + k );
+                }
+                if(k != 0 && k != this.colms-1){
+                    this.indexBuffer.push( k );
+                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + k );
                 }
             }
         }
-        console.log("termina");
-    }
+    }*/
 
     setBoolTexture1(){
         this.texture1 = true;
