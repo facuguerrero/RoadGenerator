@@ -966,7 +966,8 @@
         var camera = null;
         var factory = null;
         var autosAnimados = null;
-        var step = 0.5;
+        var frameAutos = 0;
+        var step = 10;
 
         var calle1 = null;
         var calle2 = null;
@@ -1067,8 +1068,6 @@
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
 
-            autosAnimados.updateAutos(step);
-
             if (frame < 30) {
                 var t = gl.getUniformLocation(buildingShaders, "t");
                 gl.useProgram(buildingShaders);
@@ -1086,6 +1085,11 @@
             }
 
             escena.draw(model_matrix_escene, false);
+            if(frameAutos > 10 - step) {
+                autosAnimados.updateAutos(step);
+                frameAutos = 0;
+            }
+            frameAutos++;
 
         }
 
@@ -1376,7 +1380,7 @@ body{
 .button {
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
-    top: -120px;
+    top: -180px;
     left:460px;
     display: inline-block;
     border-radius: 4px;
@@ -1429,7 +1433,7 @@ body{
     #myCanvas{
         cursor:crosshair;
         position:relative;
-        top:-140px;
+        top:-185px;
         left:10px;
         background-color: white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1456,6 +1460,19 @@ body{
         z-index:1;
     }
 
+    #slider{
+        position:relative;
+        left:480px;
+        top: -135px;
+
+
+    }
+    h3{
+        position:relative;
+        left:-100px;
+        top: -65px;
+    }
+
 </style>
 
 <script src="jquery-2.1.4.min.js"></script>
@@ -1472,6 +1489,13 @@ body{
             <canvas id="myCanvas" width="300" height="300">
             Your browser does not support the HTML5 canvas element.
             </canvas>
+
+            <div id="slider" data-role="main" class="ui-content">
+                <form method="post" action="/action_page_post.php">
+                    <input type="range" name="points" id="points" min="0" max="10">
+                    <h3 style="color:#803a37">Speed:</h3>
+                </form>
+            </div>
 
     </center>
 
@@ -1678,6 +1702,8 @@ body{
 
     var grilla = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
 
+    var new_step = 0.5;
+
     var c=document.getElementById("myCanvas");
     var ctx=c.getContext("2d");
 
@@ -1766,7 +1792,6 @@ body{
             p3 = false;
     });
 
-
 });
 
 
@@ -1777,6 +1802,7 @@ body{
     //dibujarCurva(puntosDeControl,true);
 
     function Load(){
+        step = document.getElementById("points").value;
         frame = 0;
         puntosDeControl [2] = new_points[2];
         puntosDeControl [3] = new_points[3];
