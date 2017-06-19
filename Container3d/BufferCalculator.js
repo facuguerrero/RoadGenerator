@@ -39,11 +39,12 @@ class BufferCalculator{
     }
 
     calcInBuff(){
-
+        console.log("empieza");
         for(var i = 0; i < (this.rows-1); i++) {
 
             var factor = (this.colms*this.rows)- this.rows;
             //var factor = 1;
+
             if (i % 2 == 0) {
                 // Hacia la derecha
                 for (var k = 0; k < factor; k++) {
@@ -52,12 +53,13 @@ class BufferCalculator{
                 }
             } else {
                 // Cambio de lado a la izquierda
-                for (var j = this.colms-1; j >= 0; j--) {
-                    this.indexBuffer.push(i * this.rows + j);
-                    this.indexBuffer.push((i+1) * this.rows + j);
+                for (var j = factor-1; j >= 0; j--) {
+                    //this.indexBuffer.push(i * this.rows + j);
+                    //this.indexBuffer.push((i+1) * this.rows + j);
                 }
             }
         }
+        console.log("termina");
     }
 
     setBoolTexture1(){
