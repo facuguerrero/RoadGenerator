@@ -414,7 +414,7 @@ class ObjetosFactory {
         mat3.identity(mat);
         arrayMat.push(mat);
         arrayMat.push(matt);
-        perfil.calcularSuperficieBarrido("vereda", 2, 25, arrayMat, puntosPerfil);
+        perfil.calcularSuperficieBarrido("vereda", 2, 24, arrayMat, puntosPerfil);
         vereda.add(perfil);
 
         var piso = new Objeto3D();
@@ -425,20 +425,23 @@ class ObjetosFactory {
             //piso.setType("pasto",19.0);
         }
 
-        var buf = new BufferCalculator(2,28);
+        var buf = new BufferCalculator(2,27);
         /*Seteo los buffers */
 
         //Sabemos que las normales son salientes al plano, entonces son 1 en y.
         var norm = [];
         var tex = [];
 
-        for( var i = 0; i<28; i++){
+        for( var i = 0; i<30; i++){
             norm.push(0.0);
             norm.push(1.0);
             norm.push(0.0);
+            console.log(perfil.bufferCreator.posBuffer[i]);
+            console.log(perfil.bufferCreator.posBuffer[i+1]);
+            console.log(perfil.bufferCreator.posBuffer[i+2]);
             for( var j=0; j<2; j++){
                 var u = (j / (2 - 1));
-                var v = (i / (28 - 1));
+                var v = (i / (27 - 1));
 
                 tex.push(u);
                 tex.push(v);
