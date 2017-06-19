@@ -1,9 +1,6 @@
-var CUADRADO;
-CUADRADO = "cuadrado";
-var CIRCUNFERENCIA;
-CIRCUNFERENCIA = "circunferencia";
-var LINEA;
-LINEA = "linea";
+var CUADRADO = "cuadrado";
+var CIRCUNFERENCIA = "circunferencia";
+var LINEA = "linea";
 var BASE_RUTA = "base_ruta";
 var ASFALTO_RUTA = "asfalto_ruta";
 var ESTRUCTURA_EDIFICIO= "estructura_edificio";

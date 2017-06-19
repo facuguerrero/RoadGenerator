@@ -648,9 +648,6 @@
         }
 
         function initEsquinaShaders() {
-            //Inicializamos el shader de la calle.
-
-            /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
 
             var fragmentShader = getShader("fs-street");
             var vertexShader = getShader("vs-general");
@@ -688,9 +685,6 @@
         }
 
         function initVeredaShaders() {
-            //Inicializamos el shader de la calle.
-
-            /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
 
             var fragmentShader = getShader("fs-street");
             var vertexShader = getShader("vs-general");
@@ -947,6 +941,7 @@
         var idBuilding;
         var idSideWalk;
         var idEsquina;
+        var idVereda;
 
 
         var mouse = null;
@@ -1025,8 +1020,8 @@
 
             initGL(canvas);
             initColoredShaders();
-            initEsquinaShaders();
             initStreetShaders();
+            initEsquinaShaders();
             initVeredaShaders();
             initBuildingTopShaders();
             initTextures();
