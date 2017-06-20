@@ -320,7 +320,7 @@ class ObjetosFactory {
          una calle con las mismas dimensiones de
          ancho y largo.
          */
-        return this.createCalle(x, x, "esquina",1.0);
+        return this.createCalle(x, x, "vereda",18.0);
     }
 
     createCar() {
@@ -422,7 +422,7 @@ class ObjetosFactory {
             //piso.setType("vereda",18.0);
         }
         else{
-            //piso.setType("pasto",19.0);
+            piso.setType("vereda",18.0);
         }
 
         var buf = new BufferCalculator(2,24);
@@ -448,22 +448,8 @@ class ObjetosFactory {
             pos.push(perfil.bufferCreator.posBuffer[i*3+1]);
             pos.push(perfil.bufferCreator.posBuffer[i*3+2]);
 
-
-            /*
-            for( var j=0; j<2; j++){
-                var u = (j / (2 - 1));
-                var v = (i / (27 - 1));
-
-                tex.push(u);
-                tex.push(v);
-            }*/
-
         }
-        //console.log(perfil.bufferCreator.posBuffer);
-        //console.log(pos);
-        //console.log("termina");
 
-        //console.log(perfil.bufferCreator.posBuffer);
         buf.normalBuffer =norm;
         buf.posBuffer = pos;
         buf.colorBuffer = perfil.bufferCreator.colorBuffer;
@@ -477,7 +463,6 @@ class ObjetosFactory {
             0,12,13, 14,13,15, 15,13,16, 16,13,17, 17,13,18, 18,0,13, 13,15,18, 18,0,19,
             19,0,20, 20,0,21, 21,0,22, 22,0,23 ];
 
-        //piso.bufferCreator.indexBuffer = [ 10,13,20];
         piso.build();
         piso.translate(0.0,0.2,0.0);
 

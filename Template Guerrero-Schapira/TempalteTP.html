@@ -214,8 +214,6 @@
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
     uniform sampler2D street;
     uniform sampler2D esquina;
-    uniform sampler2D vereda;
-    uniform sampler2D autopista;
 
     varying float vID;
 
@@ -228,14 +226,6 @@
 
         if(vID > 0.5 && vID < 1.5){
            textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-
-//        if(vID >17.5 && vID <18.5){
-//            textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
-//        }
-
-        if(vID >18.5 && vID <19.5){
-            textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
         gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
@@ -492,76 +482,38 @@
 
     </script>
 
-    <!--<script id="fs-buildingLow" type="x-shader/x-fragment">-->
-    <!--precision highp float;-->
+    <script id="fs-vereda" type="x-shader/x-fragment">
+    precision highp float;
 
-    <!--varying vec2 vTextureCoord;-->
-    <!--varying vec3 vLightWeighting;-->
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
 
-    <!--//TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0-->
+    uniform sampler2D vereda;
+    uniform sampler2D autopista;
 
-    <!--uniform sampler2D pb1;-->
-    <!--uniform sampler2D pb2;-->
-    <!--uniform sampler2D pb3;-->
-    <!--uniform sampler2D pb4;-->
+    varying float vID;
 
-    <!--uniform sampler2D pb5;-->
-    <!--uniform sampler2D pb6;-->
-    <!--uniform sampler2D pb7;-->
-    <!--uniform sampler2D pb8;-->
+    void main(void) {
+        vec4 textureColor;
+        float fact = 4.0;
 
-    <!--uniform sampler2D pb9;-->
-    <!--uniform sampler2D pb10;-->
-    <!--uniform sampler2D pb11;-->
-    <!--uniform sampler2D pb12;-->
+        if(vID >17.5 && vID <18.5){
+            vec2 auxUV = vTextureCoord;
 
-    <!--uniform sampler2D pb13;-->
-    <!--uniform sampler2D pb14;-->
-    <!--uniform sampler2D vereda;-->
+            auxUV.x = auxUV.x * fact;
+            auxUV.y = auxUV.y * fact;
 
+            textureColor = texture2D(vereda, vec2(auxUV.s, auxUV.t));
+        }
 
-    <!--varying float vID;-->
+        if(vID >18.5 && vID <19.5){
+            textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
+        }
 
-    <!--void main(void) {-->
-        <!--vec4 textureColor;-->
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+    }
+    </script>
 
-        <!--if(vID == 5.0){-->
-           <!--textureColor = texture2D(pb5, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 6.0){-->
-           <!--textureColor = texture2D(pb6, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 7.0){-->
-           <!--textureColor = texture2D(pb7, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 8.0){-->
-           <!--textureColor = texture2D(pb8, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 9.0){-->
-           <!--textureColor = texture2D(pb9, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 10.0){-->
-           <!--textureColor = texture2D(pb10, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 11.0){-->
-           <!--textureColor = texture2D(pb11, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 12.0){-->
-           <!--textureColor = texture2D(pb12, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 13.0){-->
-           <!--textureColor = texture2D(pb13, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 14.0){-->
-           <!--textureColor = texture2D(pb14, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-        <!--else if(vID == 15.0){-->
-           <!--textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));-->
-        <!--}-->
-
-        <!--gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);-->
-    <!--}-->
-    <!--</script>-->
 
     <script type="text/javascript">
 
@@ -744,7 +696,7 @@
 
         function initVeredaShaders() {
 
-            var fragmentShader = getShader("fs-street");
+            var fragmentShader = getShader("fs-vereda");
             var vertexShader = getShader("vs-general");
 
             veredaShader = gl.createProgram();
