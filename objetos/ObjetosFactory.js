@@ -325,7 +325,7 @@ class ObjetosFactory {
          una calle con las mismas dimensiones de
          ancho y largo.
          */
-        return this.createCalle(x, x, "vereda",18.0);
+        return this.createCalle(x, x, "esquina",1.0);
     }
 
     createCar() {
@@ -429,7 +429,7 @@ class ObjetosFactory {
             //piso.setType("vereda",18.0);
         }
         else{
-            piso.setType("vereda",18.0);
+            //piso.setType("vereda",18.0);
         }
 
         var buf = new BufferCalculator(2,24);
