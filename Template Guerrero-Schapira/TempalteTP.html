@@ -828,6 +828,24 @@
             streetShader.lightingDirectionUniform = gl.getUniformLocation(streetShader, "uLightPosition");
             streetShader.directionalColorUniform = gl.getUniformLocation(streetShader, "uDirectionalColor");
 
+            // Lights
+            streetShader.useLightingUniform = gl.getUniformLocation(streetShader, "uUseLighting");
+            streetShader.useAutoIlumination = gl.getUniformLocation(streetShader, "uUseAutoIlumination");
+            streetShader.useDirectionalLights = gl.getUniformLocation(streetShader, "uUseDirectionalLights");
+            streetShader.ambientColorUniform = gl.getUniformLocation(streetShader, "uAmbientColor");
+            streetShader.ambientIluminationIntensity = gl.getUniformLocation(streetShader, "uAmbientalLightIntensity");
+            streetShader.autoIluminationIntensity = gl.getUniformLocation(streetShader, "uAutoIluminationIntensity");
+            streetShader.autoIluminationColorUniform = gl.getUniformLocation(streetShader, "uAutoIluminationColor");
+
+            // Punctual
+            streetShader.punctualLightRadio = gl.getUniformLocation(streetShader, "uPunctualLightRadio");
+            streetShader.usePunctualLights = gl.getUniformLocation(streetShader, "uUsePunctualLights");
+            streetShader.diffusePunctualColorUniform = gl.getUniformLocation(streetShader, "uPunctualDiffuseColor");
+            streetShader.specularPunctualColorUniform = gl.getUniformLocation(streetShader, "uPunctualSpecularColor");
+            streetShader.lightPunctualIntensity = gl.getUniformLocation(streetShader, "uPunctualLightIntensity");
+            // Punctual Light 1
+            streetShader.lightingPunctual1PositionUniform = gl.getUniformLocation(streetShader, "uPunctual1LightPosition");
+
             idStreet = gl.getAttribLocation(streetShader, "aID");
         }
 
