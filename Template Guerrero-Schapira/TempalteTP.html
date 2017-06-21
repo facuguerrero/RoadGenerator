@@ -240,32 +240,37 @@
 
     void main(void) {
         vec4 textureColor;
-        vec3 normal = normalize(normalInterp);
-        vec3 tangent = normalize(tangentInterp);
-        vec3 binormal = normalize(binormalInterp);
 
-		/** Tertiary Lights: Puntuals **/
-		// Puntual Light 1
-        vec3 lightDir = uPunctual1LightPosition - vertPos;
-        vec3 lightDirNormalized = normalize(lightDir);
-        vec3 viewDir = normalize(uCameraPos - vertPos);
-        float diffusePunctualLightWeighting_1 = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
-        vec3 r = 2.0 * diffusePunctualLightWeighting_1 * normal - lightDirNormalized;
-        float rv = max(dot(r, viewDir), 0.0);
-		float specularPunctualLightWeighting_1 = pow(rv,7.0); // Especular: [(2*(N*L)*N - L) * V] ^ alpha
-		float dist_puntual_1 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0));
+        if(vID >= 499.5 && vID < 500.5){
 
-   // Total Light
-        // Especular
-        vec3 specularLightWeighting = uPunctualLightIntensity  * uPunctualSpecularColor  * specularPunctualLightWeighting_1 /dist_puntual_1;
-        // Direccional
-        vec3 direccionalLightWeighting = uPunctualLightIntensity  * uPunctualDiffuseColor  * diffusePunctualLightWeighting_1 /dist_puntual_1;
+            vec3 normal = normalize(normalInterp);
+            vec3 tangent = normalize(tangentInterp);
+            vec3 binormal = normalize(binormalInterp);
 
-        // Ambiental
-        vec3 ambientalLightWeighting = uAmbientalLightIntensity * uAmbientColor;
+            /** Tertiary Lights: Puntuals **/
+            // Puntual Light 1
+            vec3 lightDir = uPunctual1LightPosition - vertPos;
+            vec3 lightDirNormalized = normalize(lightDir);
+            vec3 viewDir = normalize(uCameraPos - vertPos);
+            float diffusePunctualLightWeighting_1 = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
+            vec3 r = 2.0 * diffusePunctualLightWeighting_1 * normal - lightDirNormalized;
+            float rv = max(dot(r, viewDir), 0.0);
+            float specularPunctualLightWeighting_1 = pow(rv,7.0); // Especular: [(2*(N*L)*N - L) * V] ^ alpha
+            float dist_puntual_1 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0));
 
-		// Ambiental + Direccional + Especular
-		vec3 vLightWeighting = ambientalLightWeighting + direccionalLightWeighting + specularLightWeighting;
+       // Total Light
+            // Especular
+            vec3 specularLightWeighting = uPunctualLightIntensity  * uPunctualSpecularColor  * specularPunctualLightWeighting_1 /dist_puntual_1;
+            // Direccional
+            vec3 direccionalLightWeighting = uPunctualLightIntensity  * uPunctualDiffuseColor  * diffusePunctualLightWeighting_1 /dist_puntual_1;
+
+            // Ambiental
+            vec3 ambientalLightWeighting = uAmbientalLightIntensity * uAmbientColor;
+
+            // Ambiental + Direccional + Especular
+            vec3 vLightWeighting = ambientalLightWeighting + direccionalLightWeighting + specularLightWeighting;
+
+        }
 
         if(vID >= 0.0 && vID < 0.5){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));

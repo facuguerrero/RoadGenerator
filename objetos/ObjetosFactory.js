@@ -186,7 +186,6 @@ class ObjetosFactory {
          */
 
         var edificio = new Objeto3D();
-        edificio.setType("calle", 500.0, null, true);
         //Creamos los puntos de la curva del edificio
         var puntosEdificio = [];
         puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
@@ -210,6 +209,7 @@ class ObjetosFactory {
         base.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapa);
         this.addColor(base,0.0,0.0,1.0);
         edificio.add(base);
+        edificio.setType("calle", 500.0, null, true);
 
 
         if (tapaAbajo) {
