@@ -23,33 +23,35 @@ var EDIFICIO = "edificio";
 var VEREDA = "vereda";
 var ESQUINA = "esquina";
 var AUTOPISTA = "autopista";
+var SKY = "sky";
+
 
 class Objeto3D extends Container3D{
 
-  constructor(){
-    super();
+    constructor(){
+        super();
 
-    this.figuras = null;
-    this.figuras = new FigurasPrimitivas();
+        this.figuras = null;
+        this.figuras = new FigurasPrimitivas();
 
-    this.posBuffer = null;
-    this.indexBuffer = null;
-    this.colorBuffer = null;
-    this.normalBuffer = null;
-    this.textureBuffer1 = null;
+        this.posBuffer = null;
+        this.indexBuffer = null;
+        this.colorBuffer = null;
+        this.normalBuffer = null;
+        this.textureBuffer1 = null;
 
-    this.webglPosBuffer = null;
-    this.webglNormalBuffer = null;
-    this.webglColorBuffer = null;
-    this.webglIndexBuffer = null;
-    this.webglTextureBuffer = null;
+        this.webglPosBuffer = null;
+        this.webglNormalBuffer = null;
+        this.webglColorBuffer = null;
+        this.webglIndexBuffer = null;
+        this.webglTextureBuffer = null;
 
-    this.bufferCreator = null;
+        this.bufferCreator = null;
 
-    this.objectType = null;
-    this.id = null;
-    this.maxY = null;
-    this.cantEdificios = null;
+        this.objectType = null;
+        this.id = null;
+        this.maxY = null;
+        this.cantEdificios = null;
     }
 
     //recibe un objectype que es un string que tiene que ser similar a alguno de los define superiores
@@ -127,7 +129,7 @@ class Objeto3D extends Container3D{
             this.webglTextureBuffer.numItems = this.textureBuffer2.length;
         }
 
-}
+    }
 
     /*
      arrayMatTrans es un array de matrices de 3x3 que al multiplicarla con cada
@@ -157,7 +159,7 @@ class Objeto3D extends Container3D{
             this.figuras.calcularCuadrado(vertices, arrayVecNOR);
         }
 
-       else if(figura == ESTRUCTURA_EDIFICIO){
+        else if(figura == ESTRUCTURA_EDIFICIO){
             if(colms != 5){
                 console.log("para hacer un edificio se necesitan exactamente 5 vertices");
             }
@@ -198,9 +200,9 @@ class Objeto3D extends Container3D{
                 console.log("para hacer una tapa se necesitan exactamente 2 vertices");
             }
             //el ultimo trae la dimension de x
-           var escalado = arrayVecPos.pop();
-           this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
-           this.addColor(buffcalc, 4, 1.0,0.0,0.0);
+            var escalado = arrayVecPos.pop();
+            this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
+            this.addColor(buffcalc, 4, 1.0,0.0,0.0);
 
         }
 
@@ -269,7 +271,7 @@ class Objeto3D extends Container3D{
 
         }
 
-       else if(figura == RUEDA){
+        else if(figura == RUEDA){
             if(colms != 11){
                 console.log("para hacer la rueda se necesitan 11 vertices");
             }
@@ -279,17 +281,17 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == VEREDA){
-           if(colms != 24){
-               console.log("Para hacer una vereda se necesitan 24 puntos");
-           }
-           var vereda = arrayVecPos.pop();
-           this.figuras.calcularVereda(vertices,arrayVecNOR);
-           if(vereda[0]) {
-               this.addColor(buffcalc, 76, 0.61, 0.48, 0.3);
-           }
-           else{
-               this.addColor(buffcalc, 76,0.0,1.0,0.0);
-           }
+            if(colms != 24){
+                console.log("Para hacer una vereda se necesitan 24 puntos");
+            }
+            var vereda = arrayVecPos.pop();
+            this.figuras.calcularVereda(vertices,arrayVecNOR);
+            if(vereda[0]) {
+                this.addColor(buffcalc, 76, 0.61, 0.48, 0.3);
+            }
+            else{
+                this.addColor(buffcalc, 76,0.0,1.0,0.0);
+            }
         }
 
         else {
@@ -307,7 +309,7 @@ class Objeto3D extends Container3D{
     }
 
     /*Rows representa la cantidad de niveles de la superficie.
-    Colms representa el n que divide el angulo tal que : 2pi/n para la rotacion
+     Colms representa el n que divide el angulo tal que : 2pi/n para la rotacion
 
      */
     calcularSuperficieRevolucion(figura,rows,colms){
@@ -361,12 +363,12 @@ class Objeto3D extends Container3D{
     }
 
     /**Dibuja al objeto. Recibe la matriz de modelado base, la matriz de la camara
-      *y la matriz de proyeccion.
-      * @param {mMatrix} mat4 Matriz de modelado del padre.
-      * @param {CameraMatrix} mat4 Matriz de camara
-      * @param {pMatrix} mat4 Matriz de proyeccion
-      * @param {parentMod} bool Indica si el padre fue modificado o no
-    */
+     *y la matriz de proyeccion.
+     * @param {mMatrix} mat4 Matriz de modelado del padre.
+     * @param {CameraMatrix} mat4 Matriz de camara
+     * @param {pMatrix} mat4 Matriz de proyeccion
+     * @param {parentMod} bool Indica si el padre fue modificado o no
+     */
     draw(mMatrix, parentMod){
         //Se crea una matriz nueva para no modificar la matriz del padre
         var modelMatrix = mat4.create();
@@ -377,7 +379,7 @@ class Objeto3D extends Container3D{
         //Se hace un llamado al draw de los hijos, uno por uno.
         this._drawChildren(modelMatrix, CameraMatrix, pMatrix, this.modified || parentMod);
         this.modified = false;
-        
+
         if (this.objectType == CALLE){
             this.setShaderProgram(streetShader);
         }
@@ -393,10 +395,13 @@ class Objeto3D extends Container3D{
         else if(this.objectType == AUTOPISTA){
             this.setShaderProgram(autopistaShader);
         }
+        else if(this.objectType == SKY){
+            this.setShaderProgram(skyShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
-        
+
         //Matriz de proyeccion y vista
         gl.uniformMatrix4fv(this.shaderProgram.pMatrixUniform, false, pMatrix);
         gl.uniformMatrix4fv(this.shaderProgram.ViewMatrixUniform, false, CameraMatrix);
@@ -454,7 +459,7 @@ class Objeto3D extends Container3D{
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         //Draw
         gl.drawElements(gl.TRIANGLE_STRIP, this.webglIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-      }
+    }
 
     /**Dibuja a los hijos
      * @param Idem draw.
@@ -466,4 +471,4 @@ class Objeto3D extends Container3D{
         }
     }
 
-  }
+}
