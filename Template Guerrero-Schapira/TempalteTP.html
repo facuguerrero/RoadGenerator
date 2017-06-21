@@ -70,6 +70,9 @@
         // Coordenada de textura sin modifiaciones
         vVertexColor = aVertexColor;
 
+        vec3 a = aVertexTangent;
+        a[0] = 1.0;
+
         ////////////////////////////////////////////
         // Calculos de la iluminaci�n
         vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
@@ -118,11 +121,13 @@
 		// Transformamos al v�rtice al espacio de la c�mara
 		vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
 
-		// Transformamos al v�rtice al espacio de la proyecci�n
-    gl_Position = uPMatrix * pos_camera_view;
+            // Transformamos al v�rtice al espacio de la proyecci�n
+        gl_Position = uPMatrix * pos_camera_view;
 
-		// Coordenada de textura sin modifiaciones
-    vTextureCoord = aTextureCoord;
+            // Coordenada de textura sin modifiaciones
+        vTextureCoord = aTextureCoord;
+
+        aVertexTangent;
 
     }
 </script>
@@ -171,6 +176,8 @@
 
 		// Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
+
+        aVertexTangent;
 
         normalInterp = normalize(uNMatrix * aVertexNormal);
         tangentInterp = normalize(uNMatrix * vec3(0.0, 0.0, 1.0));
@@ -523,6 +530,8 @@
         auxUv.y = auxUv.y*escalaY;
 
         vTextureCoord = auxUv;
+
+        aVertexTangent;
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
