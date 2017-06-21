@@ -210,10 +210,48 @@
     uniform sampler2D vereda;
     uniform sampler2D autopista;
 
+    // Lights
+    uniform vec3 uAmbientColor;
+    uniform vec3 uAutoIluminationColor;
+    uniform bool uUseDirectionalLights;
+    uniform bool uUsePunctualLights;
+    uniform bool uUseAutoIlumination;
+    uniform float uAutoIluminationIntensity;
+    uniform float uAmbientalLightIntensity;
+
+    // Puntual Lights
+    uniform float uPunctualLightRadio;
+    uniform float uPunctualLightIntensity;
+    uniform vec3 uPunctualDiffuseColor;
+    uniform vec3 uPunctualSpecularColor;
+    uniform vec3 uPunctual1LightPosition;
+    uniform vec3 uPunctual2LightPosition;
+    uniform vec3 uPunctual3LightPosition;
+    uniform vec3 uPunctual4LightPosition;
+
+    varying vec3 normalInterp;
+    varying vec3 tangentInterp;
+    varying vec3 binormalInterp;
+
     varying float vID;
 
     void main(void) {
         vec4 textureColor;
+        vec3 normal = normalize(normalInterp);
+        vec3 tangent = normalize(tangentInterp);
+        vec3 binormal = normalize(binormalInterp);
+
+		/** Tertiary Lights: Puntuals **/
+		// Puntual Light 1
+        lightDir = uPunctual1LightPosition - vertPos;
+        lightDirNormalized = normalize(lightDir);
+        viewDir = normalize(uCameraPos - vertPos);
+        float diffusePunctualLightWeighting_1 = max(dot(lightDirNormalized,normal), 0.0);	// Difusa: (N*L)
+        r = 2.0 * diffusePunctualLightWeighting_1 * normal - lightDirNormalized;
+        rv = max(dot(r, viewDir), 0.0);
+		float specularPunctualLightWeighting_1 = pow(rv,7.0); // Especular: [(2*(N*L)*N - L) * V] ^ alpha
+		float dist_puntual_1 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0));
+
 
         if(vID >= 0.0 && vID < 0.5){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
