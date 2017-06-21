@@ -400,6 +400,7 @@ class Objeto3D extends Container3D{
             this.setShaderProgram(esquinaShader);
         }
         else if (this.objectType == VEREDA){
+            console.log(this.webglTextureBuffer.numItems);
             this.setShaderProgram(veredaShader);
         }
         else if(this.objectType == AUTOPISTA){
