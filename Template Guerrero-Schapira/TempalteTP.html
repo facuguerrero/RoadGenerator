@@ -42,6 +42,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec3 aVertexColor;
+    attribute vec3 aVertexTangent;
 
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
@@ -103,6 +104,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
+    attribute vec3 aVertexTangent;
 
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
@@ -130,6 +132,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
+    attribute vec3 aVertexTangent;
     attribute float aID;
 
     uniform mat4 uViewMatrix;
@@ -392,8 +395,8 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
+    attribute vec3 aVertexTangent;
     attribute float aID;
-    attribute float amaxY;
 
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
@@ -414,6 +417,7 @@
     uniform float t;
     uniform float edificioActual;
     uniform float count;
+    uniform float amaxY;
 
     void main(void) {
 
@@ -639,7 +643,6 @@
             buildingShaders.directionalColorUniform = gl.getUniformLocation(buildingShaders, "uDirectionalColor");
 
             idBuilding = gl.getAttribLocation(buildingShaders, "aID");
-            maxYBuilding = gl.getAttribLocation(buildingShaders, "amaxY");
 
         }
 
@@ -1482,7 +1485,6 @@
         left:480px;
         top: -135px;
 
-
     }
     h3{
         position:relative;
@@ -1507,7 +1509,7 @@
         Your browser does not support the HTML5 canvas element.
     </canvas>
 
-    <div id="slider" data-role="main" class="ui-content">
+    <div id="slider" class="ui-content">
         <input type="range" name="points" id="points" value="10" min="0" max="10">
         <h3 style="color:#803a37">Car Speed:</h3>
         </form>

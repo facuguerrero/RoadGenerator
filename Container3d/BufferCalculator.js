@@ -10,12 +10,15 @@ class BufferCalculator{
     this.colorBuffer = [];
     this.normalBuffer = [];
     this.indexBuffer = [];
+    this.tangentBuffer = [];
     this.textureBuffer1 = [];
     this.textureBuffer2 = [];
 
     //Bool para saber si tiene textura o no!
     this.texture1 = false;
     this.texture2 = false;
+
+    this.tangent = false;
 
     }
 
@@ -133,6 +136,10 @@ class BufferCalculator{
     return this.textureBuffer2;
     }
 
+    getTangentBuffer(){
+        return this.tangentBuffer;
+    }
+
     /*
      vertices es una lista de vec3 que contienen las coordenadas
      x e y (con z = 1) de cada vertice, ya parametrizado de una superficie.
@@ -165,6 +172,7 @@ class BufferCalculator{
 
                 var tanVer = vec3.create();
                 vec3.cross(tanVer,binormVer, normVer);
+                var tangente = vec3.normalize([], tanVer);
 
                 vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
                 vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
@@ -180,6 +188,9 @@ class BufferCalculator{
                 this.colorBuffer.push(1.0/this.rows * i);
                 this.colorBuffer.push(0.2);
                 this.colorBuffer.push(1.0/this.colms * j);
+                this.tangentBuffer.push(tangente[0]);
+                this.tangentBuffer.push(tangente[1]);
+                this.tangentBuffer.push(tangente[2]);
 
                 if (this.texture1) {
                     // Coordenadas
@@ -202,6 +213,7 @@ class BufferCalculator{
                 }
             }
         }
+        this.tangent = true;
       }
 
     /*

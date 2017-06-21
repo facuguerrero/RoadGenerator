@@ -39,12 +39,14 @@ class Objeto3D extends Container3D{
         this.colorBuffer = null;
         this.normalBuffer = null;
         this.textureBuffer1 = null;
+        this.tangentBuffer = null;
 
         this.webglPosBuffer = null;
         this.webglNormalBuffer = null;
         this.webglColorBuffer = null;
         this.webglIndexBuffer = null;
         this.webglTextureBuffer = null;
+        this.webglTangentBuffer = null;
 
         this.bufferCreator = null;
 
@@ -82,6 +84,7 @@ class Objeto3D extends Container3D{
         this.indexBuffer = this.bufferCreator.getIndexBuffer();
         this.textureBuffer1 = this.bufferCreator.getTextureBuffer1();
         this.textureBuffer2 = this.bufferCreator.getTextureBuffer2();
+        this.tangentBuffer = this.bufferCreator.getTangentBuffer();
         this.setUpWebGLBuffers();
     }
 
@@ -127,6 +130,13 @@ class Objeto3D extends Container3D{
             gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.textureBuffer2), gl.STATIC_DRAW);
             this.webglTextureBuffer.itemSize = 2;
             this.webglTextureBuffer.numItems = this.textureBuffer2.length;
+        }
+        if(this.tangentBuffer.length > 0){
+            this.webglTangentBuffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.tangentBuffer), gl.STATIC_DRAW);
+            this.webglTangentBuffer.itemSize = 3;
+            this.webglTangentBuffer.numItems = this.tangentBuffer.length / 3;
         }
 
     }
@@ -410,6 +420,12 @@ class Objeto3D extends Container3D{
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
+        //Tangent
+        if(this.bufferCreator.tangent) {
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
+            gl.vertexAttribPointer(this.shaderProgram.vertexTangentAttribute, this.webglTangentBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        }
+
         //Texture
         if(this.bufferCreator.texture1){
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTextureBuffer);
@@ -428,10 +444,12 @@ class Objeto3D extends Container3D{
         }
         if(this.objectType == EDIFICIO){
             gl.vertexAttrib1f(idBuilding, this.id);
-            gl.vertexAttrib1f(maxYBuilding, this.maxY);
             var count = gl.getUniformLocation(buildingShaders, "count");
             gl.useProgram(buildingShaders);
             gl.uniform1f(count, this.cantEdificios);
+            var maxY = gl.getUniformLocation(buildingShaders, "amaxY");
+            gl.useProgram(buildingShaders);
+            gl.uniform1f(maxY, this.maxY);
         }
         if(this.objectType == ESQUINA){
             gl.vertexAttrib1f(idEsquina,this.id);
