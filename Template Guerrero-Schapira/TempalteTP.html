@@ -1120,6 +1120,35 @@
             // Se configura la matriz de proyecci�n
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
+            /** Configuración de la luz **/
+                // Se inicializan las variables asociadas con la Iluminación
+            var lighting = true;
+            var directionalLightsActive = true;
+            var punctualLightsActive = false;
+            var autoIluminationActive = false;
+            var useTexture = true;
+            gl.uniform1i(streetShader.useLightingUniform, lighting);
+            gl.uniform1i(streetShader.usePunctualLights, punctualLightsActive);
+            gl.uniform1i(streetShader.useDirectionalLights, directionalLightsActive);
+            gl.uniform1i(streetShader.useAutoIlumination, autoIluminationActive);
+            gl.uniform1i(streetShader.useTextureUniform, useTexture);
+
+            // Configuramos la iluminación general
+            // Auto iluminación
+            gl.uniform1f(streetShader.autoIluminationIntensity, 2.0);
+            gl.uniform3f(streetShader.autoIluminationColorUniform, 1.0, 1.0, 1.0);
+
+            // Luz ambiental
+            gl.uniform1f(streetShader.ambientIluminationIntensity, 2.0);
+            gl.uniform3f(streetShader.ambientColorUniform, 0.2, 0.2, 0.2);                     //Ambiente
+
+            // Luces puntuales
+            gl.uniform1f(streetShader.punctualLightRadio, 20.0);
+            gl.uniform1f(streetShader.lightPunctualIntensity, 0.3);							//Intensidad
+            gl.uniform3f(streetShader.diffusePunctualColorUniform, 0.8, 1.0, 0.8);				//Difusa (Verdosa)
+            gl.uniform3f(streetShader.specularPunctualColorUniform, 0.8, 1.0, 0.8);			//Especular (Verdosa)
+            gl.uniform3fv(streetShader.lightingPunctual1PositionUniform, [6.8,0.5,0.0]);	//Punctual 1
+
             ///Dibujamos las figuras
 
             escena.setShaderProgram(shaderProgramColoredObject);
