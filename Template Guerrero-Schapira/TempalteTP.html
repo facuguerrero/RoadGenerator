@@ -632,6 +632,9 @@
             buildingShaders.vertexNormalAttribute = gl.getAttribLocation(buildingShaders, "aVertexNormal");
             gl.enableVertexAttribArray(buildingShaders.vertexNormalAttribute);
 
+            buildingShaders.vertexTangentAttribute = gl.getAttribLocation(buildingShaders, "aVertexTangent");
+            gl.enableVertexAttribArray(buildingShaders.vertexTangentAttribute);
+
             buildingShaders.pMatrixUniform = gl.getUniformLocation(buildingShaders, "uPMatrix");
             buildingShaders.ViewMatrixUniform = gl.getUniformLocation(buildingShaders, "uViewMatrix");
             buildingShaders.ModelMatrixUniform = gl.getUniformLocation(buildingShaders, "uModelMatrix");
@@ -670,6 +673,9 @@
             autopistaShader.vertexNormalAttribute = gl.getAttribLocation(autopistaShader, "aVertexNormal");
             gl.enableVertexAttribArray(autopistaShader.vertexNormalAttribute);
 
+            autopistaShader.vertexTangentAttribute = gl.getAttribLocation(autopistaShader, "aVertexTangent");
+            gl.enableVertexAttribArray(autopistaShader.vertexTangentAttribute);
+
             autopistaShader.pMatrixUniform = gl.getUniformLocation(autopistaShader, "uPMatrix");
             autopistaShader.ViewMatrixUniform = gl.getUniformLocation(autopistaShader, "uViewMatrix");
             autopistaShader.ModelMatrixUniform = gl.getUniformLocation(autopistaShader, "uModelMatrix");
@@ -707,6 +713,9 @@
             esquinaShader.vertexNormalAttribute = gl.getAttribLocation(esquinaShader, "aVertexNormal");
             gl.enableVertexAttribArray(esquinaShader.vertexNormalAttribute);
 
+            esquinaShader.vertexTangentAttribute = gl.getAttribLocation(esquinaShader, "aVertexTangent");
+            gl.enableVertexAttribArray(esquinaShader.vertexTangentAttribute);
+
             esquinaShader.pMatrixUniform = gl.getUniformLocation(esquinaShader, "uPMatrix");
             esquinaShader.ViewMatrixUniform = gl.getUniformLocation(esquinaShader, "uViewMatrix");
             esquinaShader.ModelMatrixUniform = gl.getUniformLocation(esquinaShader, "uModelMatrix");
@@ -743,6 +752,9 @@
 
             veredaShader.vertexNormalAttribute = gl.getAttribLocation(veredaShader, "aVertexNormal");
             gl.enableVertexAttribArray(veredaShader.vertexNormalAttribute);
+
+            veredaShader.vertexTangentAttribute = gl.getAttribLocation(veredaShader, "aVertexTangent");
+            gl.enableVertexAttribArray(veredaShader.vertexTangentAttribute);
 
             veredaShader.pMatrixUniform = gl.getUniformLocation(veredaShader, "uPMatrix");
             veredaShader.ViewMatrixUniform = gl.getUniformLocation(veredaShader, "uViewMatrix");
@@ -783,6 +795,9 @@
 
             streetShader.vertexNormalAttribute = gl.getAttribLocation(streetShader, "aVertexNormal");
             gl.enableVertexAttribArray(streetShader.vertexNormalAttribute);
+
+            streetShader.vertexTangentAttribute = gl.getAttribLocation(streetShader, "aVertexTangent");
+            gl.enableVertexAttribArray(streetShader.vertexTangentAttribute);
 
             streetShader.pMatrixUniform = gl.getUniformLocation(streetShader, "uPMatrix");
             streetShader.ViewMatrixUniform = gl.getUniformLocation(streetShader, "uViewMatrix");
@@ -828,6 +843,9 @@
             shaderProgramColoredObject.vertexNormalAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexNormal");
             gl.enableVertexAttribArray(shaderProgramColoredObject.vertexNormalAttribute);
 
+            shaderProgramColoredObject.vertexTangentAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexTangent");
+            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexTangentAttribute);
+
             shaderProgramColoredObject.pMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uPMatrix");
             shaderProgramColoredObject.ViewMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uViewMatrix");
             shaderProgramColoredObject.ModelMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uModelMatrix");
@@ -854,14 +872,17 @@
             }
             gl.useProgram(skyShader);
 
-            streetShader.vertexPositionAttribute = gl.getAttribLocation(skyShader, "aVertexPosition");
+            skyShader.vertexPositionAttribute = gl.getAttribLocation(skyShader, "aVertexPosition");
             gl.enableVertexAttribArray(streetShader.vertexPositionAttribute);
 
-            streetShader.textureCoordAttribute = gl.getAttribLocation(skyShader, "aTextureCoord");
+            skyShader.textureCoordAttribute = gl.getAttribLocation(skyShader, "aTextureCoord");
             gl.enableVertexAttribArray(streetShader.textureCoordAttribute);
 
-            streetShader.vertexNormalAttribute = gl.getAttribLocation(skyShader, "aVertexNormal");
-            gl.enableVertexAttribArray(streetShader.vertexNormalAttribute);
+            skyShader.vertexNormalAttribute = gl.getAttribLocation(skyShader, "aVertexNormal");
+            gl.enableVertexAttribArray(skyShader.vertexNormalAttribute);
+
+            skyShader.vertexTangentAttribute = gl.getAttribLocation(skyShader, "aVertexTangent");
+            gl.enableVertexAttribArray(skyShader.vertexTangentAttribute);
 
             streetShader.pMatrixUniform = gl.getUniformLocation(skyShader, "uPMatrix");
             streetShader.ViewMatrixUniform = gl.getUniformLocation(skyShader, "uViewMatrix");

@@ -420,12 +420,6 @@ class Objeto3D extends Container3D{
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
-        //Tangent
-        if(this.bufferCreator.tangent) {
-            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
-            gl.vertexAttribPointer(this.shaderProgram.vertexTangentAttribute, this.webglTangentBuffer.itemSize, gl.FLOAT, false, 0, 0);
-        }
-
         //Texture
         if(this.bufferCreator.texture1){
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTextureBuffer);
@@ -436,6 +430,12 @@ class Objeto3D extends Container3D{
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglColorBuffer);
             gl.vertexAttribPointer(this.shaderProgram.vertexColorAttribute, this.webglColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
+        }
+
+        //Tangent
+        if(this.bufferCreator.tangent && this.webglTangentBuffer != null) {
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
+            gl.vertexAttribPointer(this.shaderProgram.vertexTangentAttribute, this.webglTangentBuffer.itemSize, gl.FLOAT, false, 0, 0);
         }
 
         //a continuacion se setea todo dependiendo del id
