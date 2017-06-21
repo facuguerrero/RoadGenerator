@@ -87,21 +87,19 @@
     }
 </script>
 
-    <script id="shader-fs-textured-obj" type="x-shader/x-fragment">
+    <script id="shader-fs-skySphere" type="x-shader/x-fragment">
     precision mediump float;
 
     varying vec2 vTextureCoord;
-    varying vec3 vLightWeighting;
 
-    uniform sampler2D uSampler;
+    uniform sampler2D sky;
 
     void main(void) {
-        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
-        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+        vec4 textureColor = texture2D(sky, vec2(vTextureCoord.s, vTextureCoord.t));
     }
 </script>
 
-    <script id="shader-vs-textured-obj" type="x-shader/x-vertex">
+    <script id="shader-vs-skySphere" type="x-shader/x-vertex">
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
@@ -111,15 +109,7 @@
     uniform mat4 uPMatrix;
     uniform mat3 uNMatrix;
 
-    uniform vec3 uAmbientColor;
-
-    uniform vec3 uLightPosition;
-    uniform vec3 uDirectionalColor;
-
-    uniform bool uUseLighting;
-
     varying vec2 vTextureCoord;
-    varying vec3 vLightWeighting;
 
     void main(void) {
 
@@ -127,26 +117,11 @@
 		vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
 
 		// Transformamos al v�rtice al espacio de la proyecci�n
-        gl_Position = uPMatrix * pos_camera_view;
+    gl_Position = uPMatrix * pos_camera_view;
 
 		// Coordenada de textura sin modifiaciones
-        vTextureCoord = aTextureCoord;
+    vTextureCoord = aTextureCoord;
 
-		////////////////////////////////////////////
-		// Calculos de la iluminaci�n
-		vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
-		normalize(light_dir);
-        if (!uUseLighting)
-		{
-            vLightWeighting = vec3(1.0, 1.0, 1.0);
-        }
-		else
-		{
-            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
-            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
-            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
-        }
-		////////////////////////////////////////////
     }
 </script>
 
@@ -214,6 +189,8 @@
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
     uniform sampler2D street;
     uniform sampler2D esquina;
+    uniform sampler2D vereda;
+    uniform sampler2D autopista;
 
     varying float vID;
 
@@ -226,6 +203,14 @@
 
         if(vID > 0.5 && vID < 1.5){
            textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
+        }
+
+//        if(vID >17.5 && vID <18.5){
+//            textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
+//        }
+
+        if(vID >18.5 && vID <19.5){
+            textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
         gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
@@ -482,38 +467,76 @@
 
     </script>
 
-    <script id="fs-vereda" type="x-shader/x-fragment">
-    precision highp float;
+    <!--<script id="fs-buildingLow" type="x-shader/x-fragment">-->
+    <!--precision highp float;-->
 
-    varying vec2 vTextureCoord;
-    varying vec3 vLightWeighting;
+    <!--varying vec2 vTextureCoord;-->
+    <!--varying vec3 vLightWeighting;-->
 
-    uniform sampler2D vereda;
-    uniform sampler2D autopista;
+    <!--//TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0-->
 
-    varying float vID;
+    <!--uniform sampler2D pb1;-->
+    <!--uniform sampler2D pb2;-->
+    <!--uniform sampler2D pb3;-->
+    <!--uniform sampler2D pb4;-->
 
-    void main(void) {
-        vec4 textureColor;
-        float fact = 4.0;
+    <!--uniform sampler2D pb5;-->
+    <!--uniform sampler2D pb6;-->
+    <!--uniform sampler2D pb7;-->
+    <!--uniform sampler2D pb8;-->
 
-        if(vID >17.5 && vID <18.5){
-            vec2 auxUV = vTextureCoord;
+    <!--uniform sampler2D pb9;-->
+    <!--uniform sampler2D pb10;-->
+    <!--uniform sampler2D pb11;-->
+    <!--uniform sampler2D pb12;-->
 
-            auxUV.x = auxUV.x * fact;
-            auxUV.y = auxUV.y * fact;
+    <!--uniform sampler2D pb13;-->
+    <!--uniform sampler2D pb14;-->
+    <!--uniform sampler2D vereda;-->
 
-            textureColor = texture2D(vereda, vec2(auxUV.s, auxUV.t));
-        }
 
-        if(vID >18.5 && vID <19.5){
-            textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
+    <!--varying float vID;-->
 
-        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
-    }
-    </script>
+    <!--void main(void) {-->
+    <!--vec4 textureColor;-->
 
+    <!--if(vID == 5.0){-->
+    <!--textureColor = texture2D(pb5, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 6.0){-->
+    <!--textureColor = texture2D(pb6, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 7.0){-->
+    <!--textureColor = texture2D(pb7, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 8.0){-->
+    <!--textureColor = texture2D(pb8, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 9.0){-->
+    <!--textureColor = texture2D(pb9, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 10.0){-->
+    <!--textureColor = texture2D(pb10, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 11.0){-->
+    <!--textureColor = texture2D(pb11, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 12.0){-->
+    <!--textureColor = texture2D(pb12, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 13.0){-->
+    <!--textureColor = texture2D(pb13, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 14.0){-->
+    <!--textureColor = texture2D(pb14, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+    <!--else if(vID == 15.0){-->
+    <!--textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));-->
+    <!--}-->
+
+    <!--gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);-->
+    <!--}-->
+    <!--</script>-->
 
     <script type="text/javascript">
 
@@ -696,7 +719,7 @@
 
         function initVeredaShaders() {
 
-            var fragmentShader = getShader("fs-vereda");
+            var fragmentShader = getShader("fs-street");
             var vertexShader = getShader("vs-general");
 
             veredaShader = gl.createProgram();
@@ -813,48 +836,80 @@
             shaderProgramColoredObject.directionalColorUniform = gl.getUniformLocation(shaderProgramColoredObject, "uDirectionalColor");
         }
 
+        function initSkySphereShaders(){
+
+            var fragmentShader = getShader("shader-fs-skySphere");
+            var vertexShader = getShader("shader-vs-skySphere");
+
+            skyShader = gl.createProgram();
+            gl.attachShader(skyShader, vertexShader);
+            gl.attachShader(skyShader, fragmentShader);
+            gl.linkProgram(skyShader);
+
+            if (!gl.getProgramParameter(skyShader, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+            gl.useProgram(skyShader);
+
+            streetShader.vertexPositionAttribute = gl.getAttribLocation(skyShader, "aVertexPosition");
+            gl.enableVertexAttribArray(streetShader.vertexPositionAttribute);
+
+            streetShader.textureCoordAttribute = gl.getAttribLocation(skyShader, "aTextureCoord");
+            gl.enableVertexAttribArray(streetShader.textureCoordAttribute);
+
+            streetShader.vertexNormalAttribute = gl.getAttribLocation(skyShader, "aVertexNormal");
+            gl.enableVertexAttribArray(streetShader.vertexNormalAttribute);
+
+            streetShader.pMatrixUniform = gl.getUniformLocation(skyShader, "uPMatrix");
+            streetShader.ViewMatrixUniform = gl.getUniformLocation(skyShader, "uViewMatrix");
+            streetShader.ModelMatrixUniform = gl.getUniformLocation(skyShader, "uModelMatrix");
+            streetShader.nMatrixUniform = gl.getUniformLocation(skyShader, "uNMatrix");
+            streetShader.samplerUniform = gl.getUniformLocation(skyShader, "uSampler");
+        }
+
         function initTextures(){
 
-                //se cargan las texturas de la callee
-                gl.useProgram(streetShader);
-                loadTexture("textures/calle.jpg", "street");
+            //se cargan las texturas de la callee
+            gl.useProgram(streetShader);
+            loadTexture("textures/calle.jpg", "street");
 
-                var location = gl.getUniformLocation(streetShader, "street");
-                gl.uniform1i(location, 0);//0 ya que es la primer textura
-                gl.activeTexture(gl.TEXTURE0);
-                gl.bindTexture(gl.TEXTURE_2D, glTextures["street"]);
+            var location = gl.getUniformLocation(streetShader, "street");
+            gl.uniform1i(location, 0);//0 ya que es la primer textura
+            gl.activeTexture(gl.TEXTURE0);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["street"]);
 
 
-                //se cargan las texturas de los edificios
-                var nombresEdificios = ["building1", "building2", "building3", "building4", "building5", "building6", "building7",
-                    "building8", "building9", "building10", "building11", "building12", "pb1", "pb2", "pb3", "pb4"];
-                var TEXTURES = [gl.TEXTURE1, gl.TEXTURE2, gl.TEXTURE3, gl.TEXTURE4, gl.TEXTURE5, gl.TEXTURE6, gl.TEXTURE7, gl.TEXTURE8, gl.TEXTURE9, gl.TEXTURE10, gl.TEXTURE11, gl.TEXTURE12, gl.TEXTURE13, gl.TEXTURE14, gl.TEXTURE15, gl.TEXTURE16];
-                gl.useProgram(buildingShaders);
-                loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
-                loadTexture("textures/ed2_pisos.jpg", nombresEdificios[1]);
-                loadTexture("textures/ed17_pisos.jpg", nombresEdificios[2]);
-                loadTexture("textures/ed4_pisos.jpg", nombresEdificios[3]);
-                loadTexture("textures/ed19_pisos.jpg", nombresEdificios[4]);
-                loadTexture("textures/ed7_pisos.jpg", nombresEdificios[5]);
-                loadTexture("textures/ed8_pisos.jpg", nombresEdificios[6]);
-                loadTexture("textures/ed9_pisos.jpg", nombresEdificios[7]);
-                loadTexture("textures/ed16_pisos.jpg", nombresEdificios[8]);
-                loadTexture("textures/ed11_pisos.jpg", nombresEdificios[9]);
-                loadTexture("textures/ed15_pisos.jpg", nombresEdificios[10]);
-                loadTexture("textures/ed14_pisos.jpg", nombresEdificios[11]);
-                loadTexture("textures/ed1_pb.jpg", nombresEdificios[12]);
-                loadTexture("textures/ed2_pb.jpg", nombresEdificios[13]);
-                loadTexture("textures/ed8_pb.jpg", nombresEdificios[14]);
-                loadTexture("textures/ed4_pb.jpg", nombresEdificios[15]);
+            //se cargan las texturas de los edificios
+            var nombresEdificios = ["building1", "building2", "building3", "building4", "building5", "building6", "building7",
+                "building8", "building9", "building10", "building11", "building12", "pb1", "pb2", "pb3", "pb4"];
+            var TEXTURES = [gl.TEXTURE1, gl.TEXTURE2, gl.TEXTURE3, gl.TEXTURE4, gl.TEXTURE5, gl.TEXTURE6, gl.TEXTURE7, gl.TEXTURE8, gl.TEXTURE9, gl.TEXTURE10, gl.TEXTURE11, gl.TEXTURE12, gl.TEXTURE13, gl.TEXTURE14, gl.TEXTURE15, gl.TEXTURE16];
+            gl.useProgram(buildingShaders);
+            loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
+            loadTexture("textures/ed2_pisos.jpg", nombresEdificios[1]);
+            loadTexture("textures/ed17_pisos.jpg", nombresEdificios[2]);
+            loadTexture("textures/ed4_pisos.jpg", nombresEdificios[3]);
+            loadTexture("textures/ed19_pisos.jpg", nombresEdificios[4]);
+            loadTexture("textures/ed7_pisos.jpg", nombresEdificios[5]);
+            loadTexture("textures/ed8_pisos.jpg", nombresEdificios[6]);
+            loadTexture("textures/ed9_pisos.jpg", nombresEdificios[7]);
+            loadTexture("textures/ed16_pisos.jpg", nombresEdificios[8]);
+            loadTexture("textures/ed11_pisos.jpg", nombresEdificios[9]);
+            loadTexture("textures/ed15_pisos.jpg", nombresEdificios[10]);
+            loadTexture("textures/ed14_pisos.jpg", nombresEdificios[11]);
+            loadTexture("textures/ed1_pb.jpg", nombresEdificios[12]);
+            loadTexture("textures/ed2_pb.jpg", nombresEdificios[13]);
+            loadTexture("textures/ed8_pb.jpg", nombresEdificios[14]);
+            loadTexture("textures/ed4_pb.jpg", nombresEdificios[15]);
 
-                for(i=1; i<17; i++) {
+            for(i=1; i<17; i++) {
 
-                    var location = gl.getUniformLocation(buildingShaders, nombresEdificios[i - 1]);
-                    gl.uniform1i(location, i);
-                    gl.activeTexture(TEXTURES[i - 1]);
-                    gl.bindTexture(gl.TEXTURE_2D, glTextures[nombresEdificios[i - 1]]);
+                var location = gl.getUniformLocation(buildingShaders, nombresEdificios[i - 1]);
+                gl.uniform1i(location, i);
+                gl.activeTexture(TEXTURES[i - 1]);
+                gl.bindTexture(gl.TEXTURE_2D, glTextures[nombresEdificios[i - 1]]);
 
-                }
+
+            }
 
             //se cargan las texturas de la esquina
             gl.useProgram(esquinaShader);
@@ -882,6 +937,15 @@
             gl.uniform1i(location, 19);
             gl.activeTexture(gl.TEXTURE19);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["autopista"]);
+
+            //se carga la textura del cielo
+//            gl.useProgram(skyShader);
+//            loadTexture("textures/refmap.jpg", "sky");
+//
+//            var location = gl.getUniformLocation(skyShader, "sky");
+//            gl.uniform1i(location, 0);//0 ya que es la primer textura
+//            gl.activeTexture(gl.TEXTURE20);
+//            gl.bindTexture(gl.TEXTURE_2D, glTextures["sky"]);
 
         }
 
@@ -976,7 +1040,7 @@
 
         function mvPushMatrix() {
             var copy = mat4.create();
-                mat4.set(mvMatrix, copy);
+            mat4.set(mvMatrix, copy);
             mvMatrixStack.push(copy);
         }
 
@@ -1059,6 +1123,7 @@
             initAutopistaShaders();
             initVeredaShaders();
             initBuildingTopShaders();
+            //initSkySphereShaders();
             initTextures();
 
             //shadersHandler = new ShaderHandler();
@@ -1295,8 +1360,8 @@
             for (var i=0; i< 16; i++){
 
                 /*if(){
-                ACA VA EL IF DE SI ES RUTA O CALLE!!!
-                }*/
+                 ACA VA EL IF DE SI ES RUTA O CALLE!!!
+                 }*/
                 if(grilla[i]){
                     var mEdf = factory.createManzanaB(manzana);
                     mEdf.translate( (horizontal* (anchoCalle+manzana) ), 0.0, (vertical* (anchoCalle+manzana) ) );
@@ -1324,54 +1389,54 @@
 
 <style>
 
-body{
-    font-family: "Lato", sans-serif;
-    background-image: url("whirlpool.png");
-}
+    body{
+        font-family: "Lato", sans-serif;
+        background-image: url("whirlpool.png");
+    }
 
-.button {
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    position: relative;
-    top: -180px;
-    left:460px;
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #63a1aa;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
+    .button {
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        position: relative;
+        top: -180px;
+        left:460px;
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #63a1aa;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
 
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
 
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
 
-.button:hover span {
-    padding-right: 25px;
-}
+    .button:hover span {
+        padding-right: 25px;
+    }
 
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
 
     #franjaSup{
         background-color: white;
@@ -1431,32 +1496,32 @@ body{
 
 <body id = "my_body" onload="Load();" body style="background-color:#E0E0E0;">
 
-    <center>
-        <h1 style="color:dimgray">SG - 66.71 - Trabajo Pr&aacute;ctico 2017</h1>
-        <h2 style="color:grey">Schapira y Guerrero</h2>
-            <canvas id="franjaSup" width="1600" height="90">
-            </canvas>
-            <canvas id="my_canvas" width="900" height="500">
-            </canvas>
-            <canvas id="myCanvas" width="300" height="300">
-            Your browser does not support the HTML5 canvas element.
-            </canvas>
+<center>
+    <h1 style="color:dimgray">SG - 66.71 - Trabajo Pr&aacute;ctico 2017</h1>
+    <h2 style="color:grey">Schapira y Guerrero</h2>
+    <canvas id="franjaSup" width="1600" height="90">
+    </canvas>
+    <canvas id="my_canvas" width="900" height="500">
+    </canvas>
+    <canvas id="myCanvas" width="300" height="300">
+        Your browser does not support the HTML5 canvas element.
+    </canvas>
 
-            <div id="slider" data-role="main" class="ui-content">
-                <input type="range" name="points" id="points" value="10" min="0" max="10">
-                <h3 style="color:#803a37">Car Speed:</h3>
-                </form>
-            </div>
+    <div id="slider" data-role="main" class="ui-content">
+        <input type="range" name="points" id="points" value="10" min="0" max="10">
+        <h3 style="color:#803a37">Car Speed:</h3>
+        </form>
+    </div>
 
-    </center>
+</center>
 
-    <center>
-        <button class="button" onclick="Load();"><span>Load </span></button>
-    </center>
+<center>
+    <button class="button" onclick="Load();"><span>Load </span></button>
+</center>
 
 
 
-    <script>
+<script>
     var Base0,Base1,Base2;
     var Base0der,Base1der,Base2der;
 
@@ -1550,9 +1615,9 @@ body{
             marcarGrilla(punto);
 
             if (t==0) ctx.moveTo(punto.x,punto.y);
-                ctx.lineTo(punto.x,punto.y);// hago una linea desde el ultimo lineTo hasta x,y
+            ctx.lineTo(punto.x,punto.y);// hago una linea desde el ultimo lineTo hasta x,y
 
-                //console.log("C("+u+")= "+punto.x+","+punto.y);
+            //console.log("C("+u+")= "+punto.x+","+punto.y);
         }
         ctx.strokeStyle="#61858b";
         ctx.stroke();
@@ -1640,11 +1705,11 @@ body{
 
     function animate() {
 
-    //dibujarGrilla();
+        //dibujarGrilla();
 
-    requestAnimationFrame( animate );
+        requestAnimationFrame( animate );
 
-    dibujarCurvaCuadratica(puntosDeControl,true);
+        dibujarCurvaCuadratica(puntosDeControl,true);
 
     }
 
@@ -1664,62 +1729,62 @@ body{
     $( document ).ready(function() {// esto es para esperar que carge la libreria Jquery
 
 
-    function updateCoordinates(e){
-    var pos=$("#myCanvas").position();
-        if(p1){
-            new_points[0][1] = (e.pageY-pos.top);
-            new_points[1][1] = (e.pageY-pos.top);
-        }
-        if(p2){
-            new_points[2][0] = (e.pageX -pos.left);
-            new_points[2][1] = (e.pageY-pos.top);
-        }
-        if(p3){
-            new_points[3][0] = (e.pageX -pos.left);
-            new_points[3][1] = (e.pageY-pos.top);
-        }
-        if(p4){
-            new_points[4][0] = (e.pageX -pos.left);
-            new_points[4][1] = (e.pageY-pos.top);
-        }
-        if(p5){
-            new_points[5][1] = (e.pageY-pos.top);
-            new_points[6][1] = (e.pageY-pos.top);
-        }
-    }
-
-    var mouseIsPressed=false;
-    var p1 = false;
-    var p5 = false;
-    var p2 = false;
-    var p3 = false;
-    var p4 = false;
-    var radio = 12;
-
-     $("#myCanvas").bind('mousemove',function(e){
-        var pos=$("#myCanvas").position();
-        if (mouseIsPressed){
+        function updateCoordinates(e){
+            var pos=$("#myCanvas").position();
+            if(p1){
+                new_points[0][1] = (e.pageY-pos.top);
+                new_points[1][1] = (e.pageY-pos.top);
+            }
+            if(p2){
+                new_points[2][0] = (e.pageX -pos.left);
+                new_points[2][1] = (e.pageY-pos.top);
+            }
+            if(p3){
+                new_points[3][0] = (e.pageX -pos.left);
+                new_points[3][1] = (e.pageY-pos.top);
+            }
             if(p4){
-                punto = puntosDeControl[4];
-                punto[0] = (e.pageX -pos.left);
-                punto[1] = (e.pageY-pos.top);
+                new_points[4][0] = (e.pageX -pos.left);
+                new_points[4][1] = (e.pageY-pos.top);
             }
-            else if(p2){
-                punto = puntosDeControl[2];
-                punto[0] = (e.pageX -pos.left);
-                punto[1] = (e.pageY-pos.top);
+            if(p5){
+                new_points[5][1] = (e.pageY-pos.top);
+                new_points[6][1] = (e.pageY-pos.top);
             }
-            else if(p3){
-                punto = puntosDeControl[3];
-                punto[0] = (e.pageX -pos.left);
-                punto[1] = (e.pageY-pos.top);
-            }
-            updateCoordinates(e);
         }
-    });
+
+        var mouseIsPressed=false;
+        var p1 = false;
+        var p5 = false;
+        var p2 = false;
+        var p3 = false;
+        var p4 = false;
+        var radio = 12;
+
+        $("#myCanvas").bind('mousemove',function(e){
+            var pos=$("#myCanvas").position();
+            if (mouseIsPressed){
+                if(p4){
+                    punto = puntosDeControl[4];
+                    punto[0] = (e.pageX -pos.left);
+                    punto[1] = (e.pageY-pos.top);
+                }
+                else if(p2){
+                    punto = puntosDeControl[2];
+                    punto[0] = (e.pageX -pos.left);
+                    punto[1] = (e.pageY-pos.top);
+                }
+                else if(p3){
+                    punto = puntosDeControl[3];
+                    punto[0] = (e.pageX -pos.left);
+                    punto[1] = (e.pageY-pos.top);
+                }
+                updateCoordinates(e);
+            }
+        });
 
 
-     $("#myCanvas").bind('mousedown',function(e){
+        $("#myCanvas").bind('mousedown',function(e){
             mouseIsPressed=true;
             var pos=$("#myCanvas").position();
 
@@ -1756,18 +1821,18 @@ body{
 
 
             updateCoordinates(e);
-    });
+        });
 
-     $("#myCanvas").bind('mouseup',function(e){
+        $("#myCanvas").bind('mouseup',function(e){
             mouseIsPressed=false;
             p4 = false;
             p2 = false;
             p3 = false;
             p1 = false;
             p5 = false;
-    });
+        });
 
-});
+    });
 
 
 
@@ -1792,8 +1857,8 @@ body{
         webGLStart();
     }
 
-    </script>
+</script>
 
- </body>
+</body>
 
 </html>

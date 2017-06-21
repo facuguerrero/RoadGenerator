@@ -41,6 +41,11 @@ class ObjetosFactory {
 
     }
 
+    createSkySphere(){
+        // var sky = new Objeto3d();
+        // return sky;
+    }
+
     createRuta(puntos) {
 
         var ruta = new Objeto3D();
@@ -387,6 +392,8 @@ class ObjetosFactory {
         linea.calcularSuperficieBarrido("escena", 2, 2, arrayMatT, pos);
 
         escene.add(linea);
+        // var sky = this.createSkySphere();
+        // escene.add(sky);
         escene.build();
         return escene;
     }
@@ -601,13 +608,13 @@ class ObjetosFactory {
 
     updateTechos(t, numEdificio){
 
-            var edificio = Math.floor(numEdificio);
+        var edificio = Math.floor(numEdificio);
 
-            var ed = this.tapasEdificios[edificio];
-            var altura = this.alturas[edificio];
-            ed.resetMatrix();
-            var escalaY= Math.min(1.0,t*0.05);
-            ed.translate(0.0, altura * escalaY, 0.0);
+        var ed = this.tapasEdificios[edificio];
+        var altura = this.alturas[edificio];
+        ed.resetMatrix();
+        var escalaY= Math.min(1.0,t*0.05);
+        ed.translate(0.0, altura * escalaY, 0.0);
     }
 
     getIdEdficios(){
