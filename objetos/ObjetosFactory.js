@@ -460,7 +460,6 @@ class ObjetosFactory {
         buf.normalBuffer =norm;
         buf.posBuffer = pos;
         buf.colorBuffer = perfil.bufferCreator.colorBuffer;
-        buf.textureBuffer1 = tex;
         buf.textureBuffer2 = tex;
 
         piso.setBufferCreator(buf);
