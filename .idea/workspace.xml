@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/shaders/GenericShader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/shaders/color_shader.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/shaders/street/fs-street.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/shaders/street/vs-street.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/shaders/texturas_simples.glsl" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,121 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5207">
-              <caret line="444" column="89" lean-forward="true" selection-start-line="444" selection-start-column="89" selection-end-line="444" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1048">
-              <caret line="215" column="28" lean-forward="false" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="32" />
-              <folding>
-                <marker date="1497816518743" expanded="true" signature="3481:4228" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="4063:4222" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="6273:14267" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="6466:6708" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="6756:6792" ph="/*...*/" />
-                <marker date="1497816518743" expanded="true" signature="7367:7403" ph="/*...*/" />
-                <marker date="1497816518743" expanded="true" signature="7948:7981" ph="/*...*/" />
-                <marker date="1497816518743" expanded="true" signature="10529:10937" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="10999:11170" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="13198:13275" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="13404:13500" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="13506:13608" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="13657:13949" ph="{...}" />
-                <marker date="1497816518743" expanded="true" signature="14004:14257" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="178" column="12" lean-forward="false" selection-start-line="178" selection-start-column="12" selection-end-line="178" selection-end-column="12" />
-              <folding>
-                <marker date="1498055107121" expanded="true" signature="1525:1602" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="2155:3147" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="2735:2797" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="2819:3088" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="3335:3426" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="3810:4141" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="4857:6212" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="5818:5880" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="5890:6159" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="6597:7254" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="6662:6758" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="6794:6891" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="7066:7166" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="8098:13647" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="8577:8903" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="8938:9264" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="9299:9625" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="9660:9986" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="10021:10347" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="10382:10708" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="10743:11069" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="11104:11430" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="11466:11793" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="11830:12157" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="12194:12521" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="12558:12884" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="12907:13233" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="13274:13397" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="13410:13529" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="14377:15744" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="14512:14560" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="14599:14635" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="15350:15412" ph="{...}" />
-                <marker date="1498055107121" expanded="true" signature="15422:15691" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VertexGrid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/VertexGrid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SupBarrido.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/SupBarrido.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-690">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="301">
+              <caret line="103" column="54" lean-forward="false" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -147,9 +32,59 @@
       <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="436" column="0" lean-forward="false" selection-start-line="436" selection-start-column="0" selection-end-line="439" selection-end-column="9" />
+            <state relative-caret-position="266">
+              <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6695">
+              <caret line="322" column="55" lean-forward="true" selection-start-line="322" selection-start-column="55" selection-end-line="322" selection-end-column="55" />
+              <folding>
+                <marker date="1498055150193" expanded="true" signature="1525:1602" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="2155:3147" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="2735:2797" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="2819:3088" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="3335:3426" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="3810:4141" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="4857:6212" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="5818:5880" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="5890:6159" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="6597:7254" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="6662:6758" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="6794:6891" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="7066:7166" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="8098:13647" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="8577:8903" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="8938:9264" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="9299:9625" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="9660:9986" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="10021:10347" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="10382:10708" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="10743:11069" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="11104:11430" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="11466:11793" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="11830:12157" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="12194:12521" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="12558:12884" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="12907:13233" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="13274:13397" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="13410:13529" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="14377:15744" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="14512:14560" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="14599:14635" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="15350:15412" ph="{...}" />
+                <marker date="1498055150193" expanded="true" signature="15422:15691" ph="{...}" />
+                <marker date="1498055150193" expanded="false" signature="58528:58553" ph="..." />
+                <marker date="1498055150193" expanded="false" signature="58581:58594" ph="..." />
+                <marker date="1498055150193" expanded="false" signature="58619:58627" ph="á" />
+                <marker date="1498055150193" expanded="false" signature="58658:58668" ph="..." />
+                <marker date="1498055150193" expanded="false" signature="59103:59116" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,6 +100,7 @@
       <find>console.log</find>
       <find>auxN</find>
       <find>columna</find>
+      <find>farol</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,11 +111,11 @@
       <list>
         <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
         <option value="$PROJECT_DIR$/Bajado2/sistemas-graficos-master/main.js" />
-        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
   </component>
@@ -190,10 +126,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="64" />
     <option name="y" value="-11" />
-    <option name="width" value="1602" />
-    <option name="height" value="849" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -232,20 +168,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Template2 TP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Template Guerrero-Schapira" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -260,79 +182,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="objetos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Container3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bajado2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sistemas-graficos-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Bajado" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sg_TP1-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bajado" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sg_TP1-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shaders" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,8 +214,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/Objeto3D.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/objetos/ObjetosFactory.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -455,6 +307,652 @@
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="SWITCHED" />
       </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Container3d/Objeto3D.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/objetos/ObjetosFactory.js</PATH>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
     </UpdatedFiles>
   </component>
   <component name="RunDashboard">
@@ -515,37 +1013,37 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12247000" />
+    <option name="totallyTimeSpent" value="12682000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.249375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,14 +1061,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9105">
-          <caret line="607" column="8" lean-forward="true" selection-start-line="607" selection-start-column="8" selection-end-line="607" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -648,40 +1138,45 @@
         <state relative-caret-position="-105">
           <caret line="497" column="22" lean-forward="false" selection-start-line="497" selection-start-column="22" selection-end-line="497" selection-end-column="22" />
           <folding>
-            <marker date="1498055107121" expanded="true" signature="1525:1602" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2155:3147" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2735:2797" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2819:3088" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="3335:3426" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="3810:4141" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="4857:6212" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="5818:5880" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="5890:6159" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6597:7254" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6662:6758" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6794:6891" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="7066:7166" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8098:13647" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8577:8903" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8938:9264" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="9299:9625" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="9660:9986" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10021:10347" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10382:10708" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10743:11069" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11104:11430" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11466:11793" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11830:12157" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12194:12521" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12558:12884" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12907:13233" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="13274:13397" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="13410:13529" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14377:15744" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14512:14560" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14599:14635" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="15350:15412" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="15422:15691" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="1525:1602" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2155:3147" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2735:2797" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2819:3088" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="3335:3426" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="3810:4141" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="4857:6212" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="5818:5880" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="5890:6159" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6597:7254" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6662:6758" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6794:6891" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="7066:7166" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8098:13647" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8577:8903" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8938:9264" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="9299:9625" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="9660:9986" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10021:10347" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10382:10708" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10743:11069" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11104:11430" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11466:11793" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11830:12157" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12194:12521" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12558:12884" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12907:13233" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="13274:13397" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="13410:13529" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14377:15744" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14512:14560" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14599:14635" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="15350:15412" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="15422:15691" ph="{...}" />
+            <marker date="1498055150193" expanded="false" signature="58528:58553" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="58581:58594" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="58619:58627" ph="á" />
+            <marker date="1498055150193" expanded="false" signature="58658:58668" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="59103:59116" ph="..." />
           </folding>
         </state>
       </provider>
@@ -771,40 +1266,45 @@
         <state relative-caret-position="5220">
           <caret line="469" column="22" lean-forward="false" selection-start-line="469" selection-start-column="22" selection-end-line="469" selection-end-column="22" />
           <folding>
-            <marker date="1498055107121" expanded="true" signature="1525:1602" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2155:3147" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2735:2797" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2819:3088" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="3335:3426" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="3810:4141" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="4857:6212" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="5818:5880" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="5890:6159" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6597:7254" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6662:6758" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6794:6891" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="7066:7166" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8098:13647" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8577:8903" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8938:9264" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="9299:9625" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="9660:9986" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10021:10347" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10382:10708" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10743:11069" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11104:11430" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11466:11793" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11830:12157" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12194:12521" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12558:12884" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12907:13233" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="13274:13397" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="13410:13529" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14377:15744" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14512:14560" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14599:14635" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="15350:15412" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="15422:15691" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="1525:1602" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2155:3147" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2735:2797" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2819:3088" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="3335:3426" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="3810:4141" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="4857:6212" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="5818:5880" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="5890:6159" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6597:7254" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6662:6758" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6794:6891" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="7066:7166" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8098:13647" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8577:8903" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8938:9264" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="9299:9625" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="9660:9986" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10021:10347" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10382:10708" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10743:11069" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11104:11430" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11466:11793" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11830:12157" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12194:12521" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12558:12884" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12907:13233" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="13274:13397" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="13410:13529" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14377:15744" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14512:14560" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14599:14635" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="15350:15412" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="15422:15691" ph="{...}" />
+            <marker date="1498055150193" expanded="false" signature="58528:58553" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="58581:58594" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="58619:58627" ph="á" />
+            <marker date="1498055150193" expanded="false" signature="58658:58668" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="59103:59116" ph="..." />
           </folding>
         </state>
       </provider>
@@ -869,7 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,7 +1376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4440">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,7 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -893,7 +1390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1746">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,7 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4516">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +1420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-693">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +1427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2194">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +1434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +1441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-567">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,24 +1462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1048">
-          <caret line="215" column="28" lean-forward="false" selection-start-line="215" selection-start-column="28" selection-end-line="215" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5207">
-          <caret line="444" column="89" lean-forward="true" selection-start-line="444" selection-start-column="89" selection-end-line="444" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="436" column="0" lean-forward="false" selection-start-line="436" selection-start-column="0" selection-end-line="439" selection-end-column="9" />
+        <state relative-caret-position="2374">
+          <caret line="174" column="18" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1005,7 +1480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-489">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,7 +1487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,7 +1494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,65 +1501,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="32" />
-          <folding>
-            <marker date="1497816518743" expanded="true" signature="3481:4228" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="4063:4222" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="6273:14267" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="6466:6708" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="6756:6792" ph="/*...*/" />
-            <marker date="1497816518743" expanded="true" signature="7367:7403" ph="/*...*/" />
-            <marker date="1497816518743" expanded="true" signature="7948:7981" ph="/*...*/" />
-            <marker date="1497816518743" expanded="true" signature="10529:10937" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="10999:11170" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="13198:13275" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="13404:13500" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="13506:13608" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="13657:13949" ph="{...}" />
-            <marker date="1497816518743" expanded="true" signature="14004:14257" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Container3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="178" column="12" lean-forward="false" selection-start-line="178" selection-start-column="12" selection-end-line="178" selection-end-column="12" />
+        <state relative-caret-position="-6695">
+          <caret line="322" column="55" lean-forward="true" selection-start-line="322" selection-start-column="55" selection-end-line="322" selection-end-column="55" />
           <folding>
-            <marker date="1498055107121" expanded="true" signature="1525:1602" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2155:3147" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2735:2797" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="2819:3088" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="3335:3426" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="3810:4141" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="4857:6212" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="5818:5880" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="5890:6159" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6597:7254" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6662:6758" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="6794:6891" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="7066:7166" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8098:13647" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8577:8903" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="8938:9264" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="9299:9625" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="9660:9986" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10021:10347" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10382:10708" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="10743:11069" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11104:11430" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11466:11793" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="11830:12157" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12194:12521" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12558:12884" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="12907:13233" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="13274:13397" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="13410:13529" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14377:15744" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14512:14560" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="14599:14635" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="15350:15412" ph="{...}" />
-            <marker date="1498055107121" expanded="true" signature="15422:15691" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="1525:1602" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2155:3147" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2735:2797" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="2819:3088" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="3335:3426" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="3810:4141" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="4857:6212" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="5818:5880" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="5890:6159" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6597:7254" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6662:6758" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="6794:6891" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="7066:7166" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8098:13647" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8577:8903" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="8938:9264" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="9299:9625" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="9660:9986" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10021:10347" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10382:10708" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="10743:11069" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11104:11430" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11466:11793" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="11830:12157" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12194:12521" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12558:12884" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="12907:13233" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="13274:13397" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="13410:13529" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14377:15744" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14512:14560" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="14599:14635" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="15350:15412" ph="{...}" />
+            <marker date="1498055150193" expanded="true" signature="15422:15691" ph="{...}" />
+            <marker date="1498055150193" expanded="false" signature="58528:58553" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="58581:58594" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="58619:58627" ph="á" />
+            <marker date="1498055150193" expanded="false" signature="58658:58668" ph="..." />
+            <marker date="1498055150193" expanded="false" signature="59103:59116" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="103" column="54" lean-forward="false" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

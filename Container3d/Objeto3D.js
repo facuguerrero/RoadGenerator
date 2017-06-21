@@ -58,10 +58,11 @@ class Objeto3D extends Container3D{
 
     //recibe un objectype que es un string que tiene que ser similar a alguno de los define superiores
     //id no se bien que es
-    setType(objectType, id, y = null){
+    setType(objectType, id, y = null, x = false){
         this.objectType = objectType;
         this.id = id;
         this.maxY = y - Math.random(); //le resto un random para que las alturas de las entradas no queden fijas
+        this.luz = x;
     }
 
     setCountEd(countEdi){

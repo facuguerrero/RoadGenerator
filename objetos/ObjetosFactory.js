@@ -101,6 +101,7 @@ class ObjetosFactory {
             if (sentido == -1) {
                 farol.rotate(Math.PI, 0.0, 1.0, 0.0);
             }
+            farol.setType("calle", 500.0, null, true);
             ruta.add(farol);
             sentido = sentido * -1;
 
