@@ -434,7 +434,7 @@ class Objeto3D extends Container3D{
         }
 
         //Tangent
-        if(this.bufferCreator.tangent && this.webglTangentBuffer != null) {
+        if(this.bufferCreator.tangent && this.webglTangentBuffer.length > 0) {
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
             gl.vertexAttribPointer(this.shaderProgram.vertexTangentAttribute, this.webglTangentBuffer.itemSize, gl.FLOAT, false, 0, 0);
         }

@@ -143,12 +143,17 @@
     uniform vec3 uAmbientColor;
     uniform vec3 uLightPosition;
     uniform vec3 uDirectionalColor;
+    uniform bool uUseReflection;
 
     uniform bool uUseLighting;
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
+
+    varying vec3 normalInterp;
+	varying vec3 tangentInterp;
+	varying vec3 binormalInterp;
 
     void main(void) {
 
@@ -163,6 +168,16 @@
 
 		// Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
+
+        normalInterp = normalize(uNMatrix * aVertexNormal);
+        tangentInterp = normalize(uNMatrix * vec3(0.0, 0.0, 1.0));
+        binormalInterp = normalize(uNMatrix * vec3(0.0, 1.0, 0.0));
+
+//		if (uUseReflection) {
+//    			vec3 view = normalize(vertPos);
+//    			reflectDir = reflect(view, normalInterp);
+//    			reflectDir = vec3(uViewMatrix * vec4(reflectDir, 0.0));
+//    	}
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
@@ -626,11 +641,11 @@
             buildingShaders.vertexPositionAttribute = gl.getAttribLocation(buildingShaders, "aVertexPosition");
             gl.enableVertexAttribArray(buildingShaders.vertexPositionAttribute);
 
-            buildingShaders.textureCoordAttribute = gl.getAttribLocation(buildingShaders, "aTextureCoord");
-            gl.enableVertexAttribArray(buildingShaders.textureCoordAttribute);
-
             buildingShaders.vertexNormalAttribute = gl.getAttribLocation(buildingShaders, "aVertexNormal");
             gl.enableVertexAttribArray(buildingShaders.vertexNormalAttribute);
+
+            buildingShaders.textureCoordAttribute = gl.getAttribLocation(buildingShaders, "aTextureCoord");
+            gl.enableVertexAttribArray(buildingShaders.textureCoordAttribute);
 
             buildingShaders.vertexTangentAttribute = gl.getAttribLocation(buildingShaders, "aVertexTangent");
             gl.enableVertexAttribArray(buildingShaders.vertexTangentAttribute);
