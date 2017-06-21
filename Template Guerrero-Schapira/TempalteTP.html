@@ -225,9 +225,6 @@
     uniform vec3 uPunctualDiffuseColor;
     uniform vec3 uPunctualSpecularColor;
     uniform vec3 uPunctual1LightPosition;
-    uniform vec3 uPunctual2LightPosition;
-    uniform vec3 uPunctual3LightPosition;
-    uniform vec3 uPunctual4LightPosition;
 
     varying vec3 normalInterp;
     varying vec3 tangentInterp;
@@ -252,6 +249,17 @@
 		float specularPunctualLightWeighting_1 = pow(rv,7.0); // Especular: [(2*(N*L)*N - L) * V] ^ alpha
 		float dist_puntual_1 = sqrt(pow(lightDir[0], 2.0) + pow(lightDir[1], 2.0) + pow(lightDir[2], 2.0));
 
+   // Total Light
+        // Especular
+        vec3 specularLightWeighting = uPunctualLightIntensity  * uPunctualSpecularColor  * specularPunctualLightWeighting_1 /dist_puntual_1;
+        // Direccional
+        vec3 direccionalLightWeighting = uPunctualLightIntensity  * uPunctualDiffuseColor  * diffusePunctualLightWeighting_1 /dist_puntual_1;
+
+        // Ambiental
+        vec3 ambientalLightWeighting = uAmbientalLightIntensity * uAmbientColor;
+
+		// Ambiental + Direccional + Especular
+		vec3 vLightWeighting = ambientalLightWeighting + direccionalLightWeighting + specularLightWeighting;
 
         if(vID >= 0.0 && vID < 0.5){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
