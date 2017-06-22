@@ -54,7 +54,6 @@ class OrbitCamera{
         var y = this.radius * Math.sin(this.phi) * Math.sin(this.theta);
         var z =this.radius * Math.cos(this.phi);
 
-        var pos = [x,y,z];
-        return pos;
+        return [x,y,z];
     }
 }
