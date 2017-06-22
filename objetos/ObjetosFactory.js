@@ -89,13 +89,15 @@ class ObjetosFactory {
         var largo = vecPos.length - ajusteFarolesBordes - 10;
         var factorColumnas = 0.0;
 
-        for (var i = ajusteFarolesBordes; i < largo; i += factorCantFaroles) {
+        //DESCOMENTAR ESTO!
+        i = 30;
+        //for (var i = ajusteFarolesBordes; i < largo; i += factorCantFaroles) {
 
             var vec = vecPosFaroles[i];
             var mat = this.getMatriz4x4(arrayMatF[i]);
 
             var farol = this.createFarol();
-            farol.translate(vec[1], vec[0], vec[2]);
+            farol.translate(vec[1], vec[0] - 20, vec[2]); //SACAR EL -15
             farol.applyMatrix(mat);
             farol.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             if (sentido == -1) {
@@ -123,7 +125,7 @@ class ObjetosFactory {
             factorColumnas++;
 
 
-        }
+        //}
 
         //ajustes de tamanio de la ruta
         ruta.scale(0.32, 0.32, 0.32);
