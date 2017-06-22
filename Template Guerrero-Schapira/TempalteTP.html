@@ -1131,6 +1131,10 @@
             // Se configura la matriz de proyecci�n
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
+            // Obtenemos la ubicación de la camara y se la pasamos al shader
+            var camera_position = camera.getPosition();
+            gl.uniform3f(streetShader.cameraPositionUniform, camera_position[0], camera_position[1], camera_position[2]);
+
             ///Dibujamos las figuras
 
             escena.setShaderProgram(shaderProgramColoredObject);
@@ -1141,7 +1145,7 @@
             /** Configuración de la luz **/
                 // Se inicializan las variables asociadas con la Iluminación
             var directionalLightsActive = true;
-            var punctualLightsActive = false;
+            var punctualLightsActive = true;
             var autoIluminationActive = false;
             var useTexture = true;
             gl.uniform1i(streetShader.usePunctualLights, punctualLightsActive);
@@ -1163,7 +1167,7 @@
             gl.uniform1f(streetShader.lightPunctualIntensity, 0.3);							//Intensidad
             gl.uniform3f(streetShader.diffusePunctualColorUniform, 0.8, 1.0, 0.8);				//Difusa (Verdosa)
             gl.uniform3f(streetShader.specularPunctualColorUniform, 0.8, 1.0, 0.8);			//Especular (Verdosa)
-            gl.uniform3fv(streetShader.lightingPunctual1PositionUniform, [0.0,1.0,0.0]);	//Punctual 1
+            gl.uniform3fv(streetShader.lightingPunctual1PositionUniform, [0.0,100.0,0.0]);	//Punctual 1
 
 
             if (frame < 30) {
