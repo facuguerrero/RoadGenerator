@@ -54,6 +54,7 @@ class Objeto3D extends Container3D{
         this.id = null;
         this.maxY = null;
         this.cantEdificios = null;
+        this.setShaderProgram(shaderProgramColoredObject);
     }
 
     //recibe un objectype que es un string que tiene que ser similar a alguno de los define superiores
