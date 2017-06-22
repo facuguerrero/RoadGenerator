@@ -177,11 +177,11 @@
         tangentInterp = normalize(uNMatrix * vec3(0.0, 0.0, 1.0));
         binormalInterp = normalize(uNMatrix * vec3(0.0, 1.0, 0.0));
 
-		if (uUseReflection) {
-    			vec3 view = normalize(vertPos);
-    			reflectDir = reflect(view, normalInterp);
-    			reflectDir = vec3(uViewMatrix * vec4(reflectDir, 0.0));
-    	}
+//		if (uUseReflection) {
+//    			vec3 view = normalize(vertPos);
+//    			reflectDir = reflect(view, normalInterp);
+//    			reflectDir = vec3(uViewMatrix * vec4(reflectDir, 0.0));
+//    	}
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
@@ -605,9 +605,6 @@
         var shaderProgramColoredObject;
         var streetShader;
         var buildingShaders;
-        var esquinaShader;
-        var veredaShader;
-        var autopistaShader;
 
         function initBuildingTopShaders() {
 
@@ -692,6 +689,9 @@
             streetShader.ambientColorUniform = gl.getUniformLocation(streetShader, "uAmbientColor");
             streetShader.lightingDirectionUniform = gl.getUniformLocation(streetShader, "uLightPosition");
             streetShader.directionalColorUniform = gl.getUniformLocation(streetShader, "uDirectionalColor");
+
+            // Camera
+            streetShader.cameraPositionUniform = gl.getUniformLocation(streetShader, "uCameraPos");
 
             // Lights
             streetShader.ambientIluminationIntensity = gl.getUniformLocation(streetShader, "uAmbientalLightIntensity");
