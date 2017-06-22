@@ -1131,12 +1131,10 @@
 
             /** Configuración de la luz **/
                 // Se inicializan las variables asociadas con la Iluminación
-            var lighting = true;
             var directionalLightsActive = true;
             var punctualLightsActive = false;
             var autoIluminationActive = false;
             var useTexture = true;
-            gl.uniform1i(streetShader.useLightingUniform, lighting);
             gl.uniform1i(streetShader.usePunctualLights, punctualLightsActive);
             gl.uniform1i(streetShader.useDirectionalLights, directionalLightsActive);
             gl.uniform1i(streetShader.useAutoIlumination, autoIluminationActive);
@@ -1149,7 +1147,6 @@
 
             // Luz ambiental
             gl.uniform1f(streetShader.ambientIluminationIntensity, 2.0);
-            gl.uniform3f(streetShader.ambientColorUniform, 0.2, 0.2, 0.2);                     //Ambiente
 
             // Luces puntuales
             gl.uniform1f(streetShader.punctualLightRadio, 20.0);
