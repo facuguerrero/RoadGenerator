@@ -371,9 +371,15 @@ class CameraHandler{
     /*---------- METODOS EXTRA -------------*/
 
     getPosition(){
-        if(this.mode == "free"){
+
+        if(this.orbitCam == null || this.freeCam == null || this.freeCamR == null){
+            return [0,0,0];
+        }
+
+        else if(this.mode == "free"){
             return this.freeCam.getPos();
         }
+
         else if(this.mode == "freeR"){
             return this.freeCamR.getPos();
         }
