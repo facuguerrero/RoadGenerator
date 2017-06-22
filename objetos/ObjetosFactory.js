@@ -251,7 +251,7 @@ class ObjetosFactory {
 
         var edificio = new Objeto3D();
         edificio.setType("edificio",this.numB, y, x);
-        edificio.setShaderProgram(streetShader);
+        edificio.setShaderProgram(buildingShaders);
         edificio.setCountEd(this.countEdif);
         this.sumNumB();
 

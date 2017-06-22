@@ -21,7 +21,7 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16820">
+            <state relative-caret-position="43">
               <caret line="933" column="26" lean-forward="false" selection-start-line="933" selection-start-column="26" selection-end-line="933" selection-end-column="26" />
               <folding>
                 <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -36,8 +36,8 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="253" column="34" lean-forward="false" selection-start-line="253" selection-start-column="34" selection-end-line="253" selection-end-column="34" />
+            <state relative-caret-position="197">
+              <caret line="143" column="30" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -87,7 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>auxN</find>
       <find>columna</find>
       <find>vs-genera</find>
       <find>farol</find>
@@ -117,6 +116,7 @@
       <find>aVertexNormal</find>
       <find>normalInterp</find>
       <find>setT</find>
+      <find>setType(</find>
     </findStrings>
     <replaceStrings>
       <replace>this.shaderProgram</replace>
@@ -348,7 +348,7 @@
       <workItem from="1498133896796" duration="599000" />
       <workItem from="1498143799814" duration="4812000" />
       <workItem from="1498162738444" duration="1515000" />
-      <workItem from="1498164586001" duration="213000" />
+      <workItem from="1498164586001" duration="285000" />
     </task>
     <task id="LOCAL-00001" summary="sky comentado">
       <created>1498047562203</created>
@@ -483,11 +483,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498164541902</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="ShaderPrograms">
+      <created>1498164804896</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1498164804896</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31171000" />
+    <option name="totallyTimeSpent" value="31243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-14" width="969" height="783" extended-state="6" />
@@ -896,7 +903,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16820">
+        <state relative-caret-position="43">
           <caret line="933" column="26" lean-forward="false" selection-start-line="933" selection-start-column="26" selection-end-line="933" selection-end-column="26" />
           <folding>
             <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -909,8 +916,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="253" column="34" lean-forward="false" selection-start-line="253" selection-start-column="34" selection-end-line="253" selection-end-column="34" />
+        <state relative-caret-position="197">
+          <caret line="143" column="30" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="30" />
           <folding />
         </state>
       </provider>
