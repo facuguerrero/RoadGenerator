@@ -50,7 +50,6 @@ class Objeto3D extends Container3D{
 
         this.bufferCreator = null;
 
-        this.objectType = null;
         this.id = null;
         this.maxY = null;
         this.cantEdificios = null;
