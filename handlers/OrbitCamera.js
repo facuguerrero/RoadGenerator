@@ -48,4 +48,13 @@ class OrbitCamera{
     getTheta(){
         return this.theta;
     }
+
+    getPosOrbit(){
+        var x = this.radius * Math.sin(this.phi) * Math.cos(this.theta);
+        var y = this.radius * Math.sin(this.phi) * Math.sin(this.theta);
+        var z =this.radius * Math.cos(this.phi);
+
+        var pos = [x,y,z];
+        return pos;
+    }
 }

@@ -368,5 +368,18 @@ class CameraHandler{
         mouse.pressedOff();
     }
 
+    /*---------- METODOS EXTRA -------------*/
+
+    getPosition(){
+        if(this.mode == "free"){
+            return this.freeCam.getPos();
+        }
+        else if(this.mode == "freeR"){
+            return this.freeCamR.getPos();
+        }
+
+        return this.orbitCam.getPosOrbit();
+    }
+
 
 }

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/CameraHandler.js" afterPath="$PROJECT_DIR$/handlers/CameraHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/OrbitCamera.js" afterPath="$PROJECT_DIR$/handlers/OrbitCamera.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,42 +18,54 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="1158" column="56" lean-forward="false" selection-start-line="1158" selection-start-column="56" selection-end-line="1158" selection-end-column="56" />
-                  <folding>
-                    <marker date="1498155353858" expanded="false" signature="61763:61788" ph="..." />
-                    <marker date="1498155353858" expanded="false" signature="61816:61829" ph="..." />
-                    <marker date="1498155353858" expanded="false" signature="61854:61862" ph="á" />
-                    <marker date="1498155353858" expanded="false" signature="61893:61903" ph="..." />
-                    <marker date="1498155353858" expanded="false" signature="62338:62351" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/main.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="363">
-                  <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="67" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CameraHandler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="380" column="34" lean-forward="false" selection-start-line="380" selection-start-column="34" selection-end-line="380" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrbitCamera.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/handlers/OrbitCamera.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreeCamera.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handlers/FreeCamera.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="1215" column="33" lean-forward="false" selection-start-line="1215" selection-start-column="33" selection-end-line="1215" selection-end-column="33" />
+              <folding>
+                <marker date="1498155681742" expanded="false" signature="61763:61788" ph="..." />
+                <marker date="1498155681742" expanded="false" signature="61816:61829" ph="..." />
+                <marker date="1498155681742" expanded="false" signature="61854:61862" ph="á" />
+                <marker date="1498155681742" expanded="false" signature="61893:61903" ph="..." />
+                <marker date="1498155681742" expanded="false" signature="62338:62351" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -77,6 +91,7 @@
       <find>ambientColorUniform</find>
       <find>ruta</find>
       <find>luz</find>
+      <find>came</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,6 +108,8 @@
         <option value="$PROJECT_DIR$/Bajado2/sistemas-graficos-master/index.html" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/handlers/CameraHandler.js" />
+        <option value="$PROJECT_DIR$/handlers/OrbitCamera.js" />
       </list>
     </option>
   </component>
@@ -147,24 +164,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Template Guerrero-Schapira" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bajado2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sistemas-graficos-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1127,17 +1126,24 @@
       <option name="project" value="LOCAL" />
       <updated>1498155452741</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fasfqawe">
+      <created>1498155483319</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1498155483319</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22664000" />
+    <option name="totallyTimeSpent" value="23861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="967" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24922441" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24894068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1173,7 +1179,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sky comentado" />
     <MESSAGE value="Farol" />
-    <option name="LAST_COMMIT_MESSAGE" value="Farol" />
+    <MESSAGE value="fasfqawe" />
+    <option name="LAST_COMMIT_MESSAGE" value="fasfqawe" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1182,35 +1189,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4965">
-          <caret line="331" column="33" lean-forward="true" selection-start-line="331" selection-start-column="33" selection-end-line="331" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template Pruebas/TempalteTP.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6810">
-          <caret line="454" column="40" lean-forward="false" selection-start-line="454" selection-start-column="40" selection-end-line="454" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8550">
-          <caret line="570" column="44" lean-forward="false" selection-start-line="570" selection-start-column="44" selection-end-line="570" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4965">
@@ -1253,11 +1231,11 @@
         <state relative-caret-position="-105">
           <caret line="497" column="22" lean-forward="false" selection-start-line="497" selection-start-column="22" selection-end-line="497" selection-end-column="22" />
           <folding>
-            <marker date="1498155353858" expanded="false" signature="61763:61788" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="61816:61829" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="61854:61862" ph="á" />
-            <marker date="1498155353858" expanded="false" signature="61893:61903" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="62338:62351" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61763:61788" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61816:61829" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61854:61862" ph="á" />
+            <marker date="1498155681742" expanded="false" signature="61893:61903" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="62338:62351" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1341,11 +1319,11 @@
         <state relative-caret-position="5220">
           <caret line="469" column="22" lean-forward="false" selection-start-line="469" selection-start-column="22" selection-end-line="469" selection-end-column="22" />
           <folding>
-            <marker date="1498155353858" expanded="false" signature="61763:61788" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="61816:61829" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="61854:61862" ph="á" />
-            <marker date="1498155353858" expanded="false" signature="61893:61903" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="62338:62351" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61763:61788" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61816:61829" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61854:61862" ph="á" />
+            <marker date="1498155681742" expanded="false" signature="61893:61903" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="62338:62351" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1553,25 +1531,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/Camera.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="238" column="0" lean-forward="true" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Bajado2/sistemas-graficos-master/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="67" />
+        <state relative-caret-position="195">
+          <caret line="243" column="38" lean-forward="true" selection-start-line="243" selection-start-column="38" selection-end-line="243" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="1158" column="56" lean-forward="false" selection-start-line="1158" selection-start-column="56" selection-end-line="1158" selection-end-column="56" />
+        <state relative-caret-position="189">
+          <caret line="1215" column="33" lean-forward="false" selection-start-line="1215" selection-start-column="33" selection-end-line="1215" selection-end-column="33" />
           <folding>
-            <marker date="1498155353858" expanded="false" signature="61763:61788" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="61816:61829" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="61854:61862" ph="á" />
-            <marker date="1498155353858" expanded="false" signature="61893:61903" ph="..." />
-            <marker date="1498155353858" expanded="false" signature="62338:62351" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61763:61788" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61816:61829" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="61854:61862" ph="á" />
+            <marker date="1498155681742" expanded="false" signature="61893:61903" ph="..." />
+            <marker date="1498155681742" expanded="false" signature="62338:62351" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/FreeCamera.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/CameraHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="380" column="34" lean-forward="false" selection-start-line="380" selection-start-column="34" selection-end-line="380" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/OrbitCamera.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
