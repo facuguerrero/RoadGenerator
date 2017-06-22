@@ -461,13 +461,13 @@ class Objeto3D extends Container3D{
             gl.uniform1f(maxY, this.maxY);
         }
         if(this.objectType == ESQUINA){
-            gl.vertexAttrib1f(idEsquina,this.id);
+            gl.vertexAttrib1f(idStreet,this.id);
         }
         if(this.objectType == VEREDA){
-            gl.vertexAttrib1f(idVereda, this.id);
+            gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == AUTOPISTA){
-            gl.vertexAttrib1f(idAutopista, this.id);
+            gl.vertexAttrib1f(idStreet, this.id);
         }
 
 

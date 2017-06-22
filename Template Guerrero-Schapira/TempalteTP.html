@@ -144,10 +144,12 @@
     //uniform bool uUseReflection;
 
     uniform bool uUseLighting;
+    uniform bool uUseReflection;
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
+    varying vec3 reflectDir;
 
     varying vec3 vertPos;
     varying vec3 normalInterp;
@@ -175,11 +177,11 @@
         tangentInterp = normalize(uNMatrix * vec3(0.0, 0.0, 1.0));
         binormalInterp = normalize(uNMatrix * vec3(0.0, 1.0, 0.0));
 
-//		if (uUseReflection) {
-//    			vec3 view = normalize(vertPos);
-//    			reflectDir = reflect(view, normalInterp);
-//    			reflectDir = vec3(uViewMatrix * vec4(reflectDir, 0.0));
-//    	}
+		if (uUseReflection) {
+    			vec3 view = normalize(vertPos);
+    			reflectDir = reflect(view, normalInterp);
+    			reflectDir = vec3(uViewMatrix * vec4(reflectDir, 0.0));
+    	}
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
@@ -234,6 +236,7 @@
     varying vec3 normalInterp;
     varying vec3 tangentInterp;
     varying vec3 binormalInterp;
+    varying vec3 reflectDir;
 
     varying float vID;
 
@@ -672,11 +675,11 @@
             streetShader.vertexPositionAttribute = gl.getAttribLocation(streetShader, "aVertexPosition");
             gl.enableVertexAttribArray(streetShader.vertexPositionAttribute);
 
-            streetShader.textureCoordAttribute = gl.getAttribLocation(streetShader, "aTextureCoord");
-            gl.enableVertexAttribArray(streetShader.textureCoordAttribute);
-
             streetShader.vertexNormalAttribute = gl.getAttribLocation(streetShader, "aVertexNormal");
             gl.enableVertexAttribArray(streetShader.vertexNormalAttribute);
+
+            streetShader.textureCoordAttribute = gl.getAttribLocation(streetShader, "aTextureCoord");
+            gl.enableVertexAttribArray(streetShader.textureCoordAttribute);
 
 //            streetShader.vertexTangentAttribute = gl.getAttribLocation(streetShader, "aVertexTangent");
 //            gl.enableVertexAttribArray(streetShader.vertexTangentAttribute);
@@ -685,24 +688,18 @@
             streetShader.ViewMatrixUniform = gl.getUniformLocation(streetShader, "uViewMatrix");
             streetShader.ModelMatrixUniform = gl.getUniformLocation(streetShader, "uModelMatrix");
             streetShader.nMatrixUniform = gl.getUniformLocation(streetShader, "uNMatrix");
-            streetShader.samplerUniform = gl.getUniformLocation(streetShader, "uSampler");
             streetShader.useLightingUniform = gl.getUniformLocation(streetShader, "uUseLighting");
             streetShader.ambientColorUniform = gl.getUniformLocation(streetShader, "uAmbientColor");
             streetShader.lightingDirectionUniform = gl.getUniformLocation(streetShader, "uLightPosition");
             streetShader.directionalColorUniform = gl.getUniformLocation(streetShader, "uDirectionalColor");
 
             // Lights
-            streetShader.useLightingUniform = gl.getUniformLocation(streetShader, "uUseLighting");
-            streetShader.useAutoIlumination = gl.getUniformLocation(streetShader, "uUseAutoIlumination");
-            streetShader.useDirectionalLights = gl.getUniformLocation(streetShader, "uUseDirectionalLights");
-            streetShader.ambientColorUniform = gl.getUniformLocation(streetShader, "uAmbientColor");
             streetShader.ambientIluminationIntensity = gl.getUniformLocation(streetShader, "uAmbientalLightIntensity");
             streetShader.autoIluminationIntensity = gl.getUniformLocation(streetShader, "uAutoIluminationIntensity");
             streetShader.autoIluminationColorUniform = gl.getUniformLocation(streetShader, "uAutoIluminationColor");
 
             // Punctual
             streetShader.punctualLightRadio = gl.getUniformLocation(streetShader, "uPunctualLightRadio");
-            streetShader.usePunctualLights = gl.getUniformLocation(streetShader, "uUsePunctualLights");
             streetShader.diffusePunctualColorUniform = gl.getUniformLocation(streetShader, "uPunctualDiffuseColor");
             streetShader.specularPunctualColorUniform = gl.getUniformLocation(streetShader, "uPunctualSpecularColor");
             streetShader.lightPunctualIntensity = gl.getUniformLocation(streetShader, "uPunctualLightIntensity");
@@ -949,9 +946,6 @@
         //variables de las id de texturas
         var idStreet;
         var idBuilding;
-        var idEsquina;
-        var idVereda;
-        var idAutopista;
 
 
         var mouse = null;
@@ -1014,6 +1008,8 @@
             mat4.identity(model_matrix_escene);
 
             /** Configuración de la luz **/
+
+            gl.uniform1i(streetShader.useReflection, false);
 
             // Configuramos la iluminación general
             // Auto iluminación
