@@ -250,7 +250,7 @@ class ObjetosFactory {
         var puntosEdificio = [];
         puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
         puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
-        puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
+        //puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
         puntosEdificio.push(vec3.fromValues(x, 0.0, z));
 
         var arrayMatT = [];

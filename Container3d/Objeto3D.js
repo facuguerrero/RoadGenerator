@@ -156,6 +156,9 @@ class Objeto3D extends Container3D{
         if((arrayMatT.length != rows || arrayVecPos.length != rows)) {
             //Se chequea el caso en el que es edificio
             if (arrayVecPos.length != rows + 1) {
+                console.log(figura);
+                console.log(rows);
+                console.log(arrayVecPos.length);
                 console.log("error de dimension para la superficie con escalado");
             }
         }
@@ -339,8 +342,8 @@ class Objeto3D extends Container3D{
         }
 
         if(figura == BASE_COLUMNA){
-            if(rows != 3){
-                console.log("Para la base de la columna se necesitan 3 niveles");
+            if(rows != 8){
+                console.log("Para la base de la columna se necesitan 8 niveles");
             }
             this.figuras.calcularBaseColumna(rows,arrayVecPos,ejeRotacion,arrayVecNor);
             //this.addColor(buffcalc, 5000,0.0,0.0,0.0);
