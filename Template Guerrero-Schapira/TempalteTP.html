@@ -1156,6 +1156,7 @@
 
             // Luz ambiental
             gl.uniform1f(streetShader.ambientIluminationIntensity, 2.0);
+            gl.uniform3f(streetShader.ambientColorUniform, 0.2, 0.2, 0.2);
 
             // Luces puntuales
             gl.uniform1f(streetShader.punctualLightRadio, 20.0);
