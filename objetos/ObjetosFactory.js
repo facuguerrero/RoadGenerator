@@ -210,8 +210,10 @@ class ObjetosFactory {
         var base = new Objeto3D();
         base.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapa);
         this.addColor(base,0.0,0.0,1.0);
+        //linea provisoria
+        base.setType("calle", 500.0, null, true);
+
         edificio.add(base);
-        edificio.setType("calle", 500.0, null, true);
 
 
         if (tapaAbajo) {
@@ -223,11 +225,12 @@ class ObjetosFactory {
             //Creamos el piso del edificio
             var baseAbajo = new Objeto3D();
             baseAbajo.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapaAbajo);
-
             edificio.add(baseAbajo);
-
+            //Linea provisoria
+            baseAbajo.setType("calle", 500.0, null, true);
         }
-
+        //linea provisoria
+        edificio.setType("calle", 500.0, null, true);
 
         edificio.calcularSuperficieBarrido("estructura_luz", 2, 5, arrayMatT, puntosEdificio);
         this.addColor(edificio,1.0,0.0,0.0);
