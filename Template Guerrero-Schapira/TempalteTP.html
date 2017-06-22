@@ -191,18 +191,18 @@
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
-		vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
-		normalize(light_dir);
-        if (!uUseLighting)
-		{
-            vLightWeighting = vec3(1.0, 1.0, 1.0);
-        }
-		else
-		{
-            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
-            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
-            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
-        }
+//		vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
+//		normalize(light_dir);
+//        if (!uUseLighting)
+//		{
+//            vLightWeighting = vec3(1.0, 1.0, 1.0);
+//        }
+//		else
+//		{
+//            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
+//            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
+//            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+//        }
 		////////////////////////////////////////////
     }
 
@@ -329,6 +329,7 @@
 
     varying float vID;
     varying float maxY;
+    varying vec3 a;
 
     void main(void) {
         vec4 textureColor;
@@ -492,6 +493,7 @@
     varying vec3 vLightWeighting;
     varying float vID;
     varying float maxY;
+    varying vec3 a;
 
     uniform float t;
     uniform float edificioActual;
@@ -531,7 +533,7 @@
 
         vTextureCoord = auxUv;
 
-        aVertexTangent;
+        a = aVertexTangent;
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
@@ -1129,6 +1131,13 @@
             // Se configura la matriz de proyecci�n
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
+            ///Dibujamos las figuras
+
+            escena.setShaderProgram(shaderProgramColoredObject);
+            escena.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
+            var model_matrix_escene = mat4.create();
+            mat4.identity(model_matrix_escene);
+
             /** Configuración de la luz **/
                 // Se inicializan las variables asociadas con la Iluminación
             var directionalLightsActive = true;
@@ -1153,14 +1162,8 @@
             gl.uniform1f(streetShader.lightPunctualIntensity, 0.3);							//Intensidad
             gl.uniform3f(streetShader.diffusePunctualColorUniform, 0.8, 1.0, 0.8);				//Difusa (Verdosa)
             gl.uniform3f(streetShader.specularPunctualColorUniform, 0.8, 1.0, 0.8);			//Especular (Verdosa)
-            gl.uniform3fv(streetShader.lightingPunctual1PositionUniform, [6.8,0.5,0.0]);	//Punctual 1
+            gl.uniform3fv(streetShader.lightingPunctual1PositionUniform, [0.0,1.0,0.0]);	//Punctual 1
 
-            ///Dibujamos las figuras
-
-            escena.setShaderProgram(shaderProgramColoredObject);
-            escena.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
-            var model_matrix_escene = mat4.create();
-            mat4.identity(model_matrix_escene);
 
             if (frame < 30) {
                 var t = gl.getUniformLocation(buildingShaders, "t");
