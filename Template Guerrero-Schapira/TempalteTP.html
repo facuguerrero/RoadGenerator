@@ -42,7 +42,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec3 aVertexColor;
-    attribute vec3 aVertexTangent;
+//    attribute vec3 aVertexTangent;
 
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
@@ -69,10 +69,6 @@
 
         // Coordenada de textura sin modifiaciones
         vVertexColor = aVertexColor;
-
-        vec3 a = aVertexTangent;
-        a[0] = 1.0;
-
         ////////////////////////////////////////////
         // Calculos de la iluminaci�n
         vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
@@ -107,7 +103,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
-    attribute vec3 aVertexTangent;
+//    attribute vec3 aVertexTangent;
 
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
@@ -126,9 +122,6 @@
 
             // Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
-
-        aVertexTangent;
-
     }
 </script>
 
@@ -137,7 +130,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
-    attribute vec3 aVertexTangent;
+//    attribute vec3 aVertexTangent;
     attribute float aID;
 
     uniform mat4 uViewMatrix;
@@ -177,7 +170,6 @@
 		// Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
 
-        aVertexTangent;
 
         normalInterp = normalize(uNMatrix * aVertexNormal);
         tangentInterp = normalize(uNMatrix * vec3(0.0, 0.0, 1.0));
@@ -475,7 +467,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
-    attribute vec3 aVertexTangent;
+//    attribute vec3 aVertexTangent;
     attribute float aID;
 
     uniform mat4 uViewMatrix;
@@ -532,8 +524,6 @@
         auxUv.y = auxUv.y*escalaY;
 
         vTextureCoord = auxUv;
-
-        a = aVertexTangent;
 
 		////////////////////////////////////////////
 		// Calculos de la iluminaci�n
@@ -644,8 +634,8 @@
             buildingShaders.textureCoordAttribute = gl.getAttribLocation(buildingShaders, "aTextureCoord");
             gl.enableVertexAttribArray(buildingShaders.textureCoordAttribute);
 
-            buildingShaders.vertexTangentAttribute = gl.getAttribLocation(buildingShaders, "aVertexTangent");
-            gl.enableVertexAttribArray(buildingShaders.vertexTangentAttribute);
+//            buildingShaders.vertexTangentAttribute = gl.getAttribLocation(buildingShaders, "aVertexTangent");
+//            gl.enableVertexAttribArray(buildingShaders.vertexTangentAttribute);
 
             buildingShaders.pMatrixUniform = gl.getUniformLocation(buildingShaders, "uPMatrix");
             buildingShaders.ViewMatrixUniform = gl.getUniformLocation(buildingShaders, "uViewMatrix");
@@ -659,126 +649,6 @@
 
             idBuilding = gl.getAttribLocation(buildingShaders, "aID");
 
-        }
-
-        function initAutopistaShaders() {
-
-            var fragmentShader = getShader("fs-street");
-            var vertexShader = getShader("vs-general");
-
-            autopistaShader = gl.createProgram();
-            gl.attachShader(autopistaShader, vertexShader);
-            gl.attachShader(autopistaShader, fragmentShader);
-            gl.linkProgram(autopistaShader);
-
-            if (!gl.getProgramParameter(autopistaShader, gl.LINK_STATUS)) {
-                alert("Could not initialise shaders");
-            }
-            gl.useProgram(autopistaShader);
-
-            autopistaShader.vertexPositionAttribute = gl.getAttribLocation(autopistaShader, "aVertexPosition");
-            gl.enableVertexAttribArray(autopistaShader.vertexPositionAttribute);
-
-            autopistaShader.textureCoordAttribute = gl.getAttribLocation(autopistaShader, "aTextureCoord");
-            gl.enableVertexAttribArray(autopistaShader.textureCoordAttribute);
-
-            autopistaShader.vertexNormalAttribute = gl.getAttribLocation(autopistaShader, "aVertexNormal");
-            gl.enableVertexAttribArray(autopistaShader.vertexNormalAttribute);
-
-            autopistaShader.vertexTangentAttribute = gl.getAttribLocation(autopistaShader, "aVertexTangent");
-            gl.enableVertexAttribArray(autopistaShader.vertexTangentAttribute);
-
-            autopistaShader.pMatrixUniform = gl.getUniformLocation(autopistaShader, "uPMatrix");
-            autopistaShader.ViewMatrixUniform = gl.getUniformLocation(autopistaShader, "uViewMatrix");
-            autopistaShader.ModelMatrixUniform = gl.getUniformLocation(autopistaShader, "uModelMatrix");
-            autopistaShader.nMatrixUniform = gl.getUniformLocation(autopistaShader, "uNMatrix");
-            autopistaShader.samplerUniform = gl.getUniformLocation(autopistaShader, "uSampler");
-            autopistaShader.useLightingUniform = gl.getUniformLocation(autopistaShader, "uUseLighting");
-            autopistaShader.ambientColorUniform = gl.getUniformLocation(autopistaShader, "uAmbientColor");
-            autopistaShader.lightingDirectionUniform = gl.getUniformLocation(autopistaShader, "uLightPosition");
-            autopistaShader.directionalColorUniform = gl.getUniformLocation(autopistaShader, "uDirectionalColor");
-
-            idAutopista = gl.getAttribLocation(autopistaShader, "aID");
-        }
-
-        function initEsquinaShaders() {
-
-            var fragmentShader = getShader("fs-street");
-            var vertexShader = getShader("vs-general");
-
-            esquinaShader = gl.createProgram();
-            gl.attachShader(esquinaShader, vertexShader);
-            gl.attachShader(esquinaShader, fragmentShader);
-            gl.linkProgram(esquinaShader);
-
-            if (!gl.getProgramParameter(esquinaShader, gl.LINK_STATUS)) {
-                alert("Could not initialise shaders");
-            }
-            gl.useProgram(esquinaShader);
-
-            esquinaShader.vertexPositionAttribute = gl.getAttribLocation(esquinaShader, "aVertexPosition");
-            gl.enableVertexAttribArray(esquinaShader.vertexPositionAttribute);
-
-            esquinaShader.textureCoordAttribute = gl.getAttribLocation(esquinaShader, "aTextureCoord");
-            gl.enableVertexAttribArray(esquinaShader.textureCoordAttribute);
-
-            esquinaShader.vertexNormalAttribute = gl.getAttribLocation(esquinaShader, "aVertexNormal");
-            gl.enableVertexAttribArray(esquinaShader.vertexNormalAttribute);
-
-            esquinaShader.vertexTangentAttribute = gl.getAttribLocation(esquinaShader, "aVertexTangent");
-            gl.enableVertexAttribArray(esquinaShader.vertexTangentAttribute);
-
-            esquinaShader.pMatrixUniform = gl.getUniformLocation(esquinaShader, "uPMatrix");
-            esquinaShader.ViewMatrixUniform = gl.getUniformLocation(esquinaShader, "uViewMatrix");
-            esquinaShader.ModelMatrixUniform = gl.getUniformLocation(esquinaShader, "uModelMatrix");
-            esquinaShader.nMatrixUniform = gl.getUniformLocation(esquinaShader, "uNMatrix");
-            esquinaShader.samplerUniform = gl.getUniformLocation(esquinaShader, "uSampler");
-            esquinaShader.useLightingUniform = gl.getUniformLocation(esquinaShader, "uUseLighting");
-            esquinaShader.ambientColorUniform = gl.getUniformLocation(esquinaShader, "uAmbientColor");
-            esquinaShader.lightingDirectionUniform = gl.getUniformLocation(esquinaShader, "uLightPosition");
-            esquinaShader.directionalColorUniform = gl.getUniformLocation(esquinaShader, "uDirectionalColor");
-
-            idEsquina = gl.getAttribLocation(esquinaShader, "aID");
-        }
-
-        function initVeredaShaders() {
-
-            var fragmentShader = getShader("fs-street");
-            var vertexShader = getShader("vs-general");
-
-            veredaShader = gl.createProgram();
-            gl.attachShader(veredaShader, vertexShader);
-            gl.attachShader(veredaShader, fragmentShader);
-            gl.linkProgram(veredaShader);
-
-            if (!gl.getProgramParameter(veredaShader, gl.LINK_STATUS)) {
-                alert("Could not initialise shaders");
-            }
-            gl.useProgram(veredaShader);
-
-            veredaShader.vertexPositionAttribute = gl.getAttribLocation(veredaShader, "aVertexPosition");
-            gl.enableVertexAttribArray(veredaShader.vertexPositionAttribute);
-
-            veredaShader.textureCoordAttribute = gl.getAttribLocation(veredaShader, "aTextureCoord");
-            gl.enableVertexAttribArray(veredaShader.textureCoordAttribute);
-
-            veredaShader.vertexNormalAttribute = gl.getAttribLocation(veredaShader, "aVertexNormal");
-            gl.enableVertexAttribArray(veredaShader.vertexNormalAttribute);
-
-            veredaShader.vertexTangentAttribute = gl.getAttribLocation(veredaShader, "aVertexTangent");
-            gl.enableVertexAttribArray(veredaShader.vertexTangentAttribute);
-
-            veredaShader.pMatrixUniform = gl.getUniformLocation(veredaShader, "uPMatrix");
-            veredaShader.ViewMatrixUniform = gl.getUniformLocation(veredaShader, "uViewMatrix");
-            veredaShader.ModelMatrixUniform = gl.getUniformLocation(veredaShader, "uModelMatrix");
-            veredaShader.nMatrixUniform = gl.getUniformLocation(veredaShader, "uNMatrix");
-            veredaShader.samplerUniform = gl.getUniformLocation(veredaShader, "uSampler");
-            veredaShader.useLightingUniform = gl.getUniformLocation(veredaShader, "uUseLighting");
-            veredaShader.ambientColorUniform = gl.getUniformLocation(veredaShader, "uAmbientColor");
-            veredaShader.lightingDirectionUniform = gl.getUniformLocation(veredaShader, "uLightPosition");
-            veredaShader.directionalColorUniform = gl.getUniformLocation(veredaShader, "uDirectionalColor");
-
-            idVereda = gl.getAttribLocation(veredaShader, "aID");
         }
 
         function initStreetShaders() {
@@ -808,8 +678,8 @@
             streetShader.vertexNormalAttribute = gl.getAttribLocation(streetShader, "aVertexNormal");
             gl.enableVertexAttribArray(streetShader.vertexNormalAttribute);
 
-            streetShader.vertexTangentAttribute = gl.getAttribLocation(streetShader, "aVertexTangent");
-            gl.enableVertexAttribArray(streetShader.vertexTangentAttribute);
+//            streetShader.vertexTangentAttribute = gl.getAttribLocation(streetShader, "aVertexTangent");
+//            gl.enableVertexAttribArray(streetShader.vertexTangentAttribute);
 
             streetShader.pMatrixUniform = gl.getUniformLocation(streetShader, "uPMatrix");
             streetShader.ViewMatrixUniform = gl.getUniformLocation(streetShader, "uViewMatrix");
@@ -873,8 +743,8 @@
             shaderProgramColoredObject.vertexNormalAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexNormal");
             gl.enableVertexAttribArray(shaderProgramColoredObject.vertexNormalAttribute);
 
-            shaderProgramColoredObject.vertexTangentAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexTangent");
-            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexTangentAttribute);
+//            shaderProgramColoredObject.vertexTangentAttribute = gl.getAttribLocation(shaderProgramColoredObject, "aVertexTangent");
+//            gl.enableVertexAttribArray(shaderProgramColoredObject.vertexTangentAttribute);
 
             shaderProgramColoredObject.pMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uPMatrix");
             shaderProgramColoredObject.ViewMatrixUniform = gl.getUniformLocation(shaderProgramColoredObject, "uViewMatrix");
@@ -911,8 +781,8 @@
             skyShader.vertexNormalAttribute = gl.getAttribLocation(skyShader, "aVertexNormal");
             gl.enableVertexAttribArray(skyShader.vertexNormalAttribute);
 
-            skyShader.vertexTangentAttribute = gl.getAttribLocation(skyShader, "aVertexTangent");
-            gl.enableVertexAttribArray(skyShader.vertexTangentAttribute);
+//            skyShader.vertexTangentAttribute = gl.getAttribLocation(skyShader, "aVertexTangent");
+//            gl.enableVertexAttribArray(skyShader.vertexTangentAttribute);
 
             streetShader.pMatrixUniform = gl.getUniformLocation(skyShader, "uPMatrix");
             streetShader.ViewMatrixUniform = gl.getUniformLocation(skyShader, "uViewMatrix");
@@ -966,28 +836,28 @@
             }
 
             //se cargan las texturas de la esquina
-            gl.useProgram(esquinaShader);
+            gl.useProgram(streetShader);
             loadTexture("textures/cruce.jpg", "esquina");
 
-            var location = gl.getUniformLocation(esquinaShader, "esquina");
+            var location = gl.getUniformLocation(streetShader, "esquina");
             gl.uniform1i(location, 17);
             gl.activeTexture(gl.TEXTURE17);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["esquina"]);
 
             //se cargan las texturas de la vereda
-            gl.useProgram(veredaShader);
+            gl.useProgram(streetShader);
             loadTexture("textures/vereda.jpg", "vereda");
 
-            var location = gl.getUniformLocation(veredaShader, "vereda");
+            var location = gl.getUniformLocation(streetShader, "vereda");
             gl.uniform1i(location, 18);
             gl.activeTexture(gl.TEXTURE18);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["vereda"]);
 
             //Autopista
-            gl.useProgram(autopistaShader);
+            gl.useProgram(streetShader);
             loadTexture("textures/autopista.jpg", "autopista");
 
-            var location = gl.getUniformLocation(autopistaShader, "autopista");
+            var location = gl.getUniformLocation(streetShader, "autopista");
             gl.uniform1i(location, 19);
             gl.activeTexture(gl.TEXTURE19);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["autopista"]);
@@ -1136,15 +1006,6 @@
             gl.uniform3f(streetShader.cameraPositionUniform, camera_position[0], camera_position[1], camera_position[2]);
 
             /** Configuración de la luz **/
-                // Se inicializan las variables asociadas con la Iluminación
-            var directionalLightsActive = true;
-            var punctualLightsActive = true;
-            var autoIluminationActive = false;
-            var useTexture = true;
-            gl.uniform1i(streetShader.usePunctualLights, punctualLightsActive);
-            gl.uniform1i(streetShader.useDirectionalLights, directionalLightsActive);
-            gl.uniform1i(streetShader.useAutoIlumination, autoIluminationActive);
-            gl.uniform1i(streetShader.useTextureUniform, useTexture);
 
             // Configuramos la iluminación general
             // Auto iluminación
@@ -1207,9 +1068,6 @@
             initGL(canvas);
             initColoredShaders();
             initStreetShaders();
-            initEsquinaShaders();
-            initAutopistaShaders();
-            initVeredaShaders();
             initBuildingTopShaders();
             //initSkySphereShaders();
             initTextures();

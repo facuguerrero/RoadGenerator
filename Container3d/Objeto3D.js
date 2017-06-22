@@ -401,14 +401,14 @@ class Objeto3D extends Container3D{
             this.setShaderProgram(buildingShaders);
         }
         else if (this.objectType == ESQUINA){
-            this.setShaderProgram(esquinaShader);
+            this.setShaderProgram(streetShader);
         }
         else if (this.objectType == VEREDA){
             console.log(this.webglTextureBuffer.numItems);
-            this.setShaderProgram(veredaShader);
+            this.setShaderProgram(streetShader);
         }
         else if(this.objectType == AUTOPISTA){
-            this.setShaderProgram(autopistaShader);
+            this.setShaderProgram(streetShader);
         }
         else if(this.objectType == SKY){
             this.setShaderProgram(skyShader);
@@ -424,6 +424,10 @@ class Objeto3D extends Container3D{
         //Position
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+        //Normal
+        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
+        gl.vertexAttribPointer(this.shaderProgram.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         //Texture
         if(this.bufferCreator.texture1){
@@ -466,9 +470,6 @@ class Objeto3D extends Container3D{
             gl.vertexAttrib1f(idAutopista, this.id);
         }
 
-        //Normal
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
-        gl.vertexAttribPointer(this.shaderProgram.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
         gl.uniformMatrix4fv(this.shaderProgram.ModelMatrixUniform, false, modelMatrix);
