@@ -212,6 +212,7 @@ class ObjetosFactory {
         this.addColor(base,0.0,0.0,1.0);
         //linea provisoria
         base.setType("calle", 500.0, null, true);
+        base.setShaderProgram(streetShader);
 
         edificio.add(base);
 
@@ -228,9 +229,11 @@ class ObjetosFactory {
             edificio.add(baseAbajo);
             //Linea provisoria
             baseAbajo.setType("calle", 500.0, null, true);
+            baseAbajo(streetShader);
         }
         //linea provisoria
         edificio.setType("calle", 500.0, null, true);
+        baseAbajo(streetShader);
 
         edificio.calcularSuperficieBarrido("estructura_luz", 2, 5, arrayMatT, puntosEdificio);
         this.addColor(edificio,1.0,0.0,0.0);
@@ -248,6 +251,7 @@ class ObjetosFactory {
 
         var edificio = new Objeto3D();
         edificio.setType("edificio",this.numB, y, x);
+        edificio.setType(streetShader);
         edificio.setCountEd(this.countEdif);
         this.sumNumB();
 
@@ -308,6 +312,7 @@ class ObjetosFactory {
         var calle = new Objeto3D();
 
         calle.setType(type,id);
+        calle.setShaderProgram(streetShader);
 
         var arrayMatT = [];
         var matt = mat3.create();
