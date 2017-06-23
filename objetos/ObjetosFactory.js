@@ -448,10 +448,12 @@ class ObjetosFactory {
         arrayMat.push(mat);
         arrayMat.push(matt);
         perfil.calcularSuperficieBarrido("vereda", 2, 24, arrayMat, puntosPerfil);
+
         vereda.add(perfil);
 
         var piso = new Objeto3D();
         if(control){
+            perfil.setType("vereda",18.0);
             piso.setType("vereda",18.0);
         }
         else{
