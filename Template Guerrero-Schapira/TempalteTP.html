@@ -89,14 +89,20 @@
 </script>
 
     <script id="shader-fs-skySphere" type="x-shader/x-fragment">
-    precision mediump float;
+    precision highp float;
 
     varying vec2 vTextureCoord;
+    varying float vID;
 
     uniform sampler2D sky;
 
     void main(void) {
-        vec4 textureColor = texture2D(sky, vec2(vTextureCoord.s * -1.0, vTextureCoord.t * -1.0));
+
+        vec4 textureColor;
+
+        if( 999.5 < vID && vID < 1000.5){
+            textureColor = texture2D(sky, vec2(vTextureCoord.s * -1.0, vTextureCoord.t * -1.0));
+        }
         gl_FragColor = vec4(textureColor.rgb, textureColor.a);
     }
 </script>
@@ -105,6 +111,7 @@
     attribute vec3 aVertexPosition;
     //attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
+    attribute float aID;
 //    attribute vec3 aVertexTangent;
 
     uniform mat4 uViewMatrix;
@@ -113,6 +120,7 @@
     uniform mat3 uNMatrix;
 
     varying vec2 vTextureCoord;
+    varying float vID;
 
     void main(void) {
 
@@ -124,6 +132,9 @@
 
             // Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
+
+        //se pasa el id
+        vID = aID;
     }
 </script>
 
@@ -796,6 +807,8 @@
             skyShader.ModelMatrixUniform = gl.getUniformLocation(skyShader, "uModelMatrix");
             skyShader.nMatrixUniform = gl.getUniformLocation(skyShader, "uNMatrix");
             skyShader.samplerUniform = gl.getUniformLocation(skyShader, "uSampler");
+
+            idSky = gl.getAttribLocation(skyShader, "aID");
         }
 
         function initTextures(){

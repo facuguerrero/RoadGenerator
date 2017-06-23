@@ -470,6 +470,9 @@ class Objeto3D extends Container3D{
         if(this.objectType == AUTOPISTA){
             gl.vertexAttrib1f(idStreet, this.id);
         }
+        if(this.objectType == SKY){
+            gl.vertexAttrib1f(idSky, this.id);
+        }
 
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
