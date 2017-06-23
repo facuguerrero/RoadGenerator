@@ -457,7 +457,6 @@ class Objeto3D extends Container3D{
             gl.useProgram(buildingShaders);
             gl.uniform1f(count, this.cantEdificios);
             var maxY = gl.getUniformLocation(buildingShaders, "amaxY");
-            gl.useProgram(buildingShaders);
             gl.uniform1f(maxY, this.maxY);
         }
         if(this.objectType == ESQUINA){

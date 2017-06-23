@@ -55,6 +55,7 @@
     uniform vec3 uDirectionalColor;
 
     uniform bool uUseLighting;
+    uniform bool uUsingNormalMap;
 
     varying vec3 vVertexColor;
     varying vec3 vLightWeighting;
@@ -299,6 +300,16 @@
     uniform float t;
     uniform float count;
 
+    // Variables utilizadas para la iluminación
+    uniform vec3 uAmbientColor;
+    uniform vec3 uDirectionalColor;
+
+	uniform float uShininess;
+
+    varying vec3 vNormal;
+    varying vec3 vLightDir;
+    varying vec3 vViewDir;
+
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
 
     uniform sampler2D building1;
@@ -320,7 +331,6 @@
 
     varying float vID;
     varying float maxY;
-    varying vec3 a;
 
     void main(void) {
         vec4 textureColor;
@@ -337,6 +347,27 @@
         float factorX = 4.0;
         float factorpbY = maxY / 2.8;
         float factoredY = 5.0;
+
+        //variables iluminacion
+        float shininess = 1.0;
+
+		// Attenuation constants
+		const float constantAtt = 1.0;
+		const float linearAtt = 0.0001;
+		const float quadraticAtt = 0.01;
+
+		vec3 normal = vNormal;
+		vec3 lightDir = normalize(vLightDir);
+        vec3 viewDir = vViewDir;
+
+        float lambertian = max(dot(lightDir, normal), 0.0);
+        float specular = 10.0;
+
+        if(lambertian > 0.0) {
+            vec3 reflectDir = reflect(-lightDir, normal);
+            float specAngle = max(dot(reflectDir, viewDir), 0.0);
+            specular = pow(specAngle, shininess);
+        }
 
         if(vID > 1.5 && vID < 2.5){
             auxUv2.x = auxUv2.x * factorX;
@@ -434,14 +465,6 @@
             textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
         }
-        if(vID > 13.5){
-            auxUv2.x = auxUv2.x * factorX;
-            auxUv2.y = auxUv2.y * factoredY;
-            auxUv.x = auxUv.x * factorX;
-            auxUv.y = auxUv.y * factorpbY;
-            textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
-            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
-        }
 
 
         if((vTextureCoord.y) < factor){
@@ -457,7 +480,14 @@
         }
 
         textureColor = color;
-        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+
+        vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
+        vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
+        vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
+
+        vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
+
+        gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
     }
     </script>
 
@@ -466,7 +496,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
-//    attribute vec3 aVertexTangent;
+    //attribute vec3 aVertexTangent;
     attribute float aID;
 
     uniform mat4 uViewMatrix;
@@ -478,18 +508,22 @@
     uniform vec3 uLightPosition;
     uniform vec3 uDirectionalColor;
 
+    uniform bool uUsingNormalMap;
     uniform bool uUseLighting;
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
     varying float maxY;
-    varying vec3 a;
 
     uniform float t;
     uniform float edificioActual;
     uniform float count;
     uniform float amaxY;
+
+    varying vec3 vNormal;
+    varying vec3 vLightDir;
+    varying vec3 vViewDir;
 
     void main(void) {
 
@@ -524,21 +558,11 @@
 
         vTextureCoord = auxUv;
 
-		////////////////////////////////////////////
-		// Calculos de la iluminaci�n
-		vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
-		normalize(light_dir);
-        if (!uUseLighting)
-		{
-            vLightWeighting = vec3(1.0, 1.0, 1.0);
-        }
-		else
-		{
-            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
-            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
-            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
-        }
-		////////////////////////////////////////////
+        vec3 pos = vec3(pos_camera_view) / pos_camera_view.w;
+        vNormal = normalize(uNMatrix * aVertexNormal);
+        vLightDir = uLightPosition - pos;
+        vViewDir = normalize(-pos);
+
     }
 
     </script>
@@ -596,8 +620,6 @@
             return shader;
         }
 
-
-        var shaderProgramTexturedObject;
         var shaderProgramColoredObject;
         var streetShader;
         var buildingShaders;
@@ -637,11 +659,12 @@
             buildingShaders.ViewMatrixUniform = gl.getUniformLocation(buildingShaders, "uViewMatrix");
             buildingShaders.ModelMatrixUniform = gl.getUniformLocation(buildingShaders, "uModelMatrix");
             buildingShaders.nMatrixUniform = gl.getUniformLocation(buildingShaders, "uNMatrix");
-            buildingShaders.samplerUniform = gl.getUniformLocation(buildingShaders, "uSampler");
             buildingShaders.useLightingUniform = gl.getUniformLocation(buildingShaders, "uUseLighting");
             buildingShaders.ambientColorUniform = gl.getUniformLocation(buildingShaders, "uAmbientColor");
             buildingShaders.lightingDirectionUniform = gl.getUniformLocation(buildingShaders, "uLightPosition");
             buildingShaders.directionalColorUniform = gl.getUniformLocation(buildingShaders, "uDirectionalColor");
+            buildingShaders.shininess = gl.getUniformLocation(buildingShaders, "uShininess");
+            buildingShaders.usingNormalMap = gl.getUniformLocation(buildingShaders, "uUsingNormalMap");
 
             idBuilding = gl.getAttribLocation(buildingShaders, "aID");
 
@@ -953,29 +976,6 @@
         var obj = null;
         var curva = null;
 
-        function mvPushMatrix() {
-            var copy = mat4.create();
-            mat4.set(mvMatrix, copy);
-            mvMatrixStack.push(copy);
-        }
-
-        function mvPopMatrix() {
-            if (mvMatrixStack.length == 0) {
-                throw "Invalid popMatrix!";
-            }
-            mvMatrix = mvMatrixStack.pop();
-        }
-
-        function setViewProjectionMatrix() {
-            gl.uniformMatrix4fv(shaderProgramTexturedObject.pMatrixUniform, false, pMatrix);
-            gl.uniformMatrix4fv(shaderProgramTexturedObject.ViewMatrixUniform, false, CameraMatrix);
-        }
-
-
-        function degToRad(degrees) {
-            return degrees * Math.PI / 180;
-        }
-
         /*DIBUJAMOS LA ESCENA*/
 
         function drawScene() {
@@ -993,35 +993,35 @@
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
             ///Dibujamos las figuras
-            escena.setupLighting(vec3.fromValues(-100.0, 0.0, -60.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
+            escena.setupLighting(vec3.fromValues(-1000.0, 20.0, -1000.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
 
-            gl.useProgram(streetShader);
-
-            // Obtenemos la ubicación de la camara y se la pasamos al shader
-            var camera_position = camera.getPosition();
-            gl.uniform3f(streetShader.cameraPositionUniform, camera_position[0], camera_position[1], camera_position[2]);
-
-            /** Configuración de la luz **/
-
-            gl.uniform1i(streetShader.useLightingPuntual, true);
-
-            // Configuramos la iluminación general
-            // Auto iluminación
-            gl.uniform1f(streetShader.autoIluminationIntensity, 2.0);
-            gl.uniform3f(streetShader.autoIluminationColorUniform, 1.0, 1.0, 1.0);
-
-            // Luz ambiental
-            gl.uniform1f(streetShader.ambientIluminationIntensity, 2.0);
-            gl.uniform3f(streetShader.ambientColorUniform, 0.2, 0.2, 0.2);
-
-            // Luces puntuales
-            gl.uniform1f(streetShader.punctualLightRadio, 20.0);
-            gl.uniform1f(streetShader.lightPunctualIntensity, 0.3);							//Intensidad
-            gl.uniform3f(streetShader.diffusePunctualColorUniform, 0.8, 1.0, 0.8);			//Difusa (Verdosa)
-            gl.uniform3f(streetShader.specularPunctualColorUniform, 0.8, 1.0, 0.8);			//Especular (Verdosa)
-            gl.uniform3fv(streetShader.lightingPunctual1PositionUniform, [0.0,10.0,0.0]);	//Punctual 1
+//            gl.useProgram(streetShader);
+//
+//            // Obtenemos la ubicación de la camara y se la pasamos al shader
+//            var camera_position = camera.getPosition();
+//            gl.uniform3f(streetShader.cameraPositionUniform, camera_position[0], camera_position[1], camera_position[2]);
+//
+//            /** Configuración de la luz **/
+//
+//            gl.uniform1i(streetShader.useLightingPuntual, true);
+//
+//            // Configuramos la iluminación general
+//            // Auto iluminación
+//            gl.uniform1f(streetShader.autoIluminationIntensity, 2.0);
+//            gl.uniform3f(streetShader.autoIluminationColorUniform, 1.0, 1.0, 1.0);
+//
+//            // Luz ambiental
+//            gl.uniform1f(streetShader.ambientIluminationIntensity, 2.0);
+//            gl.uniform3f(streetShader.ambientColorUniform, 0.2, 0.2, 0.2);
+//
+//            // Luces puntuales
+//            gl.uniform1f(streetShader.punctualLightRadio, 20.0);
+//            gl.uniform1f(streetShader.lightPunctualIntensity, 0.3);							//Intensidad
+//            gl.uniform3f(streetShader.diffusePunctualColorUniform, 0.8, 1.0, 0.8);			//Difusa (Verdosa)
+//            gl.uniform3f(streetShader.specularPunctualColorUniform, 0.8, 1.0, 0.8);			//Especular (Verdosa)
+//            gl.uniform3fv(streetShader.lightingPunctual1PositionUniform, [0.0,10.0,0.0]);	//Punctual 1
 
             if (frame < 30) {
                 var t = gl.getUniformLocation(buildingShaders, "t");

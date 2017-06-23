@@ -62,9 +62,7 @@ class Container3D{
         // Se inicializan las variables asociadas con la Iluminación
         this.setupChildrenLighting(lightPosition, ambientColor, diffuseColor);
 
-        gl.useProgram(this.shaderProgram);
-
-        if(this.objectType == null) {
+            gl.useProgram(this.shaderProgram);
 
             gl.uniform1i(this.shaderProgram.useLightingUniform, true);
             //Define direccion
@@ -73,7 +71,7 @@ class Container3D{
             gl.uniform3fv(this.shaderProgram.ambientColorUniform, ambientColor);
             //Define diffuse color
             gl.uniform3fv(this.shaderProgram.directionalColorUniform, diffuseColor);
-        }
+        //}
     }
 
     setupChildrenLighting(lightPosition, ambientColor, diffuseColor) {
