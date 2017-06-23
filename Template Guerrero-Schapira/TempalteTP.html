@@ -1055,7 +1055,7 @@
             var anchoCalle=3.0;
             var largoCalle=20.0;
             var manzana = 20.0;
-            escena=factory.createEscene(n*anchoCalle + (n-1)*manzana, true);
+            escena=factory.createEscene((n-1)*anchoCalle + (n)*manzana, true);
 
             this.crearRuta(escena);
             this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
