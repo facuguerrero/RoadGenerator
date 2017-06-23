@@ -414,7 +414,7 @@ class ObjetosFactory {
         escene.add(linea);
         if(bool) {
             var sky = this.createSky();
-            sky.translate(x/2, -50.0 ,x/2);
+            sky.translate(x/2, -75.0 ,x/2);
             escene.add(sky);
         }
         escene.build();
