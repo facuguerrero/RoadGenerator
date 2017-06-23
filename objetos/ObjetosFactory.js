@@ -46,10 +46,10 @@ class ObjetosFactory {
         var esfera = new Objeto3D();
         //console.log("esfera");
         var buffcalc = new BufferCalculator(10, 10);
-        buffcalc.createEsfera(350);
+        buffcalc.createEsfera(500);
 
         esfera.setBufferCreator(buffcalc);
-        esfera.setType("sky");
+        esfera.setType("sky",1000);
         esfera.build();
 
         return esfera;
@@ -414,6 +414,7 @@ class ObjetosFactory {
         escene.add(linea);
         if(bool) {
             var sky = this.createSky();
+            sky.translate(x/2, -50.0 ,x/2);
             escene.add(sky);
         }
         escene.build();
