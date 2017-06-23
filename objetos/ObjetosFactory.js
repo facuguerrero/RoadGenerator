@@ -149,7 +149,8 @@ class ObjetosFactory {
         baseRuta.add(asfaltoRuta);
         baseRuta.calcularSuperficieBarrido("base_ruta", vecPos.length, 17, arrayMatT, vecPos);
 
-        asfaltoRuta.setType("autopista", 19.0);
+        //asfaltoRuta.bufferCreator.setBoolTexture1();
+        //asfaltoRuta.setType("autopista", 19.0);
 
         return baseRuta;
 
@@ -485,7 +486,10 @@ class ObjetosFactory {
         buf.normalBuffer =norm;
         buf.posBuffer = pos;
         buf.colorBuffer = perfil.bufferCreator.colorBuffer;
-        buf.textureBuffer2 = tex;
+        if(control){
+            buf.setBoolTexture1();
+        }
+        buf.textureBuffer1 = tex;
 
         piso.setBufferCreator(buf);
 
