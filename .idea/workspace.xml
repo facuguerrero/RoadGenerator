@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="iluminacion directa en el street shader">
+    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -74,17 +72,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="48" column="33" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+            <state relative-caret-position="316">
+              <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
@@ -159,8 +157,8 @@
         <option value="$PROJECT_DIR$/handlers/OrbitCamera.js" />
         <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
   </component>
@@ -1346,11 +1344,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498224258899</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="iluminacion directa en el street shader">
+      <created>1498224453401</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1498224453401</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47004000" />
+    <option name="totallyTimeSpent" value="47053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -1842,18 +1847,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="48" column="33" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="301" column="10" lean-forward="false" selection-start-line="301" selection-start-column="10" selection-end-line="301" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
           <folding />
         </state>
       </provider>

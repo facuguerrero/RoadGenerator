@@ -49,6 +49,7 @@ class ObjetosFactory {
         buffcalc.createEsfera(350);
 
         esfera.setBufferCreator(buffcalc);
+        esfera.setType("sky");
         esfera.build();
 
         return esfera;
