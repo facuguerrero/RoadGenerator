@@ -181,8 +181,8 @@
         vNormal = normalize(uNMatrix * aVertexNormal);
         vLightDir = uLightPosition - pos;
         vViewDir = normalize(-pos);
-        vSpotLight1 = uFarol1TransformedPosition - pos;
-        vSpotLightDir1 = uFarol1TransformedDirection;
+        vSpotLight1 = pos;
+        vSpotLightDir1 = normalize(-pos);
     }
 
     </script>
@@ -712,6 +712,8 @@
             streetShader.ambientColorUniform = gl.getUniformLocation(streetShader, "uAmbientColor");
             streetShader.lightingDirectionUniform = gl.getUniformLocation(streetShader, "uLightPosition");
             streetShader.directionalColorUniform = gl.getUniformLocation(streetShader, "uDirectionalColor");
+            streetShader.farol1Position = gl.getUniformLocation(streetShader, "uFarol1TransformedPosition");
+            streetShader.farol1Direction = gl.getUniformLocation(streetShader, "uFarol1TransformedDirection");
 
             idStreet = gl.getAttribLocation(streetShader, "aID");
         }
