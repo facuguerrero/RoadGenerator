@@ -97,12 +97,13 @@
 
     void main(void) {
         vec4 textureColor = texture2D(sky, vec2(vTextureCoord.s, vTextureCoord.t));
+        gl_FragColor = vec4(textureColor.rgb, textureColor.a);
     }
 </script>
 
     <script id="shader-vs-skySphere" type="x-shader/x-vertex">
     attribute vec3 aVertexPosition;
-    attribute vec3 aVertexNormal;
+    //attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
 //    attribute vec3 aVertexTangent;
 
@@ -873,7 +874,7 @@
             loadTexture("textures/refmap.jpg", "sky");
 
             var location = gl.getUniformLocation(skyShader, "sky");
-            gl.uniform1i(location, 0);//0 ya que es la primer textura
+            gl.uniform1i(location, 20)//0 ya que es la primer textura
             gl.activeTexture(gl.TEXTURE20);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["sky"]);
 
