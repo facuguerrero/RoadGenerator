@@ -779,22 +779,22 @@
             gl.useProgram(skyShader);
 
             skyShader.vertexPositionAttribute = gl.getAttribLocation(skyShader, "aVertexPosition");
-            gl.enableVertexAttribArray(streetShader.vertexPositionAttribute);
+            gl.enableVertexAttribArray(skyShader.vertexPositionAttribute);
 
             skyShader.textureCoordAttribute = gl.getAttribLocation(skyShader, "aTextureCoord");
-            gl.enableVertexAttribArray(streetShader.textureCoordAttribute);
+            gl.enableVertexAttribArray(skyShader.textureCoordAttribute);
 
-            skyShader.vertexNormalAttribute = gl.getAttribLocation(skyShader, "aVertexNormal");
-            gl.enableVertexAttribArray(skyShader.vertexNormalAttribute);
+//            skyShader.vertexNormalAttribute = gl.getAttribLocation(skyShader, "aVertexNormal");
+//            gl.enableVertexAttribArray(skyShader.vertexNormalAttribute);
 
 //            skyShader.vertexTangentAttribute = gl.getAttribLocation(skyShader, "aVertexTangent");
 //            gl.enableVertexAttribArray(skyShader.vertexTangentAttribute);
 
-            streetShader.pMatrixUniform = gl.getUniformLocation(skyShader, "uPMatrix");
-            streetShader.ViewMatrixUniform = gl.getUniformLocation(skyShader, "uViewMatrix");
-            streetShader.ModelMatrixUniform = gl.getUniformLocation(skyShader, "uModelMatrix");
-            streetShader.nMatrixUniform = gl.getUniformLocation(skyShader, "uNMatrix");
-            streetShader.samplerUniform = gl.getUniformLocation(skyShader, "uSampler");
+            skyShader.pMatrixUniform = gl.getUniformLocation(skyShader, "uPMatrix");
+            skyShader.ViewMatrixUniform = gl.getUniformLocation(skyShader, "uViewMatrix");
+            skyShader.ModelMatrixUniform = gl.getUniformLocation(skyShader, "uModelMatrix");
+            skyShader.nMatrixUniform = gl.getUniformLocation(skyShader, "uNMatrix");
+            skyShader.samplerUniform = gl.getUniformLocation(skyShader, "uSampler");
         }
 
         function initTextures(){

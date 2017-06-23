@@ -425,9 +425,11 @@ class Objeto3D extends Container3D{
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
-        //Normal
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
-        gl.vertexAttribPointer(this.shaderProgram.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        if(this.objectType != SKY) {
+            //Normal
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
+            gl.vertexAttribPointer(this.shaderProgram.vertexNormalAttribute, this.webglNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        }
 
         //Texture
         if(this.bufferCreator.texture1){
