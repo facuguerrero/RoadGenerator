@@ -41,9 +41,17 @@ class ObjetosFactory {
 
     }
 
-    createSkySphere(){
-        // var sky = new Objeto3d();
-        // return sky;
+    createSky(){
+
+        var esfera = new Objeto3D();
+
+        var buffcalc = new BufferCalculator(10, 10);
+        buffcalc.createEsfera(200);
+
+        esfera.setBufferCreator(buffcalc);
+        esfera.build();
+
+        return esfera;
     }
 
     createRuta(puntos) {
@@ -403,11 +411,13 @@ class ObjetosFactory {
         linea.calcularSuperficieBarrido("escena", 2, 2, arrayMatT, pos);
 
         escene.add(linea);
-        // var sky = this.createSkySphere();
-        // escene.add(sky);
+        var sky = this.createSky();
+        escene.add(sky);
         escene.build();
         return escene;
     }
+
+
 
     createVereda(control){
 
