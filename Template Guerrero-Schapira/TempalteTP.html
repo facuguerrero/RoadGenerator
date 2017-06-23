@@ -249,6 +249,8 @@
 
         vec3 lightColor = vec3(1.0, 1.0, 1.0);
 
+        vec2 auxUv = vTextureCoord;
+
         if(lambertian > 0.0) {
             vec3 reflectDir = reflect(-lightDir, normal);
             float specAngle = max(dot(reflectDir, viewDir), 0.0);
@@ -268,10 +270,13 @@
         }
 
         if(vID >17.5 && vID <18.5){
-            textureColor = texture2D(vereda, vec2(vTextureCoord.s, vTextureCoord.t));
+            auxUv.x = auxUv.x * 7.0;
+            auxUv.y = auxUv.y * 7.0;
+            textureColor = texture2D(vereda, vec2(auxUv.s, auxUv.t));
         }
 
         if(vID >18.5 && vID <19.5){
+
             textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 

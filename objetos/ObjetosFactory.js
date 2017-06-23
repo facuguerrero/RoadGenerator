@@ -149,7 +149,6 @@ class ObjetosFactory {
         baseRuta.add(asfaltoRuta);
         baseRuta.calcularSuperficieBarrido("base_ruta", vecPos.length, 17, arrayMatT, vecPos);
 
-        //asfaltoRuta.bufferCreator.setBoolTexture1();
         //asfaltoRuta.setType("autopista", 19.0);
 
         return baseRuta;
@@ -449,6 +448,23 @@ class ObjetosFactory {
         arrayMat.push(matt);
         perfil.calcularSuperficieBarrido("vereda", 2, 24, arrayMat, puntosPerfil);
 
+        var tex1=[];
+
+        for(var i = 0.0; i<48;i++){
+
+            var u = 0.0;
+            var v = i/23;
+
+            if(i>23){
+                u = 1.0;
+                v = v-1.0;
+            }
+            tex1.push(u);
+            tex1.push(v);
+        }
+
+        perfil.bufferCreator.textureBuffer1 = tex1;
+
         vereda.add(perfil);
 
         var piso = new Objeto3D();
@@ -575,7 +591,7 @@ class ObjetosFactory {
         edificio14.translate(13.5,0.0,9.9);
         centro.add(edificio14);
 
-        centro.translate(anchoVereda/2,0.6,anchoVereda/2);
+        centro.translate(anchoVereda/2,0.19,anchoVereda/2);
         vereda.add(centro);
         manzana.add(vereda);
 
