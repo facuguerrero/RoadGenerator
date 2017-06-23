@@ -869,13 +869,13 @@
             gl.bindTexture(gl.TEXTURE_2D, glTextures["autopista"]);
 
             //se carga la textura del cielo
-//            gl.useProgram(skyShader);
-//            loadTexture("textures/refmap.jpg", "sky");
-//
-//            var location = gl.getUniformLocation(skyShader, "sky");
-//            gl.uniform1i(location, 0);//0 ya que es la primer textura
-//            gl.activeTexture(gl.TEXTURE20);
-//            gl.bindTexture(gl.TEXTURE_2D, glTextures["sky"]);
+            gl.useProgram(skyShader);
+            loadTexture("textures/refmap.jpg", "sky");
+
+            var location = gl.getUniformLocation(skyShader, "sky");
+            gl.uniform1i(location, 0);//0 ya que es la primer textura
+            gl.activeTexture(gl.TEXTURE20);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["sky"]);
 
         }
 
@@ -1019,7 +1019,7 @@
             initColoredShaders();
             initStreetShaders();
             initBuildingTopShaders();
-            //initSkySphereShaders();
+            initSkySphereShaders();
             initTextures();
 
             //shadersHandler = new ShaderHandler();
