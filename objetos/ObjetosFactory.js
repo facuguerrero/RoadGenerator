@@ -149,7 +149,7 @@ class ObjetosFactory {
         baseRuta.add(asfaltoRuta);
         baseRuta.calcularSuperficieBarrido("base_ruta", vecPos.length, 17, arrayMatT, vecPos);
 
-        //asfaltoRuta.setType("autopista", 19.0);
+        asfaltoRuta.setType("autopista", 19.0);
 
         return baseRuta;
 
@@ -451,7 +451,7 @@ class ObjetosFactory {
 
         var piso = new Objeto3D();
         if(control){
-            //piso.setType("vereda",18.0);
+            piso.setType("vereda",18.0);
         }
         else{
             //piso.setType("vereda",18.0);
