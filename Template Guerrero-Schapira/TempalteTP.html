@@ -210,6 +210,7 @@
     uniform sampler2D esquina;
     uniform sampler2D vereda;
     uniform sampler2D autopista;
+    uniform sampler2D pasto;
 
     // Variables utilizadas para la iluminación
     uniform vec3 uAmbientColor;
@@ -276,6 +277,10 @@
         if(vID >18.5 && vID <19.5){
 
             textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
+        }
+
+        if(vID> 19.5 && vID< 20.5){
+            textureColor = texture2D(pasto, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
         // Calculos spotlight 1
@@ -888,9 +893,18 @@
             loadTexture("textures/refmap.jpg", "sky");
 
             var location = gl.getUniformLocation(skyShader, "sky");
-            gl.uniform1i(location, 20)//0 ya que es la primer textura
+            gl.uniform1i(location, 20);
             gl.activeTexture(gl.TEXTURE20);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["sky"]);
+
+            //se carga la textura del pasto
+            gl.useProgram(streetShader);
+            loadTexture("textures/pasto.jpg", "pasto");
+
+            var location = gl.getUniformLocation(streetShader, "pasto");
+            gl.uniform1i(location, 21);
+            gl.activeTexture(gl.TEXTURE21);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["pasto"]);
 
         }
 

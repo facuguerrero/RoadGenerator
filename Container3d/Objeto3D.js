@@ -21,6 +21,7 @@ var AUTO = "auto";
 var CALLE = "calle";
 var EDIFICIO = "edificio";
 var VEREDA = "vereda";
+var PASTO = "pasto";
 var ESQUINA = "esquina";
 var AUTOPISTA = "autopista";
 var SKY = "sky";
@@ -300,12 +301,7 @@ class Objeto3D extends Container3D{
             }
             var vereda = arrayVecPos.pop();
             this.figuras.calcularVereda(vertices,arrayVecNOR);
-            if(vereda[0]) {
-                buffcalc.setTextures(1);
-            }
-            else{
-                this.addColor(buffcalc, 76,0.0,1.0,0.0);
-            }
+            buffcalc.setTextures(1);
         }
 
         else {
@@ -412,6 +408,9 @@ class Objeto3D extends Container3D{
         else if(this.objectType == SKY){
             this.setShaderProgram(skyShader);
         }
+        else if(this.objectType == PASTO){
+            this.setShaderProgram(streetShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -467,6 +466,9 @@ class Objeto3D extends Container3D{
             gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == AUTOPISTA){
+            gl.vertexAttrib1f(idStreet, this.id);
+        }
+        if(this.objectType == PASTO){
             gl.vertexAttrib1f(idStreet, this.id);
         }
 

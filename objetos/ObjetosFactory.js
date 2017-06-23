@@ -473,7 +473,8 @@ class ObjetosFactory {
             piso.setType("vereda",18.0);
         }
         else{
-            //piso.setType("vereda",18.0);
+            perfil.setType("pasto",20.0);
+            piso.setType("pasto",20.0);
         }
 
         var buf = new BufferCalculator(2,24);
@@ -504,9 +505,9 @@ class ObjetosFactory {
         buf.normalBuffer =norm;
         buf.posBuffer = pos;
         buf.colorBuffer = perfil.bufferCreator.colorBuffer;
-        if(control){
-            buf.setBoolTexture1();
-        }
+
+        buf.setBoolTexture1();
+
         buf.textureBuffer1 = tex;
 
         piso.setBufferCreator(buf);
