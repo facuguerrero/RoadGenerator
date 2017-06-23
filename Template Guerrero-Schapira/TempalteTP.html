@@ -100,9 +100,11 @@
 
         vec4 textureColor;
 
-        if( 999.5 < vID && vID < 1000.5){
-            textureColor = texture2D(sky, vec2(vTextureCoord.s * -1.0, vTextureCoord.t * -1.0));
-        }
+        vec2 auxUv = vTextureCoord;
+        //invierto la textura
+        auxUv.y = auxUv.y * -1.0;
+
+        textureColor = texture2D(sky, vec2(auxUv.s, auxUv.t));
         gl_FragColor = vec4(textureColor.rgb, textureColor.a);
     }
 </script>
@@ -807,8 +809,6 @@
             skyShader.ModelMatrixUniform = gl.getUniformLocation(skyShader, "uModelMatrix");
             skyShader.nMatrixUniform = gl.getUniformLocation(skyShader, "uNMatrix");
             skyShader.samplerUniform = gl.getUniformLocation(skyShader, "uSampler");
-
-            idSky = gl.getAttribLocation(skyShader, "aID");
         }
 
         function initTextures(){
