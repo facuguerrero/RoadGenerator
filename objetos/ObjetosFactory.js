@@ -44,9 +44,9 @@ class ObjetosFactory {
     createSky(){
 
         var esfera = new Objeto3D();
-
+        //console.log("esfera");
         var buffcalc = new BufferCalculator(10, 10);
-        buffcalc.createEsfera(200);
+        buffcalc.createEsfera(350);
 
         esfera.setBufferCreator(buffcalc);
         esfera.build();
@@ -385,7 +385,7 @@ class ObjetosFactory {
         return auto;
     }
 
-    createEscene(x) {
+    createEscene(x, bool = false) {
 
 
         var escene = new Objeto3D();
@@ -411,8 +411,10 @@ class ObjetosFactory {
         linea.calcularSuperficieBarrido("escena", 2, 2, arrayMatT, pos);
 
         escene.add(linea);
-        var sky = this.createSky();
-        escene.add(sky);
+        if(bool) {
+            var sky = this.createSky();
+            escene.add(sky);
+        }
         escene.build();
         return escene;
     }

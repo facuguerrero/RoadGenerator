@@ -256,17 +256,19 @@ class BufferCalculator{
     }
 
     createEsfera(radius){
+
         var posBuf = [];
         var normBuf = [];
         var texBuf = [];
         var colBuf = [];
 
         var r = radius;
-        var theta = (2*Math.PI)/(this.cols - 1);
+        var theta = (2*Math.PI)/(this.colms - 1);
         var phi = (Math.PI)/(this.rows - 1);
 
         for (var i = 0.0; i < this.rows; i++){
-            for (var j = 0.0; j < this.cols; j++){
+
+            for (var j = 0.0; j < this.colms; j++){
 
                 var cT = Math.cos(theta*j);
                 var cP = Math.cos(phi*i);
@@ -281,9 +283,9 @@ class BufferCalculator{
                 posBuf.push(r* sT *sP);
 
                 //Col
-                colBuf,push(1.0);
-                colBuf,push(0.5);
-                colBuf,push(0.3);
+                colBuf.push(1.0);
+                colBuf.push(0.5);
+                colBuf.push(0.3);
 
                 //Cargamos las normales
                 normBuf.push(cT * sP);
@@ -291,16 +293,16 @@ class BufferCalculator{
                 normBuf.push(sT * sP);
 
                 //Cargamos las texturas
-                texBuf.push(j /(this.cols - 1));
+                texBuf.push(j /(this.colms - 1));
                 texBuf.push(i /(this.rows - 1));
             }
         }
+
         this.posBuffer = posBuf;
-        this.colorBuffer = colBuf;
+        //this.colorBuffer = colBuf;
         this.normalBuffer = normBuf;
         this.setBoolTexture1();
         this.textureBuffer1 = texBuf;
         this.calcIndexBuffer();
     }
-
   }
