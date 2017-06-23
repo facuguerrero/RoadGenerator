@@ -54,45 +54,10 @@ class BufferCalculator{
                 this.indexBuffer.push(i * this.rows + k);
                 this.indexBuffer.push((i+1) * this.rows + k);
             }
-
-            /*else {
-                // Cambio de lado a la izquierda
-                for (var j = this.colms-1; j >= 0; j--) {
-                    this.indexBuffer.push(i * this.rows + j);
-                    this.indexBuffer.push((i+1) * this.rows + j);
-                }
-            }*/
-            //this.indexBuffer = [0,1,2, 1,2,3, 2,3,4, 3,4,5, 4,5,6, 5,6,7];
         }
-        //console.log("termina");
+
     }
 
-    /*calcInBuff(){
-        console.log("empieza");
-        for(var i = 0; i < (this.rows-1); i++) {
-
-            //var factor = (this.colms*this.rows)- this.rows;
-
-            // Hacia la derecha
-            for (var k = 0; k < this.colms; k++) {
-
-                if(k == 0) {
-                    this.indexBuffer.push( (i * this.colms) + k );
-                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + k );
-                }
-                if(k != 0){
-                    this.indexBuffer.push( k );
-                    this.indexBuffer.push( k );
-                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + (k-1) );
-                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + k );
-                }
-                if(k != 0 && k != this.colms-1){
-                    this.indexBuffer.push( k );
-                    this.indexBuffer.push( ( ( i+1 ) * this.colms) + k );
-                }
-            }
-        }
-    }*/
 
     setBoolTexture1(){
         this.texture1 = true;
@@ -197,14 +162,9 @@ class BufferCalculator{
                     var u = (i / (this.rows - 1));
                     var v = (j / (this.colms - 1));
 
-                    // if (switch_u == 1.0) {
-                    //     u = 1.0 - (i % 512.0) / 512.0;
-                    // } else {
-                    //     u = (i % 512.0) / 512.0;
-                    // }
                     this.textureBuffer1.push(v);
                     this.textureBuffer1.push(u);
-                    //hay que ver si hay que pasar otros vertices
+
                 }
 
                 if (this.texture2) {
@@ -294,4 +254,53 @@ class BufferCalculator{
 
         }
     }
+
+    createEsfera(radius){
+        var posBuf = [];
+        var normBuf = [];
+        var texBuf = [];
+        var colBuf = [];
+
+        var r = radius;
+        var theta = (2*Math.PI)/(this.cols - 1);
+        var phi = (Math.PI)/(this.rows - 1);
+
+        for (var i = 0.0; i < this.rows; i++){
+            for (var j = 0.0; j < this.cols; j++){
+
+                var cT = Math.cos(theta*j);
+                var cP = Math.cos(phi*i);
+                var sT = Math.sin(theta * j);
+                var sP = Math.sin(phi*i);
+
+                //La variable X se define como R*Cos(theta)*Sin(phi)
+                posBuf.push(r * cT * sP);
+                //La variable Y se define como R*Cos(phi)
+                posBuf.push(r * cP);
+                //La variable Z se define como R*Sen(theta)*Sin(phi)
+                posBuf.push(r* sT *sP);
+
+                //Col
+                colBuf,push(1.0);
+                colBuf,push(0.5);
+                colBuf,push(0.3);
+
+                //Cargamos las normales
+                normBuf.push(cT * sP);
+                normBuf.push(cP);
+                normBuf.push(sT * sP);
+
+                //Cargamos las texturas
+                texBuf.push(j /(this.cols - 1));
+                texBuf.push(i /(this.rows - 1));
+            }
+        }
+        this.posBuffer = posBuf;
+        this.colorBuffer = colBuf;
+        this.normalBuffer = normBuf;
+        this.setBoolTexture1();
+        this.textureBuffer1 = texBuf;
+        this.calcIndexBuffer();
+    }
+
   }
