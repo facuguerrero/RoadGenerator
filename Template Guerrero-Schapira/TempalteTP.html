@@ -161,8 +161,6 @@
     uniform vec3 uFarol1TransformedDirection;
 
     uniform bool uUseLighting;
-    uniform bool uUseReflection;
-    uniform bool uUseLightingPuntual;
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
@@ -195,8 +193,8 @@
         vNormal = normalize(uNMatrix * aVertexNormal);
         vLightDir = uLightPosition - pos;
         vViewDir = normalize(-pos);
-        vSpotLight1 = pos;
-        vSpotLightDir1 = normalize(-pos);
+        vSpotLight1 = vec3(0.0, 0.0, 0.0) + pos;
+        vSpotLightDir1 = vec3(0.0, 0.0, 0.0) + normalize(-pos);
     }
 
     </script>
@@ -231,7 +229,7 @@
         vec4 textureColor;
 
         //variables iluminacion
-        float shininess = 1.0;
+        float shininess = 10.0;
         const float spotlightCutOff = 0.7;  // en radianes
 		const float spotLightExponent = 2.0;
 
@@ -284,7 +282,7 @@
 		vec3 vectorToLightSource = vSpotLight1;
 		float diffuseLightWeighting = max(dot(normal, vectorToLightSource), 0.0);
 
-		vec3 spotLightIntensity = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity = vec3(1.0,1.0,1.0);
 
 		if (diffuseLightWeighting > 0.0) {
 			// Calculate attenuation
@@ -304,8 +302,6 @@
         vec3 lightIntensity =  uAmbientColor + spotLightIntensity + lambertian*uDirectionalColor + specular*uDirectionalColor ;
         vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
         vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
-
-
 
         vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
 

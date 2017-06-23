@@ -65,8 +65,8 @@ class Container3D{
         gl.useProgram(this.shaderProgram);
 
         if(this.objectType != "edificio" && this.objectType != null){
-            //gl.uniform3fv(this.shaderProgram.farol1Position, [10.0, 10.0, 10.0]);
-            //gl.uniform3fv(this.shaderProgram.farol1Direction, [0.0, 1.0, 0.0]);
+            //gl.uniform3fv(this.shaderProgram.farol1Position, [0.0, 0.0, 0.0]);
+            //gl.uniform3fv(this.shaderProgram.farol1Direction, [0.0, 0.0, 0.0]);
         }
 
         gl.uniform1i(this.shaderProgram.useLightingUniform, true);
