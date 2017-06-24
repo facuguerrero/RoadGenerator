@@ -238,7 +238,6 @@ class Objeto3D extends Container3D{
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
             //this.addColor(buffcalc,1000,0.66,0.64,0.60);
-            //buffcalc.textureBuffer1 = []
             buffcalc.setTextures(1);
         }
 
@@ -315,6 +314,7 @@ class Objeto3D extends Container3D{
             this.bufferCreator.posBuffer=vertices;
         }
     }
+
 
     /*Rows representa la cantidad de niveles de la superficie.
      Colms representa el n que divide el angulo tal que : 2pi/n para la rotacion

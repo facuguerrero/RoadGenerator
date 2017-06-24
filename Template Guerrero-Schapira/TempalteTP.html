@@ -277,9 +277,9 @@
         }
 
         if(vID >18.5 && vID <19.5){
-            auxUv.x = auxUv.x * 3.0;
+            auxUv.x = auxUv.x * 10.0;
             auxUv.y = auxUv.y * 10.0;
-            textureColor = texture2D(autopista, vec2(auxUv.s, auxUv.t));
+            textureColor = texture2D(autopista, vec2(auxUv.t, auxUv.s));
         }
 
         if(vID> 19.5 && vID< 20.5){
