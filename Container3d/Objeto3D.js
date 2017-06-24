@@ -238,6 +238,7 @@ class Objeto3D extends Container3D{
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
             //this.addColor(buffcalc,1000,0.66,0.64,0.60);
+            //buffcalc.textureBuffer1 = []
             buffcalc.setTextures(1);
         }
 
