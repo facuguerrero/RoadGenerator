@@ -211,6 +211,8 @@
     uniform sampler2D vereda;
     uniform sampler2D autopista;
     uniform sampler2D pasto;
+    uniform sampler2D concreto;
+    uniform sampler2D poste;
 
     // Variables utilizadas para la iluminación
     uniform vec3 uAmbientColor;
@@ -275,12 +277,25 @@
         }
 
         if(vID >18.5 && vID <19.5){
-
-            textureColor = texture2D(autopista, vec2(vTextureCoord.s, vTextureCoord.t));
+            auxUv.x = auxUv.x * 3.0;
+            auxUv.y = auxUv.y * 10.0;
+            textureColor = texture2D(autopista, vec2(auxUv.s, auxUv.t));
         }
 
         if(vID> 19.5 && vID< 20.5){
             textureColor = texture2D(pasto, vec2(vTextureCoord.s, vTextureCoord.t));
+        }
+
+        if(vID >20.5 && vID <21.5){
+            //auxUv.x = auxUv.x;
+            auxUv.y = auxUv.y*10.0;
+            textureColor = texture2D(concreto, vec2(auxUv.s, auxUv.t));
+        }
+
+         if(vID >21.5 && vID <22.5){
+            //auxUv.x = auxUv.x;
+            //auxUv.y = auxUv.y*10.0;
+            textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
         }
 
         // Calculos spotlight 1
@@ -905,6 +920,24 @@
             gl.uniform1i(location, 21);
             gl.activeTexture(gl.TEXTURE21);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["pasto"]);
+
+            //Concreto
+            gl.useProgram(streetShader);
+            loadTexture("textures/concreto.jpg", "concreto");
+
+            var location = gl.getUniformLocation(streetShader, "concreto");
+            gl.uniform1i(location, 22);
+            gl.activeTexture(gl.TEXTURE22);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["concreto"]);
+
+            //Poste luz
+            gl.useProgram(streetShader);
+            loadTexture("textures/poste.jpg", "poste");
+
+            var location = gl.getUniformLocation(streetShader, "poste");
+            gl.uniform1i(location, 23);
+            gl.activeTexture(gl.TEXTURE23);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["poste"]);
 
         }
 

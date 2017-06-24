@@ -149,7 +149,8 @@ class ObjetosFactory {
         baseRuta.add(asfaltoRuta);
         baseRuta.calcularSuperficieBarrido("base_ruta", vecPos.length, 17, arrayMatT, vecPos);
 
-        //asfaltoRuta.setType("autopista", 19.0);
+        baseRuta.setType("concreto",21.0);
+        asfaltoRuta.setType("autopista", 19.0);
 
         return baseRuta;
 
@@ -178,7 +179,7 @@ class ObjetosFactory {
         arrayMatT = curvaFarol.getArrayMatT();
 
         farol.calcularSuperficieBarrido("circunferencia", vecPos.length, 10, arrayMatT, vecPos);
-
+        farol.setType("poste",22.0);
         var luz = this.createLuzFarol(3.0, 1.0, 2.0, true);
         luz.translate(6.0, altura - 0.5, -1.0);
         farol.add(luz);
@@ -410,6 +411,7 @@ class ObjetosFactory {
         pos.push(vec3.fromValues(x, 0, 0));
 
         linea.calcularSuperficieBarrido("escena", 2, 2, arrayMatT, pos);
+        //linea.setType("calle",1.0);
 
         escene.add(linea);
         if(bool) {
@@ -631,6 +633,7 @@ class ObjetosFactory {
         var pilar = new Objeto3D();
         pilar.calcularSuperficieRevolucion("columna",2,cantidad);
         //pilar.rotate(-Math.PI/2,1.0,0.0,0.0);
+        //pilar.setType("concreto",21.0);
         columna.add(pilar);
 
         /*Creo lo que es la base de la columna*/

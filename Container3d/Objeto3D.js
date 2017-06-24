@@ -25,7 +25,8 @@ var PASTO = "pasto";
 var ESQUINA = "esquina";
 var AUTOPISTA = "autopista";
 var SKY = "sky";
-
+var CONCRETO = "concreto";
+var POSTE = "poste";
 
 class Objeto3D extends Container3D{
 
@@ -184,7 +185,6 @@ class Objeto3D extends Container3D{
             this.figuras.calcularEstructuraEdificio(vertices,arrayVecNOR,escalado);
             buffcalc.setTextures(1);
             //this.addColor(buffcalc,25, 1.0, 0.0, 0.0);
-
         }
 
         else if(figura == TAPA_EDIFICIO){
@@ -195,7 +195,6 @@ class Objeto3D extends Container3D{
             var escalado = arrayVecPos.pop();
             this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
             this.addColor(buffcalc, 4, 0.41,0.41,0.41);
-
         }
 
         else if(figura == ESTRUCTURA_LUZ){
@@ -207,7 +206,6 @@ class Objeto3D extends Container3D{
             var escalado = arrayVecPos.pop();
             this.figuras.calcularEstructuraEdificio(vertices,arrayVecNOR,escalado);
             this.addColor(buffcalc,25, 1.0, 0.0, 0.0);
-
         }
 
         else if(figura == TAPA_LUZ){
@@ -218,12 +216,12 @@ class Objeto3D extends Container3D{
             var escalado = arrayVecPos.pop();
             this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
             this.addColor(buffcalc, 4, 1.0,0.0,0.0);
-
         }
 
         else if(figura == CIRCUNFERENCIA){
             var radio = 0.35;
             this.figuras.calcularCirculo(colms, vertices, arrayVecNOR, radio);
+            buffcalc.setTextures(1);
         }
 
         else if(figura == LINEA){
@@ -239,7 +237,8 @@ class Objeto3D extends Container3D{
                 console.log("para hacer una base de ruta se necesitan exactamente 9 vertices");
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
-            this.addColor(buffcalc,1000,0.66,0.64,0.60);
+            //this.addColor(buffcalc,1000,0.66,0.64,0.60);
+            buffcalc.setTextures(1);
         }
 
         else if(figura == ASFALTO_RUTA){
@@ -248,7 +247,7 @@ class Objeto3D extends Container3D{
             }
             this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);
             this.addColor(buffcalc,5000,0.2 ,0.2 ,0.2);
-
+            buffcalc.setTextures(1);
         }
 
         else if(figura == CALLE){
@@ -259,7 +258,6 @@ class Objeto3D extends Container3D{
             this.figuras.calcularCalle(vertices, arrayVecNOR, escalado[0]);
             buffcalc.setTextures(1);
             //this.addColor(buffcalc, 4, 0.3, 0.3, 0.3);
-
         }
 
         else if(figura == ESCENA){
@@ -269,6 +267,7 @@ class Objeto3D extends Container3D{
             escalado = arrayVecPos.pop();
             this.figuras.calcularEscena(vertices, arrayVecNOR, escalado[0]);
             this.addColor(buffcalc,4, 0.3, 0.3, 0.3);
+            //buffcalc.setTextures(1);
         }
 
         else if(figura == CARROCERIA){
@@ -277,13 +276,11 @@ class Objeto3D extends Container3D{
             }
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
             this.addColor(buffcalc,39, 0.0, 0.0, 1.0);
-
         }
 
         else if(figura == TECHO){
             this.figuras.calcularTecho(vertices,arrayVecNOR);
             this.addColor(buffcalc, 12, 0.0, 0.0, 1.0);
-
         }
 
         else if(figura == RUEDA){
@@ -335,6 +332,7 @@ class Objeto3D extends Container3D{
                 console.log("Para el pilar de la columna se necesitan solo 2 niveles");
             }
             this.figuras.calcularColumna(arrayVecPos, ejeRotacion, arrayVecNor);
+            //buffcalc.setTextures(1);
         }
 
         if(figura == BASE_COLUMNA){
@@ -411,6 +409,12 @@ class Objeto3D extends Container3D{
         else if(this.objectType == PASTO){
             this.setShaderProgram(streetShader);
         }
+        else if(this.objectType == CONCRETO){
+            this.setShaderProgram(streetShader);
+        }
+        else if(this.objectType == POSTE){
+            this.setShaderProgram(streetShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -469,6 +473,12 @@ class Objeto3D extends Container3D{
             gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == PASTO){
+            gl.vertexAttrib1f(idStreet, this.id);
+        }
+        if(this.objectType == CONCRETO){
+            gl.vertexAttrib1f(idStreet, this.id);
+        }
+        if(this.objectType == POSTE){
             gl.vertexAttrib1f(idStreet, this.id);
         }
 
