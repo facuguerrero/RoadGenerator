@@ -385,7 +385,7 @@
       <workItem from="1498220075204" duration="4201000" />
       <workItem from="1498245920373" duration="3033000" />
       <workItem from="1498255006646" duration="391000" />
-      <workItem from="1498325498211" duration="6039000" />
+      <workItem from="1498325498211" duration="6076000" />
     </task>
     <task id="LOCAL-00001" summary="sky comentado">
       <created>1498047562203</created>
@@ -674,11 +674,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498246850389</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Agregando texturas">
+      <created>1498332816341</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1498332816341</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63257000" />
+    <option name="totallyTimeSpent" value="63294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -720,7 +727,8 @@
     <MESSAGE value="Esfera acomodada" />
     <MESSAGE value="VAMO VEREDA" />
     <MESSAGE value="texturas pasto" />
-    <option name="LAST_COMMIT_MESSAGE" value="texturas pasto" />
+    <MESSAGE value="Agregando texturas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregando texturas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
