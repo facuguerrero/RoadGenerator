@@ -432,33 +432,12 @@ class FigurasPrimitivas{
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        /*vertices.push(vec3.fromValues(18.0, 0.0, 0.0));
-        var vecNorm2 = vec3.fromValues(-1.0, 0.0, 0.0);
-        vec3.normalize(vecNorm2, vecNorm2);
-        arrayVecNOR.push(vecNorm2);
-*/
         this.calcularCurvaEsquina(vertices,arrayVecNOR, 18.0, 2.0, 1);
-
-        /*vertices.push(vec3.fromValues(20.0, 0.0, 15.0));
-        var vecNorm3 = vec3.fromValues(1.0, 0.0, 0.0);
-        vec3.normalize(vecNorm3, vecNorm3);
-        arrayVecNOR.push(vecNorm3);
-        */
 
         this.calcularCurvaEsquina(vertices,arrayVecNOR, 18.0, 18.0, 2);
 
-        /*vertices.push(vec3.fromValues(5.0, 0.0, 20.0));
-        var vecNorm3 = vec3.fromValues(0.0, 0.0, 1.0);
-        vec3.normalize(vecNorm3, vecNorm3);
-        arrayVecNOR.push(vecNorm3);
-        */
         this.calcularCurvaEsquina(vertices,arrayVecNOR, 2.0, 18.0,3);
-        /*
-        vertices.push(vec3.fromValues(0.0, 0.0, 5.0));
-        var vecNorm3 = vec3.fromValues(-1.0, 0.0, 0.0);
-        vec3.normalize(vecNorm3, vecNorm3);
-        arrayVecNOR.push(vecNorm3);
-        */
+
         this.calcularCurvaEsquina(vertices, arrayVecNOR, 2.0, 2.0, 4);
 
         vertices.push(vec3.fromValues(2.0, 0.0, 0.0));

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -123,8 +122,8 @@
       <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="571" column="0" lean-forward="true" selection-start-line="571" selection-start-column="0" selection-end-line="571" selection-end-column="0" />
+            <state relative-caret-position="2650">
+              <caret line="433" column="8" lean-forward="false" selection-start-line="433" selection-start-column="8" selection-end-line="433" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -816,11 +815,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498332816341</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Limpieza Gral">
+      <created>1498338807690</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1498338807690</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63699000" />
+    <option name="totallyTimeSpent" value="63759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-14" width="969" height="783" extended-state="6" />
@@ -872,7 +878,8 @@
     <MESSAGE value="VAMO VEREDA" />
     <MESSAGE value="texturas pasto" />
     <MESSAGE value="Agregando texturas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregando texturas" />
+    <MESSAGE value="Limpieza Gral" />
+    <option name="LAST_COMMIT_MESSAGE" value="Limpieza Gral" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1392,8 +1399,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="571" column="0" lean-forward="true" selection-start-line="571" selection-start-column="0" selection-end-line="571" selection-end-column="0" />
+        <state relative-caret-position="2650">
+          <caret line="433" column="8" lean-forward="false" selection-start-line="433" selection-start-column="8" selection-end-line="433" selection-end-column="8" />
           <folding />
         </state>
       </provider>
