@@ -42,6 +42,9 @@ class CameraHandler{
         }
 
         if(this.mode == "free"){
+
+            mat4.scale(CameraMatrix, CameraMatrix, vec4.fromValues(0.5, 0.5, 1.0,1.0));
+            console.log(CameraMatrix);
             var phi = freeCam.getPhi();
             var vec_1 = vec3.fromValues(1.0,0.0,0.0);
             mat4.rotate(CameraMatrix, CameraMatrix, phi, vec_1);
@@ -55,6 +58,7 @@ class CameraHandler{
         }
 
         if(this.mode == "freeR"){
+            mat4.scale(CameraMatrix, CameraMatrix, vec4.fromValues(0.5, 0.5, 1.0,1.0));
             var phi = freeCamR.getPhi();
             var vec_1 = vec3.fromValues(1.0,0.0,0.0);
             mat4.rotate(CameraMatrix, CameraMatrix, phi, vec_1);
