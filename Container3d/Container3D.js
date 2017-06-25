@@ -97,9 +97,9 @@ class Container3D{
 
     getPosition(){
         //los numeros ajustan las posiciones del canvas original a partir del farol
-        var x = (((this.matrix[12]* 0.32)) * 0.5)  - 22.0;
-        var z = (((this.matrix[14]* 0.32)) * 0.5)  - 20.0;
-        var pos = vec3.fromValues(x, 5.0, z);
+        var x = (((this.matrix[12]* 0.32)) * 0.5)  - 23.3;
+        var z = (((this.matrix[14]* 0.32)) * 0.5)  - 21.5;
+        var pos = vec3.fromValues(x, 5.6, z);
         return pos;
     }
 }

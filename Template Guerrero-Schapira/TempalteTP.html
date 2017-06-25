@@ -279,7 +279,7 @@
 
 		// Attenuation constants
 		const float constantAtt = 1.0;
-		const float linearAtt = 0.0001;
+		const float linearAtt = 0.00001;
 		const float quadraticAtt = 0.01;
 
 		vec3 normal = vNormal;
@@ -305,9 +305,30 @@
 	    vec3 vectorToLightSource9 = vSpotLight9;
 	    vec3 vectorToLightSource10 = vSpotLight10;
 	    vec3 vectorToLightSource11 = vSpotLight11;
+
 	    float diffuseLightWeighting = max(dot(normal, vectorToLightSource), 0.0);
+	    float diffuseLightWeighting2 = max(dot(normal, vectorToLightSource2), 0.0);
+	    float diffuseLightWeighting3 = max(dot(normal, vectorToLightSource3), 0.0);
+	    float diffuseLightWeighting4 = max(dot(normal, vectorToLightSource4), 0.0);
+	    float diffuseLightWeighting5 = max(dot(normal, vectorToLightSource5), 0.0);
+	    float diffuseLightWeighting6 = max(dot(normal, vectorToLightSource6), 0.0);
+	    float diffuseLightWeighting7 = max(dot(normal, vectorToLightSource7), 0.0);
+	    float diffuseLightWeighting8 = max(dot(normal, vectorToLightSource8), 0.0);
+	    float diffuseLightWeighting9 = max(dot(normal, vectorToLightSource9), 0.0);
+	    float diffuseLightWeighting10 = max(dot(normal, vectorToLightSource10), 0.0);
+	    float diffuseLightWeighting11 = max(dot(normal, vectorToLightSource11), 0.0);
 
 		vec3 spotLightIntensity = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity2 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity3 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity4 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity5 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity6 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity7 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity8 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity9 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity10 = vec3(0.0,0.0,0.0);
+		vec3 spotLightIntensity11 = vec3(0.0,0.0,0.0);
 
         if(lambertian > 0.0) {
             vec3 reflectDir = reflect(-lightDir, normal);
@@ -351,6 +372,157 @@
                     spotLightIntensity = spotEffect * att * (lightColor *	diffuseLightWeighting + lightColor * specularLightWeighting);
                 }
             }
+
+            if (diffuseLightWeighting2 > 0.0) {
+                // Calculate attenuation
+                float distance2 = length(vectorToLightSource2);
+                float att2 = 1.0/(constantAtt+linearAtt * distance2 + quadraticAtt * distance2 * distance2);
+                float spotEffect2 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource2));
+
+                if (spotEffect2 > spotlightCutOff) {
+                    spotEffect2 = pow(spotEffect2, spotLightExponent);
+                    vec3 reflectionVector2 =	normalize(reflect(-vectorToLightSource2,	normal));
+                    float rdotv2 = max(dot(reflectionVector2, vViewDir), 0.0);
+                    float specularLightWeighting2 = pow(rdotv2, shininess);
+                    spotLightIntensity2 = spotEffect2 * att2 * (lightColor *	diffuseLightWeighting2 + lightColor * specularLightWeighting2);
+                }
+            }
+
+            if (diffuseLightWeighting3 > 0.0) {
+                // Calculate attenuation
+                float distance3 = length(vectorToLightSource3);
+                float att3 = 1.0/(constantAtt+linearAtt * distance3 + quadraticAtt * distance3 * distance3);
+                float spotEffect3 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource3));
+
+                if (spotEffect3 > spotlightCutOff) {
+                    spotEffect3 = pow(spotEffect3, spotLightExponent);
+                    vec3 reflectionVector3 =	normalize(reflect(-vectorToLightSource3,	normal));
+                    float rdotv3 = max(dot(reflectionVector3, vViewDir), 0.0);
+                    float specularLightWeighting3 = pow(rdotv3, shininess);
+                    spotLightIntensity3 = spotEffect3 * att3 * (lightColor *	diffuseLightWeighting3 + lightColor * specularLightWeighting3);
+                }
+            }
+
+            if (diffuseLightWeighting4 > 0.0) {
+                // Calculate attenuation
+                float distance4 = length(vectorToLightSource4);
+                float att4 = 1.0/(constantAtt+linearAtt * distance4 + quadraticAtt * distance4 * distance4);
+                float spotEffect4 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource4));
+
+                if (spotEffect4 > spotlightCutOff) {
+                    spotEffect4 = pow(spotEffect4, spotLightExponent);
+                    vec3 reflectionVector4 =	normalize(reflect(-vectorToLightSource4,	normal));
+                    float rdotv4 = max(dot(reflectionVector4, vViewDir), 0.0);
+                    float specularLightWeighting4 = pow(rdotv4, shininess);
+                    spotLightIntensity4 = spotEffect4 * att4 * (lightColor *	diffuseLightWeighting4 + lightColor * specularLightWeighting4);
+                }
+            }
+
+            if (diffuseLightWeighting5 > 0.0) {
+                // Calculate attenuation
+                float distance5 = length(vectorToLightSource5);
+                float att5 = 1.0/(constantAtt+linearAtt * distance5 + quadraticAtt * distance5 * distance5);
+                float spotEffect5 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource5));
+
+                if (spotEffect5 > spotlightCutOff) {
+                    spotEffect5 = pow(spotEffect5, spotLightExponent);
+                    vec3 reflectionVector5 =	normalize(reflect(-vectorToLightSource5,	normal));
+                    float rdotv5 = max(dot(reflectionVector5, vViewDir), 0.0);
+                    float specularLightWeighting5 = pow(rdotv5, shininess);
+                    spotLightIntensity5 = spotEffect5 * att5 * (lightColor *	diffuseLightWeighting5 + lightColor * specularLightWeighting5);
+                }
+            }
+
+            if (diffuseLightWeighting6 > 0.0) {
+                // Calculate attenuation
+                float distance6 = length(vectorToLightSource6);
+                float att6 = 1.0/(constantAtt+linearAtt * distance6 + quadraticAtt * distance6 * distance6);
+                float spotEffect6 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource6));
+
+                if (spotEffect6 > spotlightCutOff) {
+                    spotEffect6 = pow(spotEffect6, spotLightExponent);
+                    vec3 reflectionVector6 =	normalize(reflect(-vectorToLightSource6,	normal));
+                    float rdotv6 = max(dot(reflectionVector6, vViewDir), 0.0);
+                    float specularLightWeighting6 = pow(rdotv6, shininess);
+                    spotLightIntensity6 = spotEffect6 * att6 * (lightColor *	diffuseLightWeighting6 + lightColor * specularLightWeighting6);
+                }
+            }
+
+            if (diffuseLightWeighting7 > 0.0) {
+                // Calculate attenuation
+                float distance7 = length(vectorToLightSource7);
+                float att7 = 1.0/(constantAtt+linearAtt * distance7 + quadraticAtt * distance7 * distance7);
+                float spotEffect7 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource7));
+
+                if (spotEffect7 > spotlightCutOff) {
+                    spotEffect7 = pow(spotEffect7, spotLightExponent);
+                    vec3 reflectionVector7 =	normalize(reflect(-vectorToLightSource7,	normal));
+                    float rdotv7 = max(dot(reflectionVector7, vViewDir), 0.0);
+                    float specularLightWeighting7 = pow(rdotv7, shininess);
+                    spotLightIntensity7 = spotEffect7 * att7 * (lightColor *	diffuseLightWeighting7 + lightColor * specularLightWeighting7);
+                }
+            }
+
+            if (diffuseLightWeighting8 > 0.0) {
+                // Calculate attenuation
+                float distance8 = length(vectorToLightSource8);
+                float att8 = 1.0/(constantAtt+linearAtt * distance8 + quadraticAtt * distance8 * distance8);
+                float spotEffect8 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource8));
+
+                if (spotEffect8 > spotlightCutOff) {
+                    spotEffect8 = pow(spotEffect8, spotLightExponent);
+                    vec3 reflectionVector8 =	normalize(reflect(-vectorToLightSource8,	normal));
+                    float rdotv8 = max(dot(reflectionVector8, vViewDir), 0.0);
+                    float specularLightWeighting8 = pow(rdotv8, shininess);
+                    spotLightIntensity8 = spotEffect8 * att8 * (lightColor *	diffuseLightWeighting8 + lightColor * specularLightWeighting8);
+                }
+            }
+
+            if (diffuseLightWeighting9 > 0.0) {
+                // Calculate attenuation
+                float distance9 = length(vectorToLightSource9);
+                float att9 = 1.0/(constantAtt+linearAtt * distance9 + quadraticAtt * distance9 * distance9);
+                float spotEffect9 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource9));
+
+                if (spotEffect9 > spotlightCutOff) {
+                    spotEffect9 = pow(spotEffect9, spotLightExponent);
+                    vec3 reflectionVector9 =	normalize(reflect(-vectorToLightSource9,	normal));
+                    float rdotv9 = max(dot(reflectionVector9, vViewDir), 0.0);
+                    float specularLightWeighting9 = pow(rdotv9, shininess);
+                    spotLightIntensity9 = spotEffect9 * att9 * (lightColor *	diffuseLightWeighting9 + lightColor * specularLightWeighting9);
+                }
+            }
+
+            if (diffuseLightWeighting10 > 0.0) {
+                // Calculate attenuation
+                float distance10 = length(vectorToLightSource10);
+                float att10 = 1.0/(constantAtt+linearAtt * distance10 + quadraticAtt * distance10 * distance10);
+                float spotEffect10 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource10));
+
+                if (spotEffect10 > spotlightCutOff) {
+                    spotEffect10 = pow(spotEffect10, spotLightExponent);
+                    vec3 reflectionVector10 =	normalize(reflect(-vectorToLightSource10,	normal));
+                    float rdotv10 = max(dot(reflectionVector10, vViewDir), 0.0);
+                    float specularLightWeighting10 = pow(rdotv10, shininess);
+                    spotLightIntensity10 = spotEffect10 * att10 * (lightColor *	diffuseLightWeighting10 + lightColor * specularLightWeighting10);
+                }
+            }
+
+            if (diffuseLightWeighting11 > 0.0) {
+                // Calculate attenuation
+                float distance11 = length(vectorToLightSource11);
+                float att11 = 1.0/(constantAtt+linearAtt * distance11 + quadraticAtt * distance11 * distance11);
+                float spotEffect11 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource11));
+
+                if (spotEffect11 > spotlightCutOff) {
+                    spotEffect11 = pow(spotEffect11, spotLightExponent);
+                    vec3 reflectionVector11 =	normalize(reflect(-vectorToLightSource11,	normal));
+                    float rdotv11 = max(dot(reflectionVector11, vViewDir), 0.0);
+                    float specularLightWeighting11 = pow(rdotv11, shininess);
+                    spotLightIntensity11 = spotEffect11 * att11 * (lightColor *	diffuseLightWeighting11 + lightColor * specularLightWeighting11);
+                }
+            }
+
             auxUv.y = auxUv.y * 100.0;
             textureColor = texture2D(autopista, vec2(auxUv.t, auxUv.s));
         }
@@ -361,7 +533,7 @@
 
         if(vID >20.5 && vID <21.5){
 
-            if (diffuseLightWeighting > 0.0) {
+                        if (diffuseLightWeighting > 0.0) {
                 // Calculate attenuation
                 float distance = length(vectorToLightSource);
                 float att = 1.0/(constantAtt+linearAtt * distance + quadraticAtt * distance * distance);
@@ -376,6 +548,156 @@
                 }
             }
 
+            if (diffuseLightWeighting2 > 0.0) {
+                // Calculate attenuation
+                float distance2 = length(vectorToLightSource2);
+                float att2 = 1.0/(constantAtt+linearAtt * distance2 + quadraticAtt * distance2 * distance2);
+                float spotEffect2 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource2));
+
+                if (spotEffect2 > spotlightCutOff) {
+                    spotEffect2 = pow(spotEffect2, spotLightExponent);
+                    vec3 reflectionVector2 =	normalize(reflect(-vectorToLightSource2,	normal));
+                    float rdotv2 = max(dot(reflectionVector2, vViewDir), 0.0);
+                    float specularLightWeighting2 = pow(rdotv2, shininess);
+                    spotLightIntensity2 = spotEffect2 * att2 * (lightColor *	diffuseLightWeighting2 + lightColor * specularLightWeighting2);
+                }
+            }
+
+            if (diffuseLightWeighting3 > 0.0) {
+                // Calculate attenuation
+                float distance3 = length(vectorToLightSource3);
+                float att3 = 1.0/(constantAtt+linearAtt * distance3 + quadraticAtt * distance3 * distance3);
+                float spotEffect3 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource3));
+
+                if (spotEffect3 > spotlightCutOff) {
+                    spotEffect3 = pow(spotEffect3, spotLightExponent);
+                    vec3 reflectionVector3 =	normalize(reflect(-vectorToLightSource3,	normal));
+                    float rdotv3 = max(dot(reflectionVector3, vViewDir), 0.0);
+                    float specularLightWeighting3 = pow(rdotv3, shininess);
+                    spotLightIntensity3 = spotEffect3 * att3 * (lightColor *	diffuseLightWeighting3 + lightColor * specularLightWeighting3);
+                }
+            }
+
+            if (diffuseLightWeighting4 > 0.0) {
+                // Calculate attenuation
+                float distance4 = length(vectorToLightSource4);
+                float att4 = 1.0/(constantAtt+linearAtt * distance4 + quadraticAtt * distance4 * distance4);
+                float spotEffect4 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource4));
+
+                if (spotEffect4 > spotlightCutOff) {
+                    spotEffect4 = pow(spotEffect4, spotLightExponent);
+                    vec3 reflectionVector4 =	normalize(reflect(-vectorToLightSource4,	normal));
+                    float rdotv4 = max(dot(reflectionVector4, vViewDir), 0.0);
+                    float specularLightWeighting4 = pow(rdotv4, shininess);
+                    spotLightIntensity4 = spotEffect4 * att4 * (lightColor *	diffuseLightWeighting4 + lightColor * specularLightWeighting4);
+                }
+            }
+
+            if (diffuseLightWeighting5 > 0.0) {
+                // Calculate attenuation
+                float distance5 = length(vectorToLightSource5);
+                float att5 = 1.0/(constantAtt+linearAtt * distance5 + quadraticAtt * distance5 * distance5);
+                float spotEffect5 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource5));
+
+                if (spotEffect5 > spotlightCutOff) {
+                    spotEffect5 = pow(spotEffect5, spotLightExponent);
+                    vec3 reflectionVector5 =	normalize(reflect(-vectorToLightSource5,	normal));
+                    float rdotv5 = max(dot(reflectionVector5, vViewDir), 0.0);
+                    float specularLightWeighting5 = pow(rdotv5, shininess);
+                    spotLightIntensity5 = spotEffect5 * att5 * (lightColor *	diffuseLightWeighting5 + lightColor * specularLightWeighting5);
+                }
+            }
+
+            if (diffuseLightWeighting6 > 0.0) {
+                // Calculate attenuation
+                float distance6 = length(vectorToLightSource6);
+                float att6 = 1.0/(constantAtt+linearAtt * distance6 + quadraticAtt * distance6 * distance6);
+                float spotEffect6 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource6));
+
+                if (spotEffect6 > spotlightCutOff) {
+                    spotEffect6 = pow(spotEffect6, spotLightExponent);
+                    vec3 reflectionVector6 =	normalize(reflect(-vectorToLightSource6,	normal));
+                    float rdotv6 = max(dot(reflectionVector6, vViewDir), 0.0);
+                    float specularLightWeighting6 = pow(rdotv6, shininess);
+                    spotLightIntensity6 = spotEffect6 * att6 * (lightColor *	diffuseLightWeighting6 + lightColor * specularLightWeighting6);
+                }
+            }
+
+            if (diffuseLightWeighting7 > 0.0) {
+                // Calculate attenuation
+                float distance7 = length(vectorToLightSource7);
+                float att7 = 1.0/(constantAtt+linearAtt * distance7 + quadraticAtt * distance7 * distance7);
+                float spotEffect7 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource7));
+
+                if (spotEffect7 > spotlightCutOff) {
+                    spotEffect7 = pow(spotEffect7, spotLightExponent);
+                    vec3 reflectionVector7 =	normalize(reflect(-vectorToLightSource7,	normal));
+                    float rdotv7 = max(dot(reflectionVector7, vViewDir), 0.0);
+                    float specularLightWeighting7 = pow(rdotv7, shininess);
+                    spotLightIntensity7 = spotEffect7 * att7 * (lightColor *	diffuseLightWeighting7 + lightColor * specularLightWeighting7);
+                }
+            }
+
+            if (diffuseLightWeighting8 > 0.0) {
+                // Calculate attenuation
+                float distance8 = length(vectorToLightSource8);
+                float att8 = 1.0/(constantAtt+linearAtt * distance8 + quadraticAtt * distance8 * distance8);
+                float spotEffect8 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource8));
+
+                if (spotEffect8 > spotlightCutOff) {
+                    spotEffect8 = pow(spotEffect8, spotLightExponent);
+                    vec3 reflectionVector8 =	normalize(reflect(-vectorToLightSource8,	normal));
+                    float rdotv8 = max(dot(reflectionVector8, vViewDir), 0.0);
+                    float specularLightWeighting8 = pow(rdotv8, shininess);
+                    spotLightIntensity8 = spotEffect8 * att8 * (lightColor *	diffuseLightWeighting8 + lightColor * specularLightWeighting8);
+                }
+            }
+
+            if (diffuseLightWeighting9 > 0.0) {
+                // Calculate attenuation
+                float distance9 = length(vectorToLightSource9);
+                float att9 = 1.0/(constantAtt+linearAtt * distance9 + quadraticAtt * distance9 * distance9);
+                float spotEffect9 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource9));
+
+                if (spotEffect9 > spotlightCutOff) {
+                    spotEffect9 = pow(spotEffect9, spotLightExponent);
+                    vec3 reflectionVector9 =	normalize(reflect(-vectorToLightSource9,	normal));
+                    float rdotv9 = max(dot(reflectionVector9, vViewDir), 0.0);
+                    float specularLightWeighting9 = pow(rdotv9, shininess);
+                    spotLightIntensity9 = spotEffect9 * att9 * (lightColor *	diffuseLightWeighting9 + lightColor * specularLightWeighting9);
+                }
+            }
+
+            if (diffuseLightWeighting10 > 0.0) {
+                // Calculate attenuation
+                float distance10 = length(vectorToLightSource10);
+                float att10 = 1.0/(constantAtt+linearAtt * distance10 + quadraticAtt * distance10 * distance10);
+                float spotEffect10 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource10));
+
+                if (spotEffect10 > spotlightCutOff) {
+                    spotEffect10 = pow(spotEffect10, spotLightExponent);
+                    vec3 reflectionVector10 =	normalize(reflect(-vectorToLightSource10,	normal));
+                    float rdotv10 = max(dot(reflectionVector10, vViewDir), 0.0);
+                    float specularLightWeighting10 = pow(rdotv10, shininess);
+                    spotLightIntensity10 = spotEffect10 * att10 * (lightColor *	diffuseLightWeighting10 + lightColor * specularLightWeighting10);
+                }
+            }
+
+            if (diffuseLightWeighting11 > 0.0) {
+                // Calculate attenuation
+                float distance11 = length(vectorToLightSource11);
+                float att11 = 1.0/(constantAtt+linearAtt * distance11 + quadraticAtt * distance11 * distance11);
+                float spotEffect11 = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource11));
+
+                if (spotEffect11 > spotlightCutOff) {
+                    spotEffect11 = pow(spotEffect11, spotLightExponent);
+                    vec3 reflectionVector11 =	normalize(reflect(-vectorToLightSource11,	normal));
+                    float rdotv11 = max(dot(reflectionVector11, vViewDir), 0.0);
+                    float specularLightWeighting11 = pow(rdotv11, shininess);
+                    spotLightIntensity11 = spotEffect11 * att11 * (lightColor *	diffuseLightWeighting11 + lightColor * specularLightWeighting11);
+                }
+            }
+
             //auxUv.x = auxUv.x;
             auxUv.y = auxUv.y*10.0;
             textureColor = texture2D(concreto, vec2(auxUv.s, auxUv.t));
@@ -387,7 +709,7 @@
             textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
         }
 
-        vec3 lightIntensity =  uAmbientColor + spotLightIntensity + lambertian*uDirectionalColor + specular*uDirectionalColor ;
+        vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + specular*uDirectionalColor ;
         vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
         vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
