@@ -203,7 +203,6 @@ class BufferCalculator{
             //angulo de rotacion
             mat4.rotate(matActual, matActual, ( (2.0*Math.PI*i) / (this.colms-1) ), vecRot);
 
-
             for(var j = 0.0; j < this.rows; j++){
                 /*Nos quedamos con el vertice de posicion y normal actual*/
                 var auxV = vertices[j];
@@ -230,25 +229,12 @@ class BufferCalculator{
                 this.colorBuffer.push(0.59);
                 this.colorBuffer.push(0.56);
 
-                if (this.texture1) {
-                    // Coordenadas
-                    var u = 1.0 - (i % 512.0) / 512.0;
-                    var v = 1.0 - (j / (this.rows - 1));
 
-                    // if (switch_u == 1.0) {
-                    //     u = 1.0 - (i % 512.0) / 512.0;
-                    // } else {
-                    //     u = (i % 512.0) / 512.0;
-                    // }
-                    this.textureBuffer1.push(u);
-                    this.textureBuffer1.push(v);
-                    //hay que ver si hay que pasar otros vertices
-                }
+                var u = i /(this.colms-1);
+                var v = j/(this.rows-1);
 
-                if (this.texture2) {
-                    this.textureBuffer2.push(verticeFormaActual[0]);
-                    this.textureBuffer2.push(verticeFormaActual[1]);
-                }
+                this.textureBuffer1.push(u);
+                this.textureBuffer1.push(v);
 
             }
 

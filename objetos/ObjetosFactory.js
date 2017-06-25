@@ -638,7 +638,7 @@ class ObjetosFactory {
         var pilar = new Objeto3D();
         pilar.calcularSuperficieRevolucion("columna",2,cantidad);
         //pilar.rotate(-Math.PI/2,1.0,0.0,0.0);
-        //pilar.setType("concreto",21.0);
+        pilar.setType("concreto",21.0);
         columna.add(pilar);
 
         /*Creo lo que es la base de la columna*/

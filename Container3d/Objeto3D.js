@@ -333,7 +333,7 @@ class Objeto3D extends Container3D{
                 console.log("Para el pilar de la columna se necesitan solo 2 niveles");
             }
             this.figuras.calcularColumna(arrayVecPos, ejeRotacion, arrayVecNor);
-            //buffcalc.setTextures(1);
+            buffcalc.setTextures(1);
         }
 
         if(figura == BASE_COLUMNA){
