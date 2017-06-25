@@ -244,6 +244,7 @@
     uniform sampler2D pasto;
     uniform sampler2D concreto;
     uniform sampler2D poste;
+    uniform sampler2D puerta;
 
     // Variables utilizadas para la iluminación
     uniform vec3 uAmbientColor;
@@ -707,6 +708,10 @@
             //auxUv.x = auxUv.x;
             //auxUv.y = auxUv.y*10.0;
             textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
+        }
+
+        if(vID > 22.5 && vID < 23.5){
+            textureColor = texture2D(puerta, vec2(auxUv.s, auxUv.t));
         }
 
         vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + specular*uDirectionalColor ;
@@ -1341,6 +1346,15 @@
             gl.uniform1i(location, 23);
             gl.activeTexture(gl.TEXTURE23);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["poste"]);
+
+            //Puerta Auto
+            gl.useProgram(streetShader);
+            loadTexture("textures/carSide.jpg", "puerta");
+
+            var location = gl.getUniformLocation(streetShader, "puerta");
+            gl.uniform1i(location, 24);
+            gl.activeTexture(gl.TEXTURE24);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["puerta"]);
 
         }
 

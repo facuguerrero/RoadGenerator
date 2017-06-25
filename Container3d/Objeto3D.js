@@ -27,6 +27,7 @@ var AUTOPISTA = "autopista";
 var SKY = "sky";
 var CONCRETO = "concreto";
 var POSTE = "poste";
+var PUERTA = "puerta";
 
 class Objeto3D extends Container3D{
 
@@ -271,11 +272,11 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == CARROCERIA){
-            if(colms != 19){
+            if(colms != 21){
                 console.log("para hacer la carroceria se necesitan 19 vertices");
             }
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
-            this.addColor(buffcalc,39, 0.0, 0.0, 1.0);
+            this.addColor(buffcalc,42, 0.0, 0.0, 1.0);
         }
 
         else if(figura == TECHO){
@@ -418,6 +419,9 @@ class Objeto3D extends Container3D{
         else if(this.objectType == POSTE){
             this.setShaderProgram(streetShader);
         }
+        else if(this.objectType == PUERTA){
+            this.setShaderProgram(streetShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -482,6 +486,9 @@ class Objeto3D extends Container3D{
             gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == POSTE){
+            gl.vertexAttrib1f(idStreet, this.id);
+        }
+        if(this.objectType == PUERTA){
             gl.vertexAttrib1f(idStreet, this.id);
         }
 

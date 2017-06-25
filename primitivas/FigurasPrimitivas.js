@@ -332,6 +332,7 @@ class FigurasPrimitivas{
         var y1= 1.0;
         var y2= 2.0;
         var y3= 2.5;
+        var y4 = 3.5;
 
         /*Declaro los puntos de la carroceria del auto
         arrancando por el vertice inferior izquierdo, y avanzando
@@ -343,10 +344,11 @@ class FigurasPrimitivas{
 
         this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR);
 
-        vertices.push(vec3.fromValues(x2, y1, 0.0));
+        /*vertices.push(vec3.fromValues(x2, y1, 0.0));
         var vecNorm2 = vec3.fromValues(0.0, -1.0, 0.0);
         vec3.normalize(vecNorm2, vecNorm2);
         arrayVecNOR.push(vecNorm2);
+        */
 
         this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR);
 
@@ -364,6 +366,21 @@ class FigurasPrimitivas{
         var vecNorm5 = vec3.fromValues(0.0, 1.0, 0.0);
         vec3.normalize(vecNorm5, vecNorm5);
         arrayVecNOR.push(vecNorm5);
+
+        vertices.push(vec3.fromValues(x2-1.0, y4,0.0));
+        var vecNorm8 = vec3.fromValues(6.0, 3.5, 0.0);
+        vec3.normalize(vecNorm8, vecNorm8);
+        arrayVecNOR.push(vecNorm8);
+
+        vertices.push(vec3.fromValues(x1+(2*r), y4,0.0));
+        var vecNorm9 = vec3.fromValues(-3.0, 3.5, 0.0);
+        vec3.normalize(vecNorm9, vecNorm9);
+        arrayVecNOR.push(vecNorm9);
+
+        vertices.push(vec3.fromValues(x1+(r), y4-0.5,0.0));
+        var vecNorm10 = vec3.fromValues(-2.0, 3.0, 0.0);
+        vec3.normalize(vecNorm10, vecNorm10);
+        arrayVecNOR.push(vecNorm10);
 
         vertices.push(vec3.fromValues(x0, y3, 0.0));
         var vecNorm6 = vec3.fromValues(-1.0, 1.0, 0.0);
