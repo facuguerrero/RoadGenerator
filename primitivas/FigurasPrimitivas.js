@@ -506,8 +506,8 @@ class FigurasPrimitivas{
         arrayVecPos.push(vec3.fromValues(2.5,2.0,0.0));
         arrayVecPos.push(vec3.fromValues(2.5,17.0,0.0));
 
-        arrayVecNor.push(vec3.fromValues(0.0,-0.07,0.0));
-        arrayVecNor.push(vec3.fromValues(0.0,-0.07,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,-0.5,0.0));
+        arrayVecNor.push(vec3.fromValues(0.0,-0.06,0.0));
 
     }
 
