@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -114,11 +116,11 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="640" column="8" lean-forward="false" selection-start-line="640" selection-start-column="8" selection-end-line="640" selection-end-column="8" />
+            <state relative-caret-position="421">
+              <caret line="655" column="38" lean-forward="false" selection-start-line="655" selection-start-column="38" selection-end-line="655" selection-end-column="38" />
               <folding>
-                <marker date="1498414954636" expanded="true" signature="42:57" ph="{...}" />
-                <marker date="1498414954636" expanded="true" signature="7754:7976" ph="{...}" />
+                <marker date="1498416694322" expanded="true" signature="42:57" ph="{...}" />
+                <marker date="1498416694322" expanded="true" signature="7754:7976" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -127,8 +129,8 @@
       <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="353" column="43" lean-forward="true" selection-start-line="353" selection-start-column="43" selection-end-line="353" selection-end-column="43" />
+            <state relative-caret-position="274">
+              <caret line="339" column="26" lean-forward="true" selection-start-line="339" selection-start-column="26" selection-end-line="339" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -147,8 +149,8 @@
       <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="509" column="50" lean-forward="false" selection-start-line="509" selection-start-column="50" selection-end-line="509" selection-end-column="50" />
+            <state relative-caret-position="465">
+              <caret line="535" column="10" lean-forward="false" selection-start-line="535" selection-start-column="10" selection-end-line="535" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -227,9 +229,9 @@
         <option value="$PROJECT_DIR$/handlers/CameraHandler.js" />
         <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-        <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
       </list>
     </option>
@@ -470,7 +472,7 @@
       <workItem from="1498245920373" duration="3033000" />
       <workItem from="1498255006646" duration="391000" />
       <workItem from="1498325498211" duration="6076000" />
-      <workItem from="1498414878372" duration="788000" />
+      <workItem from="1498414878372" duration="1953000" />
     </task>
     <task id="LOCAL-00001" summary="sky comentado">
       <created>1498047562203</created>
@@ -808,11 +810,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498415370832</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Boludes normales">
+      <created>1498415676921</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1498415676921</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75575000" />
+    <option name="totallyTimeSpent" value="76740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -859,7 +868,8 @@
     <MESSAGE value="luces casi andando" />
     <MESSAGE value="todas las luces ubicadas" />
     <MESSAGE value="Cargue bien las texturas y normales del pilar de la columna!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cargue bien las texturas y normales del pilar de la columna!" />
+    <MESSAGE value="Boludes normales" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boludes normales" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1367,25 +1377,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="640" column="8" lean-forward="false" selection-start-line="640" selection-start-column="8" selection-end-line="640" selection-end-column="8" />
-          <folding>
-            <marker date="1498414954636" expanded="true" signature="42:57" ph="{...}" />
-            <marker date="1498414954636" expanded="true" signature="7754:7976" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="353" column="43" lean-forward="true" selection-start-line="353" selection-start-column="43" selection-end-line="353" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1394,10 +1385,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="339" column="26" lean-forward="true" selection-start-line="339" selection-start-column="26" selection-end-line="339" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="655" column="38" lean-forward="false" selection-start-line="655" selection-start-column="38" selection-end-line="655" selection-end-column="38" />
+          <folding>
+            <marker date="1498416694322" expanded="true" signature="42:57" ph="{...}" />
+            <marker date="1498416694322" expanded="true" signature="7754:7976" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="509" column="50" lean-forward="false" selection-start-line="509" selection-start-column="50" selection-end-line="509" selection-end-column="50" />
+        <state relative-caret-position="465">
+          <caret line="535" column="10" lean-forward="false" selection-start-line="535" selection-start-column="10" selection-end-line="535" selection-end-column="10" />
           <folding />
         </state>
       </provider>

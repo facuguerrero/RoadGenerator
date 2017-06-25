@@ -342,6 +342,7 @@ class Objeto3D extends Container3D{
             }
             this.figuras.calcularBaseColumna(rows,arrayVecPos,ejeRotacion,arrayVecNor);
             //this.addColor(buffcalc, 5000,0.0,0.0,0.0);
+            buffcalc.setTextures(1);
         }
 
         if(figura == TAPA_COLUMNA){
@@ -349,6 +350,7 @@ class Objeto3D extends Container3D{
                 console.log("Para la tapa de la columna se necesitan 3 niveles");
             }
             this.figuras.calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor);
+            buffcalc.setTextures(1);
         }
 
         buffcalc.calcularSuperficieRevolucion(arrayVecPos, ejeRotacion, arrayVecNor);

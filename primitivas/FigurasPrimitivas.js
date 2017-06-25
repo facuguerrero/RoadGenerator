@@ -516,14 +516,12 @@ class FigurasPrimitivas{
         ejeRotacion.push(vec3.fromValues(0.0, 1.0, 0.0));
 
         arrayVecPos.push(vec3.fromValues(6.0,0.0,0.0));
-
         arrayVecPos.push(vec3.fromValues(5.9,0.5,0.0));
         arrayVecPos.push(vec3.fromValues(5.7,1.0,0.0));
         arrayVecPos.push(vec3.fromValues(5.3,1.4,0.0));
         arrayVecPos.push(vec3.fromValues(4.9,1.65,0.0));
         arrayVecPos.push(vec3.fromValues(4.3,1.80,0.0));
         arrayVecPos.push(vec3.fromValues(3.5,1.9,0.0));
-
         arrayVecPos.push(vec3.fromValues(2.5,2.0,0.0));
 
         arrayVecNor.push(vec3.fromValues(0.0,-0.5,-0.18));
@@ -534,6 +532,15 @@ class FigurasPrimitivas{
         arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
         arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
         arrayVecNor.push(vec3.fromValues(0.0,0.14,0.0));
+
+        /*arrayVecNor.push(vec3.fromValues(0.17,0.0,0.0) );
+        arrayVecNor.push(vec3.fromValues(0.99,0.08,0.0) );
+        arrayVecNor.push(vec3.fromValues(0.98,0.17,0.0) );
+        arrayVecNor.push(vec3.fromValues(0.96,0.25,0.0) );
+        arrayVecNor.push(vec3.fromValues(0.94,0.32,0.0) );
+        arrayVecNor.push(vec3.fromValues(0.92,0.39,0.0) );
+        arrayVecNor.push(vec3.fromValues(0.88,0.48,0.0) );
+        arrayVecNor.push(vec3.fromValues(0.78,0.62,0.0));*/
     }
 
     calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor){
