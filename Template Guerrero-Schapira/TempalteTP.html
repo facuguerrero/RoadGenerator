@@ -356,7 +356,7 @@
 
         if(vID >18.5 && vID <19.5){
 
-        auxUv.x = auxUv.x * 6.0;
+        auxUv.x = (auxUv.x * 4.0) - 0.5;
 
             if (diffuseLightWeighting > 0.0) {
                 // Calculate attenuation
@@ -523,7 +523,7 @@
                 }
             }
 
-            auxUv.y = auxUv.y * 100.0;
+            auxUv.y = auxUv.y * 1.0;
             textureColor = texture2D(autopista, vec2(auxUv.t, auxUv.s));
         }
 
@@ -1299,7 +1299,7 @@
 
             //Autopista
             gl.useProgram(streetShader);
-            loadTexture("textures/autopista.jpg", "autopista");
+            loadTexture("textures/ruta.jpg", "autopista");
 
             var location = gl.getUniformLocation(streetShader, "autopista");
             gl.uniform1i(location, 19);
