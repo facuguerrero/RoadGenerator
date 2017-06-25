@@ -274,7 +274,7 @@
 
         //variables iluminacion
         float shininess = 10.0;
-        const float spotlightCutOff = 0.7;  // en radianes
+        const float spotlightCutOff = 0.2;  // en radianes
 		const float spotLightExponent = 2.0;
 
 		// Attenuation constants
@@ -289,7 +289,7 @@
         float lambertian = max(dot(lightDir, normal), 0.0);
         float specular = 0.0;
 
-        vec3 lightColor = vec3(1.0, 1.0, 1.0);
+        vec3 lightColor = vec3(0.9, 0.9, 0.7);
 
         vec2 auxUv = vTextureCoord;
 
