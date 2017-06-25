@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="358" column="39" lean-forward="false" selection-start-line="358" selection-start-column="39" selection-end-line="358" selection-end-column="39" />
+            <state relative-caret-position="137">
+              <caret line="346" column="35" lean-forward="true" selection-start-line="346" selection-start-column="35" selection-end-line="346" selection-end-column="35" />
               <folding>
                 <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -1305,13 +1304,6 @@
       <workItem from="1498325498211" duration="6076000" />
       <workItem from="1498414878372" duration="1989000" />
     </task>
-    <task id="LOCAL-00002" summary="sky comentado">
-      <created>1498052089131</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1498052089131</updated>
-    </task>
     <task id="LOCAL-00003" summary="sky comentado">
       <created>1498053060978</created>
       <option name="number" value="00003" />
@@ -1648,11 +1640,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498416850981</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="cambio de la textura de la ruta">
+      <created>1498418907485</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1498418907486</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77465000" />
+    <option name="totallyTimeSpent" value="77828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
@@ -1710,7 +1709,8 @@
     <MESSAGE value="Cargue bien las texturas y normales del pilar de la columna!" />
     <MESSAGE value="Boludes normales" />
     <MESSAGE value="Las unicas normales que estan mal son las de la base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Las unicas normales que estan mal son las de la base" />
+    <MESSAGE value="cambio de la textura de la ruta" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambio de la textura de la ruta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2240,8 +2240,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="358" column="39" lean-forward="false" selection-start-line="358" selection-start-column="39" selection-end-line="358" selection-end-column="39" />
+        <state relative-caret-position="137">
+          <caret line="346" column="35" lean-forward="true" selection-start-line="346" selection-start-column="35" selection-end-line="346" selection-end-column="35" />
           <folding>
             <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
