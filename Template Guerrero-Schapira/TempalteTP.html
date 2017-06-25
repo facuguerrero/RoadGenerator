@@ -157,8 +157,17 @@
     uniform vec3 uLightPosition;
     uniform vec3 uDirectionalColor;
 
-    uniform vec3 uFarol1TransformedPosition;
-    uniform vec3 uFarol1TransformedDirection;
+    uniform vec3 uFarol1Position;
+    uniform vec3 uFarol2Position;
+    uniform vec3 uFarol3Position;
+    uniform vec3 uFarol4Position;
+    uniform vec3 uFarol5Position;
+    uniform vec3 uFarol6Position;
+    uniform vec3 uFarol7Position;
+    uniform vec3 uFarol8Position;
+    uniform vec3 uFarol9Position;
+    uniform vec3 uFarol10Position;
+    uniform vec3 uFarol11Position;
 
     uniform bool uUseLighting;
 
@@ -170,14 +179,26 @@
     varying vec3 vNormal;
     varying vec3 vLightDir;
     varying vec3 vViewDir;
-    varying vec3 vSpotLight1;
     varying vec3 vSpotLightDir1;
+    varying vec3 vSpotLight1;
+    varying vec3 vSpotLight2;
+    varying vec3 vSpotLight3;
+    varying vec3 vSpotLight4;
+    varying vec3 vSpotLight5;
+    varying vec3 vSpotLight6;
+    varying vec3 vSpotLight7;
+    varying vec3 vSpotLight8;
+    varying vec3 vSpotLight9;
+    varying vec3 vSpotLight10;
+    varying vec3 vSpotLight11;
+
 
 
     void main(void) {
 
 		// Transformamos al v�rtice al espacio de la c�mara
 		vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
+		vec4 pos_view = uModelMatrix * vec4(aVertexPosition, 1.0);
 
 		// Transformamos al v�rtice al espacio de la proyecci�n
         gl_Position = uPMatrix * pos_camera_view;
@@ -189,12 +210,22 @@
         vTextureCoord = aTextureCoord;
 
 
-        vec3 pos = vec3(pos_camera_view) / pos_camera_view.w;
+        vec3 pos = vec3(pos_view) / pos_view.w;
         vNormal = normalize(uNMatrix * aVertexNormal);
         vLightDir = uLightPosition - pos;
         vViewDir = normalize(-pos);
-        vSpotLight1 = vec3(0.0, 0.0, 0.0) + pos;
-        vSpotLightDir1 = vec3(0.0, 0.0, 0.0) + normalize(-pos);
+        vSpotLight1 = uFarol1Position - pos;
+        vSpotLight2 = uFarol2Position - pos;
+        vSpotLight3 = uFarol3Position - pos;
+        vSpotLight4 = uFarol4Position - pos;
+        vSpotLight5 = uFarol5Position - pos;
+        vSpotLight6 = uFarol6Position - pos;
+        vSpotLight7 = uFarol7Position - pos;
+        vSpotLight8 = uFarol8Position - pos;
+        vSpotLight9 = uFarol9Position - pos;
+        vSpotLight10 = uFarol10Position - pos;
+        vSpotLight11 = uFarol11Position - pos;
+        vSpotLightDir1 = vec3(0.0, -1.0, 0.0);
     }
 
     </script>
@@ -223,8 +254,18 @@
     varying vec3 vNormal;
     varying vec3 vLightDir;
     varying vec3 vViewDir;
-    varying vec3 vSpotLight1;
     varying vec3 vSpotLightDir1;
+    varying vec3 vSpotLight1;
+    varying vec3 vSpotLight2;
+    varying vec3 vSpotLight3;
+    varying vec3 vSpotLight4;
+    varying vec3 vSpotLight5;
+    varying vec3 vSpotLight6;
+    varying vec3 vSpotLight7;
+    varying vec3 vSpotLight8;
+    varying vec3 vSpotLight9;
+    varying vec3 vSpotLight10;
+    varying vec3 vSpotLight11;
 
     varying float vID;
 
@@ -246,11 +287,27 @@
         vec3 viewDir = vViewDir;
 
         float lambertian = max(dot(lightDir, normal), 0.0);
-        float specular = 10.0;
+        float specular = 0.0;
 
         vec3 lightColor = vec3(1.0, 1.0, 1.0);
 
         vec2 auxUv = vTextureCoord;
+
+        // Calculos spotlights
+	    vec3 vectorToLightSource = vSpotLight1;
+	    vec3 vectorToLightSource2 = vSpotLight2;
+	    vec3 vectorToLightSource3 = vSpotLight3;
+	    vec3 vectorToLightSource4 = vSpotLight4;
+	    vec3 vectorToLightSource5 = vSpotLight5;
+	    vec3 vectorToLightSource6 = vSpotLight6;
+	    vec3 vectorToLightSource7 = vSpotLight7;
+	    vec3 vectorToLightSource8 = vSpotLight8;
+	    vec3 vectorToLightSource9 = vSpotLight9;
+	    vec3 vectorToLightSource10 = vSpotLight10;
+	    vec3 vectorToLightSource11 = vSpotLight11;
+	    float diffuseLightWeighting = max(dot(normal, vectorToLightSource), 0.0);
+
+		vec3 spotLightIntensity = vec3(0.0,0.0,0.0);
 
         if(lambertian > 0.0) {
             vec3 reflectDir = reflect(-lightDir, normal);
@@ -277,8 +334,24 @@
         }
 
         if(vID >18.5 && vID <19.5){
-            auxUv.x = auxUv.x * 10.0;
-            auxUv.y = auxUv.y * 10.0;
+
+        auxUv.x = auxUv.x * 6.0;
+
+            if (diffuseLightWeighting > 0.0) {
+                // Calculate attenuation
+                float distance = length(vectorToLightSource);
+                float att = 1.0/(constantAtt+linearAtt * distance + quadraticAtt * distance * distance);
+                float spotEffect = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource));
+
+                if (spotEffect > spotlightCutOff) {
+                    spotEffect = pow(spotEffect, spotLightExponent);
+                    vec3 reflectionVector =	normalize(reflect(-vectorToLightSource,	normal));
+                    float rdotv = max(dot(reflectionVector, vViewDir), 0.0);
+                    float specularLightWeighting = pow(rdotv, shininess);
+                    spotLightIntensity = spotEffect * att * (lightColor *	diffuseLightWeighting + lightColor * specularLightWeighting);
+                }
+            }
+            auxUv.y = auxUv.y * 100.0;
             textureColor = texture2D(autopista, vec2(auxUv.t, auxUv.s));
         }
 
@@ -287,6 +360,22 @@
         }
 
         if(vID >20.5 && vID <21.5){
+
+            if (diffuseLightWeighting > 0.0) {
+                // Calculate attenuation
+                float distance = length(vectorToLightSource);
+                float att = 1.0/(constantAtt+linearAtt * distance + quadraticAtt * distance * distance);
+                float spotEffect = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource));
+
+                if (spotEffect > spotlightCutOff) {
+                    spotEffect = pow(spotEffect, spotLightExponent);
+                    vec3 reflectionVector =	normalize(reflect(-vectorToLightSource,	normal));
+                    float rdotv = max(dot(reflectionVector, vViewDir), 0.0);
+                    float specularLightWeighting = pow(rdotv, shininess);
+                    spotLightIntensity = spotEffect * att * (lightColor *	diffuseLightWeighting + lightColor * specularLightWeighting);
+                }
+            }
+
             //auxUv.x = auxUv.x;
             auxUv.y = auxUv.y*10.0;
             textureColor = texture2D(concreto, vec2(auxUv.s, auxUv.t));
@@ -297,27 +386,6 @@
             //auxUv.y = auxUv.y*10.0;
             textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
         }
-
-        // Calculos spotlight 1
-		vec3 vectorToLightSource = vSpotLight1;
-		float diffuseLightWeighting = max(dot(normal, vectorToLightSource), 0.0);
-
-		vec3 spotLightIntensity = vec3(1.0,1.0,1.0);
-
-		if (diffuseLightWeighting > 0.0) {
-			// Calculate attenuation
-			float distance = length(vectorToLightSource);
-			float att = 1.0/(constantAtt+linearAtt * distance + quadraticAtt * distance * distance);
-			float spotEffect = dot(normalize(vSpotLightDir1), normalize(-vectorToLightSource));
-
-			if (spotEffect > spotlightCutOff) {
-				spotEffect = pow(spotEffect, spotLightExponent);
-				vec3 reflectionVector =	normalize(reflect(-vectorToLightSource,	normal));
-				float rdotv = max(dot(reflectionVector, vViewDir), 0.0);
-				float specularLightWeighting = pow(rdotv, shininess);
-				spotLightIntensity = spotEffect * att * (lightColor *	diffuseLightWeighting + lightColor * specularLightWeighting);
-			}
-		}
 
         vec3 lightIntensity =  uAmbientColor + spotLightIntensity + lambertian*uDirectionalColor + specular*uDirectionalColor ;
         vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
@@ -608,6 +676,7 @@
     <script type="text/javascript">
 
         var gl;
+        var farolesPos = [];
         var glTextures = {};
 
         function initGL(canvas) {
@@ -747,10 +816,22 @@
             streetShader.ambientColorUniform = gl.getUniformLocation(streetShader, "uAmbientColor");
             streetShader.lightingDirectionUniform = gl.getUniformLocation(streetShader, "uLightPosition");
             streetShader.directionalColorUniform = gl.getUniformLocation(streetShader, "uDirectionalColor");
-            streetShader.farol1Position = gl.getUniformLocation(streetShader, "uFarol1TransformedPosition");
-            streetShader.farol1Direction = gl.getUniformLocation(streetShader, "uFarol1TransformedDirection");
 
             idStreet = gl.getAttribLocation(streetShader, "aID");
+
+            farolesPos.push("uFarol1Position");
+            farolesPos.push("uFarol2Position");
+            farolesPos.push("uFarol3Position");
+            farolesPos.push("uFarol4Position");
+            farolesPos.push("uFarol5Position");
+            farolesPos.push("uFarol6Position");
+            farolesPos.push("uFarol7Position");
+            farolesPos.push("uFarol8Position");
+            farolesPos.push("uFarol9Position");
+            farolesPos.push("uFarol10Position");
+            farolesPos.push("uFarol11Position");
+
+
         }
 
         function initColoredShaders() {
@@ -1041,7 +1122,7 @@
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
             ///Dibujamos las figuras
-            escena.setupLighting(vec3.fromValues(-1000.0, 20.0, 1000.0), vec3.fromValues(0.5, 0.5, 0.5), vec3.fromValues(0.05, 0.05, 0.05));
+            escena.setupLighting(vec3.fromValues(-1000.0, 20.0, 1000.0), vec3.fromValues(0.8, 0.8, 0.8), vec3.fromValues(0.05, 0.05, 0.05));
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
 

@@ -1,6 +1,7 @@
 class ObjetosFactory {
 
     constructor() {
+        this.countFaroles = 0;
         this.numB=2.0;
         this.countEdif = 2.0;
         this.tapasEdificios = [];
@@ -50,7 +51,7 @@ class ObjetosFactory {
 
         esfera.setBufferCreator(buffcalc);
         esfera.build();
-        esfera.setType("sky",1000.0);
+        esfera.setType("sky",null);
 
         return esfera;
     }
@@ -110,6 +111,13 @@ class ObjetosFactory {
             farol.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
             if (sentido == -1) {
                 farol.rotate(Math.PI, 0.0, 1.0, 0.0);
+            }
+
+            if(this.countFaroles < 11) {
+                var pos = gl.getUniformLocation(streetShader, farolesPos[this.countFaroles]);
+                gl.useProgram(streetShader);
+                gl.uniform3fv(pos, farol.getPosition());
+                this.countFaroles++;
             }
 
             ruta.add(farol);
@@ -220,8 +228,7 @@ class ObjetosFactory {
         base.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapa);
         this.addColor(base,0.0,0.0,1.0);
         //linea provisoria
-        base.setType("calle", 500.0, null, true);
-        base.setShaderProgram(streetShader);
+        //base.setShaderProgram(streetShader);
 
         edificio.add(base);
 
@@ -237,11 +244,9 @@ class ObjetosFactory {
             baseAbajo.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapaAbajo);
             edificio.add(baseAbajo);
             //Linea provisoria
-            baseAbajo.setType("calle", 500.0, null, true);
             baseAbajo.setShaderProgram(streetShader);
         }
         //linea provisoria
-        edificio.setType("calle", 500.0, null, true);
         edificio.setShaderProgram(streetShader);
 
         edificio.calcularSuperficieBarrido("estructura_luz", 2, 5, arrayMatT, puntosEdificio);
