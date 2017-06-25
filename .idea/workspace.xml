@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" afterPath="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,11 +115,11 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="655" column="38" lean-forward="false" selection-start-line="655" selection-start-column="38" selection-end-line="655" selection-end-column="38" />
+            <state relative-caret-position="301">
+              <caret line="647" column="31" lean-forward="false" selection-start-line="647" selection-start-column="31" selection-end-line="647" selection-end-column="31" />
               <folding>
-                <marker date="1498416694322" expanded="true" signature="42:57" ph="{...}" />
-                <marker date="1498416694322" expanded="true" signature="7754:7976" ph="{...}" />
+                <marker date="1498416980319" expanded="true" signature="42:57" ph="{...}" />
+                <marker date="1498416980319" expanded="true" signature="7754:7976" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -146,8 +148,8 @@
       <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="535" column="10" lean-forward="false" selection-start-line="535" selection-start-column="10" selection-end-line="535" selection-end-column="10" />
+            <state relative-caret-position="259">
+              <caret line="527" column="57" lean-forward="false" selection-start-line="527" selection-start-column="57" selection-end-line="527" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -227,8 +229,8 @@
         <option value="$PROJECT_DIR$/Container3d/Container3D.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
       </list>
     </option>
@@ -388,9 +390,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/textures/carSide.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/textures/carTop.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/textures/rueda.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/textures/ruta.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/textures/ruta_normal.jpg</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -581,14 +582,7 @@
       <workItem from="1498245920373" duration="3033000" />
       <workItem from="1498255006646" duration="391000" />
       <workItem from="1498325498211" duration="6076000" />
-      <workItem from="1498414878372" duration="1989000" />
-    </task>
-    <task id="LOCAL-00002" summary="sky comentado">
-      <created>1498052089131</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1498052089131</updated>
+      <workItem from="1498414878372" duration="4293000" />
     </task>
     <task id="LOCAL-00003" summary="sky comentado">
       <created>1498053060978</created>
@@ -926,11 +920,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498416850981</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Las unicas normales que estan mal son las de la base">
+      <created>1498416872706</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1498416872706</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76776000" />
+    <option name="totallyTimeSpent" value="79080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -1505,19 +1506,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="655" column="38" lean-forward="false" selection-start-line="655" selection-start-column="38" selection-end-line="655" selection-end-column="38" />
+        <state relative-caret-position="301">
+          <caret line="647" column="31" lean-forward="false" selection-start-line="647" selection-start-column="31" selection-end-line="647" selection-end-column="31" />
           <folding>
-            <marker date="1498416694322" expanded="true" signature="42:57" ph="{...}" />
-            <marker date="1498416694322" expanded="true" signature="7754:7976" ph="{...}" />
+            <marker date="1498416980319" expanded="true" signature="42:57" ph="{...}" />
+            <marker date="1498416980319" expanded="true" signature="7754:7976" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="535" column="10" lean-forward="false" selection-start-line="535" selection-start-column="10" selection-end-line="535" selection-end-column="10" />
+        <state relative-caret-position="259">
+          <caret line="527" column="57" lean-forward="false" selection-start-line="527" selection-start-column="57" selection-end-line="527" selection-end-column="57" />
           <folding />
         </state>
       </provider>

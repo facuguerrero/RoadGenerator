@@ -645,7 +645,7 @@ class ObjetosFactory {
         var base = new Objeto3D();
         base.calcularSuperficieRevolucion("base_columna",8,cantidad);
         //base.rotate(-Math.PI/2,1.0,0.0,0.0);
-        base.setType("concreto",21.0);
+        base.setType("poste",19.0);
         columna.add(base);
 
         /*Creo la tapa de la columna*/
