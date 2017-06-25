@@ -1480,7 +1480,7 @@
 
             escena.draw(model_matrix_escene, false);
             if(frameAutos > 10 - step) {
-                autosAnimados.updateAutos(step);
+                //autosAnimados.updateAutos(step);
                 frameAutos = 0;
             }
             frameAutos++;
@@ -1535,6 +1535,9 @@
             var largoCalle=20.0;
             var manzana = 20.0;
             escena=factory.createEscene((n-1)*anchoCalle + (n)*manzana, true);
+
+            var car = factory.createCar();
+            escena.add(car);
 
             this.crearRuta(escena);
             this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
