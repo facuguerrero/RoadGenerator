@@ -834,9 +834,9 @@ class ObjetosFactory {
         buf.colorBuffer = rueda.bufferCreator.colorBuffer;
         buf.posBuffer = pos;
         buf.indexBuffer = [1,0,2,2,0,3,3,0,4,4,0,5,5,0,6,6,0,7,7,0,8,8,0,9];
-        buf.textureBuffer1 =[1.0,0.5,  0.93,0.735,  0.73,0.88,  0.4,0.88,
-                            0.1,0.735,  0.0,0.5,  0.1,0.27,  0.4,0.12,
-                            0.73,0.12,  0.93,0.27,  1.0,0.5];
+        buf.textureBuffer1 =[1.0,0.5,  0.9,0.735,  0.65,0.93,  0.4,0.93,
+                            0.1,0.735,  0.0,0.5,  0.1,0.265,  0.4,0.07,
+                            0.65,0.07,  0.9,0.265,  1.0,0.5];
 
         buf.setBoolTexture1();
         tapa1.setBufferCreator(buf);

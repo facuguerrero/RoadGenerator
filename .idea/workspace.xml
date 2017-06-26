@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
+    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="Tengo que acomodar la textura de la rueda">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="173">
@@ -116,14 +114,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="848" column="8" lean-forward="true" selection-start-line="848" selection-start-column="8" selection-end-line="848" selection-end-column="8" />
+            <state relative-caret-position="333">
+              <caret line="837" column="59" lean-forward="false" selection-start-line="837" selection-start-column="59" selection-end-line="837" selection-end-column="59" />
               <folding>
-                <marker date="1498484137225" expanded="true" signature="42:57" ph="{...}" />
-                <marker date="1498484137225" expanded="true" signature="7754:7976" ph="{...}" />
+                <marker date="1498484733321" expanded="true" signature="42:57" ph="{...}" />
+                <marker date="1498484733321" expanded="true" signature="7754:7976" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -214,8 +212,8 @@
         <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
   </component>
@@ -569,13 +567,6 @@
       <workItem from="1498414878372" duration="15972000" />
       <workItem from="1498445231105" duration="346000" />
     </task>
-    <task id="LOCAL-00007" summary="sky comentado">
-      <created>1498059289629</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1498059289629</updated>
-    </task>
     <task id="LOCAL-00008" summary="sky comentado">
       <created>1498059712532</created>
       <option name="number" value="00008" />
@@ -912,11 +903,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498481480544</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Tengo que acomodar la textura de la rueda">
+      <created>1498484314760</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1498484314761</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98929000" />
+    <option name="totallyTimeSpent" value="99418000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -924,6 +922,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24804382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -978,7 +977,8 @@
     <MESSAGE value="Nuevo Auto" />
     <MESSAGE value="arreglado lo del boton del auto, las normales no andan" />
     <MESSAGE value="Auto acomodado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auto acomodado" />
+    <MESSAGE value="Tengo que acomodar la textura de la rueda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tengo que acomodar la textura de la rueda" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1423,17 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="848" column="8" lean-forward="true" selection-start-line="848" selection-start-column="8" selection-end-line="848" selection-end-column="8" />
-          <folding>
-            <marker date="1498484137225" expanded="true" signature="42:57" ph="{...}" />
-            <marker date="1498484137225" expanded="true" signature="7754:7976" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1524,6 +1513,17 @@
             <marker date="1498484282870" expanded="true" signature="42874:43854" ph="{...}" />
             <marker date="1498484282870" expanded="true" signature="43009:43057" ph="{...}" />
             <marker date="1498484282870" expanded="true" signature="43096:43132" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="837" column="59" lean-forward="false" selection-start-line="837" selection-start-column="59" selection-end-line="837" selection-end-column="59" />
+          <folding>
+            <marker date="1498484733321" expanded="true" signature="42:57" ph="{...}" />
+            <marker date="1498484733321" expanded="true" signature="7754:7976" ph="{...}" />
           </folding>
         </state>
       </provider>
