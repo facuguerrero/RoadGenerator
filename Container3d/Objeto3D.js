@@ -549,7 +549,7 @@ class Objeto3D extends Container3D{
         }
 
 
-        if(this.bufferCreator.normalBuffer.length != this.bufferCreator.tangentBuffer.length && this.objectType){
+        if(this.bufferCreator.normalBuffer.length != this.bufferCreator.tangentBuffer.length){
             console.log(this.objectType);
         }
 

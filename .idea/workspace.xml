@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="551" column="111" lean-forward="false" selection-start-line="551" selection-start-column="111" selection-end-line="551" selection-end-column="111" />
+            <state relative-caret-position="256">
+              <caret line="551" column="92" lean-forward="false" selection-start-line="551" selection-start-column="92" selection-end-line="551" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -104,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="439">
               <caret line="297" column="33" lean-forward="false" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
               <folding />
             </state>
@@ -189,9 +187,9 @@
         <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
-        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
         <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
+        <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
       </list>
     </option>
   </component>
@@ -349,14 +347,7 @@
       <workItem from="1498325498211" duration="6076000" />
       <workItem from="1498414878372" duration="15972000" />
       <workItem from="1498445231105" duration="346000" />
-      <workItem from="1498510896236" duration="1120000" />
-    </task>
-    <task id="LOCAL-00020" summary="ShaderPrograms">
-      <created>1498164804896</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1498164804896</updated>
+      <workItem from="1498510896236" duration="1457000" />
     </task>
     <task id="LOCAL-00021" summary="ShaderPrograms">
       <created>1498164935170</created>
@@ -694,11 +685,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498508481167</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Tangentes">
+      <created>1498512040435</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1498512040435</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115732000" />
+    <option name="totallyTimeSpent" value="116069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -730,7 +728,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pos cam arreglado" />
     <MESSAGE value="ShaderPrograms" />
     <MESSAGE value="cambio de la posicion inicial" />
     <MESSAGE value="imagen skybox" />
@@ -755,7 +752,8 @@
     <MESSAGE value="NO se de donde salio ese error" />
     <MESSAGE value="Arregle shader" />
     <MESSAGE value="cambio id calle" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio id calle" />
+    <MESSAGE value="Tangentes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tangentes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1192,14 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="551" column="111" lean-forward="false" selection-start-line="551" selection-start-column="111" selection-end-line="551" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1210,8 +1200,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
+        <state relative-caret-position="439">
           <caret line="297" column="33" lean-forward="false" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="551" column="92" lean-forward="false" selection-start-line="551" selection-start-column="92" selection-end-line="551" selection-end-column="92" />
           <folding />
         </state>
       </provider>
