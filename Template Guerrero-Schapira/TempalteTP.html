@@ -271,7 +271,7 @@
     varying vec3 vLightWeighting;
 
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
-    uniform sampler2D street;
+    //uniform sampler2D street;
     uniform sampler2D esquina;
     uniform sampler2D vereda;
     uniform sampler2D autopista;
@@ -367,9 +367,9 @@
             //llenar textura farol
         }
 
-        if(vID >= 0.0 && vID < 0.5){
+        /*if(vID >= 0.0 && vID < 0.5){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
+        }*/
 
         if(vID > 0.5 && vID < 1.5){
            textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
@@ -1151,7 +1151,6 @@
         //variables iluminacion
         float shininess = 1.0;
 
-        /
 		// Attenuation constants
 		const float constantAtt = 1.0;
 		const float linearAtt = 0.0001;
@@ -1311,43 +1310,43 @@
 
         function initCityShaders() {
 
-            var fragmentShader = getShader("fs-buildingTop");
-            var vertexShader = getShader("vs-buildingTop");
+            var fragmentShader = getShader("fs-city");
+            var vertexShader = getShader("vs-city");
 
-            buildingShaders = gl.createProgram();
-            gl.attachShader(buildingShaders, vertexShader);
-            gl.attachShader(buildingShaders, fragmentShader);
-            gl.linkProgram(buildingShaders);
+            cityShader = gl.createProgram();
+            gl.attachShader(cityShader, fragmentShader);
+            gl.attachShader(cityShader, vertexShader);
+            gl.linkProgram(cityShader);
 
-            if (!gl.getProgramParameter(buildingShaders, gl.LINK_STATUS)) {
+            if (!gl.getProgramParameter(cityShader, gl.LINK_STATUS)) {
                 alert("Could not initialise shaders");
             }
-            gl.useProgram(buildingShaders);
+            gl.useProgram(cityShader);
 
-            buildingShaders.vertexPositionAttribute = gl.getAttribLocation(buildingShaders, "aVertexPosition");
-            gl.enableVertexAttribArray(buildingShaders.vertexPositionAttribute);
+            cityShader.vertexPositionAttribute = gl.getAttribLocation(cityShader, "aVertexPosition");
+            gl.enableVertexAttribArray(cityShader.vertexPositionAttribute);
 
-            buildingShaders.vertexNormalAttribute = gl.getAttribLocation(buildingShaders, "aVertexNormal");
-            gl.enableVertexAttribArray(buildingShaders.vertexNormalAttribute);
+            cityShader.vertexNormalAttribute = gl.getAttribLocation(cityShader, "aVertexNormal");
+            gl.enableVertexAttribArray(cityShader.vertexNormalAttribute);
 
-            buildingShaders.textureCoordAttribute = gl.getAttribLocation(buildingShaders, "aTextureCoord");
-            gl.enableVertexAttribArray(buildingShaders.textureCoordAttribute);
+            cityShader.textureCoordAttribute = gl.getAttribLocation(cityShader, "aTextureCoord");
+            gl.enableVertexAttribArray(cityShader.textureCoordAttribute);
 
-//            buildingShaders.vertexTangentAttribute = gl.getAttribLocation(buildingShaders, "aVertexTangent");
-//            gl.enableVertexAttribArray(buildingShaders.vertexTangentAttribute);
+//            cityShader.vertexTangentAttribute = gl.getAttribLocation(cityShader, "aVertexTangent");
+//            gl.enableVertexAttribArray(cityShader.vertexTangentAttribute);
 
-            buildingShaders.pMatrixUniform = gl.getUniformLocation(buildingShaders, "uPMatrix");
-            buildingShaders.ViewMatrixUniform = gl.getUniformLocation(buildingShaders, "uViewMatrix");
-            buildingShaders.ModelMatrixUniform = gl.getUniformLocation(buildingShaders, "uModelMatrix");
-            buildingShaders.nMatrixUniform = gl.getUniformLocation(buildingShaders, "uNMatrix");
-            buildingShaders.useLightingUniform = gl.getUniformLocation(buildingShaders, "uUseLighting");
-            buildingShaders.ambientColorUniform = gl.getUniformLocation(buildingShaders, "uAmbientColor");
-            buildingShaders.lightingDirectionUniform = gl.getUniformLocation(buildingShaders, "uLightPosition");
-            buildingShaders.directionalColorUniform = gl.getUniformLocation(buildingShaders, "uDirectionalColor");
-            buildingShaders.shininess = gl.getUniformLocation(buildingShaders, "uShininess");
-            buildingShaders.usingNormalMap = gl.getUniformLocation(buildingShaders, "uUsingNormalMap");
+            cityShader.pMatrixUniform = gl.getUniformLocation(cityShader, "uPMatrix");
+            cityShader.ViewMatrixUniform = gl.getUniformLocation(cityShader, "uViewMatrix");
+            cityShader.ModelMatrixUniform = gl.getUniformLocation(cityShader, "uModelMatrix");
+            cityShader.nMatrixUniform = gl.getUniformLocation(cityShader, "uNMatrix");
+            cityShader.useLightingUniform = gl.getUniformLocation(cityShader, "uUseLighting");
+            cityShader.ambientColorUniform = gl.getUniformLocation(cityShader, "uAmbientColor");
+            cityShader.lightingDirectionUniform = gl.getUniformLocation(cityShader, "uLightPosition");
+            cityShader.directionalColorUniform = gl.getUniformLocation(cityShader, "uDirectionalColor");
+            cityShader.shininess = gl.getUniformLocation(cityShader, "uShininess");
+            cityShader.usingNormalMap = gl.getUniformLocation(cityShader, "uUsingNormalMap");
 
-            idBuilding = gl.getAttribLocation(buildingShaders, "aID");
+            idCity = gl.getAttribLocation(cityShader, "aID");
 
         }
 
@@ -1490,10 +1489,10 @@
         function initTextures(){
 
             //se cargan las texturas de la callee
-            gl.useProgram(streetShader);
+            gl.useProgram(cityShader);
             loadTexture("textures/calle.jpg", "street");
 
-            var location = gl.getUniformLocation(streetShader, "street");
+            var location = gl.getUniformLocation(cityShader, "street");
             gl.uniform1i(location, 0);//0 ya que es la primer textura
             gl.activeTexture(gl.TEXTURE0);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["street"]);
@@ -1706,6 +1705,7 @@
         //variables de las id de texturas
         var idStreet;
         var idBuilding;
+        var idCity;
 
 
         var mouse = null;
@@ -1754,7 +1754,7 @@
 
             escena.draw(model_matrix_escene, false);
             if(frameAutos > 10 - step) {
-                //autosAnimados.updateAutos(step);
+                autosAnimados.updateAutos(step);
                 frameAutos = 0;
             }
             frameAutos++;
@@ -1772,6 +1772,7 @@
             initColoredShaders();
             initStreetShaders();
             initBuildingTopShaders();
+            initCityShaders();
             initSkySphereShaders();
             initTextures();
 

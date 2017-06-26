@@ -407,7 +407,7 @@ class Objeto3D extends Container3D{
         this.modified = false;
 
         if (this.objectType == CALLE){
-            this.setShaderProgram(streetShader);
+            this.setShaderProgram(cityShader);
             this.useTangent = false;
         }
         else if (this.objectType == EDIFICIO){
@@ -489,7 +489,7 @@ class Objeto3D extends Container3D{
 
         //a continuacion se setea todo dependiendo del id
         if(this.objectType == CALLE){
-            gl.vertexAttrib1f(idStreet, this.id);
+            gl.vertexAttrib1f(idCity, this.id);
         }
         if(this.objectType == EDIFICIO){
             gl.vertexAttrib1f(idBuilding, this.id);

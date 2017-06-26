@@ -326,7 +326,7 @@ class ObjetosFactory {
         var calle = new Objeto3D();
 
         calle.setType(type,id);
-        calle.setShaderProgram(streetShader);
+        calle.setShaderProgram(cityShader);
 
         var arrayMatT = [];
         var matt = mat3.create();
