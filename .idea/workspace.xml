@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -101,13 +100,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="122">
+              <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
               <folding>
+                <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createMediaRuta#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createFarol#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createLuzFarol#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createBuilding#0;n#ObjetosFactory#0" expanded="false" />
@@ -123,10 +124,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2220">
+            <state relative-caret-position="-2130">
               <caret line="395" column="8" lean-forward="false" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
               <folding />
             </state>
@@ -219,8 +220,8 @@
         <option value="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
         <option value="$PROJECT_DIR$/handlers/CameraHandler.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
   </component>
@@ -378,14 +379,7 @@
       <workItem from="1498325498211" duration="6076000" />
       <workItem from="1498414878372" duration="15972000" />
       <workItem from="1498445231105" duration="346000" />
-      <workItem from="1498510896236" duration="8112000" />
-    </task>
-    <task id="LOCAL-00024" summary="ShaderPrograms">
-      <created>1498177562506</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1498177562506</updated>
+      <workItem from="1498510896236" duration="8439000" />
     </task>
     <task id="LOCAL-00025" summary="cambio de la posicion inicial">
       <created>1498178280775</created>
@@ -723,16 +717,24 @@
       <option name="project" value="LOCAL" />
       <updated>1498517089130</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Boludeces">
+      <created>1498519026597</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1498519026597</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122724000" />
+    <option name="totallyTimeSpent" value="123051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24804382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24804382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -758,7 +760,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="iluminacion directa en el street shader" />
     <MESSAGE value="Esfera acomodada" />
     <MESSAGE value="VAMO VEREDA" />
     <MESSAGE value="texturas pasto" />
@@ -783,7 +784,8 @@
     <MESSAGE value="Todos tienen tangente" />
     <MESSAGE value="Pelotudes" />
     <MESSAGE value="Varios cambios, de 3u --&gt; 2u" />
-    <option name="LAST_COMMIT_MESSAGE" value="Varios cambios, de 3u --&gt; 2u" />
+    <MESSAGE value="Boludeces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boludeces" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1285,12 +1287,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2130">
+          <caret line="395" column="8" lean-forward="false" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        <state relative-caret-position="122">
+          <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createMediaRuta#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createFarol#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createLuzFarol#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createBuilding#0;n#ObjetosFactory#0" expanded="false" />
@@ -1302,14 +1314,6 @@
             <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createManzanaP#0;n#ObjetosFactory#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2220">
-          <caret line="395" column="8" lean-forward="false" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>

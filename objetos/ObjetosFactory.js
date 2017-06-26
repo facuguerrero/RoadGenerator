@@ -9,7 +9,6 @@ class ObjetosFactory {
         //
     }
 
-
     createSky(){
 
         var esfera = new Objeto3D();
@@ -26,6 +25,7 @@ class ObjetosFactory {
     createRuta(puntos) {
 
         var ruta = new Objeto3D();
+        //ruta.setType("ruta", 123);
 
         var curvaRuta = new CuadraticBSpline(puntos.length, 0.1, true);
 
@@ -38,7 +38,7 @@ class ObjetosFactory {
         var arrayMatT = [];
         arrayMatT = curvaRuta.getArrayMatT();
 
-        var buffcalc = new BufferCalculator(vecPos.length, 9);
+        var buffcalc = new BufferCalculator(0, 0);
         ruta.setBufferCreator(buffcalc);
         ruta.build();
 
