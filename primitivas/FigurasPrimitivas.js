@@ -342,7 +342,7 @@ class FigurasPrimitivas{
         vec3.normalize(vecNorm1, vecNorm1);
         arrayVecNOR.push(vecNorm1);
 
-        this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR);
+        //this.createBaseRueda(x1,y1,r,vertices,arrayVecNOR);
 
         /*vertices.push(vec3.fromValues(x2, y1, 0.0));
         var vecNorm2 = vec3.fromValues(0.0, -1.0, 0.0);
@@ -350,7 +350,7 @@ class FigurasPrimitivas{
         arrayVecNOR.push(vecNorm2);
         */
 
-        this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR);
+        //this.createBaseRueda(x2,y1,r,vertices,arrayVecNOR);
 
         vertices.push(vec3.fromValues(x3, y1, 0.0));
         var vecNorm3 = vec3.fromValues(1.0, -1.0, 0.0);

@@ -380,14 +380,15 @@ class ObjetosFactory {
         //Creamos la carroceria del auto
         var carroceria = new Objeto3D();
 
-        carroceria.calcularSuperficieBarrido("carroceria", 2, 21, arrayMat, puntosCarroceria);
+        carroceria.calcularSuperficieBarrido("carroceria", 2, 9, arrayMat, puntosCarroceria);
         auto.add(carroceria);
 
-        this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria);
+        this.addPuertas(carroceria,auto, 9);
 
-        this.addRuedas(puntosCarroceria,arrayMat, auto);
-
-        //this.addTecho(puntosCarroceria,arrayMat,carroceria);
+        var puntos = [];
+        puntos.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntos.push(vec3.fromValues(0.0, 0.0, 0.5));
+        this.addRuedas(puntos,arrayMat, auto);
 
         return auto;
     }
@@ -709,15 +710,16 @@ class ObjetosFactory {
         return alturas;
     }
 
-    addPuertas(carroceria,auto,arrayMat,puntosCarroceria){
+    addPuertas(carroceria,auto, rows){
         var puerta1 = new Objeto3D();
-        var buf = new BufferCalculator(2,21);
-        /*Seteo los buffers */
+        var buf = new BufferCalculator(2,rows);
+
+        /*Creo los buffers necesarios para llenar las puertas */
         var norm1 = [];
         var norm2 = [];
         var pos = [];
 
-        for (var i =0; i<21;i++){
+        for (var i =0; i<rows;i++){
             norm1.push(-1.0);
             norm1.push(0.0);
             norm1.push(0.0);
@@ -731,71 +733,75 @@ class ObjetosFactory {
             pos.push(carroceria.bufferCreator.posBuffer[i*3 +2] );
         }
 
-        var tex = [ 1.0,0.0,  0.93,0.0,  0.88,0.13,  0.84,0.15,  0.8,0.15,  0.75,0.13, 0.68,0.0,
-            0.25,0.0,  0.199,0.05,  0.195,0.1,  0.193,0.1,  0.19,0.05, 0.14,0.0,
-            0.0,0.0,  0.0,0.33,  0.2,0.6,  0.5,1.0,  0.7,1.0,  0.8,0.9,  1.0,0.4,  1.0,0.0];
-        /*
-         [ 0.0,0.0,  0.07,0.0,  0.12,0.13,  0.16,0.15,  0.2,0.15,  0.25,0.13, 0.3,0.0,
-         0.7,0.0,  0.75,0.05,  0.79,0.1,  0.80,0.1,  0.81,0.05, 0.86,0.0,
-         1.0,0.0,  1.0,0.33,  0.8,0.6,  0.5,1.0,  0.3,1.0,  0.2,0.9,  0.0,0.4,  0.0,0.0];
-        */
+        var tex = [ 1.0,0.0, 0.0,0.0,  0.0,0.33,  0.28,0.6,  0.4,0.9,  0.7,0.95,  0.8,0.8,  1.0,0.5,  1.0,0.0];
+
+
+        /*Seteamos los buffers*/
+        buf.normalBuffer = norm1;
+        buf.posBuffer = pos;
+        buf.textureBuffer1 = tex;
+        buf.indexBuffer = [0,1,2, 2,0,3, 3,0,7, 7,3,6, 6,3,4, 4,5,6];
+        puerta1.setBufferCreator(buf);
 
         buf.setTextures(1);
-        buf.textureBuffer1 = tex;
-        buf.normalBuffer = norm1;
-        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
-        buf.posBuffer = pos;
-        puerta1.setBufferCreator(buf);
         puerta1.setType("puerta",23);
-        //console.log(buf.posBuffer);
-        puerta1.bufferCreator.indexBuffer = [13,14,12, 12,11,14, 14,11,10, 10,14,15,
-        15,10,9, 9,8,15, 15,8,7, 7,6,15, 15,16,6, 6,5,16, 16,5,4, 4,16,3, 3,16,17, 17,18,3,
-        3,2,18, 18,19,2, 2,1,19, 1,19,20];
+
         puerta1.build();
         auto.add(puerta1);
 
-
         //ACOMODAR LAS NORMALES, ESTAN COMO PARA ADENTRO DEL AUTO
         var puerta2 = new Objeto3D();
-        var buf = new BufferCalculator(2,21);
-        /*Seteo los buffers */
-        buf.normalBuffer = norm2;
-        buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
-        buf.posBuffer = carroceria.bufferCreator.posBuffer;
+        var buf2 = new BufferCalculator(2,rows);
 
+        /*Seteo los buffers */
+        buf2.normalBuffer = norm2;
+        buf2.posBuffer = pos;
+        buf2.textureBuffer1=tex;
+        buf2.indexBuffer = [0,1,2, 2,0,3, 3,0,7, 7,3,6, 6,3,4, 4,5,6];
         puerta2.setBufferCreator(buf);
 
-        puerta2.bufferCreator.indexBuffer = [13,14,12, 12,11,14, 14,11,10, 10,14,15,
-            15,10,9, 9,8,15, 15,8,7, 7,6,15, 15,16,6, 6,5,16, 16,5,4, 4,16,3, 3,16,17, 17,18,3,
-            3,2,18, 18,19,2, 2,1,19, 1,19,20];
-        puerta2.build();
+        buf.setTextures(1);
+        puerta2.setType("puerta",23);
 
+        puerta2.build();
         puerta2.translate(0.0,0.0,4.0);
         auto.add(puerta2);
     }
 
 
     addRuedas(puntosCarroceria,arrayMat,auto){
+
         //Creamos las ruedas del auto
         var rueda1 = new Objeto3D();
-        //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
-        //posicionamientos y el radio
-        puntosCarroceria.push(vec3.fromValues(2.0, 1.0, 0.8));
-        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
-        auto.add(rueda1);
-        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.0,false);
-        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.0,true);
-
-
         var rueda2 = new Objeto3D();
+        var rueda3 = new Objeto3D();
+        var rueda4 = new Objeto3D();
+
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
-        puntosCarroceria.push(vec3.fromValues(8.0, 1.0, 0.8));
-        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
-        auto.add(rueda2);
-        this.addTapaRueda(rueda2,arrayMat, puntosCarroceria,8.0,false);
-        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,8.0,true);
+        puntosCarroceria.push(vec3.fromValues(2.3, 1.0, 0.8));
+        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda1.translate(0.0,0.0,-0.2);
+        auto.add(rueda1);
+        this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.3,false);
 
+        puntosCarroceria.push(vec3.fromValues(2.3, 1.0, 0.8));
+        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda2.translate(0.0,0.0,3.7);
+        auto.add(rueda2);
+        this.addTapaRueda(rueda2,arrayMat, puntosCarroceria,2.3,true);
+
+        puntosCarroceria.push(vec3.fromValues(9.1, 1.0, 0.8));
+        rueda3.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda3.translate(0.0,0.0,-0.2);
+        auto.add(rueda3);
+        this.addTapaRueda(rueda3,arrayMat, puntosCarroceria,9.1,false);
+
+        puntosCarroceria.push(vec3.fromValues(9.1, 1.0, 0.8));
+        rueda4.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda4.translate(0.0,0.0,3.7);
+        auto.add(rueda4);
+        this.addTapaRueda(rueda4,arrayMat, puntosCarroceria,9.1,true);
     }
 
     addTapaRueda(rueda,arrayMat, puntosCarroceria,x,trasladar){
@@ -810,13 +816,13 @@ class ObjetosFactory {
         if (trasladar){
             n=1.0;
         }
-        var col = [];
+
         for(var i=0.0; i<rueda.bufferCreator.normalBuffer.length /3; i++){
             norm.push(0.0);
             norm.push(0.0);
             norm.push(n);
-
         }
+
         buf.normalBuffer = norm;
         buf.colorBuffer = rueda.bufferCreator.colorBuffer;
         tapa1.setBufferCreator(buf);
@@ -826,55 +832,12 @@ class ObjetosFactory {
 
         tapa1.bufferCreator.indexBuffer = [1,0,2,2,0,3,3,0,4,4,0,5,5,0,6,6,0,7,7,0,8,8,0,9];
         if(trasladar){
-            tapa1.translate(0.0,0.0,4.0);
+            tapa1.translate(0.0,0.0,0.5);
         }
         tapa1.build();
         rueda.add(tapa1);
     }
 
-    addTecho(puntosroceria,arrayMat,carroceria){
-
-        var techo = new Objeto3D();
-        techo.calcularSuperficieBarrido("techo",2,6,arrayMat,puntosCarroceria);
-
-        this.addTapaTecho(techo, false);
-        this.addTapaTecho(techo, true);
-
-        carroceria.add(techo);
-    }
-
-    addTapaTecho(techo, trasladar){
-        var tapa = new Objeto3D();
-        var buf = new BufferCalculator(2,6);
-        /*Seteo los buffers */
-        var saliente = 1.0;
-        if(!trasladar){
-            saliente=-1.0;
-        }
-        var norm = [];
-        var col =[];
-
-        for(var i = 0; i<6;i++){
-            norm.push(saliente);
-            norm.push(0.0);
-            norm.push(0.0);
-
-            col.push(0.0);
-            col.push(0.0);
-            col.push(1.0);
-        }
-        buf.normalBuffer = norm;
-        buf.colorBuffer = col;
-        buf.posBuffer = techo.bufferCreator.posBuffer;
-        tapa.setBufferCreator(buf);
-
-        tapa.bufferCreator.indexBuffer = [0,1,2,2,0,3,3,0,4];
-        if(trasladar){
-            tapa.translate(0.0,0.0,4.0);
-        }
-        tapa.build();
-        techo.add(tapa);
-    }
 
     addColor(objeto,r,g,b){
 

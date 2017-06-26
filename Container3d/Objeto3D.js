@@ -208,7 +208,7 @@ class Objeto3D extends Container3D{
             //Lo borramos para no romper la superficie.
             var escalado = arrayVecPos.pop();
             this.figuras.calcularEstructuraEdificio(vertices,arrayVecNOR,escalado);
-            this.addColor(buffcalc,25, 1.0, 0.0, 0.0);
+            //this.addColor(buffcalc,25, 1.0, 0.0, 0.0);
         }
 
         else if(figura == TAPA_LUZ){
@@ -218,7 +218,7 @@ class Objeto3D extends Container3D{
             //el ultimo trae la dimension de x
             var escalado = arrayVecPos.pop();
             this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
-            this.addColor(buffcalc, 4, 1.0,0.0,0.0);
+            //this.addColor(buffcalc, 4, 1.0,0.0,0.0);
         }
 
         else if(figura == CIRCUNFERENCIA){
@@ -249,7 +249,7 @@ class Objeto3D extends Container3D{
                 console.log("para hacer el asfalto de la ruta se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);
-            this.addColor(buffcalc,5000,0.2 ,0.2 ,0.2);
+            //this.addColor(buffcalc,5000,0.2 ,0.2 ,0.2);
             buffcalc.setTextures(1);
         }
 
