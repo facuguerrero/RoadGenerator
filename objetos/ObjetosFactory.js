@@ -640,14 +640,14 @@ class ObjetosFactory {
         var pilar = new Objeto3D();
         pilar.calcularSuperficieRevolucion("columna",2,cantidad);
         //pilar.rotate(-Math.PI/2,1.0,0.0,0.0);
-        pilar.setType("poste",22.0);
+        //pilar.setType("poste",22.0);
         columna.add(pilar);
 
         /*Creo lo que es la base de la columna*/
         var base = new Objeto3D();
         base.calcularSuperficieRevolucion("base_columna",8,cantidad);
         //base.rotate(-Math.PI/2,1.0,0.0,0.0);
-        base.setType("poste",22.0);
+        //base.setType("poste",22.0);
         columna.add(base);
 
         /*Creo la tapa de la columna*/
@@ -655,7 +655,7 @@ class ObjetosFactory {
         var tapa = new Objeto3D();
         tapa.calcularSuperficieRevolucion("tapa_columna",3,cantidad);
         //tapa.rotate(Math.PI/2,1.0,0.0,0.0);
-        tapa.setType("poste",22.0);
+        //tapa.setType("poste",22.0);
         columna.add(tapa);
 
 
@@ -742,6 +742,7 @@ class ObjetosFactory {
         buf.posBuffer = pos;
         buf.textureBuffer1 = tex;
         buf.indexBuffer = [0,1,2, 2,0,3, 3,0,7, 7,3,6, 6,3,4, 4,5,6];
+        buf.tangentBuffer=norm1;
         puerta1.setBufferCreator(buf);
 
         buf.setTextures(1);
@@ -759,6 +760,7 @@ class ObjetosFactory {
         buf2.posBuffer = pos;
         buf2.textureBuffer1=tex;
         buf2.indexBuffer = [0,1,2, 2,0,3, 3,0,7, 7,3,6, 6,3,4, 4,5,6];
+        buf2.tangentBuffer = norm2;
         puerta2.setBufferCreator(buf);
 
         buf.setTextures(1);
@@ -838,6 +840,7 @@ class ObjetosFactory {
         buf.textureBuffer1 =[1.0,0.5,  0.9,0.735,  0.65,0.93,  0.4,0.93,
                             0.1,0.735,  0.0,0.5,  0.1,0.265,  0.4,0.07,
                             0.65,0.07,  0.9,0.265,  1.0,0.5];
+        buf.tangentBuffer = norm;
 
         buf.setBoolTexture1();
         tapa1.setBufferCreator(buf);

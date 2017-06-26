@@ -344,7 +344,7 @@ class Objeto3D extends Container3D{
                 console.log("Para el pilar de la columna se necesitan solo 2 niveles");
             }
             this.figuras.calcularColumna(arrayVecPos, ejeRotacion, arrayVecNor);
-            buffcalc.setTextures(1);
+            this.addColor(buffcalc, rows*colms,0.41,0.41,0.41);
         }
 
         if(figura == BASE_COLUMNA){
@@ -352,8 +352,7 @@ class Objeto3D extends Container3D{
                 console.log("Para la base de la columna se necesitan 8 niveles");
             }
             this.figuras.calcularBaseColumna(rows,arrayVecPos,ejeRotacion,arrayVecNor);
-            //this.addColor(buffcalc, 5000,0.0,0.0,0.0);
-            buffcalc.setTextures(1);
+            this.addColor(buffcalc, rows*colms,0.41,0.41,0.41);
         }
 
         if(figura == TAPA_COLUMNA){
@@ -361,7 +360,7 @@ class Objeto3D extends Container3D{
                 console.log("Para la tapa de la columna se necesitan 3 niveles");
             }
             this.figuras.calcularTapaColumna(arrayVecPos, ejeRotacion, arrayVecNor);
-            buffcalc.setTextures(1);
+            this.addColor(buffcalc, rows*colms,0.41,0.41,0.41);
         }
 
         buffcalc.calcularSuperficieRevolucion(arrayVecPos, ejeRotacion, arrayVecNor);
