@@ -1077,7 +1077,7 @@
 
     </script>
 
-    <script id="vs-auxiliar" type="x-shader/x-vertex">
+    <script id="vs-city" type="x-shader/x-vertex">
 
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
@@ -1122,7 +1122,7 @@
     }
     </script>
 
-    <script id="fs-auxiliar" type="x-shader/x-fragment">
+    <script id="fs-city" type="x-shader/x-fragment">
     precision highp float;
 
     varying vec2 vTextureCoord;
@@ -1260,12 +1260,55 @@
         var shaderProgramColoredObject;
         var streetShader;
         var buildingShaders;
+        var cityShader;
 
         function initBuildingTopShaders() {
 
             //Inicializamos el shader de la calle.
 
             /*REVISAR ESTO, CAPAS NO HAY QUE PASARLE DIRECCIONES*/
+
+            var fragmentShader = getShader("fs-buildingTop");
+            var vertexShader = getShader("vs-buildingTop");
+
+            buildingShaders = gl.createProgram();
+            gl.attachShader(buildingShaders, vertexShader);
+            gl.attachShader(buildingShaders, fragmentShader);
+            gl.linkProgram(buildingShaders);
+
+            if (!gl.getProgramParameter(buildingShaders, gl.LINK_STATUS)) {
+                alert("Could not initialise shaders");
+            }
+            gl.useProgram(buildingShaders);
+
+            buildingShaders.vertexPositionAttribute = gl.getAttribLocation(buildingShaders, "aVertexPosition");
+            gl.enableVertexAttribArray(buildingShaders.vertexPositionAttribute);
+
+            buildingShaders.vertexNormalAttribute = gl.getAttribLocation(buildingShaders, "aVertexNormal");
+            gl.enableVertexAttribArray(buildingShaders.vertexNormalAttribute);
+
+            buildingShaders.textureCoordAttribute = gl.getAttribLocation(buildingShaders, "aTextureCoord");
+            gl.enableVertexAttribArray(buildingShaders.textureCoordAttribute);
+
+//            buildingShaders.vertexTangentAttribute = gl.getAttribLocation(buildingShaders, "aVertexTangent");
+//            gl.enableVertexAttribArray(buildingShaders.vertexTangentAttribute);
+
+            buildingShaders.pMatrixUniform = gl.getUniformLocation(buildingShaders, "uPMatrix");
+            buildingShaders.ViewMatrixUniform = gl.getUniformLocation(buildingShaders, "uViewMatrix");
+            buildingShaders.ModelMatrixUniform = gl.getUniformLocation(buildingShaders, "uModelMatrix");
+            buildingShaders.nMatrixUniform = gl.getUniformLocation(buildingShaders, "uNMatrix");
+            buildingShaders.useLightingUniform = gl.getUniformLocation(buildingShaders, "uUseLighting");
+            buildingShaders.ambientColorUniform = gl.getUniformLocation(buildingShaders, "uAmbientColor");
+            buildingShaders.lightingDirectionUniform = gl.getUniformLocation(buildingShaders, "uLightPosition");
+            buildingShaders.directionalColorUniform = gl.getUniformLocation(buildingShaders, "uDirectionalColor");
+            buildingShaders.shininess = gl.getUniformLocation(buildingShaders, "uShininess");
+            buildingShaders.usingNormalMap = gl.getUniformLocation(buildingShaders, "uUsingNormalMap");
+
+            idBuilding = gl.getAttribLocation(buildingShaders, "aID");
+
+        }
+
+        function initCityShaders() {
 
             var fragmentShader = getShader("fs-buildingTop");
             var vertexShader = getShader("vs-buildingTop");
