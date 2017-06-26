@@ -145,7 +145,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
-//    attribute vec3 aVertexTangent;
+    attribute vec3 aVertexTangent;
     attribute float aID;
 
     uniform mat4 uViewMatrix;
@@ -170,6 +170,7 @@
     uniform vec3 uFarol11Position;
 
     uniform bool uUseLighting;
+    uniform bool uUsingNormalMap;
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
@@ -226,6 +227,39 @@
         vSpotLight10 = uFarol10Position - pos;
         vSpotLight11 = uFarol11Position - pos;
         vSpotLightDir1 = vec3(0.0, -1.0, 0.0);
+
+        if(vID >18.5 && vID <19.5) {
+            //por ahora solo la autopista usa normales
+
+            // Transform normal and tangent to eye space
+            vec3 norm = vNormal;
+            vec3 tang = normalize(uNMatrix * aVertexTangent);
+            vec3 binormal = normalize(cross(norm, tang));
+
+            // Matrix for transformation to tangent space
+            mat3 toObjectLocal = mat3(
+                tang.x, binormal.x, norm.x,
+                tang.y, binormal.y, norm.y,
+                tang.z, binormal.z, norm.z
+            );
+
+            // Transform vectors to tangent space
+            vLightDir = toObjectLocal * vLightDir;
+            vViewDir = toObjectLocal * vViewDir;
+            vSpotLightDir1 = toObjectLocal * vSpotLightDir1;
+            vSpotLight1 = toObjectLocal * vSpotLight1;
+            vSpotLight2 = toObjectLocal * vSpotLight2;
+            vSpotLight3 = toObjectLocal * vSpotLight3;
+            vSpotLight4 = toObjectLocal * vSpotLight4;
+            vSpotLight5 = toObjectLocal * vSpotLight5;
+            vSpotLight6 = toObjectLocal * vSpotLight6;
+            vSpotLight7 = toObjectLocal * vSpotLight7;
+            vSpotLight8 = toObjectLocal * vSpotLight8;
+            vSpotLight9 = toObjectLocal * vSpotLight9;
+            vSpotLight10 = toObjectLocal * vSpotLight10;
+            vSpotLight11 = toObjectLocal * vSpotLight11;
+
+        }
     }
 
     </script>
@@ -244,6 +278,7 @@
     uniform sampler2D pasto;
     uniform sampler2D concreto;
     uniform sampler2D poste;
+    uniform sampler2D autopistaNormalMap;
     uniform sampler2D puerta;
 
     // Variables utilizadas para la iluminación
@@ -356,6 +391,9 @@
         }
 
         if(vID >18.5 && vID <19.5){
+
+        // Extrae la normal desde el normalMap
+        normal = vec3(2.0*texture2D(autopistaNormalMap, vTextureCoord) - 1.0);
 
         auxUv.x = (auxUv.x * 4.0) - 0.5;
 
@@ -1131,8 +1169,8 @@
             streetShader.textureCoordAttribute = gl.getAttribLocation(streetShader, "aTextureCoord");
             gl.enableVertexAttribArray(streetShader.textureCoordAttribute);
 
-//            streetShader.vertexTangentAttribute = gl.getAttribLocation(streetShader, "aVertexTangent");
-//            gl.enableVertexAttribArray(streetShader.vertexTangentAttribute);
+            streetShader.vertexTangentAttribute = gl.getAttribLocation(streetShader, "aVertexTangent");
+            gl.enableVertexAttribArray(streetShader.vertexTangentAttribute);
 
             streetShader.pMatrixUniform = gl.getUniformLocation(streetShader, "uPMatrix");
             streetShader.ViewMatrixUniform = gl.getUniformLocation(streetShader, "uViewMatrix");
@@ -1347,13 +1385,22 @@
             gl.activeTexture(gl.TEXTURE23);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["poste"]);
 
+            //Normales Autopista
+            gl.useProgram(streetShader);
+            loadTexture("textures/ruta_normal.jpg", "rutaNormalMap");
+
+            var location = gl.getUniformLocation(streetShader, "rutaNormalMap");
+            gl.uniform1i(location, 24);
+            gl.activeTexture(gl.TEXTURE24);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["rutaNormalMap"]);
+
             //Puerta Auto
             gl.useProgram(streetShader);
             loadTexture("textures/carSide.jpg", "puerta");
 
             var location = gl.getUniformLocation(streetShader, "puerta");
-            gl.uniform1i(location, 24);
-            gl.activeTexture(gl.TEXTURE24);
+            gl.uniform1i(location, 25);
+            gl.activeTexture(gl.TEXTURE25);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["puerta"]);
 
         }
@@ -1480,7 +1527,7 @@
 
             escena.draw(model_matrix_escene, false);
             if(frameAutos > 10 - step) {
-                //autosAnimados.updateAutos(step);
+                autosAnimados.updateAutos(step);
                 frameAutos = 0;
             }
             frameAutos++;
@@ -1859,6 +1906,7 @@
         position:relative;
         left:480px;
         top: -135px;
+        z-index:-1;
 
     }
     h3{

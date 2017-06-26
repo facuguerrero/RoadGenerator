@@ -53,6 +53,8 @@ class Objeto3D extends Container3D{
 
         this.bufferCreator = null;
 
+        this.useTangent = false;
+
         this.id = null;
         this.maxY = null;
         this.cantEdificios = null;
@@ -394,29 +396,38 @@ class Objeto3D extends Container3D{
 
         if (this.objectType == CALLE){
             this.setShaderProgram(streetShader);
+            this.useTangent = false;
         }
         else if (this.objectType == EDIFICIO){
             this.setShaderProgram(buildingShaders);
+            this.useTangent = false;
         }
         else if (this.objectType == ESQUINA){
+            this.useTangent = false;
             this.setShaderProgram(streetShader);
         }
         else if (this.objectType == VEREDA){
+            this.useTangent = false;
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == AUTOPISTA){
+            this.useTangent = true;
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == SKY){
+            this.useTangent = false;
             this.setShaderProgram(skyShader);
         }
         else if(this.objectType == PASTO){
+            this.useTangent = false;
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == CONCRETO){
+            this.useTangent = true;
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == POSTE){
+            this.useTangent = true;
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == PUERTA){
@@ -453,7 +464,7 @@ class Objeto3D extends Container3D{
         }
 
         //Tangent
-        if(this.bufferCreator.tangent && this.webglTangentBuffer.length > 0) {
+        if(this.useTangent) {
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
             gl.vertexAttribPointer(this.shaderProgram.vertexTangentAttribute, this.webglTangentBuffer.itemSize, gl.FLOAT, false, 0, 0);
         }

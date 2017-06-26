@@ -228,6 +228,10 @@ class BufferCalculator{
                 this.colorBuffer.push(0.62);
                 this.colorBuffer.push(0.59);
                 this.colorBuffer.push(0.56);
+                //se cargan las tangentes solo para que el shader no moleste
+                this.tangentBuffer.push(0.0);
+                this.tangentBuffer.push(0.0);
+                this.tangentBuffer.push(0.0);
 
 
                 var u = i /(this.colms-1);
