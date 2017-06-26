@@ -812,28 +812,41 @@ class ObjetosFactory {
         /*Seteo los buffers */
 
         var norm = [];
+        var pos = [];
         var n = -1.0;
         if (trasladar){
             n=1.0;
         }
 
-        for(var i=0.0; i<rueda.bufferCreator.normalBuffer.length /3; i++){
+        for(var i=0.0; i<rueda.bufferCreator.normalBuffer.length /6; i++){
             norm.push(0.0);
             norm.push(0.0);
             norm.push(n);
+
+            pos.push(rueda.bufferCreator.posBuffer[i*3]);
+            pos.push(rueda.bufferCreator.posBuffer[i*3 +1]);
+            pos.push(rueda.bufferCreator.posBuffer[i*3 +2]);
         }
+
+        /* SETEO LOS BUFFERS */
 
         buf.normalBuffer = norm;
         buf.colorBuffer = rueda.bufferCreator.colorBuffer;
+        buf.posBuffer = pos;
+        buf.indexBuffer = [1,0,2,2,0,3,3,0,4,4,0,5,5,0,6,6,0,7,7,0,8,8,0,9];
+        buf.textureBuffer1 =[1.0,0.5,  0.93,0.735,  0.73,0.88,  0.4,0.88,
+                            0.1,0.735,  0.0,0.5,  0.1,0.27,  0.4,0.12,
+                            0.73,0.12,  0.93,0.27,  1.0,0.5];
+
+        buf.setBoolTexture1();
         tapa1.setBufferCreator(buf);
 
-        puntosCarroceria.push(vec3.fromValues(x, 1.0, 0.8));
-        tapa1.calcularSuperficieBarrido("rueda",2,11,arrayMat,puntosCarroceria);
-
-        tapa1.bufferCreator.indexBuffer = [1,0,2,2,0,3,3,0,4,4,0,5,5,0,6,6,0,7,7,0,8,8,0,9];
+        /*Esto se hace para saber que rueda es*/
         if(trasladar){
             tapa1.translate(0.0,0.0,0.5);
         }
+
+        tapa1.setType("rueda",25.0);
         tapa1.build();
         rueda.add(tapa1);
     }

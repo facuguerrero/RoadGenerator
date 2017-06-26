@@ -274,7 +274,7 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == CARROCERIA){
-            if(colms != 21){
+            if(colms != 9){
                 console.log("para hacer la carroceria se necesitan 19 vertices");
             }
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
@@ -433,6 +433,9 @@ class Objeto3D extends Container3D{
         else if(this.objectType == PUERTA){
             this.setShaderProgram(streetShader);
         }
+        else if(this.objectType == RUEDA){
+            this.setShaderProgram(streetShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -500,6 +503,9 @@ class Objeto3D extends Container3D{
             gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == PUERTA){
+            gl.vertexAttrib1f(idStreet, this.id);
+        }
+        if(this.objectType == RUEDA){
             gl.vertexAttrib1f(idStreet, this.id);
         }
 

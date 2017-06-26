@@ -280,6 +280,7 @@
     uniform sampler2D poste;
     uniform sampler2D autopistaNormalMap;
     uniform sampler2D puerta;
+    uniform sampler2D rueda;
 
     // Variables utilizadas para la iluminación
     uniform vec3 uAmbientColor;
@@ -750,6 +751,10 @@
 
         if(vID > 22.5 && vID < 23.5){
             textureColor = texture2D(puerta, vec2(auxUv.s, auxUv.t));
+        }
+
+        if(vID > 24.5 && vID < 25.5){
+            textureColor = texture2D(rueda, vec2(auxUv.s, auxUv.t));
         }
 
         vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + specular*uDirectionalColor ;
@@ -1403,6 +1408,15 @@
             gl.activeTexture(gl.TEXTURE25);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["puerta"]);
 
+            //Rueda Auto
+            gl.useProgram(streetShader);
+            loadTexture("textures/rueda.jpg", "rueda");
+
+            var location = gl.getUniformLocation(streetShader, "rueda");
+            gl.uniform1i(location, 26);
+            gl.activeTexture(gl.TEXTURE26);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["rueda"]);
+
         }
 
         function loadTexture(path, string) {
@@ -1582,9 +1596,6 @@
             var largoCalle=20.0;
             var manzana = 20.0;
             escena=factory.createEscene((n-1)*anchoCalle + (n)*manzana, true);
-
-            var car = factory.createCar();
-            escena.add(car);
 
             this.crearRuta(escena);
             this.rellenarCalles(anchoCalle, largoCalle, manzana, escena, factory);
