@@ -213,7 +213,6 @@ class FigurasPrimitivas{
         var vecNorm17 = vec3.fromValues(1.0, -1.0, 0.0);
         vec3.normalize(vecNorm17, vecNorm17);
         arrayVecNOR.push(vecNorm17);
-        /
 
     }
 
