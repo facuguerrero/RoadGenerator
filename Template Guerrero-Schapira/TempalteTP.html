@@ -1425,12 +1425,12 @@
 
             //Normales Autopista
             gl.useProgram(streetShader);
-            loadTexture("textures/ruta_normal.jpg", "rutaNormalMap");
+            loadTexture("textures/ruta_normal.jpg", "autopistaNormalMap");
 
-            var location = gl.getUniformLocation(streetShader, "rutaNormalMap");
+            var location = gl.getUniformLocation(streetShader, "autopistaNormalMap");
             gl.uniform1i(location, 24);
             gl.activeTexture(gl.TEXTURE24);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["rutaNormalMap"]);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["autopistaNormalMap"]);
 
             //Puerta Auto
             gl.useProgram(streetShader);

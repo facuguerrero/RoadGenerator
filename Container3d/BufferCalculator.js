@@ -154,8 +154,8 @@ class BufferCalculator{
                 this.colorBuffer.push(1.0/this.rows * i);
                 this.colorBuffer.push(0.2);
                 this.colorBuffer.push(1.0/this.colms * j);
-                this.tangentBuffer.push(tangente[0]);
                 this.tangentBuffer.push(tangente[1]);
+                this.tangentBuffer.push(tangente[0]);
                 this.tangentBuffer.push(tangente[2]);
 
                 if (this.texture1) {
