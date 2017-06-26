@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="Las unicas normales que estan mal son las de la base">
+    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/BufferCalculator.js" afterPath="$PROJECT_DIR$/Container3d/BufferCalculator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
@@ -116,6 +114,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="423" column="34" lean-forward="false" selection-start-line="423" selection-start-column="34" selection-end-line="423" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -157,6 +165,7 @@
       <find>escena</find>
       <find>update</find>
       <find>tex</find>
+      <find>sky</find>
     </findStrings>
     <replaceStrings>
       <replace>this.shaderProgram</replace>
@@ -190,8 +199,8 @@
         <option value="$PROJECT_DIR$/Template Pruebas/TempalteTP.html" />
         <option value="$PROJECT_DIR$/primitivas/FigurasPrimitivas.js" />
         <option value="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
         <option value="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
+        <option value="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
       </list>
     </option>
   </component>
@@ -260,6 +269,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="primitivas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPSisGraf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objetos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,14 +413,7 @@
       <workItem from="1498255006646" duration="391000" />
       <workItem from="1498325498211" duration="6076000" />
       <workItem from="1498414878372" duration="15972000" />
-      <workItem from="1498445231105" duration="142000" />
-    </task>
-    <task id="LOCAL-00005" summary="sky comentado">
-      <created>1498056575702</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1498056575702</updated>
+      <workItem from="1498445231105" duration="346000" />
     </task>
     <task id="LOCAL-00006" summary="sky comentado">
       <created>1498056966195</created>
@@ -735,11 +751,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498423624381</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="arreglado lo del boton del auto, las normales no andan">
+      <created>1498445418568</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1498445418569</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91285000" />
+    <option name="totallyTimeSpent" value="91489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
@@ -790,7 +813,8 @@
     <MESSAGE value="Las unicas normales que estan mal son las de la base" />
     <MESSAGE value="NORMALES DE MIERDA" />
     <MESSAGE value="Nuevo Auto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nuevo Auto" />
+    <MESSAGE value="arreglado lo del boton del auto, las normales no andan" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglado lo del boton del auto, las normales no andan" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1223,6 +1247,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="454" column="33" lean-forward="false" selection-start-line="454" selection-start-column="32" selection-end-line="454" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1230,14 +1255,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2710">
           <caret line="278" column="37" lean-forward="false" selection-start-line="278" selection-start-column="37" selection-end-line="278" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="733" column="91" lean-forward="false" selection-start-line="733" selection-start-column="91" selection-end-line="733" selection-end-column="91" />
           <folding />
         </state>
       </provider>
@@ -1333,6 +1350,14 @@
             <marker date="1498445362433" expanded="true" signature="42862:42910" ph="{...}" />
             <marker date="1498445362433" expanded="true" signature="42949:42985" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="423" column="34" lean-forward="false" selection-start-line="423" selection-start-column="34" selection-end-line="423" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
