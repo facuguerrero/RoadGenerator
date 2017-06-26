@@ -485,6 +485,7 @@ class Objeto3D extends Container3D{
 
         //a continuacion se setea todo dependiendo del id
         if(this.objectType == CALLE){
+
             gl.vertexAttrib1f(idCity, this.id);
         }
         if(this.objectType == EDIFICIO){

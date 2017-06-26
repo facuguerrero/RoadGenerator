@@ -1347,12 +1347,12 @@
             cityShader.ViewMatrixUniform = gl.getUniformLocation(cityShader, "uViewMatrix");
             cityShader.ModelMatrixUniform = gl.getUniformLocation(cityShader, "uModelMatrix");
             cityShader.nMatrixUniform = gl.getUniformLocation(cityShader, "uNMatrix");
-            cityShader.useLightingUniform = gl.getUniformLocation(cityShader, "uUseLighting");
+            //cityShader.useLightingUniform = gl.getUniformLocation(cityShader, "uUseLighting");
             cityShader.ambientColorUniform = gl.getUniformLocation(cityShader, "uAmbientColor");
             cityShader.lightingDirectionUniform = gl.getUniformLocation(cityShader, "uLightPosition");
             cityShader.directionalColorUniform = gl.getUniformLocation(cityShader, "uDirectionalColor");
             cityShader.shininess = gl.getUniformLocation(cityShader, "uShininess");
-            cityShader.usingNormalMap = gl.getUniformLocation(cityShader, "uUsingNormalMap");
+            //cityShader.usingNormalMap = gl.getUniformLocation(cityShader, "uUsingNormalMap");
 
             idCity = gl.getAttribLocation(cityShader, "aID");
 
