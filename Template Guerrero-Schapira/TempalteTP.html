@@ -1051,6 +1051,7 @@
 
         // Transformamos al v�rtice al espacio de la c�mara
 		vec4 pos_camera_view = uViewMatrix * uModelMatrix * auxPos;
+		vec4 pos_view = uModelMatrix * vec4(aVertexPosition, 1.0);
 
 		// Transformamos al v�rtice al espacio de la proyecci�n
         gl_Position = uPMatrix * pos_camera_view;
@@ -1067,7 +1068,7 @@
 
         vTextureCoord = auxUv;
 
-        vec3 pos = vec3(pos_camera_view) / pos_camera_view.w;
+        vec3 pos = vec3(pos_view) / pos_view.w;
         vNormal = normalize(uNMatrix * aVertexNormal);
         vLightDir = uLightPosition - pos;
         vViewDir = normalize(-pos);
@@ -1081,7 +1082,7 @@
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
-    attribute vec3 aVertexTangent;
+    //attribute vec3 aVertexTangent;
     attribute float aID;
 
     uniform mat4 uViewMatrix;
