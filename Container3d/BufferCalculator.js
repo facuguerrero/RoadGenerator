@@ -132,24 +132,25 @@ class BufferCalculator{
 
                 var normVer = vec3.create();
                 vec3.copy(normVer, arrayVecNorm[j]);
+                var normal = vec3.normalize([], normVer);
 
                 var binormVer = vec3.fromValues(0.0,0.0,1.0);
 
                 var tanVer = vec3.create();
-                vec3.cross(tanVer,binormVer, normVer);
+                vec3.cross(tanVer,binormVer, normal);
                 var tangente = vec3.normalize([], tanVer);
 
                 vec3.transformMat3(verticeFormaActual,verticeFormaActual,matActual);
                 vec3.add(verticeFormaActual,vecTrasActual, verticeFormaActual);
 
-                vec3.transformMat3(normVer,normVer,matActual);
+                vec3.transformMat3(normal,normal,matActual);
 
                 this.posBuffer.push(verticeFormaActual[0]);
                 this.posBuffer.push(verticeFormaActual[1]);
                 this.posBuffer.push(verticeFormaActual[2]);
-                this.normalBuffer.push(normVer[0]);
-                this.normalBuffer.push(normVer[1]);
-                this.normalBuffer.push(normVer[2]);
+                this.normalBuffer.push(normal[0]);
+                this.normalBuffer.push(normal[1]);
+                this.normalBuffer.push(normal[2]);
                 this.colorBuffer.push(1.0/this.rows * i);
                 this.colorBuffer.push(0.2);
                 this.colorBuffer.push(1.0/this.colms * j);

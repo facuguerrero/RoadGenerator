@@ -312,7 +312,7 @@
 
         //variables iluminacion
         float shininess = 10.0;
-        const float spotlightCutOff = 0.2;  // en radianes
+        const float spotlightCutOff = 0.2;//CAMBIAR A 0.2  // en radianes
 		const float spotLightExponent = 2.0;
 
 		// Attenuation constants
@@ -324,8 +324,15 @@
 		vec3 lightDir = normalize(vLightDir);
         vec3 viewDir = vViewDir;
 
-        float lambertian = max(dot(lightDir, normal), 0.0);
         float specular = 0.0;
+
+        float lambertian = max(dot(lightDir, normal), 0.0);
+
+        if(lambertian > 0.0) {
+            vec3 reflectDir = reflect(-lightDir, normal);
+            float specAngle = max(dot(reflectDir, viewDir), 0.0);
+            specular = pow(specAngle, shininess);
+        }
 
         vec3 lightColor = vec3(0.9, 0.9, 0.7);
 
@@ -344,18 +351,6 @@
 	    vec3 vectorToLightSource10 = vSpotLight10;
 	    vec3 vectorToLightSource11 = vSpotLight11;
 
-	    float diffuseLightWeighting = max(dot(normal, vectorToLightSource), 0.0);
-	    float diffuseLightWeighting2 = max(dot(normal, vectorToLightSource2), 0.0);
-	    float diffuseLightWeighting3 = max(dot(normal, vectorToLightSource3), 0.0);
-	    float diffuseLightWeighting4 = max(dot(normal, vectorToLightSource4), 0.0);
-	    float diffuseLightWeighting5 = max(dot(normal, vectorToLightSource5), 0.0);
-	    float diffuseLightWeighting6 = max(dot(normal, vectorToLightSource6), 0.0);
-	    float diffuseLightWeighting7 = max(dot(normal, vectorToLightSource7), 0.0);
-	    float diffuseLightWeighting8 = max(dot(normal, vectorToLightSource8), 0.0);
-	    float diffuseLightWeighting9 = max(dot(normal, vectorToLightSource9), 0.0);
-	    float diffuseLightWeighting10 = max(dot(normal, vectorToLightSource10), 0.0);
-	    float diffuseLightWeighting11 = max(dot(normal, vectorToLightSource11), 0.0);
-
 		vec3 spotLightIntensity = vec3(0.0,0.0,0.0);
 		vec3 spotLightIntensity2 = vec3(0.0,0.0,0.0);
 		vec3 spotLightIntensity3 = vec3(0.0,0.0,0.0);
@@ -367,12 +362,6 @@
 		vec3 spotLightIntensity9 = vec3(0.0,0.0,0.0);
 		vec3 spotLightIntensity10 = vec3(0.0,0.0,0.0);
 		vec3 spotLightIntensity11 = vec3(0.0,0.0,0.0);
-
-        if(lambertian > 0.0) {
-            vec3 reflectDir = reflect(-lightDir, normal);
-            float specAngle = max(dot(reflectDir, viewDir), 0.0);
-            specular = pow(specAngle, shininess);
-        }
 
         if(vID >= 499.5 && vID < 500.5){
             //llenar textura farol
@@ -394,10 +383,32 @@
 
         if(vID >18.5 && vID <19.5){
 
-        // Extrae la normal desde el normalMap
-        normal = vec3(2.0*texture2D(autopistaNormalMap, vTextureCoord) - 1.0);
+            auxUv.x = (auxUv.x * 4.0) - 0.5;
+            auxUv.y = auxUv.y * 1.0;
+            textureColor = texture2D(autopista, vec2(auxUv.t, auxUv.s));
 
-        auxUv.x = (auxUv.x * 4.0) - 0.5;
+            // Extrae la normal desde el normalMap
+            normal = vec3(2.0 * texture2D(autopistaNormalMap, vec2(auxUv.t, auxUv.s)) - 1.0);
+
+            lambertian = max(dot(lightDir, normal), 0.0);
+
+            if(lambertian > 0.0) {
+                vec3 reflectDir = reflect(-lightDir, normal);
+                float specAngle = max(dot(reflectDir, viewDir), 0.0);
+                specular = pow(specAngle, shininess);
+            }
+
+            float diffuseLightWeighting = max(dot(normal, vectorToLightSource), 0.0);
+	        float diffuseLightWeighting2 = max(dot(normal, vectorToLightSource2), 0.0);
+	        float diffuseLightWeighting3 = max(dot(normal, vectorToLightSource3), 0.0);
+	        float diffuseLightWeighting4 = max(dot(normal, vectorToLightSource4), 0.0);
+	        float diffuseLightWeighting5 = max(dot(normal, vectorToLightSource5), 0.0);
+	        float diffuseLightWeighting6 = max(dot(normal, vectorToLightSource6), 0.0);
+	        float diffuseLightWeighting7 = max(dot(normal, vectorToLightSource7), 0.0);
+	        float diffuseLightWeighting8 = max(dot(normal, vectorToLightSource8), 0.0);
+	        float diffuseLightWeighting9 = max(dot(normal, vectorToLightSource9), 0.0);
+	        float diffuseLightWeighting10 = max(dot(normal, vectorToLightSource10), 0.0);
+	        float diffuseLightWeighting11 = max(dot(normal, vectorToLightSource11), 0.0);
 
             if (diffuseLightWeighting > 0.0) {
                 // Calculate attenuation
@@ -563,9 +574,6 @@
                     spotLightIntensity11 = spotEffect11 * att11 * (lightColor *	diffuseLightWeighting11 + lightColor * specularLightWeighting11);
                 }
             }
-
-            auxUv.y = auxUv.y * 1.0;
-            textureColor = texture2D(autopista, vec2(auxUv.t, auxUv.s));
         }
 
         if(vID> 19.5 && vID< 20.5){
@@ -574,7 +582,27 @@
 
         if(vID >20.5 && vID <21.5){
 
-                        if (diffuseLightWeighting > 0.0) {
+            lambertian = max(dot(lightDir, normal), 0.0);
+
+            if(lambertian > 0.0) {
+                vec3 reflectDir = reflect(-lightDir, normal);
+                float specAngle = max(dot(reflectDir, viewDir), 0.0);
+                specular = pow(specAngle, shininess);
+            }
+
+            float diffuseLightWeighting = max(dot(normal, vectorToLightSource), 0.0);
+	        float diffuseLightWeighting2 = max(dot(normal, vectorToLightSource2), 0.0);
+	        float diffuseLightWeighting3 = max(dot(normal, vectorToLightSource3), 0.0);
+	        float diffuseLightWeighting4 = max(dot(normal, vectorToLightSource4), 0.0);
+	        float diffuseLightWeighting5 = max(dot(normal, vectorToLightSource5), 0.0);
+	        float diffuseLightWeighting6 = max(dot(normal, vectorToLightSource6), 0.0);
+	        float diffuseLightWeighting7 = max(dot(normal, vectorToLightSource7), 0.0);
+	        float diffuseLightWeighting8 = max(dot(normal, vectorToLightSource8), 0.0);
+	        float diffuseLightWeighting9 = max(dot(normal, vectorToLightSource9), 0.0);
+	        float diffuseLightWeighting10 = max(dot(normal, vectorToLightSource10), 0.0);
+	        float diffuseLightWeighting11 = max(dot(normal, vectorToLightSource11), 0.0);
+
+            if (diffuseLightWeighting > 0.0) {
                 // Calculate attenuation
                 float distance = length(vectorToLightSource);
                 float att = 1.0/(constantAtt+linearAtt * distance + quadraticAtt * distance * distance);
@@ -762,13 +790,13 @@
             textureColor = texture2D(carroceria, vec2(auxUv.s, auxUv.t));
         }
 
-        vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + specular*uDirectionalColor ;
-        vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
-        vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
+        vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + (specular)*uDirectionalColor ;
+        //vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
+        //vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
-        vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
+        //vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
 
-        gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
+        gl_FragColor = vec4(textureColor.rgb * lightIntensity, textureColor.a);
     }
     </script>
 
@@ -1555,7 +1583,7 @@
 
             escena.draw(model_matrix_escene, false);
             if(frameAutos > 10 - step) {
-                autosAnimados.updateAutos(step);
+                //autosAnimados.updateAutos(step);
                 frameAutos = 0;
             }
             frameAutos++;
