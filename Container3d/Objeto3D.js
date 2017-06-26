@@ -308,6 +308,7 @@ class Objeto3D extends Container3D{
             if(figura == CARROCERIA){
                 this.llenarTexture(buffcalc);
             }
+
             this.build();
         }
         else if(! barrer){
@@ -552,8 +553,14 @@ class Objeto3D extends Container3D{
         }
 
 
-        if(this.bufferCreator.normalBuffer.length/3 != this.bufferCreator.tangentBuffer.length/3 ){
-            console.log(this.objectType);
+        if(this.bufferCreator.tangentBuffer.length == 0 ){
+            if(this.objectType == "col"){
+                console.log("aca estamo");
+            }
+            //console.log(this.objectType);
+            //console.log(this.bufferCreator.posBuffer/3);
+            //console.log(this.bufferCreator.rows);
+            //console.log(this.bufferCreator.colms);
         }
 
 
