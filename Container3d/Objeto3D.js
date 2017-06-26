@@ -157,9 +157,6 @@ class Objeto3D extends Container3D{
         if((arrayMatT.length != rows || arrayVecPos.length != rows)) {
             //Se chequea el caso en el que es edificio
             if (arrayVecPos.length != rows + 1) {
-                console.log(figura);
-                console.log(rows);
-                console.log(arrayVecPos.length);
                 console.log("error de dimension para la superficie con escalado");
             }
         }
@@ -320,7 +317,6 @@ class Objeto3D extends Container3D{
 
     llenarTexture(buf){
 
-        console.log(buf.textureBuffer1);
         var tex=[0.0,1.0,  0.0,1.0,  0.12,1.0,  0.28,1.0,  0.38,0.8,  0.685,1.0,  0.75,1.0,  0.875,1.0,  1.0,1.0,
             0.0,0.0,  0.0,0.0,  0.12,0.0,  0.28,0.0,  0.38,0.2,  0.685,0.0,  0.75,0.0,  0.875,0.0,  1.0,0.0
 
