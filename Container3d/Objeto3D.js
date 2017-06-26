@@ -513,7 +513,9 @@ class Objeto3D extends Container3D{
             gl.uniform1f(count, this.id);
         }
         if(this.objectType == AUTOPISTA){
-            gl.vertexAttrib1f(idStreet, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "attID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == PASTO){
             //gl.vertexAttrib1f(idCity, this.id);
@@ -522,19 +524,29 @@ class Objeto3D extends Container3D{
             gl.uniform1f(count, this.id);
         }
         if(this.objectType == CONCRETO){
-            gl.vertexAttrib1f(idStreet, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "attID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == POSTE){
-            gl.vertexAttrib1f(idStreet, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "attID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == PUERTA){
-            gl.vertexAttrib1f(idStreet, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "attID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == RUEDA){
-            gl.vertexAttrib1f(idStreet, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "attID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == CARROCERIA){
-            gl.vertexAttrib1f(idStreet, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "attID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
 
 

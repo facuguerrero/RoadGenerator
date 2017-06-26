@@ -153,6 +153,8 @@
     uniform mat4 uPMatrix;
     uniform mat3 uNMatrix;
 
+    uniform float attID;
+
     uniform vec3 uAmbientColor;
     uniform vec3 uLightPosition;
     uniform vec3 uDirectionalColor;
@@ -205,7 +207,7 @@
         gl_Position = uPMatrix * pos_camera_view;
 
         //se pasa el id
-        vID = aID;
+        vID = attID;
 
 		// Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
@@ -270,12 +272,7 @@
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
 
-    //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
-    //uniform sampler2D street;
-    //uniform sampler2D esquina;
-    //uniform sampler2D vereda;
     uniform sampler2D autopista;
-    //uniform sampler2D pasto;
     uniform sampler2D concreto;
     uniform sampler2D poste;
     uniform sampler2D autopistaNormalMap;
@@ -366,20 +363,6 @@
         if(vID >= 499.5 && vID < 500.5){
             //llenar textura farol
         }
-
-        /*if(vID >= 0.0 && vID < 0.5){
-           textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-
-        if(vID > 0.5 && vID < 1.5){
-           textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
-
-        if(vID >17.5 && vID <18.5){
-            auxUv.x = auxUv.x * 7.0;
-            auxUv.y = auxUv.y * 7.0;
-            textureColor = texture2D(vereda, vec2(auxUv.s, auxUv.t));
-        }*/
 
         if(vID >18.5 && vID <19.5){
 
@@ -576,9 +559,6 @@
             }
         }
 
-      /*  if(vID> 19.5 && vID< 20.5){
-            textureColor = texture2D(pasto, vec2(vTextureCoord.s, vTextureCoord.t));
-        }*/
 
         if(vID >20.5 && vID <21.5){
 
