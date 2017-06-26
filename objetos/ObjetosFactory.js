@@ -492,18 +492,27 @@ class ObjetosFactory {
         //Sabemos que las normales son salientes al plano, entonces son 1 en y.
         var norm = [];
         var pos = [];
+        var tan = [];
 
         var tex = [0.1,0.0,  0.9,0.0,  0.93,0.005,  0.959,0.019,  0.98,0.041,  0.99,0.069,
             1.0,0.9,  0.99,0.93,  0.98,0.958,  0.958,0.98,  0.93,0.99,  0.9,1.0,
             0.1,1.0,  0.069,0.99,  0.041,0.98,  0.019,0.96,  0.009,0.93,  0.0,0.9,
             0.0,0.1,  0.0098,0.069,  0.019,0.041,  0.041,0.019,  0.069,0.0048,  0.1,0.0];
 
-        //console.log("empieza");
+        /*
+        0 1 0
+        0 0 1
+        -----
+        -1 0 0
+         */
         for( var i = 0; i<24; i++){
             norm.push(0.0);
             norm.push(1.0);
             norm.push(0.0);
 
+            tan.push(-1.0);
+            tan.push(0.0);
+            tan.push(0.0);
             //Pone x6 aca y sacas el trasnportado.
             pos.push(perfil.bufferCreator.posBuffer[i*3]);
             pos.push(perfil.bufferCreator.posBuffer[i*3+1]);
@@ -513,12 +522,10 @@ class ObjetosFactory {
 
         buf.normalBuffer =norm;
         buf.posBuffer = pos;
-        buf.colorBuffer = perfil.bufferCreator.colorBuffer;
-
-        buf.setBoolTexture1();
-
+        buf.tangentBuffer = tan;
         buf.textureBuffer1 = tex;
 
+        buf.setBoolTexture1();
         piso.setBufferCreator(buf);
 
         piso.bufferCreator.indexBuffer = [0,7,1, 1,7,2, 2,7,3, 3,7,4, 4,7,5, 5,6,7,

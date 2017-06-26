@@ -549,6 +549,11 @@ class Objeto3D extends Container3D{
         }
 
 
+        if(this.bufferCreator.normalBuffer.length != this.bufferCreator.tangentBuffer.length && this.objectType){
+            console.log(this.objectType);
+        }
+
+
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
         gl.uniformMatrix4fv(this.shaderProgram.ModelMatrixUniform, false, modelMatrix);
         var normalMatrix = mat3.create();

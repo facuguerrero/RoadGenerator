@@ -251,7 +251,7 @@ class BufferCalculator{
         var posBuf = [];
         var normBuf = [];
         var texBuf = [];
-        var colBuf = [];
+        var tan = [];
 
         var r = radius;
         var theta = (2*Math.PI)/(this.colms - 1);
@@ -273,15 +273,19 @@ class BufferCalculator{
                 //La variable Z se define como R*Sen(theta)*Sin(phi)
                 posBuf.push(r* sT *sP);
 
-                //Col
-                colBuf.push(1.0);
-                colBuf.push(0.5);
-                colBuf.push(0.3);
-
                 //Cargamos las normales
                 normBuf.push(cT * sP);
                 normBuf.push(cP);
                 normBuf.push(sT * sP);
+
+                /*Cargamos las tangentes
+                Nx Ny Nz
+                0 0 1
+                */
+
+                tan.push(1.0);
+                tan.push(1.0);
+                tan.push(1.0);
 
                 //Cargamos las texturas
                 texBuf.push(j /(this.colms - 1));
@@ -290,8 +294,8 @@ class BufferCalculator{
         }
 
         this.posBuffer = posBuf;
-        //this.colorBuffer = colBuf;
         this.normalBuffer = normBuf;
+        this.tangentBuffer = tan;
         this.setBoolTexture1();
         this.textureBuffer1 = texBuf;
         this.calcIndexBuffer();
