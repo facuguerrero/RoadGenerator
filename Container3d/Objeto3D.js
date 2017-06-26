@@ -416,11 +416,11 @@ class Objeto3D extends Container3D{
         }
         else if (this.objectType == ESQUINA){
             this.useTangent = false;
-            this.setShaderProgram(streetShader);
+            this.setShaderProgram(cityShader);
         }
         else if (this.objectType == VEREDA){
             this.useTangent = false;
-            this.setShaderProgram(streetShader);
+            this.setShaderProgram(cityShader);
         }
         else if(this.objectType == AUTOPISTA){
             this.useTangent = true;
@@ -432,7 +432,7 @@ class Objeto3D extends Container3D{
         }
         else if(this.objectType == PASTO){
             this.useTangent = false;
-            this.setShaderProgram(streetShader);
+            this.setShaderProgram(cityShader);
         }
         else if(this.objectType == CONCRETO){
             this.useTangent = true;
@@ -500,16 +500,16 @@ class Objeto3D extends Container3D{
             gl.uniform1f(maxY, this.maxY);
         }
         if(this.objectType == ESQUINA){
-            gl.vertexAttrib1f(idStreet,this.id);
+            gl.vertexAttrib1f(idCity,this.id);
         }
         if(this.objectType == VEREDA){
-            gl.vertexAttrib1f(idStreet, this.id);
+            gl.vertexAttrib1f(idCity, this.id);
         }
         if(this.objectType == AUTOPISTA){
             gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == PASTO){
-            gl.vertexAttrib1f(idStreet, this.id);
+            gl.vertexAttrib1f(idCity, this.id);
         }
         if(this.objectType == CONCRETO){
             gl.vertexAttrib1f(idStreet, this.id);

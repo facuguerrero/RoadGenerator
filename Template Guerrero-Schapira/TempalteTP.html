@@ -272,10 +272,10 @@
 
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
     //uniform sampler2D street;
-    uniform sampler2D esquina;
-    uniform sampler2D vereda;
+    //uniform sampler2D esquina;
+    //uniform sampler2D vereda;
     uniform sampler2D autopista;
-    uniform sampler2D pasto;
+    //uniform sampler2D pasto;
     uniform sampler2D concreto;
     uniform sampler2D poste;
     uniform sampler2D autopistaNormalMap;
@@ -369,7 +369,7 @@
 
         /*if(vID >= 0.0 && vID < 0.5){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
-        }*/
+        }
 
         if(vID > 0.5 && vID < 1.5){
            textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
@@ -379,7 +379,7 @@
             auxUv.x = auxUv.x * 7.0;
             auxUv.y = auxUv.y * 7.0;
             textureColor = texture2D(vereda, vec2(auxUv.s, auxUv.t));
-        }
+        }*/
 
         if(vID >18.5 && vID <19.5){
 
@@ -576,9 +576,9 @@
             }
         }
 
-        if(vID> 19.5 && vID< 20.5){
+      /*  if(vID> 19.5 && vID< 20.5){
             textureColor = texture2D(pasto, vec2(vTextureCoord.s, vTextureCoord.t));
-        }
+        }*/
 
         if(vID >20.5 && vID <21.5){
 
@@ -1090,11 +1090,17 @@
     uniform mat4 uPMatrix;
     uniform mat3 uNMatrix;
 
+    uniform vec3 uAmbientColor;
     uniform vec3 uLightPosition;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+    uniform bool uUsingNormalMap;
 
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
+    varying vec3 reflectDir;
 
     varying vec3 vNormal;
     varying vec3 vLightDir;
@@ -1194,12 +1200,14 @@
 
 
         vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
-        vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
-        vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
+        //vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
+        //vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
-        vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
+        //vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
 
-        gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
+        //gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
+          gl_FragColor = vec4(textureColor.rgb * lightIntensity, textureColor.a);
+
     }
     </script>
 
@@ -1531,19 +1539,19 @@
             }
 
             //se cargan las texturas de la esquina
-            gl.useProgram(streetShader);
+            gl.useProgram(cityShader);
             loadTexture("textures/cruce.jpg", "esquina");
 
-            var location = gl.getUniformLocation(streetShader, "esquina");
+            var location = gl.getUniformLocation(cityShader, "esquina");
             gl.uniform1i(location, 17);
             gl.activeTexture(gl.TEXTURE17);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["esquina"]);
 
             //se cargan las texturas de la vereda
-            gl.useProgram(streetShader);
+            gl.useProgram(cityShader);
             loadTexture("textures/vereda.jpg", "vereda");
 
-            var location = gl.getUniformLocation(streetShader, "vereda");
+            var location = gl.getUniformLocation(cityShader, "vereda");
             gl.uniform1i(location, 18);
             gl.activeTexture(gl.TEXTURE18);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["vereda"]);
@@ -1567,10 +1575,10 @@
             gl.bindTexture(gl.TEXTURE_2D, glTextures["sky"]);
 
             //se carga la textura del pasto
-            gl.useProgram(streetShader);
+            gl.useProgram(cityShader);
             loadTexture("textures/pasto.jpg", "pasto");
 
-            var location = gl.getUniformLocation(streetShader, "pasto");
+            var location = gl.getUniformLocation(cityShader, "pasto");
             gl.uniform1i(location, 21);
             gl.activeTexture(gl.TEXTURE21);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["pasto"]);
