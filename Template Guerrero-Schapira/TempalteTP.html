@@ -1094,6 +1094,8 @@
     uniform vec3 uLightPosition;
     uniform vec3 uDirectionalColor;
 
+    uniform float atID;
+
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
@@ -1113,7 +1115,7 @@
         gl_Position = uPMatrix * pos_camera_view;
 
         //se pasa el id
-        vID = aID;
+        vID = atID;
 
 		// Coordenada de textura sin modifiaciones
         vTextureCoord = aTextureCoord;
@@ -1351,7 +1353,7 @@
             cityShader.shininess = gl.getUniformLocation(cityShader, "uShininess");
             //cityShader.usingNormalMap = gl.getUniformLocation(cityShader, "uUsingNormalMap");
 
-            idCity = gl.getAttribLocation(cityShader, "aID");
+            idCity = gl.getAttribLocation(cityShader, "atID");
 
         }
 

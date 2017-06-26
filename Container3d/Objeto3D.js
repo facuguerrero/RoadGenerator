@@ -451,6 +451,8 @@ class Objeto3D extends Container3D{
             this.setShaderProgram(shaderProgramColoredObject);
         }
 
+        gl.useProgram(this.shaderProgram);
+
         //Matriz de proyeccion y vista
         gl.uniformMatrix4fv(this.shaderProgram.pMatrixUniform, false, pMatrix);
         gl.uniformMatrix4fv(this.shaderProgram.ViewMatrixUniform, false, CameraMatrix);
@@ -485,7 +487,10 @@ class Objeto3D extends Container3D{
 
         //a continuacion se setea todo dependiendo del id
         if(this.objectType == CALLE){
-            gl.vertexAttrib1f(idCity, this.id);
+            //gl.vertexAttrib1f(idCity, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == EDIFICIO){
             gl.vertexAttrib1f(idBuilding, this.id);
@@ -496,16 +501,25 @@ class Objeto3D extends Container3D{
             gl.uniform1f(maxY, this.maxY);
         }
         if(this.objectType == ESQUINA){
-            gl.vertexAttrib1f(idCity,this.id);
+            //gl.vertexAttrib1f(idCity,this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == VEREDA){
-            gl.vertexAttrib1f(idCity, this.id);
+            //gl.vertexAttrib1f(idCity, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == AUTOPISTA){
             gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == PASTO){
-            gl.vertexAttrib1f(idCity, this.id);
+            //gl.vertexAttrib1f(idCity, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
         }
         if(this.objectType == CONCRETO){
             gl.vertexAttrib1f(idStreet, this.id);
