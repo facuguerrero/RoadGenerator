@@ -380,14 +380,14 @@ class ObjetosFactory {
         //Creamos la carroceria del auto
         var carroceria = new Objeto3D();
 
-        carroceria.calcularSuperficieBarrido("carroceria", 2, 19, arrayMat, puntosCarroceria);
+        carroceria.calcularSuperficieBarrido("carroceria", 2, 21, arrayMat, puntosCarroceria);
         auto.add(carroceria);
 
         this.addPuertas(carroceria,auto, arrayMat, puntosCarroceria);
 
         this.addRuedas(puntosCarroceria,arrayMat, auto);
 
-        this.addTecho(puntosCarroceria,arrayMat,carroceria);
+        //this.addTecho(puntosCarroceria,arrayMat,carroceria);
 
         return auto;
     }
@@ -711,12 +711,13 @@ class ObjetosFactory {
 
     addPuertas(carroceria,auto,arrayMat,puntosCarroceria){
         var puerta1 = new Objeto3D();
-        var buf = new BufferCalculator(2,19);
+        var buf = new BufferCalculator(2,21);
         /*Seteo los buffers */
         var norm1 = [];
         var norm2 = [];
+        var pos = [];
 
-        for (var i =0; i<19;i++){
+        for (var i =0; i<21;i++){
             norm1.push(-1.0);
             norm1.push(0.0);
             norm1.push(0.0);
@@ -724,24 +725,39 @@ class ObjetosFactory {
             norm2.push(1.0);
             norm2.push(0.0);
             norm2.push(0.0);
+
+            pos.push(carroceria.bufferCreator.posBuffer[i*3] );
+            pos.push(carroceria.bufferCreator.posBuffer[i*3 +1] );
+            pos.push(carroceria.bufferCreator.posBuffer[i*3 +2] );
         }
 
+        var tex = [ 1.0,0.0,  0.93,0.0,  0.88,0.13,  0.84,0.15,  0.8,0.15,  0.75,0.13, 0.68,0.0,
+            0.25,0.0,  0.199,0.05,  0.195,0.1,  0.193,0.1,  0.19,0.05, 0.14,0.0,
+            0.0,0.0,  0.0,0.33,  0.2,0.6,  0.5,1.0,  0.7,1.0,  0.8,0.9,  1.0,0.4,  1.0,0.0];
+        /*
+         [ 0.0,0.0,  0.07,0.0,  0.12,0.13,  0.16,0.15,  0.2,0.15,  0.25,0.13, 0.3,0.0,
+         0.7,0.0,  0.75,0.05,  0.79,0.1,  0.80,0.1,  0.81,0.05, 0.86,0.0,
+         1.0,0.0,  1.0,0.33,  0.8,0.6,  0.5,1.0,  0.3,1.0,  0.2,0.9,  0.0,0.4,  0.0,0.0];
+        */
 
+        buf.setTextures(1);
+        buf.textureBuffer1 = tex;
         buf.normalBuffer = norm1;
         buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
-        buf.posBuffer = carroceria.bufferCreator.posBuffer;
+        buf.posBuffer = pos;
         puerta1.setBufferCreator(buf);
-
+        puerta1.setType("puerta",23);
         //console.log(buf.posBuffer);
-        puerta1.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
-            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+        puerta1.bufferCreator.indexBuffer = [13,14,12, 12,11,14, 14,11,10, 10,14,15,
+        15,10,9, 9,8,15, 15,8,7, 7,6,15, 15,16,6, 6,5,16, 16,5,4, 4,16,3, 3,16,17, 17,18,3,
+        3,2,18, 18,19,2, 2,1,19, 1,19,20];
         puerta1.build();
         auto.add(puerta1);
 
 
         //ACOMODAR LAS NORMALES, ESTAN COMO PARA ADENTRO DEL AUTO
         var puerta2 = new Objeto3D();
-        var buf = new BufferCalculator(2,19);
+        var buf = new BufferCalculator(2,21);
         /*Seteo los buffers */
         buf.normalBuffer = norm2;
         buf.colorBuffer = carroceria.bufferCreator.colorBuffer;
@@ -749,8 +765,9 @@ class ObjetosFactory {
 
         puerta2.setBufferCreator(buf);
 
-        puerta2.bufferCreator.indexBuffer = [0,17,1,1,17,2,2,17,3,3,17,4,4,16,17,4,16,5,5,16
-            ,6,6,16,7,7,16,8,8,16,9,9,16,10,10,16,11,11,16,12,12,15,16,12,15,13,13,14,15];
+        puerta2.bufferCreator.indexBuffer = [13,14,12, 12,11,14, 14,11,10, 10,14,15,
+            15,10,9, 9,8,15, 15,8,7, 7,6,15, 15,16,6, 6,5,16, 16,5,4, 4,16,3, 3,16,17, 17,18,3,
+            3,2,18, 18,19,2, 2,1,19, 1,19,20];
         puerta2.build();
 
         puerta2.translate(0.0,0.0,4.0);
@@ -815,7 +832,7 @@ class ObjetosFactory {
         rueda.add(tapa1);
     }
 
-    addTecho(puntosCarroceria,arrayMat,carroceria){
+    addTecho(puntosroceria,arrayMat,carroceria){
 
         var techo = new Objeto3D();
         techo.calcularSuperficieBarrido("techo",2,6,arrayMat,puntosCarroceria);
