@@ -392,7 +392,9 @@ class Objeto3D extends Container3D{
      * @param {parentMod} bool Indica si el padre fue modificado o no
      */
     draw(mMatrix, parentMod){
+
         //Se crea una matriz nueva para no modificar la matriz del padre
+
         var modelMatrix = mat4.create();
         if(this.modified || parentMod){
             mat4.multiply(modelMatrix, mMatrix, this.matrix);
@@ -554,10 +556,8 @@ class Objeto3D extends Container3D{
 
 
         if(this.bufferCreator.tangentBuffer.length == 0 ){
-            if(this.objectType == "col"){
-                console.log("aca estamo");
-            }
-            //console.log(this.objectType);
+
+            console.log(this.objectType);
             //console.log(this.bufferCreator.posBuffer/3);
             //console.log(this.bufferCreator.rows);
             //console.log(this.bufferCreator.colms);

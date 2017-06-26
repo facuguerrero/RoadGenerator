@@ -9,40 +9,6 @@ class ObjetosFactory {
         //
     }
 
-    //Crea una grilla en el plano xz que permite modelar con mayor facilidad
-    createGrid() {
-
-        var grid = new Objeto3D();
-
-        //aca en 0
-        //var buffcalc = new BufferCalculator(2, 2);
-
-        var buffcalc = new BufferCalculator(0, 0);
-        //grid.setType("escena",12341);
-        grid.setBufferCreator(buffcalc);
-        grid.build();
-
-        var arrayMatT = [];
-        var matt = mat3.create();
-        var mattt = mat3.create();
-        mat3.identity(matt);
-        mat3.identity(mattt);
-        arrayMatT.push(matt);
-        arrayMatT.push(mattt);
-
-        //barras verticales
-        for (var i = -50.0; i <= 50.0; i += 3) {
-
-            var linea = new Objeto3D();
-            var vecPos = [];
-            vecPos.push(vec3.fromValues(i, 0.0, -100.0));
-            vecPos.push(vec3.fromValues(i, 0.0, 100.0));
-            linea.calcularSuperficieBarrido("linea", 2, 2, arrayMatT, vecPos);
-            grid.add(linea);
-
-        }
-        return grid;
-    }
 
     createSky(){
 
@@ -357,11 +323,6 @@ class ObjetosFactory {
     createCar() {
         /*Variables a modificar para las dimensiones del auto*/
 
-        //var auto = new Objeto3D();
-        //var buffcalc = new BufferCalculator(2, 2);
-        //auto.setBufferCreator(buffcalc);
-        //auto.build();
-
         //Declaro los puntos de la carroceria del auto
         var puntosCarroceria = [];
 
@@ -398,14 +359,6 @@ class ObjetosFactory {
     createEscene(x, bool = false) {
 
 
-        //var escene = new Objeto3D();
-
-        //aca en 0
-        //var buffcalc = new BufferCalculator(2, 2);
-        //var buffcalc = new BufferCalculator(0, 0);
-        //escene.setBufferCreator(buffcalc);
-
-
         var arrayMatT = [];
         var matt = mat3.create();
         var mattt = mat3.create();
@@ -434,10 +387,6 @@ class ObjetosFactory {
     }
 
     createVereda(control){
-
-        //var vereda = new Objeto3D();
-        //var buffcalc = new BufferCalculator(2, 2);
-
 
         var perfil = new Objeto3D();
 
@@ -473,8 +422,6 @@ class ObjetosFactory {
         }
 
         perfil.bufferCreator.textureBuffer1 = tex1;
-
-        //vereda.add(perfil);
 
         var piso = new Objeto3D();
         if(control){
@@ -537,10 +484,7 @@ class ObjetosFactory {
         piso.translate(0.0,0.2,0.0);
 
         perfil.add(piso);
-        //vereda.setBufferCreator(buffcalc);
-        //vereda.build();
         return perfil;
-
     }
 
     createManzanaB(x){
@@ -637,14 +581,6 @@ class ObjetosFactory {
         /*Objeto Contenedor*/
 
         var cantidad = 15;
-
-        //aca en 0
-        //var buffcalc = new BufferCalculator(2, cantidad);
-        //var columna = new Objeto3D();
-        //var buffcalc = new BufferCalculator(0, 0);
-        //columna.setType("col",124);
-        //columna.setBufferCreator(buffcalc);
-        //columna.build();
 
         /*Creo lo que es el cilindro de la columna*/
         var pilar = new Objeto3D();
