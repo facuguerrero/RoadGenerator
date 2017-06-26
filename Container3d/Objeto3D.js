@@ -14,10 +14,6 @@ var TECHO = "techo";
 var COLUMNA= "columna";
 var BASE_COLUMNA="base_columna";
 var TAPA_COLUMNA = "tapa_columna";
-
-var RUTA = "ruta";
-var FAROL = "farol";
-var AUTO = "auto";
 var CALLE = "calle";
 var EDIFICIO = "edificio";
 var VEREDA = "vereda";
@@ -278,7 +274,8 @@ class Objeto3D extends Container3D{
                 console.log("para hacer la carroceria se necesitan 19 vertices");
             }
             this.figuras.calcularCarroceria(vertices, arrayVecNOR);
-            this.addColor(buffcalc,42, 0.0, 0.0, 1.0);
+            buffcalc.setBoolTexture1();
+            //this.addColor(buffcalc,42, 0.0, 0.0, 1.0);
         }
 
         else if(figura == TECHO){
@@ -311,12 +308,27 @@ class Objeto3D extends Container3D{
         if(barrer) {
             this.setBufferCreator(buffcalc);
             this.bufferCreator.calcularSuperficieBarrido(vertices, arrayMatT, arrayVecPos, arrayVecNOR);
+            if(figura == CARROCERIA){
+                this.llenarTexture(buffcalc);
+            }
             this.build();
         }
         else if(! barrer){
             this.bufferCreator.posBuffer=vertices;
         }
     }
+
+    llenarTexture(buf){
+
+        console.log(buf.textureBuffer1);
+        var tex=[0.0,1.0,  0.0,1.0,  0.12,1.0,  0.28,1.0,  0.38,0.8,  0.685,1.0,  0.75,1.0,  0.875,1.0,  1.0,1.0,
+            0.0,0.0,  0.0,0.0,  0.12,0.0,  0.28,0.0,  0.38,0.2,  0.685,0.0,  0.75,0.0,  0.875,0.0,  1.0,0.0
+
+        ];
+
+        buf.textureBuffer1 = tex;
+    }
+
 
 
     /*Rows representa la cantidad de niveles de la superficie.
@@ -436,6 +448,9 @@ class Objeto3D extends Container3D{
         else if(this.objectType == RUEDA){
             this.setShaderProgram(streetShader);
         }
+        else if(this.objectType == CARROCERIA){
+            this.setShaderProgram(streetShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -506,6 +521,9 @@ class Objeto3D extends Container3D{
             gl.vertexAttrib1f(idStreet, this.id);
         }
         if(this.objectType == RUEDA){
+            gl.vertexAttrib1f(idStreet, this.id);
+        }
+        if(this.objectType == CARROCERIA){
             gl.vertexAttrib1f(idStreet, this.id);
         }
 

@@ -381,6 +381,7 @@ class ObjetosFactory {
         var carroceria = new Objeto3D();
 
         carroceria.calcularSuperficieBarrido("carroceria", 2, 9, arrayMat, puntosCarroceria);
+        carroceria.setType("carroceria",26.0);
         auto.add(carroceria);
 
         this.addPuertas(carroceria,auto, 9);
@@ -744,7 +745,7 @@ class ObjetosFactory {
         puerta1.setBufferCreator(buf);
 
         buf.setTextures(1);
-        puerta1.setType("puerta",23);
+        puerta1.setType("puerta",23.0);
 
         puerta1.build();
         auto.add(puerta1);
@@ -761,7 +762,7 @@ class ObjetosFactory {
         puerta2.setBufferCreator(buf);
 
         buf.setTextures(1);
-        puerta2.setType("puerta",23);
+        puerta2.setType("puerta",23.0);
 
         puerta2.build();
         puerta2.translate(0.0,0.0,4.0);

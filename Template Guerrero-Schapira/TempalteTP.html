@@ -281,6 +281,7 @@
     uniform sampler2D autopistaNormalMap;
     uniform sampler2D puerta;
     uniform sampler2D rueda;
+    uniform sampler2D carroceria;
 
     // Variables utilizadas para la iluminación
     uniform vec3 uAmbientColor;
@@ -755,6 +756,10 @@
 
         if(vID > 24.5 && vID < 25.5){
             textureColor = texture2D(rueda, vec2(auxUv.s, auxUv.t));
+        }
+
+        if(vID > 25.5 && vID < 26.5){
+            textureColor = texture2D(carroceria, vec2(auxUv.s, auxUv.t));
         }
 
         vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + specular*uDirectionalColor ;
@@ -1416,6 +1421,15 @@
             gl.uniform1i(location, 26);
             gl.activeTexture(gl.TEXTURE26);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["rueda"]);
+
+            //Rueda Auto
+            gl.useProgram(streetShader);
+            loadTexture("textures/carTop.jpg", "carroceria");
+
+            var location = gl.getUniformLocation(streetShader, "carroceria");
+            gl.uniform1i(location, 27);
+            gl.activeTexture(gl.TEXTURE27);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["carroceria"]);
 
         }
 
