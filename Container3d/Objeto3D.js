@@ -438,12 +438,15 @@ class Objeto3D extends Container3D{
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == PUERTA){
+            this.useTangent = true;
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == RUEDA){
+            this.useTangent = true;
             this.setShaderProgram(streetShader);
         }
         else if(this.objectType == CARROCERIA){
+            this.useTangent = true;
             this.setShaderProgram(streetShader);
         }
         else{
@@ -549,7 +552,7 @@ class Objeto3D extends Container3D{
         }
 
 
-        if(this.bufferCreator.normalBuffer.length != this.bufferCreator.tangentBuffer.length){
+        if(this.bufferCreator.normalBuffer.length/3 != this.bufferCreator.tangentBuffer.length/3 ){
             console.log(this.objectType);
         }
 
