@@ -718,16 +718,33 @@ class ObjetosFactory {
         /*Creo los buffers necesarios para llenar las puertas */
         var norm1 = [];
         var norm2 = [];
+        var tan1=[];
+        var tan2=[];
         var pos = [];
+
+        /*La tangente es el producto cruzado entre la normal y la binormal
+        1 0 0
+        0 0 1
+        -----
+        0 -1 0
+         */
 
         for (var i =0; i<rows;i++){
             norm1.push(-1.0);
             norm1.push(0.0);
             norm1.push(0.0);
 
+            tan1.push(0.0);
+            tan1.push(-1.0);
+            tan1.push(0.0);
+
             norm2.push(1.0);
             norm2.push(0.0);
             norm2.push(0.0);
+
+            tan2.push(0.0);
+            tan2.push(1.0);
+            tan2.push(0.0);
 
             pos.push(carroceria.bufferCreator.posBuffer[i*3] );
             pos.push(carroceria.bufferCreator.posBuffer[i*3 +1] );
@@ -742,7 +759,7 @@ class ObjetosFactory {
         buf.posBuffer = pos;
         buf.textureBuffer1 = tex;
         buf.indexBuffer = [0,1,2, 2,0,3, 3,0,7, 7,3,6, 6,3,4, 4,5,6];
-        buf.tangentBuffer=norm1;
+        buf.tangentBuffer=tan1;
         puerta1.setBufferCreator(buf);
 
         buf.setTextures(1);
@@ -760,7 +777,7 @@ class ObjetosFactory {
         buf2.posBuffer = pos;
         buf2.textureBuffer1=tex;
         buf2.indexBuffer = [0,1,2, 2,0,3, 3,0,7, 7,3,6, 6,3,4, 4,5,6];
-        buf2.tangentBuffer = norm2;
+        buf2.tangentBuffer = tan2;
         puerta2.setBufferCreator(buf);
 
         buf.setTextures(1);
@@ -816,6 +833,8 @@ class ObjetosFactory {
 
         var norm = [];
         var pos = [];
+        var tan =[];
+
         var n = -1.0;
         if (trasladar){
             n=1.0;
@@ -825,6 +844,10 @@ class ObjetosFactory {
             norm.push(0.0);
             norm.push(0.0);
             norm.push(n);
+
+            tan.push(0.0);
+            tan.push(n);
+            tan.push(0.0);
 
             pos.push(rueda.bufferCreator.posBuffer[i*3]);
             pos.push(rueda.bufferCreator.posBuffer[i*3 +1]);
@@ -840,7 +863,7 @@ class ObjetosFactory {
         buf.textureBuffer1 =[1.0,0.5,  0.9,0.735,  0.65,0.93,  0.4,0.93,
                             0.1,0.735,  0.0,0.5,  0.1,0.265,  0.4,0.07,
                             0.65,0.07,  0.9,0.265,  1.0,0.5];
-        buf.tangentBuffer = norm;
+        buf.tangentBuffer = tan;
 
         buf.setBoolTexture1();
         tapa1.setBufferCreator(buf);
