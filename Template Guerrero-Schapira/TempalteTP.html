@@ -1149,7 +1149,7 @@
         vec4 textureColor;
 
         //variables iluminacion
-        float shininess = 1.0;
+        float shininess = 10.0;
 
 		// Attenuation constants
 		const float constantAtt = 1.0;
@@ -1161,7 +1161,7 @@
         vec3 viewDir = vViewDir;
 
         float lambertian = max(dot(lightDir, normal), 0.0);
-        float specular = 10.0;
+        float specular = 0.0;
 
         if(lambertian > 0.0) {
             vec3 reflectDir = reflect(-lightDir, normal);
