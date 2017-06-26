@@ -1094,9 +1094,6 @@
     uniform vec3 uLightPosition;
     uniform vec3 uDirectionalColor;
 
-    uniform bool uUseLighting;
-    uniform bool uUsingNormalMap;
-
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
@@ -1179,22 +1176,22 @@
         vec2 auxUv = vTextureCoord;
 
 
-        if(vID >= 0.0 && vID < 0.5){
+        if(vID >= -0.5 && vID < 0.5){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
-        if(vID > 0.5 && vID < 1.5){
+        if(vID >= 0.5 && vID < 1.5){
            textureColor = texture2D(esquina, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
-        if(vID >17.5 && vID <18.5){
+        if(vID >= 17.5 && vID < 18.5){
             auxUv.x = auxUv.x * 7.0;
             auxUv.y = auxUv.y * 7.0;
             textureColor = texture2D(vereda, vec2(auxUv.s, auxUv.t));
         }
 
 
-        if(vID> 19.5 && vID< 20.5){
+        if(vID >= 19.5 && vID < 20.5){
             textureColor = texture2D(pasto, vec2(vTextureCoord.s, vTextureCoord.t));
         }
 
@@ -1206,7 +1203,7 @@
         //vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
 
         //gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
-          gl_FragColor = vec4(textureColor.rgb * lightIntensity, textureColor.a);
+        gl_FragColor = vec4(textureColor.rgb * lightIntensity, textureColor.a);
 
     }
     </script>
