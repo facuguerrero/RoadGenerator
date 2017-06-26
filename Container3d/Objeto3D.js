@@ -488,27 +488,27 @@ class Objeto3D extends Container3D{
         //a continuacion se setea todo dependiendo del id
         if(this.objectType == CALLE){
             //gl.vertexAttrib1f(idCity, this.id);
-            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            var count = gl.getUniformLocation(this.shaderProgram, "atID");
             gl.useProgram(this.shaderProgram);
             gl.uniform1f(count, this.id);
         }
         if(this.objectType == EDIFICIO){
             gl.vertexAttrib1f(idBuilding, this.id);
-            var count = gl.getUniformLocation(buildingShaders, "count");
-            gl.useProgram(buildingShaders);
+            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            gl.useProgram(this.shaderProgram);
             gl.uniform1f(count, this.cantEdificios);
-            var maxY = gl.getUniformLocation(buildingShaders, "amaxY");
+            var maxY = gl.getUniformLocation(this.shaderProgram, "amaxY");
             gl.uniform1f(maxY, this.maxY);
         }
         if(this.objectType == ESQUINA){
             //gl.vertexAttrib1f(idCity,this.id);
-            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            var count = gl.getUniformLocation(this.shaderProgram, "atID");
             gl.useProgram(this.shaderProgram);
             gl.uniform1f(count, this.id);
         }
         if(this.objectType == VEREDA){
             //gl.vertexAttrib1f(idCity, this.id);
-            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            var count = gl.getUniformLocation(this.shaderProgram, "atID");
             gl.useProgram(this.shaderProgram);
             gl.uniform1f(count, this.id);
         }
@@ -517,7 +517,7 @@ class Objeto3D extends Container3D{
         }
         if(this.objectType == PASTO){
             //gl.vertexAttrib1f(idCity, this.id);
-            var count = gl.getUniformLocation(this.shaderProgram, "count");
+            var count = gl.getUniformLocation(this.shaderProgram, "atID");
             gl.useProgram(this.shaderProgram);
             gl.uniform1f(count, this.id);
         }
