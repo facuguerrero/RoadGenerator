@@ -421,6 +421,18 @@
             textureColor = texture2D(carroceria, vec2(auxUv.s, auxUv.t));
         }
 
+        if(vID >49.5 && vID <50.5){
+            textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
+            sinSpot = true;
+
+        }
+
+         if(vID >50.5 && vID <51.5){
+            textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
+            sinSpot = true;
+
+        }
+
         //mat3 tbn = mat3(vvtangent, vvbinormal, vvnormal);
         //normal = normalize(tbn * normal);
 
@@ -608,18 +620,6 @@
                     spotLightIntensity11 = spotEffect11 * att11 * (lightColor *	diffuseLightWeighting11 + lightColor * specularLightWeighting11);
                 }
             }
-
-        if(vID >49.5 && vID <50.5){
-            textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
-            sinSpot = true;
-
-        }
-
-         if(vID >50.5 && vID <51.5){
-            textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
-            sinSpot = true;
-
-        }
 
         vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + (specular)*uDirectionalColor ;
 
