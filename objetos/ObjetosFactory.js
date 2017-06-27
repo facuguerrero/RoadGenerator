@@ -40,6 +40,7 @@ class ObjetosFactory {
 
         var buffcalc = new BufferCalculator(vecPos.length, 9);
         buffcalc.tangent=true;
+        buffcalc.tangentRuta = true;
         ruta.setBufferCreator(buffcalc);
         ruta.build();
 

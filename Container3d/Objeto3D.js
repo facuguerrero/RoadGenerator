@@ -269,6 +269,7 @@ class Objeto3D extends Container3D{
                 console.log("para hacer una base de ruta se necesitan exactamente 9 vertices");
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
+            buffcalc.tangentRuta = true;
             //this.addColor(buffcalc,1000,0.66,0.64,0.60);
             buffcalc.setTextures(1);
         }
@@ -278,6 +279,7 @@ class Objeto3D extends Container3D{
                 console.log("para hacer el asfalto de la ruta se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);
+            buffcalc.tangentRuta = true;
             //this.addColor(buffcalc,5000,0.2 ,0.2 ,0.2);
             buffcalc.setTextures(1);
         }
@@ -288,6 +290,7 @@ class Objeto3D extends Container3D{
             }
             escalado = arrayVecPos.pop();
             this.figuras.calcularCalle(vertices, arrayVecNOR, escalado[0]);
+            buffcalc.tangent = true;
             buffcalc.setTextures(1);
             //this.addColor(buffcalc, 4, 0.3, 0.3, 0.3);
         }
@@ -332,6 +335,7 @@ class Objeto3D extends Container3D{
             var vereda = arrayVecPos.pop();
             this.figuras.calcularVereda(vertices,arrayVecNOR);
             buffcalc.setTextures(1);
+            buffcalc.tangent = true;
         }
 
         else {
@@ -454,18 +458,18 @@ class Objeto3D extends Container3D{
         }
         if (this.objectType == CALLE){
             this.setShaderProgram(cityShader);
-            this.useTangent = false;
+            this.useTangent = true;
         }
         else if (this.objectType == EDIFICIO){
             this.setShaderProgram(buildingShaders);
             this.useTangent = false;
         }
         else if (this.objectType == ESQUINA){
-            this.useTangent = false;
+            this.useTangent = true;
             this.setShaderProgram(cityShader);
         }
         else if (this.objectType == VEREDA){
-            this.useTangent = false;
+            this.useTangent = true;
             this.setShaderProgram(cityShader);
         }
         else if(this.objectType == AUTOPISTA){
@@ -477,7 +481,7 @@ class Objeto3D extends Container3D{
             this.setShaderProgram(skyShader);
         }
         else if(this.objectType == PASTO){
-            this.useTangent = false;
+            this.useTangent = true;
             this.setShaderProgram(cityShader);
         }
         else if(this.objectType == CONCRETO){
