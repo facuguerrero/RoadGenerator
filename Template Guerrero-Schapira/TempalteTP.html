@@ -986,6 +986,8 @@
     uniform sampler2D esquinaNormalMap;
     uniform sampler2D streetNormalMap;
 
+    uniform samplerCube uReflectionMap;
+
 
     // Variables utilizadas para la iluminación
     uniform vec3 uAmbientColor;
@@ -1045,6 +1047,13 @@
             normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
         }
 
+        if(vID >= 39.5 && vID < 40.5){
+            auxUv.x = auxUv.x * 18.0;
+            auxUv.y = auxUv.y * 20.0;
+            textureColor = texture2D(pasto, vec2(auxUv.s, auxUv.t));
+            normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
+        }
+
         float lambertian = max(dot(lightDir, normal), 0.0);
         float specular = 1.0;
 
@@ -1055,13 +1064,19 @@
         }
 
         vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
-        //vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
-        //vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
-        //vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
+        vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
-        //gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
-        gl_FragColor = vec4(textureColor.rgb * lightIntensity, textureColor.a);
+//        if (vID >= 39.5 && vID < 40.5) {
+//            float reflectionFactor = 1.0;
+//            vec3 reflection = -reflect(viewDir, normal);
+//            reflectionColor = textureCube(uReflectionMap, reflection);
+//            reflectionColor = reflectionColor * reflectionFactor;
+//        }
+
+        vec4 mixedColor = textureColor + reflectionColor;
+
+        gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
 
     }
     </script>
