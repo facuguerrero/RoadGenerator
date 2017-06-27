@@ -440,6 +440,9 @@ class FigurasPrimitivas{
         vertices.push(vec3.fromValues(2.0, 0.0, 0.0));
         arrayVecNOR.push(vecNorm1);
 
+        console.log(vertices);
+        console.log(arrayVecNOR);
+
 
     }
 
@@ -473,7 +476,7 @@ class FigurasPrimitivas{
             var vec = vec3.fromValues( x + (r*c) ,0.0, z + (r*s));
             vertices.push(vec);
 
-            var vecNorm = vec3.fromValues(r/s, 0.0, -r/c );
+            var vecNorm = vec3.fromValues(- r*s, 0.0, r*c );
             vec3.normalize(vecNorm, vecNorm);
             arrayVecNOR.push(vecNorm);
         }

@@ -40,7 +40,6 @@ class ObjetosFactory {
 
         var buffcalc = new BufferCalculator(vecPos.length, 9);
         buffcalc.tangent=true;
-        buffcalc.tangentRuta = true;
         ruta.setBufferCreator(buffcalc);
         ruta.build();
 
@@ -410,15 +409,13 @@ class ObjetosFactory {
 
         perfil.bufferCreator.textureBuffer1 = tex1;
 
-        //vereda.add(perfil);
-
         var piso = new Objeto3D();
         if(control){
             perfil.setType("vereda",18.0);
             piso.setType("vereda",18.0);
         }
         else{
-            perfil.setType("pasto",20.0);
+            perfil.setType("pasto",31.0);
             piso.setType("pasto",20.0);
         }
 
@@ -441,7 +438,7 @@ class ObjetosFactory {
         -----
         -1 0 0
          */
-        for( var i = 0; i<24; i++){
+        for( var i = 0; i< perfil.bufferCreator.posBuffer.length/6; i++){
             norm.push(0.0);
             norm.push(1.0);
             norm.push(0.0);
@@ -453,6 +450,7 @@ class ObjetosFactory {
             pos.push(perfil.bufferCreator.posBuffer[i*3]);
             pos.push(perfil.bufferCreator.posBuffer[i*3+1]);
             pos.push(perfil.bufferCreator.posBuffer[i*3+2]);
+
         }
 
         buf.normalBuffer =norm;

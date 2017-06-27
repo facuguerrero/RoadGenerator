@@ -1013,10 +1013,16 @@
             normal = normalize(vec3(2.0 * texture2D(veredaNormalMap, auxUv) - 1.0));
         }
 
-
         if(vID >= 19.5 && vID < 20.5){
             textureColor = texture2D(pasto, vec2(vTextureCoord.s, vTextureCoord.t));
             normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, vTextureCoord) - 1.0));
+        }
+
+        if(vID >= 30.5 && vID < 31.5){
+            auxUv.x = auxUv.x * 20.0;
+            auxUv.y = auxUv.y * 0.005;
+            textureColor = texture2D(pasto, vec2(auxUv.s, auxUv.t));
+            normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
         }
 
         float lambertian = max(dot(lightDir, normal), 0.0);
