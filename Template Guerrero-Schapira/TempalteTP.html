@@ -196,7 +196,6 @@
     varying vec3 vSpotLight11;
 
 
-
     void main(void) {
 
 		// Transformamos al v�rtice al espacio de la c�mara
@@ -230,13 +229,14 @@
         vSpotLight11 = uFarol11Position - pos;
         vSpotLightDir1 = vec3(0.0, -1.0, 0.0);
 
-        if(vID >18.5 && vID <19.5) {
-            //por ahora solo la autopista usa normales
+        // Transform normal and tangent to eye space
+        vec3 norm = vNormal;
+        vec3 tang = normalize(uNMatrix * aVertexTangent);
+        vec3 binormal = normalize(cross(norm, tang));
 
-            // Transform normal and tangent to eye space
-            vec3 norm = vNormal;
-            vec3 tang = normalize(uNMatrix * aVertexTangent);
-            vec3 binormal = normalize(cross(norm, tang));
+        if(vID >18.5 && vID <21.5) {
+            //por ahora solo la autopista y el concreto usan normales
+
 
             // Matrix for transformation to tangent space
             mat3 toObjectLocal = mat3(
@@ -314,12 +314,12 @@
 
         //variables iluminacion
         float shininess = 10.0;
-        const float spotlightCutOff = 0.2;//CAMBIAR A 0.2  // en radianes
-		const float spotLightExponent = 2.0;
+        const float spotlightCutOff = 0.7;//CAMBIAR A 0.2  // en radianes
+		const float spotLightExponent = 10.0;
 
 		// Attenuation constants
-		const float constantAtt = 1.0;
-		const float linearAtt = 0.00001;
+		const float constantAtt = 4.0;
+		const float linearAtt = 0.0001;
 		const float quadraticAtt = 0.01;
 
 		vec3 normal = vNormal;
@@ -327,14 +327,6 @@
         vec3 viewDir = vViewDir;
 
         float specular = 0.0;
-
-        float lambertian = max(dot(lightDir, normal), 0.0);
-
-        if(lambertian > 0.0) {
-            vec3 reflectDir = reflect(-lightDir, normal);
-            float specAngle = max(dot(reflectDir, viewDir), 0.0);
-            specular = pow(specAngle, shininess);
-        }
 
         vec3 lightColor = vec3(0.9, 0.9, 0.7);
 
@@ -372,11 +364,10 @@
         if(vID >18.5 && vID <19.5){
 
             auxUv.x = (auxUv.x * 4.0) - 0.5;
-            auxUv.y = auxUv.y * 1.0;
-            textureColor = texture2D(autopista, vec2(auxUv.t, auxUv.s));
+            textureColor = texture2D(autopista, vec2(auxUv.s, auxUv.t));
 
             // Extrae la normal desde el normalMap
-            normal = vec3(2.0 * texture2D(autopistaNormalMap, vec2(auxUv.t, auxUv.s)) - 1.0);
+            normal = normalize(vec3(2.0 * texture2D(autopistaNormalMap, auxUv) - 1.0));
 
         }
 
@@ -385,7 +376,7 @@
             auxUv.y = auxUv.y*10.0;
             textureColor = texture2D(concreto, vec2(auxUv.s, auxUv.t));
             // Extrae la normal desde el normalMap
-            normal = vec3(2.0 * texture2D(concretoNormalMap, auxUv) - 1.0);
+            normal = normalize(vec3(2.0 * texture2D(concretoNormalMap, auxUv) - 1.0));
         }
 
          if(vID >21.5 && vID <22.5){
@@ -405,7 +396,10 @@
             textureColor = texture2D(carroceria, vec2(auxUv.s, auxUv.t));
         }
 
-        lambertian = max(dot(lightDir, normal), 0.0);
+        //mat3 tbn = mat3(vvtangent, vvbinormal, vvnormal);
+        //normal = normalize(tbn * normal);
+
+        float lambertian = max(dot(lightDir, normal), 0.0);
 
         if(lambertian > 0.0) {
             vec3 reflectDir = reflect(-lightDir, normal);
@@ -1584,7 +1578,7 @@
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
             ///Dibujamos las figuras
-            escena.setupLighting(vec3.fromValues(-1000.0, 20.0, 1000.0), vec3.fromValues(0.8, 0.8, 0.8), vec3.fromValues(0.05, 0.05, 0.05));
+            escena.setupLighting(vec3.fromValues(-1000.0, 20.0, 1000.0), vec3.fromValues(0.18, 0.15, 0.74), vec3.fromValues(0.01, 0.01, 0.01));
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
 

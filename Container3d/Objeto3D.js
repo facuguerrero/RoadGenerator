@@ -229,7 +229,7 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == BASE_RUTA){
-            if(colms != 17){
+            if(colms != 13){
                 console.log("para hacer una base de ruta se necesitan exactamente 9 vertices");
             }
             this.figuras.calcularBaseRuta(vertices, arrayVecNOR);
@@ -238,7 +238,7 @@ class Objeto3D extends Container3D{
         }
 
         else if(figura == ASFALTO_RUTA){
-            if(colms != 9){
+            if(colms != 5){
                 console.log("para hacer el asfalto de la ruta se necesitan exactamente 5 vertices");
             }
             this.figuras.calcularAsfaltoRuta(vertices, arrayVecNOR);
@@ -392,9 +392,7 @@ class Objeto3D extends Container3D{
      * @param {parentMod} bool Indica si el padre fue modificado o no
      */
     draw(mMatrix, parentMod){
-
         //Se crea una matriz nueva para no modificar la matriz del padre
-
         var modelMatrix = mat4.create();
         if(this.modified || parentMod){
             mat4.multiply(modelMatrix, mMatrix, this.matrix);
@@ -488,6 +486,9 @@ class Objeto3D extends Container3D{
         if(this.useTangent) {
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
             gl.vertexAttribPointer(this.shaderProgram.vertexTangentAttribute, this.webglTangentBuffer.itemSize, gl.FLOAT, false, 0, 0);
+            if(this.objectType == AUTOPISTA){
+                //console.log(this.normalBuffer[2]);
+            }
         }
 
         //a continuacion se setea todo dependiendo del id
@@ -556,8 +557,10 @@ class Objeto3D extends Container3D{
 
 
         if(this.bufferCreator.tangentBuffer.length == 0 ){
-
-            console.log(this.objectType);
+            if(this.objectType == "col"){
+                console.log("aca estamo");
+            }
+            //console.log(this.objectType);
             //console.log(this.bufferCreator.posBuffer/3);
             //console.log(this.bufferCreator.rows);
             //console.log(this.bufferCreator.colms);
