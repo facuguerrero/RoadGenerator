@@ -542,13 +542,6 @@
       <workItem from="1498445231105" duration="346000" />
       <workItem from="1498510896236" duration="8439000" />
     </task>
-    <task id="LOCAL-00026" summary="imagen skybox">
-      <created>1498220831061</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1498220831061</updated>
-    </task>
     <task id="LOCAL-00027" summary="iluminacion directa en el street shader">
       <created>1498221847219</created>
       <option name="number" value="00027" />
@@ -885,11 +878,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498525066825</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Pija de error">
+      <created>1498572681284</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1498572681285</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133416000" />
+    <option name="totallyTimeSpent" value="133444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -949,7 +949,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="VAMO VEREDA" />
     <MESSAGE value="texturas pasto" />
     <MESSAGE value="Agregando texturas" />
     <MESSAGE value="Limpieza Gral" />
@@ -974,7 +973,8 @@
     <MESSAGE value="Varios cambios, de 3u --&gt; 2u" />
     <MESSAGE value="Boludeces" />
     <MESSAGE value="MAPAS DE NORMALES ANDANDOO!" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAPAS DE NORMALES ANDANDOO!" />
+    <MESSAGE value="Pija de error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pija de error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
