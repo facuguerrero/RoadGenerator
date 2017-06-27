@@ -363,7 +363,7 @@
 
         if(vID >18.5 && vID <19.5){
 
-            auxUv.x = (auxUv.x * 4.0) - 0.5;
+            auxUv.x = (auxUv.x * 5.0) - 0.48;
             textureColor = texture2D(autopista, vec2(auxUv.s, auxUv.t));
 
             // Extrae la normal desde el normalMap
@@ -1950,6 +1950,7 @@
         left:10px;
         background-color: white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        z-index:2;
 
 
     }
@@ -1958,6 +1959,7 @@
         position:relative;
         left:-10px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        z-index:2;
 
     }
 
@@ -1977,7 +1979,7 @@
         position:relative;
         left:480px;
         top: -135px;
-        z-index:-1;
+        z-index:1;
 
     }
     h3{
