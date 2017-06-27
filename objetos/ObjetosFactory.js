@@ -562,7 +562,7 @@ class ObjetosFactory {
         esfera.setBufferCreator(buffcalc);
         esfera.build();
         //cambiar cuando haga falta
-        esfera.setType("pasto",40);
+        esfera.setType("pasto",40.0);
 
         esfera.translate( 9.5, 2.0,9.5);
         centro.add(esfera);
@@ -574,7 +574,7 @@ class ObjetosFactory {
         esfera2.setBufferCreator(buffcalc);
         esfera2.build();
         //cambiar cuando haga falta
-        esfera2.setType("pasto",40);
+        esfera2.setType("pasto",40.0);
 
         esfera2.translate( 0.0,2.0,1.8);
         esfera.add(esfera2);
@@ -586,7 +586,7 @@ class ObjetosFactory {
         esfera3.setBufferCreator(buffcalc);
         esfera3.build();
         //cambiar cuando haga falta
-        esfera3.setType("pasto",40);
+        esfera3.setType("pasto",40.0);
 
         esfera3.translate( 0.0,2.0,-1.8);
         esfera.add(esfera3);
