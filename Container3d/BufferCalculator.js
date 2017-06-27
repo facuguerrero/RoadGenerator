@@ -315,8 +315,8 @@ class BufferCalculator{
         this.normalBuffer = normBuf;
         this.tangentBuffer = tan;
         this.colorBuffer = colBuf;
-        this.setBoolTexture1();
         this.textureBuffer1 = texBuf;
+        this.setBoolTexture1();
         this.calcIndexBuffer();
     }
   }
