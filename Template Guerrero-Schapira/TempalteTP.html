@@ -26,15 +26,44 @@
     <script type="text/javascript" src="webgl-utils.js"></script>
 
     <script id="shader-fs-colored-obj" type="x-shader/x-fragment">
-    precision mediump float;
+    precision highp float;
+
+    uniform vec3 uAmbientColor;
+    uniform vec3 uDirectionalColor;
 
     varying vec3 vVertexColor;
     varying vec3 vLightWeighting;
+    varying vec3 vNormal;
+    varying vec3 vViewDir;
+    varying vec3 vLightDir;
 
     uniform sampler2D uSampler;
 
     void main(void) {
-        gl_FragColor = vec4(vVertexColor.rgb * vLightWeighting, 1.0);
+
+        float shininess = 10.0;
+
+		// Attenuation constants
+		const float constantAtt = 1.0;
+		const float linearAtt = 0.0001;
+		const float quadraticAtt = 0.01;
+
+		vec3 normal = vNormal;
+		vec3 lightDir = normalize(vLightDir);
+        vec3 viewDir = vViewDir;
+
+        float lambertian = max(dot(lightDir, normal), 0.0);
+        float specular = 0.0;
+
+        if(lambertian > 0.0) {
+            vec3 reflectDir = reflect(-lightDir, normal);
+            float specAngle = max(dot(reflectDir, viewDir), 0.0);
+            specular = pow(specAngle, shininess);
+        }
+
+        vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
+
+        gl_FragColor = vec4(vVertexColor.rgb * lightIntensity, 1.0);
     }
 </script>
 
@@ -49,42 +78,33 @@
     uniform mat4 uPMatrix;
     uniform mat3 uNMatrix;
 
-    uniform vec3 uAmbientColor;
-
     uniform vec3 uLightPosition;
-    uniform vec3 uDirectionalColor;
 
     uniform bool uUseLighting;
     uniform bool uUsingNormalMap;
 
     varying vec3 vVertexColor;
     varying vec3 vLightWeighting;
+    varying vec3 vNormal;
+    varying vec3 vViewDir;
+    varying vec3 vLightDir;
 
     void main(void) {
 
         // Transformamos al v�rtice al espacio de la c�mara
         vec4 pos_camera_view = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
+        vec4 pos_view = uModelMatrix * vec4(aVertexPosition, 1.0);
 
         // Transformamos al v�rtice al espacio de la proyecci�n
         gl_Position = uPMatrix * pos_camera_view;
 
         // Coordenada de textura sin modifiaciones
         vVertexColor = aVertexColor;
-        ////////////////////////////////////////////
-        // Calculos de la iluminaci�n
-        vec3 light_dir =  uLightPosition - vec3( pos_camera_view );
-        normalize(light_dir);
-        if (!uUseLighting)
-        {
-            vLightWeighting = vec3(1.0, 1.0, 1.0);
-        }
-        else
-        {
-            vec3 transformedNormal = normalize(uNMatrix * aVertexNormal);
-            float directionalLightWeighting = max(dot(transformedNormal, light_dir), 0.0);
-            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
-        }
-        ////////////////////////////////////////////
+
+        vec3 pos = vec3(pos_view) / pos_view.w;
+        vNormal = normalize(uNMatrix * aVertexNormal);
+        vLightDir = uLightPosition - pos;
+        vViewDir = normalize(-pos);
     }
 </script>
 
@@ -1592,9 +1612,9 @@
         var orbitCam = null;
         var freeCamR= null;
 
-        var time = 0.0;
-        var sentido = 1.0;
-        var sol = 0.01
+        var time = 0.55;
+        var sentido = -1.0;
+        var sol = 0.08;
 
         var obj = null;
 
