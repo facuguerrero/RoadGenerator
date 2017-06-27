@@ -9,41 +9,6 @@ class ObjetosFactory {
         //
     }
 
-    //Crea una grilla en el plano xz que permite modelar con mayor facilidad
-    createGrid() {
-
-        var grid = new Objeto3D();
-
-        //aca en 0
-        //var buffcalc = new BufferCalculator(2, 2);
-
-        var buffcalc = new BufferCalculator(0, 0);
-        //grid.setType("escena",12341);
-        grid.setBufferCreator(buffcalc);
-        grid.build();
-
-        var arrayMatT = [];
-        var matt = mat3.create();
-        var mattt = mat3.create();
-        mat3.identity(matt);
-        mat3.identity(mattt);
-        arrayMatT.push(matt);
-        arrayMatT.push(mattt);
-
-        //barras verticales
-        for (var i = -50.0; i <= 50.0; i += 3) {
-
-            var linea = new Objeto3D();
-            var vecPos = [];
-            vecPos.push(vec3.fromValues(i, 0.0, -100.0));
-            vecPos.push(vec3.fromValues(i, 0.0, 100.0));
-            linea.calcularSuperficieBarrido("linea", 2, 2, arrayMatT, vecPos);
-            grid.add(linea);
-
-        }
-        return grid;
-    }
-
     createSky(){
 
         var esfera = new Objeto3D();
@@ -60,6 +25,7 @@ class ObjetosFactory {
     createRuta(puntos) {
 
         var ruta = new Objeto3D();
+        //ruta.setType("ruta",12332);
 
         var curvaRuta = new CuadraticBSpline(puntos.length, 0.1, true);
 
@@ -73,6 +39,7 @@ class ObjetosFactory {
         arrayMatT = curvaRuta.getArrayMatT();
 
         var buffcalc = new BufferCalculator(vecPos.length, 9);
+        buffcalc.tangent=true;
         ruta.setBufferCreator(buffcalc);
         ruta.build();
 
@@ -138,12 +105,8 @@ class ObjetosFactory {
                 }
                 factorColumnas = 0.0;
             }
-
             factorColumnas++;
-
-
         }
-
         //ajustes de tamanio de la ruta
         ruta.scale(0.32, 0.32, 0.32);
         ruta.translate(-8.0 , 0.0, -8.0);
@@ -227,10 +190,7 @@ class ObjetosFactory {
         //Creamos el techo del edificio
         var base = new Objeto3D();
         base.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapa);
-        base.setType("poste",22.0);
-        //this.addColor(base,0.0,0.0,1.0);
-        //linea provisoria
-        //base.setShaderProgram(streetShader);
+        this.addColor(base,0.0,0.0,1.0);
 
         edificio.add(base);
 
@@ -244,17 +204,15 @@ class ObjetosFactory {
             //Creamos el piso del edificio
             var baseAbajo = new Objeto3D();
             baseAbajo.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapaAbajo);
-            baseAbajo.setType("poste",22.0);
             edificio.add(baseAbajo);
             //Linea provisoria
-            //baseAbajo.setShaderProgram(streetShader);
+            baseAbajo.setShaderProgram(streetShader);
         }
         //linea provisoria
-        //edificio.setShaderProgram(streetShader);
+        edificio.setShaderProgram(streetShader);
 
         edificio.calcularSuperficieBarrido("estructura_luz", 2, 5, arrayMatT, puntosEdificio);
-        edificio.setType("poste",22.0);
-        //this.addColor(edificio,1.0,0.0,0.0);
+        this.addColor(edificio,1.0,0.0,0.0);
 
         return edificio;
     }
@@ -310,10 +268,7 @@ class ObjetosFactory {
             baseAbajo.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapaAbajo);
 
             edificio.add(baseAbajo);
-
         }
-
-
         edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
 
         return edificio;
@@ -358,12 +313,6 @@ class ObjetosFactory {
     }
 
     createCar() {
-        /*Variables a modificar para las dimensiones del auto*/
-
-        //var auto = new Objeto3D();
-        //var buffcalc = new BufferCalculator(2, 2);
-        //auto.setBufferCreator(buffcalc);
-        //auto.build();
 
         //Declaro los puntos de la carroceria del auto
         var puntosCarroceria = [];
@@ -385,7 +334,6 @@ class ObjetosFactory {
 
         carroceria.calcularSuperficieBarrido("carroceria", 2, 9, arrayMat, puntosCarroceria);
         carroceria.setType("carroceria",26.0);
-        //auto.add(carroceria);
 
         this.addPuertas(carroceria, 9);
 
@@ -399,15 +347,6 @@ class ObjetosFactory {
     }
 
     createEscene(x, bool = false) {
-
-
-        //var escene = new Objeto3D();
-
-        //aca en 0
-        //var buffcalc = new BufferCalculator(2, 2);
-        //var buffcalc = new BufferCalculator(0, 0);
-        //escene.setBufferCreator(buffcalc);
-
 
         var arrayMatT = [];
         var matt = mat3.create();
@@ -424,23 +363,16 @@ class ObjetosFactory {
         pos.push(vec3.fromValues(x, 0, 0));
 
         linea.calcularSuperficieBarrido("escena", 2, 2, arrayMatT, pos);
-        //linea.setType("calle",1.0);
 
-        //escene.add(linea);
         if(bool) {
             var sky = this.createSky();
             sky.translate(x/2, -90.0 ,x/2);
             linea.add(sky);
         }
-        //escene.build();
         return linea;
     }
 
     createVereda(control){
-
-        //var vereda = new Objeto3D();
-        //var buffcalc = new BufferCalculator(2, 2);
-
 
         var perfil = new Objeto3D();
 
@@ -449,9 +381,9 @@ class ObjetosFactory {
         puntosPerfil.push(vec3.fromValues(0.0, 0.0, 0.0));
         puntosPerfil.push(vec3.fromValues(0.0, 0.2, 0.0));
         puntosPerfil.push(vec3.fromValues(control,control,control));
+
         //Matrices de transformacion
         var arrayMat = [];
-
         var mat = mat3.create();
         var matt = mat3.create();
         mat3.identity(mat);
@@ -516,11 +448,10 @@ class ObjetosFactory {
             tan.push(-1.0);
             tan.push(0.0);
             tan.push(0.0);
-            //Pone x6 aca y sacas el trasnportado.
+
             pos.push(perfil.bufferCreator.posBuffer[i*3]);
             pos.push(perfil.bufferCreator.posBuffer[i*3+1]);
             pos.push(perfil.bufferCreator.posBuffer[i*3+2]);
-
         }
 
         buf.normalBuffer =norm;
@@ -540,8 +471,6 @@ class ObjetosFactory {
         piso.translate(0.0,0.2,0.0);
 
         perfil.add(piso);
-        //vereda.setBufferCreator(buffcalc);
-        //vereda.build();
         return perfil;
 
     }
@@ -640,14 +569,6 @@ class ObjetosFactory {
         /*Objeto Contenedor*/
 
         var cantidad = 15;
-
-        //aca en 0
-        //var buffcalc = new BufferCalculator(2, cantidad);
-        //var columna = new Objeto3D();
-        //var buffcalc = new BufferCalculator(0, 0);
-        //columna.setType("col",124);
-        //columna.setBufferCreator(buffcalc);
-        //columna.build();
 
         /*Creo lo que es el cilindro de la columna*/
         var pilar = new Objeto3D();
@@ -758,7 +679,6 @@ class ObjetosFactory {
 
         var tex = [ 1.0,0.0, 0.0,0.0,  0.0,0.33,  0.28,0.6,  0.4,0.9,  0.7,0.95,  0.8,0.8,  1.0,0.5,  1.0,0.0];
 
-
         /*Seteamos los buffers*/
         buf.normalBuffer = norm1;
         buf.posBuffer = pos;
@@ -845,7 +765,7 @@ class ObjetosFactory {
             n=1.0;
         }
 
-        for(var i=0.0; i<rueda.bufferCreator.normalBuffer.length /6; i++){
+        for(var i=0.0; i<rueda.bufferCreator.normalBuffer.length/6; i++){
             norm.push(0.0);
             norm.push(0.0);
             norm.push(n);
@@ -857,6 +777,7 @@ class ObjetosFactory {
             pos.push(rueda.bufferCreator.posBuffer[i*3]);
             pos.push(rueda.bufferCreator.posBuffer[i*3 +1]);
             pos.push(rueda.bufferCreator.posBuffer[i*3 +2]);
+
         }
 
         /* SETEO LOS BUFFERS */
@@ -893,8 +814,6 @@ class ObjetosFactory {
             color.push(g);
             color.push(b);
         }
-
         objeto.bufferCreator.colorBuffer = color;
-
     }
 }

@@ -87,6 +87,16 @@ class Objeto3D extends Container3D{
         this.textureBuffer1 = this.bufferCreator.getTextureBuffer1();
         this.textureBuffer2 = this.bufferCreator.getTextureBuffer2();
         this.tangentBuffer = this.bufferCreator.getTangentBuffer();
+/*
+        var max = Math.max.apply(null,this.indexBuffer) +1;
+
+        if(max != this.posBuffer.length/3){
+            console.log(this.objectType);
+
+            console.log( max );
+            console.log( this.bufferCreator.posBuffer );
+            console.log( this.bufferCreator.tangentBuffer );
+        }*/
         this.setUpWebGLBuffers();
     }
 
@@ -98,6 +108,7 @@ class Objeto3D extends Container3D{
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.normalBuffer), gl.STATIC_DRAW);
         this.webglNormalBuffer.itemSize = 3;
         this.webglNormalBuffer.numItems = this.normalBuffer.length / 3;
+
 
         this.webglPosBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
@@ -133,13 +144,38 @@ class Objeto3D extends Container3D{
             this.webglTextureBuffer.itemSize = 2;
             this.webglTextureBuffer.numItems = this.textureBuffer2.length;
         }
-        if(this.tangentBuffer.length > 0){
+        //if(this.tangentBuffer >0){
+        if(this.tangentBuffer){
             this.webglTangentBuffer = gl.createBuffer();
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
             gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.tangentBuffer), gl.STATIC_DRAW);
             this.webglTangentBuffer.itemSize = 3;
             this.webglTangentBuffer.numItems = this.tangentBuffer.length / 3;
         }
+
+        /*
+        var max = Math.max.apply(null,this.indexBuffer) +1;
+
+         if(max != this.webglPosBuffer.numItems){
+
+             /*if(this.objectType == null) {
+                 this.webglTangentBuffer.itemSize = 0;
+                 //this.webglTextureBuffer.itemSize = 0;
+                 //this.webglColorBuffer.itemSize = 0;
+                 //this.webglTextureBuffer.itemSize = 0;
+                 this.webglIndexBuffer.itemSize = 0;
+                 this.webglPosBuffer.itemSize = 0;
+                 this.webglNormalBuffer.itemSize = 0;
+             }
+
+            console.log(this.objectType);
+            console.log(this.webglIndexBuffer);
+            console.log(this.webglPosBuffer);
+            console.log(this.webglNormalBuffer);
+            console.log(this.webglTangentBuffer);
+            //console.log(this.webglColorBuffer);
+            //console.log(this.webglTextureBuffer);
+         }*/
 
     }
 
@@ -286,7 +322,7 @@ class Objeto3D extends Container3D{
             }
             escalado = arrayVecPos.pop();
             this.figuras.createRueda(vertices,arrayVecNOR,escalado);
-            this.addColor(buffcalc,vertices.length*3,0.0,0.0,0.0);
+            this.addColor(buffcalc,vertices.length,0.0,0.0,0.0);
         }
 
         else if(figura == VEREDA){
@@ -308,6 +344,16 @@ class Objeto3D extends Container3D{
             if(figura == CARROCERIA){
                 this.llenarTexture(buffcalc);
             }
+
+            /*if(figura == RUEDA){
+                console.log(this.objectType);
+                console.log(buffcalc.colorBuffer);
+                console.log(buffcalc.posBuffer.length/3);
+                console.log(buffcalc.normalBuffer.length/3);
+                console.log(buffcalc.tangentBuffer.length/3);
+                console.log(buffcalc.textureBuffer1.length/2);
+                console.log(buffcalc.indexBuffer);
+            }*/
 
             this.build();
         }
@@ -393,6 +439,7 @@ class Objeto3D extends Container3D{
      */
     draw(mMatrix, parentMod){
         //Se crea una matriz nueva para no modificar la matriz del padre
+
         var modelMatrix = mat4.create();
         if(this.modified || parentMod){
             mat4.multiply(modelMatrix, mMatrix, this.matrix);
@@ -402,6 +449,9 @@ class Objeto3D extends Container3D{
         this._drawChildren(modelMatrix, CameraMatrix, pMatrix, this.modified || parentMod);
         this.modified = false;
 
+        if(this.objectType == "ruta"){
+            return;
+        }
         if (this.objectType == CALLE){
             this.setShaderProgram(cityShader);
             this.useTangent = false;
@@ -556,15 +606,13 @@ class Objeto3D extends Container3D{
         }
 
 
-        if(this.bufferCreator.tangentBuffer.length == 0 ){
-            if(this.objectType == "col"){
-                console.log("aca estamo");
-            }
-            //console.log(this.objectType);
-            //console.log(this.bufferCreator.posBuffer/3);
+        /*if(this.bufferCreator.posBuffer.length/3 != Math.max(this.bufferCreator.indexBuffer) ){
+
+            console.log(this.objectType);
+            //console.log(Math.max(this.indexBuffer));
             //console.log(this.bufferCreator.rows);
             //console.log(this.bufferCreator.colms);
-        }
+        }*/
 
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado
