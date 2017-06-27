@@ -827,12 +827,12 @@
         textureColor = color;
 
         vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
-        vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
-        vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
+        //vec4 lightMapColor = vec4(1.0,1.0,1.0,1.0);
+        //vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
-        vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
+        //vec4 mixedColor = textureColor * lightMapColor + reflectionColor;
 
-        gl_FragColor = vec4(mixedColor.rgb * lightIntensity, mixedColor.a);
+        gl_FragColor = vec4(textureColor.rgb * lightIntensity, textureColor.a);
     }
     </script>
 
@@ -842,8 +842,8 @@
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
     //attribute vec3 aVertexTangent;
-    attribute float aID;
 
+    uniform float aID;
     uniform mat4 uViewMatrix;
     uniform mat4 uModelMatrix;
     uniform mat4 uPMatrix;
@@ -874,14 +874,13 @@
 
         // position
         vec4 auxPos = vec4(aVertexPosition,1.0);
-        float escalaY = 0.0;
+        float factor = t -(aID * 10.0);
 
-        if(aID == edificioActual){
-            escalaY=min(1.0,t*0.05);
+        if(factor < 0.0){
+            factor = 0.0;
         }
-        else if (aID < edificioActual){
-            escalaY=1.0;
-        }
+
+        float escalaY=min(1.0,factor*0.05);
 
         auxPos.y=auxPos.y*escalaY;
 
@@ -961,6 +960,7 @@
         vLightDir = uLightPosition - pos;
         vViewDir = normalize(-pos);
 
+        if(vID < 30.5 && vID > 31.5){
         //Transform normal and tangent to eye space
             vec3 norm = vNormal;
             vec3 tang = normalize(uNMatrix * aVertexTangent);
@@ -978,7 +978,7 @@
             // Transform vectors to tangent space
             vLightDir = toObjectLocal * vLightDir;
             vViewDir = toObjectLocal * vViewDir;
-
+        }
 
     }
     </script>
@@ -993,6 +993,7 @@
     uniform sampler2D esquina;
     uniform sampler2D vereda;
     uniform sampler2D pasto;
+    uniform sampler2D skyy;
     uniform sampler2D pastoNormalMap;
     uniform sampler2D veredaNormalMap;
     uniform sampler2D esquinaNormalMap;
@@ -1059,12 +1060,7 @@
             normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
         }
 
-        if(vID >= 39.5 && vID < 40.5){
-            auxUv.x = auxUv.x * 18.0;
-            auxUv.y = auxUv.y * 20.0;
-            textureColor = texture2D(pasto, vec2(auxUv.s, auxUv.t));
-            normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
-        }
+        vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
         float lambertian = max(dot(lightDir, normal), 0.0);
         float specular = 1.0;
@@ -1075,16 +1071,17 @@
             specular = pow(specAngle, shininess);
         }
 
-        vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
-
-        vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
-
-//        if (vID >= 39.5 && vID < 40.5) {
-//            float reflectionFactor = 1.0;
+        if(vID >= 39.5 && vID < 40.5){
+            textureColor = texture2D(vereda, vTextureCoord);
+            //normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
+//            float specular = 0.0;
+//            float reflectionFactor = 0.8;
 //            vec3 reflection = -reflect(viewDir, normal);
 //            reflectionColor = textureCube(uReflectionMap, reflection);
 //            reflectionColor = reflectionColor * reflectionFactor;
-//        }
+        }
+
+        vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
 
         vec4 mixedColor = textureColor + reflectionColor;
 
@@ -1194,7 +1191,7 @@
             buildingShaders.shininess = gl.getUniformLocation(buildingShaders, "uShininess");
             buildingShaders.usingNormalMap = gl.getUniformLocation(buildingShaders, "uUsingNormalMap");
 
-            idBuilding = gl.getAttribLocation(buildingShaders, "aID");
+            //idBuilding = gl.getAttribLocation(buildingShaders, "aID");
 
         }
 
@@ -1546,14 +1543,20 @@
             gl.activeTexture(gl.TEXTURE31);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["concretoNormalMap"]);
 
-            //Farol luz
-//            gl.useProgram(streetShader);
-//            loadTexture("textures/farol_normal.jpg", "posteNormalMaps");
+//            //mapa de refleccion
+//            gl.useProgram(cityShader);
 //
-//            var location = gl.getUniformLocation(streetShader, "posteNormalMaps");
+//            var paths = ["textures/siege_ft.jpg",
+//                "textures/siege_bk.jpg",
+//                "textures/siege_up.jpg",
+//                "textures/siege_dn.jpg",
+//                "textures/siege_rt.jpg",
+//                "textures/siege_lf.jpg"];
+//            glTextures["uReflectionMap"] = loadCubeMap(paths);
+//            var location = gl.getUniformLocation(cityShader, "uReflectionMap");
 //            gl.uniform1i(location, 30);
 //            gl.activeTexture(gl.TEXTURE30);
-//            gl.bindTexture(gl.TEXTURE_2D, glTextures["posteNormalMaps"]);
+//            gl.bindTexture(gl.TEXTURE_CUBE_MAP, glTextures["uReflectionMap"]);
 
         }
 
@@ -1575,6 +1578,38 @@
             texture.image = image;
             //agrega la textura a glTextures
             glTextures[string] = texture;
+        }
+
+        function handleLoadedCubeMap(image, cubeMap) {
+
+            gl.bindTexture(gl.TEXTURE_CUBE_MAP, cubeMap);
+            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_X + image.side, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+            imageCount++;
+            if (imageCount == 6) {
+                imageCount = 0;
+                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                gl.generateMipmap(gl.TEXTURE_CUBE_MAP);
+            }
+            gl.bindTexture(gl.TEXTURE_CUBE_MAP, null);
+        }
+
+        var imageCount = 0;
+
+        function loadCubeMap(paths) {
+            var cubeMap = gl.createTexture();
+            for (var i = 0; i <= 5; i++) {
+                var image = new Image();
+                image.side = i;
+                image.onload = function() {
+                    handleLoadedCubeMap(this, cubeMap);
+                }
+                image.src = paths[i];
+            }
+
+            return cubeMap;
         }
 
         var CameraMatrix = mat4.create();
@@ -1676,21 +1711,14 @@
                 sentido = 1
             }
 
-            if (frame < 30) {
+            if (frame < 3000) {
                 var t = gl.getUniformLocation(buildingShaders, "t");
                 gl.useProgram(buildingShaders);
                 gl.uniform1f(t, frame);
-                var edificioActual = gl.getUniformLocation(buildingShaders, "edificioActual");
-                gl.useProgram(buildingShaders);
-                gl.uniform1f(edificioActual, countEdificios);
-                factory.updateTechos(frame, countEdificios - 2.0);
+                factory.updateTechos(frame);
                 frame++;
             }
 
-            if (frame >= 30 && countEdificios < factory.getIdEdficios() - 1.0){
-                countEdificios = countEdificios + 1.0;
-                frame = 0;
-            }
 
             escena.draw(model_matrix_escene, false);
             if(frameAutos > 10 - step) {

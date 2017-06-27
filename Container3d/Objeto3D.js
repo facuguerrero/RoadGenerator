@@ -481,6 +481,7 @@ class Objeto3D extends Container3D{
         gl.bindBuffer(gl.ARRAY_BUFFER, this.webglPosBuffer);
         gl.vertexAttribPointer(this.shaderProgram.vertexPositionAttribute, this.webglPosBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
+
         if(this.objectType != SKY) {
             //Normal
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglNormalBuffer);
@@ -513,7 +514,9 @@ class Objeto3D extends Container3D{
             gl.uniform1f(count, this.id);
         }
         if(this.objectType == EDIFICIO){
-            gl.vertexAttrib1f(idBuilding, this.id);
+            var count = gl.getUniformLocation(this.shaderProgram, "aID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
             var count = gl.getUniformLocation(this.shaderProgram, "count");
             gl.useProgram(this.shaderProgram);
             gl.uniform1f(count, this.cantEdificios);
@@ -586,7 +589,10 @@ class Objeto3D extends Container3D{
         //Index
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.webglIndexBuffer);
         //Draw
-        gl.drawElements(gl.TRIANGLE_STRIP, this.webglIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+        //if(this.objectType != SKY) {
+
+            gl.drawElements(gl.TRIANGLE_STRIP, this.webglIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+        //}
     }
 
     /**Dibuja a los hijos

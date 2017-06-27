@@ -631,15 +631,24 @@ class ObjetosFactory {
 
 //----------------- Metodos Auxiliares ---------------//
 
-    updateTechos(t, numEdificio){
+    updateTechos(t){
 
-        var edificio = Math.floor(numEdificio);
+        for(var i=0; i < this.tapasEdificios.length; i++) {
 
-        var ed = this.tapasEdificios[edificio];
-        var altura = this.alturas[edificio];
-        ed.resetMatrix();
-        var escalaY= Math.min(1.0,t*0.05);
-        ed.translate(0.0, altura * escalaY, 0.0);
+            var factor = t - ((i+2) * 10.0);
+
+            if (factor > 0.0) {
+                var edificio = i;
+
+                var ed = this.tapasEdificios[edificio];
+                var altura = this.alturas[edificio];
+                ed.resetMatrix();
+                var escalaY = Math.min(1.0, factor * 0.05);
+                ed.translate(0.0, altura * escalaY, 0.0);
+            }
+
+        }
+
     }
 
     getIdEdficios(){
