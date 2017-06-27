@@ -440,8 +440,8 @@ class FigurasPrimitivas{
         vertices.push(vec3.fromValues(2.0, 0.0, 0.0));
         arrayVecNOR.push(vecNorm1);
 
-        console.log(vertices);
-        console.log(arrayVecNOR);
+        //console.log(vertices);
+        //console.log(arrayVecNOR);
 
 
     }

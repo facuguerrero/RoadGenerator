@@ -1592,6 +1592,10 @@
         var orbitCam = null;
         var freeCamR= null;
 
+        var time = 0.0;
+        var sentido = 1.0;
+        var sol = 0.01
+
         var obj = null;
 
         /*DIBUJAMOS LA ESCENA*/
@@ -1611,9 +1615,19 @@
             mat4.perspective(pMatrix, 3.14/12.0, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
 
             ///Dibujamos las figuras
-            escena.setupLighting(vec3.fromValues(-1000.0, 100.0, 1000.0), vec3.fromValues(0.74, 0.74, 0.74), vec3.fromValues(0.05, 0.05, 0.05));
+            escena.setupLighting(vec3.fromValues(rotx, roty, rotz), vec3.fromValues(time + 0.1, time, time), vec3.fromValues(sol, sol, sol));
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
+
+            //ciclo del dia
+            time = time + (sentido * 0.0008);
+            sol = sol + (sentido * 0.0001);
+            if(time > 0.55){
+                sentido = -1.0;
+            }
+            if (time < 0.0){
+                sentido = 1
+            }
 
             if (frame < 30) {
                 var t = gl.getUniformLocation(buildingShaders, "t");
