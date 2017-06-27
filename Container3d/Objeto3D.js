@@ -540,9 +540,6 @@ class Objeto3D extends Container3D{
         if(this.useTangent) {
             gl.bindBuffer(gl.ARRAY_BUFFER, this.webglTangentBuffer);
             gl.vertexAttribPointer(this.shaderProgram.vertexTangentAttribute, this.webglTangentBuffer.itemSize, gl.FLOAT, false, 0, 0);
-            if(this.objectType == CALLE){
-                //console.log(this.normalBuffer.length);
-            }
         }
 
         //a continuacion se setea todo dependiendo del id

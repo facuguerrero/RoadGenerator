@@ -926,7 +926,7 @@
 
         vec3 pos = vec3(pos_view) / pos_view.w;
         vNormal = normalize(uNMatrix * aVertexNormal);
-        vLightDir = 3000.0 - pos;
+        vLightDir = uLightPosition - pos;
         vViewDir = normalize(-pos);
 
         //Transform normal and tangent to eye space
@@ -993,7 +993,6 @@
 		vec3 lightDir = normalize(vLightDir);
         vec3 viewDir = vViewDir;
 
-        vec3 lightColor = vec3(0.9, 0.9, 0.7);
         vec2 auxUv = vTextureCoord;
 
 
@@ -1021,7 +1020,7 @@
         }
 
         float lambertian = max(dot(lightDir, normal), 0.0);
-        float specular = 2.0;
+        float specular = 1.0;
 
         if(lambertian > 0.0) {
             vec3 reflectDir = reflect(-lightDir, normal);
