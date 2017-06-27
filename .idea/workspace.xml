@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,33 +16,91 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="453" column="15" lean-forward="false" selection-start-line="453" selection-start-column="15" selection-end-line="453" selection-end-column="15" />
+            <state relative-caret-position="390">
+              <caret line="620" column="0" lean-forward="true" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
               <folding>
-                <marker date="1498578026557" expanded="true" signature="23:18208" ph="{...}" />
-                <marker date="1498578026557" expanded="true" signature="14315:14890" ph="{...}" />
-                <marker date="1498578026557" expanded="true" signature="15705:15804" ph="{...}" />
-                <marker date="1498578026557" expanded="true" signature="15705:15837" ph="{...}" />
-                <marker date="1498578026557" expanded="true" signature="15884:16273" ph="{...}" />
-                <marker date="1498578026557" expanded="true" signature="16279:16308" ph="/*...*/" />
-                <marker date="1498578026557" expanded="true" signature="16368:16660" ph="{...}" />
-                <marker date="1498578026557" expanded="true" signature="16731:17728" ph="{...}" />
-                <marker date="1498578026557" expanded="true" signature="17792:18205" ph="{...}" />
+                <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1498585642688" expanded="true" signature="1673:2427" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="2058:2243" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="3028:3637" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="3846:4109" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="4545:4947" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="6453:9007" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="7853:9001" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="10247:25678" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="11942:11988" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="12024:12296" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="12333:12590" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="12626:12872" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="12910:12991" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="13029:13109" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="13148:13233" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="13430:13615" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="14589:15433" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="14950:15419" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="15481:16347" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="15851:16333" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="16395:17261" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="16765:17247" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="17309:18175" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="17679:18161" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="18223:19089" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="18593:19075" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="19137:20003" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="19507:19989" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="20051:20917" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="20421:20903" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="20965:21831" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="21335:21817" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="21879:22745" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="22249:22731" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="22794:23682" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="23173:23668" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="23731:24619" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="24110:24605" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="24655:24764" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="24801:24910" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="25284:25403" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="26749:32835" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="27608:27793" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="27829:28155" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="28190:28516" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="28551:28877" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="28912:29238" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="29273:29599" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="29634:29960" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="29995:30321" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="30356:30682" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="30718:31045" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="31082:31409" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="31446:31773" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="31810:32136" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="32177:32300" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="32313:32432" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="33683:34710" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="33818:33866" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="33905:33941" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="35408:36695" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="37448:40238" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="37846:38034" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="38071:38261" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="38300:38540" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="38579:38767" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="38806:39046" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="39085:39325" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="39447:39632" ph="{...}" />
+                <marker date="1498585642688" expanded="true" signature="64923:77930" ph="..." />
+                <marker date="1498585642688" expanded="true" signature="66118:67021" ph="{...}" />
+                <marker date="1498585642688" expanded="false" signature="80095:80120" ph="..." />
+                <marker date="1498585642688" expanded="false" signature="80148:80161" ph="..." />
+                <marker date="1498585642688" expanded="false" signature="80186:80194" ph="á" />
+                <marker date="1498585642688" expanded="false" signature="80225:80235" ph="..." />
+                <marker date="1498585642688" expanded="false" signature="80670:80683" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="168" column="54" lean-forward="true" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -51,198 +108,28 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="796" column="30" lean-forward="true" selection-start-line="796" selection-start-column="30" selection-end-line="796" selection-end-column="30" />
+            <state relative-caret-position="406">
+              <caret line="191" column="68" lean-forward="false" selection-start-line="191" selection-start-column="68" selection-end-line="191" selection-end-column="68" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
-                <marker date="1498585688560" expanded="true" signature="21:25926" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="5064:7133" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="7182:9252" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="7192:7417" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="8651:9120" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="9302:10061" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="9312:9463" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="10084:10271" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="10094:10211" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="10289:11239" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="11275:11939" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="11788:11911" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="11966:14814" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="12611:12815" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="12686:12753" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="12924:13019" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="13032:13125" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="13181:13203" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="13371:13696" ph="[...]" />
-                <marker date="1498585688560" expanded="true" signature="13707:13778" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="13851:14212" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="14452:14696" ph="[...]" />
-                <marker date="1498585688560" expanded="true" signature="14837:17148" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="17171:18638" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="18659:19254" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="18669:18690" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="18728:18772" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="18884:18924" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="19064:19094" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="19347:19616" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="19637:19670" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="19693:19959" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="19799:19928" ph="[...]" />
-                <marker date="1498585688560" expanded="true" signature="19974:20116" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="20067:20110" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="20137:20432" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="20239:20402" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="20303:20358" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="20466:22585" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="20563:20619" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="20741:20876" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="20912:21469" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="21592:21616" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="22146:22168" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="22633:24101" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="22831:22948" ph="//..." />
-                <marker date="1498585688560" expanded="true" signature="24165:25612" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="24259:24281" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="24394:24424" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="24498:24853" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="24863:24886" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="25114:25291" ph="[...]" />
-                <marker date="1498585688560" expanded="true" signature="25404:25444" ph="/*...*/" />
-                <marker date="1498585688560" expanded="true" signature="25466:25519" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="25641:25924" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="25776:25868" ph="{...}" />
+                <element signature="n#!!block;n#createMediaRuta#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createBuilding#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createCalle#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createCar#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createVereda#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#createColumna#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#updateTechos#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#getIdEdficios#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#getMatriz4x4#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#sumNumB#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#llenarAlturas#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#addPuertas#0;n#ObjetosFactory#0" expanded="false" />
+                <element signature="n#!!block;n#addColor#0;n#ObjetosFactory#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TempalteTP.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3231">
-              <caret line="429" column="9" lean-forward="true" selection-start-line="429" selection-start-column="9" selection-end-line="429" selection-end-column="9" />
-              <folding>
-                <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#19;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#24;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1498585800330" expanded="true" signature="1673:2427" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="2058:2243" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="3028:3637" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="3846:4109" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="4545:4947" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="6453:9007" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="7853:9001" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="10247:25678" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="11942:11988" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="12024:12296" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="12333:12590" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="12626:12872" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="12910:12991" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="13029:13109" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="13148:13233" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="13269:13378" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="13415:13524" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="13721:13906" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="14880:15724" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="15241:15710" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="15772:16638" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="16142:16624" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="16686:17552" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="17056:17538" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="17600:18466" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="17970:18452" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="18514:19380" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="18884:19366" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="19428:20294" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="19798:20280" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="20342:21208" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="20712:21194" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="21256:22122" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="21626:22108" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="22170:23036" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="22540:23022" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="23085:23973" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="23464:23959" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="24022:24910" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="24401:24896" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="25284:25403" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="25752:32848" ph="..." />
-                <marker date="1498585800330" expanded="true" signature="26749:32835" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="27608:27793" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="27829:28155" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="28190:28516" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="28551:28877" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="28912:29238" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="29273:29599" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="29634:29960" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="29995:30321" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="30356:30682" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="30718:31045" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="31082:31409" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="31446:31773" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="31810:32136" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="32177:32300" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="32313:32432" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="32907:34724" ph="..." />
-                <marker date="1498585800330" expanded="true" signature="33683:34710" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="33818:33866" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="33905:33941" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="34776:36708" ph="..." />
-                <marker date="1498585800330" expanded="true" signature="35408:36695" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="37448:40238" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="37846:38034" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="38071:38261" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="38300:38540" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="38579:38767" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="38806:39046" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="39026:39046" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="39085:39325" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="39447:39632" ph="{...}" />
-                <marker date="1498585800330" expanded="true" signature="39838:40095" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="41933:44474" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="44511:46720" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="46759:49619" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="49659:52607" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="52648:54301" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="54334:62380" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="68070:68635" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="68671:69761" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="69843:76854" ph="{...}" />
-                <marker date="1498585800330" expanded="false" signature="77948:79997" ph="..." />
-                <marker date="1498585800330" expanded="false" signature="80095:80120" ph="..." />
-                <marker date="1498585800330" expanded="false" signature="80121:91004" ph="..." />
-                <marker date="1498585800330" expanded="false" signature="80148:80161" ph="..." />
-                <marker date="1498585800330" expanded="false" signature="80186:80194" ph="á" />
-                <marker date="1498585800330" expanded="false" signature="80225:80235" ph="..." />
-                <marker date="1498585800330" expanded="false" signature="80670:80683" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado/sg_TP1-master/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1039">
-              <caret line="169" column="8" lean-forward="true" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="8" />
-              <folding>
-                <marker date="1497816518639" expanded="true" signature="1951:2046" ph="{...}" />
-                <marker date="1497816518639" expanded="true" signature="2186:2235" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutosAnimados.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -250,24 +137,28 @@
       <file leaf-file-name="Objeto3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2184">
-              <caret line="504" column="83" lean-forward="false" selection-start-line="504" selection-start-column="83" selection-end-line="504" selection-end-column="83" />
-              <folding>
-                <marker date="1498585688560" expanded="true" signature="21908:22581" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="21908:22897" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="22587:22641" ph="/** Dibuja a los hijos ...*/" />
-                <marker date="1498585688560" expanded="true" signature="22707:22894" ph="{...}" />
-                <marker date="1498585688560" expanded="true" signature="22764:22888" ph="{...}" />
-              </folding>
+            <state relative-caret-position="421">
+              <caret line="218" column="36" lean-forward="false" selection-start-line="218" selection-start-column="36" selection-end-line="218" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bajado3/index.html">
+      <file leaf-file-name="BufferCalculator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="300" column="0" lean-forward="false" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="39" />
+            <state relative-caret-position="4740">
+              <caret line="316" column="34" lean-forward="false" selection-start-line="316" selection-start-column="34" selection-end-line="316" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FigurasPrimitivas.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6615">
+              <caret line="441" column="0" lean-forward="false" selection-start-line="441" selection-start-column="0" selection-end-line="441" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -361,9 +252,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-7" />
-    <option name="width" value="1600" />
-    <option name="height" value="844" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -381,7 +273,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -404,44 +295,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Template Guerrero-Schapira" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Container3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TPSisGraf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bajado" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sg_TP1-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,197 +323,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html</PATH>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -661,41 +332,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -703,41 +339,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -745,41 +346,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="RESTORED" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
         </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
@@ -788,41 +354,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="MODIFIED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Skipped" />
@@ -830,41 +361,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="SKIPPED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Merged with conflicts" />
@@ -872,41 +368,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Merged with tree conflicts" />
@@ -914,41 +375,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Merged with property conflicts" />
@@ -956,41 +382,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Merged" />
@@ -998,41 +389,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="MERGED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Not in repository" />
@@ -1040,41 +396,6 @@
         <option name="mySupportsDeletion" value="true" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="UNKNOWN" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Locally added" />
@@ -1082,41 +403,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="LOCALLY_ADDED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Locally removed" />
@@ -1124,41 +410,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="LOCALLY_REMOVED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
       <FILE-GROUP>
         <option name="myUpdateName" value="Switched" />
@@ -1166,41 +417,6 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="SWITCHED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
@@ -1310,13 +526,6 @@
       <workItem from="1498445231105" duration="346000" />
       <workItem from="1498510896236" duration="8439000" />
       <workItem from="1498584838723" duration="125000" />
-    </task>
-    <task id="LOCAL-00036" summary="Esfera acomodada">
-      <created>1498226880918</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1498226880918</updated>
     </task>
     <task id="LOCAL-00037" summary="Esfera acomodada">
       <created>1498227521156</created>
@@ -1654,20 +863,27 @@
       <option name="project" value="LOCAL" />
       <updated>1498584901385</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Textura caja luz">
+      <created>1498585677103</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1498585677107</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139988000" />
+    <option name="totallyTimeSpent" value="139895000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-7" width="1600" height="844" extended-state="6" />
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24804382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1718,7 +934,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Limpieza Gral" />
     <MESSAGE value="luces casi andando" />
     <MESSAGE value="todas las luces ubicadas" />
     <MESSAGE value="Cargue bien las texturas y normales del pilar de la columna!" />
@@ -1743,7 +958,8 @@
     <MESSAGE value="Pija de error" />
     <MESSAGE value="Costado pasto" />
     <MESSAGE value="Mikei de pasto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mikei de pasto" />
+    <MESSAGE value="Textura caja luz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Textura caja luz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1793,101 +1009,82 @@
           <caret line="469" column="22" lean-forward="false" selection-start-line="469" selection-start-column="22" selection-end-line="469" selection-end-column="22" />
           <folding>
             <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#19;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#24;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1498585800330" expanded="true" signature="1673:2427" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="2058:2243" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="3028:3637" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="3846:4109" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="4545:4947" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="6453:9007" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="7853:9001" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="10247:25678" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="11942:11988" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12024:12296" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12333:12590" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12626:12872" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12910:12991" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13029:13109" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13148:13233" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13269:13378" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13415:13524" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13721:13906" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="14880:15724" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="15241:15710" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="15772:16638" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="16142:16624" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="16686:17552" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="17056:17538" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="17600:18466" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="17970:18452" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="18514:19380" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="18884:19366" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="19428:20294" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="19798:20280" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="20342:21208" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="20712:21194" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="21256:22122" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="21626:22108" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="22170:23036" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="22540:23022" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="23085:23973" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="23464:23959" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="24022:24910" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="24401:24896" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="25284:25403" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="25752:32848" ph="..." />
-            <marker date="1498585800330" expanded="true" signature="26749:32835" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="27608:27793" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="27829:28155" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="28190:28516" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="28551:28877" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="28912:29238" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="29273:29599" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="29634:29960" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="29995:30321" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="30356:30682" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="30718:31045" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="31082:31409" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="31446:31773" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="31810:32136" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="32177:32300" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="32313:32432" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="32907:34724" ph="..." />
-            <marker date="1498585800330" expanded="true" signature="33683:34710" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="33818:33866" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="33905:33941" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="34776:36708" ph="..." />
-            <marker date="1498585800330" expanded="true" signature="35408:36695" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="37448:40238" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="37846:38034" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38071:38261" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38300:38540" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38579:38767" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38806:39046" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39026:39046" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39085:39325" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39447:39632" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39838:40095" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="41933:44474" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="44511:46720" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="46759:49619" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="49659:52607" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="52648:54301" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="54334:62380" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="68070:68635" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="68671:69761" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="69843:76854" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="77948:79997" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80095:80120" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80121:91004" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80148:80161" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80186:80194" ph="á" />
-            <marker date="1498585800330" expanded="false" signature="80225:80235" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80670:80683" ph="..." />
+            <marker date="1498585642688" expanded="true" signature="1673:2427" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="2058:2243" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="3028:3637" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="3846:4109" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="4545:4947" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="6453:9007" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="7853:9001" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="10247:25678" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="11942:11988" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12024:12296" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12333:12590" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12626:12872" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12910:12991" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="13029:13109" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="13148:13233" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="13430:13615" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="14589:15433" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="14950:15419" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="15481:16347" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="15851:16333" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="16395:17261" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="16765:17247" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="17309:18175" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="17679:18161" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="18223:19089" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="18593:19075" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="19137:20003" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="19507:19989" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="20051:20917" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="20421:20903" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="20965:21831" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="21335:21817" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="21879:22745" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="22249:22731" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="22794:23682" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="23173:23668" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="23731:24619" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="24110:24605" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="24655:24764" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="24801:24910" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="25284:25403" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="26749:32835" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="27608:27793" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="27829:28155" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="28190:28516" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="28551:28877" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="28912:29238" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="29273:29599" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="29634:29960" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="29995:30321" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="30356:30682" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="30718:31045" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="31082:31409" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="31446:31773" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="31810:32136" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="32177:32300" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="32313:32432" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="33683:34710" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="33818:33866" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="33905:33941" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="35408:36695" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="37448:40238" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="37846:38034" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38071:38261" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38300:38540" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38579:38767" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38806:39046" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="39085:39325" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="39447:39632" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="64923:77930" ph="..." />
+            <marker date="1498585642688" expanded="true" signature="66118:67021" ph="{...}" />
+            <marker date="1498585642688" expanded="false" signature="80095:80120" ph="..." />
+            <marker date="1498585642688" expanded="false" signature="80148:80161" ph="..." />
+            <marker date="1498585642688" expanded="false" signature="80186:80194" ph="á" />
+            <marker date="1498585642688" expanded="false" signature="80225:80235" ph="..." />
+            <marker date="1498585642688" expanded="false" signature="80670:80683" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2064,10 +1261,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1039">
           <caret line="169" column="8" lean-forward="true" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="8" />
-          <folding>
-            <marker date="1497816518639" expanded="true" signature="1951:2046" ph="{...}" />
-            <marker date="1497816518639" expanded="true" signature="2186:2235" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2171,19 +1365,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/primitivas/FigurasPrimitivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="453" column="15" lean-forward="false" selection-start-line="453" selection-start-column="15" selection-end-line="453" selection-end-column="15" />
-          <folding>
-            <marker date="1498578026557" expanded="true" signature="23:18208" ph="{...}" />
-            <marker date="1498578026557" expanded="true" signature="14315:14890" ph="{...}" />
-            <marker date="1498578026557" expanded="true" signature="15705:15804" ph="{...}" />
-            <marker date="1498578026557" expanded="true" signature="15705:15837" ph="{...}" />
-            <marker date="1498578026557" expanded="true" signature="15884:16273" ph="{...}" />
-            <marker date="1498578026557" expanded="true" signature="16279:16308" ph="/*...*/" />
-            <marker date="1498578026557" expanded="true" signature="16368:16660" ph="{...}" />
-            <marker date="1498578026557" expanded="true" signature="16731:17728" ph="{...}" />
-            <marker date="1498578026557" expanded="true" signature="17792:18205" ph="{...}" />
-          </folding>
+        <state relative-caret-position="6615">
+          <caret line="441" column="0" lean-forward="false" selection-start-line="441" selection-start-column="0" selection-end-line="441" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2191,200 +1375,134 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="605">
           <caret line="300" column="0" lean-forward="false" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/BufferCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="168" column="54" lean-forward="true" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
+        <state relative-caret-position="4740">
+          <caret line="316" column="34" lean-forward="false" selection-start-line="316" selection-start-column="34" selection-end-line="316" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Container3d/Objeto3D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="504" column="83" lean-forward="false" selection-start-line="504" selection-start-column="83" selection-end-line="504" selection-end-column="83" />
-          <folding>
-            <marker date="1498585688560" expanded="true" signature="21908:22581" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="21908:22897" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="22587:22641" ph="/** Dibuja a los hijos ...*/" />
-            <marker date="1498585688560" expanded="true" signature="22707:22894" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="22764:22888" ph="{...}" />
-          </folding>
+        <state relative-caret-position="421">
+          <caret line="218" column="36" lean-forward="false" selection-start-line="218" selection-start-column="36" selection-end-line="218" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="796" column="30" lean-forward="true" selection-start-line="796" selection-start-column="30" selection-end-line="796" selection-end-column="30" />
+        <state relative-caret-position="406">
+          <caret line="191" column="68" lean-forward="false" selection-start-line="191" selection-start-column="68" selection-end-line="191" selection-end-column="68" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
-            <marker date="1498585688560" expanded="true" signature="21:25926" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="5064:7133" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="7182:9252" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="7192:7417" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="8651:9120" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="9302:10061" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="9312:9463" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="10084:10271" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="10094:10211" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="10289:11239" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="11275:11939" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="11788:11911" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="11966:14814" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="12611:12815" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="12686:12753" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="12924:13019" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="13032:13125" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="13181:13203" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="13371:13696" ph="[...]" />
-            <marker date="1498585688560" expanded="true" signature="13707:13778" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="13851:14212" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="14452:14696" ph="[...]" />
-            <marker date="1498585688560" expanded="true" signature="14837:17148" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="17171:18638" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="18659:19254" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="18669:18690" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="18728:18772" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="18884:18924" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="19064:19094" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="19347:19616" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="19637:19670" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="19693:19959" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="19799:19928" ph="[...]" />
-            <marker date="1498585688560" expanded="true" signature="19974:20116" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="20067:20110" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="20137:20432" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="20239:20402" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="20303:20358" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="20466:22585" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="20563:20619" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="20741:20876" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="20912:21469" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="21592:21616" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="22146:22168" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="22633:24101" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="22831:22948" ph="//..." />
-            <marker date="1498585688560" expanded="true" signature="24165:25612" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="24259:24281" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="24394:24424" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="24498:24853" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="24863:24886" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="25114:25291" ph="[...]" />
-            <marker date="1498585688560" expanded="true" signature="25404:25444" ph="/*...*/" />
-            <marker date="1498585688560" expanded="true" signature="25466:25519" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="25641:25924" ph="{...}" />
-            <marker date="1498585688560" expanded="true" signature="25776:25868" ph="{...}" />
+            <element signature="n#!!block;n#createMediaRuta#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createBuilding#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createCalle#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createEsquina#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createCar#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createEscene#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createVereda#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createManzanaB#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createColumna#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#updateTechos#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#getIdEdficios#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#getMatriz4x4#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#sumNumB#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#llenarAlturas#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#addPuertas#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#addColor#0;n#ObjetosFactory#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3231">
-          <caret line="429" column="9" lean-forward="true" selection-start-line="429" selection-start-column="9" selection-end-line="429" selection-end-column="9" />
+        <state relative-caret-position="390">
+          <caret line="620" column="0" lean-forward="true" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
           <folding>
             <element signature="n#script#15;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#16;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#17;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#18;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#19;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#24;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1498585800330" expanded="true" signature="1673:2427" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="2058:2243" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="3028:3637" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="3846:4109" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="4545:4947" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="6453:9007" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="7853:9001" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="10247:25678" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="11942:11988" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12024:12296" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12333:12590" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12626:12872" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="12910:12991" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13029:13109" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13148:13233" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13269:13378" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13415:13524" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="13721:13906" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="14880:15724" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="15241:15710" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="15772:16638" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="16142:16624" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="16686:17552" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="17056:17538" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="17600:18466" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="17970:18452" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="18514:19380" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="18884:19366" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="19428:20294" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="19798:20280" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="20342:21208" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="20712:21194" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="21256:22122" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="21626:22108" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="22170:23036" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="22540:23022" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="23085:23973" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="23464:23959" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="24022:24910" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="24401:24896" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="25284:25403" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="25752:32848" ph="..." />
-            <marker date="1498585800330" expanded="true" signature="26749:32835" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="27608:27793" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="27829:28155" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="28190:28516" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="28551:28877" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="28912:29238" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="29273:29599" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="29634:29960" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="29995:30321" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="30356:30682" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="30718:31045" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="31082:31409" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="31446:31773" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="31810:32136" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="32177:32300" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="32313:32432" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="32907:34724" ph="..." />
-            <marker date="1498585800330" expanded="true" signature="33683:34710" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="33818:33866" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="33905:33941" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="34776:36708" ph="..." />
-            <marker date="1498585800330" expanded="true" signature="35408:36695" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="37448:40238" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="37846:38034" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38071:38261" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38300:38540" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38579:38767" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="38806:39046" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39026:39046" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39085:39325" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39447:39632" ph="{...}" />
-            <marker date="1498585800330" expanded="true" signature="39838:40095" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="41933:44474" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="44511:46720" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="46759:49619" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="49659:52607" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="52648:54301" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="54334:62380" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="68070:68635" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="68671:69761" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="69843:76854" ph="{...}" />
-            <marker date="1498585800330" expanded="false" signature="77948:79997" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80095:80120" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80121:91004" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80148:80161" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80186:80194" ph="á" />
-            <marker date="1498585800330" expanded="false" signature="80225:80235" ph="..." />
-            <marker date="1498585800330" expanded="false" signature="80670:80683" ph="..." />
+            <marker date="1498585642688" expanded="true" signature="1673:2427" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="2058:2243" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="3028:3637" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="3846:4109" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="4545:4947" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="6453:9007" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="7853:9001" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="10247:25678" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="11942:11988" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12024:12296" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12333:12590" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12626:12872" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="12910:12991" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="13029:13109" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="13148:13233" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="13430:13615" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="14589:15433" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="14950:15419" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="15481:16347" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="15851:16333" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="16395:17261" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="16765:17247" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="17309:18175" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="17679:18161" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="18223:19089" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="18593:19075" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="19137:20003" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="19507:19989" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="20051:20917" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="20421:20903" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="20965:21831" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="21335:21817" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="21879:22745" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="22249:22731" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="22794:23682" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="23173:23668" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="23731:24619" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="24110:24605" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="24655:24764" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="24801:24910" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="25284:25403" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="26749:32835" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="27608:27793" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="27829:28155" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="28190:28516" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="28551:28877" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="28912:29238" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="29273:29599" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="29634:29960" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="29995:30321" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="30356:30682" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="30718:31045" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="31082:31409" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="31446:31773" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="31810:32136" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="32177:32300" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="32313:32432" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="33683:34710" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="33818:33866" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="33905:33941" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="35408:36695" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="37448:40238" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="37846:38034" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38071:38261" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38300:38540" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38579:38767" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="38806:39046" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="39085:39325" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="39447:39632" ph="{...}" />
+            <marker date="1498585642688" expanded="true" signature="64923:77930" ph="..." />
+            <marker date="1498585642688" expanded="true" signature="66118:67021" ph="{...}" />
+            <marker date="1498585642688" expanded="false" signature="80095:80120" ph="..." />
+            <marker date="1498585642688" expanded="false" signature="80148:80161" ph="..." />
+            <marker date="1498585642688" expanded="false" signature="80186:80194" ph="á" />
+            <marker date="1498585642688" expanded="false" signature="80225:80235" ph="..." />
+            <marker date="1498585642688" expanded="false" signature="80670:80683" ph="..." />
           </folding>
         </state>
       </provider>
