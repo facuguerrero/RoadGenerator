@@ -1019,8 +1019,8 @@
         }
 
         if(vID >= 30.5 && vID < 31.5){
-            auxUv.x = auxUv.x * 20.0;
-            auxUv.y = auxUv.y * 0.005;
+            auxUv.x = auxUv.x * 18.0;
+            auxUv.y = auxUv.y * 0.05;
             textureColor = texture2D(pasto, vec2(auxUv.s, auxUv.t));
             normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
         }
