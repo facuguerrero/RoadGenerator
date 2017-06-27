@@ -551,9 +551,48 @@ class ObjetosFactory {
         var manzana = this.createEscene(x);
         var anchoVereda = 4.0;
 
-
         var vereda = this.createVereda(true);
         var centro = this.createVereda(false);
+
+        /* OBJETO PARA LA REFLEXION */
+        var esfera = new Objeto3D();
+        var buffcalc = new BufferCalculator(20, 20);
+
+        buffcalc.createEsfera(2);
+        esfera.setBufferCreator(buffcalc);
+        esfera.build();
+        //cambiar cuando haga falta
+        esfera.setType("pasto",20);
+
+        esfera.translate( 9.5, 2.0,9.5);
+        centro.add(esfera);
+
+        var esfera2 = new Objeto3D();
+        var buffcalc = new BufferCalculator(20, 20);
+
+        buffcalc.createEsfera(1);
+        esfera2.setBufferCreator(buffcalc);
+        esfera2.build();
+        //cambiar cuando haga falta
+        esfera2.setType("pasto",20);
+
+        esfera2.translate( 0.0,2.0,1.8);
+        esfera.add(esfera2);
+
+        var esfera3 = new Objeto3D();
+        var buffcalc = new BufferCalculator(20, 20);
+
+        buffcalc.createEsfera(1);
+        esfera3.setBufferCreator(buffcalc);
+        esfera3.build();
+        //cambiar cuando haga falta
+        esfera3.setType("pasto",20);
+
+        esfera3.translate( 0.0,2.0,-1.8);
+        esfera.add(esfera3);
+
+
+        /* TERMINAMOS LA VEREDA */
 
         centro.translate(anchoVereda/2 +0.5, 0.2,anchoVereda/2 + 0.5);
         centro.scale(0.75,1.0,0.75);

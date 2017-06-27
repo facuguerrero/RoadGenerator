@@ -24,6 +24,7 @@ var SKY = "sky";
 var CONCRETO = "concreto";
 var POSTE = "poste";
 var PUERTA = "puerta";
+var ESFERA = "esfera";
 
 class Objeto3D extends Container3D{
 
@@ -87,16 +88,7 @@ class Objeto3D extends Container3D{
         this.textureBuffer1 = this.bufferCreator.getTextureBuffer1();
         this.textureBuffer2 = this.bufferCreator.getTextureBuffer2();
         this.tangentBuffer = this.bufferCreator.getTangentBuffer();
-/*
-        var max = Math.max.apply(null,this.indexBuffer) +1;
 
-        if(max != this.posBuffer.length/3){
-            console.log(this.objectType);
-
-            console.log( max );
-            console.log( this.bufferCreator.posBuffer );
-            console.log( this.bufferCreator.tangentBuffer );
-        }*/
         this.setUpWebGLBuffers();
     }
 
@@ -152,30 +144,6 @@ class Objeto3D extends Container3D{
             this.webglTangentBuffer.itemSize = 3;
             this.webglTangentBuffer.numItems = this.tangentBuffer.length / 3;
         }
-
-        /*
-        var max = Math.max.apply(null,this.indexBuffer) +1;
-
-         if(max != this.webglPosBuffer.numItems){
-
-             /*if(this.objectType == null) {
-                 this.webglTangentBuffer.itemSize = 0;
-                 //this.webglTextureBuffer.itemSize = 0;
-                 //this.webglColorBuffer.itemSize = 0;
-                 //this.webglTextureBuffer.itemSize = 0;
-                 this.webglIndexBuffer.itemSize = 0;
-                 this.webglPosBuffer.itemSize = 0;
-                 this.webglNormalBuffer.itemSize = 0;
-             }
-
-            console.log(this.objectType);
-            console.log(this.webglIndexBuffer);
-            console.log(this.webglPosBuffer);
-            console.log(this.webglNormalBuffer);
-            console.log(this.webglTangentBuffer);
-            //console.log(this.webglColorBuffer);
-            //console.log(this.webglTextureBuffer);
-         }*/
 
     }
 
@@ -349,17 +317,6 @@ class Objeto3D extends Container3D{
             if(figura == CARROCERIA){
                 this.llenarTexture(buffcalc);
             }
-
-            /*if(figura == RUEDA){
-                console.log(this.objectType);
-                console.log(buffcalc.colorBuffer);
-                console.log(buffcalc.posBuffer.length/3);
-                console.log(buffcalc.normalBuffer.length/3);
-                console.log(buffcalc.tangentBuffer.length/3);
-                console.log(buffcalc.textureBuffer1.length/2);
-                console.log(buffcalc.indexBuffer);
-            }*/
-
             this.build();
         }
         else if(! barrer){
@@ -505,6 +462,9 @@ class Objeto3D extends Container3D{
             this.useTangent = true;
             this.setShaderProgram(streetShader);
         }
+        else if(this.objectType == ESFERA){
+            this.setShaderProgram(cityShader);
+        }
         else{
             this.setShaderProgram(shaderProgramColoredObject);
         }
@@ -606,15 +566,11 @@ class Objeto3D extends Container3D{
             gl.useProgram(this.shaderProgram);
             gl.uniform1f(count, this.id);
         }
-
-
-        /*if(this.bufferCreator.posBuffer.length/3 != Math.max(this.bufferCreator.indexBuffer) ){
-
-            console.log(this.objectType);
-            //console.log(Math.max(this.indexBuffer));
-            //console.log(this.bufferCreator.rows);
-            //console.log(this.bufferCreator.colms);
-        }*/
+        if(this.objectType == ESFERA){
+            var count = gl.getUniformLocation(this.shaderProgram, "atID");
+            gl.useProgram(this.shaderProgram);
+            gl.uniform1f(count, this.id);
+        }
 
 
         //Matriz de normales. Se define como la traspuesta de la inversa de la matriz de modelado

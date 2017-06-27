@@ -263,6 +263,7 @@ class BufferCalculator{
 
         var posBuf = [];
         var normBuf = [];
+        var colBuf = [];
         var texBuf = [];
         var tan = [];
 
@@ -300,6 +301,10 @@ class BufferCalculator{
                 tan.push(1.0);
                 tan.push(1.0);
 
+                colBuf.push(0.0);
+                colBuf.push(0.0);
+                colBuf.push(0.0);
+
                 //Cargamos las texturas
                 texBuf.push(j /(this.colms - 1));
                 texBuf.push(i /(this.rows - 1));
@@ -309,6 +314,7 @@ class BufferCalculator{
         this.posBuffer = posBuf;
         this.normalBuffer = normBuf;
         this.tangentBuffer = tan;
+        this.colorBuffer = colBuf;
         this.setBoolTexture1();
         this.textureBuffer1 = texBuf;
         this.calcIndexBuffer();
