@@ -930,22 +930,22 @@
         vViewDir = normalize(-pos);
 
 // Transform normal and tangent to eye space
-        vec3 norm = vNormal;
-        vec3 tang = normalize(uNMatrix * aVertexTangent);
-        vec3 binormal = normalize(cross(norm, tang));
-
-        //todo en este shader tiene mapa de normales
-
-        // Matrix for transformation to tangent space
-        mat3 toObjectLocal = mat3(
-            tang.x, binormal.x, norm.x,
-            tang.y, binormal.y, norm.y,
-            tang.z, binormal.z, norm.z
-        );
-
-        // Transform vectors to tangent space
-        vLightDir = toObjectLocal * vLightDir;
-        vViewDir = toObjectLocal * vViewDir;
+//        vec3 norm = vNormal;
+//        vec3 tang = normalize(uNMatrix * aVertexTangent);
+//        vec3 binormal = normalize(cross(norm, tang));
+//
+//        //todo en este shader tiene mapa de normales
+//
+//        // Matrix for transformation to tangent space
+//        mat3 toObjectLocal = mat3(
+//            tang.x, binormal.x, norm.x,
+//            tang.y, binormal.y, norm.y,
+//            tang.z, binormal.z, norm.z
+//        );
+//
+//        // Transform vectors to tangent space
+//        vLightDir = toObjectLocal * vLightDir;
+//        vViewDir = toObjectLocal * vViewDir;
 
 
     }
@@ -1170,8 +1170,8 @@
             cityShader.textureCoordAttribute = gl.getAttribLocation(cityShader, "aTextureCoord");
             gl.enableVertexAttribArray(cityShader.textureCoordAttribute);
 
-//            cityShader.vertexTangentAttribute = gl.getAttribLocation(cityShader, "aVertexTangent");
-//            gl.enableVertexAttribArray(cityShader.vertexTangentAttribute);
+            cityShader.vertexTangentAttribute = gl.getAttribLocation(cityShader, "aVertexTangent");
+            gl.enableVertexAttribArray(cityShader.vertexTangentAttribute);
 
             cityShader.pMatrixUniform = gl.getUniformLocation(cityShader, "uPMatrix");
             cityShader.ViewMatrixUniform = gl.getUniformLocation(cityShader, "uViewMatrix");
