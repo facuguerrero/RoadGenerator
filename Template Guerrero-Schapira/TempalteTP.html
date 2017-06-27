@@ -111,6 +111,8 @@
     <script id="shader-fs-skySphere" type="x-shader/x-fragment">
     precision highp float;
 
+    uniform vec3 uAmbientColor;
+
     varying vec2 vTextureCoord;
     varying float vID;
 
@@ -125,7 +127,7 @@
         auxUv.y = auxUv.y * -1.0;
 
         textureColor = texture2D(sky, vec2(auxUv.s, auxUv.t));
-        gl_FragColor = vec4(textureColor.rgb, textureColor.a);
+        gl_FragColor = vec4(textureColor.rgb * (uAmbientColor + 0.4), textureColor.a);
     }
 </script>
 
@@ -1371,6 +1373,7 @@
             skyShader.ModelMatrixUniform = gl.getUniformLocation(skyShader, "uModelMatrix");
             skyShader.nMatrixUniform = gl.getUniformLocation(skyShader, "uNMatrix");
             skyShader.samplerUniform = gl.getUniformLocation(skyShader, "uSampler");
+            skyShader.ambientColorUniform = gl.getUniformLocation(skyShader, "uAmbientColor");
         }
 
         function initTextures(){
