@@ -314,7 +314,7 @@ class ObjetosFactory {
         return this.createCalle(x, x, "esquina",1.0);
     }
 
-    createCar() {
+    createCar(listaRuedas) {
 
         //Declaro los puntos de la carroceria del auto
         var puntosCarroceria = [];
@@ -342,8 +342,7 @@ class ObjetosFactory {
         var puntos = [];
         puntos.push(vec3.fromValues(0.0, 0.0, 0.0));
         puntos.push(vec3.fromValues(0.0, 0.0, 0.5));
-        this.addRuedas(puntos,arrayMat, carroceria);
-
+        this.addRuedas(puntos,arrayMat, carroceria, listaRuedas);
 
         return carroceria;
     }
@@ -763,7 +762,7 @@ class ObjetosFactory {
     }
 
 
-    addRuedas(puntosCarroceria,arrayMat,auto){
+    addRuedas(puntosCarroceria,arrayMat,auto, listaRuedas){
 
         //Creamos las ruedas del auto
         var rueda1 = new Objeto3D();
@@ -771,31 +770,40 @@ class ObjetosFactory {
         var rueda3 = new Objeto3D();
         var rueda4 = new Objeto3D();
 
+        var aux = [];
+
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
         puntosCarroceria.push(vec3.fromValues(2.3, 1.0, 0.8));
-        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
         rueda1.translate(0.0,0.0,-0.2);
         auto.add(rueda1);
         this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.3,false);
 
         puntosCarroceria.push(vec3.fromValues(2.3, 1.0, 0.8));
-        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
         rueda2.translate(0.0,0.0,3.7);
         auto.add(rueda2);
         this.addTapaRueda(rueda2,arrayMat, puntosCarroceria,2.3,true);
 
         puntosCarroceria.push(vec3.fromValues(9.1, 1.0, 0.8));
-        rueda3.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda3.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
         rueda3.translate(0.0,0.0,-0.2);
         auto.add(rueda3);
         this.addTapaRueda(rueda3,arrayMat, puntosCarroceria,9.1,false);
 
         puntosCarroceria.push(vec3.fromValues(9.1, 1.0, 0.8));
-        rueda4.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
+        rueda4.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
         rueda4.translate(0.0,0.0,3.7);
         auto.add(rueda4);
         this.addTapaRueda(rueda4,arrayMat, puntosCarroceria,9.1,true);
+
+        aux.push(rueda1.children[0]);
+        aux.push(rueda2.children[0]);
+        aux.push(rueda3.children[0]);
+        aux.push(rueda4.children[0]);
+
+        listaRuedas.push(aux);
     }
 
     addTapaRueda(rueda,arrayMat, puntosCarroceria,x,trasladar){
@@ -850,6 +858,7 @@ class ObjetosFactory {
 
         tapa1.setType("rueda",25.0);
         tapa1.build();
+
         rueda.add(tapa1);
     }
 
