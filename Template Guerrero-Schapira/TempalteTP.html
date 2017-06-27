@@ -929,23 +929,23 @@
         vLightDir = 3000.0 - pos;
         vViewDir = normalize(-pos);
 
-// Transform normal and tangent to eye space
-//        vec3 norm = vNormal;
-//        vec3 tang = normalize(uNMatrix * aVertexTangent);
-//        vec3 binormal = normalize(cross(norm, tang));
-//
-//        //todo en este shader tiene mapa de normales
-//
-//        // Matrix for transformation to tangent space
-//        mat3 toObjectLocal = mat3(
-//            tang.x, binormal.x, norm.x,
-//            tang.y, binormal.y, norm.y,
-//            tang.z, binormal.z, norm.z
-//        );
-//
-//        // Transform vectors to tangent space
-//        vLightDir = toObjectLocal * vLightDir;
-//        vViewDir = toObjectLocal * vViewDir;
+        //Transform normal and tangent to eye space
+            vec3 norm = vNormal;
+            vec3 tang = normalize(uNMatrix * aVertexTangent);
+            vec3 binormal = normalize(cross(norm, tang));
+
+            //todo en este shader tiene mapa de normales
+
+            // Matrix for transformation to tangent space
+            mat3 toObjectLocal = mat3(
+                tang.x, binormal.x, norm.x,
+                tang.y, binormal.y, norm.y,
+                tang.z, binormal.z, norm.z
+            );
+
+            // Transform vectors to tangent space
+            vLightDir = toObjectLocal * vLightDir;
+            vViewDir = toObjectLocal * vViewDir;
 
 
     }
