@@ -609,6 +609,18 @@
                 }
             }
 
+        if(vID >49.5 && vID <50.5){
+            textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
+            sinSpot = true;
+
+        }
+
+         if(vID >50.5 && vID <51.5){
+            textureColor = texture2D(poste, vec2(auxUv.s, auxUv.t));
+            sinSpot = true;
+
+        }
+
         vec3 lightIntensity =  uAmbientColor + spotLightIntensity + spotLightIntensity2 + spotLightIntensity3 + spotLightIntensity4 + spotLightIntensity5 + spotLightIntensity6 + spotLightIntensity7 + spotLightIntensity8 + spotLightIntensity9 + spotLightIntensity10 + spotLightIntensity11 + lambertian*uDirectionalColor + (specular)*uDirectionalColor ;
 
         if(sinSpot){

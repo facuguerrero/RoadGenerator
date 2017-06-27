@@ -205,6 +205,7 @@ class Objeto3D extends Container3D{
             //Lo borramos para no romper la superficie.
             var escalado = arrayVecPos.pop();
             this.figuras.calcularEstructuraEdificio(vertices,arrayVecNOR,escalado);
+            buffcalc.setTextures(1);
             //this.addColor(buffcalc,25, 1.0, 0.0, 0.0);
         }
 
@@ -215,6 +216,7 @@ class Objeto3D extends Container3D{
             //el ultimo trae la dimension de x
             var escalado = arrayVecPos.pop();
             this.figuras.calcularTapaEdificio(vertices,arrayVecNOR,escalado[0]);
+            buffcalc.setTextures(1);
             //this.addColor(buffcalc, 4, 1.0,0.0,0.0);
         }
 

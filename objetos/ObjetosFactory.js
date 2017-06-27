@@ -190,6 +190,7 @@ class ObjetosFactory {
         //Creamos el techo del edificio
         var base = new Objeto3D();
         base.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapa);
+        base.setType("poste",51.0);
         this.addColor(base,0.0,0.0,1.0);
 
         edificio.add(base);
@@ -205,6 +206,7 @@ class ObjetosFactory {
             var baseAbajo = new Objeto3D();
             baseAbajo.calcularSuperficieBarrido("tapa_luz", 2, 2, arrayMatT, puntosTapaAbajo);
             edificio.add(baseAbajo);
+            baseAbajo.setType("poste",51.0);
             //Linea provisoria
             baseAbajo.setShaderProgram(streetShader);
         }
@@ -212,7 +214,7 @@ class ObjetosFactory {
         edificio.setShaderProgram(streetShader);
 
         edificio.calcularSuperficieBarrido("estructura_luz", 2, 5, arrayMatT, puntosEdificio);
-        this.addColor(edificio,1.0,0.0,0.0);
+        edificio.setType("poste",50.0);
 
         return edificio;
     }
