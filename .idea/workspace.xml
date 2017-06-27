@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Container3d/Objeto3D.js" afterPath="$PROJECT_DIR$/Container3d/Objeto3D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" afterPath="$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/ObjetosFactory.js" afterPath="$PROJECT_DIR$/objetos/ObjetosFactory.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -530,13 +527,6 @@
       <workItem from="1498510896236" duration="8439000" />
       <workItem from="1498584838723" duration="125000" />
     </task>
-    <task id="LOCAL-00036" summary="Esfera acomodada">
-      <created>1498226880918</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1498226880918</updated>
-    </task>
     <task id="LOCAL-00037" summary="Esfera acomodada">
       <created>1498227521156</created>
       <option name="number" value="00037" />
@@ -873,11 +863,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498584901385</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Textura caja luz">
+      <created>1498585677103</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1498585677107</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139812000" />
+    <option name="totallyTimeSpent" value="139895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -937,7 +934,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Limpieza Gral" />
     <MESSAGE value="luces casi andando" />
     <MESSAGE value="todas las luces ubicadas" />
     <MESSAGE value="Cargue bien las texturas y normales del pilar de la columna!" />
@@ -962,7 +958,8 @@
     <MESSAGE value="Pija de error" />
     <MESSAGE value="Costado pasto" />
     <MESSAGE value="Mikei de pasto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mikei de pasto" />
+    <MESSAGE value="Textura caja luz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Textura caja luz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
