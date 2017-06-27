@@ -334,6 +334,7 @@ class Objeto3D extends Container3D{
             }
             var vereda = arrayVecPos.pop();
             this.figuras.calcularVereda(vertices,arrayVecNOR);
+            var largo = vertices.length;
             buffcalc.setTextures(1);
             buffcalc.tangent = true;
         }
