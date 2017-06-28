@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
+    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="No sale">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/AutosAnimados.js" afterPath="$PROJECT_DIR$/objetos/AutosAnimados.js" />
     </list>
@@ -117,8 +117,8 @@
       <file leaf-file-name="AutosAnimados.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="196" column="38" lean-forward="false" selection-start-line="196" selection-start-column="38" selection-end-line="196" selection-end-column="38" />
+            <state relative-caret-position="142">
+              <caret line="197" column="55" lean-forward="false" selection-start-line="197" selection-start-column="55" selection-end-line="197" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -127,7 +127,7 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
+            <state relative-caret-position="942">
               <caret line="808" column="4" lean-forward="false" selection-start-line="808" selection-start-column="4" selection-end-line="808" selection-end-column="4" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
@@ -559,13 +559,6 @@
       <workItem from="1498650248808" duration="3867000" />
       <workItem from="1498657042165" duration="124000" />
     </task>
-    <task id="LOCAL-00040" summary="VAMO VEREDA">
-      <created>1498229228423</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1498229228423</updated>
-    </task>
     <task id="LOCAL-00041" summary="texturas pasto">
       <created>1498246850389</created>
       <option name="number" value="00041" />
@@ -902,11 +895,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498616688156</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="No sale">
+      <created>1498659382851</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1498659382852</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158533000" />
+    <option name="totallyTimeSpent" value="158874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
@@ -1427,17 +1427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="808" column="4" lean-forward="false" selection-start-line="808" selection-start-column="4" selection-end-line="808" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
-            <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Template Guerrero-Schapira/TempalteTP.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3709">
@@ -1532,10 +1521,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="942">
+          <caret line="808" column="4" lean-forward="false" selection-start-line="808" selection-start-column="4" selection-end-line="808" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
+            <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="196" column="38" lean-forward="false" selection-start-line="196" selection-start-column="38" selection-end-line="196" selection-end-column="38" />
+        <state relative-caret-position="142">
+          <caret line="197" column="55" lean-forward="false" selection-start-line="197" selection-start-column="55" selection-end-line="197" selection-end-column="55" />
           <folding />
         </state>
       </provider>

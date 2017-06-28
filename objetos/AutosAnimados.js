@@ -195,7 +195,7 @@ class AutosAnimados {
             //var pos = rueda1[0].matrix[2]
             rueda1[0].resetMatrix();
             rueda1[0].translate(2.3, 1.0, 0.0);
-            rueda1[0].rotate(angulo , 0.0, 0.0, 1.0);
+            rueda1[0].rotate(angulo , 0.0, 0.0, 1.0);//
 
             // auto1.resetMatrix();
             // auto1.translate(vec1[1], vec1[0], vec1[2] - 10);
