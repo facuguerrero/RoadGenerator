@@ -1729,6 +1729,7 @@
             mat4.identity(model_matrix_escene);
 
             //ciclo del dia
+            //INICIO CICLO DIA
             time = time + (sentido * 0.0008);
             sol = sol + (sentido * 0.0001);
             if(time > 0.55){
@@ -1737,6 +1738,7 @@
             if (time < 0.0){
                 sentido = 1
             }
+            //FIN CICLO DIA
 
             if (frame < 3000) {
                 var t = gl.getUniformLocation(buildingShaders, "t");
@@ -1746,7 +1748,8 @@
                 frame++;
             }
 
-
+            //ACA CAMBIAMOS LA VELOCIDAD DE LOS AUTOS
+            //SI AUMENTO EN FACTORES DE 10 CAMBIA LA VELOCIDAD.
             escena.draw(model_matrix_escene, false);
             if(frameAutos > 10 - step) {
                 autosAnimados.updateAutos(step);
