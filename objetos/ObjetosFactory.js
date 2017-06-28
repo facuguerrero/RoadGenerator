@@ -276,7 +276,7 @@ class ObjetosFactory {
         return edificio;
     }
 
-    createCalle(x, z, type = "calle", id = 0.0) {
+    createCalle(x, z, type = "calle", id = 300.0) {
         /* Funcion que recibe 2 parametros:
          @X es el ancho de la calle.
          @Z es el ancho de la calle.
@@ -857,7 +857,7 @@ class ObjetosFactory {
             tapa1.translate(0.0,0.0,0.5);
         }
 
-        tapa1.setType("rueda",25.0);
+        tapa1.setType("rueda",250.0);
         tapa1.build();
 
         rueda.add(tapa1);

@@ -381,9 +381,6 @@
 		vec3 spotLightIntensity10 = vec3(0.0,0.0,0.0);
 		vec3 spotLightIntensity11 = vec3(0.0,0.0,0.0);
 
-        if(vID >= 499.5 && vID < 500.5){
-            //llenar textura farol
-        }
 
         if(vID >18.5 && vID <19.5){
 
@@ -415,7 +412,7 @@
             textureColor = texture2D(puerta, vec2(auxUv.s, auxUv.t));
         }
 
-        if(vID > 24.5 && vID < 25.5){
+        if(vID > 249.5 && vID < 250.5){
             textureColor = texture2D(rueda, vec2(auxUv.s, auxUv.t));
         }
 
@@ -668,7 +665,7 @@
     uniform sampler2D building7;
     uniform sampler2D building8;
     uniform sampler2D building9;
-    uniform sampler2D building10;
+    //uniform sampler2D building10;
     uniform sampler2D building11;
     uniform sampler2D building12;
     uniform sampler2D pb1;
@@ -785,7 +782,7 @@
             auxUv2.y = auxUv2.y * factoredY;
             auxUv.x = auxUv.x * factorX;
             auxUv.y = auxUv.y * factorpbY;
-            textureColor = texture2D(building10, vec2(auxUv2.s, auxUv2.t));
+            textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
             textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
         }
         if(vID > 10.5 && vID < 11.5){
@@ -995,7 +992,7 @@
     uniform sampler2D esquina;
     uniform sampler2D vereda;
     uniform sampler2D pasto;
-    uniform sampler2D skyy;
+//    uniform sampler2D skyy;
     uniform sampler2D pastoNormalMap;
     uniform sampler2D veredaNormalMap;
     uniform sampler2D esquinaNormalMap;
@@ -1033,7 +1030,7 @@
         vec2 auxUv = vTextureCoord;
 
 
-        if(vID >= -0.5 && vID < 0.5){
+        if(vID >= 299.5 && vID < 300.5){
            textureColor = texture2D(street, vec2(vTextureCoord.s, vTextureCoord.t));
            normal = normalize(vec3(2.0 * texture2D(streetNormalMap, vTextureCoord) - 1.0));
         }
@@ -1390,7 +1387,7 @@
 
             //se cargan las texturas de los edificios
             var nombresEdificios = ["building1", "building2", "building3", "building4", "building5", "building6", "building7",
-                "building8", "building9", "building10", "building11", "building12", "pb1", "pb2", "pb3", "pb4"];
+                "building8", "building9", "building11", "building12", "pb1", "pb2", "pb3", "pb4"];
             var TEXTURES = [gl.TEXTURE1, gl.TEXTURE2, gl.TEXTURE3, gl.TEXTURE4, gl.TEXTURE5, gl.TEXTURE6, gl.TEXTURE7, gl.TEXTURE8, gl.TEXTURE9, gl.TEXTURE10, gl.TEXTURE11, gl.TEXTURE12, gl.TEXTURE13, gl.TEXTURE14, gl.TEXTURE15, gl.TEXTURE16];
             gl.useProgram(buildingShaders);
             loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
@@ -1403,14 +1400,13 @@
             loadTexture("textures/ed9_pisos.jpg", nombresEdificios[7]);
             loadTexture("textures/ed16_pisos.jpg", nombresEdificios[8]);
             loadTexture("textures/ed11_pisos.jpg", nombresEdificios[9]);
-            loadTexture("textures/ed15_pisos.jpg", nombresEdificios[10]);
-            loadTexture("textures/ed14_pisos.jpg", nombresEdificios[11]);
-            loadTexture("textures/ed1_pb.jpg", nombresEdificios[12]);
-            loadTexture("textures/ed2_pb.jpg", nombresEdificios[13]);
-            loadTexture("textures/ed8_pb.jpg", nombresEdificios[14]);
-            loadTexture("textures/ed4_pb.jpg", nombresEdificios[15]);
+            loadTexture("textures/ed14_pisos.jpg", nombresEdificios[10]);
+            loadTexture("textures/ed1_pb.jpg", nombresEdificios[11]);
+            loadTexture("textures/ed2_pb.jpg", nombresEdificios[12]);
+            loadTexture("textures/ed8_pb.jpg", nombresEdificios[13]);
+            loadTexture("textures/ed4_pb.jpg", nombresEdificios[14]);
 
-            for(i=1; i<17; i++) {
+            for(i=1; i<16; i++) {
 
                 var location = gl.getUniformLocation(buildingShaders, nombresEdificios[i - 1]);
                 gl.uniform1i(location, i);
@@ -1419,59 +1415,49 @@
 
 
             }
+//            uniform sampler2D autopista;
+//            uniform sampler2D concreto;
+//            uniform sampler2D poste;
+//            uniform sampler2D puerta;
+//            uniform sampler2D rueda;
+//            uniform sampler2D carroceria;
+//            uniform sampler2D autopistaNormalMap;
+//            uniform sampler2D concretoNormalMap;
 
-            //se cargan las texturas de la esquina
-            gl.useProgram(cityShader);
-            loadTexture("textures/cruce.jpg", "esquina");
-
-            var location = gl.getUniformLocation(cityShader, "esquina");
-            gl.uniform1i(location, 17);
-            gl.activeTexture(gl.TEXTURE17);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["esquina"]);
-
-            //se cargan las texturas de la vereda
-            gl.useProgram(cityShader);
-            loadTexture("textures/vereda.jpg", "vereda");
-
-            var location = gl.getUniformLocation(cityShader, "vereda");
-            gl.uniform1i(location, 18);
-            gl.activeTexture(gl.TEXTURE18);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["vereda"]);
-
-            //Autopista
+            //Concreto Normales
             gl.useProgram(streetShader);
-            loadTexture("textures/ruta.jpg", "autopista");
+            loadTexture("textures/carTop.jpg", "carroceria");
 
-            var location = gl.getUniformLocation(streetShader, "autopista");
-            gl.uniform1i(location, 19);
-            gl.activeTexture(gl.TEXTURE19);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["autopista"]);
+            var location = gl.getUniformLocation(streetShader, "carroceria");
+            gl.uniform1i(location, 16);
+            gl.activeTexture(gl.TEXTURE16);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["carroceria"]);
 
             //se carga la textura del cielo
             gl.useProgram(skyShader);
             loadTexture("textures/refmap.jpg", "sky");
 
             var location = gl.getUniformLocation(skyShader, "sky");
-            gl.uniform1i(location, 20);
-            gl.activeTexture(gl.TEXTURE20);
+            gl.uniform1i(location, 17);
+            gl.activeTexture(gl.TEXTURE17);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["sky"]);
 
-            //se carga la textura del pasto
-            gl.useProgram(cityShader);
-            loadTexture("textures/pasto.jpg", "pasto");
+            //Autopista
+            gl.useProgram(streetShader);
+            loadTexture("textures/ruta.jpg", "autopista");
 
-            var location = gl.getUniformLocation(cityShader, "pasto");
-            gl.uniform1i(location, 21);
-            gl.activeTexture(gl.TEXTURE21);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["pasto"]);
+            var location = gl.getUniformLocation(streetShader, "autopista");
+            gl.uniform1i(location, 18);
+            gl.activeTexture(gl.TEXTURE18);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["autopista"]);
 
             //Concreto
             gl.useProgram(streetShader);
             loadTexture("textures/concreto.jpg", "concreto");
 
             var location = gl.getUniformLocation(streetShader, "concreto");
-            gl.uniform1i(location, 22);
-            gl.activeTexture(gl.TEXTURE22);
+            gl.uniform1i(location, 19);
+            gl.activeTexture(gl.TEXTURE19);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["concreto"]);
 
             //Poste luz
@@ -1479,27 +1465,56 @@
             loadTexture("textures/farol.jpg", "poste");
 
             var location = gl.getUniformLocation(streetShader, "poste");
-            gl.uniform1i(location, 23);
-            gl.activeTexture(gl.TEXTURE23);
+            gl.uniform1i(location, 20);
+            gl.activeTexture(gl.TEXTURE20);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["poste"]);
-
-            //Normales Autopista
-            gl.useProgram(streetShader);
-            loadTexture("textures/ruta_normal.jpg", "autopistaNormalMap");
-
-            var location = gl.getUniformLocation(streetShader, "autopistaNormalMap");
-            gl.uniform1i(location, 24);
-            gl.activeTexture(gl.TEXTURE24);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["autopistaNormalMap"]);
 
             //Puerta Auto
             gl.useProgram(streetShader);
             loadTexture("textures/carSide.jpg", "puerta");
 
             var location = gl.getUniformLocation(streetShader, "puerta");
+            gl.uniform1i(location, 21);
+            gl.activeTexture(gl.TEXTURE21);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["puerta"]);
+
+
+            //se cargan las texturas de la esquina
+            gl.useProgram(cityShader);
+            loadTexture("textures/cruce.jpg", "esquina");
+
+            var location = gl.getUniformLocation(cityShader, "esquina");
+            gl.uniform1i(location, 22);
+            gl.activeTexture(gl.TEXTURE22);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["esquina"]);
+
+            //se cargan las texturas de la vereda
+            gl.useProgram(cityShader);
+            loadTexture("textures/vereda.jpg", "vereda");
+
+            var location = gl.getUniformLocation(cityShader, "vereda");
+            gl.uniform1i(location, 23);
+            gl.activeTexture(gl.TEXTURE23);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["vereda"]);
+
+            //se carga la textura del pasto
+            gl.useProgram(cityShader);
+            loadTexture("textures/pasto.jpg", "pasto");
+
+            var location = gl.getUniformLocation(cityShader, "pasto");
+            gl.uniform1i(location, 24);
+            gl.activeTexture(gl.TEXTURE24);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["pasto"]);
+
+            //Normales Autopista
+            gl.useProgram(streetShader);
+            loadTexture("textures/ruta_normal.jpg", "autopistaNormalMap");
+
+            var location = gl.getUniformLocation(streetShader, "autopistaNormalMap");
             gl.uniform1i(location, 25);
             gl.activeTexture(gl.TEXTURE25);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["puerta"]);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["autopistaNormalMap"]);
+
 
             //Pasto Normal
             gl.useProgram(cityShader);
@@ -1542,9 +1557,18 @@
             loadTexture("textures/concreto_normal.jpg", "concretoNormalMap");
 
             var location = gl.getUniformLocation(streetShader, "concretoNormalMap");
+            gl.uniform1i(location, 30);
+            gl.activeTexture(gl.TEXTURE30);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["concretoNormalMap"]);
+
+            //Concreto Normales
+            gl.useProgram(streetShader);
+            loadTexture("textures/rueda.jpg", "rueda");
+
+            var location = gl.getUniformLocation(streetShader, "rueda");
             gl.uniform1i(location, 31);
             gl.activeTexture(gl.TEXTURE31);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["concretoNormalMap"]);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["rueda"]);
 
 //            //mapa de refleccion
 //            gl.useProgram(cityShader);
