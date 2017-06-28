@@ -192,30 +192,31 @@ class AutosAnimados {
 
             var angulo = Math.PI * this.rotacion;
 
-            auto1.resetMatrix();
-            auto1.translate(vec1[1], vec1[0], vec1[2] - 10);
-            auto1.applyMatrix(mat1);
-            auto1.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
-            auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
-            auto1.scale(0.5, 0.5, 0.5);
-
             //var pos = rueda1[0].matrix[2]
             rueda1[0].resetMatrix();
-            //rueda1[0].translate( - angulo * Math.cos(angulo), - angulo * Math.sin(angulo) ,0.0);
+            rueda1[0].translate(2.3, 1.0, 0.0);
+            rueda1[0].rotate(angulo , 0.0, 0.0, 1.0);
+
+            // auto1.resetMatrix();
+            // auto1.translate(vec1[1], vec1[0], vec1[2] - 10);
+            // auto1.applyMatrix(mat1);
+            // auto1.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
+            // auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
+            // auto1.scale(0.5, 0.5, 0.5);
+
+            //rueda1[0].resetMatrix();
+            //rueda1[0].translate(0.0,0.0,-0.2);
+
+            // rueda1[1].resetMatrix();
+            // //rueda1[1].rotate(Math.PI * this.rotacion, 0.0, 0.0, 1.0);
+            // rueda1[1].translate(0.0,0.0,0.5);
             //
-            //rueda1[0].rotate(angulo , 0.0, 0.0, 1.0);
-
-
-            rueda1[1].resetMatrix();
-            //rueda1[1].rotate(Math.PI * this.rotacion, 0.0, 0.0, 1.0);
-            rueda1[1].translate(0.0,0.0,0.5);
-
-            rueda1[2].resetMatrix();
-            //rueda1[2].rotate(Math.PI * this.rotacion, 0.0, 0.0, 1.0);
-
-            rueda1[3].resetMatrix();
-            //rueda1[3].rotate(Math.PI * this.rotacion, 0.0, 0.0, 1.0);
-            rueda1[3].translate(0.0,0.0,0.5);
+            // rueda1[2].resetMatrix();
+            // //rueda1[2].rotate(Math.PI * this.rotacion, 0.0, 0.0, 1.0);
+            //
+            // rueda1[3].resetMatrix();
+            // //rueda1[3].rotate(Math.PI * this.rotacion, 0.0, 0.0, 1.0);
+            // rueda1[3].translate(0.0,0.0,0.5);
 
             auto2.resetMatrix();
             auto2.translate(vec2[1], vec2[0], vec2[2] - 15);
