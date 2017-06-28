@@ -350,7 +350,7 @@
 		vec3 lightDir = normalize(vLightDir);
         vec3 viewDir = vViewDir;
 
-        float specular = 0.0;
+        float specular = 0.5;
 
         vec3 lightColor = vec3(0.9, 0.9, 0.7);
 
@@ -1046,7 +1046,7 @@
         vec4 reflectionColor = vec4(0.0,0.0,0.0,1.0);
 
         float lambertian = max(dot(lightDir, normal), 0.0);
-        float specular = 1.0;
+        float specular = 0.5;
 
         if(lambertian > 0.0) {
             vec3 reflectDir = reflect(-lightDir, normal);
@@ -1399,14 +1399,6 @@
 
 
             }
-//            uniform sampler2D autopista;
-//            uniform sampler2D concreto;
-//            uniform sampler2D poste;
-//            uniform sampler2D puerta;
-//            uniform sampler2D rueda;
-//            uniform sampler2D carroceria;
-//            uniform sampler2D autopistaNormalMap;
-//            uniform sampler2D concretoNormalMap;
 
             //Concreto Normales
             gl.useProgram(streetShader);
