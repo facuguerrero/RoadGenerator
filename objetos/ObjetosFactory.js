@@ -770,38 +770,39 @@ class ObjetosFactory {
         var rueda3 = new Objeto3D();
         var rueda4 = new Objeto3D();
 
-        var aux = [];
+
 
         //Las matrices y los puntos son los mismos que la carroceria solo le agrego los
         //posicionamientos y el radio
         puntosCarroceria.push(vec3.fromValues(2.3, 1.0, 0.8));
-        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
+        rueda1.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         rueda1.translate(0.0,0.0,-0.2);
         auto.add(rueda1);
         this.addTapaRueda(rueda1,arrayMat, puntosCarroceria,2.3,false);
 
         puntosCarroceria.push(vec3.fromValues(2.3, 1.0, 0.8));
-        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
+        rueda2.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         rueda2.translate(0.0,0.0,3.7);
         auto.add(rueda2);
         this.addTapaRueda(rueda2,arrayMat, puntosCarroceria,2.3,true);
 
         puntosCarroceria.push(vec3.fromValues(9.1, 1.0, 0.8));
-        rueda3.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
+        rueda3.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         rueda3.translate(0.0,0.0,-0.2);
         auto.add(rueda3);
         this.addTapaRueda(rueda3,arrayMat, puntosCarroceria,9.1,false);
 
         puntosCarroceria.push(vec3.fromValues(9.1, 1.0, 0.8));
-        rueda4.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria,aux);
+        rueda4.calcularSuperficieBarrido("rueda", 2, 11, arrayMat, puntosCarroceria);
         rueda4.translate(0.0,0.0,3.7);
         auto.add(rueda4);
         this.addTapaRueda(rueda4,arrayMat, puntosCarroceria,9.1,true);
 
-        aux.push(rueda1.children[0]);
-        aux.push(rueda2.children[0]);
-        aux.push(rueda3.children[0]);
-        aux.push(rueda4.children[0]);
+        var aux = [];
+        aux.push(rueda1);
+        aux.push(rueda2);
+        aux.push(rueda3);
+        aux.push(rueda4);
 
         listaRuedas.push(aux);
     }
