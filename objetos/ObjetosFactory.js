@@ -677,9 +677,10 @@ class ObjetosFactory {
         for(var i =0.0; i<14;i++){
             var num = Math.random();
 
-            if(num <0.5){
-                num = variaciones[i%3];
-            }
+            //if(num <0.5){
+                //num = variaciones[i%3];
+                num = 1.0;
+            //}
             alturas.push(num*20);
         }
         return alturas;
