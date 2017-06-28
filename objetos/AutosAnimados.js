@@ -196,13 +196,16 @@ class AutosAnimados {
             rueda1[0].resetMatrix();
             rueda1[0].translate(2.3, 1.0, 0.0);
             rueda1[0].rotate(angulo , 0.0, 0.0, 1.0);//
+            rueda1[0].translate(-2.3, -1.0, 0.0);
+            rueda1[0].translate(0.0, 0.0, -0.2);
 
-            // auto1.resetMatrix();
-            // auto1.translate(vec1[1], vec1[0], vec1[2] - 10);
-            // auto1.applyMatrix(mat1);
-            // auto1.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
-            // auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
-            // auto1.scale(0.5, 0.5, 0.5);
+
+            auto1.resetMatrix();
+            auto1.translate(vec1[1], vec1[0], vec1[2] - 10);
+            auto1.applyMatrix(mat1);
+            auto1.rotate(Math.PI / 2, 0.0, 0.0, 1.0);
+            auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
+            auto1.scale(0.5, 0.5, 0.5);
 
             //rueda1[0].resetMatrix();
             //rueda1[0].translate(0.0,0.0,-0.2);

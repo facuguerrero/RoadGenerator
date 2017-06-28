@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="No sale">
+    <list default="true" id="b218dc51-32ac-4f2c-bb2a-1e7adf90f81a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objetos/AutosAnimados.js" afterPath="$PROJECT_DIR$/objetos/AutosAnimados.js" />
     </list>
@@ -117,8 +117,8 @@
       <file leaf-file-name="AutosAnimados.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="197" column="55" lean-forward="false" selection-start-line="197" selection-start-column="55" selection-end-line="197" selection-end-column="55" />
+            <state relative-caret-position="214">
+              <caret line="201" column="0" lean-forward="true" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,8 +127,8 @@
       <file leaf-file-name="ObjetosFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="942">
-              <caret line="808" column="4" lean-forward="false" selection-start-line="808" selection-start-column="4" selection-end-line="808" selection-end-column="4" />
+            <state relative-caret-position="834">
+              <caret line="809" column="4" lean-forward="false" selection-start-line="809" selection-start-column="4" selection-end-line="809" selection-end-column="4" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
                 <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
@@ -353,8 +353,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/objetos/AutosAnimados.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/objetos/ObjetosFactory.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -558,13 +557,6 @@
       <workItem from="1498584838723" duration="125000" />
       <workItem from="1498650248808" duration="3867000" />
       <workItem from="1498657042165" duration="124000" />
-    </task>
-    <task id="LOCAL-00041" summary="texturas pasto">
-      <created>1498246850389</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1498246850389</updated>
     </task>
     <task id="LOCAL-00042" summary="Agregando texturas">
       <created>1498332816341</created>
@@ -902,11 +894,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498659382852</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="No sale">
+      <created>1498659720384</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1498659720384</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158874000" />
+    <option name="totallyTimeSpent" value="159677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="849" extended-state="6" />
@@ -1523,8 +1522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/ObjetosFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="942">
-          <caret line="808" column="4" lean-forward="false" selection-start-line="808" selection-start-column="4" selection-end-line="808" selection-end-column="4" />
+        <state relative-caret-position="834">
+          <caret line="809" column="4" lean-forward="false" selection-start-line="809" selection-start-column="4" selection-end-line="809" selection-end-column="4" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#ObjetosFactory#0" expanded="false" />
             <element signature="n#!!block;n#createSky#0;n#ObjetosFactory#0" expanded="false" />
@@ -1534,8 +1533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objetos/AutosAnimados.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="197" column="55" lean-forward="false" selection-start-line="197" selection-start-column="55" selection-end-line="197" selection-end-column="55" />
+        <state relative-caret-position="214">
+          <caret line="201" column="0" lean-forward="true" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
           <folding />
         </state>
       </provider>
