@@ -673,25 +673,21 @@ class ObjetosFactory {
 
     llenarAlturas(){
         var alturas = [];
-        var variaciones = [0.82,1.60,2.35];
+        var variaciones = [0.78,0.93];
+        //1: 1,7,14,16
+        //2: 2,4,8,9,11,14,17,19
+        //3: 1,2,7,8,9,11,14,16
+
+        //repetir 4,17,19
+
+        /*1 2 4 7 8 9 11 14 16 17 19*/
+
         for(var i =0.0; i<14;i++){
-            //obtiene un random entre 1 y 3
-            var num = Math.floor((Math.random() * 10) + 1);
-            var x = 8.2;
+            //obtiene un random entre 1 y 10
+            var num = Math.floor((Math.random() * 2) + 1);
 
-            if(num == 1 || num == 5 || num == 9){
-                x = 16.0;
-            }
-            if(num == 2 || num == 4 || num == 8){
-                x = 23.5;
-            }
-            if(num == null || num==0 ){
-                x=16.0;
-            }
-            console.log(i);
-            console.log(x);
-
-            alturas.push(x);
+            //alturas.push(variaciones[1] * 20)
+            alturas.push(variaciones[num-1] * 20);
         }
         return alturas;
     }
