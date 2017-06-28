@@ -128,11 +128,13 @@ class AutosAnimados {
         var largoCurva = 55.0;
 
         this.count += 0.5;
-        this.rotacion += 0.2;
+        this.rotacion += 0.1;
 
         if (this.count > 1.15){
             this.count = 0.5;
         }
+        //0.8 es a la izq en eje x
+
         if(this.rotacion>2.0){
             this.rotacion = 0.0;
         }
@@ -197,9 +199,11 @@ class AutosAnimados {
             auto1.rotate(Math.PI / 2, 0.0, 1.0, 0.0);
             auto1.scale(0.5, 0.5, 0.5);
 
+            //var pos = rueda1[0].matrix[2]
             rueda1[0].resetMatrix();
+            //rueda1[0].translate( - angulo * Math.cos(angulo), - angulo * Math.sin(angulo) ,0.0);
+            //
             //rueda1[0].rotate(angulo , 0.0, 0.0, 1.0);
-            //rueda1[0].translate(3.7 - 2.3* Math.cos(angulo), - Math.sin(angulo),0.0);
 
 
             rueda1[1].resetMatrix();
