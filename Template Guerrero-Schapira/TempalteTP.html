@@ -713,86 +713,219 @@
             specular = pow(specAngle, shininess);
         }
 
-        if(maxY>= 15.4 && maxY<15.8){
+
+        /*//14,6: 1,7,14,16
+        if(maxY>= 14.1 && maxY<15.1){
             auxUv2.x = auxUv2.x * factorX;
             auxUv2.y = auxUv2.y * factoredY;
             auxUv.x = auxUv.x * factorX;
             auxUv.y = auxUv.y * factorpbY;
 
-            if(vID >= 8.5 && vID < 11.5 || vID >= 4.5 && vID < 5.5 ){
+            if(vID >= 1.5 && vID < 7.5){
+                textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+            }
+
+            /*if(vID >= 4.5 && vID < 7.5){
+                textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+            }
+
+            if(vID >= 7.5 && vID < 10.5){
+                textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            }
+
+            if(vID >= 10.5 && vID < 13.5){
+                textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+            }
+        }*/
+
+         //15,6: 2,4,8,9,11,17,19
+        if(maxY>= 15.1 && maxY<16.1){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+
+            //
+            if(vID >= 1.5 && vID < 5.5){
                 textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
                 textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
             }
 
-            if(vID >= 1.5 && vID < 3.5 || vID >= 5.5 && vID < 6.5 || vID >= 12.5 && vID < 13.5){
-                textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
-            }
-
-            if(vID >= 6.5 && vID < 8.5 || vID >= 3.5 && vID < 4.5 ||vID >= 11.5 && vID < 12.5){
-                textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
-            }
-        }
-
-        if(maxY>= 15.8 && maxY<16.2){
-                auxUv2.x = auxUv2.x * factorX;
-                auxUv2.y = auxUv2.y * factoredY;
-                auxUv.x = auxUv.x * factorX;
-                auxUv.y = auxUv.y * factorpbY;
-
-             if(vID >= 1.5 && vID < 3.5 || vID >= 5.5 && vID < 6.5 || vID >= 7.5 && vID < 9.5 || vID >= 12.5 && vID < 13.5){
-
-                textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
-            }
-
-            if(vID >= 3.5 && vID < 5.5 || vID >= 6.5 && vID < 7.5 || vID >= 9.5 && vID < 12.5){
-
-                textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
-            }
-        }
-
-         if(maxY>= 18.1 && maxY<19.1){
-            auxUv2.x = auxUv2.x * factorX;
-            auxUv2.y = auxUv2.y * factoredY;
-            auxUv.x = auxUv.x * factorX;
-            auxUv.y = auxUv.y * factorpbY;
-
-            if(vID >= 1.5 && vID < 3.5 || vID >= 5.5 && vID < 6.5 || vID >= 12.5 && vID < 13.5){
-                textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
-            }
-
-            if(vID >= 6.5 && vID < 8.5 || vID >= 3.5 && vID < 4.5 ||vID >= 11.5 && vID < 12.5){
-                textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
-            }
-
-            if(vID >= 8.5 && vID < 11.5 || vID >= 4.5 && vID < 5.5 ){
-                textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
-            }
-        }
-
-        if(maxY>= 22.1 && maxY<23.1){
-            auxUv2.x = auxUv2.x * factorX;
-            auxUv2.y = auxUv2.y * factoredY;
-            auxUv.x = auxUv.x * factorX;
-            auxUv.y = auxUv.y * factorpbY;
-
-            if(vID >= 1.5 && vID < 3.5 || vID >= 5.5 && vID < 6.5 || vID >= 7.5 && vID < 9.5 || vID >= 12.5 && vID < 13.5){
+            /*if(vID >= 2.5 && vID < 3.5){
                 textureColor = texture2D(building4, vec2(auxUv2.s, auxUv2.t));
                 textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
             }
 
-            if(vID >= 3.5 && vID < 5.5 || vID >= 6.5 && vID < 7.5 || vID >= 9.5 && vID < 12.5){
+            if(vID >= 3.5 && vID < 6.5){
                 textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
             }
 
+            if(vID >= 6.5 && vID < 8.5){
+                textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+            }
+
+            if(vID >= 8.5 && vID < 9.5){
+                textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+            }*/
+               //
+            if(vID >= 5.5 && vID < 9.5){
+                textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            }
+            //
+            if(vID >= 9.5 && vID < 13.5){
+                textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+            }
         }
+
+        //18.6: 1,2,7,8,9,11,14,16
+         else{
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+                //
+            if(vID >= 1.5 && vID < 5.5){
+                textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+            }
+            /*if(vID >= 2.5 && vID < 3.5){
+                textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+            }
+            if(vID >= 3.5 && vID < 6.5){
+                textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+            }
+            if(vID >= 6.5 && vID < 8.5){
+                textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            }*/
+            //
+            if(vID >= 5.5 && vID < 9.5){
+                textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+            }
+            /*
+            if(vID >= 9.5 && vID < 11.5){
+                textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+            }
+            if(vID >= 11.5 && vID < 12.5){
+                textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            }*/
+            //
+            if(vID >= 9.5 && vID < 13.5){
+                textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+            }
+        }
+        /*
+        if(vID > 1.5 && vID < 2.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 2.5 && vID < 3.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 3.5 && vID < 4.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building4, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 4.5 && vID < 5.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building5, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 5.5 && vID < 6.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 6.5 && vID < 7.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 7.5 && vID < 8.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 8.5 && vID < 9.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 9.5 && vID < 10.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building2, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 10.5 && vID < 11.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 11.5 && vID < 12.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+        }
+        if(vID > 12.5 && vID < 13.5){
+            auxUv2.x = auxUv2.x * factorX;
+            auxUv2.y = auxUv2.y * factoredY;
+            auxUv.x = auxUv.x * factorX;
+            auxUv.y = auxUv.y * factorpbY;
+            textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
+            textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+        }*/
 
 
         if((vTextureCoord.y) < factor){
