@@ -276,6 +276,49 @@ class ObjetosFactory {
         return edificio;
     }
 
+    createBox(x, y, z) {
+        /*La funcion recibe:
+         @ x: Ancho de las elevaciones.
+         @ y: Alto del edificio.
+         @ z: Profundidad de una elevacion del edificio.
+         @ tapaAbajo: bool para definir o no una tapa inferior
+         */
+
+        var edificio = new Objeto3D();
+        edificio.setType("edificio",this.numB, y, x);
+        edificio.setShaderProgram(buildingShaders);
+        edificio.setCountEd(this.countEdif);
+        this.sumNumB();
+
+        //Creamos los puntos de la curva del edificio
+        var puntosEdificio = [];
+        puntosEdificio.push(vec3.fromValues(0.0, 0.0, 0.0));
+        puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
+        //puntosEdificio.push(vec3.fromValues(0.0, y, 0.0));
+        puntosEdificio.push(vec3.fromValues(x, 0.0, z));
+
+        var arrayMatT = [];
+        var mat = mat3.create();
+        var matt = mat3.create();
+        mat3.identity(mat);
+        mat3.identity(matt);
+        arrayMatT.push(mat);
+        arrayMatT.push(matt);
+
+        var puntosTapa = [];
+        puntosTapa.push(vec3.fromValues(0.0, y, 0.0));
+        puntosTapa.push(vec3.fromValues(0.0, y, z));
+        puntosTapa.push(vec3.fromValues(x, y, 0.0));
+        //Creamos el techo del edificio
+        var base = new Objeto3D();
+        base.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapa);
+        edificio.add(base);
+
+        edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
+
+        return edificio;
+    }
+
     createCalle(x, z, type = "calle", id = 300.0) {
         /* Funcion que recibe 2 parametros:
          @X es el ancho de la calle.
@@ -556,41 +599,14 @@ class ObjetosFactory {
         var centro = this.createVereda(false);
 
         /* OBJETO PARA LA REFLEXION */
-        var esfera = new Objeto3D();
-        var buffcalc = new BufferCalculator(20, 20);
+        var box = this.createBox(5.0, 5.0, 5.0);
 
-        buffcalc.createEsfera(2);
-        esfera.setBufferCreator(buffcalc);
-        esfera.build();
         //cambiar cuando haga falta
-        esfera.setType("pasto",40.0);
+        box.setType("pasto",40.0);
 
-        esfera.translate( 9.5, 2.0,9.5);
-        centro.add(esfera);
+        box.translate( 9.5, 0.0,9.5);
+        centro.add(box);
 
-        var esfera2 = new Objeto3D();
-        var buffcalc = new BufferCalculator(20, 20);
-
-        buffcalc.createEsfera(1);
-        esfera2.setBufferCreator(buffcalc);
-        esfera2.build();
-        //cambiar cuando haga falta
-        esfera2.setType("pasto",40.0);
-
-        esfera2.translate( 0.0,2.0,1.8);
-        esfera.add(esfera2);
-
-        var esfera3 = new Objeto3D();
-        var buffcalc = new BufferCalculator(20, 20);
-
-        buffcalc.createEsfera(1);
-        esfera3.setBufferCreator(buffcalc);
-        esfera3.build();
-        //cambiar cuando haga falta
-        esfera3.setType("pasto",40.0);
-
-        esfera3.translate( 0.0,2.0,-1.8);
-        esfera.add(esfera3);
 
 
         /* TERMINAMOS LA VEREDA */

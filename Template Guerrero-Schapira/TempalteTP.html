@@ -1227,9 +1227,9 @@
         if(vID >= 39.5 && vID < 40.5){
             textureColor = texture2D(vereda, vTextureCoord);
             specular = 0.5;
-            float reflectionFactor = 1.0;
-            vec2 reflectDir2D = vec2(reflectDirec.x,reflectDirec.y);
-			  vec4 enviromentColor = texture2D(skyy, reflectDir2D );
+            float reflectionFactor = 0.5;
+            vec2 reflectDir2D = vec2(reflectDirec.x * 2.0,reflectDirec.y * -2.0);
+			vec4 enviromentColor = texture2D(skyy, reflectDir2D );
             reflectionColor = enviromentColor * reflectionFactor;
         }
 
@@ -1713,7 +1713,7 @@
             gl.activeTexture(gl.TEXTURE30);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["concretoNormalMap"]);
 
-            //Concreto Normales
+            //rueda
             gl.useProgram(streetShader);
             loadTexture("textures/rueda.jpg", "rueda");
 
