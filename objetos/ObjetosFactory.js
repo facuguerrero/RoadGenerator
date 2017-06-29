@@ -602,7 +602,7 @@ class ObjetosFactory {
         //cambiar cuando haga falta
         box.setType("pasto",40.0);
 
-        box.translate( 9.5, 0.0,9.5);
+        box.translate( 7.5, 0.0,7.5);
         centro.add(box);
 
 

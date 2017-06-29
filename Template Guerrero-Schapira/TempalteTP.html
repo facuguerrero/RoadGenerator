@@ -1226,9 +1226,11 @@
         }
 
         if(vID >= 39.5 && vID < 40.5){
-            textureColor = texture2D(plata, vTextureCoord);
+            auxUv.x = auxUv.x * -1.0;
+            //auxUv.y = auxUv.y * 20.0;
+            textureColor = texture2D(plata, auxUv);
             specular = 0.6;
-            float reflectionFactor = 0.1;
+            float reflectionFactor = 0.15;
             vec2 reflectDir2D = vec2(reflectDirec.x * 1.0,reflectDirec.y * 1.0 );
 			vec4 enviromentColor = texture2D(skyy, reflectDir2D );
             reflectionColor = enviromentColor * reflectionFactor;
@@ -1672,7 +1674,7 @@
 
             //Sky reflection
             gl.useProgram(cityShader);
-            loadTexture("textures/metal.jpg", "plata");
+            loadTexture("textures/metal_con_nombres.jpg", "plata");
 
             var location = gl.getUniformLocation(cityShader, "plata");
             gl.uniform1i(location, 15);
