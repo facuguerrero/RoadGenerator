@@ -1733,22 +1733,6 @@
             gl.uniform1i(location, 31);
             gl.activeTexture(gl.TEXTURE31);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["rueda"]);
-
-//            //mapa de refleccion
-//            gl.useProgram(cityShader);
-//
-//            var paths = ["textures/siege_ft.jpg",
-//                "textures/siege_bk.jpg",
-//                "textures/siege_up.jpg",
-//                "textures/siege_dn.jpg",
-//                "textures/siege_rt.jpg",
-//                "textures/siege_lf.jpg"];
-//            glTextures["uReflectionMap"] = loadCubeMap(paths);
-//            var location = gl.getUniformLocation(cityShader, "uReflectionMap");
-//            gl.uniform1i(location, 30);
-//            gl.activeTexture(gl.TEXTURE30);
-//            gl.bindTexture(gl.TEXTURE_CUBE_MAP, glTextures["uReflectionMap"]);
-
         }
 
         function loadTexture(path, string) {
@@ -1769,38 +1753,6 @@
             texture.image = image;
             //agrega la textura a glTextures
             glTextures[string] = texture;
-        }
-
-        function handleLoadedCubeMap(image, cubeMap) {
-
-            gl.bindTexture(gl.TEXTURE_CUBE_MAP, cubeMap);
-            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_X + image.side, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-            imageCount++;
-            if (imageCount == 6) {
-                imageCount = 0;
-                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
-                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-                gl.generateMipmap(gl.TEXTURE_CUBE_MAP);
-            }
-            gl.bindTexture(gl.TEXTURE_CUBE_MAP, null);
-        }
-
-        var imageCount = 0;
-
-        function loadCubeMap(paths) {
-            var cubeMap = gl.createTexture();
-            for (var i = 0; i <= 5; i++) {
-                var image = new Image();
-                image.side = i;
-                image.onload = function() {
-                    handleLoadedCubeMap(this, cubeMap);
-                }
-                image.src = paths[i];
-            }
-
-            return cubeMap;
         }
 
         var CameraMatrix = mat4.create();
