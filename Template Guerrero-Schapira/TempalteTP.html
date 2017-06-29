@@ -2304,6 +2304,46 @@
         top: -65px;
     }
 
+    .alert {
+        padding: 20px;
+        background-color: #63a1aa;
+        color: floralwhite;
+        font-weight: bold;
+        font-family: "Lato", sans-serif;
+        margin-bottom: 15px;
+    }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .closebtn:hover {
+        color: black;
+    }
+    .controles{
+        padding: 2px;
+        margin-bottom: 1px;
+        margin-top: 1px;
+        margin-left: 30px;
+    }
+    .izquierda{
+        float:left;
+        width: 300px;
+        margin-left:30px;
+    }
+    .derecha{
+        float:left;
+        width: 500px;
+    }
+
+
 </style>
 
 <script src="jquery-2.1.4.min.js"></script>
@@ -2313,6 +2353,25 @@
 <center>
     <h1 style="color:dimgray">SG - 66.71 - Trabajo Pr&aacute;ctico 2017</h1>
     <h2 style="color:grey">Schapira y Guerrero</h2>
+    <div class="alert" style="height: 80px">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+
+        <div>
+            <div class = "izquierda">
+                <p class="controles" >Boton 1: Camara Libre Calle.</p>
+                <p class="controles" style="margin-left: 7px;">Boton 2: Camara Orbital.</p>
+                <p class="controles" >Boton 3: Camara Libre Ruta.</p>
+            </div>
+
+            <div class = "derecha">
+                <p class="controles" >Movimientos: W A S D y Elevaciones: Q E.</p>
+                <p class="controles" style="margin-left: 7px;">Movimientos: W A S D. </p>
+                <p class="controles" >Movimientos: W A S D y Elevaciones: Q E.</p>
+            </div>
+        </div>
+
+    </div>
+
     <canvas id="franjaSup" width="1600" height="90">
     </canvas>
     <canvas id="my_canvas" width="900" height="500">
@@ -2326,6 +2385,7 @@
         <h3 style="color:#803a37">Car Speed:</h3>
         </form>
     </div>
+
 
 </center>
 
