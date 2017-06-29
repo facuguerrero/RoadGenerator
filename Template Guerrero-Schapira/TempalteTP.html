@@ -1082,11 +1082,12 @@
     varying vec2 vTextureCoord;
     varying vec3 vLightWeighting;
     varying float vID;
-    varying vec3 reflectDir;
 
     varying vec3 vNormal;
     varying vec3 vLightDir;
     varying vec3 vViewDir;
+
+    varying vec3 reflectDirec;
 
     void main(void) {
 
@@ -1128,6 +1129,10 @@
             vViewDir = toObjectLocal * vViewDir;
         }
 
+        vec3 view = normalize(vec3(pos_camera_view));
+        reflectDirec = reflect(view, vNormal);
+    	reflectDirec = vec3(uViewMatrix * vec4(reflectDirec, 0.0));
+
     }
     </script>
 
@@ -1141,13 +1146,11 @@
     uniform sampler2D esquina;
     uniform sampler2D vereda;
     uniform sampler2D pasto;
-//    uniform sampler2D skyy;
+    uniform sampler2D skyy;
     uniform sampler2D pastoNormalMap;
     uniform sampler2D veredaNormalMap;
     uniform sampler2D esquinaNormalMap;
     uniform sampler2D streetNormalMap;
-
-    uniform samplerCube uReflectionMap;
 
 
     // Variables utilizadas para la iluminación
@@ -1160,6 +1163,8 @@
     varying vec3 vLightDir;
     varying vec3 vViewDir;
     varying float vID;
+
+    varying vec3 reflectDirec;
 
     void main(void) {
         vec4 textureColor;
@@ -1221,12 +1226,11 @@
 
         if(vID >= 39.5 && vID < 40.5){
             textureColor = texture2D(vereda, vTextureCoord);
-            //normal = normalize(vec3(2.0 * texture2D(pastoNormalMap, auxUv) - 1.0));
-//            float specular = 0.0;
-//            float reflectionFactor = 0.8;
-//            vec3 reflection = -reflect(viewDir, normal);
-//            reflectionColor = textureCube(uReflectionMap, reflection);
-//            reflectionColor = reflectionColor * reflectionFactor;
+            specular = 0.5;
+            float reflectionFactor = 1.0;
+            vec2 reflectDir2D = vec2(reflectDirec.x,reflectDirec.y);
+			  vec4 enviromentColor = texture2D(skyy, reflectDir2D );
+            reflectionColor = enviromentColor * reflectionFactor;
         }
 
         vec3 lightIntensity =  uAmbientColor + lambertian*uDirectionalColor + specular*uDirectionalColor ;
@@ -1656,15 +1660,22 @@
             gl.activeTexture(gl.TEXTURE25);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["autopistaNormalMap"]);
 
-
-            //Pasto Normal
+            //Sky reflection
             gl.useProgram(cityShader);
-            loadTexture("textures/pasto_normal.jpg", "pastoNormalMap");
+            loadTexture("textures/refmap.jpg", "skyy");
 
-            var location = gl.getUniformLocation(cityShader, "pastoNormalMap");
+            var location = gl.getUniformLocation(cityShader, "skyy");
             gl.uniform1i(location, 26);
             gl.activeTexture(gl.TEXTURE26);
-            gl.bindTexture(gl.TEXTURE_2D, glTextures["pastoNormalMap"]);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["skyy"]);
+//            //Pasto Normal
+//            gl.useProgram(cityShader);
+//            loadTexture("textures/pasto_normal.jpg", "pastoNormalMap");
+//
+//            var location = gl.getUniformLocation(cityShader, "pastoNormalMap");
+//            gl.uniform1i(location, 26);
+//            gl.activeTexture(gl.TEXTURE26);
+//            gl.bindTexture(gl.TEXTURE_2D, glTextures["pastoNormalMap"]);
 
             //Vereda Normal
             gl.useProgram(cityShader);
@@ -1869,17 +1880,17 @@
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
 
-            //ciclo del dia
-            //INICIO CICLO DIA
-            time = time + (sentido * 0.0008);
-            sol = sol + (sentido * 0.0001);
-            if(time > 0.55){
-                sentido = -1.0;
-            }
-            if (time < 0.0){
-                sentido = 1
-            }
-            //FIN CICLO DIA
+//            //ciclo del dia
+//            //INICIO CICLO DIA
+//            time = time + (sentido * 0.0008);
+//            sol = sol + (sentido * 0.0001);
+//            if(time > 0.55){
+//                sentido = -1.0;
+//            }
+//            if (time < 0.0){
+//                sentido = 1
+//            }
+//            //FIN CICLO DIA
 
             if (frame < 3000) {
                 var t = gl.getUniformLocation(buildingShaders, "t");

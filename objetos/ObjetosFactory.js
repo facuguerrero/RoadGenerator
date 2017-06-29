@@ -695,7 +695,7 @@ class ObjetosFactory {
 
             alturas.push(variaciones[num-1] * 20.0);
         }
-        console.log(alturas);
+        //console.log(alturas);
         return alturas;
     }
 
