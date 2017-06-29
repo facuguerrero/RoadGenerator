@@ -656,7 +656,7 @@
 
     //TOMAMOS ID'S CRECIENTES COMENZANDO POR 0.0
 
-    uniform sampler2D building1;
+    //uniform sampler2D building1;
     uniform sampler2D building2;
     uniform sampler2D building3;
     uniform sampler2D building4;
@@ -759,7 +759,7 @@
         }*/
 
 
-         if(maxY>= 15.1 && maxY<15.9){
+         if(maxY>= 14.0 && maxY<15.8){
             auxUv2.x = auxUv2.x * factorX;
             auxUv2.y = auxUv2.y * factoredY;
             auxUv.x = auxUv.x * factorX;
@@ -782,7 +782,7 @@
 
             if(vID >= 5.5 && vID < 6.5){
                 textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 6.5 && vID < 8.5 ){
@@ -797,7 +797,7 @@
 
             if(vID >= 11.5 && vID < 12.5){
                 textureColor = texture2D(building3, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 12.5 && vID < 13.5){
@@ -815,7 +815,7 @@
              if(vID >= 1.5 && vID < 3.5){
 
                 textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 3.5 && vID < 5.5){
@@ -827,25 +827,25 @@
              if(vID >= 5.5 && vID < 6.5){
 
                 textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 6.5 && vID < 7.5){
 
                 textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 7.5 && vID < 9.5){
 
                 textureColor = texture2D(building6, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 9.5 && vID < 12.5){
 
                 textureColor = texture2D(building12, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 12.5 && vID < 13.5){
@@ -855,15 +855,15 @@
             }
         }
 
-         else if(maxY>= 18.1 && maxY<19.1){
+         else if(maxY>= 16.2 && maxY<19.1){
             auxUv2.x = auxUv2.x * factorX;
             auxUv2.y = auxUv2.y * factoredY;
             auxUv.x = auxUv.x * factorX;
             auxUv.y = auxUv.y * factorpbY;
 
             if(vID >= 1.5 && vID < 3.5){
-                textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+                textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
             }
 
             if( vID >= 3.5 && vID < 4.5){
@@ -873,12 +873,12 @@
 
             if( vID >= 4.5 && vID < 5.5){
                 textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 5.5 && vID < 6.5){
-                textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+                textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
             }
 
             if( vID >= 6.5 && vID < 8.5){
@@ -888,22 +888,22 @@
 
             if(vID >= 8.5 && vID < 11.5 ){
                 textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
-            }
-
-            if(vID >= 11.5 && vID < 12.5){
-                textureColor = texture2D(building1, vec2(auxUv2.s, auxUv2.t));
                 textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
             }
 
-            if(  vID >= 12.5 && vID < 13.5){
+            if(vID >= 11.5 && vID < 12.5){
                 textureColor = texture2D(building8, vec2(auxUv2.s, auxUv2.t));
                 textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
             }
 
+            if(  vID >= 12.5 && vID < 13.5){
+                textureColor = texture2D(building9, vec2(auxUv2.s, auxUv2.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+            }
+
         }
 
-        else if(maxY>= 22.1 && maxY<23.1){
+        else if(maxY>= 19.1 && maxY<23.1){
             auxUv2.x = auxUv2.x * factorX;
             auxUv2.y = auxUv2.y * factoredY;
             auxUv.x = auxUv.x * factorX;
@@ -916,22 +916,22 @@
 
             if(vID >= 3.5 && vID < 5.5){
                 textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb1, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 5.5 && vID < 6.5){
                 textureColor = texture2D(building4, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 6.5 && vID < 7.5){
                 textureColor = texture2D(building7, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb3, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 7.5 && vID < 9.5){
                 textureColor = texture2D(building4, vec2(auxUv2.s, auxUv2.t));
-                textureColor2 = texture2D(pb2, vec2(auxUv.s, auxUv.t));
+                textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
             }
 
             if(vID >= 9.5 && vID < 12.5){
@@ -945,18 +945,18 @@
             }
         }
 
-        else{
-
-            auxUv2.x = auxUv2.x * factorX;
-            auxUv2.y = auxUv2.y * factoredY;
-            auxUv.x = auxUv.x * factorX;
-            auxUv.y = auxUv.y * factorpbY;
-
-            textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
-            textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
-
-
-        }
+//        else{
+//
+//            auxUv2.x = auxUv2.x * factorX;
+//            auxUv2.y = auxUv2.y * factoredY;
+//            auxUv.x = auxUv.x * factorX;
+//            auxUv.y = auxUv.y * factorpbY;
+//
+//            textureColor = texture2D(building11, vec2(auxUv2.s, auxUv2.t));
+//            textureColor2 = texture2D(pb4, vec2(auxUv.s, auxUv.t));
+//
+//
+//        }
 
 
 
@@ -1147,6 +1147,7 @@
     uniform sampler2D vereda;
     uniform sampler2D pasto;
     uniform sampler2D skyy;
+    uniform sampler2D plata;
     uniform sampler2D pastoNormalMap;
     uniform sampler2D veredaNormalMap;
     uniform sampler2D esquinaNormalMap;
@@ -1225,10 +1226,10 @@
         }
 
         if(vID >= 39.5 && vID < 40.5){
-            textureColor = texture2D(vereda, vTextureCoord);
-            specular = 0.5;
-            float reflectionFactor = 0.5;
-            vec2 reflectDir2D = vec2(reflectDirec.x * 2.0,reflectDirec.y * -2.0);
+            textureColor = texture2D(plata, vTextureCoord);
+            specular = 0.6;
+            float reflectionFactor = 0.1;
+            vec2 reflectDir2D = vec2(reflectDirec.x * 1.0,reflectDirec.y * 1.0 );
 			vec4 enviromentColor = texture2D(skyy, reflectDir2D );
             reflectionColor = enviromentColor * reflectionFactor;
         }
@@ -1539,27 +1540,27 @@
 
 
             //se cargan las texturas de los edificios
-            var nombresEdificios = ["building1", "building2", "building3", "building4", "building5", "building6", "building7",
+            var nombresEdificios = ["building2", "building3", "building4", "building5", "building6", "building7",
                 "building8", "building9", "building11", "building12", "pb1", "pb2", "pb3", "pb4"];
             var TEXTURES = [gl.TEXTURE1, gl.TEXTURE2, gl.TEXTURE3, gl.TEXTURE4, gl.TEXTURE5, gl.TEXTURE6, gl.TEXTURE7, gl.TEXTURE8, gl.TEXTURE9, gl.TEXTURE10, gl.TEXTURE11, gl.TEXTURE12, gl.TEXTURE13, gl.TEXTURE14, gl.TEXTURE15, gl.TEXTURE16];
             gl.useProgram(buildingShaders);
-            loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
-            loadTexture("textures/ed2_pisos.jpg", nombresEdificios[1]);
-            loadTexture("textures/ed17_pisos.jpg", nombresEdificios[2]);
-            loadTexture("textures/ed4_pisos.jpg", nombresEdificios[3]);
-            loadTexture("textures/ed19_pisos.jpg", nombresEdificios[4]);
-            loadTexture("textures/ed7_pisos.jpg", nombresEdificios[5]);
-            loadTexture("textures/ed8_pisos.jpg", nombresEdificios[6]);
-            loadTexture("textures/ed9_pisos.jpg", nombresEdificios[7]);
-            loadTexture("textures/ed16_pisos.jpg", nombresEdificios[8]);
-            loadTexture("textures/ed11_pisos.jpg", nombresEdificios[9]);
-            loadTexture("textures/ed14_pisos.jpg", nombresEdificios[10]);
-            loadTexture("textures/ed1_pb.jpg", nombresEdificios[11]);
-            loadTexture("textures/ed2_pb.jpg", nombresEdificios[12]);
-            loadTexture("textures/ed8_pb.jpg", nombresEdificios[13]);
-            loadTexture("textures/ed4_pb.jpg", nombresEdificios[14]);
+            //loadTexture("textures/ed1_pisos.jpg", nombresEdificios[0]);
+            loadTexture("textures/ed2_pisos.jpg", nombresEdificios[0]);
+            loadTexture("textures/ed17_pisos.jpg", nombresEdificios[1]);
+            loadTexture("textures/ed4_pisos.jpg", nombresEdificios[2]);
+            loadTexture("textures/ed19_pisos.jpg", nombresEdificios[3]);
+            loadTexture("textures/ed7_pisos.jpg", nombresEdificios[4]);
+            loadTexture("textures/ed8_pisos.jpg", nombresEdificios[5]);
+            loadTexture("textures/ed9_pisos.jpg", nombresEdificios[6]);
+            loadTexture("textures/ed16_pisos.jpg", nombresEdificios[7]);
+            loadTexture("textures/ed11_pisos.jpg", nombresEdificios[8]);
+            loadTexture("textures/ed14_pisos.jpg", nombresEdificios[9]);
+            loadTexture("textures/ed1_pb.jpg", nombresEdificios[10]);
+            loadTexture("textures/ed2_pb.jpg", nombresEdificios[11]);
+            loadTexture("textures/ed8_pb.jpg", nombresEdificios[12]);
+            loadTexture("textures/ed4_pb.jpg", nombresEdificios[13]);
 
-            for(i=1; i<16; i++) {
+            for(i=1; i<15; i++) {
 
                 var location = gl.getUniformLocation(buildingShaders, nombresEdificios[i - 1]);
                 gl.uniform1i(location, i);
@@ -1662,12 +1663,21 @@
 
             //Sky reflection
             gl.useProgram(cityShader);
-            loadTexture("textures/refmap.jpg", "skyy");
+            loadTexture("textures/skybox.jpg", "skyy");
 
             var location = gl.getUniformLocation(cityShader, "skyy");
             gl.uniform1i(location, 26);
             gl.activeTexture(gl.TEXTURE26);
             gl.bindTexture(gl.TEXTURE_2D, glTextures["skyy"]);
+
+            //Sky reflection
+            gl.useProgram(cityShader);
+            loadTexture("textures/metal.jpg", "plata");
+
+            var location = gl.getUniformLocation(cityShader, "plata");
+            gl.uniform1i(location, 15);
+            gl.activeTexture(gl.TEXTURE15);
+            gl.bindTexture(gl.TEXTURE_2D, glTextures["plata"]);
 //            //Pasto Normal
 //            gl.useProgram(cityShader);
 //            loadTexture("textures/pasto_normal.jpg", "pastoNormalMap");
@@ -1880,17 +1890,17 @@
             var model_matrix_escene = mat4.create();
             mat4.identity(model_matrix_escene);
 
-//            //ciclo del dia
-//            //INICIO CICLO DIA
-//            time = time + (sentido * 0.0008);
-//            sol = sol + (sentido * 0.0001);
-//            if(time > 0.55){
-//                sentido = -1.0;
-//            }
-//            if (time < 0.0){
-//                sentido = 1
-//            }
-//            //FIN CICLO DIA
+            //ciclo del dia
+            //INICIO CICLO DIA
+            time = time + (sentido * 0.0008);
+            sol = sol + (sentido * 0.0001);
+            if(time > 0.55){
+                sentido = -1.0;
+            }
+            if (time < 0.0){
+                sentido = 1
+            }
+            //FIN CICLO DIA
 
             if (frame < 3000) {
                 var t = gl.getUniformLocation(buildingShaders, "t");

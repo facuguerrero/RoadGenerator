@@ -285,10 +285,6 @@ class ObjetosFactory {
          */
 
         var edificio = new Objeto3D();
-        edificio.setType("edificio",this.numB, y, x);
-        edificio.setShaderProgram(buildingShaders);
-        edificio.setCountEd(this.countEdif);
-        this.sumNumB();
 
         //Creamos los puntos de la curva del edificio
         var puntosEdificio = [];
@@ -311,7 +307,9 @@ class ObjetosFactory {
         puntosTapa.push(vec3.fromValues(x, y, 0.0));
         //Creamos el techo del edificio
         var base = new Objeto3D();
-        base.calcularSuperficieBarrido("tapa_edificio", 2, 2, arrayMatT, puntosTapa);
+        base.calcularSuperficieBarrido("calle", 2, 2, arrayMatT, puntosTapa);
+        base.setType("pasto",40.0);
+
         edificio.add(base);
 
         edificio.calcularSuperficieBarrido("estructura_edificio", 2, 5, arrayMatT, puntosEdificio);
@@ -599,7 +597,7 @@ class ObjetosFactory {
         var centro = this.createVereda(false);
 
         /* OBJETO PARA LA REFLEXION */
-        var box = this.createBox(5.0, 5.0, 5.0);
+        var box = this.createBox(5.0, 0.3, 5.0);
 
         //cambiar cuando haga falta
         box.setType("pasto",40.0);
