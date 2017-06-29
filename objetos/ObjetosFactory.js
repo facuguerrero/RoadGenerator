@@ -12,7 +12,7 @@ class ObjetosFactory {
     createSky(){
 
         var esfera = new Objeto3D();
-        var buffcalc = new BufferCalculator(10, 10);
+        var buffcalc = new BufferCalculator(20, 20);
         buffcalc.createEsfera(500);
 
         esfera.setBufferCreator(buffcalc);
